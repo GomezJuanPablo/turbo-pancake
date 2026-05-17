@@ -759,6 +759,38 @@ img, svg { display: block; max-width: 100%; }
 .badge__icon { font-size: 16px; }
 
 /* ============================================================
+   Ko-fi floating support link
+   (Plain anchor, not the Ko-fi script widget — see BaseLayout.astro
+   for the reason.)
+   ============================================================ */
+
+.kofi-link {
+  position: fixed;
+  bottom: 18px;
+  right: 18px;
+  z-index: 9999;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: var(--primary);
+  color: #fff;
+  font-weight: 600;
+  font-size: 13px;
+  text-decoration: none;
+  border-radius: 999px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.18);
+  transition: background 120ms ease, transform 120ms ease;
+}
+.kofi-link:hover {
+  background: var(--primary-dark, #006B7F);
+  transform: translateY(-1px);
+}
+.kofi-link img {
+  display: block;
+}
+
+/* ============================================================
    Responsive — small-screen overrides
    (Layout shell handled mobile-first in the .app-shell block.)
    ============================================================ */

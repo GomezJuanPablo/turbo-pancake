@@ -52,16 +52,27 @@ const {
       </main>
     </div>
 
-    <!-- Ko-fi floating support widget. Loads async so it never blocks
-         render. Persists across pages because it lives in the layout. -->
-    <script is:inline src="https://storage.ko-fi.com/cdn/widget/Widget_2.js" defer></script>
-    <script is:inline>
-      window.addEventListener('load', () => {
-        if (typeof kofiwidget2 !== 'undefined') {
-          kofiwidget2.init('Support GlideUp on Ko-fi', '#0E8B9E', 'Y8Y21ZOMNW');
-          kofiwidget2.draw();
-        }
-      });
-    </script>
+    <!-- Ko-fi floating support link.
+         IMPORTANT: do NOT use Ko-fi's Widget_2.js + kofiwidget2.draw()
+         embed on a static Astro page. That script uses document.write,
+         which wipes the entire <body> when called after window.load —
+         observed in production on 2026-05-17 (live site rendered as the
+         Ko-fi button only). A plain styled link gets the same result
+         without the destructive script. -->
+    <a
+      class="kofi-link"
+      href="https://ko-fi.com/Y8Y21ZOMNW"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Support GlideUp on Ko-fi"
+    >
+      <img
+        src="https://storage.ko-fi.com/cdn/cup-border.png"
+        alt=""
+        width="20"
+        height="20"
+      />
+      <span>Support GlideUp on Ko-fi</span>
+    </a>
   </body>
 </html>
