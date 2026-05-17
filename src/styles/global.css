@@ -119,19 +119,34 @@ img, svg { display: block; max-width: 100%; }
    Layout shell — NE workspace pattern
    ============================================================ */
 
+/* Mobile-first: single-column shell with no side nav by default.
+   The desktop two-column layout opts in below via min-width. This
+   ordering prevents CSS minifiers from stripping a max-width media
+   query and breaking the desktop layout (see prior incident). */
 .app-shell {
   min-height: 100vh;
   display: grid;
   grid-template-rows: var(--topbar-height) 1fr;
-  grid-template-columns: var(--sidenav-width) 1fr;
+  grid-template-columns: 1fr;
   grid-template-areas:
-    "topbar topbar"
-    "sidenav content";
+    "topbar"
+    "content";
 }
 
 .topbar  { grid-area: topbar;  }
-.sidenav { grid-area: sidenav; }
+.sidenav { grid-area: sidenav; display: none; }
 .content { grid-area: content; }
+
+/* Desktop / tablet — opt in to the two-column workspace shell. */
+@media (min-width: 901px) {
+  .app-shell {
+    grid-template-columns: var(--sidenav-width) 1fr;
+    grid-template-areas:
+      "topbar topbar"
+      "sidenav content";
+  }
+  .sidenav { display: block; }
+}
 
 /* --- Top bar --- */
 
@@ -744,17 +759,11 @@ img, svg { display: block; max-width: 100%; }
 .badge__icon { font-size: 16px; }
 
 /* ============================================================
-   Responsive — collapse side nav under 900px
+   Responsive — small-screen overrides
+   (Layout shell handled mobile-first in the .app-shell block.)
    ============================================================ */
 
 @media (max-width: 900px) {
-  .app-shell {
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "topbar"
-      "content";
-  }
-  .sidenav { display: none; }
   :root {
     --content-pad-x: 20px;
     --content-pad-y: 20px;
