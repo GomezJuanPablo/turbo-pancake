@@ -1,0 +1,15 @@
+{
+  "exam": "CSA",
+  "name": "Certified System Administrator",
+  "release": "Yokohama",
+  "kb": "KB0011554",
+  "totalQuestions": 240,
+  "domains": [
+    { "id": "platform-overview-and-navigation",        "name": "Platform Overview and Navigation",        "weight": 6,    "target": 14 },
+    { "id": "instance-configuration",                  "name": "Instance Configuration",                  "weight": 10,   "target": 24 },
+    { "id": "configuring-apps-for-collaboration",      "name": "Configuring Apps for Collaboration",      "weight": 19.5, "target": 47 },
+    { "id": "self-service-and-automation",             "name": "Self-Service and Automation",             "weight": 19.5, "target": 47 },
+    { "id": "database-management-and-platform-security","name": "Database Management and Platform Security","weight": 30,  "target": 72 },
+    { "id": "data-migration-and-integration",          "name": "Data Migration and Integration",          "weight": 15,   "target": 36 }
+  ]
+}

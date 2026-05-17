@@ -1,0 +1,44 @@
+---
+interface Props {
+  activeNav?: string;
+}
+const { activeNav = '' } = Astro.props;
+---
+<header class="topbar">
+  <a href="/" class="topbar__brand" aria-label="GlideUp home">
+    <img
+      src="/brand/logo-mark.png"
+      alt=""
+      width="24"
+      height="24"
+      decoding="async"
+      class="topbar__brand-mark"
+    />
+    <span>GlideUp</span>
+  </a>
+  <nav class="topbar__nav" aria-label="Top navigation">
+    <a href="/" class={`topbar__nav-item ${activeNav === 'all' ? 'is-active' : ''}`}>All</a>
+    <a href="/csa/" class={`topbar__nav-item ${activeNav === 'csa' ? 'is-active' : ''}`}>CSA</a>
+  </nav>
+  <div class="topbar__status" aria-label="User status">
+    <span class="status-pill" title="Streak (days)">🔥 <span data-streak>0</span></span>
+    <span class="status-pill" title="Experience points">⚡ <span data-xp>0</span></span>
+  </div>
+</header>
+
+<script>
+  // Surface XP + streak from localStorage into the top bar's status pills.
+  // Defensive: progress may be empty on first load.
+  try {
+    const raw = localStorage.getItem('glideup:progress:v1');
+    if (raw) {
+      const state = JSON.parse(raw);
+      const xpEl = document.querySelector('[data-xp]');
+      const streakEl = document.querySelector('[data-streak]');
+      if (xpEl) xpEl.textContent = String(state.xp ?? 0);
+      if (streakEl) streakEl.textContent = String(state?.streak?.count ?? 0);
+    }
+  } catch {
+    /* swallow */
+  }
+</script>

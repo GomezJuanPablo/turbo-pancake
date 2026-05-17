@@ -1,0 +1,16 @@
+---
+interface Props {
+  label: string;
+  value: string | number;
+  delta?: string;
+  deltaTone?: 'up' | 'down' | 'neutral';
+}
+const { label, value, delta, deltaTone = 'up' } = Astro.props;
+const deltaClass = deltaTone === 'down' ? 'is-down'
+                 : deltaTone === 'neutral' ? 'is-neutral' : '';
+---
+<div class="stat-card">
+  <div class="stat-card__label">{label}</div>
+  <div class="stat-card__value">{value}</div>
+  {delta && <div class={`stat-card__delta ${deltaClass}`}>{delta}</div>}
+</div>

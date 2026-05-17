@@ -1,0 +1,6 @@
+# Cloudflare Pages — redirects file
+# Pattern: /old  /new  status
+/csa     /csa/      301
+/cad     /cad/      301
+/cis-itsm /cis-itsm/ 301
+/cis-df   /cis-df/   301

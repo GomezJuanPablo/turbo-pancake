@@ -1,0 +1,143 @@
+---
+interface QuestionOption { id: string; text: string; }
+interface QuestionRef    { title: string; url: string; }
+interface Question {
+  id: string;
+  exam: string;
+  domain: string;
+  subdomain?: string;
+  difficulty: 'recall' | 'application' | 'scenario';
+  type: 'single_select' | 'multi_select';
+  stem: string;
+  options: QuestionOption[];
+  correct: string[];
+  rationale: string;
+  distractor_notes: Record<string, string>;
+  references: QuestionRef[];
+  tags?: string[];
+}
+interface Props { question: Question; }
+const { question: q } = Astro.props;
+---
+<article
+  class="question"
+  data-question-id={q.id}
+  data-correct={JSON.stringify(q.correct)}
+  data-type={q.type}
+>
+  <div class="question__meta">
+    <span>{q.domain}</span>
+    <span>•</span>
+    <span>{q.difficulty}</span>
+  </div>
+
+  <h2 class="question__stem">{q.stem}</h2>
+
+  <div class="options" role="radiogroup" aria-label="Answer options">
+    {q.options.map((opt) => (
+      <button
+        type="button"
+        class="option"
+        data-option={opt.id}
+        role="radio"
+        aria-checked="false"
+      >
+        <span class="option__letter">{opt.id}</span>
+        <span class="option__text">{opt.text}</span>
+      </button>
+    ))}
+  </div>
+
+  <div class="feedback" hidden data-feedback>
+    <div class="feedback__opener" data-feedback-opener></div>
+    <p class="feedback__rationale">{q.rationale}</p>
+
+    <div class="feedback__distractors">
+      {Object.entries(q.distractor_notes).map(([letter, note]) => (
+        <div class="feedback__distractor">
+          <strong>{letter}.</strong> {note}
+        </div>
+      ))}
+    </div>
+
+    {q.references && q.references.length > 0 && (
+      <div class="feedback__refs">
+        <strong>References:</strong>
+        {q.references.map((r) => (
+          <a href={r.url} target="_blank" rel="noopener noreferrer">{r.title} ↗</a>
+        ))}
+      </div>
+    )}
+  </div>
+
+  <div style="margin-top:16px;display:flex;gap:8px;">
+    <button type="button" class="btn btn--primary" data-submit hidden>Check answer</button>
+    <button type="button" class="btn btn--ghost" data-next hidden>Next question →</button>
+  </div>
+</article>
+
+<script>
+  // Lightweight client-side quiz interaction. Keeps the page static and
+  // hydration-free; just plain DOM wiring. Voice strings come from CLAUDE.md.
+  const OPENERS_CORRECT   = ['✅ Boom. Nailed it.', '✅ Locked in.', '✅ Clean answer.'];
+  const OPENERS_INCORRECT = ['⚠️ Not quite — but now you know.', '⚠️ Close, but read the rationale.'];
+
+  function pick(list: string[]): string {
+    return list[Math.floor(Math.random() * list.length)];
+  }
+
+  function setupQuestion(card: HTMLElement) {
+    const correct = JSON.parse(card.dataset.correct || '[]') as string[];
+    const submitBtn = card.querySelector('[data-submit]') as HTMLButtonElement | null;
+    const nextBtn = card.querySelector('[data-next]') as HTMLButtonElement | null;
+    const feedback = card.querySelector('[data-feedback]') as HTMLElement | null;
+    const opener = card.querySelector('[data-feedback-opener]') as HTMLElement | null;
+    const opts = card.querySelectorAll<HTMLButtonElement>('.option');
+
+    let selected: string | null = null;
+    let revealed = false;
+
+    opts.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        if (revealed) return;
+        opts.forEach((b) => {
+          b.setAttribute('aria-checked', 'false');
+          b.classList.remove('is-selected');
+        });
+        btn.setAttribute('aria-checked', 'true');
+        btn.classList.add('is-selected');
+        selected = btn.dataset.option || null;
+        if (submitBtn) submitBtn.hidden = false;
+      });
+    });
+
+    submitBtn?.addEventListener('click', () => {
+      if (!selected || revealed) return;
+      revealed = true;
+      const isCorrect = correct.includes(selected);
+
+      opts.forEach((b) => {
+        const letter = b.dataset.option;
+        if (letter && correct.includes(letter)) b.classList.add('is-correct');
+        else if (letter === selected) b.classList.add('is-incorrect');
+        b.disabled = true;
+      });
+
+      if (feedback) {
+        feedback.hidden = false;
+        feedback.classList.add(isCorrect ? 'is-correct' : 'is-incorrect');
+      }
+      if (opener) opener.textContent = isCorrect ? pick(OPENERS_CORRECT) : pick(OPENERS_INCORRECT);
+
+      submitBtn.hidden = true;
+      if (nextBtn) nextBtn.hidden = false;
+
+      card.dispatchEvent(new CustomEvent('glideup:answered', {
+        detail: { id: card.dataset.questionId, correct: isCorrect, selected },
+        bubbles: true,
+      }));
+    });
+  }
+
+  document.querySelectorAll<HTMLElement>('.question').forEach(setupQuestion);
+</script>

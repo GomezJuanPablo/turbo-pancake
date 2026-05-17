@@ -1,0 +1,676 @@
+[
+  {
+    "id": "csa-pon-001",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Next Experience Unified Navigation",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which area of the Next Experience UI provides a persistent global header containing the company logo, top-level navigation, the unified search bar, and user profile controls across both classic UI and Workspaces?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The Application Navigator"
+      },
+      {
+        "id": "B",
+        "text": "The Unified Navigation header"
+      },
+      {
+        "id": "C",
+        "text": "The Form header"
+      },
+      {
+        "id": "D",
+        "text": "The Service Portal banner"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The Unified Navigation header is the persistent top bar in Next Experience. It surfaces the company logo, primary navigation, the global search, and user controls, and stays in place as you move between classic UI pages and Workspaces.",
+    "distractor_notes": {
+      "A": "The Application Navigator is the left-side filter/menu tree (favorites, history, all apps) — it's a navigation panel inside a page, not the global header.",
+      "C": "The form header is the band that sits on top of a single record form. It's local to the record, not global.",
+      "D": "The Service Portal banner only appears inside Service Portal pages, not across the Now Platform UI."
+    },
+    "references": [
+      {
+        "title": "Using the Next Experience Unified Navigation",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-user-interface/page/get-started/servicenow-overview/concept/using-the-next-experience-global-header.html"
+      }
+    ],
+    "tags": [
+      "next-experience",
+      "unified-navigation",
+      "global-header"
+    ]
+  },
+  {
+    "id": "csa-pon-002",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Application Navigator",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "In the classic UI Application Navigator, which feature lets a user quickly narrow the visible application menus and modules by typing a partial name?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The Filter Navigator"
+      },
+      {
+        "id": "B",
+        "text": "The Breadcrumb"
+      },
+      {
+        "id": "C",
+        "text": "The Reference Lookup"
+      },
+      {
+        "id": "D",
+        "text": "The Context Menu"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The Filter Navigator sits at the top of the Application Navigator and matches application menus and modules as you type — the fastest way to find a module without scrolling.",
+    "distractor_notes": {
+      "B": "Breadcrumbs show where you are inside a list query — they don't filter the nav tree.",
+      "C": "Reference lookups appear on reference fields inside forms to find related records. They aren't part of the nav.",
+      "D": "Context menus are right-click menus on lists, forms, and fields. They don't filter the nav tree."
+    },
+    "references": [
+      {
+        "title": "Core UI application navigator",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-user-interface/page/use/navigation/concept/c_UI16ApplicationNavigator.html"
+      }
+    ],
+    "tags": [
+      "application-navigator",
+      "filter-navigator",
+      "classic-ui"
+    ]
+  },
+  {
+    "id": "csa-pon-003",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Application Navigator",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the purpose of the History tab within the Application Navigator?",
+    "options": [
+      {
+        "id": "A",
+        "text": "It lists every record the user has ever updated, grouped by table."
+      },
+      {
+        "id": "B",
+        "text": "It shows the user's recently visited pages and records in reverse chronological order."
+      },
+      {
+        "id": "C",
+        "text": "It shows the audit history of the current record."
+      },
+      {
+        "id": "D",
+        "text": "It lists the modules an admin has hidden from the navigator."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "History keeps a per-user list of recently visited pages and records, newest first, so the user can jump back to something they were just on.",
+    "distractor_notes": {
+      "A": "There's no 'everything I've ever updated' view in the Application Navigator. Audit data lives on the record itself.",
+      "C": "Per-record audit history appears on the record (Activity Log, Audit), not in the navigator's History tab.",
+      "D": "Hidden modules are governed by roles and module visibility — not by the History tab."
+    },
+    "references": [
+      {
+        "title": "Core UI application navigator",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-user-interface/page/use/navigation/concept/c_UI16ApplicationNavigator.html"
+      }
+    ],
+    "tags": [
+      "application-navigator",
+      "history"
+    ]
+  },
+  {
+    "id": "csa-pon-004",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Favorites",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A user wants to add the current module to their personal Favorites list in Next Experience. Which action accomplishes this?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Select the star icon next to the module name in the navigator."
+      },
+      {
+        "id": "B",
+        "text": "Right-click the form header and choose Save as Favorite."
+      },
+      {
+        "id": "C",
+        "text": "Type the module name into the global search and press Enter."
+      },
+      {
+        "id": "D",
+        "text": "Open System Properties and add the module path to glide.user.favorites."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Favorites are managed by selecting the star icon next to a module or page. The starred items appear under the user's Favorites in Next Experience and persist per user.",
+    "distractor_notes": {
+      "B": "There's no 'Save as Favorite' option in the form header context menu. Form headers expose record-level actions, not nav favorites.",
+      "C": "Typing into global search runs a search across configured indexed tables — it doesn't favorite anything.",
+      "D": "There is no glide.user.favorites system property. Favorites are stored per user in platform tables, managed through the UI."
+    },
+    "references": [
+      {
+        "title": "Managing your favorites in Next Experience",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-user-interface/page/get-started/servicenow-overview/concept/managing-your-favorites.html"
+      }
+    ],
+    "tags": [
+      "favorites",
+      "next-experience",
+      "navigation"
+    ]
+  },
+  {
+    "id": "csa-pon-005",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Tags",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which statement best describes how tags work on records in the Now Platform?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Tags are stored on a single, system-defined column added to every table."
+      },
+      {
+        "id": "B",
+        "text": "Tags are user-defined labels that can be applied to records across many tables and can be private, shared with a group, or visible to all users."
+      },
+      {
+        "id": "C",
+        "text": "Tags replace categories on incidents and changes once enabled."
+      },
+      {
+        "id": "D",
+        "text": "Tags are visible only to the user who created them and cannot be shared."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Tags are flexible labels users (or admins) define and then apply to records across many tables. A tag's visibility can be private, shared with a group, or global, giving teams a lightweight way to group and find records without changing the data model.",
+    "distractor_notes": {
+      "A": "Tags aren't stored as a column on each table. They live in label tables (label, label_entry) and are associated to records through references.",
+      "C": "Tags don't replace categories. Category fields keep their own data; tags are an additional, free-form labeling layer.",
+      "D": "Tags can be private, but they can also be shared with a user group or made global. Visibility is configurable."
+    },
+    "references": [
+      {
+        "title": "Tags — Common UI elements",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-user-interface/page/use/common-ui-elements/concept/c_Tags.html"
+      }
+    ],
+    "tags": [
+      "tags",
+      "labels",
+      "common-ui"
+    ]
+  },
+  {
+    "id": "csa-pon-006",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Lists",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "On a standard list view, what is the primary purpose of the breadcrumb shown above the list?",
+    "options": [
+      {
+        "id": "A",
+        "text": "It shows the user's recent navigation history."
+      },
+      {
+        "id": "B",
+        "text": "It displays and lets the user edit the active list filter conditions."
+      },
+      {
+        "id": "C",
+        "text": "It identifies which form section the list belongs to."
+      },
+      {
+        "id": "D",
+        "text": "It links to the record's audit log."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The breadcrumb above a list represents the active filter conditions as clickable segments. Selecting a segment removes everything to its right, which is the fastest way to widen or narrow the result set.",
+    "distractor_notes": {
+      "A": "Recent navigation lives under the History tab in the Application Navigator, not in the list breadcrumb.",
+      "C": "Form sections are tabs/groupings inside a single record form. Lists aren't owned by form sections.",
+      "D": "Audit history is on the record (Activity Log, Audit related lists), not in the list breadcrumb."
+    },
+    "references": [
+      {
+        "title": "Configure and use list functions",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-user-interface/page/use/using-lists/task/configure-use-list-functions.html"
+      }
+    ],
+    "tags": [
+      "lists",
+      "breadcrumb",
+      "filtering"
+    ]
+  },
+  {
+    "id": "csa-pon-007",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Lists",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A user needs to update the State field on five incidents at once without opening each record. Which list capability supports this?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Related List Personalization"
+      },
+      {
+        "id": "B",
+        "text": "The List Editor"
+      },
+      {
+        "id": "C",
+        "text": "Reference Qualifier"
+      },
+      {
+        "id": "D",
+        "text": "The Form Designer"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The List Editor lets users update field values directly from the list view by double-clicking a cell — perfect for quick edits to a handful of records without opening each form.",
+    "distractor_notes": {
+      "A": "Related list personalization controls which columns appear in a related list and their order. It doesn't enable inline edits.",
+      "C": "Reference qualifiers restrict which records a reference field can select. They have nothing to do with editing values from a list.",
+      "D": "Form Designer is for laying out form sections and fields, not bulk-editing data."
+    },
+    "references": [
+      {
+        "title": "Use the list editor",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-user-interface/page/use/using-lists/task/t_UseTheListEditor.html"
+      }
+    ],
+    "tags": [
+      "lists",
+      "list-editor",
+      "inline-edit"
+    ]
+  },
+  {
+    "id": "csa-pon-008",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Forms",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which statement most accurately describes a Related List on a form?",
+    "options": [
+      {
+        "id": "A",
+        "text": "It is a list of records from another table that share a relationship with the current record."
+      },
+      {
+        "id": "B",
+        "text": "It is the audit trail of changes made to the current record."
+      },
+      {
+        "id": "C",
+        "text": "It is a list of users who have read access to the current record."
+      },
+      {
+        "id": "D",
+        "text": "It is a saved list view stored in the user's Favorites."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "A Related List shows records from another table that share a relationship with the record you're on — incidents on a caller, tasks on a change, attachments on an incident, and so on. It's how the form exposes connected data without leaving the page.",
+    "distractor_notes": {
+      "B": "Audit information lives in the Activity Log and Audit related lists (which are themselves related lists, but the term 'Related List' is broader and isn't synonymous with audit).",
+      "C": "Read access is governed by ACLs. It isn't surfaced as a generic related list.",
+      "D": "Favorites store navigation shortcuts (modules, pages), not embedded record collections on a form."
+    },
+    "references": [
+      {
+        "title": "Related lists",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-user-interface/page/use/using-forms/concept/c_RelatedLists.html"
+      }
+    ],
+    "tags": [
+      "forms",
+      "related-lists"
+    ]
+  },
+  {
+    "id": "csa-pon-009",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Forms",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A user with no special role wants to hide a few fields they never use from their own incident form, without affecting anyone else. Which feature lets them do this?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Form Layout (admin) — modify the form definition."
+      },
+      {
+        "id": "B",
+        "text": "Personalize Form — adjust which fields appear for this user only."
+      },
+      {
+        "id": "C",
+        "text": "Update Set — package the change as a customization."
+      },
+      {
+        "id": "D",
+        "text": "Business Rule — hide the fields server-side."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Personalize Form (the per-user gear/personalize control on the form) lets an end user hide or rearrange fields for themselves only. It changes their view of the form and leaves the underlying form definition alone for everyone else.",
+    "distractor_notes": {
+      "A": "Editing the form via Form Layout/Form Designer changes the form for every user with that view. It also requires admin (or a delegated role), which the user doesn't have.",
+      "C": "Update Sets are an admin/developer mechanism for moving configuration between instances, not for personal UI tweaks.",
+      "D": "Business Rules run server-side during database operations. They aren't the right tool for cosmetic, per-user field visibility."
+    },
+    "references": [
+      {
+        "title": "Form personalization administration",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/form-administration/concept/c_FormPersonalizationAdmin.html"
+      }
+    ],
+    "tags": [
+      "forms",
+      "personalization",
+      "self-service"
+    ]
+  },
+  {
+    "id": "csa-pon-010",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Lists",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An administrator wants to expose a new action on the right-click context menu of every Incident list, available to all users. Which configuration object should they create or modify?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A new List Control entry on the incident table."
+      },
+      {
+        "id": "B",
+        "text": "A new related list on the incident form."
+      },
+      {
+        "id": "C",
+        "text": "A new System Property under glide.ui.context_menu."
+      },
+      {
+        "id": "D",
+        "text": "A new UI Page mapped to the list view."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "List Controls define the actions, buttons, and context-menu items available on a list view for a given table. To add a right-click action on every Incident list, configure the List Controls on the incident table.",
+    "distractor_notes": {
+      "B": "Related lists appear on a form, not on a standalone list view. They don't drive list context menus.",
+      "C": "There's no general 'glide.ui.context_menu' property that adds list actions. System properties tune behavior; they don't define menu items.",
+      "D": "UI Pages render custom pages. They aren't how you add a context-menu action to an out-of-the-box list."
+    },
+    "references": [
+      {
+        "title": "Configure list controls",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/list-administration/task/t_ConfigureListControls.html"
+      }
+    ],
+    "tags": [
+      "lists",
+      "list-controls",
+      "admin"
+    ]
+  },
+  {
+    "id": "csa-pon-011",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Global Search",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A user types a phrase into the global search bar in Next Experience and presses Enter. Which statement best describes what happens?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The platform searches every column of every table in the instance."
+      },
+      {
+        "id": "B",
+        "text": "The platform searches the tables and fields that have been indexed and are configured for global search, and groups results by record type."
+      },
+      {
+        "id": "C",
+        "text": "The platform opens a list view of the first table that matches and runs the phrase as a filter."
+      },
+      {
+        "id": "D",
+        "text": "The platform runs a SQL LIKE query against the user's own records only."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Global search queries the tables and fields that admins have configured for search indexes, then presents results grouped by record type (Incident, Change, KB, etc.). It's scoped, performant, and respects each user's access rights.",
+    "distractor_notes": {
+      "A": "Searching every column of every table would be unusable. Global search is built around configured search groups, not exhaustive scans.",
+      "C": "Global search doesn't pick a single table and turn into a list filter — it returns results across configured tables.",
+      "D": "There's no per-user SQL LIKE behavior. The platform uses indexed search and ACLs to filter what each user sees."
+    },
+    "references": [
+      {
+        "title": "Global search recent queries and results",
+        "url": "https://www.servicenow.com/docs/r/yokohama/platform-administration/search-administration/global-search-recent-queries-results.html"
+      }
+    ],
+    "tags": [
+      "global-search",
+      "next-experience"
+    ]
+  },
+  {
+    "id": "csa-pon-012",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Forms",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which of the following is an Embedded List on a form?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A related list that has been promoted to display directly inside a form section instead of at the bottom of the form."
+      },
+      {
+        "id": "B",
+        "text": "A read-only summary of audit history pinned to the top of the form."
+      },
+      {
+        "id": "C",
+        "text": "A reference field that opens a popup list when clicked."
+      },
+      {
+        "id": "D",
+        "text": "A list view stored as a favorite for one user."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "An embedded list is a related list rendered inline as part of a form section, so the connected records are visible without scrolling to the very bottom of the form. It's still a related list — just embedded.",
+    "distractor_notes": {
+      "B": "Audit history surfaces in the Activity Log and audit-related lists. It isn't what 'embedded list' means.",
+      "C": "A reference field opens a lookup picker, not an inline list of related records.",
+      "D": "Favorites are personal navigation shortcuts. They don't render inside forms."
+    },
+    "references": [
+      {
+        "title": "Embedded lists",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-user-interface/page/use/using-forms/concept/c_EmbeddedLists.html"
+      }
+    ],
+    "tags": [
+      "forms",
+      "embedded-lists",
+      "related-lists"
+    ]
+  },
+  {
+    "id": "csa-pon-013",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Unified Navigation Administration",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "An admin needs to add a new custom menu — \"Operations\" — to the global header so it appears for users across every page. Which administration feature is the right starting point?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Configure a custom menu for Unified Navigation in the Now Experience Framework administration."
+      },
+      {
+        "id": "B",
+        "text": "Edit the user's profile to pin a personal menu to the header."
+      },
+      {
+        "id": "C",
+        "text": "Create a new Service Portal page and link to it from the homepage."
+      },
+      {
+        "id": "D",
+        "text": "Add a new Application module under System Definition."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Custom menus for the global header are configured through the Unified Navigation administration tooling. You define the menu, choose what it contains, and assign the audience that should see it — and then it appears in the header for those users.",
+    "distractor_notes": {
+      "B": "User profiles store per-user data and preferences but don't add globally visible menus to the header.",
+      "C": "Service Portal is a separate experience layer for self-service end users; it doesn't drive Next Experience global header menus.",
+      "D": "Application modules show up inside the Application Navigator's app menu tree, not as items in the global header."
+    },
+    "references": [
+      {
+        "title": "Configure custom menus for Unified Navigation",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-user-interface/page/administer/navigation-and-ui/task/configure-custom-menu.html"
+      }
+    ],
+    "tags": [
+      "unified-navigation",
+      "admin",
+      "custom-menus"
+    ]
+  },
+  {
+    "id": "csa-pon-014",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Platform Concepts",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A new admin is briefing a stakeholder on how data is organized in the Now Platform. Which statement is the most accurate description of the relationship between tables, fields, and forms?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Forms define columns; tables and fields are views of forms."
+      },
+      {
+        "id": "B",
+        "text": "Tables hold rows of data, fields are the columns on those tables, and forms are the UI layouts used to view or edit a single record from a table."
+      },
+      {
+        "id": "C",
+        "text": "Tables, fields, and forms are independent objects — none of them are related at the data layer."
+      },
+      {
+        "id": "D",
+        "text": "A form is a table with no fields, used only for display."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Tables are where records (rows) live. Fields are the columns defined on a table. Forms are the configurable UI used to view or edit one record from a table at a time. Forms render fields; they don't define them.",
+    "distractor_notes": {
+      "A": "Backwards. Fields are defined on the table; forms render fields. Forms don't create columns.",
+      "C": "They're tightly related. Forms read from and write to fields on tables.",
+      "D": "A form isn't a table. It's a UI layout pointing at a table and its fields."
+    },
+    "references": [
+      {
+        "title": "Now Platform forms, fields, and lists",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/general/concept/now-platform-forms-fields-lists.html"
+      },
+      {
+        "title": "Using forms",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-user-interface/page/use/using-forms/concept/c_UsingForms.html"
+      }
+    ],
+    "tags": [
+      "platform-concepts",
+      "tables",
+      "fields",
+      "forms"
+    ]
+  }
+]

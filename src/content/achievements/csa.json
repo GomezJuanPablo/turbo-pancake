@@ -1,0 +1,4 @@
+[
+  { "id": "csa-gold-standard",  "icon": "🏆", "label": "Gold Standard",  "description": "Reach Gold tier in any CSA domain." },
+  { "id": "csa-conqueror",      "icon": "🎓", "label": "CSA Conqueror",  "description": "Gold tier across every CSA domain." }
+]

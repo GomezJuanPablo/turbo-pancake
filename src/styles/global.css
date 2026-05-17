@@ -1,0 +1,775 @@
+/* ============================================================
+   GlideUp.net — Global Styles (v3, NE-Accurate)
+   Source of truth for design tokens. Mirrored from
+   docs/glideup-project-handoff-v3.md §2 and CLAUDE.md.
+   ============================================================ */
+
+:root {
+  /* --- Chrome (dark, NE workspace) --- */
+  --chrome:          #1B1B3F;   /* top bar, midnight navy */
+  --chrome-2:        #252557;   /* elevated chrome / hover */
+  --chrome-border:   #2E2E5F;   /* chrome dividers */
+  --chrome-text:     #FFFFFF;
+  --chrome-text-dim: #B8B8D1;
+
+  /* --- Content (light) --- */
+  --bg:              #F4F6F8;   /* content background */
+  --surface:         #FFFFFF;   /* cards */
+  --surface-2:       #FBFCFD;   /* elevated surfaces */
+  --border:          #E1E4E8;   /* card borders */
+  --border-strong:   #C5CCD3;   /* strong dividers / button borders */
+
+  /* --- Text --- */
+  --text:            #1A1A2E;
+  --text-muted:      #5C6C7C;
+  --text-dim:        #8B9AA8;
+
+  /* --- Primary action (deep teal) --- */
+  --primary:         #0E8B9E;
+  --primary-hover:   #006B7F;
+  --primary-dark:    #00525E;
+  --primary-bg:      rgba(14, 139, 158, 0.08);
+
+  /* --- Cosmic accent (spark only) --- */
+  --magenta:         #E91E63;
+
+  /* --- States --- */
+  --success:         #16A75C;
+  --amber:           #FF8C42;
+  --rose:            #E63946;
+
+  /* --- Tier badges --- */
+  --bronze:          #A77043;
+  --silver:          #6B7A8A;
+  --gold:            #D4A017;
+
+  /* --- Layout --- */
+  --topbar-height:   52px;
+  --sidenav-width:   240px;
+  --content-max:     1180px;
+  --content-pad-x:   32px;
+  --content-pad-y:   28px;
+
+  /* --- Radius & elevation --- */
+  --radius-sm:       6px;
+  --radius:          10px;
+  --radius-lg:       14px;
+  --shadow-sm:       0 1px 2px rgba(26, 26, 46, 0.06),
+                     0 1px 1px rgba(26, 26, 46, 0.04);
+  --shadow:          0 4px 12px rgba(26, 26, 46, 0.08);
+  --shadow-hero:     0 8px 32px rgba(27, 27, 63, 0.24);
+
+  /* --- Typography --- */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+               Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* --- Motion --- */
+  --ease:            cubic-bezier(0.4, 0, 0.2, 1);
+  --t-fast:          120ms;
+  --t-base:          200ms;
+}
+
+/* ============================================================
+   Reset
+   ============================================================ */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6, p, ul, ol { margin: 0; }
+ul, ol { padding: 0; list-style: none; }
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color var(--t-fast) var(--ease);
+}
+a:hover { color: var(--primary-hover); }
+
+button {
+  font: inherit;
+  cursor: pointer;
+  border: 0;
+  background: transparent;
+  color: inherit;
+}
+
+img, svg { display: block; max-width: 100%; }
+
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ============================================================
+   Layout shell — NE workspace pattern
+   ============================================================ */
+
+.app-shell {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: var(--topbar-height) 1fr;
+  grid-template-columns: var(--sidenav-width) 1fr;
+  grid-template-areas:
+    "topbar topbar"
+    "sidenav content";
+}
+
+.topbar  { grid-area: topbar;  }
+.sidenav { grid-area: sidenav; }
+.content { grid-area: content; }
+
+/* --- Top bar --- */
+
+.topbar {
+  background: var(--chrome);
+  color: var(--chrome-text);
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  border-bottom: 1px solid var(--chrome-border);
+  gap: 24px;
+}
+
+.topbar__brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: -0.01em;
+}
+.topbar__brand-mark {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  display: block;
+  /* The G mark is teal on transparent — reads cleanly on the navy chrome
+     without modification. No filter needed. */
+}
+
+.topbar__nav {
+  display: flex;
+  gap: 4px;
+  margin-left: 12px;
+}
+
+.topbar__nav-item {
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  color: var(--chrome-text-dim);
+  font-size: 13px;
+  font-weight: 500;
+  transition: background var(--t-fast) var(--ease), color var(--t-fast) var(--ease);
+}
+.topbar__nav-item:hover {
+  background: var(--chrome-2);
+  color: var(--chrome-text);
+}
+.topbar__nav-item.is-active {
+  background: var(--chrome-2);
+  color: var(--chrome-text);
+}
+
+.topbar__status {
+  margin-left: auto;
+  display: flex;
+  gap: 8px;
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--chrome-2);
+  color: var(--chrome-text);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* --- Side nav --- */
+
+.sidenav {
+  background: var(--surface);
+  border-right: 1px solid var(--border);
+  padding: 16px 0;
+  overflow-y: auto;
+}
+
+.sidenav__group {
+  margin-bottom: 8px;
+}
+
+.sidenav__group-label {
+  padding: 8px 20px 4px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-dim);
+}
+
+.sidenav__item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 20px;
+  font-size: 13px;
+  color: var(--text-muted);
+  border-left: 3px solid transparent;
+  transition: background var(--t-fast) var(--ease),
+              color var(--t-fast) var(--ease),
+              border-color var(--t-fast) var(--ease);
+}
+.sidenav__item:hover {
+  background: var(--bg);
+  color: var(--text);
+}
+.sidenav__item.is-active {
+  background: var(--primary-bg);
+  border-left-color: var(--primary);
+  color: var(--primary-dark);
+  font-weight: 600;
+}
+
+.sidenav__badge {
+  margin-left: auto;
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 1px 8px;
+}
+
+.sidenav__ext {
+  margin-left: auto;
+  color: var(--text-dim);
+  font-size: 11px;
+}
+
+/* --- Content --- */
+
+.content {
+  padding: var(--content-pad-y) var(--content-pad-x);
+  overflow-y: auto;
+}
+
+.content__inner {
+  max-width: var(--content-max);
+  margin: 0 auto;
+}
+
+.breadcrumb {
+  display: flex;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+.breadcrumb__sep { color: var(--text-dim); }
+.breadcrumb a { color: var(--text-muted); }
+.breadcrumb a:hover { color: var(--primary); }
+
+/* ============================================================
+   Cosmic hero — dark navy gradient + starfield + teal/magenta sparks
+   ============================================================ */
+
+.cosmic-hero {
+  position: relative;
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(14, 139, 158, 0.22), transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(233, 30, 99, 0.10), transparent 60%),
+    linear-gradient(135deg, #1B1B3F 0%, #2A2A5C 60%, #1B1B3F 100%);
+  color: #fff;
+  padding: 0;
+  overflow: hidden;
+  box-shadow: var(--shadow-hero);
+  isolation: isolate;
+}
+
+.cosmic-hero::before {
+  /* Subtle starfield — overlays whether or not the banner image loads */
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(1.5px 1.5px at 12% 22%, #FFFFFF 100%, transparent),
+    radial-gradient(1px 1px at 38% 18%, rgba(255,255,255,0.7) 100%, transparent),
+    radial-gradient(1px 1px at 72% 36%, rgba(255,255,255,0.5) 100%, transparent),
+    radial-gradient(2px 2px at 86% 14%, #E91E63 100%, transparent),
+    radial-gradient(1.5px 1.5px at 24% 78%, rgba(14, 139, 158, 0.9) 100%, transparent),
+    radial-gradient(1px 1px at 56% 64%, rgba(255,255,255,0.6) 100%, transparent),
+    radial-gradient(1px 1px at 92% 82%, rgba(255,255,255,0.4) 100%, transparent);
+  pointer-events: none;
+  opacity: 0.6;
+  z-index: 1;
+}
+
+.cosmic-hero__banner {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+.cosmic-hero__banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.85;
+}
+.cosmic-hero__banner::after {
+  /* Soft inset gradient so text remains legible over the banner */
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    100deg,
+    rgba(27, 27, 63, 0.85) 0%,
+    rgba(27, 27, 63, 0.55) 40%,
+    rgba(27, 27, 63, 0.10) 100%
+  );
+}
+
+.cosmic-hero__content {
+  position: relative;
+  z-index: 2;
+  padding: 36px 40px;
+  max-width: 640px;
+}
+
+.cosmic-hero__title {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-bottom: 6px;
+  position: relative;
+}
+
+.cosmic-hero__subtitle {
+  font-size: 14px;
+  color: var(--chrome-text-dim);
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.cosmic-hero__progress {
+  position: relative;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.10);
+  border-radius: 999px;
+  overflow: hidden;
+  margin-bottom: 16px;
+  max-width: 480px;
+}
+.cosmic-hero__progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary) 0%, var(--magenta) 100%);
+  width: 0%;
+  border-radius: 999px;
+  transition: width var(--t-base) var(--ease);
+}
+
+.cosmic-hero__cta {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  background: var(--primary);
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+  border-radius: var(--radius-sm);
+  transition: background var(--t-fast) var(--ease), transform var(--t-fast) var(--ease);
+}
+.cosmic-hero__cta:hover {
+  background: var(--primary-hover);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+/* ============================================================
+   Stat cards — NE metric pattern
+   ============================================================ */
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.stat-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  box-shadow: var(--shadow-sm);
+}
+
+.stat-card__label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.stat-card__value {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.1;
+}
+
+.stat-card__delta {
+  margin-top: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--success);
+}
+.stat-card__delta.is-down { color: var(--rose); }
+.stat-card__delta.is-neutral { color: var(--text-muted); }
+
+/* ============================================================
+   Tabs (NE underline-on-active)
+   ============================================================ */
+
+.tabs {
+  display: flex;
+  gap: 4px;
+  border-bottom: 1px solid var(--border);
+  margin: 16px 0 20px;
+}
+
+.tab {
+  padding: 10px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-muted);
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  transition: color var(--t-fast) var(--ease), border-color var(--t-fast) var(--ease);
+}
+.tab:hover { color: var(--text); }
+.tab.is-active {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+  font-weight: 600;
+}
+
+/* ============================================================
+   Cards (Domain, generic)
+   ============================================================ */
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px 22px;
+  box-shadow: var(--shadow-sm);
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 14px;
+}
+
+.domain-card__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.domain-card__title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+}
+.domain-card__weight {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+.domain-card__progress {
+  height: 6px;
+  background: var(--bg);
+  border-radius: 999px;
+  overflow: hidden;
+  margin: 12px 0 8px;
+}
+.domain-card__progress-fill {
+  height: 100%;
+  background: var(--primary);
+  width: 0%;
+  transition: width var(--t-base) var(--ease);
+}
+.domain-card__meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* --- Tier badges --- */
+
+.tier {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.tier.is-locked { background: var(--bg); color: var(--text-dim); }
+.tier.is-bronze { background: rgba(167, 112, 67, 0.12); color: var(--bronze); }
+.tier.is-silver { background: rgba(107, 122, 138, 0.14); color: var(--silver); }
+.tier.is-gold   { background: rgba(212, 160, 23, 0.16); color: var(--gold); }
+
+/* ============================================================
+   Question card + feedback states
+   ============================================================ */
+
+.question {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+}
+
+.question__meta {
+  display: flex;
+  gap: 12px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.question__stem {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 18px;
+  line-height: 1.45;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.option {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  cursor: pointer;
+  transition: border-color var(--t-fast) var(--ease),
+              background var(--t-fast) var(--ease);
+  text-align: left;
+  width: 100%;
+}
+.option:hover {
+  border-color: var(--primary);
+  background: var(--primary-bg);
+}
+.option__letter {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  border-radius: 6px;
+  background: var(--bg);
+  display: grid;
+  place-items: center;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+.option__text {
+  font-size: 14px;
+  color: var(--text);
+  line-height: 1.45;
+}
+
+.option.is-correct {
+  border-color: var(--success);
+  background: rgba(22, 167, 92, 0.06);
+}
+.option.is-correct .option__letter {
+  background: var(--success);
+  color: #fff;
+}
+.option.is-incorrect {
+  border-color: var(--rose);
+  background: rgba(230, 57, 70, 0.05);
+}
+.option.is-incorrect .option__letter {
+  background: var(--rose);
+  color: #fff;
+}
+
+/* --- Feedback panel --- */
+
+.feedback {
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  margin-top: 16px;
+}
+.feedback.is-correct {
+  background: rgba(22, 167, 92, 0.08);
+  border-left: 3px solid var(--success);
+}
+.feedback.is-incorrect {
+  background: rgba(230, 57, 70, 0.06);
+  border-left: 3px solid var(--rose);
+}
+
+.feedback__opener {
+  font-weight: 700;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+.feedback__rationale {
+  font-size: 13px;
+  color: var(--text);
+  line-height: 1.55;
+  margin-bottom: 10px;
+}
+.feedback__distractors {
+  font-size: 12px;
+  color: var(--text-muted);
+  border-top: 1px dashed var(--border);
+  padding-top: 10px;
+  margin-top: 10px;
+}
+.feedback__distractor {
+  margin-bottom: 6px;
+}
+.feedback__distractor strong { color: var(--text); }
+
+.feedback__refs {
+  margin-top: 10px;
+  font-size: 12px;
+}
+.feedback__refs a {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+/* ============================================================
+   Buttons
+   ============================================================ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  font-weight: 600;
+  border: 1px solid transparent;
+  transition: background var(--t-fast) var(--ease),
+              border-color var(--t-fast) var(--ease),
+              color var(--t-fast) var(--ease);
+}
+.btn--primary {
+  background: var(--primary);
+  color: #fff;
+}
+.btn--primary:hover { background: var(--primary-hover); color: #fff; }
+.btn--ghost {
+  background: transparent;
+  color: var(--text);
+  border-color: var(--border-strong);
+}
+.btn--ghost:hover {
+  background: var(--bg);
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+/* ============================================================
+   Achievement badges
+   ============================================================ */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text);
+}
+.badge__icon { font-size: 16px; }
+
+/* ============================================================
+   Responsive — collapse side nav under 900px
+   ============================================================ */
+
+@media (max-width: 900px) {
+  .app-shell {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "topbar"
+      "content";
+  }
+  .sidenav { display: none; }
+  :root {
+    --content-pad-x: 20px;
+    --content-pad-y: 20px;
+  }
+  .cosmic-hero { padding: 24px; }
+  .cosmic-hero__title { font-size: 20px; }
+}
+
+/* ============================================================
+   Reduced motion
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

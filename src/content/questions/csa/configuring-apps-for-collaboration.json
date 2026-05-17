@@ -1,0 +1,2237 @@
+[
+  {
+    "id": "csa-acl-001",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Configuring Apps for Collaboration",
+    "subdomain": "Task Table",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which statement best describes the Task table in the Now Platform?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A base table that holds fields common to all work items (number, state, assigned_to, priority, etc.) from which Incident, Change, Problem, and many other tables extend."
+      },
+      {
+        "id": "B",
+        "text": "A read-only audit log of every user action across the platform."
+      },
+      {
+        "id": "C",
+        "text": "A table containing only scheduled jobs."
+      },
+      {
+        "id": "D",
+        "text": "A reporting view across Incidents and Changes that doesn't store data of its own."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Task is the parent table for work items in the platform. Incident, Change, Problem, and many other tables extend it, which is why they share fields like number, state, assigned_to, and short_description.",
+    "distractor_notes": {
+      "B": "Audit history lives in audit tables, not on the Task table.",
+      "C": "Scheduled jobs live on sys_trigger, not on Task.",
+      "D": "Task is a real table, not a virtual report view."
+    },
+    "references": [
+      {
+        "title": "Task table",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/task-table/concept/task-table.html"
+      }
+    ],
+    "tags": [
+      "task-table",
+      "platform"
+    ]
+  },
+  {
+    "id": "csa-acl-002",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Configuring Apps for Collaboration",
+    "subdomain": "Table Extension",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is table extension in the Now Platform?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A relationship where a child table inherits the fields and behavior of a parent table and can add its own."
+      },
+      {
+        "id": "B",
+        "text": "A read replica of the table maintained for reporting."
+      },
+      {
+        "id": "C",
+        "text": "A foreign key constraint between two unrelated tables."
+      },
+      {
+        "id": "D",
+        "text": "A scheduled job that copies records from one table to another."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Table extension is inheritance for tables. A child table inherits every field defined on the parent and can layer on its own. Incident, Change, and Problem all extend Task, which is why they share core fields.",
+    "distractor_notes": {
+      "B": "Replicas are an infrastructure concept; extension is a data-model concept.",
+      "C": "Foreign keys connect rows, not table definitions.",
+      "D": "Scheduled copies aren't how the platform shares schema."
+    },
+    "references": [
+      {
+        "title": "Table extension",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/table-administration/concept/c_TableExtension.html"
+      }
+    ],
+    "tags": [
+      "table-extension",
+      "inheritance",
+      "data-model"
+    ]
+  },
+  {
+    "id": "csa-acl-003",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Configuring Apps for Collaboration",
+    "subdomain": "Task Table",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which of these tables does NOT extend Task in a standard ServiceNow instance?",
+    "options": [
+      {
+        "id": "A",
+        "text": "incident"
+      },
+      {
+        "id": "B",
+        "text": "change_request"
+      },
+      {
+        "id": "C",
+        "text": "problem"
+      },
+      {
+        "id": "D",
+        "text": "sys_user"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "sys_user is the users table — completely separate from the Task hierarchy. Incident, Change Request, and Problem all extend Task and share its common fields.",
+    "distractor_notes": {
+      "A": "Incident extends Task.",
+      "B": "Change Request extends Task.",
+      "C": "Problem extends Task."
+    },
+    "references": [
+      {
+        "title": "Task table",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/task-table/concept/task-table.html"
+      }
+    ],
+    "tags": [
+      "task-table",
+      "data-model"
+    ]
+  },
+  {
+    "id": "csa-acl-004",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Configuring Apps for Collaboration",
+    "subdomain": "Task Fields",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which of the following fields is inherited from the Task table by all extending tables like Incident, Change, and Problem?",
+    "options": [
+      {
+        "id": "A",
+        "text": "assigned_to"
+      },
+      {
+        "id": "B",
+        "text": "caller_id"
+      },
+      {
+        "id": "C",
+        "text": "model_id"
+      },
+      {
+        "id": "D",
+        "text": "ci_class"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "assigned_to is defined on the Task base table, so every extending table inherits it. That's why incidents, changes, and problems all share a consistent way to express ownership.",
+    "distractor_notes": {
+      "B": "caller_id is specific to Incident.",
+      "C": "model_id appears on CI/asset tables, not on Task.",
+      "D": "ci_class isn't a Task field."
+    },
+    "references": [
+      {
+        "title": "Task table",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/task-table/concept/task-table.html"
+      }
+    ],
+    "tags": [
+      "task-table",
+      "fields",
+      "inheritance"
+    ]
+  },
+  {
+    "id": "csa-acl-005",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Configuring Apps for Collaboration",
+    "subdomain": "Assignment",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An admin wants assignment_group and assigned_to to behave consistently — picking a group filters the assignable users to members of that group. Which platform feature enables this out-of-the-box?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A reference qualifier on assigned_to that constrains it to the selected assignment_group's members."
+      },
+      {
+        "id": "B",
+        "text": "An ACL that prevents users from being assigned."
+      },
+      {
+        "id": "C",
+        "text": "A scheduled job that runs every 15 minutes to fix invalid assignments."
+      },
+      {
+        "id": "D",
+        "text": "A workflow that emails the admin when assignments don't match."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Reference qualifiers narrow which records a reference field can pick. The platform's out-of-the-box qualifier on assigned_to looks at the chosen assignment_group and limits the user list to that group's members.",
+    "distractor_notes": {
+      "B": "ACLs are about access, not filtering field values.",
+      "C": "Cleaning up bad data after the fact is a workaround, not a constraint.",
+      "D": "Email alerts catch problems late — the qualifier prevents them in the first place."
+    },
+    "references": [
+      {
+        "title": "Task table",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/task-table/concept/task-table.html"
+      }
+    ],
+    "tags": [
+      "assignment",
+      "reference-qualifier",
+      "task"
+    ]
+  },
+  {
+    "id": "csa-acl-006",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Configuring Apps for Collaboration",
+    "subdomain": "State Model",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Most child tables of Task share a common state-progression pattern. Which statement best describes that pattern?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Records progress through a defined sequence of states such as New → In Progress → Resolved → Closed, with state values stored as integers on a choice list field."
+      },
+      {
+        "id": "B",
+        "text": "State is a free-text field on every record."
+      },
+      {
+        "id": "C",
+        "text": "State is computed at runtime from the record's age."
+      },
+      {
+        "id": "D",
+        "text": "State is stored in localStorage in the user's browser."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Task and its children use a choice list for state, stored as integers, that walks through a defined lifecycle (e.g., New, In Progress, On Hold, Resolved, Closed). Each child table can tailor labels and add states, but the pattern is consistent.",
+    "distractor_notes": {
+      "B": "Free-text states would defeat reporting and automation. State is a choice field.",
+      "C": "State doesn't auto-compute from age. SLA timers can use age, but the state field itself is explicit.",
+      "D": "Record state is server-side data, not browser storage."
+    },
+    "references": [
+      {
+        "title": "Incident state model",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-it-service-management/page/product/incident-management/reference/r_IncidentStateModel.html"
+      }
+    ],
+    "tags": [
+      "state",
+      "task",
+      "lifecycle"
+    ]
+  },
+  {
+    "id": "csa-acl-007",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Configuring Apps for Collaboration",
+    "subdomain": "Parent / Child Tasks",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A user opens an incident and notices a Parent field. What is the typical use of that field?",
+    "options": [
+      {
+        "id": "A",
+        "text": "To link this task to another task that contains it or that this task is part of, expressing a parent–child relationship between work items."
+      },
+      {
+        "id": "B",
+        "text": "To set the user's manager on the record."
+      },
+      {
+        "id": "C",
+        "text": "To select the previous record number in number sequence."
+      },
+      {
+        "id": "D",
+        "text": "To assign the record to the parent company."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The Parent field on Task lets you link records into a parent–child relationship — useful for grouping related incidents, tying child changes to a parent change, or building task breakdowns.",
+    "distractor_notes": {
+      "B": "User management lives on sys_user via the manager field, not on the task's Parent.",
+      "C": "Parent isn't a numbering link; numbers come from the number maintenance settings.",
+      "D": "Company assignment lives on dedicated fields, not Parent."
+    },
+    "references": [
+      {
+        "title": "Task table",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/task-table/concept/task-table.html"
+      }
+    ],
+    "tags": [
+      "task",
+      "parent-child"
+    ]
+  },
+  {
+    "id": "csa-acl-008",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Configuring Apps for Collaboration",
+    "subdomain": "Activity Log",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What does the Activity Log on a task record typically show?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A chronological feed of field changes, comments, work notes, and notifications associated with the record."
+      },
+      {
+        "id": "B",
+        "text": "Only the comments the caller has typed."
+      },
+      {
+        "id": "C",
+        "text": "Only the work notes the assignee has typed."
+      },
+      {
+        "id": "D",
+        "text": "A list of database connections used while the record was open."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The Activity Log/Stream is a unified chronological feed on the record — field changes, work notes, comments, attachments, and notification events all flow through it. It's the record's narrative.",
+    "distractor_notes": {
+      "B": "Comments are visible to end users; work notes are internal. Both appear in the activity feed, plus other events.",
+      "C": "Same as above — both are present.",
+      "D": "Database connection events don't live on the record."
+    },
+    "references": [
+      {
+        "title": "Task table",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/task-table/concept/task-table.html"
+      }
+    ],
+    "tags": [
+      "activity-log",
+      "task",
+      "audit"
+    ]
+  },
+  {
+    "id": "csa-acl-009",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Configuring Apps for Collaboration",
+    "subdomain": "Work Notes vs Comments",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "On a typical incident, what's the difference between Work notes and Comments?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Work notes are intended for internal team communication; Comments (additional comments) are visible to the customer/end user."
+      },
+      {
+        "id": "B",
+        "text": "They're identical — the platform stores both in the same field."
+      },
+      {
+        "id": "C",
+        "text": "Work notes are visible to everyone; Comments are admin-only."
+      },
+      {
+        "id": "D",
+        "text": "Work notes can only be entered through email; Comments only through the form."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Work notes are internal-only collaboration. Comments (often labeled 'Additional comments') are intended to be visible to the customer through the portal or notifications. Knowing which is which prevents accidental customer-facing snark.",
+    "distractor_notes": {
+      "B": "They're separate fields with different visibility semantics.",
+      "C": "Backwards. Work notes are internal; comments are customer-visible.",
+      "D": "Both can be entered through the form or through inbound email."
+    },
+    "references": [
+      {
+        "title": "Task table",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/task-table/concept/task-table.html"
+      }
+    ],
+    "tags": [
+      "work-notes",
+      "comments",
+      "collaboration"
+    ]
+  },
+  {
+    "id": "csa-acl-010",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Configuring Apps for Collaboration",
+    "subdomain": "Table Extension",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A developer wants to add a custom field that should appear on every task-derived table (Incident, Change, Problem, etc.). Where should they add the field?",
+    "options": [
+      {
+        "id": "A",
+        "text": "On the Task table — extending tables inherit it automatically."
+      },
+      {
+        "id": "B",
+        "text": "On each child table individually."
+      },
+      {
+        "id": "C",
+        "text": "Only on the Incident table."
+      },
+      {
+        "id": "D",
+        "text": "On the sys_user table."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Adding the field once on Task lets every extending table inherit it for free. That's the whole point of table extension — share schema where it belongs in the hierarchy.",
+    "distractor_notes": {
+      "B": "Adding the same field on every child is repetitive and easy to get out of sync.",
+      "C": "Only Incident would have it; other task tables wouldn't.",
+      "D": "sys_user is unrelated to tasks."
+    },
+    "references": [
+      {
+        "title": "Table extension",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/table-administration/concept/c_TableExtension.html"
+      }
+    ],
+    "tags": [
+      "table-extension",
+      "schema",
+      "task"
+    ]
+  },
+  {
+    "id": "csa-acl-011",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Configuring Apps for Collaboration",
+    "subdomain": "Number Maintenance",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Why do incidents have numbers like INC0010023, changes like CHG0001234, and problems like PRB0040001 instead of plain integers?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Each task-derived table has its own number-maintenance configuration (prefix + counter) so records are distinguishable across the platform."
+      },
+      {
+        "id": "B",
+        "text": "The numbers are encrypted versions of the record's sys_id."
+      },
+      {
+        "id": "C",
+        "text": "The numbers are randomly generated UUIDs."
+      },
+      {
+        "id": "D",
+        "text": "The numbers are computed from the assigned_to user's employee ID."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Each task-derived table has its own number-maintenance configuration: a prefix (INC, CHG, PRB, etc.) and a numeric counter. That's why tasks of different types are immediately readable at a glance.",
+    "distractor_notes": {
+      "B": "sys_id is a separate 32-character GUID; the visible number is independent.",
+      "C": "Numbers are sequential per table, not random.",
+      "D": "Assignee identity has nothing to do with the record number."
+    },
+    "references": [
+      {
+        "title": "Task table",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/task-table/concept/task-table.html"
+      }
+    ],
+    "tags": [
+      "numbering",
+      "task"
+    ]
+  },
+  {
+    "id": "csa-acl-012",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Configuring Apps for Collaboration",
+    "subdomain": "Task Approvals",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A change request requires approval from two managers in sequence before it can proceed. Which platform mechanism is designed for this approval routing?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Approval records (sysapproval_approver) generated by a flow or workflow attached to the change process, ordered sequentially."
+      },
+      {
+        "id": "B",
+        "text": "Two separate incident records, one per approver."
+      },
+      {
+        "id": "C",
+        "text": "An ACL that requires two field updates to save the record."
+      },
+      {
+        "id": "D",
+        "text": "A UI policy that hides the Save button until both managers comment."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Approvals on tasks are tracked on sysapproval_approver and orchestrated by the change process — typically a flow or workflow that creates approval requests in a defined order. That's how multi-step approval is meant to work.",
+    "distractor_notes": {
+      "B": "Creating sibling incidents loses the parent–child relationship and the ordered approval semantics.",
+      "C": "ACLs are about who can save, not who has signed off.",
+      "D": "Hiding Save doesn't track who approved, when, or why."
+    },
+    "references": [
+      {
+        "title": "Change management",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-it-service-management/page/product/change-management/concept/c_ITILChangeManagement.html"
+      }
+    ],
+    "tags": [
+      "approvals",
+      "change",
+      "process"
+    ]
+  },
+  {
+    "id": "csa-acl-013",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Configuring Apps for Collaboration",
+    "subdomain": "Incident Management",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the primary purpose of Incident Management in ITSM?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Restore normal service operation as quickly as possible after an unplanned interruption or reduction in quality."
+      },
+      {
+        "id": "B",
+        "text": "Plan and approve changes to production infrastructure."
+      },
+      {
+        "id": "C",
+        "text": "Identify the underlying cause of recurring service issues."
+      },
+      {
+        "id": "D",
+        "text": "Track the long-term lifecycle of physical assets."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Incident Management exists to restore service as fast as possible. It's about minimizing impact to the business, not about finding root cause (that's Problem) or planning changes (that's Change).",
+    "distractor_notes": {
+      "B": "Planning and approving changes is Change Management.",
+      "C": "Identifying root cause is Problem Management.",
+      "D": "Tracking physical assets is Asset/HAM."
+    },
+    "references": [
+      {
+        "title": "Incident Management",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-it-service-management/page/product/incident-management/concept/c_IncidentManagement.html"
+      }
+    ],
+    "tags": [
+      "incident",
+      "itsm"
+    ]
+  },
+  {
+    "id": "csa-acl-014",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Configuring Apps for Collaboration",
+    "subdomain": "Incident State Model",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which of these is the typical default sequence of incident states?",
+    "options": [
+      {
+        "id": "A",
+        "text": "New → In Progress → On Hold → Resolved → Closed"
+      },
+      {
+        "id": "B",
+        "text": "Draft → Submitted → Approved → Implemented"
+      },
+      {
+        "id": "C",
+        "text": "Created → Reviewed → Published → Retired"
+      },
+      {
+        "id": "D",
+        "text": "Logged → Investigated → Eradicated → Recovered"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Out-of-the-box, incidents move through New → In Progress → On Hold (optional) → Resolved → Closed. Customers and reporting depend on this consistent flow.",
+    "distractor_notes": {
+      "B": "That's closer to a Change Request flow, not incidents.",
+      "C": "That's closer to a Knowledge article lifecycle.",
+      "D": "Those terms describe a security-incident response model, not the standard ITSM incident state model."
+    },
+    "references": [
+      {
+        "title": "Incident state model",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-it-service-management/page/product/incident-management/reference/r_IncidentStateModel.html"
+      }
+    ],
+    "tags": [
+      "incident",
+      "state"
+    ]
+  },
+  {
+    "id": "csa-acl-015",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Configuring Apps for Collaboration",
+    "subdomain": "Incident Priority",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "How is incident Priority typically derived out-of-the-box?",
+    "options": [
+      {
+        "id": "A",
+        "text": "From a Priority Lookup that combines Impact and Urgency into a single priority value."
+      },
+      {
+        "id": "B",
+        "text": "Manually typed by the caller into a free-text field."
+      },
+      {
+        "id": "C",
+        "text": "From the geographic location of the assignee."
+      },
+      {
+        "id": "D",
+        "text": "From the most recently committed update set."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Out-of-the-box, Impact × Urgency drives Priority through a Priority Lookup matrix. Setting impact and urgency on a new incident makes priority calculate automatically.",
+    "distractor_notes": {
+      "B": "Priority is a choice list. It's not a free-text typed by callers.",
+      "C": "Assignee location doesn't drive priority.",
+      "D": "Update sets are unrelated to operational data calculation."
+    },
+    "references": [
+      {
+        "title": "Incident Management",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-it-service-management/page/product/incident-management/concept/c_IncidentManagement.html"
+      }
+    ],
+    "tags": [
+      "incident",
+      "priority",
+      "impact",
+      "urgency"
+    ]
+  },
+  {
+    "id": "csa-acl-016",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Configuring Apps for Collaboration",
+    "subdomain": "Change Management",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which Change Management type is intended for low-risk, pre-approved, repeatable changes?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Standard"
+      },
+      {
+        "id": "B",
+        "text": "Normal"
+      },
+      {
+        "id": "C",
+        "text": "Emergency"
+      },
+      {
+        "id": "D",
+        "text": "Major"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Standard changes are pre-approved, well-understood, low-risk changes that follow a template. They skip heavy approval and CAB review because the template was already vetted.",
+    "distractor_notes": {
+      "B": "Normal changes require CAB review and typical approval — not pre-approved.",
+      "C": "Emergency changes are for urgent issues that can't wait for normal review.",
+      "D": "Major isn't a standard change type label in OOB Change Management."
+    },
+    "references": [
+      {
+        "title": "Change types",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-it-service-management/page/product/change-management/reference/r_ChangeTypes.html"
+      }
+    ],
+    "tags": [
+      "change",
+      "standard-change"
+    ]
+  },
+  {
+    "id": "csa-acl-017",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Configuring Apps for Collaboration",
+    "subdomain": "Change Management",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which Change Management type is intended for unplanned, time-critical changes — for example, a production outage requiring an immediate fix?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Emergency"
+      },
+      {
+        "id": "B",
+        "text": "Standard"
+      },
+      {
+        "id": "C",
+        "text": "Normal"
+      },
+      {
+        "id": "D",
+        "text": "Routine"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Emergency changes are designed for urgent fixes that can't wait for the normal CAB cycle. They still have an approval path, but on an accelerated timeline.",
+    "distractor_notes": {
+      "B": "Standard changes are pre-approved, low-risk — the opposite of unplanned and time-critical.",
+      "C": "Normal changes follow the full review cycle, which won't fit an outage timeline.",
+      "D": "'Routine' isn't a change type in OOB Change Management."
+    },
+    "references": [
+      {
+        "title": "Change types",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-it-service-management/page/product/change-management/reference/r_ChangeTypes.html"
+      }
+    ],
+    "tags": [
+      "change",
+      "emergency-change"
+    ]
+  },
+  {
+    "id": "csa-acl-018",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Configuring Apps for Collaboration",
+    "subdomain": "Change Management",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A team frequently performs the same database patch every Tuesday with no incidents. Which change type best fits this work?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Create a Standard Change Template for the patch and submit the change against it."
+      },
+      {
+        "id": "B",
+        "text": "Submit a brand-new Normal change each Tuesday."
+      },
+      {
+        "id": "C",
+        "text": "Submit an Emergency change each Tuesday."
+      },
+      {
+        "id": "D",
+        "text": "Submit an incident each Tuesday."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Recurring, low-risk, well-understood work is exactly the use case for a Standard Change Template. The template gets pre-approved once; each weekly execution is a Standard change created from the template.",
+    "distractor_notes": {
+      "B": "Submitting a fresh Normal change every week wastes CAB cycles.",
+      "C": "Emergencies are for unplanned urgent fixes, not for routine recurring work.",
+      "D": "An incident is for restoring service after an unplanned interruption."
+    },
+    "references": [
+      {
+        "title": "Change types",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-it-service-management/page/product/change-management/reference/r_ChangeTypes.html"
+      }
+    ],
+    "tags": [
+      "change",
+      "standard-change",
+      "template"
+    ]
+  },
+  {
+    "id": "csa-acl-019",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Configuring Apps for Collaboration",
+    "subdomain": "Problem Management",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the primary purpose of Problem Management?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Identify the underlying cause of incidents and prevent recurrence."
+      },
+      {
+        "id": "B",
+        "text": "Restore service as fast as possible after an interruption."
+      },
+      {
+        "id": "C",
+        "text": "Track planned changes to infrastructure."
+      },
+      {
+        "id": "D",
+        "text": "Approve user access to applications."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Problem Management investigates root cause to stop incidents from recurring. Incidents fix today; problems fix tomorrow.",
+    "distractor_notes": {
+      "B": "Restoring service is Incident Management.",
+      "C": "Tracking changes is Change Management.",
+      "D": "Access approvals are part of identity/access governance, not Problem."
+    },
+    "references": [
+      {
+        "title": "Problem Management",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-it-service-management/page/product/problem-management/concept/c_ProblemManagement.html"
+      }
+    ],
+    "tags": [
+      "problem",
+      "root-cause"
+    ]
+  },
+  {
+    "id": "csa-acl-020",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Configuring Apps for Collaboration",
+    "subdomain": "Problem Management",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Three different customers logged incidents about the same authentication failure over the last week. What's the appropriate next step in ITSM terms?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Open a Problem record, link the related incidents to it, and investigate root cause."
+      },
+      {
+        "id": "B",
+        "text": "Merge all three incidents into one and close the others as duplicates without further investigation."
+      },
+      {
+        "id": "C",
+        "text": "Open three separate Change records."
+      },
+      {
+        "id": "D",
+        "text": "Send each caller an apology email and close the incidents."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Recurring incidents pointing at the same underlying issue is the canonical signal to open a Problem and link the affected incidents to it. The problem owns the root-cause investigation while incidents continue to track service restoration.",
+    "distractor_notes": {
+      "B": "Merging doesn't address recurrence. Closing as duplicate hides the pattern.",
+      "C": "Changes are planned modifications. They aren't the right artifact for investigating a recurring failure.",
+      "D": "Apologizing and closing leaves the underlying defect unresolved."
+    },
+    "references": [
+      {
+        "title": "Problem Management",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-it-service-management/page/product/problem-management/concept/c_ProblemManagement.html"
+      }
+    ],
+    "tags": [
+      "problem",
+      "incident",
+      "recurrence"
+    ]
+  },
+  {
+    "id": "csa-acl-021",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Configuring Apps for Collaboration",
+    "subdomain": "Incident vs Problem",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "An incident and a problem are most usefully distinguished by which idea?",
+    "options": [
+      {
+        "id": "A",
+        "text": "An incident records a service-affecting event needing restoration; a problem investigates the underlying cause to prevent recurrence."
+      },
+      {
+        "id": "B",
+        "text": "An incident is small; a problem is large."
+      },
+      {
+        "id": "C",
+        "text": "An incident is internal; a problem is customer-facing."
+      },
+      {
+        "id": "D",
+        "text": "An incident is open longer than a problem."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Scope matters less than purpose. An incident is 'restore service.' A problem is 'why did this happen and how do we stop it from happening again.' Two different jobs, often handled by two different teams.",
+    "distractor_notes": {
+      "B": "Size doesn't define the distinction. A 'large' incident is still about restoration.",
+      "C": "Both can be internal or external — they're not separated by audience.",
+      "D": "Problems frequently outlive incidents. Duration isn't the defining quality."
+    },
+    "references": [
+      {
+        "title": "Problem Management",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-it-service-management/page/product/problem-management/concept/c_ProblemManagement.html"
+      }
+    ],
+    "tags": [
+      "incident",
+      "problem",
+      "itsm-fundamentals"
+    ]
+  },
+  {
+    "id": "csa-acl-022",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Configuring Apps for Collaboration",
+    "subdomain": "Change Management",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A Normal change is in 'Assess' state. The CAB has reviewed it. What state transition typically follows next?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Authorize — the change is approved and ready to be scheduled for implementation."
+      },
+      {
+        "id": "B",
+        "text": "Closed — the change is finished without implementation."
+      },
+      {
+        "id": "C",
+        "text": "Resolved — the change is reverted."
+      },
+      {
+        "id": "D",
+        "text": "Cancelled — the change is automatically deleted."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "After Assess, an approved Normal change moves to Authorize, then Scheduled, Implement, Review, and Closed. Authorize is the next state when CAB has signed off.",
+    "distractor_notes": {
+      "B": "Closing immediately skips implementation — that's a separate flow if the change is withdrawn.",
+      "C": "Resolved isn't part of the Change state model in this way; Resolved belongs to Incident.",
+      "D": "Cancelled is an explicit choice, not automatic, and doesn't delete the record."
+    },
+    "references": [
+      {
+        "title": "Change Management",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-it-service-management/page/product/change-management/concept/c_ITILChangeManagement.html"
+      }
+    ],
+    "tags": [
+      "change",
+      "state"
+    ]
+  },
+  {
+    "id": "csa-acl-023",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Configuring Apps for Collaboration",
+    "subdomain": "Incident Management",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An incident is resolved. Which condition typically must be true before the platform moves it to Closed?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A defined auto-close interval passes after Resolved without reopening, or the caller confirms resolution — per the configured policy."
+      },
+      {
+        "id": "B",
+        "text": "The instance restarts."
+      },
+      {
+        "id": "C",
+        "text": "An admin manually edits the sys_id."
+      },
+      {
+        "id": "D",
+        "text": "Every related KB article is republished."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The configured auto-close behavior (e.g., 7 days after Resolved) or explicit caller confirmation moves an incident from Resolved to Closed. The platform won't close active incidents on its own.",
+    "distractor_notes": {
+      "B": "Instance restarts have nothing to do with record state.",
+      "C": "Editing sys_id is not a supported operation.",
+      "D": "Knowledge republishing isn't a prerequisite for closing incidents."
+    },
+    "references": [
+      {
+        "title": "Incident state model",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-it-service-management/page/product/incident-management/reference/r_IncidentStateModel.html"
+      }
+    ],
+    "tags": [
+      "incident",
+      "closure",
+      "auto-close"
+    ]
+  },
+  {
+    "id": "csa-acl-024",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Configuring Apps for Collaboration",
+    "subdomain": "Change Management",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the primary role of the Change Advisory Board (CAB) in ITSM?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A cross-functional group that reviews and authorizes proposed Normal changes and assesses risk and scheduling."
+      },
+      {
+        "id": "B",
+        "text": "A team that resolves incidents at the service desk."
+      },
+      {
+        "id": "C",
+        "text": "A monitoring tool that watches for unauthorized changes."
+      },
+      {
+        "id": "D",
+        "text": "A scheduled job that auto-approves all standard changes weekly."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The Change Advisory Board reviews Normal changes — assessing risk, impact, scheduling conflicts — and authorizes them to proceed. CAB is people and process, not a tool.",
+    "distractor_notes": {
+      "B": "Service desk handles incidents, not change authorization.",
+      "C": "CAB isn't a monitoring tool. Drift detection is a separate discipline.",
+      "D": "Auto-approval isn't CAB's job; pre-approved Standard changes are a different model."
+    },
+    "references": [
+      {
+        "title": "Change Management",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-it-service-management/page/product/change-management/concept/c_ITILChangeManagement.html"
+      }
+    ],
+    "tags": [
+      "change",
+      "cab",
+      "governance"
+    ]
+  },
+  {
+    "id": "csa-acl-025",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Configuring Apps for Collaboration",
+    "subdomain": "Knowledge Management",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the primary purpose of Knowledge Management in the Now Platform?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Capture, organize, share, and reuse information through knowledge articles so users and agents can find answers faster."
+      },
+      {
+        "id": "B",
+        "text": "Track the financial value of IT assets over time."
+      },
+      {
+        "id": "C",
+        "text": "Plan and approve infrastructure changes."
+      },
+      {
+        "id": "D",
+        "text": "Replace incident records with KB articles."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Knowledge Management is about storing reusable information — how-tos, FAQs, runbooks — in knowledge articles so callers and agents can find answers quickly. Done well, it shifts work from tickets to self-service.",
+    "distractor_notes": {
+      "B": "Asset financial tracking is Asset Management.",
+      "C": "Change planning is Change Management.",
+      "D": "KB articles complement incidents; they don't replace them."
+    },
+    "references": [
+      {
+        "title": "Knowledge Management",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-servicenow-platform/page/product/knowledge-management/concept/c_KnowledgeManagement.html"
+      }
+    ],
+    "tags": [
+      "knowledge",
+      "self-service"
+    ]
+  },
+  {
+    "id": "csa-acl-026",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Configuring Apps for Collaboration",
+    "subdomain": "Knowledge Bases",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is a Knowledge Base (KB) in the Now Platform?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A container that holds related knowledge articles and has its own ownership, workflow, and access controls."
+      },
+      {
+        "id": "B",
+        "text": "A field on every incident record that stores text."
+      },
+      {
+        "id": "C",
+        "text": "A row on sys_user holding the user's reading preferences."
+      },
+      {
+        "id": "D",
+        "text": "A type of dashboard widget."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "A Knowledge Base is the container — a logical grouping (IT, HR, Customer Service, etc.) with its own owners, workflow, and access rules. Articles live inside a KB and inherit some of that governance.",
+    "distractor_notes": {
+      "B": "Knowledge isn't a free-text field on incidents.",
+      "C": "User preferences live on sys_user but they aren't KBs.",
+      "D": "Dashboards have widgets — a KB isn't one."
+    },
+    "references": [
+      {
+        "title": "Knowledge Bases",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-servicenow-platform/page/product/knowledge-management/concept/c_KnowledgeBases.html"
+      }
+    ],
+    "tags": [
+      "knowledge-base",
+      "kb"
+    ]
+  },
+  {
+    "id": "csa-acl-027",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Configuring Apps for Collaboration",
+    "subdomain": "Knowledge Articles",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which lifecycle states are typical for a knowledge article from authoring to retirement?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Draft → Review → Published → Retired."
+      },
+      {
+        "id": "B",
+        "text": "New → In Progress → Resolved → Closed."
+      },
+      {
+        "id": "C",
+        "text": "Open → Authorized → Implemented → Reviewed."
+      },
+      {
+        "id": "D",
+        "text": "Created → Verified → Encrypted → Backed Up."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "KB articles typically move through Draft (author), Review (approval), Published (visible), and Retired (no longer current). The workflow is configurable but those four are the classic stages.",
+    "distractor_notes": {
+      "B": "That's the Incident state model.",
+      "C": "That's closer to Change Management.",
+      "D": "Encryption and backup aren't article states."
+    },
+    "references": [
+      {
+        "title": "Knowledge Management",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-servicenow-platform/page/product/knowledge-management/concept/c_KnowledgeManagement.html"
+      }
+    ],
+    "tags": [
+      "knowledge",
+      "lifecycle"
+    ]
+  },
+  {
+    "id": "csa-acl-028",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Configuring Apps for Collaboration",
+    "subdomain": "User Criteria",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the role of User Criteria in Knowledge Management?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Define who can or cannot read or contribute to a KB or article based on attributes like role, group, department, location, or company."
+      },
+      {
+        "id": "B",
+        "text": "Filter the list of incidents shown on the agent home page."
+      },
+      {
+        "id": "C",
+        "text": "Define which fields appear on a form."
+      },
+      {
+        "id": "D",
+        "text": "Schedule recurring publication of articles."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "User Criteria define audience for knowledge — Can Read, Cannot Read, Can Contribute, Cannot Contribute — based on user attributes. They're the supported way to scope visibility and contribution without writing custom ACLs.",
+    "distractor_notes": {
+      "B": "Incident list filtering uses list filters and assignment, not user criteria.",
+      "C": "Form layout is controlled by Form Designer/Layout, not user criteria.",
+      "D": "Article scheduling is part of the workflow, not user criteria."
+    },
+    "references": [
+      {
+        "title": "User criteria overview",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-servicenow-platform/page/product/knowledge-management/concept/user-criteria-overview.html"
+      }
+    ],
+    "tags": [
+      "user-criteria",
+      "knowledge",
+      "access"
+    ]
+  },
+  {
+    "id": "csa-acl-029",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Configuring Apps for Collaboration",
+    "subdomain": "User Criteria",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An HR KB should be visible only to HR employees and contractors should be excluded. How is this typically configured?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Add a 'Can Read' user criteria that includes the HR group and a 'Cannot Read' user criteria that excludes contractors on the HR KB."
+      },
+      {
+        "id": "B",
+        "text": "Encrypt every HR article with a password."
+      },
+      {
+        "id": "C",
+        "text": "Write a UI policy that hides HR articles from contractors."
+      },
+      {
+        "id": "D",
+        "text": "Move HR articles to a hidden URL that contractors don't know about."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "User Criteria handle exactly this case: Can Read narrows audience to HR; Cannot Read excludes contractors. The KB itself enforces the rule centrally instead of scattering logic across the platform.",
+    "distractor_notes": {
+      "B": "Article-level password encryption isn't the platform's access model.",
+      "C": "UI policies don't gate visibility outside the form context — they don't apply to portal search or KB lookups.",
+      "D": "Security through obscurity isn't security."
+    },
+    "references": [
+      {
+        "title": "User criteria overview",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-servicenow-platform/page/product/knowledge-management/concept/user-criteria-overview.html"
+      }
+    ],
+    "tags": [
+      "user-criteria",
+      "knowledge",
+      "access"
+    ]
+  },
+  {
+    "id": "csa-acl-030",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Configuring Apps for Collaboration",
+    "subdomain": "Knowledge Articles",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An agent wants to create a brand new knowledge article from a resolved incident. Which feature is intended for this?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Use the 'Create Knowledge' / 'Post Knowledge' action on the incident, which seeds a draft article using fields from the incident."
+      },
+      {
+        "id": "B",
+        "text": "Manually copy/paste the incident's description into a new browser tab and email it to the KB team."
+      },
+      {
+        "id": "C",
+        "text": "Mark the incident as 'is_knowledge_article = true' on sys_dictionary."
+      },
+      {
+        "id": "D",
+        "text": "Export the incident as a PDF and attach it to a new KB record."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Out-of-the-box, agents can trigger article creation directly from a resolved incident. The platform seeds a draft using fields from the source record so knowledge capture happens in the flow of work.",
+    "distractor_notes": {
+      "B": "Manual copy/paste defeats the integration the platform provides.",
+      "C": "sys_dictionary defines fields, not record state.",
+      "D": "PDFs make poor reusable articles. Attachments aren't articles."
+    },
+    "references": [
+      {
+        "title": "Create a knowledge article",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-servicenow-platform/page/product/knowledge-management/task/t_CreateKnowledgeArticle.html"
+      }
+    ],
+    "tags": [
+      "knowledge",
+      "create-article",
+      "incident"
+    ]
+  },
+  {
+    "id": "csa-acl-031",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Configuring Apps for Collaboration",
+    "subdomain": "Knowledge Articles",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which statement about knowledge article versioning is most accurate?",
+    "options": [
+      {
+        "id": "A",
+        "text": "When an article is updated through the supported workflow, the platform can produce a new version, preserving the prior version for reference."
+      },
+      {
+        "id": "B",
+        "text": "Articles cannot be versioned — every edit overwrites the previous content irretrievably."
+      },
+      {
+        "id": "C",
+        "text": "Versions are stored in the user's browser localStorage."
+      },
+      {
+        "id": "D",
+        "text": "Versioning requires a third-party plugin from the App Store."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Knowledge supports versioning so an edit can produce a new version while keeping the prior one for history and rollback. Whether versioning is on depends on KB configuration, but it's a platform capability.",
+    "distractor_notes": {
+      "B": "Edits don't have to be destructive when versioning is configured.",
+      "C": "Articles live in the database, not in the browser.",
+      "D": "Versioning isn't a third-party add-on."
+    },
+    "references": [
+      {
+        "title": "Knowledge Management",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-servicenow-platform/page/product/knowledge-management/concept/c_KnowledgeManagement.html"
+      }
+    ],
+    "tags": [
+      "knowledge",
+      "versioning"
+    ]
+  },
+  {
+    "id": "csa-acl-032",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Configuring Apps for Collaboration",
+    "subdomain": "Knowledge Bases",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Why might an organization use multiple Knowledge Bases instead of one large KB?",
+    "options": [
+      {
+        "id": "A",
+        "text": "To separate ownership, workflows, access, and category trees by audience (e.g., IT, HR, Customer Service)."
+      },
+      {
+        "id": "B",
+        "text": "ServiceNow requires a separate KB per article author."
+      },
+      {
+        "id": "C",
+        "text": "Each KB stores articles on its own physical server."
+      },
+      {
+        "id": "D",
+        "text": "Multiple KBs are required for performance — a single KB cannot index more than 100 articles."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Multiple KBs let different teams own their content, run their own approval workflow, set audience-specific access, and organize their own categories. It's an organizational model, not a performance constraint.",
+    "distractor_notes": {
+      "B": "There's no per-author KB requirement.",
+      "C": "KBs don't map to physical servers.",
+      "D": "There's no 100-article limit."
+    },
+    "references": [
+      {
+        "title": "Knowledge Bases",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-servicenow-platform/page/product/knowledge-management/concept/c_KnowledgeBases.html"
+      }
+    ],
+    "tags": [
+      "knowledge-base",
+      "governance"
+    ]
+  },
+  {
+    "id": "csa-acl-033",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Configuring Apps for Collaboration",
+    "subdomain": "Knowledge Categorization",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "How is a knowledge article typically organized inside a Knowledge Base?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Articles are placed in categories (and optional subcategories) within a KB, supporting hierarchical browsing alongside search."
+      },
+      {
+        "id": "B",
+        "text": "Articles are sorted only by ascending sys_id."
+      },
+      {
+        "id": "C",
+        "text": "Articles must be filed under exactly one tag — no categories exist."
+      },
+      {
+        "id": "D",
+        "text": "Articles are organized by the user who opened them most recently."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Knowledge uses a category (and optional subcategory) tree inside each KB for hierarchical organization. Users can browse by category or search across the whole KB.",
+    "distractor_notes": {
+      "B": "sys_id ordering wouldn't be useful for end users.",
+      "C": "Tags can apply, but categories also exist and are the main organizational unit.",
+      "D": "Viewing history is per-user and isn't how articles are filed."
+    },
+    "references": [
+      {
+        "title": "Knowledge Management",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-servicenow-platform/page/product/knowledge-management/concept/c_KnowledgeManagement.html"
+      }
+    ],
+    "tags": [
+      "knowledge",
+      "categories"
+    ]
+  },
+  {
+    "id": "csa-acl-034",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Configuring Apps for Collaboration",
+    "subdomain": "Knowledge Feedback",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the role of article feedback (helpful/not helpful ratings, comments) in Knowledge Management?",
+    "options": [
+      {
+        "id": "A",
+        "text": "It provides signals that owners use to improve, update, or retire articles based on reader experience."
+      },
+      {
+        "id": "B",
+        "text": "It is purely cosmetic — feedback is never stored on the platform."
+      },
+      {
+        "id": "C",
+        "text": "It automatically deletes any article that receives negative feedback."
+      },
+      {
+        "id": "D",
+        "text": "It increases an article's sys_id."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Feedback exists to inform article owners. Patterns of low ratings or comments highlight articles that need rewriting, updating, or retirement.",
+    "distractor_notes": {
+      "B": "Feedback is stored, reported on, and used in governance.",
+      "C": "Negative feedback prompts review, not auto-deletion.",
+      "D": "sys_id is immutable. Feedback never changes it."
+    },
+    "references": [
+      {
+        "title": "Knowledge Management",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-servicenow-platform/page/product/knowledge-management/concept/c_KnowledgeManagement.html"
+      }
+    ],
+    "tags": [
+      "knowledge",
+      "feedback",
+      "governance"
+    ]
+  },
+  {
+    "id": "csa-acl-035",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Configuring Apps for Collaboration",
+    "subdomain": "Knowledge Workflow",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "An admin wants every article in the HR KB to be approved by an HR Knowledge Manager before it goes Published. What's the most appropriate configuration?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Configure or assign a knowledge workflow on the HR KB that requires manager approval before transitioning to Published."
+      },
+      {
+        "id": "B",
+        "text": "Mark the KB as private and tell HR managers to read every article over email."
+      },
+      {
+        "id": "C",
+        "text": "Disable Knowledge Management on the instance."
+      },
+      {
+        "id": "D",
+        "text": "Delete the Draft state from the article form layout."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Each KB can be configured with its own workflow. Adding a manager approval step in the HR KB's workflow enforces sign-off before Published — no ad-hoc email reviews required.",
+    "distractor_notes": {
+      "B": "Email reviews aren't auditable and don't enforce the workflow.",
+      "C": "Disabling KM globally breaks the use case.",
+      "D": "Hiding the Draft state doesn't introduce approval — it removes a state from the UI."
+    },
+    "references": [
+      {
+        "title": "Knowledge Bases",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-servicenow-platform/page/product/knowledge-management/concept/c_KnowledgeBases.html"
+      }
+    ],
+    "tags": [
+      "knowledge",
+      "workflow",
+      "approval"
+    ]
+  },
+  {
+    "id": "csa-acl-036",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Configuring Apps for Collaboration",
+    "subdomain": "Knowledge Articles",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An article references a process that has since been deprecated. What's the right action?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Move the article to Retired state so it's no longer surfaced to users while preserving the record for history."
+      },
+      {
+        "id": "B",
+        "text": "Delete the article from the database immediately."
+      },
+      {
+        "id": "C",
+        "text": "Open an incident on the article."
+      },
+      {
+        "id": "D",
+        "text": "Mark the article as a duplicate of itself."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Retiring is the right move: the article stops appearing in search and browse, but the record remains for audit and historical reference. Deletion loses that history.",
+    "distractor_notes": {
+      "B": "Hard-deleting articles erases history and any links pointing to them.",
+      "C": "Incidents track service interruptions, not stale content.",
+      "D": "Self-duplication isn't a meaningful state."
+    },
+    "references": [
+      {
+        "title": "Knowledge Management",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-servicenow-platform/page/product/knowledge-management/concept/c_KnowledgeManagement.html"
+      }
+    ],
+    "tags": [
+      "knowledge",
+      "retire",
+      "lifecycle"
+    ]
+  },
+  {
+    "id": "csa-acl-037",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Configuring Apps for Collaboration",
+    "subdomain": "Service Catalog",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the primary purpose of Service Catalog?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Present a structured set of orderable services and request items to end users, with workflows that fulfill those requests behind the scenes."
+      },
+      {
+        "id": "B",
+        "text": "Replace the Incident Management app entirely."
+      },
+      {
+        "id": "C",
+        "text": "Store the company's marketing materials."
+      },
+      {
+        "id": "D",
+        "text": "Hold every record on the platform in one searchable list."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Service Catalog is the storefront — users browse and order items (a laptop, software access, an HR change), and the platform spins up the appropriate fulfillment workflow. Self-service in, automation behind.",
+    "distractor_notes": {
+      "B": "Incidents and catalog requests are separate, complementary apps.",
+      "C": "Marketing content lives elsewhere (Knowledge, CMS, etc.).",
+      "D": "Catalog isn't a unified list of all platform records."
+    },
+    "references": [
+      {
+        "title": "Service Catalog Management",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-servicenow-platform/page/product/service-catalog-management/concept/c_ServiceCatalogManagement.html"
+      }
+    ],
+    "tags": [
+      "service-catalog",
+      "self-service"
+    ]
+  },
+  {
+    "id": "csa-acl-038",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Configuring Apps for Collaboration",
+    "subdomain": "Catalog Items",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is a Catalog Item?",
+    "options": [
+      {
+        "id": "A",
+        "text": "An orderable thing in the catalog (laptop, access request, name change, etc.) with its own variables, workflow, and price/category."
+      },
+      {
+        "id": "B",
+        "text": "A free-text field on an incident form."
+      },
+      {
+        "id": "C",
+        "text": "A scheduled job that polls inventory."
+      },
+      {
+        "id": "D",
+        "text": "A row on sys_user."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "A catalog item represents one orderable thing. It carries variables (what to ask the user), a workflow or flow (how to fulfill it), and metadata (category, image, price, who can see it).",
+    "distractor_notes": {
+      "B": "It's a discrete configuration object, not a free-text field.",
+      "C": "Catalog items aren't scheduled jobs.",
+      "D": "sys_user rows are users. Catalog items live on their own table."
+    },
+    "references": [
+      {
+        "title": "Catalog items",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-servicenow-platform/page/product/service-catalog-management/concept/c_CatalogItems.html"
+      }
+    ],
+    "tags": [
+      "service-catalog",
+      "catalog-item"
+    ]
+  },
+  {
+    "id": "csa-acl-039",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Configuring Apps for Collaboration",
+    "subdomain": "Catalog Variables",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What are catalog Variables used for?",
+    "options": [
+      {
+        "id": "A",
+        "text": "They define the questions asked of the requester on a catalog item (text, choice, reference, etc.) and capture the answers used by the fulfillment workflow."
+      },
+      {
+        "id": "B",
+        "text": "They are server-side global JavaScript variables shared across all scripts on the instance."
+      },
+      {
+        "id": "C",
+        "text": "They store the user's session timeout."
+      },
+      {
+        "id": "D",
+        "text": "They cache outbound email templates."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Variables are the form fields on a catalog item — what the platform asks the requester. The answers flow into the requested item record and feed the fulfillment workflow.",
+    "distractor_notes": {
+      "B": "Catalog variables are specific to a catalog item, not platform-wide JS.",
+      "C": "Session timeout is a system property.",
+      "D": "Email templates live in the notifications subsystem."
+    },
+    "references": [
+      {
+        "title": "Catalog variables",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-servicenow-platform/page/product/service-catalog-management/concept/c_CatalogVariables.html"
+      }
+    ],
+    "tags": [
+      "catalog-variables",
+      "service-catalog"
+    ]
+  },
+  {
+    "id": "csa-acl-040",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Configuring Apps for Collaboration",
+    "subdomain": "Request / RITM",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "When a user submits a catalog item, what records does the platform typically create?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A Request (REQ) header record and one or more Requested Item (RITM) records, often with one or more Catalog Tasks (SCTASK) generated by the workflow."
+      },
+      {
+        "id": "B",
+        "text": "Only an Incident record."
+      },
+      {
+        "id": "C",
+        "text": "Only a Change record."
+      },
+      {
+        "id": "D",
+        "text": "Only a Problem record."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Submission creates a Request (REQ) as the umbrella, a Requested Item (RITM) per item ordered, and Catalog Tasks (SCTASK) generated by the fulfillment workflow as work to do.",
+    "distractor_notes": {
+      "B": "Incidents are about unplanned service interruptions, not catalog orders.",
+      "C": "Changes are planned infrastructure modifications, not request fulfillment.",
+      "D": "Problems track root cause investigations."
+    },
+    "references": [
+      {
+        "title": "Request fulfillment",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-servicenow-platform/page/product/service-catalog-management/concept/c_RequestFulfillment.html"
+      }
+    ],
+    "tags": [
+      "request",
+      "ritm",
+      "sctask"
+    ]
+  },
+  {
+    "id": "csa-acl-041",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Configuring Apps for Collaboration",
+    "subdomain": "Catalog UI",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An admin wants to surface only a subset of catalog items to a partner company, not the full company catalog. Which mechanism is most appropriate?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Use User Criteria on the relevant catalog items / categories to control who sees them."
+      },
+      {
+        "id": "B",
+        "text": "Create a duplicate of every internal item and rename them."
+      },
+      {
+        "id": "C",
+        "text": "Hide items with a CSS rule on the portal."
+      },
+      {
+        "id": "D",
+        "text": "Delete the items that shouldn't be visible."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "User Criteria control audience for catalog items and categories — exactly the same mechanism Knowledge uses. Add a Can View criteria for the partner audience; deny on the rest.",
+    "distractor_notes": {
+      "B": "Duplicating items inflates maintenance and drifts the two copies over time.",
+      "C": "CSS hides things visually but doesn't enforce access — a savvy user could still submit by URL.",
+      "D": "Deletion removes items entirely; the goal is selective visibility."
+    },
+    "references": [
+      {
+        "title": "Catalog items",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-servicenow-platform/page/product/service-catalog-management/concept/c_CatalogItems.html"
+      }
+    ],
+    "tags": [
+      "user-criteria",
+      "catalog",
+      "access"
+    ]
+  },
+  {
+    "id": "csa-acl-042",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Configuring Apps for Collaboration",
+    "subdomain": "Catalog Categories",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is a Category in Service Catalog?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A grouping that organizes catalog items under a heading users can browse (e.g., Hardware, Software, HR)."
+      },
+      {
+        "id": "B",
+        "text": "A workflow stage on a Requested Item."
+      },
+      {
+        "id": "C",
+        "text": "A role attached to a user."
+      },
+      {
+        "id": "D",
+        "text": "A type of attachment."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Categories organize catalog items into browsable groupings. They give the catalog its shape and help users find what they need without scrolling endlessly.",
+    "distractor_notes": {
+      "B": "Workflow stages live on the fulfillment flow, not categories.",
+      "C": "Categories aren't roles.",
+      "D": "Categories aren't attachments."
+    },
+    "references": [
+      {
+        "title": "Service Catalog Management",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-servicenow-platform/page/product/service-catalog-management/concept/c_ServiceCatalogManagement.html"
+      }
+    ],
+    "tags": [
+      "catalog",
+      "categories"
+    ]
+  },
+  {
+    "id": "csa-acl-043",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Configuring Apps for Collaboration",
+    "subdomain": "Variable Sets",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is a Variable Set?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A reusable group of variables (with their order, layout, and behavior) that can be attached to multiple catalog items."
+      },
+      {
+        "id": "B",
+        "text": "A read-only field on the requested item."
+      },
+      {
+        "id": "C",
+        "text": "A user's saved cart in the portal."
+      },
+      {
+        "id": "D",
+        "text": "A set of audit records for variable changes."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Variable sets are reusable bundles of variables. Define once, attach to many catalog items — useful for shared inputs like 'requested for, location, justification.'",
+    "distractor_notes": {
+      "B": "Variables are inputs, not read-only display values.",
+      "C": "Saved carts are a portal feature, not variable sets.",
+      "D": "Audits aren't variable sets."
+    },
+    "references": [
+      {
+        "title": "Catalog variables",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-servicenow-platform/page/product/service-catalog-management/concept/c_CatalogVariables.html"
+      }
+    ],
+    "tags": [
+      "variable-set",
+      "catalog"
+    ]
+  },
+  {
+    "id": "csa-acl-044",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Configuring Apps for Collaboration",
+    "subdomain": "Request Fulfillment",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "After a user submits a 'New Laptop' catalog item, the workflow generates two catalog tasks: one for IT to provision the laptop and one for Finance to record the asset. Which record type are these tasks?",
+    "options": [
+      {
+        "id": "A",
+        "text": "SCTASK (Catalog Task) records."
+      },
+      {
+        "id": "B",
+        "text": "INC (Incident) records."
+      },
+      {
+        "id": "C",
+        "text": "CHG (Change Request) records."
+      },
+      {
+        "id": "D",
+        "text": "KB (Knowledge) records."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Tasks generated by a catalog fulfillment workflow are SCTASK records (Catalog Tasks). They give each team a discrete unit of work tied back to the requesting RITM and REQ.",
+    "distractor_notes": {
+      "B": "Incidents are for service interruptions, not catalog fulfillment.",
+      "C": "Changes are for planned modifications — not for routine provisioning tasks.",
+      "D": "KBs are knowledge articles."
+    },
+    "references": [
+      {
+        "title": "Request fulfillment",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-servicenow-platform/page/product/service-catalog-management/concept/c_RequestFulfillment.html"
+      }
+    ],
+    "tags": [
+      "sctask",
+      "fulfillment",
+      "catalog"
+    ]
+  },
+  {
+    "id": "csa-acl-045",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Configuring Apps for Collaboration",
+    "subdomain": "Catalog UI Policies",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "On a catalog item, an admin wants the 'Justification' variable to appear only when 'Request type' is set to 'Above standard equipment.' Which configuration is intended for this?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A Catalog UI Policy on the item that sets Justification to visible/mandatory based on Request type."
+      },
+      {
+        "id": "B",
+        "text": "A regular Business Rule on the requested item table."
+      },
+      {
+        "id": "C",
+        "text": "An ACL on the variable."
+      },
+      {
+        "id": "D",
+        "text": "A scheduled job that toggles visibility every minute."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Catalog UI Policies are the catalog-side cousin of regular UI Policies. They drive show/hide, mandatory, and read-only behavior on catalog variables based on other variable values. Exactly this use case.",
+    "distractor_notes": {
+      "B": "Business rules run server-side and aren't the right tool for conditional variable display.",
+      "C": "ACLs are about access, not conditional visibility on the catalog form.",
+      "D": "Scheduled jobs are wildly the wrong mechanism for UI behavior."
+    },
+    "references": [
+      {
+        "title": "Catalog variables",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-servicenow-platform/page/product/service-catalog-management/concept/c_CatalogVariables.html"
+      }
+    ],
+    "tags": [
+      "catalog-ui-policy",
+      "variables"
+    ]
+  },
+  {
+    "id": "csa-acl-046",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Configuring Apps for Collaboration",
+    "subdomain": "Order Guides",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "An admin needs to onboard a new hire with a laptop, a phone, software access, and an HR profile all in one go. Which catalog construct bundles related items into a single ordering experience?",
+    "options": [
+      {
+        "id": "A",
+        "text": "An Order Guide that gathers shared inputs once and then submits multiple related catalog items together."
+      },
+      {
+        "id": "B",
+        "text": "A single mega catalog item with one workflow that does everything."
+      },
+      {
+        "id": "C",
+        "text": "A KB article that lists the steps."
+      },
+      {
+        "id": "D",
+        "text": "Four separate incidents."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Order Guides are designed for exactly this: collect a small set of shared questions (employee name, start date, location), then submit a bundle of catalog items in one flow. The user gets one experience; the platform gets discrete fulfillable items.",
+    "distractor_notes": {
+      "B": "A mega item buries discrete fulfillment work in one record and makes routing harder.",
+      "C": "A KB article is documentation, not a bundling mechanism.",
+      "D": "Incidents aren't catalog requests."
+    },
+    "references": [
+      {
+        "title": "Service Catalog Management",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-servicenow-platform/page/product/service-catalog-management/concept/c_ServiceCatalogManagement.html"
+      }
+    ],
+    "tags": [
+      "order-guide",
+      "onboarding",
+      "catalog"
+    ]
+  },
+  {
+    "id": "csa-acl-047",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Configuring Apps for Collaboration",
+    "subdomain": "Catalog Workflow",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An admin wants the fulfillment of a catalog item to run a Flow Designer flow when submitted. Where is this attachment configured?",
+    "options": [
+      {
+        "id": "A",
+        "text": "On the catalog item, set the flow as the item's fulfillment flow/workflow."
+      },
+      {
+        "id": "B",
+        "text": "On the user's profile."
+      },
+      {
+        "id": "C",
+        "text": "In the user's browser settings."
+      },
+      {
+        "id": "D",
+        "text": "On the change_request table's number-maintenance record."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Each catalog item points at the flow (or older Workflow) that fulfills it. Submission triggers the bound flow with the variable answers as inputs.",
+    "distractor_notes": {
+      "B": "User profile doesn't dictate catalog fulfillment.",
+      "C": "Browser settings don't run server-side flows.",
+      "D": "Number maintenance configures record numbering, not flows."
+    },
+    "references": [
+      {
+        "title": "Catalog items",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-servicenow-platform/page/product/service-catalog-management/concept/c_CatalogItems.html"
+      }
+    ],
+    "tags": [
+      "catalog",
+      "flow",
+      "fulfillment"
+    ]
+  }
+]

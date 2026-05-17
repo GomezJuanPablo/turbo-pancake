@@ -1,0 +1,12 @@
+[
+  { "id": "first-blood",         "icon": "🎯", "label": "First Blood",        "description": "Get your first question right." },
+  { "id": "read-the-distractor", "icon": "📚", "label": "Read the Distractor","description": "Open the distractor notes 50 times." },
+  { "id": "streak-goblin",       "icon": "🔥", "label": "Streak Goblin",      "description": "7 days in a row." },
+  { "id": "speed-glider",        "icon": "⚡", "label": "Speed Glider",       "description": "Answer 10 in under 60 seconds each." },
+  { "id": "goblin-brain",        "icon": "🧠", "label": "Goblin Brain",       "description": "Maintain 90% accuracy across 50 questions." },
+  { "id": "comeback-kid",        "icon": "🔄", "label": "Comeback Kid",       "description": "Get a previously-wrong question right on review." },
+  { "id": "perfect-run",         "icon": "💯", "label": "Perfect Run",        "description": "Complete a 10-question session with no misses." },
+  { "id": "early-bird",          "icon": "🌅", "label": "Early Bird",         "description": "Practice before 7am local time." },
+  { "id": "night-owl",           "icon": "🦉", "label": "Night Owl",          "description": "Practice after 10pm local time." },
+  { "id": "certified-goblin",    "icon": "🧌", "label": "Certified Goblin",   "description": "Hit 1,000 XP." }
+]

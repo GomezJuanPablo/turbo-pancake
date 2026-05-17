@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <rect width="32" height="32" rx="6" fill="#1B1B3F"/>
+  <!-- Stylized G with glide trail -->
+  <path d="M22 9 A8 8 0 1 0 22 23 L22 17 L16 17"
+        fill="none" stroke="#0E8B9E" stroke-width="3"
+        stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Magenta cosmic spark -->
+  <circle cx="26" cy="9" r="2" fill="#E91E63"/>
+</svg>

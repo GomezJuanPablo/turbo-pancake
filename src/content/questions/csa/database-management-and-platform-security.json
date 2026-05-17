@@ -1,0 +1,3417 @@
+[
+  {
+    "id": "csa-dbs-001",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "Tables",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "How are user-defined tables typically created in the Now Platform?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Through Table Administration (Tables module / Tables & Columns), giving the table a label, name, and optional parent for extension."
+      },
+      {
+        "id": "B",
+        "text": "By writing SQL CREATE TABLE statements in System Log."
+      },
+      {
+        "id": "C",
+        "text": "By editing the favicon.svg in the public folder."
+      },
+      {
+        "id": "D",
+        "text": "Only by ServiceNow Support on a ticket."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Admins create tables through Table Administration. The platform handles the underlying schema; users provide the label/name and choose whether to extend an existing table.",
+    "distractor_notes": {
+      "B": "Direct DDL isn't how the platform works — tables are configuration records.",
+      "C": "Favicons are unrelated to the database.",
+      "D": "Customer admins create their own tables."
+    },
+    "references": [
+      {
+        "title": "Tables and Fields",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/table-administration/concept/c_TablesAndFields.html"
+      }
+    ],
+    "tags": [
+      "tables",
+      "schema"
+    ]
+  },
+  {
+    "id": "csa-dbs-002",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "Tables",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A team needs a new 'Vendor Contact' table that should share fields like number, state, and assigned_to with other work tables. What is the most idiomatic approach?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Extend the Task table so the new table inherits Task's fields and behaviors."
+      },
+      {
+        "id": "B",
+        "text": "Create the table from scratch with no parent and duplicate every field by hand."
+      },
+      {
+        "id": "C",
+        "text": "Reuse sys_user_group for the data."
+      },
+      {
+        "id": "D",
+        "text": "Store the vendor contacts as KB articles."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Extending Task is the platform-native way to share work-item fields and behavior. The new table inherits number, state, assigned_to, work notes, etc., and can layer on its own fields.",
+    "distractor_notes": {
+      "B": "Duplicating fields drifts away from the inherited model immediately.",
+      "C": "sys_user_group stores groups, not vendor contact records.",
+      "D": "KB isn't a data table for vendor contacts."
+    },
+    "references": [
+      {
+        "title": "Tables and Fields",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/table-administration/concept/c_TablesAndFields.html"
+      }
+    ],
+    "tags": [
+      "tables",
+      "task-extension"
+    ]
+  },
+  {
+    "id": "csa-dbs-003",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "Create Table",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "When creating a new table, what is the difference between the Label and the Name fields?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Label is the user-visible name; Name is the internal API/database identifier (typically lowercase with underscores)."
+      },
+      {
+        "id": "B",
+        "text": "They are exactly the same and one is auto-copied from the other forever."
+      },
+      {
+        "id": "C",
+        "text": "Label is the database name and Name is the user-visible name."
+      },
+      {
+        "id": "D",
+        "text": "Neither is editable."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Label is what users see in lists and forms. Name is the internal identifier the platform uses in queries, scripts, and APIs — typically lowercase with underscores (e.g., u_vendor_contact).",
+    "distractor_notes": {
+      "B": "Label is initialized from Name but they're distinct.",
+      "C": "Backwards.",
+      "D": "Both are editable when creating a table."
+    },
+    "references": [
+      {
+        "title": "Create a table",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/table-administration/task/t_CreateATable.html"
+      }
+    ],
+    "tags": [
+      "tables",
+      "naming"
+    ]
+  },
+  {
+    "id": "csa-dbs-004",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "Field Types",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which field type is used to point one record at another record on a chosen target table?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Reference"
+      },
+      {
+        "id": "B",
+        "text": "String"
+      },
+      {
+        "id": "C",
+        "text": "Choice"
+      },
+      {
+        "id": "D",
+        "text": "Boolean"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Reference fields store a pointer (sys_id) to a record on another table, and the platform shows the display value to users. They power relationships like incident.assigned_to → sys_user.",
+    "distractor_notes": {
+      "B": "String stores arbitrary text.",
+      "C": "Choice stores a value from a fixed list.",
+      "D": "Boolean stores true/false."
+    },
+    "references": [
+      {
+        "title": "Field types",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/field-administration/reference/r_FieldTypes.html"
+      }
+    ],
+    "tags": [
+      "fields",
+      "reference"
+    ]
+  },
+  {
+    "id": "csa-dbs-005",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "Field Types",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which field type is most appropriate for storing a fixed, short set of values like Low / Medium / High?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Choice"
+      },
+      {
+        "id": "B",
+        "text": "String (unbounded)"
+      },
+      {
+        "id": "C",
+        "text": "Reference"
+      },
+      {
+        "id": "D",
+        "text": "Date/Time"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Choice fields enforce a discrete set of values with labels and underlying values. They keep data clean and feed reporting reliably.",
+    "distractor_notes": {
+      "B": "Unbounded strings allow drift like 'high', 'High', 'HIGH', 'hi'.",
+      "C": "Reference is for pointing at records on another table.",
+      "D": "Date/Time stores moments in time."
+    },
+    "references": [
+      {
+        "title": "Field types",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/field-administration/reference/r_FieldTypes.html"
+      }
+    ],
+    "tags": [
+      "fields",
+      "choice"
+    ]
+  },
+  {
+    "id": "csa-dbs-006",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "System Dictionary",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the System Dictionary (sys_dictionary)?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The metadata table that defines every field on every table — including type, label, max length, default value, and the table it belongs to."
+      },
+      {
+        "id": "B",
+        "text": "A user-readable glossary of business terms used by stakeholders."
+      },
+      {
+        "id": "C",
+        "text": "A list of every record ever modified."
+      },
+      {
+        "id": "D",
+        "text": "The KB containing platform documentation."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "sys_dictionary is the platform's field metadata table. It describes every column on every table — type, length, defaults, attributes — and is how the platform knows what each column is.",
+    "distractor_notes": {
+      "B": "A business glossary is a separate, organizational concern.",
+      "C": "Audit history isn't sys_dictionary.",
+      "D": "Documentation is in KBs, not sys_dictionary."
+    },
+    "references": [
+      {
+        "title": "System dictionary",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/field-administration/concept/c_SystemDictionary.html"
+      }
+    ],
+    "tags": [
+      "sys_dictionary",
+      "metadata"
+    ]
+  },
+  {
+    "id": "csa-dbs-007",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "sys_id",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is sys_id?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A 32-character globally unique identifier (GUID) that every record on every table receives as its primary key."
+      },
+      {
+        "id": "B",
+        "text": "An incrementing integer per table, like incident.number."
+      },
+      {
+        "id": "C",
+        "text": "A user-facing label for the record."
+      },
+      {
+        "id": "D",
+        "text": "A field that stores the record's color in the UI."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "sys_id is the platform's universal primary key — a 32-character GUID on every record. Numbers like INC0010023 are display identifiers; sys_id is the immutable internal one.",
+    "distractor_notes": {
+      "B": "incident.number is the display identifier, separate from sys_id.",
+      "C": "Labels are display strings, not sys_ids.",
+      "D": "Colors aren't a sys_id property."
+    },
+    "references": [
+      {
+        "title": "Tables and Fields",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/table-administration/concept/c_TablesAndFields.html"
+      }
+    ],
+    "tags": [
+      "sys_id",
+      "primary-key"
+    ]
+  },
+  {
+    "id": "csa-dbs-008",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "Dictionary Overrides",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A field is defined on Task and used by every extending table, but the Incident table needs a different default value for that field. Which mechanism is intended for this?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A Dictionary Override on the Incident table for that field, supplying the Incident-specific default."
+      },
+      {
+        "id": "B",
+        "text": "Modify the parent field on Task and break the consistency for every other extending table."
+      },
+      {
+        "id": "C",
+        "text": "Create a duplicate field on Incident with a different name."
+      },
+      {
+        "id": "D",
+        "text": "Hide the field on Incident with a UI policy."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Dictionary Overrides let you customize attributes of an inherited field on the child table without changing the parent. Different default, mandatory, calculation — without forking the schema.",
+    "distractor_notes": {
+      "B": "Editing the parent affects every child — that's the wrong-scope change.",
+      "C": "Duplicate fields create drift and confusion.",
+      "D": "Hiding the field doesn't change its default value."
+    },
+    "references": [
+      {
+        "title": "System dictionary",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/field-administration/concept/c_SystemDictionary.html"
+      }
+    ],
+    "tags": [
+      "dictionary-override",
+      "inheritance"
+    ]
+  },
+  {
+    "id": "csa-dbs-009",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "Field Types",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which field type can be used to attach a free-form rich text document such as resolution notes with images?",
+    "options": [
+      {
+        "id": "A",
+        "text": "HTML"
+      },
+      {
+        "id": "B",
+        "text": "Boolean"
+      },
+      {
+        "id": "C",
+        "text": "Integer"
+      },
+      {
+        "id": "D",
+        "text": "Reference"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "HTML fields hold rich, formatted content with optional images. They're how knowledge bodies and rich descriptions are stored.",
+    "distractor_notes": {
+      "B": "Boolean is true/false.",
+      "C": "Integer is a number.",
+      "D": "Reference points at another record."
+    },
+    "references": [
+      {
+        "title": "Field types",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/field-administration/reference/r_FieldTypes.html"
+      }
+    ],
+    "tags": [
+      "fields",
+      "html"
+    ]
+  },
+  {
+    "id": "csa-dbs-010",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "Field Naming",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "When admins add custom fields on out-of-the-box tables, what prefix convention does the platform use for those field names?",
+    "options": [
+      {
+        "id": "A",
+        "text": "u_ (e.g., u_business_unit)"
+      },
+      {
+        "id": "B",
+        "text": "x_ (e.g., x_business_unit)"
+      },
+      {
+        "id": "C",
+        "text": "sys_ (e.g., sys_business_unit)"
+      },
+      {
+        "id": "D",
+        "text": "No prefix is used at all."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Custom fields on OOB tables get the u_ prefix automatically. This makes them easy to distinguish from platform fields and protects upgrades. (x_ is reserved for scoped apps; sys_ is platform-reserved.)",
+    "distractor_notes": {
+      "B": "x_ is the convention for scoped applications' resources, not custom fields on OOB tables.",
+      "C": "sys_ is the platform's namespace.",
+      "D": "The platform enforces the prefix to keep things tidy."
+    },
+    "references": [
+      {
+        "title": "Tables and Fields",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/table-administration/concept/c_TablesAndFields.html"
+      }
+    ],
+    "tags": [
+      "fields",
+      "naming",
+      "u_prefix"
+    ]
+  },
+  {
+    "id": "csa-dbs-011",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "Choice Lists",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A team needs to add a new Choice value to the State field on Incident. Where is this configured?",
+    "options": [
+      {
+        "id": "A",
+        "text": "On the Choice list for the State field on Incident (sys_choice for that table+field), adding a label, value, and sequence."
+      },
+      {
+        "id": "B",
+        "text": "By creating a new sys_user row."
+      },
+      {
+        "id": "C",
+        "text": "By writing a business rule that intercepts saves."
+      },
+      {
+        "id": "D",
+        "text": "By editing the favicon.svg."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Choice list values for a given table+field live on sys_choice. Add an entry with a label, value, and sequence to add a new option.",
+    "distractor_notes": {
+      "B": "Users have nothing to do with choice values.",
+      "C": "Business rules don't define choice values.",
+      "D": "Favicon is unrelated."
+    },
+    "references": [
+      {
+        "title": "Field types",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/field-administration/reference/r_FieldTypes.html"
+      }
+    ],
+    "tags": [
+      "choice",
+      "sys_choice"
+    ]
+  },
+  {
+    "id": "csa-dbs-012",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "Table Extension",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "An admin extends the Task table for a new 'Vendor Contact' work type. Six months later, a stakeholder asks for a new field 'Region' to be added to every kind of task. Where should they add it?",
+    "options": [
+      {
+        "id": "A",
+        "text": "On the Task table, so every extending table (including Vendor Contact, Incident, Change, Problem) inherits the new field automatically."
+      },
+      {
+        "id": "B",
+        "text": "On every child table individually, including out-of-the-box ones."
+      },
+      {
+        "id": "C",
+        "text": "Only on Vendor Contact."
+      },
+      {
+        "id": "D",
+        "text": "On sys_dictionary directly with a JSON edit."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Add at the right level of the hierarchy. If it applies to every task, it goes on Task — every child inherits automatically. That's exactly why inheritance exists.",
+    "distractor_notes": {
+      "B": "Per-child duplication drifts and is brittle to upgrades.",
+      "C": "Only Vendor Contact would have it — defeats the requirement.",
+      "D": "Directly editing sys_dictionary outside the supported tools is risky and unnecessary."
+    },
+    "references": [
+      {
+        "title": "Tables and Fields",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/table-administration/concept/c_TablesAndFields.html"
+      }
+    ],
+    "tags": [
+      "table-extension",
+      "schema-evolution"
+    ]
+  },
+  {
+    "id": "csa-dbs-013",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "Field Attributes",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What does the 'Mandatory' attribute on a field control?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The field must have a non-empty value when the record is saved; the platform enforces it at the data layer."
+      },
+      {
+        "id": "B",
+        "text": "The field becomes invisible to non-admin users."
+      },
+      {
+        "id": "C",
+        "text": "The field is automatically backed up."
+      },
+      {
+        "id": "D",
+        "text": "The field is encrypted at rest."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Mandatory is a data-layer constraint. A mandatory field has to carry a value before the record can be saved, regardless of UI path.",
+    "distractor_notes": {
+      "B": "Visibility is controlled by UI policies, ACLs, and form layout.",
+      "C": "Backup behavior isn't a field attribute.",
+      "D": "Encryption is a separate platform feature."
+    },
+    "references": [
+      {
+        "title": "Field types",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/field-administration/reference/r_FieldTypes.html"
+      }
+    ],
+    "tags": [
+      "fields",
+      "mandatory"
+    ]
+  },
+  {
+    "id": "csa-dbs-014",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "Display Field",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is a Display field on a table?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The single field shown by default when a record is referenced from another table or shown in a search result (e.g., 'name' on User, 'short_description' on Incident)."
+      },
+      {
+        "id": "B",
+        "text": "A field that's always read-only."
+      },
+      {
+        "id": "C",
+        "text": "A field that holds the user's preferred display resolution."
+      },
+      {
+        "id": "D",
+        "text": "A field that's automatically translated into every language."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Each table has one Display field — the field shown by default when the record is referenced or surfaced in lists/search. Picking the right Display field is what makes references human-readable.",
+    "distractor_notes": {
+      "B": "Read-only is a separate attribute.",
+      "C": "Display resolution is browser-side.",
+      "D": "Translation is a separate i18n feature."
+    },
+    "references": [
+      {
+        "title": "Tables and Fields",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/table-administration/concept/c_TablesAndFields.html"
+      }
+    ],
+    "tags": [
+      "display-field",
+      "reference-fields"
+    ]
+  },
+  {
+    "id": "csa-dbs-015",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "Schema",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A reference field on the Incident table for 'Primary Contact' must point at a sys_user record. Which configuration is essential?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Set the field's Reference attribute to point at the sys_user table; the platform uses sys_user's Display field to render the value."
+      },
+      {
+        "id": "B",
+        "text": "Set the field type to Choice with sys_user values typed manually."
+      },
+      {
+        "id": "C",
+        "text": "Set the field type to HTML and paste the user's name."
+      },
+      {
+        "id": "D",
+        "text": "Use a Boolean field and document the meaning of true vs false."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Reference fields need a target table. Once you point the field at sys_user, the platform shows the user's display value, and reference qualifiers/lookups all light up naturally.",
+    "distractor_notes": {
+      "B": "Typing user lists into a choice goes stale instantly.",
+      "C": "HTML strings lose the relationship.",
+      "D": "Boolean can't represent a user."
+    },
+    "references": [
+      {
+        "title": "Field types",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/field-administration/reference/r_FieldTypes.html"
+      }
+    ],
+    "tags": [
+      "reference-field",
+      "schema"
+    ]
+  },
+  {
+    "id": "csa-dbs-016",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "ACLs",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is an Access Control List (ACL) in the Now Platform?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A record that defines a security rule for a table, field, or row operation, evaluated when a user tries to perform that operation."
+      },
+      {
+        "id": "B",
+        "text": "A list of users authorized to log in to the instance."
+      },
+      {
+        "id": "C",
+        "text": "A list of plugins enabled on the instance."
+      },
+      {
+        "id": "D",
+        "text": "A list of attachments on a record."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "ACLs are the platform's contextual security rules. Each one targets a resource (table, field, row, etc.), an operation (read, write, create, delete), and combines roles, conditions, and scripts to allow or deny access.",
+    "distractor_notes": {
+      "B": "Logging in is governed by authentication, not ACLs.",
+      "C": "Plugins are a separate concept.",
+      "D": "Attachments aren't ACLs."
+    },
+    "references": [
+      {
+        "title": "Access control rules",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/administer/contextual-security/concept/access-control-rules.html"
+      }
+    ],
+    "tags": [
+      "acl",
+      "security"
+    ]
+  },
+  {
+    "id": "csa-dbs-017",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "ACLs",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which operations are commonly governed by ACLs?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Read, Write, Create, Delete (and a few others)."
+      },
+      {
+        "id": "B",
+        "text": "Only Read."
+      },
+      {
+        "id": "C",
+        "text": "Only Delete."
+      },
+      {
+        "id": "D",
+        "text": "Only operations against the sys_user table."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "ACLs cover all the common record operations — read, write, create, delete — plus specialized ones (execute, edit_task_relations, report_on, etc.). Different operations get different rules.",
+    "distractor_notes": {
+      "B": "ACLs aren't read-only.",
+      "C": "Same — many ops, not just delete.",
+      "D": "ACLs apply to every table."
+    },
+    "references": [
+      {
+        "title": "Contextual security",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/administer/contextual-security/concept/contextual-security.html"
+      }
+    ],
+    "tags": [
+      "acl",
+      "operations"
+    ]
+  },
+  {
+    "id": "csa-dbs-018",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "ACLs",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "An ACL is built up from which evaluation pieces?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Roles, conditions, and a script — all three are evaluated to determine the final allow/deny."
+      },
+      {
+        "id": "B",
+        "text": "Only roles."
+      },
+      {
+        "id": "C",
+        "text": "Only a script."
+      },
+      {
+        "id": "D",
+        "text": "The user's screen resolution."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "An ACL combines required roles, an optional condition, and an optional script. All three must be satisfied for the ACL to grant access — that's the layered model that makes ACL fine-grained.",
+    "distractor_notes": {
+      "B": "Roles alone wouldn't allow row/condition rules.",
+      "C": "Scripts alone would be hard to audit.",
+      "D": "Screen resolution is browser-side and irrelevant."
+    },
+    "references": [
+      {
+        "title": "Access control rules",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/administer/contextual-security/concept/access-control-rules.html"
+      }
+    ],
+    "tags": [
+      "acl",
+      "roles",
+      "conditions",
+      "script"
+    ]
+  },
+  {
+    "id": "csa-dbs-019",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "ACL Granularity",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An admin wants to allow ITIL agents to read incidents but to read the work_notes field only when they're a member of the assignment group. Which combination of ACLs would best express this?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A table-level read ACL on incident granting read to itil, plus a field-level read ACL on incident.work_notes that additionally restricts read by a condition tying assignment_group to the user's groups."
+      },
+      {
+        "id": "B",
+        "text": "Disable the work_notes field entirely."
+      },
+      {
+        "id": "C",
+        "text": "Write a single read ACL on sys_user."
+      },
+      {
+        "id": "D",
+        "text": "Set the work_notes field to mandatory."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Table ACLs gate the resource; field ACLs gate specific columns within that resource. Layering both is exactly how to grant broad read but tighten visibility on sensitive columns.",
+    "distractor_notes": {
+      "B": "Disabling the field breaks every workflow that uses it.",
+      "C": "sys_user is the wrong table — this is about incident access.",
+      "D": "Mandatory affects saves, not reads."
+    },
+    "references": [
+      {
+        "title": "Contextual security",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/administer/contextual-security/concept/contextual-security.html"
+      }
+    ],
+    "tags": [
+      "acl",
+      "field-acl",
+      "row-condition"
+    ]
+  },
+  {
+    "id": "csa-dbs-020",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "ACL Evaluation",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which statement about ACL evaluation order is most accurate?",
+    "options": [
+      {
+        "id": "A",
+        "text": "More specific ACL rules (e.g., table.field) are evaluated before more general ones (e.g., table) for the same operation."
+      },
+      {
+        "id": "B",
+        "text": "The platform evaluates ACL rules in random order each time."
+      },
+      {
+        "id": "C",
+        "text": "Older ACLs always override newer ones."
+      },
+      {
+        "id": "D",
+        "text": "Field ACLs always run after the user logs out."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The platform evaluates ACL rules from most specific to most general for a given operation. Field-level rules are evaluated alongside table-level rules; specificity governs the precedence within that scheme.",
+    "distractor_notes": {
+      "B": "Evaluation isn't random.",
+      "C": "Age isn't a factor in precedence.",
+      "D": "Logout has nothing to do with ACL evaluation."
+    },
+    "references": [
+      {
+        "title": "ACL rule processing",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/administer/contextual-security/reference/r_ACLRuleProcessing.html"
+      }
+    ],
+    "tags": [
+      "acl",
+      "evaluation"
+    ]
+  },
+  {
+    "id": "csa-dbs-021",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "ACL Creation",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An admin wants to allow only the assigned_to of an incident to write the resolution_notes field. Which ACL is the right shape?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A write ACL on incident.resolution_notes with a condition checking that the current user equals current.assigned_to (and the user has the appropriate role)."
+      },
+      {
+        "id": "B",
+        "text": "A new role named 'resolution_writer' assigned only at runtime."
+      },
+      {
+        "id": "C",
+        "text": "A UI policy that hides the field for everyone."
+      },
+      {
+        "id": "D",
+        "text": "A scheduled job that scans for unauthorized resolution notes."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Field ACL + row-context condition is exactly the pattern: write on incident.resolution_notes, gated by the current user matching assigned_to. Server-side, auditable, enforced for every interface.",
+    "distractor_notes": {
+      "B": "Issuing a one-off role at runtime isn't supported the way described.",
+      "C": "Hiding the field for everyone defeats the use case.",
+      "D": "After-the-fact scanning isn't enforcement."
+    },
+    "references": [
+      {
+        "title": "Create an ACL rule",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/administer/contextual-security/task/t_CreateAnACLRule.html"
+      }
+    ],
+    "tags": [
+      "acl",
+      "field",
+      "row-context"
+    ]
+  },
+  {
+    "id": "csa-dbs-022",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "ACLs",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which statement describes how ACL roles are combined when multiple are listed?",
+    "options": [
+      {
+        "id": "A",
+        "text": "If multiple roles are listed on an ACL, the user must have at least one of them (OR semantics)."
+      },
+      {
+        "id": "B",
+        "text": "If multiple roles are listed, the user must have all of them (AND semantics)."
+      },
+      {
+        "id": "C",
+        "text": "Listing multiple roles is unsupported."
+      },
+      {
+        "id": "D",
+        "text": "Roles are ignored if a script is present."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Multiple roles on an ACL are evaluated with OR semantics: the user passes the role check if they hold any one of them. AND-style requirements are typically composed via condition or script.",
+    "distractor_notes": {
+      "B": "ACLs use OR for the role list.",
+      "C": "Multiple roles are supported.",
+      "D": "Script runs in addition to roles, not instead of them."
+    },
+    "references": [
+      {
+        "title": "Access control rules",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/administer/contextual-security/concept/access-control-rules.html"
+      }
+    ],
+    "tags": [
+      "acl",
+      "roles"
+    ]
+  },
+  {
+    "id": "csa-dbs-023",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "Inherited ACLs",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which statement best describes ACL inheritance when one table extends another?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Child tables inherit applicable ACLs from their parent, and table/field ACLs on the child can additionally restrict or augment access."
+      },
+      {
+        "id": "B",
+        "text": "Child tables ignore parent ACLs entirely."
+      },
+      {
+        "id": "C",
+        "text": "Parent tables inherit ACLs from their children."
+      },
+      {
+        "id": "D",
+        "text": "ACLs apply only to the table they're defined on with no inheritance whatsoever."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Child tables inherit parent ACLs. ACLs defined on the child layer on top — that's how a Task ACL applies to Incident, with Incident-specific ACLs available to refine.",
+    "distractor_notes": {
+      "B": "Children don't ignore parent ACLs.",
+      "C": "Inheritance flows from parent to child, not the reverse.",
+      "D": "Inheritance is real."
+    },
+    "references": [
+      {
+        "title": "ACL rule processing",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/administer/contextual-security/reference/r_ACLRuleProcessing.html"
+      }
+    ],
+    "tags": [
+      "acl",
+      "inheritance"
+    ]
+  },
+  {
+    "id": "csa-dbs-024",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "ACLs",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A user reports they can't update an incident even though they're in the right group. The admin checks and sees an applicable ACL with a condition + role + script. What is the correct mental model for whether the user is allowed?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The user must satisfy all three checks (role, condition, script) for that ACL to grant the operation."
+      },
+      {
+        "id": "B",
+        "text": "Just having the role is enough — condition and script are advisory."
+      },
+      {
+        "id": "C",
+        "text": "Just passing the script is enough — role and condition don't matter."
+      },
+      {
+        "id": "D",
+        "text": "Just matching the condition is enough — role and script don't matter."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "An ACL grants when all three checks pass: the user has one of the listed roles AND the condition is true AND the script returns true. Any of the three failing means the ACL doesn't grant.",
+    "distractor_notes": {
+      "B": "Conditions and scripts are not advisory.",
+      "C": "Script alone isn't sufficient.",
+      "D": "Condition alone isn't sufficient."
+    },
+    "references": [
+      {
+        "title": "Access control rules",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/administer/contextual-security/concept/access-control-rules.html"
+      }
+    ],
+    "tags": [
+      "acl",
+      "evaluation",
+      "debugging"
+    ]
+  },
+  {
+    "id": "csa-dbs-025",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "Elevated Privilege",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Why does the platform require an admin to 'elevate roles' before editing certain sensitive security records like ACLs?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Elevated privilege (security_admin) is required for editing high-impact security configuration; admin alone is not sufficient, by design."
+      },
+      {
+        "id": "B",
+        "text": "Because admins forget the difference between roles and groups."
+      },
+      {
+        "id": "C",
+        "text": "Because the platform encrypts ACLs and decrypting them requires a fee."
+      },
+      {
+        "id": "D",
+        "text": "Because ACL edits are made on a separate physical server."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Editing the most sensitive security config (ACLs, certain system properties, etc.) requires the security_admin role and an explicit elevation step. It's a deliberate friction to prevent accidental sweeping changes.",
+    "distractor_notes": {
+      "B": "Elevation isn't about memory.",
+      "C": "There's no encryption fee.",
+      "D": "It's not a physical server distinction."
+    },
+    "references": [
+      {
+        "title": "Contextual security",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/administer/contextual-security/concept/contextual-security.html"
+      }
+    ],
+    "tags": [
+      "security_admin",
+      "elevation",
+      "acl"
+    ]
+  },
+  {
+    "id": "csa-dbs-026",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "ACL Debugging",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An admin wants to see why a specific user is denied an operation. Which platform feature gives a step-by-step trace of ACL evaluation?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Enabling 'Security Debug' (ACL debug) to trace ACL rule evaluation and see which rule decided the outcome."
+      },
+      {
+        "id": "B",
+        "text": "Reading the user's browser DevTools console."
+      },
+      {
+        "id": "C",
+        "text": "Reading the favicon.svg."
+      },
+      {
+        "id": "D",
+        "text": "Running a Performance Analytics indicator."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Security Debug surfaces the per-rule pass/fail decisions during ACL evaluation so admins can see exactly which rule allowed or denied a given access — invaluable when something's wrong.",
+    "distractor_notes": {
+      "B": "DevTools doesn't see server-side ACL evaluation.",
+      "C": "Favicon is irrelevant.",
+      "D": "PA tracks KPIs, not ACL evaluation."
+    },
+    "references": [
+      {
+        "title": "ACL rule processing",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/administer/contextual-security/reference/r_ACLRuleProcessing.html"
+      }
+    ],
+    "tags": [
+      "acl",
+      "security-debug"
+    ]
+  },
+  {
+    "id": "csa-dbs-027",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "Default Deny",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the platform's default behavior when no ACL grants a user the requested operation?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Deny — if no ACL grants access, access is denied. ACLs are permit-based."
+      },
+      {
+        "id": "B",
+        "text": "Allow — if no ACL is defined, the platform allows everything by default."
+      },
+      {
+        "id": "C",
+        "text": "Random — the platform flips a coin."
+      },
+      {
+        "id": "D",
+        "text": "Always deny, even if an ACL does grant access."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "ACLs are permit-based. If no rule grants the operation, the platform denies. That's how the security model defaults to 'safe' — admins must intentionally grant.",
+    "distractor_notes": {
+      "B": "Default-allow would be terrible security.",
+      "C": "Not random.",
+      "D": "Granting ACLs do grant access — the system isn't a deny-only model."
+    },
+    "references": [
+      {
+        "title": "Access control rules",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/administer/contextual-security/concept/access-control-rules.html"
+      }
+    ],
+    "tags": [
+      "acl",
+      "default-deny"
+    ]
+  },
+  {
+    "id": "csa-dbs-028",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "ACLs and References",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "An ACL restricts read on sys_user. Reference fields elsewhere that point at sys_user show the display value as blank for some users. What is the most likely cause?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The reading user lacks read access on sys_user (or the specific user record), so the platform can't show the display value."
+      },
+      {
+        "id": "B",
+        "text": "The browser cache is stale."
+      },
+      {
+        "id": "C",
+        "text": "The sys_id has been deleted."
+      },
+      {
+        "id": "D",
+        "text": "The instance is in read-only mode."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Reference rendering depends on the user being allowed to read the target record. If the user can't read sys_user (or that specific row), the platform displays a blank/restricted value rather than leak data.",
+    "distractor_notes": {
+      "B": "Browser cache wouldn't blank only some references.",
+      "C": "Deleted sys_ids show as broken references, not blanks.",
+      "D": "Read-only mode affects writes."
+    },
+    "references": [
+      {
+        "title": "Access control rules",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/administer/contextual-security/concept/access-control-rules.html"
+      }
+    ],
+    "tags": [
+      "acl",
+      "reference",
+      "display-value"
+    ]
+  },
+  {
+    "id": "csa-dbs-029",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "Wildcard ACLs",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What does a wildcard ACL like incident.* cover?",
+    "options": [
+      {
+        "id": "A",
+        "text": "All fields on the incident table for the specified operation."
+      },
+      {
+        "id": "B",
+        "text": "Only deleted records on incident."
+      },
+      {
+        "id": "C",
+        "text": "Only the form view of incident."
+      },
+      {
+        "id": "D",
+        "text": "Only attachments to incident."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Wildcard field ACLs (table.*) target all fields on that table for the operation. They're a useful baseline that field-specific ACLs can refine.",
+    "distractor_notes": {
+      "B": "Deletion is a separate operation.",
+      "C": "Forms aren't ACL targets per se.",
+      "D": "Attachments have their own ACLs."
+    },
+    "references": [
+      {
+        "title": "Access control rules",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/administer/contextual-security/concept/access-control-rules.html"
+      }
+    ],
+    "tags": [
+      "acl",
+      "wildcard",
+      "field"
+    ]
+  },
+  {
+    "id": "csa-dbs-030",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "ACL Performance",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A poorly written script in an ACL is slowing down list rendering on the incident table. What's the most appropriate response?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Refactor the ACL script to avoid heavy queries inside the per-record evaluation, prefer indexed conditions, and lean on roles/conditions instead of script where possible."
+      },
+      {
+        "id": "B",
+        "text": "Disable all ACLs on the table."
+      },
+      {
+        "id": "C",
+        "text": "Hard-delete the slow records."
+      },
+      {
+        "id": "D",
+        "text": "Move the user to a different group."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "ACL scripts run per record per evaluation. Reducing work inside the script, leaning on indexed conditions, and using roles where they suffice are the standard performance fixes.",
+    "distractor_notes": {
+      "B": "Disabling ACLs breaks the security model.",
+      "C": "Deleting data doesn't fix the rule.",
+      "D": "Moving the user doesn't address the script."
+    },
+    "references": [
+      {
+        "title": "Access control rules",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/administer/contextual-security/concept/access-control-rules.html"
+      }
+    ],
+    "tags": [
+      "acl",
+      "performance"
+    ]
+  },
+  {
+    "id": "csa-dbs-031",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "Data Policy",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is a Data Policy in the Now Platform?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A rule that enforces conditions on a record (e.g., mandatory, read-only) at the data layer, regardless of how the record is updated — form, API, import set, script."
+      },
+      {
+        "id": "B",
+        "text": "A client-side script that decorates forms."
+      },
+      {
+        "id": "C",
+        "text": "A UI policy that's executed only at midnight."
+      },
+      {
+        "id": "D",
+        "text": "An ACL that restricts access by IP address."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Data Policies enforce conditions at the database/data layer. Unlike UI Policies (which only affect the form), Data Policies apply across all write paths — API, import sets, scripts, integrations.",
+    "distractor_notes": {
+      "B": "Client scripts run in the browser. Data Policies run server-side and apply regardless of UI.",
+      "C": "There's no midnight-only UI policy.",
+      "D": "ACLs and Data Policies are different mechanisms."
+    },
+    "references": [
+      {
+        "title": "Data Policy",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/form-administration/concept/c_DataPolicy.html"
+      }
+    ],
+    "tags": [
+      "data-policy",
+      "enforcement"
+    ]
+  },
+  {
+    "id": "csa-dbs-032",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "Data Policy vs UI Policy",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A field must be mandatory regardless of whether the record is created through the form, the REST API, an import set, or a flow. Which mechanism is the right fit?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A Data Policy with the field marked Mandatory."
+      },
+      {
+        "id": "B",
+        "text": "A UI Policy with the field marked Mandatory."
+      },
+      {
+        "id": "C",
+        "text": "A client script with g_form.setMandatory."
+      },
+      {
+        "id": "D",
+        "text": "A custom CSS rule."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "UI Policy enforces on the form only. Data Policy enforces across all write paths because it runs at the data layer. If 'every path' is the requirement, Data Policy is the answer.",
+    "distractor_notes": {
+      "B": "UI Policies only see the form context.",
+      "C": "g_form runs in the browser; API/import set imports never call it.",
+      "D": "CSS hides things visually; it doesn't enforce data rules."
+    },
+    "references": [
+      {
+        "title": "Data Policy",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/form-administration/concept/c_DataPolicy.html"
+      }
+    ],
+    "tags": [
+      "data-policy",
+      "ui-policy",
+      "enforcement"
+    ]
+  },
+  {
+    "id": "csa-dbs-033",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "Data Policy",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which of these statements is true about converting a Data Policy to a UI Policy (or vice versa)?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The platform allows conversion in some cases, but each mechanism has a different enforcement scope; conversion isn't always exactly equivalent."
+      },
+      {
+        "id": "B",
+        "text": "Conversion is impossible."
+      },
+      {
+        "id": "C",
+        "text": "Conversion always preserves identical behavior in every context."
+      },
+      {
+        "id": "D",
+        "text": "Conversion requires editing the favicon.svg."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "There's an action to translate between Data Policy and UI Policy where it makes sense, but the two enforce in different contexts. Going from UI to Data extends enforcement; going from Data to UI narrows it.",
+    "distractor_notes": {
+      "B": "It is possible.",
+      "C": "Behavior is not exactly identical because the scopes differ.",
+      "D": "Favicon is unrelated."
+    },
+    "references": [
+      {
+        "title": "Data Policy",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/form-administration/concept/c_DataPolicy.html"
+      }
+    ],
+    "tags": [
+      "data-policy",
+      "ui-policy"
+    ]
+  },
+  {
+    "id": "csa-dbs-034",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "Audit Tables",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What does Field Auditing on a table do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Records changes to designated fields (old value, new value, who, when) in the audit history so admins can see exactly how a record evolved."
+      },
+      {
+        "id": "B",
+        "text": "Sends an email to the user whenever a field is read."
+      },
+      {
+        "id": "C",
+        "text": "Encrypts the field at rest."
+      },
+      {
+        "id": "D",
+        "text": "Locks the field permanently after one write."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Field auditing captures before/after values, the user, and the timestamp for every change to audited fields. The audit history is what powers the Activity Log's field-change entries.",
+    "distractor_notes": {
+      "B": "Audit captures changes (writes), not reads.",
+      "C": "Encryption is a separate feature.",
+      "D": "Auditing observes; it doesn't lock."
+    },
+    "references": [
+      {
+        "title": "Audit tables",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/general/concept/c_AuditTables.html"
+      }
+    ],
+    "tags": [
+      "audit",
+      "history"
+    ]
+  },
+  {
+    "id": "csa-dbs-035",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "Audit Tables",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An admin needs to know who changed the assigned_to on an incident yesterday. Where does this information live?",
+    "options": [
+      {
+        "id": "A",
+        "text": "In the audit history for that record/field — surfaced in the Activity Log and queryable on the audit tables."
+      },
+      {
+        "id": "B",
+        "text": "In the user's browser localStorage."
+      },
+      {
+        "id": "C",
+        "text": "In the favicon.svg metadata."
+      },
+      {
+        "id": "D",
+        "text": "Only by restoring a database backup."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Audited field changes are stored in the audit tables and shown in the Activity Log. Filter for that record + assigned_to field to see the prior value, new value, who made the change, and when.",
+    "distractor_notes": {
+      "B": "Browser storage is per-user UI state, not change history.",
+      "C": "Favicon is unrelated.",
+      "D": "You don't need a backup — the audit log captures it."
+    },
+    "references": [
+      {
+        "title": "Audit tables",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/general/concept/c_AuditTables.html"
+      }
+    ],
+    "tags": [
+      "audit",
+      "incident",
+      "activity-log"
+    ]
+  },
+  {
+    "id": "csa-dbs-036",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "Field Normalization",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is Field Normalization used for?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Standardizing values stored in free-text fields (e.g., mapping 'Win10', 'Windows 10', 'win 10' to a canonical value) so reporting and automation work consistently."
+      },
+      {
+        "id": "B",
+        "text": "Sorting fields alphabetically on a form."
+      },
+      {
+        "id": "C",
+        "text": "Compressing attachment data."
+      },
+      {
+        "id": "D",
+        "text": "A type of ACL on field reads."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Field Normalization collapses variant spellings of the same thing into a canonical normalized value, which keeps reports and automation honest. It's especially useful on data imported from external systems.",
+    "distractor_notes": {
+      "B": "Form sorting isn't normalization.",
+      "C": "Attachment compression isn't normalization.",
+      "D": "Reading isn't normalization."
+    },
+    "references": [
+      {
+        "title": "Field normalization",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/field-administration/concept/c_FieldNormalization.html"
+      }
+    ],
+    "tags": [
+      "field-normalization",
+      "data-quality"
+    ]
+  },
+  {
+    "id": "csa-dbs-037",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "Encryption Support",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which statement most accurately describes the platform's field-level encryption capability?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Designated fields can be encrypted at rest so their values are stored as ciphertext and only readable by users with access to the appropriate encryption context/keys."
+      },
+      {
+        "id": "B",
+        "text": "All fields on every table are encrypted at the application layer by default — no configuration is required."
+      },
+      {
+        "id": "C",
+        "text": "Encryption is only available on attachments, never on fields."
+      },
+      {
+        "id": "D",
+        "text": "Encryption applies only to fields with type Choice."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Field-level encryption protects designated fields at rest. Only users with access to the appropriate encryption context can read the plaintext. It's how sensitive data like PII gets stored without giving the whole admin pool blanket access.",
+    "distractor_notes": {
+      "B": "Encryption is configured on chosen fields, not blanket-on by default.",
+      "C": "Field-level encryption supports fields, not just attachments.",
+      "D": "Encryption isn't tied to Choice type."
+    },
+    "references": [
+      {
+        "title": "Encryption support",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/administer/encryption/concept/c_EncryptionSupport.html"
+      }
+    ],
+    "tags": [
+      "encryption",
+      "field-encryption",
+      "security"
+    ]
+  },
+  {
+    "id": "csa-dbs-038",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "Audit Tables",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which statement is true about which fields are audited?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Auditing is controlled per table (and can be tuned per field), so admins can opt into auditing only the fields they care about."
+      },
+      {
+        "id": "B",
+        "text": "Every field on every table is audited and there's no way to opt out."
+      },
+      {
+        "id": "C",
+        "text": "Auditing is only available for fields named 'status'."
+      },
+      {
+        "id": "D",
+        "text": "Auditing only stores changes made through the REST API."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Auditing is configurable at the table/field level. Admins decide which fields are valuable to track, which keeps history relevant and audit volume reasonable.",
+    "distractor_notes": {
+      "B": "Universal mandatory auditing isn't the model.",
+      "C": "Auditing has no name-based restriction.",
+      "D": "All write paths produce audit entries when auditing is enabled."
+    },
+    "references": [
+      {
+        "title": "Audit tables",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/general/concept/c_AuditTables.html"
+      }
+    ],
+    "tags": [
+      "audit",
+      "configuration"
+    ]
+  },
+  {
+    "id": "csa-dbs-039",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "Data Policy",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An admin needs to ensure a field is read-only on every existing record (regardless of source) but writable when the record is being created. Which capability fits best?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A Data Policy on the field set to Read-only when the record is not new (e.g., when sys_id is not empty), enforcing across all paths."
+      },
+      {
+        "id": "B",
+        "text": "A UI policy that's hidden on update."
+      },
+      {
+        "id": "C",
+        "text": "A client script that mutes the keyboard."
+      },
+      {
+        "id": "D",
+        "text": "An ACL that disables write to the entire table."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Data Policy can scope its read-only enforcement to records that aren't new, applying across form/API/import. UI Policy would only cover the form.",
+    "distractor_notes": {
+      "B": "UI Policy enforcement stops at the form.",
+      "C": "Keyboard muting isn't a thing.",
+      "D": "Table-wide write deny is way too broad."
+    },
+    "references": [
+      {
+        "title": "Data Policy",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/form-administration/concept/c_DataPolicy.html"
+      }
+    ],
+    "tags": [
+      "data-policy",
+      "read-only"
+    ]
+  },
+  {
+    "id": "csa-dbs-040",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "Field Normalization",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "Reports on incident.category show 35 distinct values, but business stakeholders insist there are only 7 real categories. What's a reasonable first response?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Configure Field Normalization on incident.category to map variant values to a canonical set and clean up reports going forward."
+      },
+      {
+        "id": "B",
+        "text": "Delete every incident not matching the 7 categories."
+      },
+      {
+        "id": "C",
+        "text": "Rename the field."
+      },
+      {
+        "id": "D",
+        "text": "Disable reporting on the table."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Normalization is built for exactly this. Map the 35 noisy values to the 7 canonical ones; reports and automation immediately align with the business model.",
+    "distractor_notes": {
+      "B": "Deleting incidents loses history.",
+      "C": "Renaming the field doesn't fix the variants.",
+      "D": "Disabling reporting hides the problem."
+    },
+    "references": [
+      {
+        "title": "Field normalization",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/field-administration/concept/c_FieldNormalization.html"
+      }
+    ],
+    "tags": [
+      "field-normalization",
+      "data-quality",
+      "reporting"
+    ]
+  },
+  {
+    "id": "csa-dbs-041",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "Audit Trail",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which kind of change is NOT typically captured in field audit history?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A user opening (reading) the record without changing any field."
+      },
+      {
+        "id": "B",
+        "text": "A field being updated from value A to value B."
+      },
+      {
+        "id": "C",
+        "text": "A field being cleared."
+      },
+      {
+        "id": "D",
+        "text": "A field being set on initial record creation."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Field audit history tracks writes — changes to values. Pure reads of a record don't generate an audit entry on field history (that's a different concept entirely).",
+    "distractor_notes": {
+      "B": "Field updates are captured.",
+      "C": "Field clears are still writes; they're captured.",
+      "D": "Initial inserts populate field history with the first value."
+    },
+    "references": [
+      {
+        "title": "Audit tables",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/general/concept/c_AuditTables.html"
+      }
+    ],
+    "tags": [
+      "audit",
+      "reads",
+      "writes"
+    ]
+  },
+  {
+    "id": "csa-dbs-042",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "Encryption",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An admin needs to ensure only a specific group can read the SSN field on Employee records, even other admins should not see plaintext SSNs. Which approach is best?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Configure field-level encryption on the SSN field with an encryption context that only the authorized group can use."
+      },
+      {
+        "id": "B",
+        "text": "Add a Business Rule that emails the admin whenever the SSN is read."
+      },
+      {
+        "id": "C",
+        "text": "Hide the field with a UI policy."
+      },
+      {
+        "id": "D",
+        "text": "Move the SSN to a KB article visible only to the group."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Field-level encryption bound to an encryption context is exactly the pattern. Even users with broad admin can't decrypt without access to the context, which is the point of separating duties on sensitive fields.",
+    "distractor_notes": {
+      "B": "Notifications observe access; they don't prevent it.",
+      "C": "UI hiding doesn't stop API or scripts from reading.",
+      "D": "Storing SSNs in KB articles is not the secure design."
+    },
+    "references": [
+      {
+        "title": "Encryption support",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/administer/encryption/concept/c_EncryptionSupport.html"
+      }
+    ],
+    "tags": [
+      "encryption",
+      "pii",
+      "context"
+    ]
+  },
+  {
+    "id": "csa-dbs-043",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "Data Policy",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Where do Data Policies typically run relative to the database operation?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Server-side, during the insert/update operation, evaluating conditions before the write is persisted."
+      },
+      {
+        "id": "B",
+        "text": "In the user's browser only."
+      },
+      {
+        "id": "C",
+        "text": "In a separate physical data center."
+      },
+      {
+        "id": "D",
+        "text": "Only at midnight as a batch job."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Data Policies run server-side, in the same operation as the write. If a condition fails, the write fails. That's why they're effective across every write path.",
+    "distractor_notes": {
+      "B": "Client-side is what UI Policy does.",
+      "C": "Not a physical data center matter.",
+      "D": "Not a batch job."
+    },
+    "references": [
+      {
+        "title": "Data Policy",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/form-administration/concept/c_DataPolicy.html"
+      }
+    ],
+    "tags": [
+      "data-policy",
+      "server-side"
+    ]
+  },
+  {
+    "id": "csa-dbs-044",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "Audit Storage",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which statement about audit table growth is most accurate?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Audit tables grow with the number of audited field changes, so admins should consider which fields are worth auditing rather than turning on auditing for every field."
+      },
+      {
+        "id": "B",
+        "text": "Audit tables stay the same size regardless of activity."
+      },
+      {
+        "id": "C",
+        "text": "Audit tables shrink automatically when an incident is closed."
+      },
+      {
+        "id": "D",
+        "text": "Audit tables are stored in browser localStorage."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Audit data accumulates. Choosing which fields to audit is a real design decision — the most useful audit data without ballooning storage and slowing reports.",
+    "distractor_notes": {
+      "B": "Audit tables grow with activity.",
+      "C": "Incident closure doesn't truncate audit data.",
+      "D": "Audit is server-side, not in browser storage."
+    },
+    "references": [
+      {
+        "title": "Audit tables",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/general/concept/c_AuditTables.html"
+      }
+    ],
+    "tags": [
+      "audit",
+      "storage",
+      "design"
+    ]
+  },
+  {
+    "id": "csa-dbs-045",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "Data Policy",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "After enabling a new Data Policy that makes a field mandatory, an overnight integration that previously created records starts failing. What's the appropriate response?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Inspect the integration payload — the field that's now mandatory is missing — and either update the integration to supply the field or refine the Data Policy's condition to exempt the integration use case."
+      },
+      {
+        "id": "B",
+        "text": "Disable all Data Policies on the instance."
+      },
+      {
+        "id": "C",
+        "text": "Hide the field with a UI policy."
+      },
+      {
+        "id": "D",
+        "text": "Ignore the failures and hope they stop."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Data Policy is doing its job — enforcing across every write path. The fix is either supply the field in the integration or adjust the policy's condition so the integration doesn't trigger it.",
+    "distractor_notes": {
+      "B": "Disabling all Data Policies removes a lot of legitimate guardrails.",
+      "C": "Hiding fields doesn't affect API enforcement.",
+      "D": "Ignoring failures is not a strategy."
+    },
+    "references": [
+      {
+        "title": "Data Policy",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/form-administration/concept/c_DataPolicy.html"
+      }
+    ],
+    "tags": [
+      "data-policy",
+      "integration",
+      "troubleshooting"
+    ]
+  },
+  {
+    "id": "csa-dbs-046",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "Authentication",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is authentication in the context of a ServiceNow instance?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The process of verifying that a user (or system) is who they claim to be, before authorization decides what they can do."
+      },
+      {
+        "id": "B",
+        "text": "The process of granting roles to a user."
+      },
+      {
+        "id": "C",
+        "text": "The process of encrypting attachments at rest."
+      },
+      {
+        "id": "D",
+        "text": "The process of capturing field-change audit history."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Authentication verifies identity (who you are). Authorization comes after — once identity is established, ACLs and roles decide what you can do.",
+    "distractor_notes": {
+      "B": "Role assignment is authorization-side configuration.",
+      "C": "Encryption is a separate platform feature.",
+      "D": "Audit history is observation, not authentication."
+    },
+    "references": [
+      {
+        "title": "Authentication overview",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/integrate/authentication/concept/c_AuthenticationOverview.html"
+      }
+    ],
+    "tags": [
+      "authentication",
+      "identity"
+    ]
+  },
+  {
+    "id": "csa-dbs-047",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "SSO / SAML",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is SAML 2.0 used for?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A standard for single sign-on where an Identity Provider (IdP) issues an assertion that ServiceNow (the Service Provider) trusts to authenticate users."
+      },
+      {
+        "id": "B",
+        "text": "A protocol for sending email attachments."
+      },
+      {
+        "id": "C",
+        "text": "A type of inbound web service for creating records."
+      },
+      {
+        "id": "D",
+        "text": "A query language for tables."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "SAML 2.0 is an SSO standard. The user authenticates at the IdP, which issues an assertion ServiceNow trusts as proof of identity. The user never types a password into the instance directly.",
+    "distractor_notes": {
+      "B": "Email isn't SAML.",
+      "C": "Inbound REST/SOAP creates records.",
+      "D": "Querying uses GlideRecord/REST APIs, not SAML."
+    },
+    "references": [
+      {
+        "title": "SAML 2.0 web SSO",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/integrate/saml/concept/c_SAML20Web.html"
+      }
+    ],
+    "tags": [
+      "sso",
+      "saml",
+      "identity-provider"
+    ]
+  },
+  {
+    "id": "csa-dbs-048",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "MFA",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is Multi-Factor Authentication (MFA)?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Requiring at least two distinct authentication factors (e.g., something you know + something you have) before granting access."
+      },
+      {
+        "id": "B",
+        "text": "Requiring the user to log in twice in a row with the same password."
+      },
+      {
+        "id": "C",
+        "text": "Requiring two browsers to be open."
+      },
+      {
+        "id": "D",
+        "text": "Requiring the user to memorize multiple passwords."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "MFA combines factors from different categories (knowledge, possession, inherence). Even if one factor is stolen, the attacker still needs the other to authenticate.",
+    "distractor_notes": {
+      "B": "Same factor twice isn't multi-factor.",
+      "C": "Multiple browsers aren't a factor.",
+      "D": "Multiple passwords is still single-factor (knowledge)."
+    },
+    "references": [
+      {
+        "title": "Multi-factor authentication",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/integrate/authentication/concept/c_MultifactorAuthentication.html"
+      }
+    ],
+    "tags": [
+      "mfa",
+      "authentication"
+    ]
+  },
+  {
+    "id": "csa-dbs-049",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "MFA",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A new admin is enabling MFA for admins on a Yokohama instance. Which statement is most accurate about the default in Yokohama for local logins?",
+    "options": [
+      {
+        "id": "A",
+        "text": "In Yokohama, MFA is enforced by default for local logins, with configurable enrollment windows and exemptions."
+      },
+      {
+        "id": "B",
+        "text": "MFA is unavailable on Yokohama and must be added by a third-party plugin."
+      },
+      {
+        "id": "C",
+        "text": "MFA can only be enabled through SAML."
+      },
+      {
+        "id": "D",
+        "text": "MFA only protects integration accounts, never interactive users."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Yokohama enforces MFA on local logins by default. Admins can adjust enrollment windows and exempt specific users or groups when needed.",
+    "distractor_notes": {
+      "B": "It's not a third-party plugin — MFA is platform-native.",
+      "C": "MFA isn't limited to SAML.",
+      "D": "MFA covers interactive users, not just integration accounts."
+    },
+    "references": [
+      {
+        "title": "Multi-factor authentication",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/integrate/authentication/concept/c_MultifactorAuthentication.html"
+      }
+    ],
+    "tags": [
+      "mfa",
+      "yokohama",
+      "default"
+    ]
+  },
+  {
+    "id": "csa-dbs-050",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "SSO",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A company wants users to sign in to ServiceNow with their corporate identity (Okta/Azure AD). Which integration is the typical fit?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Configure SAML 2.0 between the instance (as Service Provider) and the corporate IdP, so authentication delegates to the IdP."
+      },
+      {
+        "id": "B",
+        "text": "Import every corporate user into sys_user with a separate password."
+      },
+      {
+        "id": "C",
+        "text": "Run a scheduled job that emails passwords daily."
+      },
+      {
+        "id": "D",
+        "text": "Disable authentication on the instance."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "SAML SSO is the canonical integration. ServiceNow trusts the IdP's assertion, so the user goes through corporate identity (with whatever MFA/policies the IdP enforces) and lands authenticated in the instance.",
+    "distractor_notes": {
+      "B": "Importing users with separate passwords means double identity stores.",
+      "C": "Emailing passwords is a security disaster.",
+      "D": "Disabling authentication means an open instance."
+    },
+    "references": [
+      {
+        "title": "SAML 2.0 web SSO",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/integrate/saml/concept/c_SAML20Web.html"
+      }
+    ],
+    "tags": [
+      "sso",
+      "saml",
+      "okta",
+      "azure-ad"
+    ]
+  },
+  {
+    "id": "csa-dbs-051",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "Password Reset",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the Password Reset application used for?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Letting users reset their own password through self-service verification (security questions, email, mobile, etc.) instead of contacting the service desk."
+      },
+      {
+        "id": "B",
+        "text": "Storing the user's password in plain text on the user profile."
+      },
+      {
+        "id": "C",
+        "text": "Resetting the instance's database admin password."
+      },
+      {
+        "id": "D",
+        "text": "Rotating SSL certificates."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Password Reset reduces service desk load by letting users verify themselves and reset on their own. Different verification methods are supported and can be combined.",
+    "distractor_notes": {
+      "B": "Passwords are never stored plain text.",
+      "C": "The platform doesn't expose database admin password ops to customers.",
+      "D": "Cert rotation is a different operation."
+    },
+    "references": [
+      {
+        "title": "Password reset",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/users-and-groups/concept/c_PasswordReset.html"
+      }
+    ],
+    "tags": [
+      "password-reset",
+      "self-service"
+    ]
+  },
+  {
+    "id": "csa-dbs-052",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "Authentication Modules",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which statement about multi-provider authentication is most accurate?",
+    "options": [
+      {
+        "id": "A",
+        "text": "An instance can be configured with multiple authentication methods (local, SAML, LDAP, OAuth/OIDC), with rules and order to choose between them."
+      },
+      {
+        "id": "B",
+        "text": "Once SAML is enabled, no other authentication method can be used on the instance."
+      },
+      {
+        "id": "C",
+        "text": "Multi-provider authentication requires a separate physical server."
+      },
+      {
+        "id": "D",
+        "text": "Only local authentication is supported in production."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Instances support multiple authentication methods (Multi-Provider SSO). Admins can offer SAML primary, local fallback for break-glass accounts, integration users via OAuth, and so on.",
+    "distractor_notes": {
+      "B": "Multiple providers can coexist by design.",
+      "C": "No physical server requirement.",
+      "D": "Production instances often use SSO + local fallback for emergencies."
+    },
+    "references": [
+      {
+        "title": "Authentication overview",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/integrate/authentication/concept/c_AuthenticationOverview.html"
+      }
+    ],
+    "tags": [
+      "authentication",
+      "multi-provider"
+    ]
+  },
+  {
+    "id": "csa-dbs-053",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "OAuth / OIDC",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is OAuth typically used for with a ServiceNow instance?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Granting integrations or applications delegated access to the instance on behalf of a user (or service account) using tokens instead of passwords."
+      },
+      {
+        "id": "B",
+        "text": "Storing user passwords as plain text on the user profile."
+      },
+      {
+        "id": "C",
+        "text": "Sending email notifications."
+      },
+      {
+        "id": "D",
+        "text": "Capturing field-change audit data."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "OAuth gives clients delegated access via short-lived tokens. It's how modern integrations authorize against the instance without storing user passwords or hand-rolling auth.",
+    "distractor_notes": {
+      "B": "OAuth doesn't store passwords plain text.",
+      "C": "OAuth isn't email.",
+      "D": "OAuth isn't auditing."
+    },
+    "references": [
+      {
+        "title": "Authentication overview",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/integrate/authentication/concept/c_AuthenticationOverview.html"
+      }
+    ],
+    "tags": [
+      "oauth",
+      "tokens",
+      "integrations"
+    ]
+  },
+  {
+    "id": "csa-dbs-054",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "Authentication",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A company has SAML SSO enforced for everyone. They also need a break-glass admin account that can log in if SAML is broken. What's the typical approach?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Keep a local-auth admin account excluded from SAML enforcement, secured with MFA, used only when SAML is unavailable."
+      },
+      {
+        "id": "B",
+        "text": "Disable SAML permanently."
+      },
+      {
+        "id": "C",
+        "text": "Email the admin password to the whole company in case of emergency."
+      },
+      {
+        "id": "D",
+        "text": "Store the admin password in a public KB article."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "A SAML-excluded local admin (sometimes called break-glass) is the standard pattern. Lock it down with strong MFA; use it only when the IdP path is unavailable.",
+    "distractor_notes": {
+      "B": "Disabling SAML permanently to handle an outage is overkill.",
+      "C": "Emailing admin passwords to the company is a security catastrophe.",
+      "D": "Public storage of admin credentials is unsafe by any standard."
+    },
+    "references": [
+      {
+        "title": "Authentication overview",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/integrate/authentication/concept/c_AuthenticationOverview.html"
+      }
+    ],
+    "tags": [
+      "saml",
+      "break-glass",
+      "resilience"
+    ]
+  },
+  {
+    "id": "csa-dbs-055",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "Password Policy",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which statement most accurately describes password policy on the platform?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Admins can configure password complexity, expiration, history, and reuse rules for local accounts via password policy settings."
+      },
+      {
+        "id": "B",
+        "text": "Password policy is hard-coded and cannot be configured."
+      },
+      {
+        "id": "C",
+        "text": "Password policy is enforced only on the day a user is created."
+      },
+      {
+        "id": "D",
+        "text": "Password policy applies only to SSO users."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Password policy controls complexity, expiration, history, and similar rules for local accounts. SSO users authenticate through the IdP, which enforces its own policy.",
+    "distractor_notes": {
+      "B": "Policy is configurable.",
+      "C": "Policy applies on every password set/change.",
+      "D": "Policy is for local auth; SSO users follow the IdP's policy."
+    },
+    "references": [
+      {
+        "title": "Authentication overview",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/integrate/authentication/concept/c_AuthenticationOverview.html"
+      }
+    ],
+    "tags": [
+      "password-policy",
+      "local-auth"
+    ]
+  },
+  {
+    "id": "csa-dbs-056",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "Session",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which statement about session management is most accurate?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The platform manages sessions with configurable timeouts and can invalidate them on logout, role change, password reset, or admin action."
+      },
+      {
+        "id": "B",
+        "text": "Sessions last forever until the browser is uninstalled."
+      },
+      {
+        "id": "C",
+        "text": "Sessions are stored in the user's keyboard buffer."
+      },
+      {
+        "id": "D",
+        "text": "Sessions only exist for users with the admin role."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Sessions have configurable lifetimes and the platform invalidates them on logout, security-relevant events, or admin action. That control is what limits the blast radius if a session is stolen.",
+    "distractor_notes": {
+      "B": "Sessions don't persist forever.",
+      "C": "Keyboards aren't session stores.",
+      "D": "Every authenticated user has a session."
+    },
+    "references": [
+      {
+        "title": "Authentication overview",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/integrate/authentication/concept/c_AuthenticationOverview.html"
+      }
+    ],
+    "tags": [
+      "session",
+      "timeout"
+    ]
+  },
+  {
+    "id": "csa-dbs-057",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "MFA",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A team wants MFA enabled but a service-account user that runs as an integration shouldn't be prompted. What's the supported approach?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Configure the MFA policy with an exemption for that specific user or for a service-account group, and limit the account's allowed login methods (e.g., API tokens only)."
+      },
+      {
+        "id": "B",
+        "text": "Disable MFA on the entire instance."
+      },
+      {
+        "id": "C",
+        "text": "Email the service account's MFA codes to a shared mailbox."
+      },
+      {
+        "id": "D",
+        "text": "Set the service account's password to 'password'."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Service accounts shouldn't be prompted interactively for MFA. The right pattern is to scope the MFA policy to exempt that account and restrict the account's allowed login methods to token-based.",
+    "distractor_notes": {
+      "B": "Disabling MFA org-wide loses protection for interactive users.",
+      "C": "Sharing MFA codes by mailbox defeats MFA's protection.",
+      "D": "'password' as a password is comically insecure."
+    },
+    "references": [
+      {
+        "title": "Multi-factor authentication",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/integrate/authentication/concept/c_MultifactorAuthentication.html"
+      }
+    ],
+    "tags": [
+      "mfa",
+      "service-account",
+      "exemption"
+    ]
+  },
+  {
+    "id": "csa-dbs-058",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "Login Audit",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Where can an admin see which users have logged in (or failed to log in) recently?",
+    "options": [
+      {
+        "id": "A",
+        "text": "On the login audit / sys_user_session and related security tables that record successful and failed login events."
+      },
+      {
+        "id": "B",
+        "text": "On the user's browser bookmarks bar."
+      },
+      {
+        "id": "C",
+        "text": "In the favicon.svg."
+      },
+      {
+        "id": "D",
+        "text": "Only by reading server-side raw HTTP logs."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Login events live on the platform's session/login audit tables. Admins can query them, build reports, and trigger alerts.",
+    "distractor_notes": {
+      "B": "Bookmarks aren't audit logs.",
+      "C": "Favicon is unrelated.",
+      "D": "The platform surfaces login data inside the instance."
+    },
+    "references": [
+      {
+        "title": "Authentication overview",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/integrate/authentication/concept/c_AuthenticationOverview.html"
+      }
+    ],
+    "tags": [
+      "audit",
+      "login",
+      "session"
+    ]
+  },
+  {
+    "id": "csa-dbs-059",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "Authentication",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A user reports that after enrolling in MFA, their integration script stopped working. What's the most likely cause and fix?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The script was authenticating as the user with basic auth and now MFA blocks that path; switch the script to OAuth/token-based authentication or to a dedicated service account exempt from interactive MFA."
+      },
+      {
+        "id": "B",
+        "text": "MFA broke the script's encryption of attachments."
+      },
+      {
+        "id": "C",
+        "text": "Reverse the user's role to fix the script."
+      },
+      {
+        "id": "D",
+        "text": "Re-import the user record."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Basic auth bound to a user account collides with MFA. The right fix is moving the integration to token-based auth (OAuth) and ideally using a dedicated service account — both standard practices anyway.",
+    "distractor_notes": {
+      "B": "MFA doesn't touch attachment encryption.",
+      "C": "Roles aren't the cause.",
+      "D": "Re-importing the user doesn't fix the auth model."
+    },
+    "references": [
+      {
+        "title": "Multi-factor authentication",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/integrate/authentication/concept/c_MultifactorAuthentication.html"
+      }
+    ],
+    "tags": [
+      "mfa",
+      "oauth",
+      "integration"
+    ]
+  },
+  {
+    "id": "csa-dbs-060",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "Instance Security Center",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the Instance Security Center?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A centralized dashboard that surfaces the security posture of the instance — configuration findings, hardening recommendations, and security-relevant events."
+      },
+      {
+        "id": "B",
+        "text": "A read-only catalog of every user's password."
+      },
+      {
+        "id": "C",
+        "text": "A scheduled job that emails the admin a daily horoscope."
+      },
+      {
+        "id": "D",
+        "text": "A standalone product unrelated to the instance."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Instance Security Center is the admin's one-stop view of instance hardening: findings, recommendations, and trends. It's where you go to see whether the instance is configured the way a secure ServiceNow instance should be.",
+    "distractor_notes": {
+      "B": "Passwords aren't viewable anywhere — they're hashed.",
+      "C": "ISC is a dashboard, not a daily email.",
+      "D": "It's part of the platform, not a standalone product."
+    },
+    "references": [
+      {
+        "title": "Instance Security Center",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/administer/security-center/concept/instance-security-center.html"
+      }
+    ],
+    "tags": [
+      "isc",
+      "security-baseline"
+    ]
+  },
+  {
+    "id": "csa-dbs-061",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "Security Configuration",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the role of security hardening properties on a ServiceNow instance?",
+    "options": [
+      {
+        "id": "A",
+        "text": "They configure platform-level safeguards (e.g., session timeouts, headers, content rules, password rules) that reduce the instance's exposure to common attacks."
+      },
+      {
+        "id": "B",
+        "text": "They control the screen color of the login page only."
+      },
+      {
+        "id": "C",
+        "text": "They define which browser extensions a user has installed."
+      },
+      {
+        "id": "D",
+        "text": "They are obsolete and only kept for backward compatibility."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Hardening properties tune platform behavior to reduce attack surface — things like session timeouts, response headers, password rules, plugin behaviors. They are the levers admins use to align with their organization's security posture.",
+    "distractor_notes": {
+      "B": "Hardening is more than cosmetic.",
+      "C": "The instance doesn't manage browser extensions.",
+      "D": "Hardening is current and actively used."
+    },
+    "references": [
+      {
+        "title": "Security configuration overview",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/administer/security-center/concept/security-configuration-overview.html"
+      }
+    ],
+    "tags": [
+      "hardening",
+      "security-properties"
+    ]
+  },
+  {
+    "id": "csa-dbs-062",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "Contextual Security",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which statement most accurately characterizes ServiceNow's security model overall?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Contextual security: identity (auth) + role + ACL evaluation + scope + record context together decide what a user can do."
+      },
+      {
+        "id": "B",
+        "text": "Only the admin role matters; everything else is decorative."
+      },
+      {
+        "id": "C",
+        "text": "Security is enforced solely by the browser."
+      },
+      {
+        "id": "D",
+        "text": "There is no security model — the instance is open to anyone."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The platform's security is contextual: who you are, what role you hold, what ACLs apply, which scope you're in, and what the specific record context says — all together decide each operation.",
+    "distractor_notes": {
+      "B": "Admin is one role among many, and many things shouldn't require admin.",
+      "C": "The server enforces security; the browser is a client.",
+      "D": "Authentication and ACLs gate everything."
+    },
+    "references": [
+      {
+        "title": "Contextual security",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/administer/security-center/concept/security-configuration-overview.html"
+      }
+    ],
+    "tags": [
+      "security-model",
+      "contextual"
+    ]
+  },
+  {
+    "id": "csa-dbs-063",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "Security Best Practice",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "An admin gets a request to give the new help desk team the admin role 'just to make their work easier.' What's the right response?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Decline. Grant the most specific roles needed for their work (e.g., itil) and refine permissions with groups and ACLs — never broadcast admin."
+      },
+      {
+        "id": "B",
+        "text": "Grant admin to everyone on the team; it's the fastest way to unblock them."
+      },
+      {
+        "id": "C",
+        "text": "Hide the admin role with a UI policy."
+      },
+      {
+        "id": "D",
+        "text": "Disable ACLs on the incident table."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Least privilege is the principle. The admin role is the platform super-role — it shouldn't be the way help desk gets day-to-day work done. itil + appropriate groups/ACLs gets the job done without handing over the platform.",
+    "distractor_notes": {
+      "B": "Mass admin grants create persistent privilege debt.",
+      "C": "Hiding admin in the UI doesn't remove the access.",
+      "D": "Disabling ACLs destroys the security model."
+    },
+    "references": [
+      {
+        "title": "Security configuration overview",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/administer/security-center/concept/security-configuration-overview.html"
+      }
+    ],
+    "tags": [
+      "least-privilege",
+      "admin",
+      "rbac"
+    ]
+  },
+  {
+    "id": "csa-dbs-064",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "Security Headers",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Why does the platform set response security headers like X-Frame-Options, X-Content-Type-Options, and Referrer-Policy?",
+    "options": [
+      {
+        "id": "A",
+        "text": "To reduce common web vulnerabilities such as clickjacking, MIME-sniffing, and leaking referrer data, in defense in depth with the rest of the security model."
+      },
+      {
+        "id": "B",
+        "text": "Because the browser refuses to load pages without them."
+      },
+      {
+        "id": "C",
+        "text": "Because they make the page render faster."
+      },
+      {
+        "id": "D",
+        "text": "Because they enable autoplay of media."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "These response headers are part of defense in depth — they protect users against entire classes of web attacks even when other defenses also apply.",
+    "distractor_notes": {
+      "B": "Browsers load pages without them; the headers add protection.",
+      "C": "Headers don't change rendering speed.",
+      "D": "They have nothing to do with autoplay."
+    },
+    "references": [
+      {
+        "title": "Security configuration overview",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/administer/security-center/concept/security-configuration-overview.html"
+      }
+    ],
+    "tags": [
+      "headers",
+      "defense-in-depth"
+    ]
+  },
+  {
+    "id": "csa-dbs-065",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "ACL Override Caution",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A junior admin sees that a single, broad ACL grant 'fixes' a stubborn access issue and wants to ship that as the fix. What's the right move?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Investigate the actual access requirement and grant the minimum permissions to satisfy it, instead of widening an ACL."
+      },
+      {
+        "id": "B",
+        "text": "Ship the broad ACL fast — security can be revisited later."
+      },
+      {
+        "id": "C",
+        "text": "Delete the ACL entirely."
+      },
+      {
+        "id": "D",
+        "text": "Email the change to the whole company."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Broad-fix ACLs leak access far beyond what was needed. The right response is to model the actual requirement (role + condition + script) and grant the minimum that satisfies it — even if it takes longer.",
+    "distractor_notes": {
+      "B": "'Security later' rarely happens.",
+      "C": "Deleting the ACL opens or breaks things further.",
+      "D": "Mass-email isn't relevant to the fix."
+    },
+    "references": [
+      {
+        "title": "Instance Security Center",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/administer/security-center/concept/instance-security-center.html"
+      }
+    ],
+    "tags": [
+      "least-privilege",
+      "acl",
+      "review"
+    ]
+  },
+  {
+    "id": "csa-dbs-066",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "Hardening Cadence",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A team rolls out a new instance. What's a sensible first-week security activity?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Open Instance Security Center, review findings, address high-severity hardening items first, document exceptions, and put recurring review on the calendar."
+      },
+      {
+        "id": "B",
+        "text": "Make every user an admin so day-to-day work isn't blocked."
+      },
+      {
+        "id": "C",
+        "text": "Turn off all ACLs until everything is configured."
+      },
+      {
+        "id": "D",
+        "text": "Disable HTTPS to speed up testing."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "ISC plus a documented review cadence is the textbook week-one security posture. Address the high-severity items first, document exceptions, schedule the next review — it's a repeatable, audit-friendly rhythm.",
+    "distractor_notes": {
+      "B": "Mass admin is the opposite of secure setup.",
+      "C": "Disabling ACLs guts security.",
+      "D": "Disabling HTTPS exposes credentials in transit."
+    },
+    "references": [
+      {
+        "title": "Instance Security Center",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/administer/security-center/concept/instance-security-center.html"
+      }
+    ],
+    "tags": [
+      "isc",
+      "hardening",
+      "review-cadence"
+    ]
+  },
+  {
+    "id": "csa-dbs-067",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "Plugin Hygiene",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Why does activating unnecessary plugins have a security implication?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Each plugin can ship new tables, roles, ACLs, and integrations — every one of which expands attack surface and configuration to maintain."
+      },
+      {
+        "id": "B",
+        "text": "Plugins don't affect security at all."
+      },
+      {
+        "id": "C",
+        "text": "Plugins automatically disable ACLs."
+      },
+      {
+        "id": "D",
+        "text": "Plugins are encrypted differently from the rest of the platform."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Plugins add functionality, but with that comes more configuration to maintain, more roles to govern, sometimes new endpoints, and a broader configuration surface. Activate intentionally.",
+    "distractor_notes": {
+      "B": "They can affect security via the surfaces they expose.",
+      "C": "Plugins don't generally disable ACLs.",
+      "D": "Encryption isn't plugin-specific."
+    },
+    "references": [
+      {
+        "title": "Security configuration overview",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/administer/security-center/concept/security-configuration-overview.html"
+      }
+    ],
+    "tags": [
+      "plugins",
+      "attack-surface"
+    ]
+  },
+  {
+    "id": "csa-dbs-068",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "ACL Audit",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An auditor asks for proof of who can read sensitive PII fields on the Employee table. What's the supported response?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Show the table/field ACLs governing read on those fields, plus the role and group membership reports that resolve who effectively has each role."
+      },
+      {
+        "id": "B",
+        "text": "Provide a screenshot of the form."
+      },
+      {
+        "id": "C",
+        "text": "Email the auditor the database backup."
+      },
+      {
+        "id": "D",
+        "text": "Say there are no such ACLs and move on."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The supported answer is showing the ACLs and the roles/groups behind them. That's how you prove an access claim end-to-end without leaking any actual PII.",
+    "distractor_notes": {
+      "B": "Form screenshots don't prove the access model.",
+      "C": "Emailing backups is a serious data-handling violation.",
+      "D": "Refusing the request fails the audit."
+    },
+    "references": [
+      {
+        "title": "Instance Security Center",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/administer/security-center/concept/instance-security-center.html"
+      }
+    ],
+    "tags": [
+      "audit",
+      "acl",
+      "pii"
+    ]
+  },
+  {
+    "id": "csa-dbs-069",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "Defense in Depth",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which statement best describes 'defense in depth' on a ServiceNow instance?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Multiple, overlapping controls (authentication, ACLs, field encryption, audit, headers, etc.) so that no single layer's failure exposes the instance."
+      },
+      {
+        "id": "B",
+        "text": "A single firewall that protects everything."
+      },
+      {
+        "id": "C",
+        "text": "Hiding fields in the UI to make them inaccessible."
+      },
+      {
+        "id": "D",
+        "text": "Storing every password as plain text in a secure file."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Defense in depth means stacked controls. If one layer fails or is misconfigured, another still applies. That's why authentication, ACLs, encryption, audit, and headers all matter — together.",
+    "distractor_notes": {
+      "B": "A single layer is brittle.",
+      "C": "UI hiding doesn't enforce access.",
+      "D": "Plain-text passwords contradict everything secure."
+    },
+    "references": [
+      {
+        "title": "Security configuration overview",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/administer/security-center/concept/security-configuration-overview.html"
+      }
+    ],
+    "tags": [
+      "defense-in-depth"
+    ]
+  },
+  {
+    "id": "csa-dbs-070",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "Security Posture",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A finding in Instance Security Center says session timeout is set higher than the recommended baseline. Which response is best?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Investigate the business justification for the current value, align with the baseline if possible, and document an exception with renewal dates if the value must remain higher."
+      },
+      {
+        "id": "B",
+        "text": "Ignore the finding; the dashboard is just decorative."
+      },
+      {
+        "id": "C",
+        "text": "Lower the timeout to 5 seconds without warning users."
+      },
+      {
+        "id": "D",
+        "text": "Disable the dashboard so the finding no longer appears."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Findings deserve real responses — either align with the baseline or document an exception. Hiding findings doesn't make the underlying risk go away.",
+    "distractor_notes": {
+      "B": "Ignoring findings accumulates security debt.",
+      "C": "5 seconds breaks every interactive workflow.",
+      "D": "Disabling the dashboard hides risk, not solves it."
+    },
+    "references": [
+      {
+        "title": "Instance Security Center",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/administer/security-center/concept/instance-security-center.html"
+      }
+    ],
+    "tags": [
+      "isc",
+      "exceptions",
+      "process"
+    ]
+  },
+  {
+    "id": "csa-dbs-071",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "Change Control",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "An admin is about to change an ACL on a heavily-used production table. What's the safer practice?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Develop and test the change on a sub-production instance, capture it in an update set, peer-review it, and promote via the documented change process."
+      },
+      {
+        "id": "B",
+        "text": "Edit the ACL directly on production at 2pm during peak usage."
+      },
+      {
+        "id": "C",
+        "text": "Disable the ACL during the change so nothing breaks."
+      },
+      {
+        "id": "D",
+        "text": "Email the change to the whole company in advance and skip testing."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Sub-prod first, captured in an update set, peer-reviewed, promoted through change — that's the standard ITSM hygiene for security-sensitive changes, and it's how you avoid a production-day surprise.",
+    "distractor_notes": {
+      "B": "Mid-day production edits skip every safeguard.",
+      "C": "Disabling ACLs to make a change creates an exposure window.",
+      "D": "Email isn't a substitute for testing."
+    },
+    "references": [
+      {
+        "title": "Instance Security Center",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/administer/security-center/concept/instance-security-center.html"
+      }
+    ],
+    "tags": [
+      "change-control",
+      "acl",
+      "lifecycle"
+    ]
+  },
+  {
+    "id": "csa-dbs-072",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "Continuous Improvement",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which statement is most accurate about security posture over time?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Security posture drifts as the instance changes; ongoing review and remediation are part of the operating model — not a one-time setup task."
+      },
+      {
+        "id": "B",
+        "text": "Once secure, an instance stays secure forever without further attention."
+      },
+      {
+        "id": "C",
+        "text": "Security posture is the responsibility of ServiceNow Support, not the customer."
+      },
+      {
+        "id": "D",
+        "text": "Security posture only matters at launch."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Security posture is a living thing. New plugins, new integrations, new roles, new releases — all of it can shift the picture. Ongoing review is the only way to keep the posture aligned with intent.",
+    "distractor_notes": {
+      "B": "Drift happens with every change.",
+      "C": "Customers own their configuration and posture.",
+      "D": "Launch is just the beginning."
+    },
+    "references": [
+      {
+        "title": "Instance Security Center",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/administer/security-center/concept/instance-security-center.html"
+      }
+    ],
+    "tags": [
+      "posture",
+      "operations"
+    ]
+  }
+]

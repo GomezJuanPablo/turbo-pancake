@@ -1,0 +1,1151 @@
+[
+  {
+    "id": "csa-ic-001",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Instance Configuration",
+    "subdomain": "User Administration",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "In the Now Platform, where are user records stored?",
+    "options": [
+      {
+        "id": "A",
+        "text": "On the sys_user table."
+      },
+      {
+        "id": "B",
+        "text": "On the sys_user_group table."
+      },
+      {
+        "id": "C",
+        "text": "On the sys_user_role table."
+      },
+      {
+        "id": "D",
+        "text": "On the sys_user_has_role table."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "User records live on the sys_user table. The other user-administration tables (groups, roles, role assignments) all reference back to sys_user for the individual user.",
+    "distractor_notes": {
+      "B": "sys_user_group holds the groups themselves (one row per group), not individual users.",
+      "C": "sys_user_role is the catalog of roles available in the instance, not where users live.",
+      "D": "sys_user_has_role is the join table that links users to roles — useful, but it doesn't store the user records."
+    },
+    "references": [
+      {
+        "title": "Creating users, companies, and departments",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/roles/concept/using-user-administration.html"
+      }
+    ],
+    "tags": [
+      "users",
+      "user-administration",
+      "sys_user"
+    ]
+  },
+  {
+    "id": "csa-ic-002",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Instance Configuration",
+    "subdomain": "Groups",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which statement best describes a group in ServiceNow?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A collection of users that can be assigned roles, used as approvers, and used as assignment targets on tasks."
+      },
+      {
+        "id": "B",
+        "text": "A reusable security ACL applied to specific tables."
+      },
+      {
+        "id": "C",
+        "text": "A view of users filtered by department."
+      },
+      {
+        "id": "D",
+        "text": "A role variant scoped to one application."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "A group is a collection of users (records on sys_user_group). Groups can carry roles that flow to their members, be used as approvers, and be assignment targets on tasks — that's why they're the workhorse for assignment routing.",
+    "distractor_notes": {
+      "B": "ACLs are access control rules. They can require roles, but groups themselves aren't ACLs.",
+      "C": "Department is a separate field on the user record. A group isn't just a department filter.",
+      "D": "Roles can be application-scoped, but a group isn't a 'scoped role'. Groups carry roles; they aren't roles."
+    },
+    "references": [
+      {
+        "title": "Create a user group",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/users-and-groups/task/t_CreateAGroup.html"
+      }
+    ],
+    "tags": [
+      "groups",
+      "user-administration",
+      "sys_user_group"
+    ]
+  },
+  {
+    "id": "csa-ic-003",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Instance Configuration",
+    "subdomain": "Roles",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "How are roles typically granted to a user in ServiceNow?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Directly on the user record, indirectly through group membership, or by inheritance from a parent role."
+      },
+      {
+        "id": "B",
+        "text": "Only by editing the sys_user_has_role table with a SQL update."
+      },
+      {
+        "id": "C",
+        "text": "Only by being a member of an organization unit."
+      },
+      {
+        "id": "D",
+        "text": "Only by activating a plugin that ships the role."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Roles can be granted directly on the user, granted to a group the user belongs to (the user inherits the group's roles), or contained by another role (parent roles include their child roles). All three paths produce effective permissions.",
+    "distractor_notes": {
+      "B": "You don't run SQL to assign roles — you use the platform UI. sys_user_has_role is the join table behind the scenes.",
+      "C": "Org unit / department doesn't grant roles by itself.",
+      "D": "Plugins can ship new roles, but activating a plugin doesn't assign those roles to users automatically."
+    },
+    "references": [
+      {
+        "title": "Assign a role to a user",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/users-and-groups/task/t_AssignARoleToAUser.html"
+      }
+    ],
+    "tags": [
+      "roles",
+      "rbac",
+      "user-administration"
+    ]
+  },
+  {
+    "id": "csa-ic-004",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Instance Configuration",
+    "subdomain": "Roles",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An admin needs every member of the \"ServiceDesk\" group to be able to read incidents. What is the most maintainable way to grant that access?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Assign the appropriate role to the ServiceDesk group; members inherit it through membership."
+      },
+      {
+        "id": "B",
+        "text": "Manually add the role to every user one at a time on sys_user."
+      },
+      {
+        "id": "C",
+        "text": "Edit the incident table ACL to bypass role checks for ServiceDesk."
+      },
+      {
+        "id": "D",
+        "text": "Make every user a system administrator."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Assigning the role to the group is the maintainable pattern: every current and future member inherits the role just by being in the group. Removing someone from the group automatically removes the inherited access.",
+    "distractor_notes": {
+      "B": "Per-user assignment works once, but it drifts the moment the team changes — exactly what the group-based model is designed to avoid.",
+      "C": "Bypassing ACLs for one group is a security anti-pattern and isn't how role evaluation is supposed to work.",
+      "D": "Granting admin to everyone solves the access problem by destroying the security model. Don't."
+    },
+    "references": [
+      {
+        "title": "Assign a role to a group",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/roles/task/t_AssignRoleToGroup.html"
+      }
+    ],
+    "tags": [
+      "roles",
+      "groups",
+      "rbac"
+    ]
+  },
+  {
+    "id": "csa-ic-005",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Instance Configuration",
+    "subdomain": "Roles",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which role grants full administrative access to the Now Platform's core configuration and security?",
+    "options": [
+      {
+        "id": "A",
+        "text": "itil"
+      },
+      {
+        "id": "B",
+        "text": "admin"
+      },
+      {
+        "id": "C",
+        "text": "approver_user"
+      },
+      {
+        "id": "D",
+        "text": "snc_internal"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The admin role is the platform's super-role — it inherits and contains a large set of administrative roles and is required to perform broad configuration and security work.",
+    "distractor_notes": {
+      "A": "itil is the standard role for ITSM agents (incidents, problems, changes). It is not a platform admin.",
+      "C": "approver_user lets a user act on approval requests assigned to them. It grants no admin power.",
+      "D": "snc_internal is for ServiceNow-internal/HI integrations. It is not the platform admin role."
+    },
+    "references": [
+      {
+        "title": "Base system roles",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/roles/reference/r_BaseSystemRoles.html"
+      }
+    ],
+    "tags": [
+      "roles",
+      "admin",
+      "base-system-roles"
+    ]
+  },
+  {
+    "id": "csa-ic-006",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Instance Configuration",
+    "subdomain": "Impersonation",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A developer needs to verify how the Service Catalog appears to an end user with no ITIL role. Which administrative tool is designed for this?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Impersonate User"
+      },
+      {
+        "id": "B",
+        "text": "Update Set Preview"
+      },
+      {
+        "id": "C",
+        "text": "Performance Analytics"
+      },
+      {
+        "id": "D",
+        "text": "System Log Replay"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Impersonate User lets an admin temporarily browse the platform as another user. It's the supported way to verify what someone with a different role profile actually sees, and the platform logs every impersonation for accountability.",
+    "distractor_notes": {
+      "B": "Update Set Preview compares incoming changes to the target instance. It has nothing to do with viewing the UI as another user.",
+      "C": "Performance Analytics is a reporting and KPI tool. It does not switch your view to another user's perspective.",
+      "D": "'System Log Replay' is not a standard platform tool. You can't replay another user's session this way."
+    },
+    "references": [
+      {
+        "title": "Impersonate a user",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/users-and-groups/concept/c_ImpersonateAUser.html"
+      }
+    ],
+    "tags": [
+      "impersonation",
+      "testing",
+      "admin"
+    ]
+  },
+  {
+    "id": "csa-ic-007",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Instance Configuration",
+    "subdomain": "Plugins",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which statement most accurately describes plugins in the Now Platform?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Bundles of platform features and content that an administrator activates on the instance to enable additional functionality."
+      },
+      {
+        "id": "B",
+        "text": "Browser extensions installed in the user's browser."
+      },
+      {
+        "id": "C",
+        "text": "Third-party Node packages installed through npm."
+      },
+      {
+        "id": "D",
+        "text": "External services connected by REST that run outside the instance."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Plugins package platform features (tables, scripts, UI, demo data, roles, etc.) that an admin activates on an instance. Activation enables the functionality and, where applicable, loads demo data.",
+    "distractor_notes": {
+      "B": "Plugins live in the instance, not in the browser. They aren't browser extensions.",
+      "C": "Plugins are not npm packages. ServiceNow has its own packaging model.",
+      "D": "External services connected by REST are integrations, not plugins. Plugins run inside the instance."
+    },
+    "references": [
+      {
+        "title": "ServiceNow plugins",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/plugins/concept/c_ServiceNowPlugins.html"
+      }
+    ],
+    "tags": [
+      "plugins",
+      "platform"
+    ]
+  },
+  {
+    "id": "csa-ic-008",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Instance Configuration",
+    "subdomain": "Plugins",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An administrator activates a plugin on a sub-production instance and chooses to load demo data. Which statement is true?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The demo data is for evaluation only and is typically not loaded on production instances."
+      },
+      {
+        "id": "B",
+        "text": "Demo data is encrypted and cannot be deleted after activation."
+      },
+      {
+        "id": "C",
+        "text": "Demo data is added to the current update set automatically."
+      },
+      {
+        "id": "D",
+        "text": "Demo data overwrites any existing records of the same table."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Demo data is intended to help admins and developers evaluate a plugin in a sub-production environment. It's standard practice not to load demo data on a production instance.",
+    "distractor_notes": {
+      "B": "Demo data is regular platform data — it isn't encrypted, and it can be removed.",
+      "C": "Plugin activation and the demo data it ships are tracked separately from a developer's current update set.",
+      "D": "Demo data is inserted; it doesn't overwrite existing records of the same table based on field collisions."
+    },
+    "references": [
+      {
+        "title": "Activate a plugin",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/plugins/task/t_ActivateAPlugin.html"
+      }
+    ],
+    "tags": [
+      "plugins",
+      "demo-data",
+      "activation"
+    ]
+  },
+  {
+    "id": "csa-ic-009",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Instance Configuration",
+    "subdomain": "Application Scope",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the primary purpose of application scope in the Now Platform?",
+    "options": [
+      {
+        "id": "A",
+        "text": "It identifies and protects the resources (tables, scripts, etc.) that belong to a specific application and controls how other applications can access them."
+      },
+      {
+        "id": "B",
+        "text": "It defines which physical data center hosts the application."
+      },
+      {
+        "id": "C",
+        "text": "It controls which time zone the application runs in."
+      },
+      {
+        "id": "D",
+        "text": "It limits how many users may use the application concurrently."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Application scope namespaces an application's resources and governs cross-scope access. It's how the platform keeps applications from stepping on each other and lets app developers expose only what they intend to share.",
+    "distractor_notes": {
+      "B": "Application scope is a logical construct. It has nothing to do with data center placement.",
+      "C": "Time zone is a system / user setting, not a scope concept.",
+      "D": "User concurrency is a licensing and capacity matter, not what scope governs."
+    },
+    "references": [
+      {
+        "title": "Application scope",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-application-development/page/build/applications/concept/c_ApplicationScope.html"
+      }
+    ],
+    "tags": [
+      "application-scope",
+      "scoped-apps"
+    ]
+  },
+  {
+    "id": "csa-ic-010",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Instance Configuration",
+    "subdomain": "Update Sets",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which statement best describes an update set?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A group of customizations that can be moved from one instance to another."
+      },
+      {
+        "id": "B",
+        "text": "A snapshot of every record in the database."
+      },
+      {
+        "id": "C",
+        "text": "A backup of the instance's binary attachments only."
+      },
+      {
+        "id": "D",
+        "text": "A scheduled job that runs nightly to clean log tables."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "An update set is a portable container for configuration changes (the things admins and developers customize — UI, scripts, policies, etc.) that can be exported from one instance and applied to another.",
+    "distractor_notes": {
+      "B": "Update sets don't capture data records. They capture configuration changes tracked by the platform.",
+      "C": "Update sets are for configuration, not for attachments or binaries.",
+      "D": "Update sets are not scheduled jobs. They're an artifact you move between instances."
+    },
+    "references": [
+      {
+        "title": "System update sets",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-application-development/page/build/system-update-sets/concept/system-update-sets.html"
+      }
+    ],
+    "tags": [
+      "update-sets",
+      "promotion"
+    ]
+  },
+  {
+    "id": "csa-ic-011",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Instance Configuration",
+    "subdomain": "Update Sets",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A developer is about to make a series of configuration changes on a development instance that they will later promote to test and production. What should they do first?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Create and select a new, named update set as the current update set on the dev instance."
+      },
+      {
+        "id": "B",
+        "text": "Disable system logging so the changes are not captured."
+      },
+      {
+        "id": "C",
+        "text": "Activate the demo-data plugin so the changes capture sample records."
+      },
+      {
+        "id": "D",
+        "text": "Switch the dev instance into Read-Only mode."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Before making changes meant for promotion, create a new update set and set it as your current set. Every captured change then lands in that named update set, which you can later export and apply to test and production.",
+    "distractor_notes": {
+      "B": "Disabling logging would just blind the admin. Update sets track configuration changes regardless.",
+      "C": "Demo data is for evaluation; it isn't a promotion mechanism.",
+      "D": "Read-Only mode prevents changes — exactly the opposite of what's needed."
+    },
+    "references": [
+      {
+        "title": "Create and select an update set as the current set",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-application-development/page/build/system-update-sets/task/create-select-update-set.html"
+      }
+    ],
+    "tags": [
+      "update-sets",
+      "promotion",
+      "lifecycle"
+    ]
+  },
+  {
+    "id": "csa-ic-012",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Instance Configuration",
+    "subdomain": "System Properties",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An admin wants to view and edit the platform's system properties in one place. Which list path do they enter in the Application Navigator filter?",
+    "options": [
+      {
+        "id": "A",
+        "text": "sys_properties.list"
+      },
+      {
+        "id": "B",
+        "text": "sys_user.list"
+      },
+      {
+        "id": "C",
+        "text": "sys_dictionary.list"
+      },
+      {
+        "id": "D",
+        "text": "syslog.list"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "System properties live on the sys_properties table. Entering sys_properties.list in the filter opens the full list — the standard way for an admin to view, search, and edit platform configuration values.",
+    "distractor_notes": {
+      "B": "sys_user.list opens the users table, not the system properties.",
+      "C": "sys_dictionary.list shows the data dictionary (field metadata), not configuration properties.",
+      "D": "syslog.list shows the system log. It's diagnostic output, not configuration."
+    },
+    "references": [
+      {
+        "title": "Available system properties",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/reference-pages/reference/r_AvailableSystemProperties.html"
+      }
+    ],
+    "tags": [
+      "system-properties",
+      "configuration",
+      "admin"
+    ]
+  },
+  {
+    "id": "csa-ic-013",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Instance Configuration",
+    "subdomain": "Notifications",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which statement best describes a notification in the Now Platform?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A record on a table that defines when and to whom the platform sends an email, SMS, or push message in response to events or conditions."
+      },
+      {
+        "id": "B",
+        "text": "A toast popup that always appears at the top of the form when a record is saved."
+      },
+      {
+        "id": "C",
+        "text": "An audit log entry of a field change on a record."
+      },
+      {
+        "id": "D",
+        "text": "A scheduled job that runs every hour to clean the syslog table."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Notifications are configuration records that tell the platform when to send a message (email, SMS, push), to whom, and with what content. They can be triggered by record events or by record conditions on insert/update.",
+    "distractor_notes": {
+      "B": "Toast popups are UI feedback. They're unrelated to the notifications subsystem.",
+      "C": "Audit log entries are read-only history. They don't drive notifications by themselves.",
+      "D": "Scheduled cleanup jobs maintain log tables. They aren't the notifications feature."
+    },
+    "references": [
+      {
+        "title": "Notifications",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-servicenow-platform/page/administer/notification/concept/c_Notifications.html"
+      }
+    ],
+    "tags": [
+      "notifications",
+      "email"
+    ]
+  },
+  {
+    "id": "csa-ic-014",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Instance Configuration",
+    "subdomain": "Notifications",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An admin needs to send an email to the assignee whenever an incident's priority is set to 1 - Critical. Which configuration accomplishes this most directly?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Create an email notification on the Incident table with a condition that priority equals 1 and 'When to send' set to send on record update; address it to the assigned_to field."
+      },
+      {
+        "id": "B",
+        "text": "Add a UI policy that hides the priority field for non-admins."
+      },
+      {
+        "id": "C",
+        "text": "Create an ACL that denies write access to incidents with priority 1."
+      },
+      {
+        "id": "D",
+        "text": "Write a client script that calls window.alert when priority changes."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The right tool is an email notification on the Incident table — set the condition to priority = 1, the trigger to record update, and the To/recipients to the assigned_to field. That's exactly the use case notifications are designed for.",
+    "distractor_notes": {
+      "B": "UI policies change form visibility/behavior. They don't send email.",
+      "C": "ACLs control access, not communications.",
+      "D": "window.alert is a browser popup for the current user. Notifications need to reach the assignee even when they're not on the form."
+    },
+    "references": [
+      {
+        "title": "Create an email notification",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-servicenow-platform/page/administer/notification/task/t_CreateAnEmailNotification.html"
+      }
+    ],
+    "tags": [
+      "notifications",
+      "email",
+      "incident"
+    ]
+  },
+  {
+    "id": "csa-ic-015",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Instance Configuration",
+    "subdomain": "Email Properties",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the role of email properties (the email-related system properties) on an instance?",
+    "options": [
+      {
+        "id": "A",
+        "text": "They control instance-level email behavior such as sending enable/disable, test mode, SMTP/IMAP configuration values, and reply parsing settings."
+      },
+      {
+        "id": "B",
+        "text": "They store the personal email signature for every user."
+      },
+      {
+        "id": "C",
+        "text": "They cache outbound email attachments for performance."
+      },
+      {
+        "id": "D",
+        "text": "They define the user's preferred font for the inbox UI."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Email properties are the instance-level switches that control how the platform sends and receives email — enable/disable sending, test mode, mail server configuration, and how inbound replies are interpreted.",
+    "distractor_notes": {
+      "B": "Personal signatures are user-level settings, not instance email properties.",
+      "C": "Attachment caching isn't what email properties are for.",
+      "D": "Inbox UI fonts are unrelated to email properties."
+    },
+    "references": [
+      {
+        "title": "Email properties",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-servicenow-platform/page/administer/notification/concept/c_EmailProperties.html"
+      }
+    ],
+    "tags": [
+      "email",
+      "properties",
+      "instance"
+    ]
+  },
+  {
+    "id": "csa-ic-016",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Instance Configuration",
+    "subdomain": "Update Set Lifecycle",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Before exporting an update set from a source instance, what state should it normally be set to?",
+    "options": [
+      {
+        "id": "A",
+        "text": "In Progress"
+      },
+      {
+        "id": "B",
+        "text": "Complete"
+      },
+      {
+        "id": "C",
+        "text": "Ignored"
+      },
+      {
+        "id": "D",
+        "text": "Build"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Setting an update set to Complete signals that you're done making changes inside it and that it's ready to be picked up by a target instance. In Progress sets aren't intended for promotion.",
+    "distractor_notes": {
+      "A": "In Progress means you're still capturing changes. Promote a Complete set, not an in-progress one.",
+      "C": "Ignored update sets aren't promoted at all.",
+      "D": "There is no 'Build' state in the update set lifecycle."
+    },
+    "references": [
+      {
+        "title": "Complete an update set",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-application-development/page/build/system-update-sets/concept/c_CompleteAnUpdateSet.html"
+      }
+    ],
+    "tags": [
+      "update-sets",
+      "lifecycle"
+    ]
+  },
+  {
+    "id": "csa-ic-017",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Instance Configuration",
+    "subdomain": "Update Set Lifecycle",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "On the target (test or production) instance, what is the typical order for applying an update set received from another instance?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Retrieve → Preview → Commit"
+      },
+      {
+        "id": "B",
+        "text": "Commit → Retrieve → Preview"
+      },
+      {
+        "id": "C",
+        "text": "Preview → Commit → Retrieve"
+      },
+      {
+        "id": "D",
+        "text": "Export → Import → Validate"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "On the target instance you Retrieve the remote update set (pull it across), Preview it (resolve any collisions or warnings), and then Commit it (apply the changes to the instance). Doing those steps out of order is the classic foot-gun.",
+    "distractor_notes": {
+      "B": "Committing before retrieving is impossible — there's nothing to commit yet.",
+      "C": "Preview comes after Retrieve, not first.",
+      "D": "Export/Import/Validate isn't the supported update-set vocabulary."
+    },
+    "references": [
+      {
+        "title": "Preview a remote update set",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-application-development/page/build/system-update-sets/task/t_PreviewARemoteUpdateSet.html"
+      },
+      {
+        "title": "Commit an update set",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-application-development/page/build/system-update-sets/task/t_CommitAnUpdateSet.html"
+      }
+    ],
+    "tags": [
+      "update-sets",
+      "lifecycle",
+      "promotion"
+    ]
+  },
+  {
+    "id": "csa-ic-018",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Instance Configuration",
+    "subdomain": "Update Set Lifecycle",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "During preview, the target instance reports an update set collision. What is the correct response?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Investigate the collision, choose to accept remote, skip, or merge as appropriate, then commit."
+      },
+      {
+        "id": "B",
+        "text": "Force-commit without resolving — collisions are informational only."
+      },
+      {
+        "id": "C",
+        "text": "Delete the target record manually, then re-preview."
+      },
+      {
+        "id": "D",
+        "text": "Restart the instance to clear the collision cache."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Collisions surface during preview so the admin can decide what to do per change — accept the incoming change, skip it, or merge — before committing. That deliberation is the whole point of the preview step.",
+    "distractor_notes": {
+      "B": "Commits don't ignore unresolved problems quietly. The preview step exists so problems are addressed first.",
+      "C": "Deleting target records by hand is dangerous and not the supported workflow for collision resolution.",
+      "D": "Restarting doesn't change the underlying conflict; the data is still incompatible."
+    },
+    "references": [
+      {
+        "title": "Preview a remote update set",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-application-development/page/build/system-update-sets/task/t_PreviewARemoteUpdateSet.html"
+      }
+    ],
+    "tags": [
+      "update-sets",
+      "preview",
+      "collision"
+    ]
+  },
+  {
+    "id": "csa-ic-019",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Instance Configuration",
+    "subdomain": "Update Sets",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which type of change is NOT captured in a standard update set?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A new business rule script."
+      },
+      {
+        "id": "B",
+        "text": "A new UI policy."
+      },
+      {
+        "id": "C",
+        "text": "A new incident record submitted by an end user."
+      },
+      {
+        "id": "D",
+        "text": "A new client script."
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Update sets capture configuration changes — scripts, policies, forms, fields, and so on. Operational data records (an incident the team logged today) are not configuration and aren't carried in update sets.",
+    "distractor_notes": {
+      "A": "Business rules are configuration — they are captured.",
+      "B": "UI policies are configuration — they are captured.",
+      "D": "Client scripts are configuration — they are captured."
+    },
+    "references": [
+      {
+        "title": "System update set administration",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-application-development/page/build/system-update-sets/concept/c_SystemUpdateSetsAdministration.html"
+      }
+    ],
+    "tags": [
+      "update-sets",
+      "data-vs-config"
+    ]
+  },
+  {
+    "id": "csa-ic-020",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Instance Configuration",
+    "subdomain": "Branding",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Where does an administrator change the company logo that appears in the Next Experience global header?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Through the platform's branding/Next Experience configuration that updates the instance logo."
+      },
+      {
+        "id": "B",
+        "text": "By renaming the favicon.svg in the OS file system."
+      },
+      {
+        "id": "C",
+        "text": "By writing a script include named CompanyLogo."
+      },
+      {
+        "id": "D",
+        "text": "By editing the user's profile picture."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The instance logo for the Next Experience header is changed through the platform's branding configuration — the supported, upgrade-safe path. It updates centrally and applies for all users.",
+    "distractor_notes": {
+      "B": "Instances aren't browsed as files; you can't rename favicon assets on a host file system.",
+      "C": "Script includes are reusable server scripts. They aren't where you set the logo.",
+      "D": "A user's profile picture is just their avatar — not the company branding."
+    },
+    "references": [
+      {
+        "title": "Change instance banner logo in Next Experience",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-user-interface/page/administer/navigation-and-ui/task/change-instance-logo.html"
+      }
+    ],
+    "tags": [
+      "branding",
+      "logo",
+      "next-experience"
+    ]
+  },
+  {
+    "id": "csa-ic-021",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Instance Configuration",
+    "subdomain": "Scoped Apps",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which statement is true about a custom scoped application?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Its resources are namespaced and the application controls how other scopes may read or write them."
+      },
+      {
+        "id": "B",
+        "text": "It is automatically global — all scopes have full access by default."
+      },
+      {
+        "id": "C",
+        "text": "It cannot have its own update sets."
+      },
+      {
+        "id": "D",
+        "text": "It cannot define new roles."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Scoped apps namespace their resources and use explicit access settings to govern what other scopes can do with them. That isolation is what makes scope a useful packaging boundary.",
+    "distractor_notes": {
+      "B": "Scoped apps are not global. Cross-scope access is opt-in.",
+      "C": "Scoped apps absolutely have their own update tracking.",
+      "D": "Scoped apps can define their own roles."
+    },
+    "references": [
+      {
+        "title": "Application scope",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-application-development/page/build/applications/concept/c_ApplicationScope.html"
+      }
+    ],
+    "tags": [
+      "scoped-apps",
+      "application-scope"
+    ]
+  },
+  {
+    "id": "csa-ic-022",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Instance Configuration",
+    "subdomain": "Custom Applications",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An admin wants to start a new custom application on their developer instance. Which tool is the supported starting point?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Studio (the application development workspace)."
+      },
+      {
+        "id": "B",
+        "text": "The CMDB Health dashboard."
+      },
+      {
+        "id": "C",
+        "text": "A Service Portal page builder widget."
+      },
+      {
+        "id": "D",
+        "text": "Performance Analytics."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Studio is the application development environment for creating and managing custom applications, their files, and source control. It's the supported entry point for new custom apps.",
+    "distractor_notes": {
+      "B": "The CMDB Health dashboard is for CMDB data quality. It doesn't create applications.",
+      "C": "Service Portal page builder builds portal pages, not applications.",
+      "D": "Performance Analytics is analytics tooling, not an app dev environment."
+    },
+    "references": [
+      {
+        "title": "Create a custom application",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-application-development/page/build/applications/task/t_CreateACustomApp.html"
+      }
+    ],
+    "tags": [
+      "studio",
+      "custom-apps",
+      "application-development"
+    ]
+  },
+  {
+    "id": "csa-ic-023",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Instance Configuration",
+    "subdomain": "Update Sets",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A developer makes a change while the global Default update set is selected. Where does that change land?",
+    "options": [
+      {
+        "id": "A",
+        "text": "In the Default update set, which is intended for unintentional or untracked changes and is not recommended for promotion."
+      },
+      {
+        "id": "B",
+        "text": "In the most recently committed update set on production."
+      },
+      {
+        "id": "C",
+        "text": "In a temporary in-memory buffer that disappears on logout."
+      },
+      {
+        "id": "D",
+        "text": "In all open update sets simultaneously."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The Default update set is a catch-all for changes made when no purposeful set is active. It captures the change but is not the right vehicle for moving deliberate work between instances — always select a named set before making changes you intend to promote.",
+    "distractor_notes": {
+      "B": "Production update sets aren't auto-edited by other instances. There's no remote write.",
+      "C": "Changes persist; they aren't held in memory only.",
+      "D": "There is exactly one current update set at a time per scope."
+    },
+    "references": [
+      {
+        "title": "System update set administration",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-application-development/page/build/system-update-sets/concept/c_SystemUpdateSetsAdministration.html"
+      }
+    ],
+    "tags": [
+      "update-sets",
+      "default",
+      "hygiene"
+    ]
+  },
+  {
+    "id": "csa-ic-024",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Instance Configuration",
+    "subdomain": "Update Set Lifecycle",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A change committed via update set unexpectedly broke a related list on production. What is the most appropriate immediate response?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Use the Back Out option on the committed update set to reverse the captured changes, then investigate."
+      },
+      {
+        "id": "B",
+        "text": "Disable the entire instance until next maintenance window."
+      },
+      {
+        "id": "C",
+        "text": "Delete the affected related list manually so users don't see it."
+      },
+      {
+        "id": "D",
+        "text": "Re-import the same update set a second time."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Committed update sets can be backed out, which reverses the changes they applied. It's the right first move when a commit causes a regression — restore the prior state, then root-cause the problem on a sub-prod instance.",
+    "distractor_notes": {
+      "B": "Disabling the instance is wildly disproportionate and isn't a normal recovery step.",
+      "C": "Manual deletes create more drift and don't address the root cause.",
+      "D": "Re-importing the same broken change doesn't help."
+    },
+    "references": [
+      {
+        "title": "System update set administration",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-application-development/page/build/system-update-sets/concept/c_SystemUpdateSetsAdministration.html"
+      }
+    ],
+    "tags": [
+      "update-sets",
+      "back-out",
+      "incident-response"
+    ]
+  }
+]

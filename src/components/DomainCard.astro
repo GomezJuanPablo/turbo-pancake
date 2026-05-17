@@ -1,0 +1,43 @@
+---
+interface Props {
+  title: string;
+  weight: string;      // "6%"
+  answered: number;
+  total: number;
+  accuracy?: number;   // 0-100
+  tier?: 'locked' | 'bronze' | 'silver' | 'gold';
+}
+const {
+  title,
+  weight,
+  answered,
+  total,
+  accuracy = 0,
+  tier = 'locked',
+} = Astro.props;
+
+const pct = total > 0 ? Math.round((answered / total) * 100) : 0;
+const tierLabel = {
+  locked: 'Locked',
+  bronze: '🥉 Bronze',
+  silver: '🥈 Silver',
+  gold:   '🏆 Gold',
+}[tier];
+---
+<article class="card domain-card">
+  <div class="domain-card__head">
+    <div>
+      <div class="domain-card__title">{title}</div>
+      <div class="domain-card__weight">{weight} of exam</div>
+    </div>
+    <span class={`tier is-${tier}`}>{tierLabel}</span>
+  </div>
+  <div class="domain-card__progress" role="progressbar"
+       aria-valuenow={pct} aria-valuemin="0" aria-valuemax="100">
+    <div class="domain-card__progress-fill" style={`width:${pct}%`}></div>
+  </div>
+  <div class="domain-card__meta">
+    <span>{answered} / {total} answered</span>
+    {answered > 0 && <span>{accuracy}% accuracy</span>}
+  </div>
+</article>

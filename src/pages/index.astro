@@ -1,0 +1,126 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import CosmicHero from '../components/CosmicHero.astro';
+import StatCard from '../components/StatCard.astro';
+import { getEntry, getCollection } from 'astro:content';
+
+// CSA is the live exam; the others render as "coming soon" cards.
+const csaBlueprint = await getEntry('blueprints', 'csa');
+const allQuestions = await getCollection('questions');
+
+// Flatten across exams (today: just CSA). Each entry is an array of question objects.
+const csaQuestions = allQuestions
+  .filter((e) => e.id.startsWith('csa/'))
+  .flatMap((e) => e.data);
+
+const csaTarget = csaBlueprint!.data.totalQuestions;
+const csaAuthored = csaQuestions.length;
+const csaPct = csaTarget > 0 ? Math.round((csaAuthored / csaTarget) * 100) : 0;
+
+const exams = [
+  {
+    code: 'CSA',
+    name: 'Certified System Administrator',
+    description: 'Foundational platform administration — the starting cert for ServiceNow.',
+    href: '/csa/',
+    status: 'live',
+    questions: csaAuthored,
+    target: csaTarget,
+  },
+  {
+    code: 'CAD',
+    name: 'Certified Application Developer',
+    description: 'Building applications on the Now Platform. Coming next.',
+    href: '/cad/',
+    status: 'soon',
+    questions: 0,
+    target: 240,
+  },
+  {
+    code: 'CIS-ITSM',
+    name: 'Certified Implementation Specialist — ITSM',
+    description: 'IT Service Management implementation patterns and process.',
+    href: '/cis-itsm/',
+    status: 'soon',
+    questions: 0,
+    target: 240,
+  },
+  {
+    code: 'CIS-DF',
+    name: 'Certified Implementation Specialist — Data Foundations',
+    description: 'CMDB, data hygiene, integrations, the data layer.',
+    href: '/cis-df/',
+    status: 'soon',
+    questions: 0,
+    target: 240,
+  },
+];
+---
+<BaseLayout
+  title="GlideUp.net — Free ServiceNow Cert Practice"
+  description="Free, doc-anchored ServiceNow CSA practice. 240 questions, every answer explained, every answer linked to docs.servicenow.com."
+  activeNav="all"
+>
+  <Breadcrumb crumbs={[
+    { label: 'Practice' },
+    { label: 'Overview' },
+  ]} />
+
+  <CosmicHero
+    title="Level Up Your Now"
+    subtitle="Free, community-built, doc-anchored ServiceNow certification practice. Every wrong answer explained. No login. No ads."
+    progressPct={csaPct}
+    ctaLabel={`Start CSA — ${csaAuthored} questions`}
+    ctaHref="/csa/practice/"
+  />
+
+  <div class="stat-grid">
+    <StatCard label="Exams" value={`${exams.length}`} delta="CSA live" deltaTone="up" />
+    <StatCard label="CSA questions" value={`${csaAuthored}`} delta={csaAuthored >= csaTarget ? 'complete' : `${csaTarget - csaAuthored} to go`} deltaTone={csaAuthored >= csaTarget ? 'up' : 'neutral'} />
+    <StatCard label="Doc-anchored" value="100%" delta="every question" deltaTone="up" />
+  </div>
+
+  <h2 style="font-size:16px;font-weight:600;margin:24px 0 12px;">Exams</h2>
+  <div class="card-grid">
+    {exams.map((exam) => (
+      <a
+        href={exam.status === 'live' ? exam.href : '#'}
+        class={`card exam-card ${exam.status === 'soon' ? 'is-soon' : ''}`}
+        aria-disabled={exam.status === 'soon' ? 'true' : 'false'}
+        style={exam.status === 'soon' ? 'pointer-events:none;opacity:0.7;' : ''}
+      >
+        <div class="exam-card__head">
+          <div>
+            <div class="exam-card__code">{exam.code}</div>
+            <div class="exam-card__name">{exam.name}</div>
+          </div>
+          {exam.status === 'live'
+            ? <span class="tier is-bronze" style="background:rgba(14,139,158,0.10);color:var(--primary-dark);">Live</span>
+            : <span class="tier is-locked">Coming soon</span>}
+        </div>
+        <p class="exam-card__desc">{exam.description}</p>
+        <div class="exam-card__meta">
+          {exam.status === 'live'
+            ? <span>{exam.questions} / {exam.target} questions</span>
+            : <span>Targeting {exam.target} questions</span>}
+        </div>
+      </a>
+    ))}
+  </div>
+
+  <p style="margin-top:32px;font-size:12px;color:var(--text-muted);max-width:720px;">
+    Every question on GlideUp is anchored to a verified <a href="https://docs.servicenow.com" target="_blank" rel="noopener">docs.servicenow.com</a> URL.
+    Your progress lives in this browser's localStorage and nowhere else.
+  </p>
+</BaseLayout>
+
+<style>
+  .exam-card { display: block; text-decoration: none; color: inherit; transition: border-color var(--t-fast) var(--ease), transform var(--t-fast) var(--ease); }
+  .exam-card:not(.is-soon):hover { border-color: var(--primary); transform: translateY(-1px); }
+  .exam-card__head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 8px; }
+  .exam-card__code { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--primary-dark); margin-bottom: 4px; }
+  .exam-card__name { font-size: 15px; font-weight: 600; color: var(--text); }
+  .exam-card__desc { font-size: 13px; color: var(--text-muted); margin: 6px 0 12px; line-height: 1.45; }
+  .exam-card__meta { font-size: 12px; color: var(--text-muted); }
+</style>

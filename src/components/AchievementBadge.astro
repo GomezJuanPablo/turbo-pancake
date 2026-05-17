@@ -1,0 +1,18 @@
+---
+interface Props {
+  icon: string;
+  label: string;
+  unlocked?: boolean;
+  description?: string;
+}
+const { icon, label, unlocked = false, description } = Astro.props;
+---
+<div
+  class="badge"
+  style={unlocked ? '' : 'opacity:0.4;'}
+  title={description || ''}
+  aria-label={`${label}${unlocked ? ' — unlocked' : ' — locked'}`}
+>
+  <span class="badge__icon" aria-hidden="true">{icon}</span>
+  <span>{label}</span>
+</div>

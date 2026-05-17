@@ -1,0 +1,57 @@
+---
+/**
+ * CosmicHero — the homepage banner.
+ *
+ * Per CLAUDE.md and the project handoff: the cosmic hero is the SOLE
+ * place magenta appears prominently (the supplied banner has a magenta
+ * nebula). Everywhere else, magenta stays a spark only.
+ */
+interface Props {
+  title: string;
+  subtitle?: string;
+  progressPct?: number;     // 0–100
+  ctaLabel?: string;
+  ctaHref?: string;
+  banner?: string;          // path to banner image (optional)
+}
+const {
+  title,
+  subtitle = '',
+  progressPct = 0,
+  ctaLabel = 'Start practicing',
+  ctaHref = '#',
+  banner,
+} = Astro.props;
+---
+<section class="cosmic-hero">
+  {banner && (
+    <div class="cosmic-hero__banner" aria-hidden="true">
+      <img
+        src={banner}
+        alt=""
+        loading="eager"
+        decoding="async"
+        fetchpriority="high"
+      />
+    </div>
+  )}
+  <div class="cosmic-hero__content">
+    <h1 class="cosmic-hero__title">{title}</h1>
+    {subtitle && <p class="cosmic-hero__subtitle">{subtitle}</p>}
+    {progressPct > 0 && (
+      <div
+        class="cosmic-hero__progress"
+        role="progressbar"
+        aria-valuenow={progressPct}
+        aria-valuemin="0"
+        aria-valuemax="100"
+      >
+        <div class="cosmic-hero__progress-fill" style={`width:${progressPct}%`}></div>
+      </div>
+    )}
+    <a href={ctaHref} class="cosmic-hero__cta">
+      {ctaLabel}
+      <span aria-hidden="true">→</span>
+    </a>
+  </div>
+</section>

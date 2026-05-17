@@ -1,0 +1,2235 @@
+[
+  {
+    "id": "csa-ssa-001",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Self-Service and Automation",
+    "subdomain": "Flow Designer",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is Flow Designer in the Now Platform?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A low-code, web-based environment for building automated business logic using triggers, actions, and subflows — without writing custom scripts for most tasks."
+      },
+      {
+        "id": "B",
+        "text": "A drag-and-drop form designer for end users."
+      },
+      {
+        "id": "C",
+        "text": "A scheduled job to clean log tables."
+      },
+      {
+        "id": "D",
+        "text": "A read-only viewer for the legacy Workflow tool."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Flow Designer is the modern low-code automation tool. Admins compose a trigger (when), one or more actions (what), and optional subflows (reusable units) to automate business processes — often without writing scripts.",
+    "distractor_notes": {
+      "B": "Form Designer handles forms. Flow Designer is for automation logic.",
+      "C": "Cleanup jobs are scheduled scripts, not Flow Designer's purpose.",
+      "D": "Flow Designer is a separate, modern tool — not a viewer for the legacy Workflow editor."
+    },
+    "references": [
+      {
+        "title": "Flow Designer",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-build-workflows/page/administer/flow-designer/concept/flow-designer.html"
+      }
+    ],
+    "tags": [
+      "flow-designer",
+      "automation",
+      "low-code"
+    ]
+  },
+  {
+    "id": "csa-ssa-002",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Self-Service and Automation",
+    "subdomain": "Flow Triggers",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which of these is a typical trigger type in Flow Designer?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A record-based trigger (Created, Updated, Created or Updated, Deleted) on a specified table with optional conditions."
+      },
+      {
+        "id": "B",
+        "text": "A trigger based on which browser tab the user has open."
+      },
+      {
+        "id": "C",
+        "text": "A trigger that fires only when the instance is being upgraded."
+      },
+      {
+        "id": "D",
+        "text": "A trigger based on the user's keyboard language."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Record triggers — Created, Updated, Created or Updated, Deleted — on a chosen table with a condition are the workhorse trigger types. Scheduled and async triggers also exist, but record triggers are the most common starting point.",
+    "distractor_notes": {
+      "B": "Browser tab state isn't a server-side trigger.",
+      "C": "Upgrades aren't a user-defined trigger type.",
+      "D": "Keyboard language isn't a flow trigger."
+    },
+    "references": [
+      {
+        "title": "Flow trigger",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-build-workflows/page/administer/flow-designer/concept/flow-trigger.html"
+      }
+    ],
+    "tags": [
+      "flow-designer",
+      "triggers"
+    ]
+  },
+  {
+    "id": "csa-ssa-003",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Self-Service and Automation",
+    "subdomain": "Flow Actions",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is an Action in Flow Designer?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A reusable building block that performs a discrete operation (create record, ask for approval, send email, REST call, etc.) and exposes inputs and outputs."
+      },
+      {
+        "id": "B",
+        "text": "A column on the user table."
+      },
+      {
+        "id": "C",
+        "text": "A scheduled job that emails the admin."
+      },
+      {
+        "id": "D",
+        "text": "A read-only checkbox on a form."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Actions are the verbs of Flow Designer — each action does one thing, takes typed inputs, and exposes outputs the rest of the flow can reference. Out-of-the-box actions cover most common needs.",
+    "distractor_notes": {
+      "B": "User table columns aren't actions.",
+      "C": "Scheduled jobs are a different mechanism.",
+      "D": "A checkbox is a UI element, not a flow construct."
+    },
+    "references": [
+      {
+        "title": "Flow actions",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-build-workflows/page/administer/flow-designer/concept/flow-actions.html"
+      }
+    ],
+    "tags": [
+      "flow-designer",
+      "actions"
+    ]
+  },
+  {
+    "id": "csa-ssa-004",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Self-Service and Automation",
+    "subdomain": "Subflows",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is a Subflow?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A reusable flow with defined inputs and outputs that can be called from other flows or actions, like a function in code."
+      },
+      {
+        "id": "B",
+        "text": "A flow that runs only when the instance is in maintenance mode."
+      },
+      {
+        "id": "C",
+        "text": "An archived flow that's been deactivated permanently."
+      },
+      {
+        "id": "D",
+        "text": "A copy of a flow used solely for testing."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Subflows are reusable flows. Define one with typed inputs and outputs, then call it from any flow or action. Subflows are how you keep automation DRY.",
+    "distractor_notes": {
+      "B": "Maintenance mode isn't tied to subflow definitions.",
+      "C": "Subflows are active reusable building blocks, not archives.",
+      "D": "Test copies are a habit, not a defined platform concept."
+    },
+    "references": [
+      {
+        "title": "Subflow",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-build-workflows/page/administer/flow-designer/concept/subflow.html"
+      }
+    ],
+    "tags": [
+      "flow-designer",
+      "subflow",
+      "reuse"
+    ]
+  },
+  {
+    "id": "csa-ssa-005",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Self-Service and Automation",
+    "subdomain": "Flow Designer",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An admin wants to email the assigned_to user when an incident is created with priority 1. Which Flow Designer composition fits best?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A flow with a Record Created trigger on Incident (condition: priority = 1) and a Send Email action targeted at assigned_to."
+      },
+      {
+        "id": "B",
+        "text": "A new Catalog Item that emails the user when submitted."
+      },
+      {
+        "id": "C",
+        "text": "A change request submitted to CAB."
+      },
+      {
+        "id": "D",
+        "text": "A KB article that the user reads."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The trigger captures 'a P1 incident was created'; the Send Email action delivers the message to assigned_to. That two-step composition is the canonical pattern for this scenario.",
+    "distractor_notes": {
+      "B": "Catalog items handle requests, not reactive notifications on incidents.",
+      "C": "CAB doesn't relate to per-incident notifications.",
+      "D": "KB articles inform but don't alert."
+    },
+    "references": [
+      {
+        "title": "Flow Designer",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-build-workflows/page/administer/flow-designer/concept/flow-designer.html"
+      }
+    ],
+    "tags": [
+      "flow-designer",
+      "incident",
+      "notification"
+    ]
+  },
+  {
+    "id": "csa-ssa-006",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Self-Service and Automation",
+    "subdomain": "Flow Designer",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which statement is most accurate about Flow Designer vs the legacy Workflow editor?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Flow Designer is the modern, recommended automation tool; legacy Workflow remains for existing content, but new automation should generally be built in Flow Designer."
+      },
+      {
+        "id": "B",
+        "text": "Flow Designer is read-only and only used for viewing legacy workflows."
+      },
+      {
+        "id": "C",
+        "text": "Workflow is a newer tool that replaced Flow Designer."
+      },
+      {
+        "id": "D",
+        "text": "The two are identical and interchangeable in every way."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Flow Designer is the strategic, modern automation tool. Legacy Workflow still exists for content built in it, but new development should use Flow Designer where possible.",
+    "distractor_notes": {
+      "B": "Flow Designer is the build tool, not a viewer.",
+      "C": "Backwards — Flow Designer is newer than Workflow.",
+      "D": "They have different models, inputs, debugging, and limitations."
+    },
+    "references": [
+      {
+        "title": "Flow Designer",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-build-workflows/page/administer/flow-designer/concept/flow-designer.html"
+      }
+    ],
+    "tags": [
+      "flow-designer",
+      "workflow",
+      "modernization"
+    ]
+  },
+  {
+    "id": "csa-ssa-007",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Self-Service and Automation",
+    "subdomain": "Flow Actions",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An admin wants to call an external REST API as a step inside a flow. Which Flow Designer component is the right pick?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A REST action — either an out-of-the-box action from a Spoke or a custom action built around the REST step."
+      },
+      {
+        "id": "B",
+        "text": "A UI policy on the form."
+      },
+      {
+        "id": "C",
+        "text": "A scheduled job that runs every 30 seconds."
+      },
+      {
+        "id": "D",
+        "text": "A business rule using GlideAjax."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Flow Designer has REST steps and spokes (pre-built REST integrations) for calling external APIs inside a flow. That keeps the integration in the same low-code model as the rest of the automation.",
+    "distractor_notes": {
+      "B": "UI policies run in the browser. They don't make outbound API calls.",
+      "C": "Scheduled job polling is overkill for one-off API calls during a flow.",
+      "D": "Business rules run server-side, but Flow Designer is the right tool when the call is part of an automation."
+    },
+    "references": [
+      {
+        "title": "Flow actions",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-build-workflows/page/administer/flow-designer/concept/flow-actions.html"
+      }
+    ],
+    "tags": [
+      "flow-designer",
+      "rest",
+      "integration"
+    ]
+  },
+  {
+    "id": "csa-ssa-008",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Self-Service and Automation",
+    "subdomain": "Flow Designer",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "What is data pill in Flow Designer used for?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A reference to a piece of data — trigger fields, action outputs, flow variables — that can be dragged into action inputs."
+      },
+      {
+        "id": "B",
+        "text": "A pill-shaped notification banner on the form."
+      },
+      {
+        "id": "C",
+        "text": "A new type of incident priority."
+      },
+      {
+        "id": "D",
+        "text": "A user-rating widget on a KB article."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Data pills are the platform's way of passing data through a flow. Drag a pill from a trigger or earlier action into an input on a later step, and the value flows through at runtime.",
+    "distractor_notes": {
+      "B": "Notification banners aren't data pills.",
+      "C": "Priority is a different concept entirely.",
+      "D": "Article rating is a Knowledge feature."
+    },
+    "references": [
+      {
+        "title": "Flow Designer",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-build-workflows/page/administer/flow-designer/concept/flow-designer.html"
+      }
+    ],
+    "tags": [
+      "flow-designer",
+      "data-pill"
+    ]
+  },
+  {
+    "id": "csa-ssa-009",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Self-Service and Automation",
+    "subdomain": "Flow Designer",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A flow occasionally fails when an upstream API returns an unexpected error. What's the supported way to give the flow controlled error behavior at the failing step?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Configure the action's error handling (e.g., Continue, Stop with error, custom error path) on the flow step so downstream behavior is intentional."
+      },
+      {
+        "id": "B",
+        "text": "Disable the flow permanently."
+      },
+      {
+        "id": "C",
+        "text": "Remove the failing step and hope the rest works."
+      },
+      {
+        "id": "D",
+        "text": "Set sys_id of the flow to null."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Flow Designer lets you set error behavior per step — continue, stop with error, or branch on error. That's how a flow gracefully handles upstream failures instead of just blowing up.",
+    "distractor_notes": {
+      "B": "Permanently disabling the flow doesn't fix the actual error path.",
+      "C": "Removing the step changes the behavior of the flow entirely.",
+      "D": "sys_id is immutable platform metadata."
+    },
+    "references": [
+      {
+        "title": "Flow actions",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-build-workflows/page/administer/flow-designer/concept/flow-actions.html"
+      }
+    ],
+    "tags": [
+      "flow-designer",
+      "error-handling"
+    ]
+  },
+  {
+    "id": "csa-ssa-010",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Self-Service and Automation",
+    "subdomain": "Flow Designer",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Two catalog items share the same '15-line provisioning sequence' at the end of their flows. What's the cleanest way to avoid duplicating that sequence in two flows?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Extract the shared sequence into a Subflow and call it from both flows."
+      },
+      {
+        "id": "B",
+        "text": "Copy and paste the steps into each flow and keep them in sync manually."
+      },
+      {
+        "id": "C",
+        "text": "Convert the flow into a Business Rule."
+      },
+      {
+        "id": "D",
+        "text": "Convert the flow into a Client Script."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Extract once, call from many — that's the subflow pattern. Maintain the logic in one place, and both flows pick up changes automatically.",
+    "distractor_notes": {
+      "B": "Copy-paste drifts. Changes will land in one place and not the other.",
+      "C": "Business rules run in a different context; they aren't a substitute for flow logic.",
+      "D": "Client scripts run in the browser; flows run server-side."
+    },
+    "references": [
+      {
+        "title": "Subflow",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-build-workflows/page/administer/flow-designer/concept/subflow.html"
+      }
+    ],
+    "tags": [
+      "subflow",
+      "reuse"
+    ]
+  },
+  {
+    "id": "csa-ssa-011",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Self-Service and Automation",
+    "subdomain": "Flow Designer",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Where does an admin typically watch a flow execute to debug behavior, see step-by-step inputs/outputs, and identify which step failed?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The Executions view of the flow, which shows each run with per-step inputs, outputs, and status."
+      },
+      {
+        "id": "B",
+        "text": "The user's browser localStorage."
+      },
+      {
+        "id": "C",
+        "text": "The favicon.svg of the instance."
+      },
+      {
+        "id": "D",
+        "text": "The sys_user record of the admin who created the flow."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Each flow has an Executions view. It records the runs and shows what happened at each step, with inputs, outputs, and status. It's the debugger.",
+    "distractor_notes": {
+      "B": "Server-side runs don't write to browser storage.",
+      "C": "Favicon is just an icon file.",
+      "D": "Flow runs aren't recorded on the author's user row."
+    },
+    "references": [
+      {
+        "title": "Flow Designer",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-build-workflows/page/administer/flow-designer/concept/flow-designer.html"
+      }
+    ],
+    "tags": [
+      "flow-designer",
+      "executions",
+      "debug"
+    ]
+  },
+  {
+    "id": "csa-ssa-012",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Self-Service and Automation",
+    "subdomain": "Flow Designer Run As",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A flow needs to update records the requester (an end user) wouldn't normally have permission to write. Which configuration on the flow handles this without granting the end user extra privileges?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Set the flow to run with the System User (or a service account) rather than the user who triggered it, so it has the permissions needed regardless of the trigger user."
+      },
+      {
+        "id": "B",
+        "text": "Grant the admin role to every requester."
+      },
+      {
+        "id": "C",
+        "text": "Disable ACLs on the target table."
+      },
+      {
+        "id": "D",
+        "text": "Move the records to a public KB."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Flows can run as the System User (or a service account), letting the automation perform work the end-user trigger wouldn't be allowed to do directly. The user keeps their normal permissions; the flow does its job.",
+    "distractor_notes": {
+      "B": "Handing out admin solves the problem by destroying the security model.",
+      "C": "Disabling ACLs is a non-starter.",
+      "D": "Knowledge bases don't determine record write permissions."
+    },
+    "references": [
+      {
+        "title": "Flow Designer",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-build-workflows/page/administer/flow-designer/concept/flow-designer.html"
+      }
+    ],
+    "tags": [
+      "flow-designer",
+      "run-as",
+      "security"
+    ]
+  },
+  {
+    "id": "csa-ssa-013",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Self-Service and Automation",
+    "subdomain": "Business Rules",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is a Business Rule in the Now Platform?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A server-side script that runs on database operations (insert, update, delete, query) on a chosen table, before, after, async, or as a display rule."
+      },
+      {
+        "id": "B",
+        "text": "A browser-side script that decorates the form after submission."
+      },
+      {
+        "id": "C",
+        "text": "A read-only checklist on a record."
+      },
+      {
+        "id": "D",
+        "text": "A type of dashboard widget."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Business Rules run on the server when records are inserted, updated, deleted, queried — or when the form is displayed. They enforce policy, derive fields, or call other code at the data layer.",
+    "distractor_notes": {
+      "B": "Browser-side scripts are Client Scripts, not Business Rules.",
+      "C": "Checklists aren't a Business Rule.",
+      "D": "Widgets render UI; they aren't server-side rules."
+    },
+    "references": [
+      {
+        "title": "Business Rules",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-application-development/page/script/business-rules/concept/c_BusinessRules.html"
+      }
+    ],
+    "tags": [
+      "business-rules",
+      "server-side"
+    ]
+  },
+  {
+    "id": "csa-ssa-014",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Self-Service and Automation",
+    "subdomain": "Business Rules",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which 'When' option on a business rule runs the script before the database write happens?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Before"
+      },
+      {
+        "id": "B",
+        "text": "After"
+      },
+      {
+        "id": "C",
+        "text": "Async"
+      },
+      {
+        "id": "D",
+        "text": "Display"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Before runs in the same transaction as the operation, before the write is committed. It's the right pick when you want to mutate current/previous values or reject the write.",
+    "distractor_notes": {
+      "B": "After runs once the write is committed — useful for side effects, not for modifying the record being written.",
+      "C": "Async runs in a separate scheduled context after the transaction.",
+      "D": "Display runs as the form is being rendered to the user, not on writes."
+    },
+    "references": [
+      {
+        "title": "Business Rules",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-application-development/page/script/business-rules/concept/c_BusinessRules.html"
+      }
+    ],
+    "tags": [
+      "business-rules",
+      "when"
+    ]
+  },
+  {
+    "id": "csa-ssa-015",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Self-Service and Automation",
+    "subdomain": "Business Rules",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An admin needs to set a field automatically based on other field values whenever an incident is saved. Which business rule 'When' is the right starting choice?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Before — modify the current record values before the write."
+      },
+      {
+        "id": "B",
+        "text": "Async — modify the record in a future scheduled run."
+      },
+      {
+        "id": "C",
+        "text": "Display — modify the record while the user is viewing it."
+      },
+      {
+        "id": "D",
+        "text": "After — modify the record after the write is committed."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Setting fields on the record being saved is the canonical 'Before' use case. The script runs in the same transaction, edits current values, and the write captures the changes.",
+    "distractor_notes": {
+      "B": "Async would do the work in a separate transaction — slower and out of sync.",
+      "C": "Display rules adjust what the user sees, not what's written.",
+      "D": "After-write field edits trigger an extra database write. Before is more efficient and idiomatic."
+    },
+    "references": [
+      {
+        "title": "Business Rules",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-application-development/page/script/business-rules/concept/c_BusinessRules.html"
+      }
+    ],
+    "tags": [
+      "business-rules",
+      "before",
+      "derived-fields"
+    ]
+  },
+  {
+    "id": "csa-ssa-016",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Self-Service and Automation",
+    "subdomain": "Business Rules",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What does the Order field on a business rule control?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The execution order relative to other business rules on the same table and 'When' — lower order runs first."
+      },
+      {
+        "id": "B",
+        "text": "The order in which the rule appears in the navigation menu."
+      },
+      {
+        "id": "C",
+        "text": "The numbered priority of the resulting record."
+      },
+      {
+        "id": "D",
+        "text": "The number of database rows the rule may modify."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Order determines execution sequence among rules on the same table and trigger. Lower numbers run first. It's how an admin influences which rule sees the world first.",
+    "distractor_notes": {
+      "B": "Business rules aren't navigation menu items.",
+      "C": "Record priority is unrelated.",
+      "D": "There's no per-rule row-modification cap controlled by Order."
+    },
+    "references": [
+      {
+        "title": "Business rule execution order",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-application-development/page/script/business-rules/reference/r_BusinessRulesExecutionOrder.html"
+      }
+    ],
+    "tags": [
+      "business-rules",
+      "order"
+    ]
+  },
+  {
+    "id": "csa-ssa-017",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Self-Service and Automation",
+    "subdomain": "Client Scripts",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is a Client Script in the Now Platform?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A script that runs in the user's browser when a form loads or changes, used to react to user input without a server round-trip."
+      },
+      {
+        "id": "B",
+        "text": "A server-side script that runs nightly."
+      },
+      {
+        "id": "C",
+        "text": "A scheduled job triggered by login."
+      },
+      {
+        "id": "D",
+        "text": "A database trigger that fires on table insert."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Client scripts run in the browser — onLoad, onChange, onSubmit, onCellEdit. They react to user input without going back to the server, but they have to be paired with server-side validation since the user can bypass client logic.",
+    "distractor_notes": {
+      "B": "Server-side scripts run on the server. Client scripts run client-side.",
+      "C": "Scheduled jobs aren't client scripts.",
+      "D": "Triggers are server-side. Client scripts are not."
+    },
+    "references": [
+      {
+        "title": "Client Scripts",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-application-development/page/script/client-scripts/concept/c_ClientScripts.html"
+      }
+    ],
+    "tags": [
+      "client-scripts",
+      "client-side"
+    ]
+  },
+  {
+    "id": "csa-ssa-018",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Self-Service and Automation",
+    "subdomain": "Client Scripts",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which client script type runs when a form is first loaded for the user?",
+    "options": [
+      {
+        "id": "A",
+        "text": "onLoad"
+      },
+      {
+        "id": "B",
+        "text": "onChange"
+      },
+      {
+        "id": "C",
+        "text": "onSubmit"
+      },
+      {
+        "id": "D",
+        "text": "onCellEdit"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "onLoad fires when the form first renders — useful for initial setup like setting default visibility or warning the user about record state.",
+    "distractor_notes": {
+      "B": "onChange fires when a watched field changes.",
+      "C": "onSubmit fires when the user submits the form.",
+      "D": "onCellEdit fires when a list-editor cell is edited."
+    },
+    "references": [
+      {
+        "title": "Client Scripts",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-application-development/page/script/client-scripts/concept/c_ClientScripts.html"
+      }
+    ],
+    "tags": [
+      "client-scripts",
+      "onload"
+    ]
+  },
+  {
+    "id": "csa-ssa-019",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Self-Service and Automation",
+    "subdomain": "UI Policy",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is a UI Policy?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A declarative configuration that controls whether fields on a form are visible, mandatory, or read-only based on conditions — without writing a script in most cases."
+      },
+      {
+        "id": "B",
+        "text": "A server-side ACL."
+      },
+      {
+        "id": "C",
+        "text": "A scheduled job that toggles fields on time-of-day."
+      },
+      {
+        "id": "D",
+        "text": "A field type on the form."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "UI Policies declaratively set field visibility, mandatory, and read-only based on conditions. They cover the common 'show this field if that other field is X' need without script.",
+    "distractor_notes": {
+      "B": "ACLs control access. UI Policies control form behavior.",
+      "C": "Scheduled jobs aren't UI policies.",
+      "D": "UI Policies aren't field types."
+    },
+    "references": [
+      {
+        "title": "UI Policy",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-application-development/page/script/client-scripts/concept/c_UIPolicy.html"
+      }
+    ],
+    "tags": [
+      "ui-policy",
+      "form-behavior"
+    ]
+  },
+  {
+    "id": "csa-ssa-020",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Self-Service and Automation",
+    "subdomain": "UI Policy vs Client Script",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An admin needs the Resolution Notes field to be mandatory only when State is set to Resolved. What is the lowest-friction implementation?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A UI Policy with condition State = Resolved, setting Resolution Notes to mandatory."
+      },
+      {
+        "id": "B",
+        "text": "A client script that hand-rolls the visibility/mandatory logic."
+      },
+      {
+        "id": "C",
+        "text": "A business rule that rejects the save with a hardcoded error."
+      },
+      {
+        "id": "D",
+        "text": "A scheduled job that emails the assignee at midnight."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "This is exactly the use case UI Policies were built for: declarative, condition-driven mandatory. Client scripts could do it, but UI Policies are clearer and easier for the next person to read.",
+    "distractor_notes": {
+      "B": "Custom client scripts work but are heavier than needed.",
+      "C": "Business rules can enforce it on save, but they don't update the form to indicate mandatory until submit — bad UX.",
+      "D": "Email at midnight doesn't enforce anything at the moment the user is saving."
+    },
+    "references": [
+      {
+        "title": "UI Policy",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-application-development/page/script/client-scripts/concept/c_UIPolicy.html"
+      }
+    ],
+    "tags": [
+      "ui-policy",
+      "form-behavior",
+      "best-practice"
+    ]
+  },
+  {
+    "id": "csa-ssa-021",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Self-Service and Automation",
+    "subdomain": "Client Script vs Business Rule",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A requirement says \"never allow incidents to be saved with priority 1 unless the user has the major_incident_manager role.\" Where should this be enforced?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Server-side, in a Business Rule (and an ACL), so the rule is enforced regardless of how the record is updated — UI, API, scripts, etc."
+      },
+      {
+        "id": "B",
+        "text": "Client-side only, in a client script — users can be trusted."
+      },
+      {
+        "id": "C",
+        "text": "In CSS on the form."
+      },
+      {
+        "id": "D",
+        "text": "In a KB article telling everyone the rule."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Anything load-bearing has to be enforced server-side. The same write can come from the UI, the API, a flow, or an integration — only server-side enforcement covers all paths. A client script can add UI friction, but the rule has to live where it can't be bypassed.",
+    "distractor_notes": {
+      "B": "Client scripts can be skipped (API calls, scripts, importers). Trust the server, not the browser.",
+      "C": "CSS hides things; it doesn't enforce anything.",
+      "D": "Documentation isn't enforcement."
+    },
+    "references": [
+      {
+        "title": "Business Rules",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-application-development/page/script/business-rules/concept/c_BusinessRules.html"
+      }
+    ],
+    "tags": [
+      "business-rules",
+      "client-scripts",
+      "enforcement"
+    ]
+  },
+  {
+    "id": "csa-ssa-022",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Self-Service and Automation",
+    "subdomain": "Business Rules",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Inside a Before Update business rule, which object typically holds the values of the record as it was BEFORE the update?",
+    "options": [
+      {
+        "id": "A",
+        "text": "previous"
+      },
+      {
+        "id": "B",
+        "text": "current"
+      },
+      {
+        "id": "C",
+        "text": "g_form"
+      },
+      {
+        "id": "D",
+        "text": "GlideUser"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Inside a server-side business rule, `previous` holds the pre-update state and `current` holds the values about to be written. Compare them to detect a transition like priority changing from 3 to 1.",
+    "distractor_notes": {
+      "B": "current is the incoming values, not the prior state.",
+      "C": "g_form is a client-side object on the form, not server-side.",
+      "D": "GlideUser provides info about the running user, not record state."
+    },
+    "references": [
+      {
+        "title": "Business Rules",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-application-development/page/script/business-rules/concept/c_BusinessRules.html"
+      }
+    ],
+    "tags": [
+      "business-rules",
+      "current",
+      "previous"
+    ]
+  },
+  {
+    "id": "csa-ssa-023",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Self-Service and Automation",
+    "subdomain": "Client Scripts",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A client script wants to read the value of a field on the current form. Which API does it commonly use?",
+    "options": [
+      {
+        "id": "A",
+        "text": "g_form.getValue('field_name')"
+      },
+      {
+        "id": "B",
+        "text": "current.getValue('field_name')"
+      },
+      {
+        "id": "C",
+        "text": "GlideRecord('incident').get('field_name')"
+      },
+      {
+        "id": "D",
+        "text": "previous.getValue('field_name')"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "g_form is the client-side form API. getValue retrieves a field's current value as the user sees it. It's the right tool inside a client script.",
+    "distractor_notes": {
+      "B": "current is server-side. Client scripts don't have it.",
+      "C": "Synchronous server queries in client scripts are an anti-pattern and not what g_form provides.",
+      "D": "previous is server-side, not available in client scripts."
+    },
+    "references": [
+      {
+        "title": "Client Scripts",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-application-development/page/script/client-scripts/concept/c_ClientScripts.html"
+      }
+    ],
+    "tags": [
+      "client-scripts",
+      "g_form"
+    ]
+  },
+  {
+    "id": "csa-ssa-024",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Self-Service and Automation",
+    "subdomain": "Performance",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A business rule that runs on every Update to the Incident table is causing a noticeable slowdown when the table grows. What's the most appropriate first response?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Tighten the rule's Filter Conditions and revisit whether its 'When' should be Async, so it only runs when it must and does heavy work outside the user's transaction."
+      },
+      {
+        "id": "B",
+        "text": "Add more business rules to balance the load."
+      },
+      {
+        "id": "C",
+        "text": "Delete every incident older than a week."
+      },
+      {
+        "id": "D",
+        "text": "Disable the entire Incident table."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Performance fixes start with: run less, and run later if possible. Tighten the Filter Conditions so the rule only fires when it actually needs to, and consider Async to move heavy work outside the user's save transaction.",
+    "distractor_notes": {
+      "B": "More rules makes it worse, not better.",
+      "C": "Deleting data is a destructive non-fix and addresses the wrong problem.",
+      "D": "Disabling the table is wildly disproportionate."
+    },
+    "references": [
+      {
+        "title": "Business Rules",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-application-development/page/script/business-rules/concept/c_BusinessRules.html"
+      }
+    ],
+    "tags": [
+      "business-rules",
+      "performance",
+      "async"
+    ]
+  },
+  {
+    "id": "csa-ssa-025",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Self-Service and Automation",
+    "subdomain": "Service Portal",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is Service Portal?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A modern, configurable, mobile-friendly self-service web interface built from portals, pages, and widgets — separate from the classic UI."
+      },
+      {
+        "id": "B",
+        "text": "The administrator's settings panel for licensing."
+      },
+      {
+        "id": "C",
+        "text": "A read-only mobile app for browsing incidents."
+      },
+      {
+        "id": "D",
+        "text": "An offline cache of the catalog for use without internet."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Service Portal is the self-service experience layer — branded, responsive, and built from portals, pages, and reusable widgets. It's where end users see the catalog, knowledge, and request status.",
+    "distractor_notes": {
+      "B": "Licensing settings live in admin tools, not Service Portal.",
+      "C": "Service Portal is a full self-service interface, not read-only.",
+      "D": "Service Portal is online; there's no offline catalog mode."
+    },
+    "references": [
+      {
+        "title": "Service Portal",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-servicenow-platform/page/build/service-portal/concept/c_ServicePortal.html"
+      }
+    ],
+    "tags": [
+      "service-portal",
+      "self-service"
+    ]
+  },
+  {
+    "id": "csa-ssa-026",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Self-Service and Automation",
+    "subdomain": "Service Portal Widgets",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is a widget in Service Portal?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A reusable, self-contained UI component (HTML template + client/server controllers + CSS) that can be placed on portal pages."
+      },
+      {
+        "id": "B",
+        "text": "A toggle on a form for marking it as a favorite."
+      },
+      {
+        "id": "C",
+        "text": "A read-only summary of a record's audit history."
+      },
+      {
+        "id": "D",
+        "text": "A type of approval request."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Widgets are the building blocks of Service Portal pages. Each widget bundles HTML, client and server controllers, and CSS, and can be reused across pages.",
+    "distractor_notes": {
+      "B": "Favoriting forms is a classic UI feature, not a widget.",
+      "C": "Audit history is a different platform feature.",
+      "D": "Approvals are records, not portal widgets."
+    },
+    "references": [
+      {
+        "title": "Service Portal",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-servicenow-platform/page/build/service-portal/concept/c_ServicePortal.html"
+      }
+    ],
+    "tags": [
+      "service-portal",
+      "widget"
+    ]
+  },
+  {
+    "id": "csa-ssa-027",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Self-Service and Automation",
+    "subdomain": "Reports",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is a Report in the Now Platform?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A saved query against a table with a chosen visualization (list, bar, pie, time series, etc.) that can be shared and added to dashboards."
+      },
+      {
+        "id": "B",
+        "text": "An incident ticket with priority 1."
+      },
+      {
+        "id": "C",
+        "text": "A scheduled job that emails the admin."
+      },
+      {
+        "id": "D",
+        "text": "A type of business rule."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "A Report is a saved query + visualization. Define a table, conditions, and how to render the result, then share it or surface it on a dashboard.",
+    "distractor_notes": {
+      "B": "An incident is a work item, not a report.",
+      "C": "Scheduled jobs can run reports, but the report itself is the saved query/viz.",
+      "D": "Business rules are server-side scripts, not reports."
+    },
+    "references": [
+      {
+        "title": "Reports overview",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-now-intelligence/page/use/reporting/concept/c_ReportsOverview.html"
+      }
+    ],
+    "tags": [
+      "reports",
+      "reporting"
+    ]
+  },
+  {
+    "id": "csa-ssa-028",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Self-Service and Automation",
+    "subdomain": "Reports",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A manager wants a bar chart of open incidents grouped by assignment group. Which path is most appropriate?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Create a Report on the Incident table with a condition (state != Closed/Resolved), Group By assignment_group, visualized as a bar chart."
+      },
+      {
+        "id": "B",
+        "text": "Open every incident and count by hand."
+      },
+      {
+        "id": "C",
+        "text": "Add a UI policy that displays the count on the form."
+      },
+      {
+        "id": "D",
+        "text": "Write a custom Knowledge article that lists the counts."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "That's exactly what Reports do: pick the table, set the filter, choose a Group By and a visualization, save. The report then refreshes against current data whenever opened.",
+    "distractor_notes": {
+      "B": "Manual counting is exactly what reporting is for.",
+      "C": "UI policies are about form behavior, not aggregation.",
+      "D": "A KB article goes stale immediately."
+    },
+    "references": [
+      {
+        "title": "Create a report",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-now-intelligence/page/use/reporting/task/t_CreateAReport.html"
+      }
+    ],
+    "tags": [
+      "reports",
+      "incident",
+      "group-by"
+    ]
+  },
+  {
+    "id": "csa-ssa-029",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Self-Service and Automation",
+    "subdomain": "Dashboards",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is a Dashboard in the Now Platform?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A configurable page that surfaces multiple reports and interactive analytics widgets together, typically organized by tabs."
+      },
+      {
+        "id": "B",
+        "text": "A row on the user table holding the user's preferences."
+      },
+      {
+        "id": "C",
+        "text": "A scheduled job that emails reports daily."
+      },
+      {
+        "id": "D",
+        "text": "An audit trail of dashboard edits."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Dashboards aggregate reports and analytics into one configurable page — typically with tabs. They're how teams keep an eye on KPIs without opening reports one by one.",
+    "distractor_notes": {
+      "B": "User prefs are stored on sys_user, but they're not dashboards.",
+      "C": "Dashboards can be scheduled, but the dashboard is the configurable page, not the job.",
+      "D": "Edits to dashboards are tracked in version history, not in the dashboard itself."
+    },
+    "references": [
+      {
+        "title": "Dashboards",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-now-intelligence/page/use/dashboards/concept/dashboards.html"
+      }
+    ],
+    "tags": [
+      "dashboards",
+      "reporting"
+    ]
+  },
+  {
+    "id": "csa-ssa-030",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Self-Service and Automation",
+    "subdomain": "Performance Analytics",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "How is Performance Analytics different from standard Reports?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Performance Analytics captures time-series snapshots of KPIs so trends, targets, and breakdowns are persistent over time — Reports query live data and don't preserve historical snapshots automatically."
+      },
+      {
+        "id": "B",
+        "text": "Performance Analytics is the same product as Reports, just renamed."
+      },
+      {
+        "id": "C",
+        "text": "Performance Analytics replaces the entire Reporting feature."
+      },
+      {
+        "id": "D",
+        "text": "Performance Analytics runs only on the user's phone."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "PA is built around indicators that snapshot KPI values over time. That historical record lets you trend and compare against targets. Reports run live and don't keep history without you wiring up snapshots yourself.",
+    "distractor_notes": {
+      "B": "They're related but distinct products with different capabilities and licensing.",
+      "C": "Reports continue to exist alongside PA.",
+      "D": "PA runs on the server; it's not phone-only."
+    },
+    "references": [
+      {
+        "title": "Performance Analytics",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-now-intelligence/page/use/performance-analytics/concept/c_PerformanceAnalytics.html"
+      }
+    ],
+    "tags": [
+      "performance-analytics",
+      "reporting",
+      "kpi"
+    ]
+  },
+  {
+    "id": "csa-ssa-031",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Self-Service and Automation",
+    "subdomain": "Service Portal",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An admin wants end users to browse the catalog through a branded portal at /sp. Which Service Portal artifact controls the URL suffix and high-level configuration?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A Portal record (sp_portal) with a URL suffix and references to the homepage and theme."
+      },
+      {
+        "id": "B",
+        "text": "A System Property named glide.url_suffix."
+      },
+      {
+        "id": "C",
+        "text": "A business rule on every table."
+      },
+      {
+        "id": "D",
+        "text": "An ACL on the catalog item table."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "A Portal record defines the URL suffix, homepage page, theme, and other top-level settings for the portal experience. /sp is the default Service Portal.",
+    "distractor_notes": {
+      "B": "There's no single glide.url_suffix property that defines a portal.",
+      "C": "Business rules are server-side scripts unrelated to portal routing.",
+      "D": "ACLs gate access; they don't route portal URLs."
+    },
+    "references": [
+      {
+        "title": "Service Portal",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-servicenow-platform/page/build/service-portal/concept/c_ServicePortal.html"
+      }
+    ],
+    "tags": [
+      "service-portal",
+      "portal-record",
+      "url"
+    ]
+  },
+  {
+    "id": "csa-ssa-032",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Self-Service and Automation",
+    "subdomain": "Reports",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which statement about report sharing is most accurate?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Reports can be shared with specific users, groups, or roles; recipients only see what they have access to under the platform's ACLs."
+      },
+      {
+        "id": "B",
+        "text": "Reports are public by default and anyone on the internet can see them."
+      },
+      {
+        "id": "C",
+        "text": "Reports cannot be shared at all — each user must rebuild their own."
+      },
+      {
+        "id": "D",
+        "text": "Shared reports bypass ACLs so the recipient sees every row."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Reports are shared with explicit audiences, and the platform's ACLs still apply at runtime. So even a shared report only shows the recipient rows they're allowed to read.",
+    "distractor_notes": {
+      "B": "Reports aren't public to the internet by default.",
+      "C": "Sharing is a built-in feature.",
+      "D": "ACLs always apply — reports don't bypass them."
+    },
+    "references": [
+      {
+        "title": "Reports overview",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-now-intelligence/page/use/reporting/concept/c_ReportsOverview.html"
+      }
+    ],
+    "tags": [
+      "reports",
+      "sharing",
+      "acl"
+    ]
+  },
+  {
+    "id": "csa-ssa-033",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Self-Service and Automation",
+    "subdomain": "Dashboards",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An admin wants the same operational view for every member of the Network Ops team. Which approach is most maintainable?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Create one dashboard, share it with the Network Ops group, and keep it updated centrally."
+      },
+      {
+        "id": "B",
+        "text": "Have each user create their own personal dashboard from scratch."
+      },
+      {
+        "id": "C",
+        "text": "Email static PNG screenshots every morning."
+      },
+      {
+        "id": "D",
+        "text": "Put the data in a KB article."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "One central dashboard, shared with the right audience, is the maintainable pattern. Updates land in one place, every team member sees the latest, and ACLs still gate row-level access.",
+    "distractor_notes": {
+      "B": "Personal dashboards drift instantly.",
+      "C": "Static PNGs are stale the moment they're sent.",
+      "D": "KB articles don't refresh against live data."
+    },
+    "references": [
+      {
+        "title": "Dashboards",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-now-intelligence/page/use/dashboards/concept/dashboards.html"
+      }
+    ],
+    "tags": [
+      "dashboards",
+      "sharing",
+      "operations"
+    ]
+  },
+  {
+    "id": "csa-ssa-034",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Self-Service and Automation",
+    "subdomain": "Reports",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A user reports that the same report shows different totals for them than for a manager. What is the most likely explanation?",
+    "options": [
+      {
+        "id": "A",
+        "text": "ACLs are filtering rows differently for the two users based on their roles, group memberships, or other criteria."
+      },
+      {
+        "id": "B",
+        "text": "Reports run on cached random snapshots that vary per user."
+      },
+      {
+        "id": "C",
+        "text": "The platform displays different totals based on browser type."
+      },
+      {
+        "id": "D",
+        "text": "The user's screen resolution is changing the math."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Reports honor each user's ACLs. Two users querying the same report can legitimately see different totals because the underlying rows they're allowed to read differ. That's a feature, not a bug.",
+    "distractor_notes": {
+      "B": "There's no per-user random caching of totals.",
+      "C": "Browser type doesn't change report math.",
+      "D": "Screen resolution doesn't change values."
+    },
+    "references": [
+      {
+        "title": "Reports overview",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-now-intelligence/page/use/reporting/concept/c_ReportsOverview.html"
+      }
+    ],
+    "tags": [
+      "reports",
+      "acl",
+      "row-visibility"
+    ]
+  },
+  {
+    "id": "csa-ssa-035",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Self-Service and Automation",
+    "subdomain": "Service Portal",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which statement is most accurate about Service Portal vs the classic UI for end users?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Service Portal is intended primarily for self-service end users, while fulfiller/agents typically work in Next Experience or workspaces; both can coexist."
+      },
+      {
+        "id": "B",
+        "text": "Service Portal completely replaces the classic UI for all users including fulfillers."
+      },
+      {
+        "id": "C",
+        "text": "Classic UI cannot be used at the same time as Service Portal."
+      },
+      {
+        "id": "D",
+        "text": "Service Portal only works for incidents, not for any other table."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Service Portal is the self-service surface for end users. Fulfillers and admins live in Next Experience and workspaces. The two coexist on the same instance.",
+    "distractor_notes": {
+      "B": "Fulfillers usually prefer Next Experience/agent workspace.",
+      "C": "They can run side by side.",
+      "D": "Service Portal supports incidents, requests, KB, custom apps — not just incidents."
+    },
+    "references": [
+      {
+        "title": "Service Portal",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-servicenow-platform/page/build/service-portal/concept/c_ServicePortal.html"
+      }
+    ],
+    "tags": [
+      "service-portal",
+      "ux",
+      "end-users"
+    ]
+  },
+  {
+    "id": "csa-ssa-036",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Self-Service and Automation",
+    "subdomain": "Reporting Governance",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A finance team wants a weekly snapshot of \"open incidents older than 30 days\" preserved over time so they can chart the trend. Which capability fits best?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Configure a Performance Analytics indicator that snapshots the count on a scheduled cadence."
+      },
+      {
+        "id": "B",
+        "text": "Take a manual screenshot every week and store it in a KB article."
+      },
+      {
+        "id": "C",
+        "text": "Run a one-time report and assume the number won't change."
+      },
+      {
+        "id": "D",
+        "text": "Save the report to a USB drive every week."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Time-series snapshots of a KPI are exactly the PA indicator pattern. Schedule the snapshot, accumulate history, then chart and target against it.",
+    "distractor_notes": {
+      "B": "Screenshots aren't queryable or chartable.",
+      "C": "One-time reports lose the trend signal.",
+      "D": "USB archiving doesn't power reporting."
+    },
+    "references": [
+      {
+        "title": "Performance Analytics",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-now-intelligence/page/use/performance-analytics/concept/c_PerformanceAnalytics.html"
+      }
+    ],
+    "tags": [
+      "performance-analytics",
+      "snapshot",
+      "trend"
+    ]
+  },
+  {
+    "id": "csa-ssa-037",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Self-Service and Automation",
+    "subdomain": "Service Level Management",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is a Service Level Agreement (SLA) Definition in ServiceNow?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A record that defines a measurable commitment — typically a duration tied to a condition on a target table — and the schedule used to count time."
+      },
+      {
+        "id": "B",
+        "text": "A read-only audit log of agent activity."
+      },
+      {
+        "id": "C",
+        "text": "A type of ACL."
+      },
+      {
+        "id": "D",
+        "text": "A field on the user record."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "An SLA Definition declares the commitment (e.g., 'P1 incident resolved within 4 hours'), the conditions that start/pause/stop the timer, and the schedule used to count business or 24x7 time. The platform creates Task SLA records to track each one in flight.",
+    "distractor_notes": {
+      "B": "Activity logs are unrelated.",
+      "C": "ACLs control access, not commitments.",
+      "D": "SLA definitions live on their own table, not on the user."
+    },
+    "references": [
+      {
+        "title": "Service Level Management",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-servicenow-platform/page/administer/service-level-management/concept/c_ServiceLevelManagement.html"
+      }
+    ],
+    "tags": [
+      "sla",
+      "slm"
+    ]
+  },
+  {
+    "id": "csa-ssa-038",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Self-Service and Automation",
+    "subdomain": "SLA Schedules",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An SLA only counts business hours (Mon–Fri 9am–5pm). Which platform construct enforces that?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A Schedule referenced by the SLA Definition that defines the business hours used to measure duration."
+      },
+      {
+        "id": "B",
+        "text": "A scheduled job that ticks a counter every minute."
+      },
+      {
+        "id": "C",
+        "text": "A UI policy that hides the SLA when it's after hours."
+      },
+      {
+        "id": "D",
+        "text": "An ACL that blocks updates after 5pm."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Schedules define business hours, holidays, and time zones. The SLA Definition references a Schedule, so the breach timer respects business hours instead of running 24x7.",
+    "distractor_notes": {
+      "B": "Manual minute-counters are not how SLA timers work.",
+      "C": "UI policies don't affect SLA timing.",
+      "D": "ACLs control access, not time accounting."
+    },
+    "references": [
+      {
+        "title": "Define an SLA",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-servicenow-platform/page/administer/service-level-management/task/t_DefineAnSLA.html"
+      }
+    ],
+    "tags": [
+      "sla",
+      "schedule",
+      "business-hours"
+    ]
+  },
+  {
+    "id": "csa-ssa-039",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Self-Service and Automation",
+    "subdomain": "SLA Pause",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "An incident's SLA should NOT count time while it's waiting on the caller. How is this typically configured?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Add a Pause condition (state = Awaiting Caller) on the SLA Definition so the timer pauses while that condition is true."
+      },
+      {
+        "id": "B",
+        "text": "Delete the SLA when the state changes."
+      },
+      {
+        "id": "C",
+        "text": "Move the incident to a different table."
+      },
+      {
+        "id": "D",
+        "text": "Disable email so the caller can't be contacted."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "SLAs support Start/Pause/Stop conditions. Setting a Pause condition on 'Awaiting Caller' freezes the timer while the state is true and resumes when it isn't — exactly the right tool here.",
+    "distractor_notes": {
+      "B": "Deleting the SLA loses the history.",
+      "C": "Moving tables would lose all linkage.",
+      "D": "Disabling email doesn't change the time math."
+    },
+    "references": [
+      {
+        "title": "Define an SLA",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-servicenow-platform/page/administer/service-level-management/task/t_DefineAnSLA.html"
+      }
+    ],
+    "tags": [
+      "sla",
+      "pause",
+      "incident"
+    ]
+  },
+  {
+    "id": "csa-ssa-040",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Self-Service and Automation",
+    "subdomain": "Surveys",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the Survey Management feature used for?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Designing surveys with questions and categories, distributing them on triggers or schedules, and collecting and reporting on responses."
+      },
+      {
+        "id": "B",
+        "text": "Sending push notifications to mobile devices."
+      },
+      {
+        "id": "C",
+        "text": "Logging audit changes to records."
+      },
+      {
+        "id": "D",
+        "text": "Creating SAML identity providers."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Survey Management designs the survey instrument, distributes it (typically when an incident is closed, a request fulfilled, etc.), and reports on responses. It's the platform's voice-of-customer feature.",
+    "distractor_notes": {
+      "B": "Push notifications aren't surveys.",
+      "C": "Audit changes live in audit tables, separate from surveys.",
+      "D": "SAML configuration is a security feature."
+    },
+    "references": [
+      {
+        "title": "Survey Management",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-servicenow-platform/page/administer/survey-administration/concept/c_SurveyManagement.html"
+      }
+    ],
+    "tags": [
+      "surveys",
+      "voc"
+    ]
+  },
+  {
+    "id": "csa-ssa-041",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Self-Service and Automation",
+    "subdomain": "Inbound Email Actions",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is an Inbound Email Action?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A configuration that runs when the platform receives email matching a condition — used to create or update records, reply, or trigger a flow."
+      },
+      {
+        "id": "B",
+        "text": "A spam filter for the user's personal inbox."
+      },
+      {
+        "id": "C",
+        "text": "A scheduled job that empties the syslog table."
+      },
+      {
+        "id": "D",
+        "text": "A type of UI policy."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Inbound email actions are how the platform turns incoming mail into work — create or update incidents, append comments, reply to senders, kick off automation. Conditions and order govern which action processes a given message.",
+    "distractor_notes": {
+      "B": "Inbound actions are server-side and instance-level.",
+      "C": "Syslog cleanup is unrelated.",
+      "D": "UI policies are about form behavior."
+    },
+    "references": [
+      {
+        "title": "Inbound email actions",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-servicenow-platform/page/administer/notification/concept/c_InboundEmailActions.html"
+      }
+    ],
+    "tags": [
+      "inbound-email",
+      "automation"
+    ]
+  },
+  {
+    "id": "csa-ssa-042",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Self-Service and Automation",
+    "subdomain": "Inbound Email Actions",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An admin wants emails sent to support@company.com to automatically create new incidents. Which configuration is the typical fit?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Configure an Inbound Email Action of type 'New' on the Incident table that creates a record from inbound messages matching the condition."
+      },
+      {
+        "id": "B",
+        "text": "Add a UI policy on the user table."
+      },
+      {
+        "id": "C",
+        "text": "Add a scheduled job that polls a separate IMAP server."
+      },
+      {
+        "id": "D",
+        "text": "Write a business rule on sys_user_group."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Inbound Email Actions of type 'New' are designed to spawn records from inbound mail. Set the target table to Incident, define the conditions, and map subject/body to fields.",
+    "distractor_notes": {
+      "B": "UI policies don't process inbound mail.",
+      "C": "Custom IMAP polling re-invents what the platform already does.",
+      "D": "Business rules on a group don't see inbound mail."
+    },
+    "references": [
+      {
+        "title": "Inbound email actions",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-servicenow-platform/page/administer/notification/concept/c_InboundEmailActions.html"
+      }
+    ],
+    "tags": [
+      "inbound-email",
+      "incident"
+    ]
+  },
+  {
+    "id": "csa-ssa-043",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Self-Service and Automation",
+    "subdomain": "Scheduled Jobs",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is a Scheduled Job in the Now Platform?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A configurable, server-side task that runs on a defined schedule (daily, weekly, cron) to perform work such as running scripts, sending reports, or triggering flows."
+      },
+      {
+        "id": "B",
+        "text": "A type of attachment on a record."
+      },
+      {
+        "id": "C",
+        "text": "A free-text field on the user form."
+      },
+      {
+        "id": "D",
+        "text": "A read-only audit row."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Scheduled Jobs run server-side on a schedule. Use them for recurring work like cleanups, summary reports, periodic integrations, or kicking off a flow on a cadence.",
+    "distractor_notes": {
+      "B": "Attachments are files, not jobs.",
+      "C": "Free-text fields aren't jobs.",
+      "D": "Audit rows are history, not scheduled work."
+    },
+    "references": [
+      {
+        "title": "Scheduled jobs",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/scheduled-jobs/concept/c_ScheduledJobs.html"
+      }
+    ],
+    "tags": [
+      "scheduled-jobs",
+      "automation"
+    ]
+  },
+  {
+    "id": "csa-ssa-044",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Self-Service and Automation",
+    "subdomain": "SLA Workflow",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which record type does the platform create on a target task when an SLA Definition's start condition is met?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A Task SLA record (task_sla) that tracks elapsed/remaining time and lifecycle of that specific SLA on that task."
+      },
+      {
+        "id": "B",
+        "text": "A new Change Request."
+      },
+      {
+        "id": "C",
+        "text": "A new sys_user row."
+      },
+      {
+        "id": "D",
+        "text": "A new Problem record."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Task SLA records (task_sla) are the per-task instances of an SLA Definition. They carry the elapsed time, remaining time, breach time, and lifecycle for that one task's commitment.",
+    "distractor_notes": {
+      "B": "Change requests aren't SLA instances.",
+      "C": "Users aren't SLA instances.",
+      "D": "Problems aren't SLA instances."
+    },
+    "references": [
+      {
+        "title": "Service Level Management",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-servicenow-platform/page/administer/service-level-management/concept/c_ServiceLevelManagement.html"
+      }
+    ],
+    "tags": [
+      "sla",
+      "task-sla"
+    ]
+  },
+  {
+    "id": "csa-ssa-045",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Self-Service and Automation",
+    "subdomain": "Scheduled Jobs",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A scheduled job is running too long and starting to overlap with itself on subsequent runs. What is the most appropriate first response?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Review and tighten the job's scope (filter conditions, batch size), and consider running it less frequently or off business hours."
+      },
+      {
+        "id": "B",
+        "text": "Disable the platform's job scheduler entirely."
+      },
+      {
+        "id": "C",
+        "text": "Increase the run interval to every 5 seconds."
+      },
+      {
+        "id": "D",
+        "text": "Delete the syslog table."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Performance fix: do less, run less often, run when it won't compete with users. Tightening filter conditions and reducing frequency typically resolves overlap without surgery.",
+    "distractor_notes": {
+      "B": "Disabling the whole scheduler is wildly disproportionate.",
+      "C": "Running every 5 seconds will make the overlap dramatically worse.",
+      "D": "Deleting log data doesn't change the job's runtime."
+    },
+    "references": [
+      {
+        "title": "Scheduled jobs",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/scheduled-jobs/concept/c_ScheduledJobs.html"
+      }
+    ],
+    "tags": [
+      "scheduled-jobs",
+      "performance"
+    ]
+  },
+  {
+    "id": "csa-ssa-046",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Self-Service and Automation",
+    "subdomain": "Surveys",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A team wants a CSAT survey to be sent automatically when an incident is closed. Which configuration is the typical fit?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A survey with a trigger condition tied to incident closure (or a flow/business rule that sends the survey on the Closed transition)."
+      },
+      {
+        "id": "B",
+        "text": "An ACL that prevents incidents from closing."
+      },
+      {
+        "id": "C",
+        "text": "A UI policy that adds a star to the form."
+      },
+      {
+        "id": "D",
+        "text": "A KB article shared with the caller."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Survey Management supports triggered distribution. Configure the survey to be sent when an incident transitions to Closed — either directly or via a flow/business rule that calls the survey.",
+    "distractor_notes": {
+      "B": "Blocking closure has nothing to do with surveying.",
+      "C": "A star on a form isn't a survey.",
+      "D": "A KB article is information, not a measurement instrument."
+    },
+    "references": [
+      {
+        "title": "Survey Management",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-servicenow-platform/page/administer/survey-administration/concept/c_SurveyManagement.html"
+      }
+    ],
+    "tags": [
+      "surveys",
+      "csat",
+      "incident"
+    ]
+  },
+  {
+    "id": "csa-ssa-047",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Self-Service and Automation",
+    "subdomain": "Inbound Email Actions",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A user replies to an incident notification email with new information. The platform updates the incident with the user's comment instead of creating a new record. Which inbound action mechanism is responsible?",
+    "options": [
+      {
+        "id": "A",
+        "text": "An Inbound Email Action of type 'Reply' (or 'Update') that matches on a reference (e.g., watermark, prefix in subject) and updates the existing record."
+      },
+      {
+        "id": "B",
+        "text": "A scheduled job that scans replies hourly."
+      },
+      {
+        "id": "C",
+        "text": "An ACL that prevents new records from being created by email."
+      },
+      {
+        "id": "D",
+        "text": "A UI policy on the email form."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Reply/Update inbound actions match incoming mail to an existing record (typically via a watermark or subject prefix) and apply the change there. That's how '[INC0010023] Network outage' threading works without creating duplicate records.",
+    "distractor_notes": {
+      "B": "Inbound mail is event-driven, not poll-driven.",
+      "C": "ACLs don't categorize inbound mail.",
+      "D": "UI policies don't process email."
+    },
+    "references": [
+      {
+        "title": "Inbound email actions",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-servicenow-platform/page/administer/notification/concept/c_InboundEmailActions.html"
+      }
+    ],
+    "tags": [
+      "inbound-email",
+      "reply",
+      "threading"
+    ]
+  }
+]

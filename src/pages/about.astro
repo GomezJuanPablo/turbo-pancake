@@ -1,0 +1,106 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+---
+<BaseLayout
+  title="About — GlideUp.net"
+  description="Why GlideUp exists and how it works — free, doc-anchored ServiceNow certification practice."
+  activeNav="about"
+>
+  <Breadcrumb crumbs={[
+    { label: 'Practice', href: '/' },
+    { label: 'About' },
+  ]} />
+
+  <div class="about-banner">
+    <img
+      src="/brand/banner.png"
+      alt="GlideUp — Level Up Your Now"
+      loading="eager"
+      decoding="async"
+      fetchpriority="high"
+    />
+  </div>
+
+  <div class="about-grid">
+    <article class="card about-card">
+      <h1 style="font-size:22px;font-weight:700;margin-bottom:12px;">About GlideUp</h1>
+      <p style="margin-bottom:12px;line-height:1.6;">
+        GlideUp is a free, community-built ServiceNow certification practice site. Every
+        question is anchored to verified documentation on
+        <a href="https://docs.servicenow.com" target="_blank" rel="noopener">docs.servicenow.com</a>.
+        Every wrong answer comes with a specific note explaining <em>why</em> it's wrong — so
+        you learn the platform, not just the answer.
+      </p>
+      <p style="margin-bottom:12px;line-height:1.6;">
+        We cover the four core ServiceNow certs in sequence: <strong>CSA</strong> first, then
+        <strong>CAD</strong>, <strong>CIS-ITSM</strong>, and <strong>CIS-DF</strong>. Each
+        exam builds out to 240 questions distributed across the official blueprint domains.
+      </p>
+      <p style="margin-bottom:12px;line-height:1.6;">
+        No login. No PII. No ads. Your progress lives in your browser's localStorage and
+        nowhere else.
+      </p>
+
+      <h2 style="font-size:16px;font-weight:600;margin:24px 0 8px;">Reset your progress</h2>
+      <p style="line-height:1.6;margin-bottom:8px;">
+        Your stats live in this browser only. Wiping is a one-click affair.
+      </p>
+      <button id="reset-progress" class="btn btn--ghost" type="button">Reset local progress</button>
+      <p id="reset-status" style="margin-top:8px;font-size:12px;color:var(--text-muted);" hidden>
+        🧌 Progress cleared. Onward.
+      </p>
+    </article>
+
+    <aside class="about-side">
+      <img
+        src="/brand/mascot-full.png"
+        alt="The GlideUp goblin mascot — a friendly cosmic study buddy"
+        loading="lazy"
+        decoding="async"
+        style="width:100%;height:auto;border-radius:14px;background:var(--bg);"
+      />
+      <p style="margin-top:12px;font-size:12px;color:var(--text-muted);line-height:1.5;">
+        Meet the goblin. Antenna, backpack, glowing G. Available in stickers
+        (eventually) and at every achievement unlock.
+      </p>
+    </aside>
+  </div>
+</BaseLayout>
+
+<script>
+  const btn = document.getElementById('reset-progress');
+  const status = document.getElementById('reset-status');
+  btn?.addEventListener('click', () => {
+    try { localStorage.removeItem('glideup:progress:v1'); } catch {}
+    status.hidden = false;
+    setTimeout(() => location.reload(), 800);
+  });
+</script>
+
+<style>
+  .about-banner {
+    margin: 0 0 24px;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: #0A0B2C;
+    line-height: 0;
+  }
+  .about-banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .about-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 280px;
+    gap: 24px;
+    align-items: start;
+  }
+  .about-card { max-width: 780px; }
+  @media (max-width: 880px) {
+    .about-grid { grid-template-columns: 1fr; }
+    .about-side { order: -1; max-width: 280px; }
+  }
+</style>

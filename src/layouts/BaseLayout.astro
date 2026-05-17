@@ -1,0 +1,67 @@
+---
+import '../styles/global.css';
+import TopBar from '../components/TopBar.astro';
+import SideNav from '../components/SideNav.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+  activeNav?: string;
+}
+
+const {
+  title = 'GlideUp.net — Free ServiceNow Cert Practice',
+  description = 'Free, community-built, doc-anchored ServiceNow certification practice. CSA, CAD, CIS-ITSM, CIS-DF. No login, no ads.',
+  activeNav = '',
+} = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/png" href="/brand/logo-mark.png" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://glideup.net" />
+    <meta property="og:image" content="/og-image.png" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+
+    <!-- Preconnect for Inter -->
+    <link rel="preconnect" href="https://rsms.me" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <TopBar activeNav={activeNav} />
+      <SideNav activeNav={activeNav} />
+      <main class="content">
+        <div class="content__inner">
+          <slot />
+        </div>
+      </main>
+    </div>
+
+    <!-- Ko-fi floating support widget. Loads async so it never blocks
+         render. Persists across pages because it lives in the layout. -->
+    <script is:inline src="https://storage.ko-fi.com/cdn/widget/Widget_2.js" defer></script>
+    <script is:inline>
+      window.addEventListener('load', () => {
+        if (typeof kofiwidget2 !== 'undefined') {
+          kofiwidget2.init('Support GlideUp on Ko-fi', '#0E8B9E', 'Y8Y21ZOMNW');
+          kofiwidget2.draw();
+        }
+      });
+    </script>
+  </body>
+</html>

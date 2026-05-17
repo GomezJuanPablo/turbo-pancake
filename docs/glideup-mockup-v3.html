@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GlideUp — Level Up Your Now</title>
+<style>
+  :root {
+    /* Surface — light content area */
+    --bg: #F4F6F8;
+    --surface: #FFFFFF;
+    --surface-2: #FAFBFC;
+    --border: #E1E4E8;
+    --border-strong: #C5CCD3;
+
+    /* Chrome — dark midnight navy (matches NE top bar) */
+    --chrome: #1B1B3F;
+    --chrome-2: #252557;
+    --chrome-border: #2E2E5F;
+    --chrome-text: #FFFFFF;
+    --chrome-text-muted: #B8B8D1;
+
+    /* Text */
+    --text: #1A1A2E;
+    --text-muted: #5C6C7C;
+    --text-dim: #8B9AA8;
+
+    /* Brand — deep teal primary (NE action color) */
+    --primary: #0E8B9E;
+    --primary-hover: #006B7F;
+    --primary-dark: #00525E;
+    --primary-bg: rgba(14, 139, 158, 0.08);
+    --primary-border: rgba(14, 139, 158, 0.30);
+
+    /* Accent — cosmic touches (used sparingly) */
+    --magenta: #E91E63;
+    --magenta-soft: rgba(233, 30, 99, 0.12);
+
+    /* State */
+    --success: #16A75C;
+    --success-bg: rgba(22, 167, 92, 0.10);
+    --amber: #FF8C42;
+    --amber-bg: rgba(255, 140, 66, 0.12);
+    --rose: #E63946;
+    --rose-bg: rgba(230, 57, 70, 0.10);
+
+    /* Tiers */
+    --bronze: #A77043;
+    --silver: #6B7A8A;
+    --gold: #D4A017;
+
+    /* Shadow */
+    --shadow-sm: 0 1px 2px rgba(15, 31, 45, 0.04), 0 1px 3px rgba(15, 31, 45, 0.06);
+    --shadow-md: 0 4px 6px rgba(15, 31, 45, 0.04), 0 2px 4px rgba(15, 31, 45, 0.06);
+    --shadow-lg: 0 10px 15px rgba(15, 31, 45, 0.05), 0 4px 6px rgba(15, 31, 45, 0.04);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+  button { font-family: inherit; cursor: pointer; }
+
+  /* App shell */
+  .app-shell {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    min-height: 100vh;
+  }
+
+  /* Top bar — midnight navy */
+  .topbar {
+    grid-column: 1 / -1;
+    background: var(--chrome);
+    color: var(--chrome-text);
+    padding: 0 24px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    border-bottom: 1px solid var(--chrome-border);
+  }
+  .topbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 800;
+    font-size: 18px;
+    letter-spacing: -0.01em;
+  }
+  .logo-mark {
+    width: 28px;
+    height: 28px;
+    background: var(--primary);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 900;
+    font-size: 15px;
+    position: relative;
+  }
+  .logo-mark::after {
+    content: "";
+    position: absolute;
+    right: -4px;
+    top: -4px;
+    width: 7px;
+    height: 7px;
+    background: var(--magenta);
+    border-radius: 50%;
+    box-shadow: 0 0 6px var(--magenta);
+  }
+  .brand-text { color: white; }
+  .brand-accent { color: var(--primary); }
+
+  .topbar-nav {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-left: 32px;
+  }
+  .topbar-nav-item {
+    padding: 6px 12px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--chrome-text-muted);
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .topbar-nav-item:hover { background: rgba(255, 255, 255, 0.08); color: white; }
+  .topbar-nav-item.active { background: var(--chrome-2); color: white; }
+
+  .topbar-right {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-left: auto;
+  }
+  .topbar-pill {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 12px;
+    background: var(--chrome-2);
+    border: 1px solid var(--chrome-border);
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+    color: white;
+  }
+  .topbar-pill.streak { color: var(--amber); border-color: rgba(255, 140, 66, 0.3); }
+  .topbar-pill.xp { color: var(--primary); border-color: rgba(14, 139, 158, 0.4); }
+
+  /* Side nav rail */
+  .sidenav {
+    background: var(--surface);
+    border-right: 1px solid var(--border);
+    padding: 16px 0;
+    grid-column: 1;
+  }
+  .sidenav-section {
+    padding: 0 12px;
+    margin-bottom: 18px;
+  }
+  .sidenav-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 8px 12px 4px;
+  }
+  .nav-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    color: var(--text-muted);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.12s;
+    text-decoration: none;
+    margin-bottom: 1px;
+  }
+  .nav-item:hover {
+    background: var(--bg);
+    color: var(--text);
+  }
+  .nav-item.active {
+    background: var(--primary-bg);
+    color: var(--primary-dark);
+    font-weight: 600;
+    border-left: 3px solid var(--primary);
+    padding-left: 9px;
+  }
+  .nav-item.disabled {
+    color: var(--text-dim);
+    cursor: not-allowed;
+    opacity: 0.55;
+  }
+  .nav-badge {
+    margin-left: auto;
+    font-size: 10px;
+    background: var(--bg);
+    color: var(--text-dim);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 700;
+  }
+  .nav-badge.active {
+    background: var(--primary);
+    color: white;
+  }
+
+  /* Main content */
+  .main {
+    grid-column: 2;
+    padding: 28px 36px 80px;
+    max-width: 1180px;
+  }
+
+  /* Page header */
+  .page-header { margin-bottom: 24px; }
+  .breadcrumb {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+  }
+  .breadcrumb a { color: var(--text-muted); text-decoration: none; }
+  .breadcrumb a:hover { color: var(--primary); }
+  .breadcrumb .sep { margin: 0 6px; color: var(--text-dim); }
+  .page-title {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--text);
+  }
+
+  /* Hero / progress card — cosmic background */
+  .hero {
+    background: linear-gradient(135deg, var(--chrome) 0%, #2A2A5C 100%);
+    color: white;
+    border-radius: 12px;
+    padding: 28px;
+    margin-bottom: 24px;
+    box-shadow: var(--shadow-md);
+    position: relative;
+    overflow: hidden;
+  }
+  /* Cosmic dots */
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(circle at 85% 20%, var(--magenta) 1px, transparent 2px),
+      radial-gradient(circle at 75% 75%, var(--primary) 1.5px, transparent 2.5px),
+      radial-gradient(circle at 92% 50%, rgba(255,255,255,0.4) 1px, transparent 2px),
+      radial-gradient(circle at 80% 35%, rgba(255,255,255,0.3) 1px, transparent 1.5px),
+      radial-gradient(circle at 88% 65%, rgba(255,255,255,0.5) 1px, transparent 2px),
+      radial-gradient(circle at 70% 25%, var(--amber) 1px, transparent 2px),
+      radial-gradient(circle at 95% 80%, rgba(255,255,255,0.4) 1px, transparent 1.5px);
+    pointer-events: none;
+  }
+  /* Cosmic orb glow */
+  .hero::after {
+    content: "";
+    position: absolute;
+    top: -100px;
+    right: -80px;
+    width: 320px;
+    height: 320px;
+    background: radial-gradient(circle, rgba(14, 139, 158, 0.25) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .hero-content { position: relative; z-index: 1; }
+  .hero-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--chrome-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 10px;
+  }
+  .hero-meta .release-tag {
+    background: var(--primary-bg);
+    color: var(--primary);
+    padding: 3px 9px;
+    border-radius: 4px;
+    border: 1px solid var(--primary-border);
+  }
+  .hero h2 {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin-bottom: 6px;
+    color: white;
+  }
+  .hero-sub {
+    color: var(--chrome-text-muted);
+    font-size: 14px;
+    margin-bottom: 22px;
+    max-width: 620px;
+  }
+
+  /* Hero progress */
+  .hero .progress-track {
+    width: 100%;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 999px;
+    overflow: hidden;
+    margin-bottom: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+  }
+  .hero .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary), var(--magenta));
+    border-radius: 999px;
+  }
+  .hero .progress-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: var(--chrome-text-muted);
+  }
+  .hero .progress-meta strong { color: white; font-weight: 700; }
+  .hero-actions {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+  }
+
+  /* Light progress (used in domain cards) */
+  .progress-track {
+    width: 100%;
+    height: 8px;
+    background: var(--bg);
+    border-radius: 999px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+  .progress-fill {
+    height: 100%;
+    background: var(--primary);
+    border-radius: 999px;
+    transition: width 0.6s ease;
+  }
+
+  /* Buttons */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 14px;
+    transition: all 0.15s;
+    text-decoration: none;
+  }
+  .btn:hover { background: var(--primary-hover); transform: translateY(-1px); box-shadow: var(--shadow-md); }
+  .btn-ghost {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  .btn-ghost:hover { background: rgba(255, 255, 255, 0.16); }
+  .btn-secondary {
+    background: var(--surface);
+    color: var(--text);
+    border: 1px solid var(--border-strong);
+  }
+  .btn-secondary:hover { background: var(--bg); border-color: var(--text-dim); }
+
+  /* Tabs */
+  .tabs {
+    display: flex;
+    gap: 4px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 20px;
+  }
+  .tab {
+    padding: 10px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-muted);
+    border: none;
+    background: transparent;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+  }
+  .tab.active {
+    color: var(--text);
+    border-bottom-color: var(--primary);
+  }
+  .tab:hover:not(.active) { color: var(--text); }
+
+  /* Section header */
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin: 32px 0 14px;
+  }
+  .section-header h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text);
+  }
+  .section-subtitle {
+    font-size: 13px;
+    color: var(--text-muted);
+  }
+
+  /* Domain mastery grid */
+  .domain-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 14px;
+  }
+  .domain-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px;
+    transition: all 0.15s;
+    cursor: pointer;
+    box-shadow: var(--shadow-sm);
+  }
+  .domain-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+  }
+  .domain-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 14px;
+    gap: 8px;
+  }
+  .domain-name {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.3;
+    flex: 1;
+    color: var(--text);
+  }
+  .domain-weight {
+    font-size: 11px;
+    color: var(--text-dim);
+    font-weight: 700;
+    background: var(--bg);
+    padding: 3px 7px;
+    border-radius: 4px;
+    flex-shrink: 0;
+  }
+  .tier-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 9px;
+    border-radius: 999px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .tier-badge.bronze { color: var(--bronze); background: rgba(167, 112, 67, 0.12); border: 1px solid rgba(167, 112, 67, 0.25); }
+  .tier-badge.silver { color: var(--silver); background: rgba(107, 122, 138, 0.12); border: 1px solid rgba(107, 122, 138, 0.25); }
+  .tier-badge.gold { color: var(--gold); background: rgba(212, 160, 23, 0.12); border: 1px solid rgba(212, 160, 23, 0.30); }
+  .tier-badge.locked { color: var(--text-dim); background: var(--bg); border: 1px solid var(--border); }
+  .domain-progress { margin: 14px 0 8px; }
+  .domain-progress .progress-track { height: 6px; }
+  .domain-stats {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+  .domain-stats strong { color: var(--text); }
+
+  /* Stat cards (NE-style metric cards) */
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin-bottom: 24px;
+  }
+  .stat-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px 20px;
+    box-shadow: var(--shadow-sm);
+  }
+  .stat-label {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+    font-weight: 600;
+  }
+  .stat-value {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--text);
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+  .stat-sub {
+    font-size: 12px;
+    color: var(--text-dim);
+    margin-top: 6px;
+  }
+  .stat-sub.up { color: var(--success); }
+  .stat-sub.down { color: var(--rose); }
+
+  /* Question card */
+  .question-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: var(--shadow-sm);
+  }
+  .question-meta {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+  }
+  .meta-pill {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    padding: 3px 9px;
+    border-radius: 4px;
+    font-weight: 600;
+  }
+  .meta-pill.difficulty-recall { color: var(--success); border-color: rgba(22, 167, 92, 0.3); background: var(--success-bg); }
+  .meta-pill.difficulty-app { color: var(--amber); border-color: rgba(255, 140, 66, 0.3); background: var(--amber-bg); }
+  .meta-pill.difficulty-scenario { color: var(--rose); border-color: rgba(230, 57, 70, 0.3); background: var(--rose-bg); }
+  .question-stem {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.55;
+    margin-bottom: 18px;
+    color: var(--text);
+  }
+  .options {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .option {
+    background: var(--surface);
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 16px;
+    transition: all 0.12s;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    color: var(--text);
+    text-align: left;
+    width: 100%;
+  }
+  .option:hover:not(:disabled) {
+    border-color: var(--primary);
+    background: var(--primary-bg);
+  }
+  .option:disabled { cursor: default; }
+  .option-letter {
+    width: 26px;
+    height: 26px;
+    border-radius: 6px;
+    background: var(--bg);
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 12px;
+    flex-shrink: 0;
+    border: 1px solid var(--border);
+  }
+  .option.correct { border-color: var(--success); background: var(--success-bg); }
+  .option.correct .option-letter { background: var(--success); color: white; border-color: var(--success); }
+  .option.incorrect { border-color: var(--rose); background: var(--rose-bg); }
+  .option.incorrect .option-letter { background: var(--rose); color: white; border-color: var(--rose); }
+  .option.dimmed { opacity: 0.55; }
+
+  /* Feedback */
+  .feedback {
+    margin-top: 16px;
+    padding: 18px;
+    border-radius: 8px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    display: none;
+  }
+  .feedback.show { display: block; animation: slideIn 0.25s ease; }
+  @keyframes slideIn { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: translateY(0); } }
+  .feedback-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+    font-weight: 800;
+    margin-bottom: 10px;
+  }
+  .feedback.correct .feedback-header { color: var(--success); }
+  .feedback.incorrect .feedback-header { color: var(--amber); }
+  .feedback-rationale {
+    color: var(--text);
+    margin-bottom: 14px;
+    line-height: 1.6;
+    font-size: 14px;
+  }
+  .feedback-distractors {
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid var(--border);
+  }
+  .feedback-distractors h4 {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+    font-weight: 700;
+  }
+  .feedback-distractors ul { list-style: none; }
+  .feedback-distractors li {
+    padding: 6px 0;
+    color: var(--text-muted);
+    font-size: 13px;
+    line-height: 1.55;
+  }
+  .feedback-distractors li strong { color: var(--text); }
+  .feedback-ref {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 12px;
+    padding: 7px 12px;
+    background: var(--surface);
+    border: 1px solid var(--border-strong);
+    border-radius: 6px;
+    font-size: 13px;
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .feedback-ref:hover { background: var(--primary-bg); border-color: var(--primary); }
+  .xp-burst {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: var(--primary);
+    color: white;
+    padding: 3px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 800;
+    margin-left: 6px;
+  }
+  .xp-burst.partial { background: var(--amber); }
+
+  /* Achievements */
+  .achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 12px;
+  }
+  .achievement {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px;
+    text-align: center;
+    transition: all 0.15s;
+  }
+  .achievement.unlocked {
+    border-color: var(--primary-border);
+    background: linear-gradient(180deg, var(--surface), var(--primary-bg));
+  }
+  .achievement.locked { opacity: 0.5; }
+  .achievement-icon { font-size: 28px; margin-bottom: 6px; display: block; }
+  .achievement-name { font-size: 13px; font-weight: 700; margin-bottom: 3px; color: var(--text); }
+  .achievement-desc { font-size: 11px; color: var(--text-muted); line-height: 1.4; }
+
+  /* Footer */
+  .footer-note {
+    margin-top: 48px;
+    padding: 16px;
+    text-align: center;
+    color: var(--text-dim);
+    font-size: 12px;
+  }
+  .footer-note .accent { color: var(--primary); font-weight: 600; }
+</style>
+</head>
+<body>
+
+<div class="app-shell">
+
+  <!-- Top bar — midnight navy like NE -->
+  <div class="topbar">
+    <div class="topbar-brand">
+      <div class="logo-mark">G</div>
+      <div><span class="brand-text">Glide</span><span class="brand-accent">Up</span></div>
+    </div>
+    <div class="topbar-nav">
+      <div class="topbar-nav-item active">All</div>
+      <div class="topbar-nav-item">Favorites</div>
+      <div class="topbar-nav-item">History</div>
+    </div>
+    <div class="topbar-right">
+      <div class="topbar-pill streak">
+        <span>🔥</span><span>7 day streak</span>
+      </div>
+      <div class="topbar-pill xp">
+        <span>⚡</span><span>2,840 XP</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Side nav -->
+  <nav class="sidenav">
+    <div class="sidenav-section">
+      <div class="sidenav-label">Practice</div>
+      <a class="nav-item active" href="#">
+        <span>📋</span><span>CSA</span>
+        <span class="nav-badge active">58%</span>
+      </a>
+      <a class="nav-item disabled" href="#">
+        <span>⚙️</span><span>CAD</span>
+        <span class="nav-badge">Soon</span>
+      </a>
+      <a class="nav-item disabled" href="#">
+        <span>🛠️</span><span>CIS-ITSM</span>
+        <span class="nav-badge">Soon</span>
+      </a>
+      <a class="nav-item disabled" href="#">
+        <span>🗃️</span><span>CIS-DF</span>
+        <span class="nav-badge">Soon</span>
+      </a>
+    </div>
+    <div class="sidenav-section">
+      <div class="sidenav-label">Library</div>
+      <a class="nav-item" href="#"><span>🎯</span><span>Daily Challenge</span></a>
+      <a class="nav-item" href="#"><span>📊</span><span>My Stats</span></a>
+      <a class="nav-item" href="#"><span>🏆</span><span>Achievements</span></a>
+      <a class="nav-item" href="#"><span>📚</span><span>Study Resources</span></a>
+    </div>
+    <div class="sidenav-section">
+      <div class="sidenav-label">Community</div>
+      <a class="nav-item" href="#"><span>💬</span><span>Suggest a Fix</span></a>
+      <a class="nav-item" href="#"><span>ℹ️</span><span>About</span></a>
+    </div>
+  </nav>
+
+  <!-- Main -->
+  <main class="main">
+
+    <div class="page-header">
+      <div class="breadcrumb">
+        <a href="#">Practice</a><span class="sep">›</span><a href="#">CSA</a><span class="sep">›</span><span>Dashboard</span>
+      </div>
+      <h1 class="page-title">Certified System Administrator</h1>
+    </div>
+
+    <!-- Cosmic hero -->
+    <div class="hero">
+      <div class="hero-content">
+        <div class="hero-meta">
+          <span>Currently studying</span>
+          <span class="release-tag">Yokohama Release</span>
+        </div>
+        <h2>You're 58% through the CSA blueprint</h2>
+        <div class="hero-sub">140 of 240 questions answered. Database Management is your weakest domain — let's go grind some ACLs.</div>
+        <div class="progress-track">
+          <div class="progress-fill" style="width: 58%"></div>
+        </div>
+        <div class="progress-meta">
+          <span><strong>140</strong> answered · <strong>112</strong> correct (80%)</span>
+          <span><strong>100</strong> to go</span>
+        </div>
+        <div class="hero-actions">
+          <a class="btn" href="#">Continue Practice →</a>
+          <a class="btn btn-ghost" href="#">Focus Weakest Domain</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- NE-style metric cards -->
+    <div class="stat-grid">
+      <div class="stat-card">
+        <div class="stat-label">Questions Answered</div>
+        <div class="stat-value">140</div>
+        <div class="stat-sub up">↑ 22 this week</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Accuracy</div>
+        <div class="stat-value">80%</div>
+        <div class="stat-sub up">↑ 3% this week</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Current Streak</div>
+        <div class="stat-value">7</div>
+        <div class="stat-sub">days in a row</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Total XP</div>
+        <div class="stat-value">2,840</div>
+        <div class="stat-sub">across all exams</div>
+      </div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="tabs">
+      <button class="tab active">Overview</button>
+      <button class="tab">Domains</button>
+      <button class="tab">History</button>
+      <button class="tab">Blueprint</button>
+    </div>
+
+    <!-- Domain Mastery -->
+    <div class="section-header">
+      <h3>Domain Mastery</h3>
+      <span class="section-subtitle">Weighted to match the real exam</span>
+    </div>
+    <div class="domain-grid">
+
+      <div class="domain-card">
+        <div class="domain-header">
+          <div class="domain-name">Platform Overview & Navigation</div>
+          <div class="domain-weight">6%</div>
+        </div>
+        <span class="tier-badge gold">🏆 Gold</span>
+        <div class="domain-progress">
+          <div class="progress-track">
+            <div class="progress-fill" style="width: 100%; background: var(--gold);"></div>
+          </div>
+        </div>
+        <div class="domain-stats">
+          <span><strong>14/14</strong> answered</span>
+          <span><strong>93%</strong> accuracy</span>
+        </div>
+      </div>
+
+      <div class="domain-card">
+        <div class="domain-header">
+          <div class="domain-name">Instance Configuration</div>
+          <div class="domain-weight">10%</div>
+        </div>
+        <span class="tier-badge silver">🥈 Silver</span>
+        <div class="domain-progress">
+          <div class="progress-track">
+            <div class="progress-fill" style="width: 100%; background: var(--silver);"></div>
+          </div>
+        </div>
+        <div class="domain-stats">
+          <span><strong>24/24</strong> answered</span>
+          <span><strong>79%</strong> accuracy</span>
+        </div>
+      </div>
+
+      <div class="domain-card">
+        <div class="domain-header">
+          <div class="domain-name">Configuring Apps for Collaboration</div>
+          <div class="domain-weight">19.5%</div>
+        </div>
+        <span class="tier-badge silver">🥈 Silver</span>
+        <div class="domain-progress">
+          <div class="progress-track">
+            <div class="progress-fill" style="width: 76%; background: var(--silver);"></div>
+          </div>
+        </div>
+        <div class="domain-stats">
+          <span><strong>36/47</strong> answered</span>
+          <span><strong>83%</strong> accuracy</span>
+        </div>
+      </div>
+
+      <div class="domain-card">
+        <div class="domain-header">
+          <div class="domain-name">Self-Service & Automation</div>
+          <div class="domain-weight">19.5%</div>
+        </div>
+        <span class="tier-badge bronze">🥉 Bronze</span>
+        <div class="domain-progress">
+          <div class="progress-track">
+            <div class="progress-fill" style="width: 60%; background: var(--bronze);"></div>
+          </div>
+        </div>
+        <div class="domain-stats">
+          <span><strong>28/47</strong> answered</span>
+          <span><strong>71%</strong> accuracy</span>
+        </div>
+      </div>
+
+      <div class="domain-card">
+        <div class="domain-header">
+          <div class="domain-name">Database Mgmt & Platform Security</div>
+          <div class="domain-weight">30%</div>
+        </div>
+        <span class="tier-badge bronze">🥉 Bronze</span>
+        <div class="domain-progress">
+          <div class="progress-track">
+            <div class="progress-fill" style="width: 35%; background: var(--bronze);"></div>
+          </div>
+        </div>
+        <div class="domain-stats">
+          <span><strong>25/72</strong> answered</span>
+          <span><strong>68%</strong> accuracy</span>
+        </div>
+      </div>
+
+      <div class="domain-card">
+        <div class="domain-header">
+          <div class="domain-name">Data Migration & Integration</div>
+          <div class="domain-weight">15%</div>
+        </div>
+        <span class="tier-badge locked">🔒 Locked</span>
+        <div class="domain-progress">
+          <div class="progress-track">
+            <div class="progress-fill" style="width: 36%; background: var(--text-dim);"></div>
+          </div>
+        </div>
+        <div class="domain-stats">
+          <span><strong>13/36</strong> answered</span>
+          <span><strong>—</strong> need 10+ for tier</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Sample Question -->
+    <div class="section-header">
+      <h3>Try a Question</h3>
+      <span class="section-subtitle">CSA · Platform Overview & Navigation</span>
+    </div>
+    <div class="question-card">
+      <div class="question-meta">
+        <span class="meta-pill">Q · csa-pon-001</span>
+        <span class="meta-pill difficulty-recall">Recall</span>
+        <span class="meta-pill">Single Select</span>
+      </div>
+      <div class="question-stem">
+        Which Next Experience component provides a persistent, account-wide view of recently visited records, favorites, and history regardless of which application the user is currently working in?
+      </div>
+      <div class="options" id="options">
+        <button class="option" data-id="A" onclick="answer('A')">
+          <span class="option-letter">A</span><span>Application Navigator</span>
+        </button>
+        <button class="option" data-id="B" onclick="answer('B')">
+          <span class="option-letter">B</span><span>Unified Navigation sidebar</span>
+        </button>
+        <button class="option" data-id="C" onclick="answer('C')">
+          <span class="option-letter">C</span><span>Form header</span>
+        </button>
+        <button class="option" data-id="D" onclick="answer('D')">
+          <span class="option-letter">D</span><span>Banner frame</span>
+        </button>
+      </div>
+      <div class="feedback" id="feedback"></div>
+    </div>
+
+    <!-- Achievements -->
+    <div class="section-header">
+      <h3>Recent Achievements</h3>
+      <span class="section-subtitle">8 of 24 unlocked</span>
+    </div>
+    <div class="achievements-grid">
+      <div class="achievement unlocked">
+        <span class="achievement-icon">🔥</span>
+        <div class="achievement-name">Streak Goblin</div>
+        <div class="achievement-desc">7 days in a row. Sleep is optional.</div>
+      </div>
+      <div class="achievement unlocked">
+        <span class="achievement-icon">📚</span>
+        <div class="achievement-name">Read the Distractor</div>
+        <div class="achievement-desc">Read 50 answer rationales. Nerd.</div>
+      </div>
+      <div class="achievement unlocked">
+        <span class="achievement-icon">🎯</span>
+        <div class="achievement-name">First Blood</div>
+        <div class="achievement-desc">Got your first one right. Proud of you.</div>
+      </div>
+      <div class="achievement unlocked">
+        <span class="achievement-icon">⚡</span>
+        <div class="achievement-name">Speed Glider</div>
+        <div class="achievement-desc">10 questions in under 5 min.</div>
+      </div>
+      <div class="achievement unlocked">
+        <span class="achievement-icon">🧠</span>
+        <div class="achievement-name">Goblin Brain</div>
+        <div class="achievement-desc">Nailed a scenario on the first try.</div>
+      </div>
+      <div class="achievement unlocked">
+        <span class="achievement-icon">🏆</span>
+        <div class="achievement-name">Gold Standard</div>
+        <div class="achievement-desc">Reached Gold in any domain.</div>
+      </div>
+      <div class="achievement unlocked">
+        <span class="achievement-icon">💯</span>
+        <div class="achievement-name">Perfect Run</div>
+        <div class="achievement-desc">10 in a row, no misses.</div>
+      </div>
+      <div class="achievement unlocked">
+        <span class="achievement-icon">🔄</span>
+        <div class="achievement-name">Comeback Kid</div>
+        <div class="achievement-desc">Returned next day after a miss.</div>
+      </div>
+      <div class="achievement locked">
+        <span class="achievement-icon">🌅</span>
+        <div class="achievement-name">Early Bird</div>
+        <div class="achievement-desc">Answered before 6 AM. Are you okay?</div>
+      </div>
+      <div class="achievement locked">
+        <span class="achievement-icon">🦉</span>
+        <div class="achievement-name">Night Owl</div>
+        <div class="achievement-desc">Answered after midnight. Same.</div>
+      </div>
+      <div class="achievement locked">
+        <span class="achievement-icon">🧌</span>
+        <div class="achievement-name">Certified Goblin</div>
+        <div class="achievement-desc">Hit Gold in every domain.</div>
+      </div>
+      <div class="achievement locked">
+        <span class="achievement-icon">🎓</span>
+        <div class="achievement-name">CSA Conqueror</div>
+        <div class="achievement-desc">All 240 CSA questions answered.</div>
+      </div>
+    </div>
+
+    <div class="footer-note">
+      Free · Community-built · Doc-anchored · <span class="accent">Goblin-approved</span><br>
+      GlideUp.net · v0.3 mockup · Built by JP @ Lumaisla
+    </div>
+
+  </main>
+
+</div>
+
+<script>
+  const CORRECT = 'B';
+  const RATIONALES = {
+    A: "Application Navigator is the OG (classic UI). Still works, but it's context-specific to whatever app you're in. Useful, not the answer.",
+    C: "Form header lives on a record. Buttons, related links, that whole vibe — not navigation.",
+    D: "Banner frame is global identity and system controls (your avatar, system search). Not where your favorites live."
+  };
+  function answer(choice) {
+    const options = document.querySelectorAll('.option');
+    options.forEach(o => {
+      o.disabled = true;
+      const id = o.getAttribute('data-id');
+      if (id === CORRECT) o.classList.add('correct');
+      else if (id === choice && choice !== CORRECT) o.classList.add('incorrect');
+      else o.classList.add('dimmed');
+    });
+    const fb = document.getElementById('feedback');
+    const isCorrect = choice === CORRECT;
+    fb.className = 'feedback show ' + (isCorrect ? 'correct' : 'incorrect');
+    const distractorHtml = Object.entries(RATIONALES)
+      .map(([letter, text]) => `<li><strong>${letter}.</strong> ${text}</li>`).join('');
+    fb.innerHTML = `
+      <div class="feedback-header">
+        ${isCorrect ? '✅ Boom. Nailed it.' : '⚠️ Not quite — but now you know.'}
+        ${isCorrect ? '<span class="xp-burst">+25 XP</span>' : '<span class="xp-burst partial">+10 XP</span>'}
+      </div>
+      <div class="feedback-rationale">
+        <strong>Correct answer: B — Unified Navigation sidebar.</strong><br><br>
+        The Unified Navigation sidebar is your persistent home base — it sticks around no matter what app you've wandered into, and exposes Favorites, History, and the All menu from anywhere. Think of it as the platform nav bar that refuses to leave your side, in a helpful way.
+      </div>
+      <div class="feedback-distractors">
+        <h4>The other paths</h4>
+        <ul>${distractorHtml}</ul>
+      </div>
+      <a href="#" class="feedback-ref">📚 Reference: Next Experience Unified Navigation</a>
+    `;
+  }
+</script>
+
+</body>
+</html>

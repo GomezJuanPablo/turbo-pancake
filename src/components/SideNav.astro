@@ -1,0 +1,46 @@
+---
+interface Props {
+  activeNav?: string;
+}
+const { activeNav = '' } = Astro.props;
+
+const groups = [
+  {
+    label: 'Practice',
+    items: [
+      { id: 'csa',      label: 'CSA',       href: '/csa/' },
+      { id: 'cad',      label: 'CAD',       href: '/cad/',      disabled: true },
+      { id: 'cis-itsm', label: 'CIS-ITSM',  href: '/cis-itsm/', disabled: true },
+      { id: 'cis-df',   label: 'CIS-DF',    href: '/cis-df/',   disabled: true },
+    ],
+  },
+  {
+    label: 'Library',
+    items: [
+      { id: 'roadmap',     label: 'Roadmap',     href: '/roadmap/' },
+      { id: 'about',       label: 'About',       href: '/about/' },
+    ],
+  },
+];
+---
+<aside class="sidenav" aria-label="Primary navigation">
+  {groups.map((group) => (
+    <div class="sidenav__group">
+      <div class="sidenav__group-label">{group.label}</div>
+      {group.items.map((item) => (
+        <a
+          href={item.disabled ? '#' : item.href}
+          class={`sidenav__item ${activeNav === item.id ? 'is-active' : ''}`}
+          aria-disabled={item.disabled ? 'true' : 'false'}
+          target={item.external ? '_blank' : undefined}
+          rel={item.external ? 'noopener noreferrer' : undefined}
+          style={item.disabled ? 'opacity:0.45;pointer-events:none;' : ''}
+        >
+          {item.label}
+          {item.disabled && <span class="sidenav__badge">soon</span>}
+          {item.external && <span class="sidenav__ext" aria-hidden="true">↗</span>}
+        </a>
+      ))}
+    </div>
+  ))}
+</aside>

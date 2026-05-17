@@ -1,0 +1,45 @@
+---
+// Standalone Feedback panel — used when the QuestionCard's inline feedback
+// isn't enough (e.g., results pages, review screens).
+interface Distractors { [letter: string]: string; }
+interface Reference   { title: string; url: string; }
+interface Props {
+  isCorrect: boolean;
+  rationale: string;
+  distractorNotes: Distractors;
+  references?: Reference[];
+  opener?: string;
+}
+const {
+  isCorrect,
+  rationale,
+  distractorNotes,
+  references = [],
+  opener,
+} = Astro.props;
+
+const defaultOpener = isCorrect ? '✅ Boom. Nailed it.' : '⚠️ Not quite — but now you know.';
+const finalOpener = opener || defaultOpener;
+const stateClass = isCorrect ? 'is-correct' : 'is-incorrect';
+---
+<div class={`feedback ${stateClass}`}>
+  <div class="feedback__opener">{finalOpener}</div>
+  <p class="feedback__rationale">{rationale}</p>
+
+  <div class="feedback__distractors">
+    {Object.entries(distractorNotes).map(([letter, note]) => (
+      <div class="feedback__distractor">
+        <strong>{letter}.</strong> {note}
+      </div>
+    ))}
+  </div>
+
+  {references.length > 0 && (
+    <div class="feedback__refs">
+      <strong>References:</strong>
+      {references.map((r) => (
+        <a href={r.url} target="_blank" rel="noopener noreferrer">{r.title} ↗</a>
+      ))}
+    </div>
+  )}
+</div>

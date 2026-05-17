@@ -1,0 +1,1711 @@
+[
+  {
+    "id": "csa-dmi-001",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Data Migration and Integration",
+    "subdomain": "Import Sets",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is an Import Set?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A staging table that holds incoming external data so it can be inspected, transformed, and loaded into a target table."
+      },
+      {
+        "id": "B",
+        "text": "A live mirror of a production table."
+      },
+      {
+        "id": "C",
+        "text": "A user's saved query on the incident table."
+      },
+      {
+        "id": "D",
+        "text": "A type of UI policy."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Import Sets are staging tables. Incoming data lands there first; transform maps then move and reshape it into the target table. Staging gives you a chance to inspect and transform before touching live data.",
+    "distractor_notes": {
+      "B": "Import sets aren't mirrors of production tables.",
+      "C": "Saved queries are stored on sys_user_filter or similar — not import sets.",
+      "D": "UI policies govern form behavior."
+    },
+    "references": [
+      {
+        "title": "Import sets",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/import-sets/concept/c_ImportSets.html"
+      }
+    ],
+    "tags": [
+      "import-sets",
+      "staging"
+    ]
+  },
+  {
+    "id": "csa-dmi-002",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Data Migration and Integration",
+    "subdomain": "Data Sources",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is a Data Source in the import-set workflow?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A configuration record that describes where incoming data comes from (file upload, FTP, JDBC, REST, etc.) and how to fetch and parse it."
+      },
+      {
+        "id": "B",
+        "text": "A row in the audit history."
+      },
+      {
+        "id": "C",
+        "text": "A category on a KB article."
+      },
+      {
+        "id": "D",
+        "text": "A favorite saved by the user."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Data Sources tell the platform where the data is coming from and how to retrieve and parse it — file, FTP, REST, JDBC, etc. They feed import sets, which feed transform maps.",
+    "distractor_notes": {
+      "B": "Audit rows are change history.",
+      "C": "KB categories are unrelated.",
+      "D": "Favorites are nav shortcuts."
+    },
+    "references": [
+      {
+        "title": "Create a data source",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/import-sets/task/t_CreateADataSource.html"
+      }
+    ],
+    "tags": [
+      "data-source",
+      "import"
+    ]
+  },
+  {
+    "id": "csa-dmi-003",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Data Migration and Integration",
+    "subdomain": "Load Data",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An admin needs to load a CSV of vendors into the platform. Which sequence is the textbook approach?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Create a Data Source pointing at the CSV → Load the data into an Import Set staging table → Build a Transform Map to the target table → Run the transform."
+      },
+      {
+        "id": "B",
+        "text": "Edit the production table by hand to add the rows one by one."
+      },
+      {
+        "id": "C",
+        "text": "Open the CSV in a browser tab and copy values into incidents."
+      },
+      {
+        "id": "D",
+        "text": "Move the CSV to a KB article."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Data Source → Import Set → Transform Map → Target is the canonical pipeline. Each step is inspectable and reusable.",
+    "distractor_notes": {
+      "B": "Manual editing doesn't scale and skips every safeguard.",
+      "C": "Copy/paste isn't a supported pattern.",
+      "D": "KBs aren't data targets."
+    },
+    "references": [
+      {
+        "title": "Load data using import sets",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/import-sets/task/t_LoadDataUsingImportSets.html"
+      }
+    ],
+    "tags": [
+      "import-sets",
+      "csv",
+      "pipeline"
+    ]
+  },
+  {
+    "id": "csa-dmi-004",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Data Migration and Integration",
+    "subdomain": "Import Sets",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Why does the platform use a staging Import Set table instead of writing directly to the target?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Staging lets you inspect raw data, run validations, apply transformations, handle errors, and re-run without dirtying the target table."
+      },
+      {
+        "id": "B",
+        "text": "Because the target table cannot accept writes."
+      },
+      {
+        "id": "C",
+        "text": "Because import sets are encrypted and target tables are not."
+      },
+      {
+        "id": "D",
+        "text": "Because the target table is read-only."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Staging is the point: it lets you transform, validate, and recover before the data lands in the target. Without it, errors get expensive fast.",
+    "distractor_notes": {
+      "B": "Target tables accept writes; the staging step is an architectural choice.",
+      "C": "Encryption isn't the reason.",
+      "D": "Target tables aren't read-only."
+    },
+    "references": [
+      {
+        "title": "Import sets",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/import-sets/concept/c_ImportSets.html"
+      }
+    ],
+    "tags": [
+      "import-sets",
+      "design"
+    ]
+  },
+  {
+    "id": "csa-dmi-005",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Data Migration and Integration",
+    "subdomain": "Data Sources",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which file format is NOT directly supported as an Import Set data source out-of-the-box?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A live Microsoft Word .docx with table data."
+      },
+      {
+        "id": "B",
+        "text": "CSV"
+      },
+      {
+        "id": "C",
+        "text": "Excel (XLS/XLSX)"
+      },
+      {
+        "id": "D",
+        "text": "XML / JSON"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Out-of-the-box import data sources support CSV, Excel, XML/JSON, and similar structured formats — plus JDBC, REST, FTP. Word documents are document format, not a structured data source.",
+    "distractor_notes": {
+      "B": "CSV is supported.",
+      "C": "Excel (XLS/XLSX) is supported.",
+      "D": "XML / JSON are supported."
+    },
+    "references": [
+      {
+        "title": "Create a data source",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/import-sets/task/t_CreateADataSource.html"
+      }
+    ],
+    "tags": [
+      "data-source",
+      "formats"
+    ]
+  },
+  {
+    "id": "csa-dmi-006",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Data Migration and Integration",
+    "subdomain": "Import Sets",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An import has been running for a few days and the import set staging tables have grown large. What's the supported way to keep things tidy?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Use the platform's import set cleanup mechanism (e.g., scheduled cleanup or table rotation) to prune old staging rows after successful transforms."
+      },
+      {
+        "id": "B",
+        "text": "Disable the import permanently."
+      },
+      {
+        "id": "C",
+        "text": "Delete the target table to start over."
+      },
+      {
+        "id": "D",
+        "text": "Lower the size of every monitor in the office."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Import set staging rows accumulate. The platform supports cleanup so old runs don't bloat the staging tables indefinitely.",
+    "distractor_notes": {
+      "B": "Disabling halts the work but doesn't clean.",
+      "C": "Deleting the target nukes the legitimate data.",
+      "D": "Monitor size is unrelated."
+    },
+    "references": [
+      {
+        "title": "Import sets",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/import-sets/concept/c_ImportSets.html"
+      }
+    ],
+    "tags": [
+      "import-sets",
+      "housekeeping"
+    ]
+  },
+  {
+    "id": "csa-dmi-007",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Data Migration and Integration",
+    "subdomain": "Import Sets",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which statement is most accurate about applying ACLs to import data?",
+    "options": [
+      {
+        "id": "A",
+        "text": "ACLs evaluate at insert/update on the target table when transforms write records, the same way they evaluate any other write — so import users still need the right permissions."
+      },
+      {
+        "id": "B",
+        "text": "Imports bypass all ACLs by design."
+      },
+      {
+        "id": "C",
+        "text": "ACLs apply only after the import is committed for a week."
+      },
+      {
+        "id": "D",
+        "text": "ACLs only apply if the import is run by a guest user."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Transforms write to the target like any other server-side write, and ACLs evaluate accordingly. Import users (or the configured run-as user) need the right permissions on the target — otherwise the writes fail.",
+    "distractor_notes": {
+      "B": "Imports don't bypass ACLs.",
+      "C": "ACLs evaluate at write-time, not on a delay.",
+      "D": "Guest users are a different (typically unauthenticated) context entirely."
+    },
+    "references": [
+      {
+        "title": "Import sets",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/import-sets/concept/c_ImportSets.html"
+      }
+    ],
+    "tags": [
+      "import-sets",
+      "acl"
+    ]
+  },
+  {
+    "id": "csa-dmi-008",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Data Migration and Integration",
+    "subdomain": "Data Source",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A nightly file lands on an SFTP server and must be ingested. Which data source configuration fits best?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Configure a Data Source of type SFTP (or FTP/FTPS) pointing at the file path, with credentials and a schedule to retrieve and parse it."
+      },
+      {
+        "id": "B",
+        "text": "Manually download the file and copy/paste into a KB article."
+      },
+      {
+        "id": "C",
+        "text": "Skip the data source and write a CSS rule to display the file."
+      },
+      {
+        "id": "D",
+        "text": "Email the file to every user."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The platform supports FTP-family protocols as data sources, with schedules and credentials. That's the right shape for a nightly drop on SFTP.",
+    "distractor_notes": {
+      "B": "Manual handling doesn't scale.",
+      "C": "CSS doesn't parse data files.",
+      "D": "Emailing files to everyone is a security and noise problem."
+    },
+    "references": [
+      {
+        "title": "Create a data source",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/import-sets/task/t_CreateADataSource.html"
+      }
+    ],
+    "tags": [
+      "data-source",
+      "sftp",
+      "schedule"
+    ]
+  },
+  {
+    "id": "csa-dmi-009",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Data Migration and Integration",
+    "subdomain": "Errors",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A transform run reports 200 errors and 800 successful inserts. What's the right next step?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Inspect the import set rows with errors, fix the data or refine the transform map, and re-run the failed rows without re-importing the entire data set."
+      },
+      {
+        "id": "B",
+        "text": "Delete the target table and start over."
+      },
+      {
+        "id": "C",
+        "text": "Ignore the errors and disable error logging."
+      },
+      {
+        "id": "D",
+        "text": "Run the import 10 more times and hope it works."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Staging exists exactly for this. Inspect the failing rows, fix the input or the transform, and re-process only the errors. No need to re-import everything.",
+    "distractor_notes": {
+      "B": "Deleting the target nukes successful imports too.",
+      "C": "Hiding errors doesn't fix them.",
+      "D": "Re-running without understanding doesn't fix anything."
+    },
+    "references": [
+      {
+        "title": "Import sets",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/import-sets/concept/c_ImportSets.html"
+      }
+    ],
+    "tags": [
+      "import-sets",
+      "errors",
+      "recovery"
+    ]
+  },
+  {
+    "id": "csa-dmi-010",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Data Migration and Integration",
+    "subdomain": "Import Sets",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which statement about Import Set rows is most accurate?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Each staging row corresponds to a record from the source data and has a state showing whether the transform inserted, updated, ignored, or errored on it."
+      },
+      {
+        "id": "B",
+        "text": "Staging rows are written directly to the target table."
+      },
+      {
+        "id": "C",
+        "text": "Staging rows live forever and cannot be deleted."
+      },
+      {
+        "id": "D",
+        "text": "Staging rows are visible only to the system admin user."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Each staging row tracks what happened to it during the transform — useful for both auditing and re-running just the failed rows.",
+    "distractor_notes": {
+      "B": "Staging is separate from the target.",
+      "C": "Staging rows can be cleaned up.",
+      "D": "Visibility depends on role/ACL, not just admin."
+    },
+    "references": [
+      {
+        "title": "Import sets",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/import-sets/concept/c_ImportSets.html"
+      }
+    ],
+    "tags": [
+      "import-sets",
+      "row-state"
+    ]
+  },
+  {
+    "id": "csa-dmi-011",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Data Migration and Integration",
+    "subdomain": "Import Sets",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An admin wants the first row of an uploaded CSV to be treated as column headers. Where is this configured?",
+    "options": [
+      {
+        "id": "A",
+        "text": "On the Data Source's parsing configuration (e.g., headers in first row option) so the platform maps columns by header name."
+      },
+      {
+        "id": "B",
+        "text": "On the user's profile."
+      },
+      {
+        "id": "C",
+        "text": "On the favicon.svg."
+      },
+      {
+        "id": "D",
+        "text": "On the incident table form layout."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Parsing options on the Data Source — including whether the first row is headers, what delimiter to use, and what character encoding to assume — control how the file is interpreted.",
+    "distractor_notes": {
+      "B": "User profile doesn't influence CSV parsing.",
+      "C": "Favicon is unrelated.",
+      "D": "Form layout doesn't change imports."
+    },
+    "references": [
+      {
+        "title": "Create a data source",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/import-sets/task/t_CreateADataSource.html"
+      }
+    ],
+    "tags": [
+      "data-source",
+      "csv",
+      "headers"
+    ]
+  },
+  {
+    "id": "csa-dmi-012",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Data Migration and Integration",
+    "subdomain": "Import Sets",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A team is migrating user records from a legacy system. They plan to run weekly delta loads after the initial full load. Which approach is most appropriate?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Reuse the Data Source and Transform Map for both initial and weekly delta loads, using coalesce fields on the transform map to update existing users and insert new ones."
+      },
+      {
+        "id": "B",
+        "text": "Build two completely different pipelines so nothing is shared."
+      },
+      {
+        "id": "C",
+        "text": "Always run a full reload from scratch every week."
+      },
+      {
+        "id": "D",
+        "text": "Disable the user table during deltas."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Coalesce on the transform map makes the same pipeline handle both initial and delta loads — match by a stable key, update existing, insert new. Reusing the artifacts keeps maintenance manageable.",
+    "distractor_notes": {
+      "B": "Duplicate pipelines drift.",
+      "C": "Weekly full reloads waste resources and can churn user records.",
+      "D": "Disabling the table breaks dependent workflows."
+    },
+    "references": [
+      {
+        "title": "Load data using import sets",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/import-sets/task/t_LoadDataUsingImportSets.html"
+      }
+    ],
+    "tags": [
+      "import-sets",
+      "delta",
+      "coalesce"
+    ]
+  },
+  {
+    "id": "csa-dmi-013",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Data Migration and Integration",
+    "subdomain": "Transform Maps",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is a Transform Map?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A configuration that maps fields from an Import Set's staging table to fields on a target table, with rules for coalescing, scripts, and field-level transformations."
+      },
+      {
+        "id": "B",
+        "text": "A type of business rule that fires on form load."
+      },
+      {
+        "id": "C",
+        "text": "A KB article that explains how to import data."
+      },
+      {
+        "id": "D",
+        "text": "A scheduled job that emails the data dictionary."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Transform Maps define how each source column maps to each target field, plus how to identify existing records via coalesce, plus optional scripts at the row/field/event level.",
+    "distractor_notes": {
+      "B": "Business rules and transform maps are different mechanisms.",
+      "C": "A KB article documents; it doesn't transform.",
+      "D": "Scheduled jobs aren't transform maps."
+    },
+    "references": [
+      {
+        "title": "Transform maps",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/import-sets/concept/c_TransformMaps.html"
+      }
+    ],
+    "tags": [
+      "transform-map",
+      "import"
+    ]
+  },
+  {
+    "id": "csa-dmi-014",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Data Migration and Integration",
+    "subdomain": "Field Maps",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is a Field Map within a Transform Map?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A row that says 'source column X' maps to 'target field Y', optionally with a script for value transformation."
+      },
+      {
+        "id": "B",
+        "text": "A type of UI policy."
+      },
+      {
+        "id": "C",
+        "text": "A pointer between two unrelated tables."
+      },
+      {
+        "id": "D",
+        "text": "A free-text field on the user record."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Field Maps are the individual pairings inside a Transform Map. Each one says how one source column lands on one target field, with optional scripting in between.",
+    "distractor_notes": {
+      "B": "UI policy is form behavior.",
+      "C": "Field maps are inside a transform map, not random table pointers.",
+      "D": "Free-text fields aren't field maps."
+    },
+    "references": [
+      {
+        "title": "Create a field map",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/import-sets/task/t_CreateAFieldMap.html"
+      }
+    ],
+    "tags": [
+      "field-map",
+      "transform"
+    ]
+  },
+  {
+    "id": "csa-dmi-015",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Data Migration and Integration",
+    "subdomain": "Coalesce",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What does the Coalesce attribute on a Field Map do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Marks the field as a match key — if a target record exists with the same value, the transform updates it; otherwise it inserts a new record."
+      },
+      {
+        "id": "B",
+        "text": "Encrypts the value in transit."
+      },
+      {
+        "id": "C",
+        "text": "Forces the value to uppercase."
+      },
+      {
+        "id": "D",
+        "text": "Removes the field from the import."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Coalesce defines the match key for the transform. If the target table has a row matching the coalesce value, the transform updates that row. If not, it inserts a new one. This is how the same pipeline supports both updates and inserts.",
+    "distractor_notes": {
+      "B": "Coalesce is a match rule, not encryption.",
+      "C": "Case folding is a separate transformation step.",
+      "D": "Coalesce includes the field; it doesn't remove it."
+    },
+    "references": [
+      {
+        "title": "Coalesce fields",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/import-sets/reference/r_CoalesceFields.html"
+      }
+    ],
+    "tags": [
+      "coalesce",
+      "upsert"
+    ]
+  },
+  {
+    "id": "csa-dmi-016",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Data Migration and Integration",
+    "subdomain": "Coalesce",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An admin wants user records imported with the same employee_number to update existing rows rather than create duplicates. What configuration achieves this?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Mark the field map for employee_number as a Coalesce field on the transform map."
+      },
+      {
+        "id": "B",
+        "text": "Set the target table to read-only."
+      },
+      {
+        "id": "C",
+        "text": "Delete the user table before each import."
+      },
+      {
+        "id": "D",
+        "text": "Disable ACLs during import."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Coalesce on employee_number says 'if a row with this number exists, update; else insert.' Exactly the upsert behavior the admin wants.",
+    "distractor_notes": {
+      "B": "Read-only would block the upsert.",
+      "C": "Deleting before import loses every other field's history.",
+      "D": "Disabling ACLs is a security disaster and doesn't help."
+    },
+    "references": [
+      {
+        "title": "Coalesce fields",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/import-sets/reference/r_CoalesceFields.html"
+      }
+    ],
+    "tags": [
+      "coalesce",
+      "upsert",
+      "user-import"
+    ]
+  },
+  {
+    "id": "csa-dmi-017",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Data Migration and Integration",
+    "subdomain": "Multiple Coalesce",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What happens when a Transform Map has multiple Coalesce fields?",
+    "options": [
+      {
+        "id": "A",
+        "text": "All coalesce fields together form a composite match key — the transform matches a target only when all coalesce values match."
+      },
+      {
+        "id": "B",
+        "text": "Only the first coalesce is used and the rest are ignored."
+      },
+      {
+        "id": "C",
+        "text": "Each coalesce field creates a separate duplicate record."
+      },
+      {
+        "id": "D",
+        "text": "Multiple coalesce fields are not supported."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Multiple coalesce fields form a composite key. A target row matches only when every coalesce field matches. Useful when no single column is unique on its own.",
+    "distractor_notes": {
+      "B": "All coalesce fields contribute to the match.",
+      "C": "Coalesce prevents duplicates, not creates them.",
+      "D": "Composite coalesce is supported and common."
+    },
+    "references": [
+      {
+        "title": "Coalesce fields",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/import-sets/reference/r_CoalesceFields.html"
+      }
+    ],
+    "tags": [
+      "coalesce",
+      "composite-key"
+    ]
+  },
+  {
+    "id": "csa-dmi-018",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Data Migration and Integration",
+    "subdomain": "Transform Scripts",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which Transform Map script type runs once before any row is processed?",
+    "options": [
+      {
+        "id": "A",
+        "text": "onStart"
+      },
+      {
+        "id": "B",
+        "text": "onBefore"
+      },
+      {
+        "id": "C",
+        "text": "onAfter"
+      },
+      {
+        "id": "D",
+        "text": "onComplete"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "onStart fires once at the beginning of the transform run — useful for setting up counters, looking up reference data, or one-time logging.",
+    "distractor_notes": {
+      "B": "onBefore runs before each row.",
+      "C": "onAfter runs after each row.",
+      "D": "onComplete runs once after all rows."
+    },
+    "references": [
+      {
+        "title": "Transform map scripts",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/import-sets/concept/c_TransformMapScripts.html"
+      }
+    ],
+    "tags": [
+      "transform-scripts",
+      "onStart"
+    ]
+  },
+  {
+    "id": "csa-dmi-019",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Data Migration and Integration",
+    "subdomain": "Transform Scripts",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which Transform Map script type runs per-row before the row is inserted/updated on the target?",
+    "options": [
+      {
+        "id": "A",
+        "text": "onBefore"
+      },
+      {
+        "id": "B",
+        "text": "onStart"
+      },
+      {
+        "id": "C",
+        "text": "onComplete"
+      },
+      {
+        "id": "D",
+        "text": "onSubmit"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "onBefore runs for each row before the target write. It's where you'd transform values, set defaults, look up references, or decide to skip the row entirely.",
+    "distractor_notes": {
+      "B": "onStart runs once before any rows.",
+      "C": "onComplete runs once after all rows.",
+      "D": "onSubmit is a UI/Client Script concept, not a transform script type."
+    },
+    "references": [
+      {
+        "title": "Transform map scripts",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/import-sets/concept/c_TransformMapScripts.html"
+      }
+    ],
+    "tags": [
+      "transform-scripts",
+      "onBefore"
+    ]
+  },
+  {
+    "id": "csa-dmi-020",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Data Migration and Integration",
+    "subdomain": "Transform Scripts",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A transform map needs to skip rows whose Status column is 'archived' so they aren't loaded into the target. Which script type and pattern is the right fit?",
+    "options": [
+      {
+        "id": "A",
+        "text": "An onBefore script that inspects source.u_status and sets ignore = true (or similar) so the row is skipped during the transform."
+      },
+      {
+        "id": "B",
+        "text": "A UI policy that hides the row on the form."
+      },
+      {
+        "id": "C",
+        "text": "Deleting every archived row from the production table after the import."
+      },
+      {
+        "id": "D",
+        "text": "Renaming the column to 'maybe_skip'."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "onBefore is where per-row filtering belongs. Inspect the source, decide whether to process, and skip when the rule says skip — all before the target write.",
+    "distractor_notes": {
+      "B": "Form UI policies don't affect imports.",
+      "C": "Cleanup after the fact is brittle and expensive.",
+      "D": "Renaming columns doesn't filter."
+    },
+    "references": [
+      {
+        "title": "Transform map scripts",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/import-sets/concept/c_TransformMapScripts.html"
+      }
+    ],
+    "tags": [
+      "transform-scripts",
+      "onBefore",
+      "filtering"
+    ]
+  },
+  {
+    "id": "csa-dmi-021",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Data Migration and Integration",
+    "subdomain": "Field Maps",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A source column contains a free-text department name ('Engineering', 'engineering', 'ENG'). The target field is a reference to the Department table. How is this typically handled in a Field Map?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Use a script on the Field Map (or an onBefore script) to look up the Department by normalized name and set the target reference to the sys_id of the matching record."
+      },
+      {
+        "id": "B",
+        "text": "Paste the literal string into the reference field."
+      },
+      {
+        "id": "C",
+        "text": "Set the target field to type Boolean."
+      },
+      {
+        "id": "D",
+        "text": "Skip the column and forget about departments."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Reference fields need sys_ids, not strings. A script normalizes the source string, looks up the matching record, and sets the reference. That bridges loose string input to clean relational data.",
+    "distractor_notes": {
+      "B": "Reference fields don't take literal strings.",
+      "C": "Boolean can't represent a department.",
+      "D": "Skipping the data abandons the requirement."
+    },
+    "references": [
+      {
+        "title": "Create a field map",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/import-sets/task/t_CreateAFieldMap.html"
+      }
+    ],
+    "tags": [
+      "field-map",
+      "reference",
+      "lookup"
+    ]
+  },
+  {
+    "id": "csa-dmi-022",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Data Migration and Integration",
+    "subdomain": "Transform Map",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A transform inserts the same record twice on each run because the file repeats the row. What's the most appropriate fix?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Configure a Coalesce field on the natural key (e.g., employee_number) so the second occurrence updates the existing record instead of inserting a duplicate."
+      },
+      {
+        "id": "B",
+        "text": "Disable inserts entirely on the target table."
+      },
+      {
+        "id": "C",
+        "text": "Set the target field to read-only."
+      },
+      {
+        "id": "D",
+        "text": "Delete duplicates after the run with a script."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Duplicates are a missing match-key. Coalesce on the natural key tells the transform to treat repeats as updates. Cleaner than after-the-fact deletes.",
+    "distractor_notes": {
+      "B": "Disabling inserts breaks the legitimate flow.",
+      "C": "Read-only blocks the update path too.",
+      "D": "Post-run cleanup is fragile and slow."
+    },
+    "references": [
+      {
+        "title": "Coalesce fields",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/import-sets/reference/r_CoalesceFields.html"
+      }
+    ],
+    "tags": [
+      "coalesce",
+      "duplicates"
+    ]
+  },
+  {
+    "id": "csa-dmi-023",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Data Migration and Integration",
+    "subdomain": "Transform Map",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which statement about scheduled transforms is most accurate?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Data sources and transform maps can be scheduled together so a recurring import + transform runs without manual intervention."
+      },
+      {
+        "id": "B",
+        "text": "Transforms must always be triggered manually."
+      },
+      {
+        "id": "C",
+        "text": "Transforms only run when the admin is logged in."
+      },
+      {
+        "id": "D",
+        "text": "Transforms cannot be scheduled at all."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Scheduled imports + transforms are a built-in pattern. The platform pulls/parses the source on a schedule and runs the transform automatically.",
+    "distractor_notes": {
+      "B": "Scheduling is supported.",
+      "C": "Server-side jobs don't require interactive presence.",
+      "D": "Scheduling is well-supported."
+    },
+    "references": [
+      {
+        "title": "Transform maps",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/import-sets/concept/c_TransformMaps.html"
+      }
+    ],
+    "tags": [
+      "transform-map",
+      "schedule"
+    ]
+  },
+  {
+    "id": "csa-dmi-024",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Data Migration and Integration",
+    "subdomain": "Transform Performance",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A transform that runs scripts per row is slow on large imports. What's a sensible first step?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Move work that doesn't need per-row context (lookups, configuration loads) into onStart and onComplete; inside per-row scripts, cache lookups and avoid heavy queries."
+      },
+      {
+        "id": "B",
+        "text": "Delete every row that failed once."
+      },
+      {
+        "id": "C",
+        "text": "Disable the target table during imports."
+      },
+      {
+        "id": "D",
+        "text": "Always re-import every record from scratch."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Per-row scripts amplify costs. Push lookups and setup into onStart/onComplete, cache where possible, and keep the per-row work tight. That's the classic transform performance pattern.",
+    "distractor_notes": {
+      "B": "Deleting failed rows isn't a perf fix.",
+      "C": "Disabling the target breaks the import.",
+      "D": "Full reloads make things worse."
+    },
+    "references": [
+      {
+        "title": "Transform map scripts",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/import-sets/concept/c_TransformMapScripts.html"
+      }
+    ],
+    "tags": [
+      "transform-map",
+      "performance"
+    ]
+  },
+  {
+    "id": "csa-dmi-025",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Data Migration and Integration",
+    "subdomain": "REST API",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What does ServiceNow's Inbound REST API provide?",
+    "options": [
+      {
+        "id": "A",
+        "text": "HTTP endpoints (e.g., /api/now/table/incident) that external systems use to create, read, update, and delete records on the instance with JSON payloads."
+      },
+      {
+        "id": "B",
+        "text": "A way to log in to the instance using a USB key."
+      },
+      {
+        "id": "C",
+        "text": "A read-only feed of the platform's marketing pages."
+      },
+      {
+        "id": "D",
+        "text": "A scheduled job that emails records."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Inbound REST exposes the instance's tables (and custom endpoints) over HTTP with JSON. External systems use it to push and pull data — the canonical 'how things talk to ServiceNow' interface.",
+    "distractor_notes": {
+      "B": "USB key login isn't a thing here.",
+      "C": "Marketing pages aren't the REST API.",
+      "D": "Scheduled jobs aren't REST endpoints."
+    },
+    "references": [
+      {
+        "title": "REST API",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-integrate-applications/page/integrate/inbound-rest/concept/c_RESTAPI.html"
+      }
+    ],
+    "tags": [
+      "rest",
+      "inbound-rest",
+      "table-api"
+    ]
+  },
+  {
+    "id": "csa-dmi-026",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Data Migration and Integration",
+    "subdomain": "Outbound REST",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the Outbound REST Web Service used for?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Letting the instance call external HTTP/JSON APIs — for integrations, notifications, lookups, and triggering external systems."
+      },
+      {
+        "id": "B",
+        "text": "Sending physical mail."
+      },
+      {
+        "id": "C",
+        "text": "Sending push notifications to mobile devices only."
+      },
+      {
+        "id": "D",
+        "text": "Replacing the user's browser."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Outbound REST is the platform's mechanism for calling external HTTP APIs. Use it from Flow Designer, scripts, or business rules to push data or fetch from another system.",
+    "distractor_notes": {
+      "B": "Physical mail is unrelated.",
+      "C": "Push notifications are a separate channel.",
+      "D": "The browser isn't replaced."
+    },
+    "references": [
+      {
+        "title": "Outbound REST web service",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-integrate-applications/page/integrate/outbound-rest/concept/c_OutboundRESTWebService.html"
+      }
+    ],
+    "tags": [
+      "rest",
+      "outbound-rest",
+      "integration"
+    ]
+  },
+  {
+    "id": "csa-dmi-027",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Data Migration and Integration",
+    "subdomain": "SOAP",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which statement is most accurate about SOAP web services on the platform?",
+    "options": [
+      {
+        "id": "A",
+        "text": "SOAP is supported (both inbound and outbound) for compatibility with systems that require it, although REST is generally preferred for new integrations."
+      },
+      {
+        "id": "B",
+        "text": "SOAP is not supported in any direction."
+      },
+      {
+        "id": "C",
+        "text": "SOAP is the only supported integration protocol."
+      },
+      {
+        "id": "D",
+        "text": "SOAP only works inside the user's browser."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "SOAP support is still there — important for legacy integrations. New work typically uses REST because it's lighter and easier to debug, but SOAP isn't going anywhere yet.",
+    "distractor_notes": {
+      "B": "SOAP is supported.",
+      "C": "REST exists alongside SOAP.",
+      "D": "SOAP runs server-to-server."
+    },
+    "references": [
+      {
+        "title": "SOAP web service",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-integrate-applications/page/integrate/web-services/concept/c_SOAPWebService.html"
+      }
+    ],
+    "tags": [
+      "soap",
+      "integration"
+    ]
+  },
+  {
+    "id": "csa-dmi-028",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Data Migration and Integration",
+    "subdomain": "MID Server",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is a MID Server?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A Java application installed on a customer's network that acts as a bridge between the ServiceNow instance and on-premises systems behind the corporate firewall."
+      },
+      {
+        "id": "B",
+        "text": "A browser plugin installed on every user's laptop."
+      },
+      {
+        "id": "C",
+        "text": "A type of ACL."
+      },
+      {
+        "id": "D",
+        "text": "A scheduled job that emails the admin."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "MID Server is the bridge into the customer's internal network. The instance (cloud) talks to MID; MID reaches into on-prem systems on its behalf. It's how Discovery, IntegrationHub, and JDBC imports reach private systems.",
+    "distractor_notes": {
+      "B": "Browser plugins are unrelated.",
+      "C": "MID Servers aren't ACLs.",
+      "D": "Scheduled jobs run inside the instance, not on a MID Server."
+    },
+    "references": [
+      {
+        "title": "MID Server",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-servicenow-platform/page/product/mid-server/concept/mid-server-landing.html"
+      }
+    ],
+    "tags": [
+      "mid-server",
+      "on-prem",
+      "bridge"
+    ]
+  },
+  {
+    "id": "csa-dmi-029",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Data Migration and Integration",
+    "subdomain": "MID Server",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A team wants to pull data from an on-prem SQL database into ServiceNow without exposing the DB to the public internet. What's the typical pattern?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Install a MID Server inside the corporate network, configure a JDBC data source through the MID Server, and have the instance read via MID."
+      },
+      {
+        "id": "B",
+        "text": "Move the database to the public internet."
+      },
+      {
+        "id": "C",
+        "text": "Have the admin email the SQL results daily."
+      },
+      {
+        "id": "D",
+        "text": "Copy/paste rows from a SQL client into a KB article."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "MID Server is the supported pattern for reaching private databases. The DB stays inside the network; the MID Server queries it and relays the data to the instance.",
+    "distractor_notes": {
+      "B": "Internet-exposing a corporate DB is unsafe.",
+      "C": "Manual emailing doesn't scale or audit well.",
+      "D": "Copy/paste isn't an integration pattern."
+    },
+    "references": [
+      {
+        "title": "MID Server",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-servicenow-platform/page/product/mid-server/concept/mid-server-landing.html"
+      }
+    ],
+    "tags": [
+      "mid-server",
+      "jdbc"
+    ]
+  },
+  {
+    "id": "csa-dmi-030",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Data Migration and Integration",
+    "subdomain": "IntegrationHub",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is IntegrationHub?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A framework that extends Flow Designer with integration capabilities — including spokes (pre-built integration packs), custom actions, and connection management — for connecting to external systems with low code."
+      },
+      {
+        "id": "B",
+        "text": "A type of incident."
+      },
+      {
+        "id": "C",
+        "text": "A read-only audit log of plugin activations."
+      },
+      {
+        "id": "D",
+        "text": "A scheduled job for sending email."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "IntegrationHub is the platform's integration story for Flow Designer. Spokes pre-build the actions for popular external systems; custom actions cover the rest; connections manage credentials and endpoints. Low-code integration as a first-class pattern.",
+    "distractor_notes": {
+      "B": "Not an incident.",
+      "C": "Not an audit log.",
+      "D": "Not a scheduled job."
+    },
+    "references": [
+      {
+        "title": "IntegrationHub",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-build-workflows/page/administer/integrationhub/concept/integrationhub.html"
+      }
+    ],
+    "tags": [
+      "integrationhub",
+      "spokes",
+      "flow-designer"
+    ]
+  },
+  {
+    "id": "csa-dmi-031",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Data Migration and Integration",
+    "subdomain": "IntegrationHub Spokes",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is a spoke in IntegrationHub?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A scoped application that packages pre-built actions and integration capabilities for a specific external system (e.g., a Slack spoke, a Microsoft Teams spoke)."
+      },
+      {
+        "id": "B",
+        "text": "A wheel on a server rack."
+      },
+      {
+        "id": "C",
+        "text": "A new field type."
+      },
+      {
+        "id": "D",
+        "text": "A type of UI policy."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "A spoke bundles ready-made actions targeting a specific system — install, configure the connection, and you've got low-code actions to use inside flows.",
+    "distractor_notes": {
+      "B": "Different kind of spoke.",
+      "C": "Not a field type.",
+      "D": "Not a UI policy."
+    },
+    "references": [
+      {
+        "title": "IntegrationHub",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-build-workflows/page/administer/integrationhub/concept/integrationhub.html"
+      }
+    ],
+    "tags": [
+      "integrationhub",
+      "spoke"
+    ]
+  },
+  {
+    "id": "csa-dmi-032",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Data Migration and Integration",
+    "subdomain": "REST API",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An external system needs to retrieve a single incident by sys_id over REST. Which endpoint shape is correct?",
+    "options": [
+      {
+        "id": "A",
+        "text": "GET /api/now/table/incident/{sys_id}"
+      },
+      {
+        "id": "B",
+        "text": "DELETE /api/now/table/incident/{sys_id}"
+      },
+      {
+        "id": "C",
+        "text": "POST /api/now/table/incident"
+      },
+      {
+        "id": "D",
+        "text": "PUT /api/now/table/incident"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Table API uses GET on /api/now/table/incident/{sys_id} for retrieve-by-id. POST creates, PATCH/PUT updates, DELETE deletes — REST verb semantics map to the underlying operations.",
+    "distractor_notes": {
+      "B": "DELETE would remove the record.",
+      "C": "POST creates a new record.",
+      "D": "PUT updates a record (typically with full body)."
+    },
+    "references": [
+      {
+        "title": "REST API",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-integrate-applications/page/integrate/inbound-rest/concept/c_RESTAPI.html"
+      }
+    ],
+    "tags": [
+      "rest",
+      "table-api",
+      "get"
+    ]
+  },
+  {
+    "id": "csa-dmi-033",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Data Migration and Integration",
+    "subdomain": "REST Security",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A partner system will call ServiceNow REST APIs on behalf of itself, not a specific user. What authentication is appropriate?",
+    "options": [
+      {
+        "id": "A",
+        "text": "OAuth (client credentials) with a dedicated service-account scope and least-privilege roles, rotating secrets per policy."
+      },
+      {
+        "id": "B",
+        "text": "Use the admin's personal password embedded in the partner's code."
+      },
+      {
+        "id": "C",
+        "text": "Disable authentication on REST endpoints."
+      },
+      {
+        "id": "D",
+        "text": "Send the password as a URL query parameter."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Machine-to-machine integrations belong on OAuth client credentials with a dedicated service account, least-privilege roles, and secret rotation. That's how you make integrations safe and auditable.",
+    "distractor_notes": {
+      "B": "Embedding personal passwords is unsafe and unauditable.",
+      "C": "Open APIs are an instant breach.",
+      "D": "Passwords in URLs leak through logs and history."
+    },
+    "references": [
+      {
+        "title": "REST API",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-integrate-applications/page/integrate/inbound-rest/concept/c_RESTAPI.html"
+      }
+    ],
+    "tags": [
+      "rest",
+      "oauth",
+      "security"
+    ]
+  },
+  {
+    "id": "csa-dmi-034",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Data Migration and Integration",
+    "subdomain": "IntegrationHub vs Outbound REST",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A team needs to call a partner's REST API from a flow. They want low-code if possible and don't mind installing a spoke if it exists. What's the right first move?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Check whether an IntegrationHub spoke exists for that partner; if so, install and configure it, and use its actions inside the flow. Otherwise build a custom action wrapping a REST step."
+      },
+      {
+        "id": "B",
+        "text": "Write the entire flow as a single business rule with raw fetch calls."
+      },
+      {
+        "id": "C",
+        "text": "Run a scheduled job that uses curl on a MID Server."
+      },
+      {
+        "id": "D",
+        "text": "Ignore the requirement."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Spokes are the low-code path. If one exists, use it; if not, a custom action wrapping the REST step keeps the integration inside Flow Designer's framework rather than spilling into ad-hoc scripts.",
+    "distractor_notes": {
+      "B": "Raw business rules dodge the integration framework.",
+      "C": "curl on a MID Server is wildly off the supported path.",
+      "D": "Ignoring isn't an option."
+    },
+    "references": [
+      {
+        "title": "IntegrationHub",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-build-workflows/page/administer/integrationhub/concept/integrationhub.html"
+      }
+    ],
+    "tags": [
+      "integrationhub",
+      "spoke",
+      "decision"
+    ]
+  },
+  {
+    "id": "csa-dmi-035",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Data Migration and Integration",
+    "subdomain": "REST",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which response format does the Table API return by default for GET requests?",
+    "options": [
+      {
+        "id": "A",
+        "text": "JSON"
+      },
+      {
+        "id": "B",
+        "text": "Plain text"
+      },
+      {
+        "id": "C",
+        "text": "PDF"
+      },
+      {
+        "id": "D",
+        "text": "CSV (always)"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Table API responses are JSON by default. XML is supported via Accept headers; CSV/Excel are supported in other contexts. JSON is the default and the most common.",
+    "distractor_notes": {
+      "B": "Plain text isn't the default.",
+      "C": "PDF isn't a Table API response.",
+      "D": "CSV isn't the default."
+    },
+    "references": [
+      {
+        "title": "REST API",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-integrate-applications/page/integrate/inbound-rest/concept/c_RESTAPI.html"
+      }
+    ],
+    "tags": [
+      "rest",
+      "json",
+      "table-api"
+    ]
+  },
+  {
+    "id": "csa-dmi-036",
+    "exam": "CSA",
+    "release": "Yokohama",
+    "domain": "Data Migration and Integration",
+    "subdomain": "MID Server Auth",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A team is installing a new MID Server in production. What's the most appropriate posture for the MID Server's user/account?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Use a dedicated MID Server user account with the minimum roles required, rotate credentials per policy, and monitor MID Server activity."
+      },
+      {
+        "id": "B",
+        "text": "Use a personal admin account and share the credentials with the whole team."
+      },
+      {
+        "id": "C",
+        "text": "Disable authentication on the MID Server."
+      },
+      {
+        "id": "D",
+        "text": "Run the MID Server as root with no auditing."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Dedicated service account with least privilege is the standard, supportable posture. Personal accounts conflate ownership with operation; disabled auth is a non-starter.",
+    "distractor_notes": {
+      "B": "Personal accounts make audits painful and access fragile to staffing changes.",
+      "C": "Disabled auth is wide-open.",
+      "D": "Root with no auditing is an audit failure waiting to happen."
+    },
+    "references": [
+      {
+        "title": "MID Server",
+        "url": "https://www.servicenow.com/docs/bundle/yokohama-servicenow-platform/page/product/mid-server/concept/mid-server-landing.html"
+      }
+    ],
+    "tags": [
+      "mid-server",
+      "service-account",
+      "least-privilege"
+    ]
+  }
+]

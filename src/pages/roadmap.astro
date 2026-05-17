@@ -1,0 +1,107 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+
+// 8-week public roadmap. Each exam ships ~2 weeks apart. Dates are
+// intentionally rough — better honest than pretend-precise. Update by
+// editing this file.
+const phases = [
+  {
+    label: 'Now',
+    color: 'live',
+    items: [
+      { exam: 'CSA', title: 'Certified System Administrator', detail: '240 doc-anchored questions, all 6 domains, live for free practice.' },
+    ],
+  },
+  {
+    label: 'Next ~2 weeks',
+    color: 'next',
+    items: [
+      { exam: 'CAD', title: 'Certified Application Developer', detail: '240 questions across App Engine, GlideRecord/Script Includes, Service Portal widgets, and integration patterns.' },
+    ],
+  },
+  {
+    label: 'Then ~4 weeks',
+    color: 'later',
+    items: [
+      { exam: 'CIS-ITSM', title: 'CIS — ITSM', detail: 'ITSM implementation patterns, processes, configuration.' },
+    ],
+  },
+  {
+    label: 'Then ~6 weeks',
+    color: 'later',
+    items: [
+      { exam: 'CIS-DF', title: 'CIS — Data Foundations', detail: '240 questions covering CMDB design, data quality and reconciliation, import sets and transform maps, and integration patterns — the implementation work behind every clean data layer on the Now Platform.' },
+    ],
+  },
+];
+
+const principles = [
+  { t: 'Doc-anchored only', d: 'Every question links to a live page on docs.servicenow.com. If the doc page disappears or moves, the question gets pulled — no exceptions, no guessing.' },
+  { t: 'Voice rules are sacred', d: 'Stems plain and exam-accurate. Personality in rationales. 🧌 in achievements only.' },
+  { t: 'No login, no PII, no ads', d: 'Anonymous progress via localStorage. Cloudflare Web Analytics for cookieless traffic counts.' },
+];
+---
+<BaseLayout
+  title="Roadmap — GlideUp.net"
+  description="What's live, what's next. A 90-day view of where GlideUp is heading."
+  activeNav="roadmap"
+>
+  <Breadcrumb crumbs={[
+    { label: 'Practice', href: '/' },
+    { label: 'Roadmap' },
+  ]} />
+
+  <h1 style="font-size:22px;font-weight:700;margin-bottom:8px;">Roadmap</h1>
+  <p style="font-size:13px;color:var(--text-muted);margin-bottom:24px;max-width:720px;line-height:1.5;">
+    Honest dates over pretend-precise ones. Each phase is one exam, ~240 questions,
+    blueprint-weighted. If a date slips, this page updates first.
+  </p>
+
+  <div class="roadmap">
+    {phases.map((p) => (
+      <section class={`roadmap__phase phase--${p.color}`}>
+        <header class="roadmap__phase-head">
+          <span class="roadmap__phase-label">{p.label}</span>
+        </header>
+        {p.items.map((item) => (
+          <article class="card roadmap__item">
+            <div class="roadmap__item-code">{item.exam}</div>
+            <div class="roadmap__item-title">{item.title}</div>
+            <div class="roadmap__item-detail">{item.detail}</div>
+          </article>
+        ))}
+      </section>
+    ))}
+  </div>
+
+  <h2 style="font-size:16px;font-weight:600;margin:32px 0 12px;">Principles we don't trade off</h2>
+  <div class="card-grid">
+    {principles.map((p) => (
+      <article class="card">
+        <div style="font-size:14px;font-weight:600;margin-bottom:6px;">{p.t}</div>
+        <p style="font-size:13px;color:var(--text-muted);line-height:1.5;margin:0;">{p.d}</p>
+      </article>
+    ))}
+  </div>
+</BaseLayout>
+
+<style>
+  .roadmap {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+  }
+  .roadmap__phase-head { margin-bottom: 10px; }
+  .roadmap__phase-label {
+    font-size: 11px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.08em; padding: 4px 10px; border-radius: 999px;
+    border: 1px solid var(--border);
+  }
+  .phase--live .roadmap__phase-label { color: var(--primary-dark); background: var(--primary-bg); border-color: rgba(14,139,158,0.25); }
+  .phase--next .roadmap__phase-label { color: var(--amber); background: rgba(255,140,66,0.10); border-color: rgba(255,140,66,0.30); }
+  .phase--later .roadmap__phase-label { color: var(--text-muted); }
+  .roadmap__item-code { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; color: var(--primary-dark); margin-bottom: 4px; }
+  .roadmap__item-title { font-size: 14px; font-weight: 600; margin-bottom: 6px; }
+  .roadmap__item-detail { font-size: 12px; color: var(--text-muted); line-height: 1.5; }
+</style>

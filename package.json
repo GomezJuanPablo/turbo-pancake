@@ -1,0 +1,36 @@
+{
+  "name": "glideup",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Free, community-built, doc-anchored ServiceNow certification practice site.",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "prebuild": "node scripts/validate-questions.mjs --schema-only && node scripts/validate-questions.mjs --voice-only",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "validate": "node scripts/validate-questions.mjs",
+    "validate:schema": "node scripts/validate-questions.mjs --schema-only",
+    "validate:urls": "node scripts/validate-questions.mjs --urls-only",
+    "validate:voice": "node scripts/validate-questions.mjs --voice-only"
+  },
+  "dependencies": {
+    "astro": "^4.16.18"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.4",
+    "@types/node": "^20.11.0",
+    "typescript": "^5.5.4"
+  },
+  "engines": {
+    "node": ">=18.17.0"
+  },
+  "license": "MIT",
+  "homepage": "https://glideup.net",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GomezJuanPablo/turbo-pancake.git"
+  }
+}
