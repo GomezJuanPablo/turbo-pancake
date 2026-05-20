@@ -2,7 +2,7 @@
   {
     "id": "csa-pon-001",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Platform Overview and Navigation",
     "subdomain": "Next Experience Unified Navigation",
     "difficulty": "recall",
@@ -38,7 +38,7 @@
     "references": [
       {
         "title": "Using the Next Experience Unified Navigation",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-user-interface/page/get-started/servicenow-overview/concept/using-the-next-experience-global-header.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-user-interface/page/get-started/servicenow-overview/concept/using-the-next-experience-global-header.html"
       }
     ],
     "tags": [
@@ -50,7 +50,7 @@
   {
     "id": "csa-pon-002",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Platform Overview and Navigation",
     "subdomain": "Application Navigator",
     "difficulty": "recall",
@@ -86,7 +86,7 @@
     "references": [
       {
         "title": "Core UI application navigator",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-user-interface/page/use/navigation/concept/c_UI16ApplicationNavigator.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-user-interface/page/use/navigation/concept/c_UI16ApplicationNavigator.html"
       }
     ],
     "tags": [
@@ -98,7 +98,7 @@
   {
     "id": "csa-pon-003",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Platform Overview and Navigation",
     "subdomain": "Application Navigator",
     "difficulty": "recall",
@@ -134,7 +134,7 @@
     "references": [
       {
         "title": "Core UI application navigator",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-user-interface/page/use/navigation/concept/c_UI16ApplicationNavigator.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-user-interface/page/use/navigation/concept/c_UI16ApplicationNavigator.html"
       }
     ],
     "tags": [
@@ -145,7 +145,7 @@
   {
     "id": "csa-pon-004",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Platform Overview and Navigation",
     "subdomain": "Favorites",
     "difficulty": "application",
@@ -181,7 +181,7 @@
     "references": [
       {
         "title": "Managing your favorites in Next Experience",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-user-interface/page/get-started/servicenow-overview/concept/managing-your-favorites.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-user-interface/page/get-started/servicenow-overview/concept/managing-your-favorites.html"
       }
     ],
     "tags": [
@@ -193,7 +193,7 @@
   {
     "id": "csa-pon-005",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Platform Overview and Navigation",
     "subdomain": "Tags",
     "difficulty": "recall",
@@ -229,7 +229,7 @@
     "references": [
       {
         "title": "Tags — Common UI elements",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-user-interface/page/use/common-ui-elements/concept/c_Tags.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-user-interface/page/use/common-ui-elements/concept/c_Tags.html"
       }
     ],
     "tags": [
@@ -241,7 +241,7 @@
   {
     "id": "csa-pon-006",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Platform Overview and Navigation",
     "subdomain": "Lists",
     "difficulty": "recall",
@@ -277,7 +277,7 @@
     "references": [
       {
         "title": "Configure and use list functions",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-user-interface/page/use/using-lists/task/configure-use-list-functions.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-user-interface/page/use/using-lists/task/configure-use-list-functions.html"
       }
     ],
     "tags": [
@@ -289,7 +289,7 @@
   {
     "id": "csa-pon-007",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Platform Overview and Navigation",
     "subdomain": "Lists",
     "difficulty": "application",
@@ -325,7 +325,7 @@
     "references": [
       {
         "title": "Use the list editor",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-user-interface/page/use/using-lists/task/t_UseTheListEditor.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-user-interface/page/use/using-lists/task/t_UseTheListEditor.html"
       }
     ],
     "tags": [
@@ -337,7 +337,7 @@
   {
     "id": "csa-pon-008",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Platform Overview and Navigation",
     "subdomain": "Forms",
     "difficulty": "recall",
@@ -373,7 +373,7 @@
     "references": [
       {
         "title": "Related lists",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-user-interface/page/use/using-forms/concept/c_RelatedLists.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-user-interface/page/use/using-forms/concept/c_RelatedLists.html"
       }
     ],
     "tags": [
@@ -384,7 +384,7 @@
   {
     "id": "csa-pon-009",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Platform Overview and Navigation",
     "subdomain": "Forms",
     "difficulty": "application",
@@ -420,7 +420,7 @@
     "references": [
       {
         "title": "Form personalization administration",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/form-administration/concept/c_FormPersonalizationAdmin.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/form-administration/concept/c_FormPersonalizationAdmin.html"
       }
     ],
     "tags": [
@@ -432,7 +432,7 @@
   {
     "id": "csa-pon-010",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Platform Overview and Navigation",
     "subdomain": "Lists",
     "difficulty": "application",
@@ -468,7 +468,7 @@
     "references": [
       {
         "title": "Configure list controls",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/list-administration/task/t_ConfigureListControls.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/list-administration/task/t_ConfigureListControls.html"
       }
     ],
     "tags": [
@@ -480,7 +480,7 @@
   {
     "id": "csa-pon-011",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Platform Overview and Navigation",
     "subdomain": "Global Search",
     "difficulty": "application",
@@ -516,7 +516,7 @@
     "references": [
       {
         "title": "Global search recent queries and results",
-        "url": "https://www.servicenow.com/docs/r/yokohama/platform-administration/search-administration/global-search-recent-queries-results.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/search-administration/global-search-recent-queries-results.html"
       }
     ],
     "tags": [
@@ -527,7 +527,7 @@
   {
     "id": "csa-pon-012",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Platform Overview and Navigation",
     "subdomain": "Forms",
     "difficulty": "recall",
@@ -563,7 +563,7 @@
     "references": [
       {
         "title": "Embedded lists",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-user-interface/page/use/using-forms/concept/c_EmbeddedLists.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-user-interface/page/use/using-forms/concept/c_EmbeddedLists.html"
       }
     ],
     "tags": [
@@ -575,7 +575,7 @@
   {
     "id": "csa-pon-013",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Platform Overview and Navigation",
     "subdomain": "Unified Navigation Administration",
     "difficulty": "scenario",
@@ -611,7 +611,7 @@
     "references": [
       {
         "title": "Configure custom menus for Unified Navigation",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-user-interface/page/administer/navigation-and-ui/task/configure-custom-menu.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-user-interface/page/administer/navigation-and-ui/task/configure-custom-menu.html"
       }
     ],
     "tags": [
@@ -623,7 +623,7 @@
   {
     "id": "csa-pon-014",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Platform Overview and Navigation",
     "subdomain": "Platform Concepts",
     "difficulty": "scenario",
@@ -659,11 +659,11 @@
     "references": [
       {
         "title": "Now Platform forms, fields, and lists",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/general/concept/now-platform-forms-fields-lists.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/general/concept/now-platform-forms-fields-lists.html"
       },
       {
         "title": "Using forms",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-user-interface/page/use/using-forms/concept/c_UsingForms.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-user-interface/page/use/using-forms/concept/c_UsingForms.html"
       }
     ],
     "tags": [

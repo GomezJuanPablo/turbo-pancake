@@ -2,7 +2,7 @@
   {
     "id": "csa-dmi-001",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Data Migration and Integration",
     "subdomain": "Import Sets",
     "difficulty": "recall",
@@ -38,7 +38,7 @@
     "references": [
       {
         "title": "Import sets",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/import-sets/concept/c_ImportSets.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/import-sets/concept/c_ImportSets.html"
       }
     ],
     "tags": [
@@ -49,7 +49,7 @@
   {
     "id": "csa-dmi-002",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Data Migration and Integration",
     "subdomain": "Data Sources",
     "difficulty": "recall",
@@ -85,7 +85,7 @@
     "references": [
       {
         "title": "Create a data source",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/import-sets/task/t_CreateADataSource.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/import-sets/task/t_CreateADataSource.html"
       }
     ],
     "tags": [
@@ -96,7 +96,7 @@
   {
     "id": "csa-dmi-003",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Data Migration and Integration",
     "subdomain": "Load Data",
     "difficulty": "application",
@@ -132,7 +132,7 @@
     "references": [
       {
         "title": "Load data using import sets",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/import-sets/task/t_LoadDataUsingImportSets.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/import-sets/task/t_LoadDataUsingImportSets.html"
       }
     ],
     "tags": [
@@ -144,7 +144,7 @@
   {
     "id": "csa-dmi-004",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Data Migration and Integration",
     "subdomain": "Import Sets",
     "difficulty": "recall",
@@ -180,7 +180,7 @@
     "references": [
       {
         "title": "Import sets",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/import-sets/concept/c_ImportSets.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/import-sets/concept/c_ImportSets.html"
       }
     ],
     "tags": [
@@ -191,7 +191,7 @@
   {
     "id": "csa-dmi-005",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Data Migration and Integration",
     "subdomain": "Data Sources",
     "difficulty": "recall",
@@ -227,7 +227,7 @@
     "references": [
       {
         "title": "Create a data source",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/import-sets/task/t_CreateADataSource.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/import-sets/task/t_CreateADataSource.html"
       }
     ],
     "tags": [
@@ -238,7 +238,7 @@
   {
     "id": "csa-dmi-006",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Data Migration and Integration",
     "subdomain": "Import Sets",
     "difficulty": "application",
@@ -274,7 +274,7 @@
     "references": [
       {
         "title": "Import sets",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/import-sets/concept/c_ImportSets.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/import-sets/concept/c_ImportSets.html"
       }
     ],
     "tags": [
@@ -285,7 +285,7 @@
   {
     "id": "csa-dmi-007",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Data Migration and Integration",
     "subdomain": "Import Sets",
     "difficulty": "recall",
@@ -321,7 +321,7 @@
     "references": [
       {
         "title": "Import sets",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/import-sets/concept/c_ImportSets.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/import-sets/concept/c_ImportSets.html"
       }
     ],
     "tags": [
@@ -332,7 +332,7 @@
   {
     "id": "csa-dmi-008",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Data Migration and Integration",
     "subdomain": "Data Source",
     "difficulty": "application",
@@ -368,7 +368,7 @@
     "references": [
       {
         "title": "Create a data source",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/import-sets/task/t_CreateADataSource.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/import-sets/task/t_CreateADataSource.html"
       }
     ],
     "tags": [
@@ -380,7 +380,7 @@
   {
     "id": "csa-dmi-009",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Data Migration and Integration",
     "subdomain": "Errors",
     "difficulty": "scenario",
@@ -416,7 +416,7 @@
     "references": [
       {
         "title": "Import sets",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/import-sets/concept/c_ImportSets.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/import-sets/concept/c_ImportSets.html"
       }
     ],
     "tags": [
@@ -428,7 +428,7 @@
   {
     "id": "csa-dmi-010",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Data Migration and Integration",
     "subdomain": "Import Sets",
     "difficulty": "recall",
@@ -464,7 +464,7 @@
     "references": [
       {
         "title": "Import sets",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/import-sets/concept/c_ImportSets.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/import-sets/concept/c_ImportSets.html"
       }
     ],
     "tags": [
@@ -475,7 +475,7 @@
   {
     "id": "csa-dmi-011",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Data Migration and Integration",
     "subdomain": "Import Sets",
     "difficulty": "application",
@@ -511,7 +511,7 @@
     "references": [
       {
         "title": "Create a data source",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/import-sets/task/t_CreateADataSource.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/import-sets/task/t_CreateADataSource.html"
       }
     ],
     "tags": [
@@ -523,7 +523,7 @@
   {
     "id": "csa-dmi-012",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Data Migration and Integration",
     "subdomain": "Import Sets",
     "difficulty": "scenario",
@@ -559,7 +559,7 @@
     "references": [
       {
         "title": "Load data using import sets",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/import-sets/task/t_LoadDataUsingImportSets.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/import-sets/task/t_LoadDataUsingImportSets.html"
       }
     ],
     "tags": [
@@ -571,7 +571,7 @@
   {
     "id": "csa-dmi-013",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Data Migration and Integration",
     "subdomain": "Transform Maps",
     "difficulty": "recall",
@@ -607,7 +607,7 @@
     "references": [
       {
         "title": "Transform maps",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/import-sets/concept/c_TransformMaps.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/import-sets/concept/c_TransformMaps.html"
       }
     ],
     "tags": [
@@ -618,7 +618,7 @@
   {
     "id": "csa-dmi-014",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Data Migration and Integration",
     "subdomain": "Field Maps",
     "difficulty": "recall",
@@ -654,7 +654,7 @@
     "references": [
       {
         "title": "Create a field map",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/import-sets/task/t_CreateAFieldMap.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/import-sets/task/t_CreateAFieldMap.html"
       }
     ],
     "tags": [
@@ -665,7 +665,7 @@
   {
     "id": "csa-dmi-015",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Data Migration and Integration",
     "subdomain": "Coalesce",
     "difficulty": "recall",
@@ -701,7 +701,7 @@
     "references": [
       {
         "title": "Coalesce fields",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/import-sets/reference/r_CoalesceFields.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/import-sets/reference/r_CoalesceFields.html"
       }
     ],
     "tags": [
@@ -712,7 +712,7 @@
   {
     "id": "csa-dmi-016",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Data Migration and Integration",
     "subdomain": "Coalesce",
     "difficulty": "application",
@@ -748,7 +748,7 @@
     "references": [
       {
         "title": "Coalesce fields",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/import-sets/reference/r_CoalesceFields.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/import-sets/reference/r_CoalesceFields.html"
       }
     ],
     "tags": [
@@ -760,7 +760,7 @@
   {
     "id": "csa-dmi-017",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Data Migration and Integration",
     "subdomain": "Multiple Coalesce",
     "difficulty": "recall",
@@ -796,7 +796,7 @@
     "references": [
       {
         "title": "Coalesce fields",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/import-sets/reference/r_CoalesceFields.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/import-sets/reference/r_CoalesceFields.html"
       }
     ],
     "tags": [
@@ -807,7 +807,7 @@
   {
     "id": "csa-dmi-018",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Data Migration and Integration",
     "subdomain": "Transform Scripts",
     "difficulty": "recall",
@@ -843,7 +843,7 @@
     "references": [
       {
         "title": "Transform map scripts",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/import-sets/concept/c_TransformMapScripts.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/import-sets/concept/c_TransformMapScripts.html"
       }
     ],
     "tags": [
@@ -854,7 +854,7 @@
   {
     "id": "csa-dmi-019",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Data Migration and Integration",
     "subdomain": "Transform Scripts",
     "difficulty": "recall",
@@ -890,7 +890,7 @@
     "references": [
       {
         "title": "Transform map scripts",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/import-sets/concept/c_TransformMapScripts.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/import-sets/concept/c_TransformMapScripts.html"
       }
     ],
     "tags": [
@@ -901,7 +901,7 @@
   {
     "id": "csa-dmi-020",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Data Migration and Integration",
     "subdomain": "Transform Scripts",
     "difficulty": "application",
@@ -937,7 +937,7 @@
     "references": [
       {
         "title": "Transform map scripts",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/import-sets/concept/c_TransformMapScripts.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/import-sets/concept/c_TransformMapScripts.html"
       }
     ],
     "tags": [
@@ -949,7 +949,7 @@
   {
     "id": "csa-dmi-021",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Data Migration and Integration",
     "subdomain": "Field Maps",
     "difficulty": "application",
@@ -985,7 +985,7 @@
     "references": [
       {
         "title": "Create a field map",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/import-sets/task/t_CreateAFieldMap.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/import-sets/task/t_CreateAFieldMap.html"
       }
     ],
     "tags": [
@@ -997,7 +997,7 @@
   {
     "id": "csa-dmi-022",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Data Migration and Integration",
     "subdomain": "Transform Map",
     "difficulty": "scenario",
@@ -1033,7 +1033,7 @@
     "references": [
       {
         "title": "Coalesce fields",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/import-sets/reference/r_CoalesceFields.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/import-sets/reference/r_CoalesceFields.html"
       }
     ],
     "tags": [
@@ -1044,7 +1044,7 @@
   {
     "id": "csa-dmi-023",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Data Migration and Integration",
     "subdomain": "Transform Map",
     "difficulty": "recall",
@@ -1080,7 +1080,7 @@
     "references": [
       {
         "title": "Transform maps",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/import-sets/concept/c_TransformMaps.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/import-sets/concept/c_TransformMaps.html"
       }
     ],
     "tags": [
@@ -1091,7 +1091,7 @@
   {
     "id": "csa-dmi-024",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Data Migration and Integration",
     "subdomain": "Transform Performance",
     "difficulty": "application",
@@ -1127,7 +1127,7 @@
     "references": [
       {
         "title": "Transform map scripts",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/import-sets/concept/c_TransformMapScripts.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/import-sets/concept/c_TransformMapScripts.html"
       }
     ],
     "tags": [
@@ -1138,7 +1138,7 @@
   {
     "id": "csa-dmi-025",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Data Migration and Integration",
     "subdomain": "REST API",
     "difficulty": "recall",
@@ -1174,7 +1174,7 @@
     "references": [
       {
         "title": "REST API",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-integrate-applications/page/integrate/inbound-rest/concept/c_RESTAPI.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-integrate-applications/page/integrate/inbound-rest/concept/c_RESTAPI.html"
       }
     ],
     "tags": [
@@ -1186,7 +1186,7 @@
   {
     "id": "csa-dmi-026",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Data Migration and Integration",
     "subdomain": "Outbound REST",
     "difficulty": "recall",
@@ -1222,7 +1222,7 @@
     "references": [
       {
         "title": "Outbound REST web service",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-integrate-applications/page/integrate/outbound-rest/concept/c_OutboundRESTWebService.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-integrate-applications/page/integrate/outbound-rest/concept/c_OutboundRESTWebService.html"
       }
     ],
     "tags": [
@@ -1234,7 +1234,7 @@
   {
     "id": "csa-dmi-027",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Data Migration and Integration",
     "subdomain": "SOAP",
     "difficulty": "recall",
@@ -1270,7 +1270,7 @@
     "references": [
       {
         "title": "SOAP web service",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-integrate-applications/page/integrate/web-services/concept/c_SOAPWebService.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-integrate-applications/page/integrate/web-services/concept/c_SOAPWebService.html"
       }
     ],
     "tags": [
@@ -1281,7 +1281,7 @@
   {
     "id": "csa-dmi-028",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Data Migration and Integration",
     "subdomain": "MID Server",
     "difficulty": "recall",
@@ -1317,7 +1317,7 @@
     "references": [
       {
         "title": "MID Server",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-servicenow-platform/page/product/mid-server/concept/mid-server-landing.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/product/mid-server/concept/mid-server-landing.html"
       }
     ],
     "tags": [
@@ -1329,7 +1329,7 @@
   {
     "id": "csa-dmi-029",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Data Migration and Integration",
     "subdomain": "MID Server",
     "difficulty": "application",
@@ -1365,7 +1365,7 @@
     "references": [
       {
         "title": "MID Server",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-servicenow-platform/page/product/mid-server/concept/mid-server-landing.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/product/mid-server/concept/mid-server-landing.html"
       }
     ],
     "tags": [
@@ -1376,7 +1376,7 @@
   {
     "id": "csa-dmi-030",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Data Migration and Integration",
     "subdomain": "IntegrationHub",
     "difficulty": "recall",
@@ -1412,7 +1412,7 @@
     "references": [
       {
         "title": "IntegrationHub",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-build-workflows/page/administer/integrationhub/concept/integrationhub.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-build-workflows/page/administer/integrationhub/concept/integrationhub.html"
       }
     ],
     "tags": [
@@ -1424,7 +1424,7 @@
   {
     "id": "csa-dmi-031",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Data Migration and Integration",
     "subdomain": "IntegrationHub Spokes",
     "difficulty": "recall",
@@ -1460,7 +1460,7 @@
     "references": [
       {
         "title": "IntegrationHub",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-build-workflows/page/administer/integrationhub/concept/integrationhub.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-build-workflows/page/administer/integrationhub/concept/integrationhub.html"
       }
     ],
     "tags": [
@@ -1471,7 +1471,7 @@
   {
     "id": "csa-dmi-032",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Data Migration and Integration",
     "subdomain": "REST API",
     "difficulty": "application",
@@ -1507,7 +1507,7 @@
     "references": [
       {
         "title": "REST API",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-integrate-applications/page/integrate/inbound-rest/concept/c_RESTAPI.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-integrate-applications/page/integrate/inbound-rest/concept/c_RESTAPI.html"
       }
     ],
     "tags": [
@@ -1519,7 +1519,7 @@
   {
     "id": "csa-dmi-033",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Data Migration and Integration",
     "subdomain": "REST Security",
     "difficulty": "scenario",
@@ -1555,7 +1555,7 @@
     "references": [
       {
         "title": "REST API",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-integrate-applications/page/integrate/inbound-rest/concept/c_RESTAPI.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-integrate-applications/page/integrate/inbound-rest/concept/c_RESTAPI.html"
       }
     ],
     "tags": [
@@ -1567,7 +1567,7 @@
   {
     "id": "csa-dmi-034",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Data Migration and Integration",
     "subdomain": "IntegrationHub vs Outbound REST",
     "difficulty": "scenario",
@@ -1603,7 +1603,7 @@
     "references": [
       {
         "title": "IntegrationHub",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-build-workflows/page/administer/integrationhub/concept/integrationhub.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-build-workflows/page/administer/integrationhub/concept/integrationhub.html"
       }
     ],
     "tags": [
@@ -1615,7 +1615,7 @@
   {
     "id": "csa-dmi-035",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Data Migration and Integration",
     "subdomain": "REST",
     "difficulty": "recall",
@@ -1651,7 +1651,7 @@
     "references": [
       {
         "title": "REST API",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-integrate-applications/page/integrate/inbound-rest/concept/c_RESTAPI.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-integrate-applications/page/integrate/inbound-rest/concept/c_RESTAPI.html"
       }
     ],
     "tags": [
@@ -1663,7 +1663,7 @@
   {
     "id": "csa-dmi-036",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Data Migration and Integration",
     "subdomain": "MID Server Auth",
     "difficulty": "scenario",
@@ -1699,7 +1699,7 @@
     "references": [
       {
         "title": "MID Server",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-servicenow-platform/page/product/mid-server/concept/mid-server-landing.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/product/mid-server/concept/mid-server-landing.html"
       }
     ],
     "tags": [

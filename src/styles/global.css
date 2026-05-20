@@ -642,6 +642,19 @@ img, svg { display: block; max-width: 100%; }
   line-height: 1.45;
 }
 
+/* Selected (pre-submit) — teal ring + tinted background.
+   The JS adds .is-selected on click; without this rule the user gets
+   no visual confirmation that their pick registered. */
+.option.is-selected {
+  border-color: var(--primary);
+  background: var(--primary-bg);
+  box-shadow: 0 0 0 1px var(--primary) inset;
+}
+.option.is-selected .option__letter {
+  background: var(--primary);
+  color: #fff;
+}
+
 .option.is-correct {
   border-color: var(--success);
   background: rgba(22, 167, 92, 0.06);

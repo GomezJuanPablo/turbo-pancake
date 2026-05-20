@@ -2,7 +2,7 @@
   {
     "id": "csa-acl-001",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Configuring Apps for Collaboration",
     "subdomain": "Task Table",
     "difficulty": "recall",
@@ -38,7 +38,7 @@
     "references": [
       {
         "title": "Task table",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/task-table/concept/task-table.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/task-table/concept/task-table.html"
       }
     ],
     "tags": [
@@ -49,7 +49,7 @@
   {
     "id": "csa-acl-002",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Configuring Apps for Collaboration",
     "subdomain": "Table Extension",
     "difficulty": "recall",
@@ -85,7 +85,7 @@
     "references": [
       {
         "title": "Table extension",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/table-administration/concept/c_TableExtension.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/table-administration/concept/c_TableExtension.html"
       }
     ],
     "tags": [
@@ -97,7 +97,7 @@
   {
     "id": "csa-acl-003",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Configuring Apps for Collaboration",
     "subdomain": "Task Table",
     "difficulty": "recall",
@@ -133,7 +133,7 @@
     "references": [
       {
         "title": "Task table",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/task-table/concept/task-table.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/task-table/concept/task-table.html"
       }
     ],
     "tags": [
@@ -144,7 +144,7 @@
   {
     "id": "csa-acl-004",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Configuring Apps for Collaboration",
     "subdomain": "Task Fields",
     "difficulty": "recall",
@@ -180,7 +180,7 @@
     "references": [
       {
         "title": "Task table",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/task-table/concept/task-table.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/task-table/concept/task-table.html"
       }
     ],
     "tags": [
@@ -192,7 +192,7 @@
   {
     "id": "csa-acl-005",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Configuring Apps for Collaboration",
     "subdomain": "Assignment",
     "difficulty": "application",
@@ -228,7 +228,7 @@
     "references": [
       {
         "title": "Task table",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/task-table/concept/task-table.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/task-table/concept/task-table.html"
       }
     ],
     "tags": [
@@ -240,7 +240,7 @@
   {
     "id": "csa-acl-006",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Configuring Apps for Collaboration",
     "subdomain": "State Model",
     "difficulty": "recall",
@@ -276,7 +276,7 @@
     "references": [
       {
         "title": "Incident state model",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-it-service-management/page/product/incident-management/reference/r_IncidentStateModel.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-it-service-management/page/product/incident-management/reference/r_IncidentStateModel.html"
       }
     ],
     "tags": [
@@ -288,7 +288,7 @@
   {
     "id": "csa-acl-007",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Configuring Apps for Collaboration",
     "subdomain": "Parent / Child Tasks",
     "difficulty": "application",
@@ -324,7 +324,7 @@
     "references": [
       {
         "title": "Task table",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/task-table/concept/task-table.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/task-table/concept/task-table.html"
       }
     ],
     "tags": [
@@ -335,7 +335,7 @@
   {
     "id": "csa-acl-008",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Configuring Apps for Collaboration",
     "subdomain": "Activity Log",
     "difficulty": "recall",
@@ -371,7 +371,7 @@
     "references": [
       {
         "title": "Task table",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/task-table/concept/task-table.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/task-table/concept/task-table.html"
       }
     ],
     "tags": [
@@ -383,7 +383,7 @@
   {
     "id": "csa-acl-009",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Configuring Apps for Collaboration",
     "subdomain": "Work Notes vs Comments",
     "difficulty": "recall",
@@ -419,7 +419,7 @@
     "references": [
       {
         "title": "Task table",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/task-table/concept/task-table.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/task-table/concept/task-table.html"
       }
     ],
     "tags": [
@@ -431,7 +431,7 @@
   {
     "id": "csa-acl-010",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Configuring Apps for Collaboration",
     "subdomain": "Table Extension",
     "difficulty": "application",
@@ -467,7 +467,7 @@
     "references": [
       {
         "title": "Table extension",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/table-administration/concept/c_TableExtension.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/table-administration/concept/c_TableExtension.html"
       }
     ],
     "tags": [
@@ -479,7 +479,7 @@
   {
     "id": "csa-acl-011",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Configuring Apps for Collaboration",
     "subdomain": "Number Maintenance",
     "difficulty": "recall",
@@ -515,7 +515,7 @@
     "references": [
       {
         "title": "Task table",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/task-table/concept/task-table.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/task-table/concept/task-table.html"
       }
     ],
     "tags": [
@@ -526,7 +526,7 @@
   {
     "id": "csa-acl-012",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Configuring Apps for Collaboration",
     "subdomain": "Task Approvals",
     "difficulty": "scenario",
@@ -562,7 +562,7 @@
     "references": [
       {
         "title": "Change management",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-it-service-management/page/product/change-management/concept/c_ITILChangeManagement.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-it-service-management/page/product/change-management/concept/c_ITILChangeManagement.html"
       }
     ],
     "tags": [
@@ -574,7 +574,7 @@
   {
     "id": "csa-acl-013",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Configuring Apps for Collaboration",
     "subdomain": "Incident Management",
     "difficulty": "recall",
@@ -610,7 +610,7 @@
     "references": [
       {
         "title": "Incident Management",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-it-service-management/page/product/incident-management/concept/c_IncidentManagement.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-it-service-management/page/product/incident-management/concept/c_IncidentManagement.html"
       }
     ],
     "tags": [
@@ -621,7 +621,7 @@
   {
     "id": "csa-acl-014",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Configuring Apps for Collaboration",
     "subdomain": "Incident State Model",
     "difficulty": "recall",
@@ -657,7 +657,7 @@
     "references": [
       {
         "title": "Incident state model",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-it-service-management/page/product/incident-management/reference/r_IncidentStateModel.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-it-service-management/page/product/incident-management/reference/r_IncidentStateModel.html"
       }
     ],
     "tags": [
@@ -668,7 +668,7 @@
   {
     "id": "csa-acl-015",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Configuring Apps for Collaboration",
     "subdomain": "Incident Priority",
     "difficulty": "recall",
@@ -704,7 +704,7 @@
     "references": [
       {
         "title": "Incident Management",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-it-service-management/page/product/incident-management/concept/c_IncidentManagement.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-it-service-management/page/product/incident-management/concept/c_IncidentManagement.html"
       }
     ],
     "tags": [
@@ -717,7 +717,7 @@
   {
     "id": "csa-acl-016",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Configuring Apps for Collaboration",
     "subdomain": "Change Management",
     "difficulty": "recall",
@@ -753,7 +753,7 @@
     "references": [
       {
         "title": "Change types",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-it-service-management/page/product/change-management/reference/r_ChangeTypes.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-it-service-management/page/product/change-management/reference/r_ChangeTypes.html"
       }
     ],
     "tags": [
@@ -764,7 +764,7 @@
   {
     "id": "csa-acl-017",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Configuring Apps for Collaboration",
     "subdomain": "Change Management",
     "difficulty": "recall",
@@ -800,7 +800,7 @@
     "references": [
       {
         "title": "Change types",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-it-service-management/page/product/change-management/reference/r_ChangeTypes.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-it-service-management/page/product/change-management/reference/r_ChangeTypes.html"
       }
     ],
     "tags": [
@@ -811,7 +811,7 @@
   {
     "id": "csa-acl-018",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Configuring Apps for Collaboration",
     "subdomain": "Change Management",
     "difficulty": "application",
@@ -847,7 +847,7 @@
     "references": [
       {
         "title": "Change types",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-it-service-management/page/product/change-management/reference/r_ChangeTypes.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-it-service-management/page/product/change-management/reference/r_ChangeTypes.html"
       }
     ],
     "tags": [
@@ -859,7 +859,7 @@
   {
     "id": "csa-acl-019",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Configuring Apps for Collaboration",
     "subdomain": "Problem Management",
     "difficulty": "recall",
@@ -895,7 +895,7 @@
     "references": [
       {
         "title": "Problem Management",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-it-service-management/page/product/problem-management/concept/c_ProblemManagement.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-it-service-management/page/product/problem-management/concept/c_ProblemManagement.html"
       }
     ],
     "tags": [
@@ -906,7 +906,7 @@
   {
     "id": "csa-acl-020",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Configuring Apps for Collaboration",
     "subdomain": "Problem Management",
     "difficulty": "application",
@@ -942,7 +942,7 @@
     "references": [
       {
         "title": "Problem Management",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-it-service-management/page/product/problem-management/concept/c_ProblemManagement.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-it-service-management/page/product/problem-management/concept/c_ProblemManagement.html"
       }
     ],
     "tags": [
@@ -954,7 +954,7 @@
   {
     "id": "csa-acl-021",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Configuring Apps for Collaboration",
     "subdomain": "Incident vs Problem",
     "difficulty": "recall",
@@ -990,7 +990,7 @@
     "references": [
       {
         "title": "Problem Management",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-it-service-management/page/product/problem-management/concept/c_ProblemManagement.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-it-service-management/page/product/problem-management/concept/c_ProblemManagement.html"
       }
     ],
     "tags": [
@@ -1002,7 +1002,7 @@
   {
     "id": "csa-acl-022",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Configuring Apps for Collaboration",
     "subdomain": "Change Management",
     "difficulty": "scenario",
@@ -1038,7 +1038,7 @@
     "references": [
       {
         "title": "Change Management",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-it-service-management/page/product/change-management/concept/c_ITILChangeManagement.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-it-service-management/page/product/change-management/concept/c_ITILChangeManagement.html"
       }
     ],
     "tags": [
@@ -1049,7 +1049,7 @@
   {
     "id": "csa-acl-023",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Configuring Apps for Collaboration",
     "subdomain": "Incident Management",
     "difficulty": "application",
@@ -1085,7 +1085,7 @@
     "references": [
       {
         "title": "Incident state model",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-it-service-management/page/product/incident-management/reference/r_IncidentStateModel.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-it-service-management/page/product/incident-management/reference/r_IncidentStateModel.html"
       }
     ],
     "tags": [
@@ -1097,7 +1097,7 @@
   {
     "id": "csa-acl-024",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Configuring Apps for Collaboration",
     "subdomain": "Change Management",
     "difficulty": "recall",
@@ -1133,7 +1133,7 @@
     "references": [
       {
         "title": "Change Management",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-it-service-management/page/product/change-management/concept/c_ITILChangeManagement.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-it-service-management/page/product/change-management/concept/c_ITILChangeManagement.html"
       }
     ],
     "tags": [
@@ -1145,7 +1145,7 @@
   {
     "id": "csa-acl-025",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Configuring Apps for Collaboration",
     "subdomain": "Knowledge Management",
     "difficulty": "recall",
@@ -1181,7 +1181,7 @@
     "references": [
       {
         "title": "Knowledge Management",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-servicenow-platform/page/product/knowledge-management/concept/c_KnowledgeManagement.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/product/knowledge-management/concept/c_KnowledgeManagement.html"
       }
     ],
     "tags": [
@@ -1192,7 +1192,7 @@
   {
     "id": "csa-acl-026",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Configuring Apps for Collaboration",
     "subdomain": "Knowledge Bases",
     "difficulty": "recall",
@@ -1228,7 +1228,7 @@
     "references": [
       {
         "title": "Knowledge Bases",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-servicenow-platform/page/product/knowledge-management/concept/c_KnowledgeBases.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/product/knowledge-management/concept/c_KnowledgeBases.html"
       }
     ],
     "tags": [
@@ -1239,7 +1239,7 @@
   {
     "id": "csa-acl-027",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Configuring Apps for Collaboration",
     "subdomain": "Knowledge Articles",
     "difficulty": "recall",
@@ -1275,7 +1275,7 @@
     "references": [
       {
         "title": "Knowledge Management",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-servicenow-platform/page/product/knowledge-management/concept/c_KnowledgeManagement.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/product/knowledge-management/concept/c_KnowledgeManagement.html"
       }
     ],
     "tags": [
@@ -1286,7 +1286,7 @@
   {
     "id": "csa-acl-028",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Configuring Apps for Collaboration",
     "subdomain": "User Criteria",
     "difficulty": "recall",
@@ -1322,7 +1322,7 @@
     "references": [
       {
         "title": "User criteria overview",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-servicenow-platform/page/product/knowledge-management/concept/user-criteria-overview.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/product/knowledge-management/concept/user-criteria-overview.html"
       }
     ],
     "tags": [
@@ -1334,7 +1334,7 @@
   {
     "id": "csa-acl-029",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Configuring Apps for Collaboration",
     "subdomain": "User Criteria",
     "difficulty": "application",
@@ -1370,7 +1370,7 @@
     "references": [
       {
         "title": "User criteria overview",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-servicenow-platform/page/product/knowledge-management/concept/user-criteria-overview.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/product/knowledge-management/concept/user-criteria-overview.html"
       }
     ],
     "tags": [
@@ -1382,7 +1382,7 @@
   {
     "id": "csa-acl-030",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Configuring Apps for Collaboration",
     "subdomain": "Knowledge Articles",
     "difficulty": "application",
@@ -1418,7 +1418,7 @@
     "references": [
       {
         "title": "Create a knowledge article",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-servicenow-platform/page/product/knowledge-management/task/t_CreateKnowledgeArticle.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/product/knowledge-management/task/t_CreateKnowledgeArticle.html"
       }
     ],
     "tags": [
@@ -1430,7 +1430,7 @@
   {
     "id": "csa-acl-031",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Configuring Apps for Collaboration",
     "subdomain": "Knowledge Articles",
     "difficulty": "recall",
@@ -1466,7 +1466,7 @@
     "references": [
       {
         "title": "Knowledge Management",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-servicenow-platform/page/product/knowledge-management/concept/c_KnowledgeManagement.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/product/knowledge-management/concept/c_KnowledgeManagement.html"
       }
     ],
     "tags": [
@@ -1477,7 +1477,7 @@
   {
     "id": "csa-acl-032",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Configuring Apps for Collaboration",
     "subdomain": "Knowledge Bases",
     "difficulty": "recall",
@@ -1513,7 +1513,7 @@
     "references": [
       {
         "title": "Knowledge Bases",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-servicenow-platform/page/product/knowledge-management/concept/c_KnowledgeBases.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/product/knowledge-management/concept/c_KnowledgeBases.html"
       }
     ],
     "tags": [
@@ -1524,7 +1524,7 @@
   {
     "id": "csa-acl-033",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Configuring Apps for Collaboration",
     "subdomain": "Knowledge Categorization",
     "difficulty": "recall",
@@ -1560,7 +1560,7 @@
     "references": [
       {
         "title": "Knowledge Management",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-servicenow-platform/page/product/knowledge-management/concept/c_KnowledgeManagement.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/product/knowledge-management/concept/c_KnowledgeManagement.html"
       }
     ],
     "tags": [
@@ -1571,7 +1571,7 @@
   {
     "id": "csa-acl-034",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Configuring Apps for Collaboration",
     "subdomain": "Knowledge Feedback",
     "difficulty": "recall",
@@ -1607,7 +1607,7 @@
     "references": [
       {
         "title": "Knowledge Management",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-servicenow-platform/page/product/knowledge-management/concept/c_KnowledgeManagement.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/product/knowledge-management/concept/c_KnowledgeManagement.html"
       }
     ],
     "tags": [
@@ -1619,7 +1619,7 @@
   {
     "id": "csa-acl-035",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Configuring Apps for Collaboration",
     "subdomain": "Knowledge Workflow",
     "difficulty": "scenario",
@@ -1655,7 +1655,7 @@
     "references": [
       {
         "title": "Knowledge Bases",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-servicenow-platform/page/product/knowledge-management/concept/c_KnowledgeBases.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/product/knowledge-management/concept/c_KnowledgeBases.html"
       }
     ],
     "tags": [
@@ -1667,7 +1667,7 @@
   {
     "id": "csa-acl-036",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Configuring Apps for Collaboration",
     "subdomain": "Knowledge Articles",
     "difficulty": "application",
@@ -1703,7 +1703,7 @@
     "references": [
       {
         "title": "Knowledge Management",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-servicenow-platform/page/product/knowledge-management/concept/c_KnowledgeManagement.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/product/knowledge-management/concept/c_KnowledgeManagement.html"
       }
     ],
     "tags": [
@@ -1715,7 +1715,7 @@
   {
     "id": "csa-acl-037",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Configuring Apps for Collaboration",
     "subdomain": "Service Catalog",
     "difficulty": "recall",
@@ -1751,7 +1751,7 @@
     "references": [
       {
         "title": "Service Catalog Management",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-servicenow-platform/page/product/service-catalog-management/concept/c_ServiceCatalogManagement.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/product/service-catalog-management/concept/c_ServiceCatalogManagement.html"
       }
     ],
     "tags": [
@@ -1762,7 +1762,7 @@
   {
     "id": "csa-acl-038",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Configuring Apps for Collaboration",
     "subdomain": "Catalog Items",
     "difficulty": "recall",
@@ -1798,7 +1798,7 @@
     "references": [
       {
         "title": "Catalog items",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-servicenow-platform/page/product/service-catalog-management/concept/c_CatalogItems.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/product/service-catalog-management/concept/c_CatalogItems.html"
       }
     ],
     "tags": [
@@ -1809,7 +1809,7 @@
   {
     "id": "csa-acl-039",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Configuring Apps for Collaboration",
     "subdomain": "Catalog Variables",
     "difficulty": "recall",
@@ -1845,7 +1845,7 @@
     "references": [
       {
         "title": "Catalog variables",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-servicenow-platform/page/product/service-catalog-management/concept/c_CatalogVariables.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/product/service-catalog-management/concept/c_CatalogVariables.html"
       }
     ],
     "tags": [
@@ -1856,7 +1856,7 @@
   {
     "id": "csa-acl-040",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Configuring Apps for Collaboration",
     "subdomain": "Request / RITM",
     "difficulty": "recall",
@@ -1892,7 +1892,7 @@
     "references": [
       {
         "title": "Request fulfillment",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-servicenow-platform/page/product/service-catalog-management/concept/c_RequestFulfillment.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/product/service-catalog-management/concept/c_RequestFulfillment.html"
       }
     ],
     "tags": [
@@ -1904,7 +1904,7 @@
   {
     "id": "csa-acl-041",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Configuring Apps for Collaboration",
     "subdomain": "Catalog UI",
     "difficulty": "application",
@@ -1940,7 +1940,7 @@
     "references": [
       {
         "title": "Catalog items",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-servicenow-platform/page/product/service-catalog-management/concept/c_CatalogItems.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/product/service-catalog-management/concept/c_CatalogItems.html"
       }
     ],
     "tags": [
@@ -1952,7 +1952,7 @@
   {
     "id": "csa-acl-042",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Configuring Apps for Collaboration",
     "subdomain": "Catalog Categories",
     "difficulty": "recall",
@@ -1988,7 +1988,7 @@
     "references": [
       {
         "title": "Service Catalog Management",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-servicenow-platform/page/product/service-catalog-management/concept/c_ServiceCatalogManagement.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/product/service-catalog-management/concept/c_ServiceCatalogManagement.html"
       }
     ],
     "tags": [
@@ -1999,7 +1999,7 @@
   {
     "id": "csa-acl-043",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Configuring Apps for Collaboration",
     "subdomain": "Variable Sets",
     "difficulty": "recall",
@@ -2035,7 +2035,7 @@
     "references": [
       {
         "title": "Catalog variables",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-servicenow-platform/page/product/service-catalog-management/concept/c_CatalogVariables.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/product/service-catalog-management/concept/c_CatalogVariables.html"
       }
     ],
     "tags": [
@@ -2046,7 +2046,7 @@
   {
     "id": "csa-acl-044",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Configuring Apps for Collaboration",
     "subdomain": "Request Fulfillment",
     "difficulty": "application",
@@ -2082,7 +2082,7 @@
     "references": [
       {
         "title": "Request fulfillment",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-servicenow-platform/page/product/service-catalog-management/concept/c_RequestFulfillment.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/product/service-catalog-management/concept/c_RequestFulfillment.html"
       }
     ],
     "tags": [
@@ -2094,7 +2094,7 @@
   {
     "id": "csa-acl-045",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Configuring Apps for Collaboration",
     "subdomain": "Catalog UI Policies",
     "difficulty": "application",
@@ -2130,7 +2130,7 @@
     "references": [
       {
         "title": "Catalog variables",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-servicenow-platform/page/product/service-catalog-management/concept/c_CatalogVariables.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/product/service-catalog-management/concept/c_CatalogVariables.html"
       }
     ],
     "tags": [
@@ -2141,7 +2141,7 @@
   {
     "id": "csa-acl-046",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Configuring Apps for Collaboration",
     "subdomain": "Order Guides",
     "difficulty": "scenario",
@@ -2177,7 +2177,7 @@
     "references": [
       {
         "title": "Service Catalog Management",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-servicenow-platform/page/product/service-catalog-management/concept/c_ServiceCatalogManagement.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/product/service-catalog-management/concept/c_ServiceCatalogManagement.html"
       }
     ],
     "tags": [
@@ -2189,7 +2189,7 @@
   {
     "id": "csa-acl-047",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Configuring Apps for Collaboration",
     "subdomain": "Catalog Workflow",
     "difficulty": "application",
@@ -2225,7 +2225,7 @@
     "references": [
       {
         "title": "Catalog items",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-servicenow-platform/page/product/service-catalog-management/concept/c_CatalogItems.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/product/service-catalog-management/concept/c_CatalogItems.html"
       }
     ],
     "tags": [

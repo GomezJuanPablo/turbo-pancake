@@ -2,7 +2,7 @@
   {
     "id": "csa-dbs-001",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Database Management and Platform Security",
     "subdomain": "Tables",
     "difficulty": "recall",
@@ -38,7 +38,7 @@
     "references": [
       {
         "title": "Tables and Fields",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/table-administration/concept/c_TablesAndFields.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/table-administration/concept/c_TablesAndFields.html"
       }
     ],
     "tags": [
@@ -49,7 +49,7 @@
   {
     "id": "csa-dbs-002",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Database Management and Platform Security",
     "subdomain": "Tables",
     "difficulty": "application",
@@ -85,7 +85,7 @@
     "references": [
       {
         "title": "Tables and Fields",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/table-administration/concept/c_TablesAndFields.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/table-administration/concept/c_TablesAndFields.html"
       }
     ],
     "tags": [
@@ -96,7 +96,7 @@
   {
     "id": "csa-dbs-003",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Database Management and Platform Security",
     "subdomain": "Create Table",
     "difficulty": "recall",
@@ -132,7 +132,7 @@
     "references": [
       {
         "title": "Create a table",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/table-administration/task/t_CreateATable.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/table-administration/task/t_CreateATable.html"
       }
     ],
     "tags": [
@@ -143,7 +143,7 @@
   {
     "id": "csa-dbs-004",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Database Management and Platform Security",
     "subdomain": "Field Types",
     "difficulty": "recall",
@@ -179,7 +179,7 @@
     "references": [
       {
         "title": "Field types",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/field-administration/reference/r_FieldTypes.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/field-administration/reference/r_FieldTypes.html"
       }
     ],
     "tags": [
@@ -190,7 +190,7 @@
   {
     "id": "csa-dbs-005",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Database Management and Platform Security",
     "subdomain": "Field Types",
     "difficulty": "recall",
@@ -226,7 +226,7 @@
     "references": [
       {
         "title": "Field types",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/field-administration/reference/r_FieldTypes.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/field-administration/reference/r_FieldTypes.html"
       }
     ],
     "tags": [
@@ -237,7 +237,7 @@
   {
     "id": "csa-dbs-006",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Database Management and Platform Security",
     "subdomain": "System Dictionary",
     "difficulty": "recall",
@@ -273,7 +273,7 @@
     "references": [
       {
         "title": "System dictionary",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/field-administration/concept/c_SystemDictionary.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/field-administration/concept/c_SystemDictionary.html"
       }
     ],
     "tags": [
@@ -284,7 +284,7 @@
   {
     "id": "csa-dbs-007",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Database Management and Platform Security",
     "subdomain": "sys_id",
     "difficulty": "recall",
@@ -320,7 +320,7 @@
     "references": [
       {
         "title": "Tables and Fields",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/table-administration/concept/c_TablesAndFields.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/table-administration/concept/c_TablesAndFields.html"
       }
     ],
     "tags": [
@@ -331,7 +331,7 @@
   {
     "id": "csa-dbs-008",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Database Management and Platform Security",
     "subdomain": "Dictionary Overrides",
     "difficulty": "application",
@@ -367,7 +367,7 @@
     "references": [
       {
         "title": "System dictionary",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/field-administration/concept/c_SystemDictionary.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/field-administration/concept/c_SystemDictionary.html"
       }
     ],
     "tags": [
@@ -378,7 +378,7 @@
   {
     "id": "csa-dbs-009",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Database Management and Platform Security",
     "subdomain": "Field Types",
     "difficulty": "recall",
@@ -414,7 +414,7 @@
     "references": [
       {
         "title": "Field types",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/field-administration/reference/r_FieldTypes.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/field-administration/reference/r_FieldTypes.html"
       }
     ],
     "tags": [
@@ -425,7 +425,7 @@
   {
     "id": "csa-dbs-010",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Database Management and Platform Security",
     "subdomain": "Field Naming",
     "difficulty": "recall",
@@ -461,7 +461,7 @@
     "references": [
       {
         "title": "Tables and Fields",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/table-administration/concept/c_TablesAndFields.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/table-administration/concept/c_TablesAndFields.html"
       }
     ],
     "tags": [
@@ -473,7 +473,7 @@
   {
     "id": "csa-dbs-011",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Database Management and Platform Security",
     "subdomain": "Choice Lists",
     "difficulty": "application",
@@ -509,7 +509,7 @@
     "references": [
       {
         "title": "Field types",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/field-administration/reference/r_FieldTypes.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/field-administration/reference/r_FieldTypes.html"
       }
     ],
     "tags": [
@@ -520,7 +520,7 @@
   {
     "id": "csa-dbs-012",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Database Management and Platform Security",
     "subdomain": "Table Extension",
     "difficulty": "scenario",
@@ -556,7 +556,7 @@
     "references": [
       {
         "title": "Tables and Fields",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/table-administration/concept/c_TablesAndFields.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/table-administration/concept/c_TablesAndFields.html"
       }
     ],
     "tags": [
@@ -567,7 +567,7 @@
   {
     "id": "csa-dbs-013",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Database Management and Platform Security",
     "subdomain": "Field Attributes",
     "difficulty": "recall",
@@ -603,7 +603,7 @@
     "references": [
       {
         "title": "Field types",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/field-administration/reference/r_FieldTypes.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/field-administration/reference/r_FieldTypes.html"
       }
     ],
     "tags": [
@@ -614,7 +614,7 @@
   {
     "id": "csa-dbs-014",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Database Management and Platform Security",
     "subdomain": "Display Field",
     "difficulty": "recall",
@@ -650,7 +650,7 @@
     "references": [
       {
         "title": "Tables and Fields",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/table-administration/concept/c_TablesAndFields.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/table-administration/concept/c_TablesAndFields.html"
       }
     ],
     "tags": [
@@ -661,7 +661,7 @@
   {
     "id": "csa-dbs-015",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Database Management and Platform Security",
     "subdomain": "Schema",
     "difficulty": "application",
@@ -697,7 +697,7 @@
     "references": [
       {
         "title": "Field types",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/field-administration/reference/r_FieldTypes.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/field-administration/reference/r_FieldTypes.html"
       }
     ],
     "tags": [
@@ -708,7 +708,7 @@
   {
     "id": "csa-dbs-016",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Database Management and Platform Security",
     "subdomain": "ACLs",
     "difficulty": "recall",
@@ -744,7 +744,7 @@
     "references": [
       {
         "title": "Access control rules",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/administer/contextual-security/concept/access-control-rules.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/administer/contextual-security/concept/access-control-rules.html"
       }
     ],
     "tags": [
@@ -755,7 +755,7 @@
   {
     "id": "csa-dbs-017",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Database Management and Platform Security",
     "subdomain": "ACLs",
     "difficulty": "recall",
@@ -791,7 +791,7 @@
     "references": [
       {
         "title": "Contextual security",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/administer/contextual-security/concept/contextual-security.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/administer/contextual-security/concept/contextual-security.html"
       }
     ],
     "tags": [
@@ -802,7 +802,7 @@
   {
     "id": "csa-dbs-018",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Database Management and Platform Security",
     "subdomain": "ACLs",
     "difficulty": "recall",
@@ -838,7 +838,7 @@
     "references": [
       {
         "title": "Access control rules",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/administer/contextual-security/concept/access-control-rules.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/administer/contextual-security/concept/access-control-rules.html"
       }
     ],
     "tags": [
@@ -851,7 +851,7 @@
   {
     "id": "csa-dbs-019",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Database Management and Platform Security",
     "subdomain": "ACL Granularity",
     "difficulty": "application",
@@ -887,7 +887,7 @@
     "references": [
       {
         "title": "Contextual security",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/administer/contextual-security/concept/contextual-security.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/administer/contextual-security/concept/contextual-security.html"
       }
     ],
     "tags": [
@@ -899,7 +899,7 @@
   {
     "id": "csa-dbs-020",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Database Management and Platform Security",
     "subdomain": "ACL Evaluation",
     "difficulty": "recall",
@@ -935,7 +935,7 @@
     "references": [
       {
         "title": "ACL rule processing",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/administer/contextual-security/reference/r_ACLRuleProcessing.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/administer/contextual-security/reference/r_ACLRuleProcessing.html"
       }
     ],
     "tags": [
@@ -946,7 +946,7 @@
   {
     "id": "csa-dbs-021",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Database Management and Platform Security",
     "subdomain": "ACL Creation",
     "difficulty": "application",
@@ -982,7 +982,7 @@
     "references": [
       {
         "title": "Create an ACL rule",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/administer/contextual-security/task/t_CreateAnACLRule.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/administer/contextual-security/task/t_CreateAnACLRule.html"
       }
     ],
     "tags": [
@@ -994,7 +994,7 @@
   {
     "id": "csa-dbs-022",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Database Management and Platform Security",
     "subdomain": "ACLs",
     "difficulty": "recall",
@@ -1030,7 +1030,7 @@
     "references": [
       {
         "title": "Access control rules",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/administer/contextual-security/concept/access-control-rules.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/administer/contextual-security/concept/access-control-rules.html"
       }
     ],
     "tags": [
@@ -1041,7 +1041,7 @@
   {
     "id": "csa-dbs-023",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Database Management and Platform Security",
     "subdomain": "Inherited ACLs",
     "difficulty": "recall",
@@ -1077,7 +1077,7 @@
     "references": [
       {
         "title": "ACL rule processing",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/administer/contextual-security/reference/r_ACLRuleProcessing.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/administer/contextual-security/reference/r_ACLRuleProcessing.html"
       }
     ],
     "tags": [
@@ -1088,7 +1088,7 @@
   {
     "id": "csa-dbs-024",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Database Management and Platform Security",
     "subdomain": "ACLs",
     "difficulty": "scenario",
@@ -1124,7 +1124,7 @@
     "references": [
       {
         "title": "Access control rules",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/administer/contextual-security/concept/access-control-rules.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/administer/contextual-security/concept/access-control-rules.html"
       }
     ],
     "tags": [
@@ -1136,7 +1136,7 @@
   {
     "id": "csa-dbs-025",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Database Management and Platform Security",
     "subdomain": "Elevated Privilege",
     "difficulty": "recall",
@@ -1172,7 +1172,7 @@
     "references": [
       {
         "title": "Contextual security",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/administer/contextual-security/concept/contextual-security.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/administer/contextual-security/concept/contextual-security.html"
       }
     ],
     "tags": [
@@ -1184,7 +1184,7 @@
   {
     "id": "csa-dbs-026",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Database Management and Platform Security",
     "subdomain": "ACL Debugging",
     "difficulty": "application",
@@ -1220,7 +1220,7 @@
     "references": [
       {
         "title": "ACL rule processing",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/administer/contextual-security/reference/r_ACLRuleProcessing.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/administer/contextual-security/reference/r_ACLRuleProcessing.html"
       }
     ],
     "tags": [
@@ -1231,7 +1231,7 @@
   {
     "id": "csa-dbs-027",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Database Management and Platform Security",
     "subdomain": "Default Deny",
     "difficulty": "recall",
@@ -1267,7 +1267,7 @@
     "references": [
       {
         "title": "Access control rules",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/administer/contextual-security/concept/access-control-rules.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/administer/contextual-security/concept/access-control-rules.html"
       }
     ],
     "tags": [
@@ -1278,7 +1278,7 @@
   {
     "id": "csa-dbs-028",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Database Management and Platform Security",
     "subdomain": "ACLs and References",
     "difficulty": "scenario",
@@ -1314,7 +1314,7 @@
     "references": [
       {
         "title": "Access control rules",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/administer/contextual-security/concept/access-control-rules.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/administer/contextual-security/concept/access-control-rules.html"
       }
     ],
     "tags": [
@@ -1326,7 +1326,7 @@
   {
     "id": "csa-dbs-029",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Database Management and Platform Security",
     "subdomain": "Wildcard ACLs",
     "difficulty": "recall",
@@ -1362,7 +1362,7 @@
     "references": [
       {
         "title": "Access control rules",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/administer/contextual-security/concept/access-control-rules.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/administer/contextual-security/concept/access-control-rules.html"
       }
     ],
     "tags": [
@@ -1374,7 +1374,7 @@
   {
     "id": "csa-dbs-030",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Database Management and Platform Security",
     "subdomain": "ACL Performance",
     "difficulty": "application",
@@ -1410,7 +1410,7 @@
     "references": [
       {
         "title": "Access control rules",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/administer/contextual-security/concept/access-control-rules.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/administer/contextual-security/concept/access-control-rules.html"
       }
     ],
     "tags": [
@@ -1421,7 +1421,7 @@
   {
     "id": "csa-dbs-031",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Database Management and Platform Security",
     "subdomain": "Data Policy",
     "difficulty": "recall",
@@ -1457,7 +1457,7 @@
     "references": [
       {
         "title": "Data Policy",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/form-administration/concept/c_DataPolicy.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/form-administration/concept/c_DataPolicy.html"
       }
     ],
     "tags": [
@@ -1468,7 +1468,7 @@
   {
     "id": "csa-dbs-032",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Database Management and Platform Security",
     "subdomain": "Data Policy vs UI Policy",
     "difficulty": "application",
@@ -1504,7 +1504,7 @@
     "references": [
       {
         "title": "Data Policy",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/form-administration/concept/c_DataPolicy.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/form-administration/concept/c_DataPolicy.html"
       }
     ],
     "tags": [
@@ -1516,7 +1516,7 @@
   {
     "id": "csa-dbs-033",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Database Management and Platform Security",
     "subdomain": "Data Policy",
     "difficulty": "recall",
@@ -1552,7 +1552,7 @@
     "references": [
       {
         "title": "Data Policy",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/form-administration/concept/c_DataPolicy.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/form-administration/concept/c_DataPolicy.html"
       }
     ],
     "tags": [
@@ -1563,7 +1563,7 @@
   {
     "id": "csa-dbs-034",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Database Management and Platform Security",
     "subdomain": "Audit Tables",
     "difficulty": "recall",
@@ -1599,7 +1599,7 @@
     "references": [
       {
         "title": "Audit tables",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/general/concept/c_AuditTables.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/general/concept/c_AuditTables.html"
       }
     ],
     "tags": [
@@ -1610,7 +1610,7 @@
   {
     "id": "csa-dbs-035",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Database Management and Platform Security",
     "subdomain": "Audit Tables",
     "difficulty": "application",
@@ -1646,7 +1646,7 @@
     "references": [
       {
         "title": "Audit tables",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/general/concept/c_AuditTables.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/general/concept/c_AuditTables.html"
       }
     ],
     "tags": [
@@ -1658,7 +1658,7 @@
   {
     "id": "csa-dbs-036",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Database Management and Platform Security",
     "subdomain": "Field Normalization",
     "difficulty": "recall",
@@ -1694,7 +1694,7 @@
     "references": [
       {
         "title": "Field normalization",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/field-administration/concept/c_FieldNormalization.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/field-administration/concept/c_FieldNormalization.html"
       }
     ],
     "tags": [
@@ -1705,7 +1705,7 @@
   {
     "id": "csa-dbs-037",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Database Management and Platform Security",
     "subdomain": "Encryption Support",
     "difficulty": "recall",
@@ -1741,7 +1741,7 @@
     "references": [
       {
         "title": "Encryption support",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/administer/encryption/concept/c_EncryptionSupport.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/administer/encryption/concept/c_EncryptionSupport.html"
       }
     ],
     "tags": [
@@ -1753,7 +1753,7 @@
   {
     "id": "csa-dbs-038",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Database Management and Platform Security",
     "subdomain": "Audit Tables",
     "difficulty": "recall",
@@ -1789,7 +1789,7 @@
     "references": [
       {
         "title": "Audit tables",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/general/concept/c_AuditTables.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/general/concept/c_AuditTables.html"
       }
     ],
     "tags": [
@@ -1800,7 +1800,7 @@
   {
     "id": "csa-dbs-039",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Database Management and Platform Security",
     "subdomain": "Data Policy",
     "difficulty": "application",
@@ -1836,7 +1836,7 @@
     "references": [
       {
         "title": "Data Policy",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/form-administration/concept/c_DataPolicy.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/form-administration/concept/c_DataPolicy.html"
       }
     ],
     "tags": [
@@ -1847,7 +1847,7 @@
   {
     "id": "csa-dbs-040",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Database Management and Platform Security",
     "subdomain": "Field Normalization",
     "difficulty": "scenario",
@@ -1883,7 +1883,7 @@
     "references": [
       {
         "title": "Field normalization",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/field-administration/concept/c_FieldNormalization.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/field-administration/concept/c_FieldNormalization.html"
       }
     ],
     "tags": [
@@ -1895,7 +1895,7 @@
   {
     "id": "csa-dbs-041",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Database Management and Platform Security",
     "subdomain": "Audit Trail",
     "difficulty": "recall",
@@ -1931,7 +1931,7 @@
     "references": [
       {
         "title": "Audit tables",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/general/concept/c_AuditTables.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/general/concept/c_AuditTables.html"
       }
     ],
     "tags": [
@@ -1943,7 +1943,7 @@
   {
     "id": "csa-dbs-042",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Database Management and Platform Security",
     "subdomain": "Encryption",
     "difficulty": "application",
@@ -1979,7 +1979,7 @@
     "references": [
       {
         "title": "Encryption support",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/administer/encryption/concept/c_EncryptionSupport.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/administer/encryption/concept/c_EncryptionSupport.html"
       }
     ],
     "tags": [
@@ -1991,7 +1991,7 @@
   {
     "id": "csa-dbs-043",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Database Management and Platform Security",
     "subdomain": "Data Policy",
     "difficulty": "recall",
@@ -2027,7 +2027,7 @@
     "references": [
       {
         "title": "Data Policy",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/form-administration/concept/c_DataPolicy.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/form-administration/concept/c_DataPolicy.html"
       }
     ],
     "tags": [
@@ -2038,7 +2038,7 @@
   {
     "id": "csa-dbs-044",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Database Management and Platform Security",
     "subdomain": "Audit Storage",
     "difficulty": "recall",
@@ -2074,7 +2074,7 @@
     "references": [
       {
         "title": "Audit tables",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/general/concept/c_AuditTables.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/general/concept/c_AuditTables.html"
       }
     ],
     "tags": [
@@ -2086,7 +2086,7 @@
   {
     "id": "csa-dbs-045",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Database Management and Platform Security",
     "subdomain": "Data Policy",
     "difficulty": "scenario",
@@ -2122,7 +2122,7 @@
     "references": [
       {
         "title": "Data Policy",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/form-administration/concept/c_DataPolicy.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/form-administration/concept/c_DataPolicy.html"
       }
     ],
     "tags": [
@@ -2134,7 +2134,7 @@
   {
     "id": "csa-dbs-046",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Database Management and Platform Security",
     "subdomain": "Authentication",
     "difficulty": "recall",
@@ -2170,7 +2170,7 @@
     "references": [
       {
         "title": "Authentication overview",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/integrate/authentication/concept/c_AuthenticationOverview.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/integrate/authentication/concept/c_AuthenticationOverview.html"
       }
     ],
     "tags": [
@@ -2181,7 +2181,7 @@
   {
     "id": "csa-dbs-047",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Database Management and Platform Security",
     "subdomain": "SSO / SAML",
     "difficulty": "recall",
@@ -2217,7 +2217,7 @@
     "references": [
       {
         "title": "SAML 2.0 web SSO",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/integrate/saml/concept/c_SAML20Web.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/integrate/saml/concept/c_SAML20Web.html"
       }
     ],
     "tags": [
@@ -2229,7 +2229,7 @@
   {
     "id": "csa-dbs-048",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Database Management and Platform Security",
     "subdomain": "MFA",
     "difficulty": "recall",
@@ -2265,7 +2265,7 @@
     "references": [
       {
         "title": "Multi-factor authentication",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/integrate/authentication/concept/c_MultifactorAuthentication.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/integrate/authentication/concept/c_MultifactorAuthentication.html"
       }
     ],
     "tags": [
@@ -2276,20 +2276,20 @@
   {
     "id": "csa-dbs-049",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Database Management and Platform Security",
     "subdomain": "MFA",
     "difficulty": "application",
     "type": "single_select",
-    "stem": "A new admin is enabling MFA for admins on a Yokohama instance. Which statement is most accurate about the default in Yokohama for local logins?",
+    "stem": "A new admin is enabling MFA for admins on a Zurich instance. Which statement is most accurate about the default in Zurich for local logins?",
     "options": [
       {
         "id": "A",
-        "text": "In Yokohama, MFA is enforced by default for local logins, with configurable enrollment windows and exemptions."
+        "text": "In Zurich, MFA is enforced by default for local logins, with configurable enrollment windows and exemptions."
       },
       {
         "id": "B",
-        "text": "MFA is unavailable on Yokohama and must be added by a third-party plugin."
+        "text": "MFA is unavailable on Zurich and must be added by a third-party plugin."
       },
       {
         "id": "C",
@@ -2303,7 +2303,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "Yokohama enforces MFA on local logins by default. Admins can adjust enrollment windows and exempt specific users or groups when needed.",
+    "rationale": "Zurich enforces MFA on local logins by default. Admins can adjust enrollment windows and exempt specific users or groups when needed.",
     "distractor_notes": {
       "B": "It's not a third-party plugin — MFA is platform-native.",
       "C": "MFA isn't limited to SAML.",
@@ -2312,19 +2312,19 @@
     "references": [
       {
         "title": "Multi-factor authentication",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/integrate/authentication/concept/c_MultifactorAuthentication.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/integrate/authentication/concept/c_MultifactorAuthentication.html"
       }
     ],
     "tags": [
       "mfa",
-      "yokohama",
+      "zurich",
       "default"
     ]
   },
   {
     "id": "csa-dbs-050",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Database Management and Platform Security",
     "subdomain": "SSO",
     "difficulty": "scenario",
@@ -2360,7 +2360,7 @@
     "references": [
       {
         "title": "SAML 2.0 web SSO",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/integrate/saml/concept/c_SAML20Web.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/integrate/saml/concept/c_SAML20Web.html"
       }
     ],
     "tags": [
@@ -2373,7 +2373,7 @@
   {
     "id": "csa-dbs-051",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Database Management and Platform Security",
     "subdomain": "Password Reset",
     "difficulty": "recall",
@@ -2409,7 +2409,7 @@
     "references": [
       {
         "title": "Password reset",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/users-and-groups/concept/c_PasswordReset.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/users-and-groups/concept/c_PasswordReset.html"
       }
     ],
     "tags": [
@@ -2420,7 +2420,7 @@
   {
     "id": "csa-dbs-052",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Database Management and Platform Security",
     "subdomain": "Authentication Modules",
     "difficulty": "recall",
@@ -2456,7 +2456,7 @@
     "references": [
       {
         "title": "Authentication overview",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/integrate/authentication/concept/c_AuthenticationOverview.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/integrate/authentication/concept/c_AuthenticationOverview.html"
       }
     ],
     "tags": [
@@ -2467,7 +2467,7 @@
   {
     "id": "csa-dbs-053",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Database Management and Platform Security",
     "subdomain": "OAuth / OIDC",
     "difficulty": "recall",
@@ -2503,7 +2503,7 @@
     "references": [
       {
         "title": "Authentication overview",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/integrate/authentication/concept/c_AuthenticationOverview.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/integrate/authentication/concept/c_AuthenticationOverview.html"
       }
     ],
     "tags": [
@@ -2515,7 +2515,7 @@
   {
     "id": "csa-dbs-054",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Database Management and Platform Security",
     "subdomain": "Authentication",
     "difficulty": "scenario",
@@ -2551,7 +2551,7 @@
     "references": [
       {
         "title": "Authentication overview",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/integrate/authentication/concept/c_AuthenticationOverview.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/integrate/authentication/concept/c_AuthenticationOverview.html"
       }
     ],
     "tags": [
@@ -2563,7 +2563,7 @@
   {
     "id": "csa-dbs-055",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Database Management and Platform Security",
     "subdomain": "Password Policy",
     "difficulty": "recall",
@@ -2599,7 +2599,7 @@
     "references": [
       {
         "title": "Authentication overview",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/integrate/authentication/concept/c_AuthenticationOverview.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/integrate/authentication/concept/c_AuthenticationOverview.html"
       }
     ],
     "tags": [
@@ -2610,7 +2610,7 @@
   {
     "id": "csa-dbs-056",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Database Management and Platform Security",
     "subdomain": "Session",
     "difficulty": "recall",
@@ -2646,7 +2646,7 @@
     "references": [
       {
         "title": "Authentication overview",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/integrate/authentication/concept/c_AuthenticationOverview.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/integrate/authentication/concept/c_AuthenticationOverview.html"
       }
     ],
     "tags": [
@@ -2657,7 +2657,7 @@
   {
     "id": "csa-dbs-057",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Database Management and Platform Security",
     "subdomain": "MFA",
     "difficulty": "application",
@@ -2693,7 +2693,7 @@
     "references": [
       {
         "title": "Multi-factor authentication",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/integrate/authentication/concept/c_MultifactorAuthentication.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/integrate/authentication/concept/c_MultifactorAuthentication.html"
       }
     ],
     "tags": [
@@ -2705,7 +2705,7 @@
   {
     "id": "csa-dbs-058",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Database Management and Platform Security",
     "subdomain": "Login Audit",
     "difficulty": "recall",
@@ -2741,7 +2741,7 @@
     "references": [
       {
         "title": "Authentication overview",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/integrate/authentication/concept/c_AuthenticationOverview.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/integrate/authentication/concept/c_AuthenticationOverview.html"
       }
     ],
     "tags": [
@@ -2753,7 +2753,7 @@
   {
     "id": "csa-dbs-059",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Database Management and Platform Security",
     "subdomain": "Authentication",
     "difficulty": "scenario",
@@ -2789,7 +2789,7 @@
     "references": [
       {
         "title": "Multi-factor authentication",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/integrate/authentication/concept/c_MultifactorAuthentication.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/integrate/authentication/concept/c_MultifactorAuthentication.html"
       }
     ],
     "tags": [
@@ -2801,7 +2801,7 @@
   {
     "id": "csa-dbs-060",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Database Management and Platform Security",
     "subdomain": "Instance Security Center",
     "difficulty": "recall",
@@ -2837,7 +2837,7 @@
     "references": [
       {
         "title": "Instance Security Center",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/administer/security-center/concept/instance-security-center.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/administer/security-center/concept/instance-security-center.html"
       }
     ],
     "tags": [
@@ -2848,7 +2848,7 @@
   {
     "id": "csa-dbs-061",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Database Management and Platform Security",
     "subdomain": "Security Configuration",
     "difficulty": "recall",
@@ -2884,7 +2884,7 @@
     "references": [
       {
         "title": "Security configuration overview",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/administer/security-center/concept/security-configuration-overview.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/administer/security-center/concept/security-configuration-overview.html"
       }
     ],
     "tags": [
@@ -2895,7 +2895,7 @@
   {
     "id": "csa-dbs-062",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Database Management and Platform Security",
     "subdomain": "Contextual Security",
     "difficulty": "recall",
@@ -2931,7 +2931,7 @@
     "references": [
       {
         "title": "Contextual security",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/administer/security-center/concept/security-configuration-overview.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/administer/security-center/concept/security-configuration-overview.html"
       }
     ],
     "tags": [
@@ -2942,7 +2942,7 @@
   {
     "id": "csa-dbs-063",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Database Management and Platform Security",
     "subdomain": "Security Best Practice",
     "difficulty": "scenario",
@@ -2978,7 +2978,7 @@
     "references": [
       {
         "title": "Security configuration overview",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/administer/security-center/concept/security-configuration-overview.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/administer/security-center/concept/security-configuration-overview.html"
       }
     ],
     "tags": [
@@ -2990,7 +2990,7 @@
   {
     "id": "csa-dbs-064",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Database Management and Platform Security",
     "subdomain": "Security Headers",
     "difficulty": "recall",
@@ -3026,7 +3026,7 @@
     "references": [
       {
         "title": "Security configuration overview",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/administer/security-center/concept/security-configuration-overview.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/administer/security-center/concept/security-configuration-overview.html"
       }
     ],
     "tags": [
@@ -3037,7 +3037,7 @@
   {
     "id": "csa-dbs-065",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Database Management and Platform Security",
     "subdomain": "ACL Override Caution",
     "difficulty": "scenario",
@@ -3073,7 +3073,7 @@
     "references": [
       {
         "title": "Instance Security Center",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/administer/security-center/concept/instance-security-center.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/administer/security-center/concept/instance-security-center.html"
       }
     ],
     "tags": [
@@ -3085,7 +3085,7 @@
   {
     "id": "csa-dbs-066",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Database Management and Platform Security",
     "subdomain": "Hardening Cadence",
     "difficulty": "application",
@@ -3121,7 +3121,7 @@
     "references": [
       {
         "title": "Instance Security Center",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/administer/security-center/concept/instance-security-center.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/administer/security-center/concept/instance-security-center.html"
       }
     ],
     "tags": [
@@ -3133,7 +3133,7 @@
   {
     "id": "csa-dbs-067",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Database Management and Platform Security",
     "subdomain": "Plugin Hygiene",
     "difficulty": "recall",
@@ -3169,7 +3169,7 @@
     "references": [
       {
         "title": "Security configuration overview",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/administer/security-center/concept/security-configuration-overview.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/administer/security-center/concept/security-configuration-overview.html"
       }
     ],
     "tags": [
@@ -3180,7 +3180,7 @@
   {
     "id": "csa-dbs-068",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Database Management and Platform Security",
     "subdomain": "ACL Audit",
     "difficulty": "application",
@@ -3216,7 +3216,7 @@
     "references": [
       {
         "title": "Instance Security Center",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/administer/security-center/concept/instance-security-center.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/administer/security-center/concept/instance-security-center.html"
       }
     ],
     "tags": [
@@ -3228,7 +3228,7 @@
   {
     "id": "csa-dbs-069",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Database Management and Platform Security",
     "subdomain": "Defense in Depth",
     "difficulty": "recall",
@@ -3264,7 +3264,7 @@
     "references": [
       {
         "title": "Security configuration overview",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/administer/security-center/concept/security-configuration-overview.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/administer/security-center/concept/security-configuration-overview.html"
       }
     ],
     "tags": [
@@ -3274,7 +3274,7 @@
   {
     "id": "csa-dbs-070",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Database Management and Platform Security",
     "subdomain": "Security Posture",
     "difficulty": "application",
@@ -3310,7 +3310,7 @@
     "references": [
       {
         "title": "Instance Security Center",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/administer/security-center/concept/instance-security-center.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/administer/security-center/concept/instance-security-center.html"
       }
     ],
     "tags": [
@@ -3322,7 +3322,7 @@
   {
     "id": "csa-dbs-071",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Database Management and Platform Security",
     "subdomain": "Change Control",
     "difficulty": "scenario",
@@ -3358,7 +3358,7 @@
     "references": [
       {
         "title": "Instance Security Center",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/administer/security-center/concept/instance-security-center.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/administer/security-center/concept/instance-security-center.html"
       }
     ],
     "tags": [
@@ -3370,7 +3370,7 @@
   {
     "id": "csa-dbs-072",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Database Management and Platform Security",
     "subdomain": "Continuous Improvement",
     "difficulty": "recall",
@@ -3406,7 +3406,7 @@
     "references": [
       {
         "title": "Instance Security Center",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-security/page/administer/security-center/concept/instance-security-center.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/administer/security-center/concept/instance-security-center.html"
       }
     ],
     "tags": [

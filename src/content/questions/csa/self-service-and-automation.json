@@ -2,7 +2,7 @@
   {
     "id": "csa-ssa-001",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Self-Service and Automation",
     "subdomain": "Flow Designer",
     "difficulty": "recall",
@@ -38,7 +38,7 @@
     "references": [
       {
         "title": "Flow Designer",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-build-workflows/page/administer/flow-designer/concept/flow-designer.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-build-workflows/page/administer/flow-designer/concept/flow-designer.html"
       }
     ],
     "tags": [
@@ -50,7 +50,7 @@
   {
     "id": "csa-ssa-002",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Self-Service and Automation",
     "subdomain": "Flow Triggers",
     "difficulty": "recall",
@@ -86,7 +86,7 @@
     "references": [
       {
         "title": "Flow trigger",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-build-workflows/page/administer/flow-designer/concept/flow-trigger.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-build-workflows/page/administer/flow-designer/concept/flow-trigger.html"
       }
     ],
     "tags": [
@@ -97,7 +97,7 @@
   {
     "id": "csa-ssa-003",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Self-Service and Automation",
     "subdomain": "Flow Actions",
     "difficulty": "recall",
@@ -133,7 +133,7 @@
     "references": [
       {
         "title": "Flow actions",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-build-workflows/page/administer/flow-designer/concept/flow-actions.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-build-workflows/page/administer/flow-designer/concept/flow-actions.html"
       }
     ],
     "tags": [
@@ -144,7 +144,7 @@
   {
     "id": "csa-ssa-004",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Self-Service and Automation",
     "subdomain": "Subflows",
     "difficulty": "recall",
@@ -180,7 +180,7 @@
     "references": [
       {
         "title": "Subflow",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-build-workflows/page/administer/flow-designer/concept/subflow.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-build-workflows/page/administer/flow-designer/concept/subflow.html"
       }
     ],
     "tags": [
@@ -192,7 +192,7 @@
   {
     "id": "csa-ssa-005",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Self-Service and Automation",
     "subdomain": "Flow Designer",
     "difficulty": "application",
@@ -228,7 +228,7 @@
     "references": [
       {
         "title": "Flow Designer",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-build-workflows/page/administer/flow-designer/concept/flow-designer.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-build-workflows/page/administer/flow-designer/concept/flow-designer.html"
       }
     ],
     "tags": [
@@ -240,7 +240,7 @@
   {
     "id": "csa-ssa-006",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Self-Service and Automation",
     "subdomain": "Flow Designer",
     "difficulty": "recall",
@@ -276,7 +276,7 @@
     "references": [
       {
         "title": "Flow Designer",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-build-workflows/page/administer/flow-designer/concept/flow-designer.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-build-workflows/page/administer/flow-designer/concept/flow-designer.html"
       }
     ],
     "tags": [
@@ -288,7 +288,7 @@
   {
     "id": "csa-ssa-007",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Self-Service and Automation",
     "subdomain": "Flow Actions",
     "difficulty": "application",
@@ -324,7 +324,7 @@
     "references": [
       {
         "title": "Flow actions",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-build-workflows/page/administer/flow-designer/concept/flow-actions.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-build-workflows/page/administer/flow-designer/concept/flow-actions.html"
       }
     ],
     "tags": [
@@ -336,7 +336,7 @@
   {
     "id": "csa-ssa-008",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Self-Service and Automation",
     "subdomain": "Flow Designer",
     "difficulty": "application",
@@ -372,7 +372,7 @@
     "references": [
       {
         "title": "Flow Designer",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-build-workflows/page/administer/flow-designer/concept/flow-designer.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-build-workflows/page/administer/flow-designer/concept/flow-designer.html"
       }
     ],
     "tags": [
@@ -383,7 +383,7 @@
   {
     "id": "csa-ssa-009",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Self-Service and Automation",
     "subdomain": "Flow Designer",
     "difficulty": "scenario",
@@ -419,7 +419,7 @@
     "references": [
       {
         "title": "Flow actions",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-build-workflows/page/administer/flow-designer/concept/flow-actions.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-build-workflows/page/administer/flow-designer/concept/flow-actions.html"
       }
     ],
     "tags": [
@@ -430,7 +430,7 @@
   {
     "id": "csa-ssa-010",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Self-Service and Automation",
     "subdomain": "Flow Designer",
     "difficulty": "application",
@@ -466,7 +466,7 @@
     "references": [
       {
         "title": "Subflow",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-build-workflows/page/administer/flow-designer/concept/subflow.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-build-workflows/page/administer/flow-designer/concept/subflow.html"
       }
     ],
     "tags": [
@@ -477,7 +477,7 @@
   {
     "id": "csa-ssa-011",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Self-Service and Automation",
     "subdomain": "Flow Designer",
     "difficulty": "recall",
@@ -513,7 +513,7 @@
     "references": [
       {
         "title": "Flow Designer",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-build-workflows/page/administer/flow-designer/concept/flow-designer.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-build-workflows/page/administer/flow-designer/concept/flow-designer.html"
       }
     ],
     "tags": [
@@ -525,7 +525,7 @@
   {
     "id": "csa-ssa-012",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Self-Service and Automation",
     "subdomain": "Flow Designer Run As",
     "difficulty": "scenario",
@@ -561,7 +561,7 @@
     "references": [
       {
         "title": "Flow Designer",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-build-workflows/page/administer/flow-designer/concept/flow-designer.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-build-workflows/page/administer/flow-designer/concept/flow-designer.html"
       }
     ],
     "tags": [
@@ -573,7 +573,7 @@
   {
     "id": "csa-ssa-013",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Self-Service and Automation",
     "subdomain": "Business Rules",
     "difficulty": "recall",
@@ -609,7 +609,7 @@
     "references": [
       {
         "title": "Business Rules",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-application-development/page/script/business-rules/concept/c_BusinessRules.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-application-development/page/script/business-rules/concept/c_BusinessRules.html"
       }
     ],
     "tags": [
@@ -620,7 +620,7 @@
   {
     "id": "csa-ssa-014",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Self-Service and Automation",
     "subdomain": "Business Rules",
     "difficulty": "recall",
@@ -656,7 +656,7 @@
     "references": [
       {
         "title": "Business Rules",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-application-development/page/script/business-rules/concept/c_BusinessRules.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-application-development/page/script/business-rules/concept/c_BusinessRules.html"
       }
     ],
     "tags": [
@@ -667,7 +667,7 @@
   {
     "id": "csa-ssa-015",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Self-Service and Automation",
     "subdomain": "Business Rules",
     "difficulty": "application",
@@ -703,7 +703,7 @@
     "references": [
       {
         "title": "Business Rules",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-application-development/page/script/business-rules/concept/c_BusinessRules.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-application-development/page/script/business-rules/concept/c_BusinessRules.html"
       }
     ],
     "tags": [
@@ -715,7 +715,7 @@
   {
     "id": "csa-ssa-016",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Self-Service and Automation",
     "subdomain": "Business Rules",
     "difficulty": "recall",
@@ -751,7 +751,7 @@
     "references": [
       {
         "title": "Business rule execution order",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-application-development/page/script/business-rules/reference/r_BusinessRulesExecutionOrder.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-application-development/page/script/business-rules/reference/r_BusinessRulesExecutionOrder.html"
       }
     ],
     "tags": [
@@ -762,7 +762,7 @@
   {
     "id": "csa-ssa-017",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Self-Service and Automation",
     "subdomain": "Client Scripts",
     "difficulty": "recall",
@@ -798,7 +798,7 @@
     "references": [
       {
         "title": "Client Scripts",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-application-development/page/script/client-scripts/concept/c_ClientScripts.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-application-development/page/script/client-scripts/concept/c_ClientScripts.html"
       }
     ],
     "tags": [
@@ -809,7 +809,7 @@
   {
     "id": "csa-ssa-018",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Self-Service and Automation",
     "subdomain": "Client Scripts",
     "difficulty": "recall",
@@ -845,7 +845,7 @@
     "references": [
       {
         "title": "Client Scripts",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-application-development/page/script/client-scripts/concept/c_ClientScripts.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-application-development/page/script/client-scripts/concept/c_ClientScripts.html"
       }
     ],
     "tags": [
@@ -856,7 +856,7 @@
   {
     "id": "csa-ssa-019",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Self-Service and Automation",
     "subdomain": "UI Policy",
     "difficulty": "recall",
@@ -892,7 +892,7 @@
     "references": [
       {
         "title": "UI Policy",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-application-development/page/script/client-scripts/concept/c_UIPolicy.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-application-development/page/script/client-scripts/concept/c_UIPolicy.html"
       }
     ],
     "tags": [
@@ -903,7 +903,7 @@
   {
     "id": "csa-ssa-020",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Self-Service and Automation",
     "subdomain": "UI Policy vs Client Script",
     "difficulty": "application",
@@ -939,7 +939,7 @@
     "references": [
       {
         "title": "UI Policy",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-application-development/page/script/client-scripts/concept/c_UIPolicy.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-application-development/page/script/client-scripts/concept/c_UIPolicy.html"
       }
     ],
     "tags": [
@@ -951,7 +951,7 @@
   {
     "id": "csa-ssa-021",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Self-Service and Automation",
     "subdomain": "Client Script vs Business Rule",
     "difficulty": "scenario",
@@ -987,7 +987,7 @@
     "references": [
       {
         "title": "Business Rules",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-application-development/page/script/business-rules/concept/c_BusinessRules.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-application-development/page/script/business-rules/concept/c_BusinessRules.html"
       }
     ],
     "tags": [
@@ -999,7 +999,7 @@
   {
     "id": "csa-ssa-022",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Self-Service and Automation",
     "subdomain": "Business Rules",
     "difficulty": "application",
@@ -1035,7 +1035,7 @@
     "references": [
       {
         "title": "Business Rules",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-application-development/page/script/business-rules/concept/c_BusinessRules.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-application-development/page/script/business-rules/concept/c_BusinessRules.html"
       }
     ],
     "tags": [
@@ -1047,7 +1047,7 @@
   {
     "id": "csa-ssa-023",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Self-Service and Automation",
     "subdomain": "Client Scripts",
     "difficulty": "application",
@@ -1083,7 +1083,7 @@
     "references": [
       {
         "title": "Client Scripts",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-application-development/page/script/client-scripts/concept/c_ClientScripts.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-application-development/page/script/client-scripts/concept/c_ClientScripts.html"
       }
     ],
     "tags": [
@@ -1094,7 +1094,7 @@
   {
     "id": "csa-ssa-024",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Self-Service and Automation",
     "subdomain": "Performance",
     "difficulty": "scenario",
@@ -1130,7 +1130,7 @@
     "references": [
       {
         "title": "Business Rules",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-application-development/page/script/business-rules/concept/c_BusinessRules.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-application-development/page/script/business-rules/concept/c_BusinessRules.html"
       }
     ],
     "tags": [
@@ -1142,7 +1142,7 @@
   {
     "id": "csa-ssa-025",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Self-Service and Automation",
     "subdomain": "Service Portal",
     "difficulty": "recall",
@@ -1178,7 +1178,7 @@
     "references": [
       {
         "title": "Service Portal",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-servicenow-platform/page/build/service-portal/concept/c_ServicePortal.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/build/service-portal/concept/c_ServicePortal.html"
       }
     ],
     "tags": [
@@ -1189,7 +1189,7 @@
   {
     "id": "csa-ssa-026",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Self-Service and Automation",
     "subdomain": "Service Portal Widgets",
     "difficulty": "recall",
@@ -1225,7 +1225,7 @@
     "references": [
       {
         "title": "Service Portal",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-servicenow-platform/page/build/service-portal/concept/c_ServicePortal.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/build/service-portal/concept/c_ServicePortal.html"
       }
     ],
     "tags": [
@@ -1236,7 +1236,7 @@
   {
     "id": "csa-ssa-027",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Self-Service and Automation",
     "subdomain": "Reports",
     "difficulty": "recall",
@@ -1272,7 +1272,7 @@
     "references": [
       {
         "title": "Reports overview",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-now-intelligence/page/use/reporting/concept/c_ReportsOverview.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-now-intelligence/page/use/reporting/concept/c_ReportsOverview.html"
       }
     ],
     "tags": [
@@ -1283,7 +1283,7 @@
   {
     "id": "csa-ssa-028",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Self-Service and Automation",
     "subdomain": "Reports",
     "difficulty": "application",
@@ -1319,7 +1319,7 @@
     "references": [
       {
         "title": "Create a report",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-now-intelligence/page/use/reporting/task/t_CreateAReport.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-now-intelligence/page/use/reporting/task/t_CreateAReport.html"
       }
     ],
     "tags": [
@@ -1331,7 +1331,7 @@
   {
     "id": "csa-ssa-029",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Self-Service and Automation",
     "subdomain": "Dashboards",
     "difficulty": "recall",
@@ -1367,7 +1367,7 @@
     "references": [
       {
         "title": "Dashboards",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-now-intelligence/page/use/dashboards/concept/dashboards.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-now-intelligence/page/use/dashboards/concept/dashboards.html"
       }
     ],
     "tags": [
@@ -1378,7 +1378,7 @@
   {
     "id": "csa-ssa-030",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Self-Service and Automation",
     "subdomain": "Performance Analytics",
     "difficulty": "recall",
@@ -1414,7 +1414,7 @@
     "references": [
       {
         "title": "Performance Analytics",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-now-intelligence/page/use/performance-analytics/concept/c_PerformanceAnalytics.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-now-intelligence/page/use/performance-analytics/concept/c_PerformanceAnalytics.html"
       }
     ],
     "tags": [
@@ -1426,7 +1426,7 @@
   {
     "id": "csa-ssa-031",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Self-Service and Automation",
     "subdomain": "Service Portal",
     "difficulty": "application",
@@ -1462,7 +1462,7 @@
     "references": [
       {
         "title": "Service Portal",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-servicenow-platform/page/build/service-portal/concept/c_ServicePortal.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/build/service-portal/concept/c_ServicePortal.html"
       }
     ],
     "tags": [
@@ -1474,7 +1474,7 @@
   {
     "id": "csa-ssa-032",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Self-Service and Automation",
     "subdomain": "Reports",
     "difficulty": "recall",
@@ -1510,7 +1510,7 @@
     "references": [
       {
         "title": "Reports overview",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-now-intelligence/page/use/reporting/concept/c_ReportsOverview.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-now-intelligence/page/use/reporting/concept/c_ReportsOverview.html"
       }
     ],
     "tags": [
@@ -1522,7 +1522,7 @@
   {
     "id": "csa-ssa-033",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Self-Service and Automation",
     "subdomain": "Dashboards",
     "difficulty": "application",
@@ -1558,7 +1558,7 @@
     "references": [
       {
         "title": "Dashboards",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-now-intelligence/page/use/dashboards/concept/dashboards.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-now-intelligence/page/use/dashboards/concept/dashboards.html"
       }
     ],
     "tags": [
@@ -1570,7 +1570,7 @@
   {
     "id": "csa-ssa-034",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Self-Service and Automation",
     "subdomain": "Reports",
     "difficulty": "scenario",
@@ -1606,7 +1606,7 @@
     "references": [
       {
         "title": "Reports overview",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-now-intelligence/page/use/reporting/concept/c_ReportsOverview.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-now-intelligence/page/use/reporting/concept/c_ReportsOverview.html"
       }
     ],
     "tags": [
@@ -1618,7 +1618,7 @@
   {
     "id": "csa-ssa-035",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Self-Service and Automation",
     "subdomain": "Service Portal",
     "difficulty": "recall",
@@ -1654,7 +1654,7 @@
     "references": [
       {
         "title": "Service Portal",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-servicenow-platform/page/build/service-portal/concept/c_ServicePortal.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/build/service-portal/concept/c_ServicePortal.html"
       }
     ],
     "tags": [
@@ -1666,7 +1666,7 @@
   {
     "id": "csa-ssa-036",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Self-Service and Automation",
     "subdomain": "Reporting Governance",
     "difficulty": "scenario",
@@ -1702,7 +1702,7 @@
     "references": [
       {
         "title": "Performance Analytics",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-now-intelligence/page/use/performance-analytics/concept/c_PerformanceAnalytics.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-now-intelligence/page/use/performance-analytics/concept/c_PerformanceAnalytics.html"
       }
     ],
     "tags": [
@@ -1714,7 +1714,7 @@
   {
     "id": "csa-ssa-037",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Self-Service and Automation",
     "subdomain": "Service Level Management",
     "difficulty": "recall",
@@ -1750,7 +1750,7 @@
     "references": [
       {
         "title": "Service Level Management",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-servicenow-platform/page/administer/service-level-management/concept/c_ServiceLevelManagement.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/administer/service-level-management/concept/c_ServiceLevelManagement.html"
       }
     ],
     "tags": [
@@ -1761,7 +1761,7 @@
   {
     "id": "csa-ssa-038",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Self-Service and Automation",
     "subdomain": "SLA Schedules",
     "difficulty": "application",
@@ -1797,7 +1797,7 @@
     "references": [
       {
         "title": "Define an SLA",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-servicenow-platform/page/administer/service-level-management/task/t_DefineAnSLA.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/administer/service-level-management/task/t_DefineAnSLA.html"
       }
     ],
     "tags": [
@@ -1809,7 +1809,7 @@
   {
     "id": "csa-ssa-039",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Self-Service and Automation",
     "subdomain": "SLA Pause",
     "difficulty": "scenario",
@@ -1845,7 +1845,7 @@
     "references": [
       {
         "title": "Define an SLA",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-servicenow-platform/page/administer/service-level-management/task/t_DefineAnSLA.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/administer/service-level-management/task/t_DefineAnSLA.html"
       }
     ],
     "tags": [
@@ -1857,7 +1857,7 @@
   {
     "id": "csa-ssa-040",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Self-Service and Automation",
     "subdomain": "Surveys",
     "difficulty": "recall",
@@ -1893,7 +1893,7 @@
     "references": [
       {
         "title": "Survey Management",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-servicenow-platform/page/administer/survey-administration/concept/c_SurveyManagement.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/administer/survey-administration/concept/c_SurveyManagement.html"
       }
     ],
     "tags": [
@@ -1904,7 +1904,7 @@
   {
     "id": "csa-ssa-041",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Self-Service and Automation",
     "subdomain": "Inbound Email Actions",
     "difficulty": "recall",
@@ -1940,7 +1940,7 @@
     "references": [
       {
         "title": "Inbound email actions",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-servicenow-platform/page/administer/notification/concept/c_InboundEmailActions.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/administer/notification/concept/c_InboundEmailActions.html"
       }
     ],
     "tags": [
@@ -1951,7 +1951,7 @@
   {
     "id": "csa-ssa-042",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Self-Service and Automation",
     "subdomain": "Inbound Email Actions",
     "difficulty": "application",
@@ -1987,7 +1987,7 @@
     "references": [
       {
         "title": "Inbound email actions",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-servicenow-platform/page/administer/notification/concept/c_InboundEmailActions.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/administer/notification/concept/c_InboundEmailActions.html"
       }
     ],
     "tags": [
@@ -1998,7 +1998,7 @@
   {
     "id": "csa-ssa-043",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Self-Service and Automation",
     "subdomain": "Scheduled Jobs",
     "difficulty": "recall",
@@ -2034,7 +2034,7 @@
     "references": [
       {
         "title": "Scheduled jobs",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/scheduled-jobs/concept/c_ScheduledJobs.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/scheduled-jobs/concept/c_ScheduledJobs.html"
       }
     ],
     "tags": [
@@ -2045,7 +2045,7 @@
   {
     "id": "csa-ssa-044",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Self-Service and Automation",
     "subdomain": "SLA Workflow",
     "difficulty": "recall",
@@ -2081,7 +2081,7 @@
     "references": [
       {
         "title": "Service Level Management",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-servicenow-platform/page/administer/service-level-management/concept/c_ServiceLevelManagement.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/administer/service-level-management/concept/c_ServiceLevelManagement.html"
       }
     ],
     "tags": [
@@ -2092,7 +2092,7 @@
   {
     "id": "csa-ssa-045",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Self-Service and Automation",
     "subdomain": "Scheduled Jobs",
     "difficulty": "application",
@@ -2128,7 +2128,7 @@
     "references": [
       {
         "title": "Scheduled jobs",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/scheduled-jobs/concept/c_ScheduledJobs.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/scheduled-jobs/concept/c_ScheduledJobs.html"
       }
     ],
     "tags": [
@@ -2139,7 +2139,7 @@
   {
     "id": "csa-ssa-046",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Self-Service and Automation",
     "subdomain": "Surveys",
     "difficulty": "application",
@@ -2175,7 +2175,7 @@
     "references": [
       {
         "title": "Survey Management",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-servicenow-platform/page/administer/survey-administration/concept/c_SurveyManagement.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/administer/survey-administration/concept/c_SurveyManagement.html"
       }
     ],
     "tags": [
@@ -2187,7 +2187,7 @@
   {
     "id": "csa-ssa-047",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Self-Service and Automation",
     "subdomain": "Inbound Email Actions",
     "difficulty": "scenario",
@@ -2223,7 +2223,7 @@
     "references": [
       {
         "title": "Inbound email actions",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-servicenow-platform/page/administer/notification/concept/c_InboundEmailActions.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/administer/notification/concept/c_InboundEmailActions.html"
       }
     ],
     "tags": [

@@ -2,7 +2,7 @@
   {
     "id": "csa-ic-001",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Instance Configuration",
     "subdomain": "User Administration",
     "difficulty": "recall",
@@ -38,7 +38,7 @@
     "references": [
       {
         "title": "Creating users, companies, and departments",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/roles/concept/using-user-administration.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/roles/concept/using-user-administration.html"
       }
     ],
     "tags": [
@@ -50,7 +50,7 @@
   {
     "id": "csa-ic-002",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Instance Configuration",
     "subdomain": "Groups",
     "difficulty": "recall",
@@ -86,7 +86,7 @@
     "references": [
       {
         "title": "Create a user group",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/users-and-groups/task/t_CreateAGroup.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/users-and-groups/task/t_CreateAGroup.html"
       }
     ],
     "tags": [
@@ -98,7 +98,7 @@
   {
     "id": "csa-ic-003",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Instance Configuration",
     "subdomain": "Roles",
     "difficulty": "recall",
@@ -134,7 +134,7 @@
     "references": [
       {
         "title": "Assign a role to a user",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/users-and-groups/task/t_AssignARoleToAUser.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/users-and-groups/task/t_AssignARoleToAUser.html"
       }
     ],
     "tags": [
@@ -146,7 +146,7 @@
   {
     "id": "csa-ic-004",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Instance Configuration",
     "subdomain": "Roles",
     "difficulty": "application",
@@ -182,7 +182,7 @@
     "references": [
       {
         "title": "Assign a role to a group",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/roles/task/t_AssignRoleToGroup.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/roles/task/t_AssignRoleToGroup.html"
       }
     ],
     "tags": [
@@ -194,7 +194,7 @@
   {
     "id": "csa-ic-005",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Instance Configuration",
     "subdomain": "Roles",
     "difficulty": "recall",
@@ -230,7 +230,7 @@
     "references": [
       {
         "title": "Base system roles",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/roles/reference/r_BaseSystemRoles.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/roles/reference/r_BaseSystemRoles.html"
       }
     ],
     "tags": [
@@ -242,7 +242,7 @@
   {
     "id": "csa-ic-006",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Instance Configuration",
     "subdomain": "Impersonation",
     "difficulty": "application",
@@ -278,7 +278,7 @@
     "references": [
       {
         "title": "Impersonate a user",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/users-and-groups/concept/c_ImpersonateAUser.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/users-and-groups/concept/c_ImpersonateAUser.html"
       }
     ],
     "tags": [
@@ -290,7 +290,7 @@
   {
     "id": "csa-ic-007",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Instance Configuration",
     "subdomain": "Plugins",
     "difficulty": "recall",
@@ -326,7 +326,7 @@
     "references": [
       {
         "title": "ServiceNow plugins",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/plugins/concept/c_ServiceNowPlugins.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/plugins/concept/c_ServiceNowPlugins.html"
       }
     ],
     "tags": [
@@ -337,7 +337,7 @@
   {
     "id": "csa-ic-008",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Instance Configuration",
     "subdomain": "Plugins",
     "difficulty": "application",
@@ -373,7 +373,7 @@
     "references": [
       {
         "title": "Activate a plugin",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/plugins/task/t_ActivateAPlugin.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/plugins/task/t_ActivateAPlugin.html"
       }
     ],
     "tags": [
@@ -385,7 +385,7 @@
   {
     "id": "csa-ic-009",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Instance Configuration",
     "subdomain": "Application Scope",
     "difficulty": "recall",
@@ -421,7 +421,7 @@
     "references": [
       {
         "title": "Application scope",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-application-development/page/build/applications/concept/c_ApplicationScope.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-application-development/page/build/applications/concept/c_ApplicationScope.html"
       }
     ],
     "tags": [
@@ -432,7 +432,7 @@
   {
     "id": "csa-ic-010",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Instance Configuration",
     "subdomain": "Update Sets",
     "difficulty": "recall",
@@ -468,7 +468,7 @@
     "references": [
       {
         "title": "System update sets",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-application-development/page/build/system-update-sets/concept/system-update-sets.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-application-development/page/build/system-update-sets/concept/system-update-sets.html"
       }
     ],
     "tags": [
@@ -479,7 +479,7 @@
   {
     "id": "csa-ic-011",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Instance Configuration",
     "subdomain": "Update Sets",
     "difficulty": "scenario",
@@ -515,7 +515,7 @@
     "references": [
       {
         "title": "Create and select an update set as the current set",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-application-development/page/build/system-update-sets/task/create-select-update-set.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-application-development/page/build/system-update-sets/task/create-select-update-set.html"
       }
     ],
     "tags": [
@@ -527,7 +527,7 @@
   {
     "id": "csa-ic-012",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Instance Configuration",
     "subdomain": "System Properties",
     "difficulty": "application",
@@ -563,7 +563,7 @@
     "references": [
       {
         "title": "Available system properties",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/reference-pages/reference/r_AvailableSystemProperties.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/reference-pages/reference/r_AvailableSystemProperties.html"
       }
     ],
     "tags": [
@@ -575,7 +575,7 @@
   {
     "id": "csa-ic-013",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Instance Configuration",
     "subdomain": "Notifications",
     "difficulty": "recall",
@@ -611,7 +611,7 @@
     "references": [
       {
         "title": "Notifications",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-servicenow-platform/page/administer/notification/concept/c_Notifications.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/administer/notification/concept/c_Notifications.html"
       }
     ],
     "tags": [
@@ -622,7 +622,7 @@
   {
     "id": "csa-ic-014",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Instance Configuration",
     "subdomain": "Notifications",
     "difficulty": "application",
@@ -658,7 +658,7 @@
     "references": [
       {
         "title": "Create an email notification",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-servicenow-platform/page/administer/notification/task/t_CreateAnEmailNotification.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/administer/notification/task/t_CreateAnEmailNotification.html"
       }
     ],
     "tags": [
@@ -670,7 +670,7 @@
   {
     "id": "csa-ic-015",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Instance Configuration",
     "subdomain": "Email Properties",
     "difficulty": "recall",
@@ -706,7 +706,7 @@
     "references": [
       {
         "title": "Email properties",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-servicenow-platform/page/administer/notification/concept/c_EmailProperties.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/administer/notification/concept/c_EmailProperties.html"
       }
     ],
     "tags": [
@@ -718,7 +718,7 @@
   {
     "id": "csa-ic-016",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Instance Configuration",
     "subdomain": "Update Set Lifecycle",
     "difficulty": "recall",
@@ -754,7 +754,7 @@
     "references": [
       {
         "title": "Complete an update set",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-application-development/page/build/system-update-sets/concept/c_CompleteAnUpdateSet.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-application-development/page/build/system-update-sets/concept/c_CompleteAnUpdateSet.html"
       }
     ],
     "tags": [
@@ -765,7 +765,7 @@
   {
     "id": "csa-ic-017",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Instance Configuration",
     "subdomain": "Update Set Lifecycle",
     "difficulty": "application",
@@ -801,11 +801,11 @@
     "references": [
       {
         "title": "Preview a remote update set",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-application-development/page/build/system-update-sets/task/t_PreviewARemoteUpdateSet.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-application-development/page/build/system-update-sets/task/t_PreviewARemoteUpdateSet.html"
       },
       {
         "title": "Commit an update set",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-application-development/page/build/system-update-sets/task/t_CommitAnUpdateSet.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-application-development/page/build/system-update-sets/task/t_CommitAnUpdateSet.html"
       }
     ],
     "tags": [
@@ -817,7 +817,7 @@
   {
     "id": "csa-ic-018",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Instance Configuration",
     "subdomain": "Update Set Lifecycle",
     "difficulty": "scenario",
@@ -853,7 +853,7 @@
     "references": [
       {
         "title": "Preview a remote update set",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-application-development/page/build/system-update-sets/task/t_PreviewARemoteUpdateSet.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-application-development/page/build/system-update-sets/task/t_PreviewARemoteUpdateSet.html"
       }
     ],
     "tags": [
@@ -865,7 +865,7 @@
   {
     "id": "csa-ic-019",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Instance Configuration",
     "subdomain": "Update Sets",
     "difficulty": "recall",
@@ -901,7 +901,7 @@
     "references": [
       {
         "title": "System update set administration",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-application-development/page/build/system-update-sets/concept/c_SystemUpdateSetsAdministration.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-application-development/page/build/system-update-sets/concept/c_SystemUpdateSetsAdministration.html"
       }
     ],
     "tags": [
@@ -912,7 +912,7 @@
   {
     "id": "csa-ic-020",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Instance Configuration",
     "subdomain": "Branding",
     "difficulty": "recall",
@@ -948,7 +948,7 @@
     "references": [
       {
         "title": "Change instance banner logo in Next Experience",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-platform-user-interface/page/administer/navigation-and-ui/task/change-instance-logo.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-user-interface/page/administer/navigation-and-ui/task/change-instance-logo.html"
       }
     ],
     "tags": [
@@ -960,7 +960,7 @@
   {
     "id": "csa-ic-021",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Instance Configuration",
     "subdomain": "Scoped Apps",
     "difficulty": "recall",
@@ -996,7 +996,7 @@
     "references": [
       {
         "title": "Application scope",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-application-development/page/build/applications/concept/c_ApplicationScope.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-application-development/page/build/applications/concept/c_ApplicationScope.html"
       }
     ],
     "tags": [
@@ -1007,7 +1007,7 @@
   {
     "id": "csa-ic-022",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Instance Configuration",
     "subdomain": "Custom Applications",
     "difficulty": "application",
@@ -1043,7 +1043,7 @@
     "references": [
       {
         "title": "Create a custom application",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-application-development/page/build/applications/task/t_CreateACustomApp.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-application-development/page/build/applications/task/t_CreateACustomApp.html"
       }
     ],
     "tags": [
@@ -1055,7 +1055,7 @@
   {
     "id": "csa-ic-023",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Instance Configuration",
     "subdomain": "Update Sets",
     "difficulty": "application",
@@ -1091,7 +1091,7 @@
     "references": [
       {
         "title": "System update set administration",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-application-development/page/build/system-update-sets/concept/c_SystemUpdateSetsAdministration.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-application-development/page/build/system-update-sets/concept/c_SystemUpdateSetsAdministration.html"
       }
     ],
     "tags": [
@@ -1103,7 +1103,7 @@
   {
     "id": "csa-ic-024",
     "exam": "CSA",
-    "release": "Yokohama",
+    "release": "Zurich",
     "domain": "Instance Configuration",
     "subdomain": "Update Set Lifecycle",
     "difficulty": "scenario",
@@ -1139,7 +1139,7 @@
     "references": [
       {
         "title": "System update set administration",
-        "url": "https://www.servicenow.com/docs/bundle/yokohama-application-development/page/build/system-update-sets/concept/c_SystemUpdateSetsAdministration.html"
+        "url": "https://www.servicenow.com/docs/bundle/zurich-application-development/page/build/system-update-sets/concept/c_SystemUpdateSetsAdministration.html"
       }
     ],
     "tags": [
