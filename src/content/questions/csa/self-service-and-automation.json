@@ -38,7 +38,7 @@
     "references": [
       {
         "title": "Flow Designer",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-build-workflows/page/administer/flow-designer/concept/flow-designer.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/build-workflows/flow-designer.html"
       }
     ],
     "tags": [
@@ -86,7 +86,7 @@
     "references": [
       {
         "title": "Flow trigger",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-build-workflows/page/administer/flow-designer/concept/flow-trigger.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/build-workflows/flow-trigger.html"
       }
     ],
     "tags": [
@@ -133,7 +133,7 @@
     "references": [
       {
         "title": "Flow actions",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-build-workflows/page/administer/flow-designer/concept/flow-actions.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/build-workflows/workflow-studio/flow-actions.html"
       }
     ],
     "tags": [
@@ -180,7 +180,7 @@
     "references": [
       {
         "title": "Subflow",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-build-workflows/page/administer/flow-designer/concept/subflow.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/build-workflows/subflow.html"
       }
     ],
     "tags": [
@@ -228,7 +228,7 @@
     "references": [
       {
         "title": "Flow Designer",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-build-workflows/page/administer/flow-designer/concept/flow-designer.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/build-workflows/flow-designer.html"
       }
     ],
     "tags": [
@@ -276,7 +276,7 @@
     "references": [
       {
         "title": "Flow Designer",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-build-workflows/page/administer/flow-designer/concept/flow-designer.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/build-workflows/flow-designer.html"
       }
     ],
     "tags": [
@@ -324,7 +324,7 @@
     "references": [
       {
         "title": "Flow actions",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-build-workflows/page/administer/flow-designer/concept/flow-actions.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/build-workflows/workflow-studio/flow-actions.html"
       }
     ],
     "tags": [
@@ -372,7 +372,7 @@
     "references": [
       {
         "title": "Flow Designer",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-build-workflows/page/administer/flow-designer/concept/flow-designer.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/build-workflows/flow-designer.html"
       }
     ],
     "tags": [
@@ -419,7 +419,7 @@
     "references": [
       {
         "title": "Flow actions",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-build-workflows/page/administer/flow-designer/concept/flow-actions.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/build-workflows/workflow-studio/flow-actions.html"
       }
     ],
     "tags": [
@@ -466,7 +466,7 @@
     "references": [
       {
         "title": "Subflow",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-build-workflows/page/administer/flow-designer/concept/subflow.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/build-workflows/subflow.html"
       }
     ],
     "tags": [
@@ -513,7 +513,7 @@
     "references": [
       {
         "title": "Flow Designer",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-build-workflows/page/administer/flow-designer/concept/flow-designer.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/build-workflows/flow-designer.html"
       }
     ],
     "tags": [
@@ -561,7 +561,7 @@
     "references": [
       {
         "title": "Flow Designer",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-build-workflows/page/administer/flow-designer/concept/flow-designer.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/build-workflows/flow-designer.html"
       }
     ],
     "tags": [
@@ -609,7 +609,7 @@
     "references": [
       {
         "title": "Business Rules",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-application-development/page/script/business-rules/concept/c_BusinessRules.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/application-development/c_BusinessRules.html"
       }
     ],
     "tags": [
@@ -656,7 +656,7 @@
     "references": [
       {
         "title": "Business Rules",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-application-development/page/script/business-rules/concept/c_BusinessRules.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/application-development/c_BusinessRules.html"
       }
     ],
     "tags": [
@@ -703,7 +703,7 @@
     "references": [
       {
         "title": "Business Rules",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-application-development/page/script/business-rules/concept/c_BusinessRules.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/application-development/c_BusinessRules.html"
       }
     ],
     "tags": [
@@ -751,7 +751,7 @@
     "references": [
       {
         "title": "Business rule execution order",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-application-development/page/script/business-rules/reference/r_BusinessRulesExecutionOrder.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/application-development/r_BusinessRulesExecutionOrder.html"
       }
     ],
     "tags": [
@@ -798,7 +798,7 @@
     "references": [
       {
         "title": "Client Scripts",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-application-development/page/script/client-scripts/concept/c_ClientScripts.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/application-development/c_ClientScripts.html"
       }
     ],
     "tags": [
@@ -845,7 +845,7 @@
     "references": [
       {
         "title": "Client Scripts",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-application-development/page/script/client-scripts/concept/c_ClientScripts.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/application-development/c_ClientScripts.html"
       }
     ],
     "tags": [
@@ -892,7 +892,7 @@
     "references": [
       {
         "title": "UI Policy",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-application-development/page/script/client-scripts/concept/c_UIPolicy.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/application-development/c_UIPolicy.html"
       }
     ],
     "tags": [
@@ -939,7 +939,7 @@
     "references": [
       {
         "title": "UI Policy",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-application-development/page/script/client-scripts/concept/c_UIPolicy.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/application-development/c_UIPolicy.html"
       }
     ],
     "tags": [
@@ -987,7 +987,7 @@
     "references": [
       {
         "title": "Business Rules",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-application-development/page/script/business-rules/concept/c_BusinessRules.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/application-development/c_BusinessRules.html"
       }
     ],
     "tags": [
@@ -1035,7 +1035,7 @@
     "references": [
       {
         "title": "Business Rules",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-application-development/page/script/business-rules/concept/c_BusinessRules.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/application-development/c_BusinessRules.html"
       }
     ],
     "tags": [
@@ -1083,7 +1083,7 @@
     "references": [
       {
         "title": "Client Scripts",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-application-development/page/script/client-scripts/concept/c_ClientScripts.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/application-development/c_ClientScripts.html"
       }
     ],
     "tags": [
@@ -1130,7 +1130,7 @@
     "references": [
       {
         "title": "Business Rules",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-application-development/page/script/business-rules/concept/c_BusinessRules.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/application-development/c_BusinessRules.html"
       }
     ],
     "tags": [
@@ -1178,7 +1178,7 @@
     "references": [
       {
         "title": "Service Portal",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/build/service-portal/concept/c_ServicePortal.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/c_ServicePortal.html"
       }
     ],
     "tags": [
@@ -1225,7 +1225,7 @@
     "references": [
       {
         "title": "Service Portal",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/build/service-portal/concept/c_ServicePortal.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/c_ServicePortal.html"
       }
     ],
     "tags": [
@@ -1272,7 +1272,7 @@
     "references": [
       {
         "title": "Reports overview",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-now-intelligence/page/use/reporting/concept/c_ReportsOverview.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/now-intelligence/c_ReportsOverview.html"
       }
     ],
     "tags": [
@@ -1319,7 +1319,7 @@
     "references": [
       {
         "title": "Create a report",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-now-intelligence/page/use/reporting/task/t_CreateAReport.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/now-intelligence/t_CreateAReport.html"
       }
     ],
     "tags": [
@@ -1367,7 +1367,7 @@
     "references": [
       {
         "title": "Dashboards",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-now-intelligence/page/use/dashboards/concept/dashboards.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/now-intelligence/dashboards.html"
       }
     ],
     "tags": [
@@ -1414,7 +1414,7 @@
     "references": [
       {
         "title": "Performance Analytics",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-now-intelligence/page/use/performance-analytics/concept/c_PerformanceAnalytics.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/now-intelligence/performance-analytics/c_PerformanceAnalytics.html"
       }
     ],
     "tags": [
@@ -1462,7 +1462,7 @@
     "references": [
       {
         "title": "Service Portal",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/build/service-portal/concept/c_ServicePortal.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/c_ServicePortal.html"
       }
     ],
     "tags": [
@@ -1510,7 +1510,7 @@
     "references": [
       {
         "title": "Reports overview",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-now-intelligence/page/use/reporting/concept/c_ReportsOverview.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/now-intelligence/c_ReportsOverview.html"
       }
     ],
     "tags": [
@@ -1558,7 +1558,7 @@
     "references": [
       {
         "title": "Dashboards",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-now-intelligence/page/use/dashboards/concept/dashboards.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/now-intelligence/dashboards.html"
       }
     ],
     "tags": [
@@ -1606,7 +1606,7 @@
     "references": [
       {
         "title": "Reports overview",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-now-intelligence/page/use/reporting/concept/c_ReportsOverview.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/now-intelligence/c_ReportsOverview.html"
       }
     ],
     "tags": [
@@ -1654,7 +1654,7 @@
     "references": [
       {
         "title": "Service Portal",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/build/service-portal/concept/c_ServicePortal.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/c_ServicePortal.html"
       }
     ],
     "tags": [
@@ -1702,7 +1702,7 @@
     "references": [
       {
         "title": "Performance Analytics",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-now-intelligence/page/use/performance-analytics/concept/c_PerformanceAnalytics.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/now-intelligence/performance-analytics/c_PerformanceAnalytics.html"
       }
     ],
     "tags": [
@@ -1750,7 +1750,7 @@
     "references": [
       {
         "title": "Service Level Management",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/administer/service-level-management/concept/c_ServiceLevelManagement.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/c_ServiceLevelManagement.html"
       }
     ],
     "tags": [
@@ -1797,7 +1797,7 @@
     "references": [
       {
         "title": "Define an SLA",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/administer/service-level-management/task/t_DefineAnSLA.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/t_DefineAnSLA.html"
       }
     ],
     "tags": [
@@ -1845,7 +1845,7 @@
     "references": [
       {
         "title": "Define an SLA",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/administer/service-level-management/task/t_DefineAnSLA.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/t_DefineAnSLA.html"
       }
     ],
     "tags": [
@@ -1893,7 +1893,7 @@
     "references": [
       {
         "title": "Survey Management",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/administer/survey-administration/concept/c_SurveyManagement.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/c_SurveyManagement.html"
       }
     ],
     "tags": [
@@ -1940,7 +1940,7 @@
     "references": [
       {
         "title": "Inbound email actions",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/administer/notification/concept/c_InboundEmailActions.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/c_InboundEmailActions.html"
       }
     ],
     "tags": [
@@ -1987,7 +1987,7 @@
     "references": [
       {
         "title": "Inbound email actions",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/administer/notification/concept/c_InboundEmailActions.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/c_InboundEmailActions.html"
       }
     ],
     "tags": [
@@ -2034,7 +2034,7 @@
     "references": [
       {
         "title": "Scheduled jobs",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/scheduled-jobs/concept/c_ScheduledJobs.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_ScheduledJobs.html"
       }
     ],
     "tags": [
@@ -2081,7 +2081,7 @@
     "references": [
       {
         "title": "Service Level Management",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/administer/service-level-management/concept/c_ServiceLevelManagement.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/c_ServiceLevelManagement.html"
       }
     ],
     "tags": [
@@ -2128,7 +2128,7 @@
     "references": [
       {
         "title": "Scheduled jobs",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/scheduled-jobs/concept/c_ScheduledJobs.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_ScheduledJobs.html"
       }
     ],
     "tags": [
@@ -2175,7 +2175,7 @@
     "references": [
       {
         "title": "Survey Management",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/administer/survey-administration/concept/c_SurveyManagement.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/c_SurveyManagement.html"
       }
     ],
     "tags": [
@@ -2223,7 +2223,7 @@
     "references": [
       {
         "title": "Inbound email actions",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/administer/notification/concept/c_InboundEmailActions.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/c_InboundEmailActions.html"
       }
     ],
     "tags": [

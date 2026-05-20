@@ -38,7 +38,7 @@
     "references": [
       {
         "title": "Tables and Fields",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/table-administration/concept/c_TablesAndFields.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_TablesAndFields.html"
       }
     ],
     "tags": [
@@ -85,7 +85,7 @@
     "references": [
       {
         "title": "Tables and Fields",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/table-administration/concept/c_TablesAndFields.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_TablesAndFields.html"
       }
     ],
     "tags": [
@@ -132,7 +132,7 @@
     "references": [
       {
         "title": "Create a table",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/table-administration/task/t_CreateATable.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/table-administration-and-data-management/t_CreateATable.html"
       }
     ],
     "tags": [
@@ -179,7 +179,7 @@
     "references": [
       {
         "title": "Field types",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/field-administration/reference/r_FieldTypes.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/r_FieldTypes.html"
       }
     ],
     "tags": [
@@ -226,7 +226,7 @@
     "references": [
       {
         "title": "Field types",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/field-administration/reference/r_FieldTypes.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/r_FieldTypes.html"
       }
     ],
     "tags": [
@@ -273,7 +273,7 @@
     "references": [
       {
         "title": "System dictionary",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/field-administration/concept/c_SystemDictionary.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_SystemDictionary.html"
       }
     ],
     "tags": [
@@ -320,7 +320,7 @@
     "references": [
       {
         "title": "Tables and Fields",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/table-administration/concept/c_TablesAndFields.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_TablesAndFields.html"
       }
     ],
     "tags": [
@@ -367,7 +367,7 @@
     "references": [
       {
         "title": "System dictionary",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/field-administration/concept/c_SystemDictionary.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_SystemDictionary.html"
       }
     ],
     "tags": [
@@ -414,7 +414,7 @@
     "references": [
       {
         "title": "Field types",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/field-administration/reference/r_FieldTypes.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/r_FieldTypes.html"
       }
     ],
     "tags": [
@@ -461,7 +461,7 @@
     "references": [
       {
         "title": "Tables and Fields",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/table-administration/concept/c_TablesAndFields.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_TablesAndFields.html"
       }
     ],
     "tags": [
@@ -509,7 +509,7 @@
     "references": [
       {
         "title": "Field types",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/field-administration/reference/r_FieldTypes.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/r_FieldTypes.html"
       }
     ],
     "tags": [
@@ -556,7 +556,7 @@
     "references": [
       {
         "title": "Tables and Fields",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/table-administration/concept/c_TablesAndFields.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_TablesAndFields.html"
       }
     ],
     "tags": [
@@ -603,7 +603,7 @@
     "references": [
       {
         "title": "Field types",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/field-administration/reference/r_FieldTypes.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/r_FieldTypes.html"
       }
     ],
     "tags": [
@@ -650,7 +650,7 @@
     "references": [
       {
         "title": "Tables and Fields",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/table-administration/concept/c_TablesAndFields.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_TablesAndFields.html"
       }
     ],
     "tags": [
@@ -697,7 +697,7 @@
     "references": [
       {
         "title": "Field types",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/field-administration/reference/r_FieldTypes.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/r_FieldTypes.html"
       }
     ],
     "tags": [
@@ -744,7 +744,7 @@
     "references": [
       {
         "title": "Access control rules",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/administer/contextual-security/concept/access-control-rules.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/access-control/access-control-rules.html"
       }
     ],
     "tags": [
@@ -791,7 +791,7 @@
     "references": [
       {
         "title": "Contextual security",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/administer/contextual-security/concept/contextual-security.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/contextual-security.html"
       }
     ],
     "tags": [
@@ -838,7 +838,7 @@
     "references": [
       {
         "title": "Access control rules",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/administer/contextual-security/concept/access-control-rules.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/access-control/access-control-rules.html"
       }
     ],
     "tags": [
@@ -887,7 +887,7 @@
     "references": [
       {
         "title": "Contextual security",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/administer/contextual-security/concept/contextual-security.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/contextual-security.html"
       }
     ],
     "tags": [
@@ -935,7 +935,7 @@
     "references": [
       {
         "title": "ACL rule processing",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/administer/contextual-security/reference/r_ACLRuleProcessing.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/r_ACLRuleProcessing.html"
       }
     ],
     "tags": [
@@ -982,7 +982,7 @@
     "references": [
       {
         "title": "Create an ACL rule",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/administer/contextual-security/task/t_CreateAnACLRule.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/access-control/t_CreateAnACLRule.html"
       }
     ],
     "tags": [
@@ -1030,7 +1030,7 @@
     "references": [
       {
         "title": "Access control rules",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/administer/contextual-security/concept/access-control-rules.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/access-control/access-control-rules.html"
       }
     ],
     "tags": [
@@ -1077,7 +1077,7 @@
     "references": [
       {
         "title": "ACL rule processing",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/administer/contextual-security/reference/r_ACLRuleProcessing.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/r_ACLRuleProcessing.html"
       }
     ],
     "tags": [
@@ -1124,7 +1124,7 @@
     "references": [
       {
         "title": "Access control rules",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/administer/contextual-security/concept/access-control-rules.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/access-control/access-control-rules.html"
       }
     ],
     "tags": [
@@ -1172,7 +1172,7 @@
     "references": [
       {
         "title": "Contextual security",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/administer/contextual-security/concept/contextual-security.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/contextual-security.html"
       }
     ],
     "tags": [
@@ -1220,7 +1220,7 @@
     "references": [
       {
         "title": "ACL rule processing",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/administer/contextual-security/reference/r_ACLRuleProcessing.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/r_ACLRuleProcessing.html"
       }
     ],
     "tags": [
@@ -1267,7 +1267,7 @@
     "references": [
       {
         "title": "Access control rules",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/administer/contextual-security/concept/access-control-rules.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/access-control/access-control-rules.html"
       }
     ],
     "tags": [
@@ -1314,7 +1314,7 @@
     "references": [
       {
         "title": "Access control rules",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/administer/contextual-security/concept/access-control-rules.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/access-control/access-control-rules.html"
       }
     ],
     "tags": [
@@ -1362,7 +1362,7 @@
     "references": [
       {
         "title": "Access control rules",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/administer/contextual-security/concept/access-control-rules.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/access-control/access-control-rules.html"
       }
     ],
     "tags": [
@@ -1410,7 +1410,7 @@
     "references": [
       {
         "title": "Access control rules",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/administer/contextual-security/concept/access-control-rules.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/access-control/access-control-rules.html"
       }
     ],
     "tags": [
@@ -1457,7 +1457,7 @@
     "references": [
       {
         "title": "Data Policy",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/form-administration/concept/c_DataPolicy.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_DataPolicy.html"
       }
     ],
     "tags": [
@@ -1504,7 +1504,7 @@
     "references": [
       {
         "title": "Data Policy",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/form-administration/concept/c_DataPolicy.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_DataPolicy.html"
       }
     ],
     "tags": [
@@ -1552,7 +1552,7 @@
     "references": [
       {
         "title": "Data Policy",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/form-administration/concept/c_DataPolicy.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_DataPolicy.html"
       }
     ],
     "tags": [
@@ -1599,7 +1599,7 @@
     "references": [
       {
         "title": "Audit tables",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/general/concept/c_AuditTables.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_AuditTables.html"
       }
     ],
     "tags": [
@@ -1646,7 +1646,7 @@
     "references": [
       {
         "title": "Audit tables",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/general/concept/c_AuditTables.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_AuditTables.html"
       }
     ],
     "tags": [
@@ -1694,7 +1694,7 @@
     "references": [
       {
         "title": "Field normalization",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/field-administration/concept/c_FieldNormalization.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_FieldNormalization.html"
       }
     ],
     "tags": [
@@ -1741,7 +1741,7 @@
     "references": [
       {
         "title": "Encryption support",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/administer/encryption/concept/c_EncryptionSupport.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/c_EncryptionSupport.html"
       }
     ],
     "tags": [
@@ -1789,7 +1789,7 @@
     "references": [
       {
         "title": "Audit tables",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/general/concept/c_AuditTables.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_AuditTables.html"
       }
     ],
     "tags": [
@@ -1836,7 +1836,7 @@
     "references": [
       {
         "title": "Data Policy",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/form-administration/concept/c_DataPolicy.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_DataPolicy.html"
       }
     ],
     "tags": [
@@ -1883,7 +1883,7 @@
     "references": [
       {
         "title": "Field normalization",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/field-administration/concept/c_FieldNormalization.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_FieldNormalization.html"
       }
     ],
     "tags": [
@@ -1931,7 +1931,7 @@
     "references": [
       {
         "title": "Audit tables",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/general/concept/c_AuditTables.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_AuditTables.html"
       }
     ],
     "tags": [
@@ -1979,7 +1979,7 @@
     "references": [
       {
         "title": "Encryption support",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/administer/encryption/concept/c_EncryptionSupport.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/c_EncryptionSupport.html"
       }
     ],
     "tags": [
@@ -2027,7 +2027,7 @@
     "references": [
       {
         "title": "Data Policy",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/form-administration/concept/c_DataPolicy.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_DataPolicy.html"
       }
     ],
     "tags": [
@@ -2074,7 +2074,7 @@
     "references": [
       {
         "title": "Audit tables",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/general/concept/c_AuditTables.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_AuditTables.html"
       }
     ],
     "tags": [
@@ -2122,7 +2122,7 @@
     "references": [
       {
         "title": "Data Policy",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/form-administration/concept/c_DataPolicy.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_DataPolicy.html"
       }
     ],
     "tags": [
@@ -2170,7 +2170,7 @@
     "references": [
       {
         "title": "Authentication overview",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/integrate/authentication/concept/c_AuthenticationOverview.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/c_AuthenticationOverview.html"
       }
     ],
     "tags": [
@@ -2217,7 +2217,7 @@
     "references": [
       {
         "title": "SAML 2.0 web SSO",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/integrate/saml/concept/c_SAML20Web.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/c_SAML20Web.html"
       }
     ],
     "tags": [
@@ -2265,7 +2265,7 @@
     "references": [
       {
         "title": "Multi-factor authentication",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/integrate/authentication/concept/c_MultifactorAuthentication.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/c_MultifactorAuthentication.html"
       }
     ],
     "tags": [
@@ -2312,7 +2312,7 @@
     "references": [
       {
         "title": "Multi-factor authentication",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/integrate/authentication/concept/c_MultifactorAuthentication.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/c_MultifactorAuthentication.html"
       }
     ],
     "tags": [
@@ -2360,7 +2360,7 @@
     "references": [
       {
         "title": "SAML 2.0 web SSO",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/integrate/saml/concept/c_SAML20Web.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/c_SAML20Web.html"
       }
     ],
     "tags": [
@@ -2409,7 +2409,7 @@
     "references": [
       {
         "title": "Password reset",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/users-and-groups/concept/c_PasswordReset.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_PasswordReset.html"
       }
     ],
     "tags": [
@@ -2456,7 +2456,7 @@
     "references": [
       {
         "title": "Authentication overview",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/integrate/authentication/concept/c_AuthenticationOverview.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/c_AuthenticationOverview.html"
       }
     ],
     "tags": [
@@ -2503,7 +2503,7 @@
     "references": [
       {
         "title": "Authentication overview",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/integrate/authentication/concept/c_AuthenticationOverview.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/c_AuthenticationOverview.html"
       }
     ],
     "tags": [
@@ -2551,7 +2551,7 @@
     "references": [
       {
         "title": "Authentication overview",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/integrate/authentication/concept/c_AuthenticationOverview.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/c_AuthenticationOverview.html"
       }
     ],
     "tags": [
@@ -2599,7 +2599,7 @@
     "references": [
       {
         "title": "Authentication overview",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/integrate/authentication/concept/c_AuthenticationOverview.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/c_AuthenticationOverview.html"
       }
     ],
     "tags": [
@@ -2646,7 +2646,7 @@
     "references": [
       {
         "title": "Authentication overview",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/integrate/authentication/concept/c_AuthenticationOverview.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/c_AuthenticationOverview.html"
       }
     ],
     "tags": [
@@ -2693,7 +2693,7 @@
     "references": [
       {
         "title": "Multi-factor authentication",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/integrate/authentication/concept/c_MultifactorAuthentication.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/c_MultifactorAuthentication.html"
       }
     ],
     "tags": [
@@ -2741,7 +2741,7 @@
     "references": [
       {
         "title": "Authentication overview",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/integrate/authentication/concept/c_AuthenticationOverview.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/c_AuthenticationOverview.html"
       }
     ],
     "tags": [
@@ -2789,7 +2789,7 @@
     "references": [
       {
         "title": "Multi-factor authentication",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/integrate/authentication/concept/c_MultifactorAuthentication.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/c_MultifactorAuthentication.html"
       }
     ],
     "tags": [
@@ -2837,7 +2837,7 @@
     "references": [
       {
         "title": "Instance Security Center",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/administer/security-center/concept/instance-security-center.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/instance-security-center.html"
       }
     ],
     "tags": [
@@ -2884,7 +2884,7 @@
     "references": [
       {
         "title": "Security configuration overview",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/administer/security-center/concept/security-configuration-overview.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/security-configuration-overview.html"
       }
     ],
     "tags": [
@@ -2931,7 +2931,7 @@
     "references": [
       {
         "title": "Contextual security",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/administer/security-center/concept/security-configuration-overview.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/security-configuration-overview.html"
       }
     ],
     "tags": [
@@ -2978,7 +2978,7 @@
     "references": [
       {
         "title": "Security configuration overview",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/administer/security-center/concept/security-configuration-overview.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/security-configuration-overview.html"
       }
     ],
     "tags": [
@@ -3026,7 +3026,7 @@
     "references": [
       {
         "title": "Security configuration overview",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/administer/security-center/concept/security-configuration-overview.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/security-configuration-overview.html"
       }
     ],
     "tags": [
@@ -3073,7 +3073,7 @@
     "references": [
       {
         "title": "Instance Security Center",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/administer/security-center/concept/instance-security-center.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/instance-security-center.html"
       }
     ],
     "tags": [
@@ -3121,7 +3121,7 @@
     "references": [
       {
         "title": "Instance Security Center",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/administer/security-center/concept/instance-security-center.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/instance-security-center.html"
       }
     ],
     "tags": [
@@ -3169,7 +3169,7 @@
     "references": [
       {
         "title": "Security configuration overview",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/administer/security-center/concept/security-configuration-overview.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/security-configuration-overview.html"
       }
     ],
     "tags": [
@@ -3216,7 +3216,7 @@
     "references": [
       {
         "title": "Instance Security Center",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/administer/security-center/concept/instance-security-center.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/instance-security-center.html"
       }
     ],
     "tags": [
@@ -3264,7 +3264,7 @@
     "references": [
       {
         "title": "Security configuration overview",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/administer/security-center/concept/security-configuration-overview.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/security-configuration-overview.html"
       }
     ],
     "tags": [
@@ -3310,7 +3310,7 @@
     "references": [
       {
         "title": "Instance Security Center",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/administer/security-center/concept/instance-security-center.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/instance-security-center.html"
       }
     ],
     "tags": [
@@ -3358,7 +3358,7 @@
     "references": [
       {
         "title": "Instance Security Center",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/administer/security-center/concept/instance-security-center.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/instance-security-center.html"
       }
     ],
     "tags": [
@@ -3406,7 +3406,7 @@
     "references": [
       {
         "title": "Instance Security Center",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/administer/security-center/concept/instance-security-center.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/instance-security-center.html"
       }
     ],
     "tags": [

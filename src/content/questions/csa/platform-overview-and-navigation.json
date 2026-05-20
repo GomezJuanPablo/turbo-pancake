@@ -38,7 +38,7 @@
     "references": [
       {
         "title": "Using the Next Experience Unified Navigation",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-user-interface/page/get-started/servicenow-overview/concept/using-the-next-experience-global-header.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-user-interface/using-the-next-experience-global-header.html"
       }
     ],
     "tags": [
@@ -86,7 +86,7 @@
     "references": [
       {
         "title": "Core UI application navigator",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-user-interface/page/use/navigation/concept/c_UI16ApplicationNavigator.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-user-interface/c_UI16ApplicationNavigator.html"
       }
     ],
     "tags": [
@@ -134,7 +134,7 @@
     "references": [
       {
         "title": "Core UI application navigator",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-user-interface/page/use/navigation/concept/c_UI16ApplicationNavigator.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-user-interface/c_UI16ApplicationNavigator.html"
       }
     ],
     "tags": [
@@ -181,7 +181,7 @@
     "references": [
       {
         "title": "Managing your favorites in Next Experience",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-user-interface/page/get-started/servicenow-overview/concept/managing-your-favorites.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-user-interface/managing-your-favorites.html"
       }
     ],
     "tags": [
@@ -229,7 +229,7 @@
     "references": [
       {
         "title": "Tags — Common UI elements",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-user-interface/page/use/common-ui-elements/concept/c_Tags.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-user-interface/c_Tags.html"
       }
     ],
     "tags": [
@@ -277,7 +277,7 @@
     "references": [
       {
         "title": "Configure and use list functions",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-user-interface/page/use/using-lists/task/configure-use-list-functions.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-user-interface/configure-use-list-functions.html"
       }
     ],
     "tags": [
@@ -325,7 +325,7 @@
     "references": [
       {
         "title": "Use the list editor",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-user-interface/page/use/using-lists/task/t_UseTheListEditor.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-user-interface/t_UseTheListEditor.html"
       }
     ],
     "tags": [
@@ -373,7 +373,7 @@
     "references": [
       {
         "title": "Related lists",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-user-interface/page/use/using-forms/concept/c_RelatedLists.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-user-interface/c_RelatedLists.html"
       }
     ],
     "tags": [
@@ -420,7 +420,7 @@
     "references": [
       {
         "title": "Form personalization administration",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/form-administration/concept/c_FormPersonalizationAdmin.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_FormPersonalizationAdmin.html"
       }
     ],
     "tags": [
@@ -468,7 +468,7 @@
     "references": [
       {
         "title": "Configure list controls",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/list-administration/task/t_ConfigureListControls.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/list-administration/t_ConfigureListControls.html"
       }
     ],
     "tags": [
@@ -563,7 +563,7 @@
     "references": [
       {
         "title": "Embedded lists",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-user-interface/page/use/using-forms/concept/c_EmbeddedLists.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-user-interface/c_EmbeddedLists.html"
       }
     ],
     "tags": [
@@ -611,7 +611,7 @@
     "references": [
       {
         "title": "Configure custom menus for Unified Navigation",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-user-interface/page/administer/navigation-and-ui/task/configure-custom-menu.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-user-interface/configure-custom-menu.html"
       }
     ],
     "tags": [
@@ -659,11 +659,11 @@
     "references": [
       {
         "title": "Now Platform forms, fields, and lists",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/general/concept/now-platform-forms-fields-lists.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/now-platform-forms-fields-lists.html"
       },
       {
         "title": "Using forms",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-user-interface/page/use/using-forms/concept/c_UsingForms.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-user-interface/c_UsingForms.html"
       }
     ],
     "tags": [

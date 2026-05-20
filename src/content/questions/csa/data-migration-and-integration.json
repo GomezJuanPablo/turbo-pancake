@@ -38,7 +38,7 @@
     "references": [
       {
         "title": "Import sets",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/import-sets/concept/c_ImportSets.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_ImportSets.html"
       }
     ],
     "tags": [
@@ -85,7 +85,7 @@
     "references": [
       {
         "title": "Create a data source",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/import-sets/task/t_CreateADataSource.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/t_CreateADataSource.html"
       }
     ],
     "tags": [
@@ -132,7 +132,7 @@
     "references": [
       {
         "title": "Load data using import sets",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/import-sets/task/t_LoadDataUsingImportSets.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/t_LoadDataUsingImportSets.html"
       }
     ],
     "tags": [
@@ -180,7 +180,7 @@
     "references": [
       {
         "title": "Import sets",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/import-sets/concept/c_ImportSets.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_ImportSets.html"
       }
     ],
     "tags": [
@@ -227,7 +227,7 @@
     "references": [
       {
         "title": "Create a data source",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/import-sets/task/t_CreateADataSource.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/t_CreateADataSource.html"
       }
     ],
     "tags": [
@@ -274,7 +274,7 @@
     "references": [
       {
         "title": "Import sets",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/import-sets/concept/c_ImportSets.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_ImportSets.html"
       }
     ],
     "tags": [
@@ -321,7 +321,7 @@
     "references": [
       {
         "title": "Import sets",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/import-sets/concept/c_ImportSets.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_ImportSets.html"
       }
     ],
     "tags": [
@@ -368,7 +368,7 @@
     "references": [
       {
         "title": "Create a data source",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/import-sets/task/t_CreateADataSource.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/t_CreateADataSource.html"
       }
     ],
     "tags": [
@@ -416,7 +416,7 @@
     "references": [
       {
         "title": "Import sets",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/import-sets/concept/c_ImportSets.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_ImportSets.html"
       }
     ],
     "tags": [
@@ -464,7 +464,7 @@
     "references": [
       {
         "title": "Import sets",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/import-sets/concept/c_ImportSets.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_ImportSets.html"
       }
     ],
     "tags": [
@@ -511,7 +511,7 @@
     "references": [
       {
         "title": "Create a data source",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/import-sets/task/t_CreateADataSource.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/t_CreateADataSource.html"
       }
     ],
     "tags": [
@@ -559,7 +559,7 @@
     "references": [
       {
         "title": "Load data using import sets",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/import-sets/task/t_LoadDataUsingImportSets.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/t_LoadDataUsingImportSets.html"
       }
     ],
     "tags": [
@@ -607,7 +607,7 @@
     "references": [
       {
         "title": "Transform maps",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/import-sets/concept/c_TransformMaps.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_TransformMaps.html"
       }
     ],
     "tags": [
@@ -654,7 +654,7 @@
     "references": [
       {
         "title": "Create a field map",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/import-sets/task/t_CreateAFieldMap.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/t_CreateAFieldMap.html"
       }
     ],
     "tags": [
@@ -701,7 +701,7 @@
     "references": [
       {
         "title": "Coalesce fields",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/import-sets/reference/r_CoalesceFields.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/r_CoalesceFields.html"
       }
     ],
     "tags": [
@@ -748,7 +748,7 @@
     "references": [
       {
         "title": "Coalesce fields",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/import-sets/reference/r_CoalesceFields.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/r_CoalesceFields.html"
       }
     ],
     "tags": [
@@ -796,7 +796,7 @@
     "references": [
       {
         "title": "Coalesce fields",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/import-sets/reference/r_CoalesceFields.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/r_CoalesceFields.html"
       }
     ],
     "tags": [
@@ -843,7 +843,7 @@
     "references": [
       {
         "title": "Transform map scripts",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/import-sets/concept/c_TransformMapScripts.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_TransformMapScripts.html"
       }
     ],
     "tags": [
@@ -890,7 +890,7 @@
     "references": [
       {
         "title": "Transform map scripts",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/import-sets/concept/c_TransformMapScripts.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_TransformMapScripts.html"
       }
     ],
     "tags": [
@@ -937,7 +937,7 @@
     "references": [
       {
         "title": "Transform map scripts",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/import-sets/concept/c_TransformMapScripts.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_TransformMapScripts.html"
       }
     ],
     "tags": [
@@ -985,7 +985,7 @@
     "references": [
       {
         "title": "Create a field map",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/import-sets/task/t_CreateAFieldMap.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/t_CreateAFieldMap.html"
       }
     ],
     "tags": [
@@ -1033,7 +1033,7 @@
     "references": [
       {
         "title": "Coalesce fields",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/import-sets/reference/r_CoalesceFields.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/r_CoalesceFields.html"
       }
     ],
     "tags": [
@@ -1080,7 +1080,7 @@
     "references": [
       {
         "title": "Transform maps",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/import-sets/concept/c_TransformMaps.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_TransformMaps.html"
       }
     ],
     "tags": [
@@ -1127,7 +1127,7 @@
     "references": [
       {
         "title": "Transform map scripts",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/import-sets/concept/c_TransformMapScripts.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_TransformMapScripts.html"
       }
     ],
     "tags": [
@@ -1174,7 +1174,7 @@
     "references": [
       {
         "title": "REST API",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-integrate-applications/page/integrate/inbound-rest/concept/c_RESTAPI.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/integrate-applications/c_RESTAPI.html"
       }
     ],
     "tags": [
@@ -1222,7 +1222,7 @@
     "references": [
       {
         "title": "Outbound REST web service",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-integrate-applications/page/integrate/outbound-rest/concept/c_OutboundRESTWebService.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/integrate-applications/c_OutboundRESTWebService.html"
       }
     ],
     "tags": [
@@ -1270,7 +1270,7 @@
     "references": [
       {
         "title": "SOAP web service",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-integrate-applications/page/integrate/web-services/concept/c_SOAPWebService.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/integrate-applications/c_SOAPWebService.html"
       }
     ],
     "tags": [
@@ -1317,7 +1317,7 @@
     "references": [
       {
         "title": "MID Server",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/product/mid-server/concept/mid-server-landing.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/mid-server/mid-server-landing.html"
       }
     ],
     "tags": [
@@ -1365,7 +1365,7 @@
     "references": [
       {
         "title": "MID Server",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/product/mid-server/concept/mid-server-landing.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/mid-server/mid-server-landing.html"
       }
     ],
     "tags": [
@@ -1412,7 +1412,7 @@
     "references": [
       {
         "title": "IntegrationHub",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-build-workflows/page/administer/integrationhub/concept/integrationhub.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/build-workflows/integrationhub.html"
       }
     ],
     "tags": [
@@ -1460,7 +1460,7 @@
     "references": [
       {
         "title": "IntegrationHub",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-build-workflows/page/administer/integrationhub/concept/integrationhub.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/build-workflows/integrationhub.html"
       }
     ],
     "tags": [
@@ -1507,7 +1507,7 @@
     "references": [
       {
         "title": "REST API",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-integrate-applications/page/integrate/inbound-rest/concept/c_RESTAPI.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/integrate-applications/c_RESTAPI.html"
       }
     ],
     "tags": [
@@ -1555,7 +1555,7 @@
     "references": [
       {
         "title": "REST API",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-integrate-applications/page/integrate/inbound-rest/concept/c_RESTAPI.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/integrate-applications/c_RESTAPI.html"
       }
     ],
     "tags": [
@@ -1603,7 +1603,7 @@
     "references": [
       {
         "title": "IntegrationHub",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-build-workflows/page/administer/integrationhub/concept/integrationhub.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/build-workflows/integrationhub.html"
       }
     ],
     "tags": [
@@ -1651,7 +1651,7 @@
     "references": [
       {
         "title": "REST API",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-integrate-applications/page/integrate/inbound-rest/concept/c_RESTAPI.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/integrate-applications/c_RESTAPI.html"
       }
     ],
     "tags": [
@@ -1699,7 +1699,7 @@
     "references": [
       {
         "title": "MID Server",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/product/mid-server/concept/mid-server-landing.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/mid-server/mid-server-landing.html"
       }
     ],
     "tags": [

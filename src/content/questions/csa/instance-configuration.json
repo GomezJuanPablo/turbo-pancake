@@ -38,7 +38,7 @@
     "references": [
       {
         "title": "Creating users, companies, and departments",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/roles/concept/using-user-administration.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/user-administration/using-user-administration.html"
       }
     ],
     "tags": [
@@ -86,7 +86,7 @@
     "references": [
       {
         "title": "Create a user group",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/users-and-groups/task/t_CreateAGroup.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/user-administration/t_CreateAGroup.html"
       }
     ],
     "tags": [
@@ -134,7 +134,7 @@
     "references": [
       {
         "title": "Assign a role to a user",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/users-and-groups/task/t_AssignARoleToAUser.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/user-administration/t_AssignARoleToAUser.html"
       }
     ],
     "tags": [
@@ -182,7 +182,7 @@
     "references": [
       {
         "title": "Assign a role to a group",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/roles/task/t_AssignRoleToGroup.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/user-administration/t_AssignRoleToGroup.html"
       }
     ],
     "tags": [
@@ -230,7 +230,7 @@
     "references": [
       {
         "title": "Base system roles",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/roles/reference/r_BaseSystemRoles.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/user-administration/r_BaseSystemRoles.html"
       }
     ],
     "tags": [
@@ -278,7 +278,7 @@
     "references": [
       {
         "title": "Impersonate a user",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/users-and-groups/concept/c_ImpersonateAUser.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/user-administration/c_ImpersonateAUser.html"
       }
     ],
     "tags": [
@@ -326,7 +326,7 @@
     "references": [
       {
         "title": "ServiceNow plugins",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/plugins/concept/c_ServiceNowPlugins.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_ServiceNowPlugins.html"
       }
     ],
     "tags": [
@@ -373,7 +373,7 @@
     "references": [
       {
         "title": "Activate a plugin",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/plugins/task/t_ActivateAPlugin.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/t_ActivateAPlugin.html"
       }
     ],
     "tags": [
@@ -421,7 +421,7 @@
     "references": [
       {
         "title": "Application scope",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-application-development/page/build/applications/concept/c_ApplicationScope.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/application-development/c_ApplicationScope.html"
       }
     ],
     "tags": [
@@ -468,7 +468,7 @@
     "references": [
       {
         "title": "System update sets",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-application-development/page/build/system-update-sets/concept/system-update-sets.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/application-development/system-update-sets/system-update-sets.html"
       }
     ],
     "tags": [
@@ -515,7 +515,7 @@
     "references": [
       {
         "title": "Create and select an update set as the current set",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-application-development/page/build/system-update-sets/task/create-select-update-set.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/application-development/system-update-sets/create-select-update-set.html"
       }
     ],
     "tags": [
@@ -563,7 +563,7 @@
     "references": [
       {
         "title": "Available system properties",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/reference-pages/reference/r_AvailableSystemProperties.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/r_AvailableSystemProperties.html"
       }
     ],
     "tags": [
@@ -611,7 +611,7 @@
     "references": [
       {
         "title": "Notifications",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/administer/notification/concept/c_Notifications.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/c_Notifications.html"
       }
     ],
     "tags": [
@@ -658,7 +658,7 @@
     "references": [
       {
         "title": "Create an email notification",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/administer/notification/task/t_CreateAnEmailNotification.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/t_CreateAnEmailNotification.html"
       }
     ],
     "tags": [
@@ -706,7 +706,7 @@
     "references": [
       {
         "title": "Email properties",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/administer/notification/concept/c_EmailProperties.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/c_EmailProperties.html"
       }
     ],
     "tags": [
@@ -754,7 +754,7 @@
     "references": [
       {
         "title": "Complete an update set",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-application-development/page/build/system-update-sets/concept/c_CompleteAnUpdateSet.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/application-development/c_CompleteAnUpdateSet.html"
       }
     ],
     "tags": [
@@ -801,11 +801,11 @@
     "references": [
       {
         "title": "Preview a remote update set",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-application-development/page/build/system-update-sets/task/t_PreviewARemoteUpdateSet.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/application-development/system-update-sets/t_PreviewARemoteUpdateSet.html"
       },
       {
         "title": "Commit an update set",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-application-development/page/build/system-update-sets/task/t_CommitAnUpdateSet.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/application-development/system-update-sets/t_CommitAnUpdateSet.html"
       }
     ],
     "tags": [
@@ -853,7 +853,7 @@
     "references": [
       {
         "title": "Preview a remote update set",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-application-development/page/build/system-update-sets/task/t_PreviewARemoteUpdateSet.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/application-development/system-update-sets/t_PreviewARemoteUpdateSet.html"
       }
     ],
     "tags": [
@@ -901,7 +901,7 @@
     "references": [
       {
         "title": "System update set administration",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-application-development/page/build/system-update-sets/concept/c_SystemUpdateSetsAdministration.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/application-development/c_SystemUpdateSetsAdministration.html"
       }
     ],
     "tags": [
@@ -948,7 +948,7 @@
     "references": [
       {
         "title": "Change instance banner logo in Next Experience",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-user-interface/page/administer/navigation-and-ui/task/change-instance-logo.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-user-interface/change-instance-logo.html"
       }
     ],
     "tags": [
@@ -996,7 +996,7 @@
     "references": [
       {
         "title": "Application scope",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-application-development/page/build/applications/concept/c_ApplicationScope.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/application-development/c_ApplicationScope.html"
       }
     ],
     "tags": [
@@ -1043,7 +1043,7 @@
     "references": [
       {
         "title": "Create a custom application",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-application-development/page/build/applications/task/t_CreateACustomApp.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/application-development/t_CreateACustomApp.html"
       }
     ],
     "tags": [
@@ -1091,7 +1091,7 @@
     "references": [
       {
         "title": "System update set administration",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-application-development/page/build/system-update-sets/concept/c_SystemUpdateSetsAdministration.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/application-development/c_SystemUpdateSetsAdministration.html"
       }
     ],
     "tags": [
@@ -1139,7 +1139,7 @@
     "references": [
       {
         "title": "System update set administration",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-application-development/page/build/system-update-sets/concept/c_SystemUpdateSetsAdministration.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/application-development/c_SystemUpdateSetsAdministration.html"
       }
     ],
     "tags": [

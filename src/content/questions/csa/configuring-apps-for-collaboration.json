@@ -38,7 +38,7 @@
     "references": [
       {
         "title": "Task table",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/task-table/concept/task-table.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/task-table.html"
       }
     ],
     "tags": [
@@ -85,7 +85,7 @@
     "references": [
       {
         "title": "Table extension",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/table-administration/concept/c_TableExtension.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_TableExtension.html"
       }
     ],
     "tags": [
@@ -133,7 +133,7 @@
     "references": [
       {
         "title": "Task table",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/task-table/concept/task-table.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/task-table.html"
       }
     ],
     "tags": [
@@ -180,7 +180,7 @@
     "references": [
       {
         "title": "Task table",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/task-table/concept/task-table.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/task-table.html"
       }
     ],
     "tags": [
@@ -228,7 +228,7 @@
     "references": [
       {
         "title": "Task table",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/task-table/concept/task-table.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/task-table.html"
       }
     ],
     "tags": [
@@ -276,7 +276,7 @@
     "references": [
       {
         "title": "Incident state model",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-it-service-management/page/product/incident-management/reference/r_IncidentStateModel.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/it-service-management/r_IncidentStateModel.html"
       }
     ],
     "tags": [
@@ -324,7 +324,7 @@
     "references": [
       {
         "title": "Task table",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/task-table/concept/task-table.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/task-table.html"
       }
     ],
     "tags": [
@@ -371,7 +371,7 @@
     "references": [
       {
         "title": "Task table",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/task-table/concept/task-table.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/task-table.html"
       }
     ],
     "tags": [
@@ -419,7 +419,7 @@
     "references": [
       {
         "title": "Task table",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/task-table/concept/task-table.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/task-table.html"
       }
     ],
     "tags": [
@@ -467,7 +467,7 @@
     "references": [
       {
         "title": "Table extension",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/table-administration/concept/c_TableExtension.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_TableExtension.html"
       }
     ],
     "tags": [
@@ -515,7 +515,7 @@
     "references": [
       {
         "title": "Task table",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-platform-administration/page/administer/task-table/concept/task-table.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/task-table.html"
       }
     ],
     "tags": [
@@ -562,7 +562,7 @@
     "references": [
       {
         "title": "Change management",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-it-service-management/page/product/change-management/concept/c_ITILChangeManagement.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/it-service-management/change-management/c_ITILChangeManagement.html"
       }
     ],
     "tags": [
@@ -610,7 +610,7 @@
     "references": [
       {
         "title": "Incident Management",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-it-service-management/page/product/incident-management/concept/c_IncidentManagement.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/it-service-management/incident-management/c_IncidentManagement.html"
       }
     ],
     "tags": [
@@ -657,7 +657,7 @@
     "references": [
       {
         "title": "Incident state model",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-it-service-management/page/product/incident-management/reference/r_IncidentStateModel.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/it-service-management/r_IncidentStateModel.html"
       }
     ],
     "tags": [
@@ -704,7 +704,7 @@
     "references": [
       {
         "title": "Incident Management",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-it-service-management/page/product/incident-management/concept/c_IncidentManagement.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/it-service-management/incident-management/c_IncidentManagement.html"
       }
     ],
     "tags": [
@@ -753,7 +753,7 @@
     "references": [
       {
         "title": "Change types",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-it-service-management/page/product/change-management/reference/r_ChangeTypes.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/it-service-management/r_ChangeTypes.html"
       }
     ],
     "tags": [
@@ -800,7 +800,7 @@
     "references": [
       {
         "title": "Change types",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-it-service-management/page/product/change-management/reference/r_ChangeTypes.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/it-service-management/r_ChangeTypes.html"
       }
     ],
     "tags": [
@@ -847,7 +847,7 @@
     "references": [
       {
         "title": "Change types",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-it-service-management/page/product/change-management/reference/r_ChangeTypes.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/it-service-management/r_ChangeTypes.html"
       }
     ],
     "tags": [
@@ -895,7 +895,7 @@
     "references": [
       {
         "title": "Problem Management",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-it-service-management/page/product/problem-management/concept/c_ProblemManagement.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/it-service-management/problem-management/c_ProblemManagement.html"
       }
     ],
     "tags": [
@@ -942,7 +942,7 @@
     "references": [
       {
         "title": "Problem Management",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-it-service-management/page/product/problem-management/concept/c_ProblemManagement.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/it-service-management/problem-management/c_ProblemManagement.html"
       }
     ],
     "tags": [
@@ -990,7 +990,7 @@
     "references": [
       {
         "title": "Problem Management",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-it-service-management/page/product/problem-management/concept/c_ProblemManagement.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/it-service-management/problem-management/c_ProblemManagement.html"
       }
     ],
     "tags": [
@@ -1038,7 +1038,7 @@
     "references": [
       {
         "title": "Change Management",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-it-service-management/page/product/change-management/concept/c_ITILChangeManagement.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/it-service-management/change-management/c_ITILChangeManagement.html"
       }
     ],
     "tags": [
@@ -1085,7 +1085,7 @@
     "references": [
       {
         "title": "Incident state model",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-it-service-management/page/product/incident-management/reference/r_IncidentStateModel.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/it-service-management/r_IncidentStateModel.html"
       }
     ],
     "tags": [
@@ -1133,7 +1133,7 @@
     "references": [
       {
         "title": "Change Management",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-it-service-management/page/product/change-management/concept/c_ITILChangeManagement.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/it-service-management/change-management/c_ITILChangeManagement.html"
       }
     ],
     "tags": [
@@ -1181,7 +1181,7 @@
     "references": [
       {
         "title": "Knowledge Management",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/product/knowledge-management/concept/c_KnowledgeManagement.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/c_KnowledgeManagement.html"
       }
     ],
     "tags": [
@@ -1228,7 +1228,7 @@
     "references": [
       {
         "title": "Knowledge Bases",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/product/knowledge-management/concept/c_KnowledgeBases.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/c_KnowledgeBases.html"
       }
     ],
     "tags": [
@@ -1275,7 +1275,7 @@
     "references": [
       {
         "title": "Knowledge Management",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/product/knowledge-management/concept/c_KnowledgeManagement.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/c_KnowledgeManagement.html"
       }
     ],
     "tags": [
@@ -1322,7 +1322,7 @@
     "references": [
       {
         "title": "User criteria overview",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/product/knowledge-management/concept/user-criteria-overview.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/user-criteria-overview.html"
       }
     ],
     "tags": [
@@ -1370,7 +1370,7 @@
     "references": [
       {
         "title": "User criteria overview",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/product/knowledge-management/concept/user-criteria-overview.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/user-criteria-overview.html"
       }
     ],
     "tags": [
@@ -1418,7 +1418,7 @@
     "references": [
       {
         "title": "Create a knowledge article",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/product/knowledge-management/task/t_CreateKnowledgeArticle.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/t_CreateKnowledgeArticle.html"
       }
     ],
     "tags": [
@@ -1466,7 +1466,7 @@
     "references": [
       {
         "title": "Knowledge Management",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/product/knowledge-management/concept/c_KnowledgeManagement.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/c_KnowledgeManagement.html"
       }
     ],
     "tags": [
@@ -1513,7 +1513,7 @@
     "references": [
       {
         "title": "Knowledge Bases",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/product/knowledge-management/concept/c_KnowledgeBases.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/c_KnowledgeBases.html"
       }
     ],
     "tags": [
@@ -1560,7 +1560,7 @@
     "references": [
       {
         "title": "Knowledge Management",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/product/knowledge-management/concept/c_KnowledgeManagement.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/c_KnowledgeManagement.html"
       }
     ],
     "tags": [
@@ -1607,7 +1607,7 @@
     "references": [
       {
         "title": "Knowledge Management",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/product/knowledge-management/concept/c_KnowledgeManagement.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/c_KnowledgeManagement.html"
       }
     ],
     "tags": [
@@ -1655,7 +1655,7 @@
     "references": [
       {
         "title": "Knowledge Bases",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/product/knowledge-management/concept/c_KnowledgeBases.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/c_KnowledgeBases.html"
       }
     ],
     "tags": [
@@ -1703,7 +1703,7 @@
     "references": [
       {
         "title": "Knowledge Management",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/product/knowledge-management/concept/c_KnowledgeManagement.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/c_KnowledgeManagement.html"
       }
     ],
     "tags": [
@@ -1751,7 +1751,7 @@
     "references": [
       {
         "title": "Service Catalog Management",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/product/service-catalog-management/concept/c_ServiceCatalogManagement.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/c_ServiceCatalogManagement.html"
       }
     ],
     "tags": [
@@ -1798,7 +1798,7 @@
     "references": [
       {
         "title": "Catalog items",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/product/service-catalog-management/concept/c_CatalogItems.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/c_CatalogItems.html"
       }
     ],
     "tags": [
@@ -1845,7 +1845,7 @@
     "references": [
       {
         "title": "Catalog variables",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/product/service-catalog-management/concept/c_CatalogVariables.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/c_CatalogVariables.html"
       }
     ],
     "tags": [
@@ -1892,7 +1892,7 @@
     "references": [
       {
         "title": "Request fulfillment",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/product/service-catalog-management/concept/c_RequestFulfillment.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/c_RequestFulfillment.html"
       }
     ],
     "tags": [
@@ -1940,7 +1940,7 @@
     "references": [
       {
         "title": "Catalog items",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/product/service-catalog-management/concept/c_CatalogItems.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/c_CatalogItems.html"
       }
     ],
     "tags": [
@@ -1988,7 +1988,7 @@
     "references": [
       {
         "title": "Service Catalog Management",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/product/service-catalog-management/concept/c_ServiceCatalogManagement.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/c_ServiceCatalogManagement.html"
       }
     ],
     "tags": [
@@ -2035,7 +2035,7 @@
     "references": [
       {
         "title": "Catalog variables",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/product/service-catalog-management/concept/c_CatalogVariables.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/c_CatalogVariables.html"
       }
     ],
     "tags": [
@@ -2082,7 +2082,7 @@
     "references": [
       {
         "title": "Request fulfillment",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/product/service-catalog-management/concept/c_RequestFulfillment.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/c_RequestFulfillment.html"
       }
     ],
     "tags": [
@@ -2130,7 +2130,7 @@
     "references": [
       {
         "title": "Catalog variables",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/product/service-catalog-management/concept/c_CatalogVariables.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/c_CatalogVariables.html"
       }
     ],
     "tags": [
@@ -2177,7 +2177,7 @@
     "references": [
       {
         "title": "Service Catalog Management",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/product/service-catalog-management/concept/c_ServiceCatalogManagement.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/c_ServiceCatalogManagement.html"
       }
     ],
     "tags": [
@@ -2225,7 +2225,7 @@
     "references": [
       {
         "title": "Catalog items",
-        "url": "https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/product/service-catalog-management/concept/c_CatalogItems.html"
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/c_CatalogItems.html"
       }
     ],
     "tags": [
