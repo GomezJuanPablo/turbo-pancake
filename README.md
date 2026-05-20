@@ -109,6 +109,3 @@ Validator enforces: required fields present, `correct` is always an array, every
 
 MIT — see [LICENSE](./LICENSE). Question content is offered under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) so the community can fork and extend.
 
-## Status
-
-Pre-build. Mockup v3 (NE-accurate palette) approved. CSA batch 1 (Platform Overview & Navigation, 14 questions) shipping now.
