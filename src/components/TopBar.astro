@@ -19,6 +19,7 @@ const { activeNav = '' } = Astro.props;
   <nav class="topbar__nav" aria-label="Top navigation">
     <a href="/" class={`topbar__nav-item ${activeNav === 'all' ? 'is-active' : ''}`}>All</a>
     <a href="/csa/" class={`topbar__nav-item ${activeNav === 'csa' ? 'is-active' : ''}`}>CSA</a>
+    <a href="/cad/" class={`topbar__nav-item ${activeNav === 'cad' ? 'is-active' : ''}`}>CAD</a>
   </nav>
   <div class="topbar__status" aria-label="User status">
     <span class="status-pill" title="Streak (days)">🔥 <span data-streak>0</span></span>

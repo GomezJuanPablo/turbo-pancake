@@ -2,7 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 
-// 8-week public roadmap. Each exam ships ~2 weeks apart. Dates are
+// Public roadmap. CSA and CAD are live; CIS exams come next. Dates are
 // intentionally rough — better honest than pretend-precise. Update by
 // editing this file.
 const phases = [
@@ -11,24 +11,18 @@ const phases = [
     color: 'live',
     items: [
       { exam: 'CSA', title: 'Certified System Administrator', detail: '240 doc-anchored questions, all 6 domains, live for free practice.' },
+      { exam: 'CAD', title: 'Certified Application Developer', detail: '240 doc-anchored questions across App Engine, GlideRecord/Script Includes, Service Portal, and integration patterns. Live for free practice.' },
     ],
   },
   {
-    label: 'Next ~2 weeks',
+    label: 'Next ~4 weeks',
     color: 'next',
-    items: [
-      { exam: 'CAD', title: 'Certified Application Developer', detail: '240 questions across App Engine, GlideRecord/Script Includes, Service Portal widgets, and integration patterns.' },
-    ],
-  },
-  {
-    label: 'Then ~4 weeks',
-    color: 'later',
     items: [
       { exam: 'CIS-ITSM', title: 'CIS — ITSM', detail: 'ITSM implementation patterns, processes, configuration.' },
     ],
   },
   {
-    label: 'Then ~6 weeks',
+    label: 'Then ~8 weeks',
     color: 'later',
     items: [
       { exam: 'CIS-DF', title: 'CIS — Data Foundations', detail: '240 questions covering CMDB design, data quality and reconciliation, import sets and transform maps, and integration patterns — the implementation work behind every clean data layer on the Now Platform.' },
