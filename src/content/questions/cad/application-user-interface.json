@@ -1,0 +1,1309 @@
+[
+  {
+    "id": "cad-aui-001",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Application User Interface",
+    "subdomain": "Form Designer",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the Form Designer in ServiceNow?",
+    "options": [
+      { "id": "A", "text": "A scripting console used to edit Business Rules." },
+      { "id": "B", "text": "A drag-and-drop interface for arranging fields, sections, and form layout on a table's form view." },
+      { "id": "C", "text": "An external program developers install on their laptop to design forms offline." },
+      { "id": "D", "text": "A reporting tool for visualizing form submission rates." }
+    ],
+    "correct": ["B"],
+    "rationale": "Form Designer is the visual, drag-and-drop tool inside the platform for laying out a table's form — adding/removing fields, creating sections, and arranging columns. It edits the same Form record under the hood, just with a friendlier UI than the legacy Form Layout view.",
+    "distractor_notes": {
+      "A": "Business Rules are server-side scripts edited in their own record form — not in Form Designer.",
+      "C": "Form Designer is a browser-based tool inside the instance. No local install required.",
+      "D": "Form Designer doesn't report on submissions — that's Reports / Performance Analytics."
+    },
+    "references": [
+      { "title": "Form designer", "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_FormDesign.html" }
+    ],
+    "tags": ["form-designer", "forms", "fundamentals"]
+  },
+  {
+    "id": "cad-aui-002",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Application User Interface",
+    "subdomain": "Form Layout",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "When you remove a field from a form using Form Designer (or the form's context-menu Configure → Form Layout), what happens to the underlying field on the table?",
+    "options": [
+      { "id": "A", "text": "The field is permanently deleted from the table and any stored data is lost." },
+      { "id": "B", "text": "The field is only removed from this form's layout — the column and any stored data remain on the table." },
+      { "id": "C", "text": "The field is moved into a hidden 'archive' section accessible only to admins." },
+      { "id": "D", "text": "The field is converted into a related list automatically." }
+    ],
+    "correct": ["B"],
+    "rationale": "Removing a field from a form view changes only the form layout. The underlying dictionary entry and stored data are untouched. To actually delete the field from the table, you delete the Dictionary record itself — a separate, destructive action.",
+    "distractor_notes": {
+      "A": "Form layout edits don't drop database columns. Conflating the two is a common — and dangerous — beginner mistake.",
+      "C": "There is no 'archive' section. Fields are either on the form's layout or off it.",
+      "D": "Removing a field doesn't change its type. Related lists are configured separately."
+    },
+    "references": [
+      { "title": "Configuring the form layout", "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/configure-form-layout.html" }
+    ],
+    "tags": ["form-layout", "fields", "remove-vs-delete"]
+  },
+  {
+    "id": "cad-aui-003",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Application User Interface",
+    "subdomain": "Form Sections",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the purpose of form Sections in Form Designer?",
+    "options": [
+      { "id": "A", "text": "Sections control which roles can see the form at all." },
+      { "id": "B", "text": "Sections group related fields together on a form, typically rendered as tabs or collapsible groups, to organize long forms into digestible chunks." },
+      { "id": "C", "text": "Sections store the form's HTML source code." },
+      { "id": "D", "text": "Sections automatically translate field labels into other languages." }
+    ],
+    "correct": ["B"],
+    "rationale": "Sections are a layout primitive for grouping fields. They render as tabs (or stacked groups) so users aren't faced with a wall of fields. Good sectioning is one of the most impactful usability moves on long forms.",
+    "distractor_notes": {
+      "A": "Visibility is controlled by ACLs and UI Policies, not by sections.",
+      "C": "Sections aren't HTML containers — they're records that reference a list of fields.",
+      "D": "Translation lives in the language record/field label system, not in sections."
+    },
+    "references": [
+      { "title": "Form designer", "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_FormDesign.html" }
+    ],
+    "tags": ["form-sections", "tabs", "layout"]
+  },
+  {
+    "id": "cad-aui-004",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Application User Interface",
+    "subdomain": "Form Designer",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A developer needs to add a brand-new field 'Loaner Type' to the form. From Form Designer, what's the most direct path?",
+    "options": [
+      { "id": "A", "text": "Open the table in Studio, write SQL to ALTER the table, then refresh the form." },
+      { "id": "B", "text": "Drag a field type from the Form Designer field palette onto the form — the platform creates the dictionary entry and adds it to the form's layout in one step." },
+      { "id": "C", "text": "Edit the form's source XML to inject a new <field> tag." },
+      { "id": "D", "text": "Form Designer cannot create new fields — only rearrange existing ones." }
+    ],
+    "correct": ["B"],
+    "rationale": "Form Designer's field palette doubles as a creation tool: dragging a type (String, Choice, Reference, etc.) onto the form creates the dictionary record AND places the field on the form. No SQL, no XML editing.",
+    "distractor_notes": {
+      "A": "Developers don't write SQL directly against the platform's database. Schema changes go through the platform.",
+      "C": "Forms aren't authored as raw XML files.",
+      "D": "Form Designer can create new fields — that's a key feature."
+    },
+    "references": [
+      { "title": "Form designer", "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_FormDesign.html" }
+    ],
+    "tags": ["form-designer", "create-field", "field-palette"]
+  },
+  {
+    "id": "cad-aui-005",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Application User Interface",
+    "subdomain": "Form Layout",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A developer accidentally deletes the 'Notes' field from the Dictionary on a production-mirror Dev instance. Records that had Notes data now show empty. What's true?",
+    "options": [
+      { "id": "A", "text": "Deleting a field from the Dictionary drops the column and the stored data is lost — restore from a backup or recreate the field and re-import data." },
+      { "id": "B", "text": "Dictionary deletes are reversible from the trash — open System Definition → Trash and click Restore." },
+      { "id": "C", "text": "The data is automatically migrated into a backup field with the same name and an _old suffix." },
+      { "id": "D", "text": "Form Layout edits and Dictionary deletes are identical operations — nothing is actually lost." }
+    ],
+    "correct": ["A"],
+    "rationale": "Deleting a Dictionary record drops the underlying column and the data with it. There's no trash, no shadow backup — the recovery path is a backup restore or recreate + reimport. This is why distinguishing form-layout removal from Dictionary deletion matters so much.",
+    "distractor_notes": {
+      "B": "There's no Trash with a Restore button for Dictionary deletes.",
+      "C": "No auto-shadow-field behavior exists.",
+      "D": "Form Layout edits are non-destructive; Dictionary deletes are destructive. Treating them the same is the bug at the heart of this scenario."
+    },
+    "references": [
+      { "title": "System dictionary", "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_SystemDictionary.html" },
+      { "title": "Configuring the form layout", "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/configure-form-layout.html" }
+    ],
+    "tags": ["dictionary", "field-delete", "data-loss", "scenario"]
+  },
+  {
+    "id": "cad-aui-006",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Application User Interface",
+    "subdomain": "Lists",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the List Editor in ServiceNow?",
+    "options": [
+      { "id": "A", "text": "A separate desktop application for editing CSV files." },
+      { "id": "B", "text": "A list view feature that lets users edit field values directly in the list cells without opening each record's form." },
+      { "id": "C", "text": "A tool for deleting fields from a table." },
+      { "id": "D", "text": "A view that hides all fields except the first column." }
+    ],
+    "correct": ["B"],
+    "rationale": "List Editor enables inline editing — double-click a cell to change its value without navigating into the record form. Great for quick bulk updates. ACLs and write-protection still apply per field.",
+    "distractor_notes": {
+      "A": "List Editor is a browser-based feature, not a separate application.",
+      "C": "Field deletion happens in the Dictionary, not in the list.",
+      "D": "Hiding columns is a separate list personalization feature."
+    },
+    "references": [
+      { "title": "Use the list editor", "url": "https://www.servicenow.com/docs/r/zurich/platform-user-interface/t_UseTheListEditor.html" }
+    ],
+    "tags": ["lists", "list-editor", "inline-editing"]
+  },
+  {
+    "id": "cad-aui-007",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Application User Interface",
+    "subdomain": "Lists",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A user wants to see additional columns on their Loaner Requests list without changing what other users see. Which approach achieves that?",
+    "options": [
+      { "id": "A", "text": "Edit the table's default list layout — every user inherits the change." },
+      { "id": "B", "text": "Use Personalize List (the gear icon) to add columns; the customization is saved as a personal list view for that user only." },
+      { "id": "C", "text": "Submit a request to ServiceNow Support." },
+      { "id": "D", "text": "Personal list views are not supported in Zurich." }
+    ],
+    "correct": ["B"],
+    "rationale": "Personalize List (or Configure List for admins) lets a user save their own column choice as a personal list — visible only to them. The shared default isn't affected. That's how power users tailor the platform without imposing on teammates.",
+    "distractor_notes": {
+      "A": "Editing the default list layout changes it for everyone — wrong scope for a personal preference.",
+      "C": "Self-service personalization doesn't need a Support ticket.",
+      "D": "Personal lists are absolutely supported."
+    },
+    "references": [
+      { "title": "Personal list administration", "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/list-administration/c_AdministeringPersonalLists.html" },
+      { "title": "Configure and use list functions", "url": "https://www.servicenow.com/docs/r/zurich/platform-user-interface/configure-use-list-functions.html" }
+    ],
+    "tags": ["lists", "personalize", "personal-list"]
+  },
+  {
+    "id": "cad-aui-008",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Application User Interface",
+    "subdomain": "Lists",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "When a list is displayed, what determines which columns appear by default for all users?",
+    "options": [
+      { "id": "A", "text": "The first 10 fields in alphabetical order." },
+      { "id": "B", "text": "The List Layout for the table (configurable via Configure → List Layout), which is the shared default list view for that role/view combination." },
+      { "id": "C", "text": "Whichever fields the last user added to their personal list." },
+      { "id": "D", "text": "All fields on the table are always shown." }
+    ],
+    "correct": ["B"],
+    "rationale": "List Layout is the shared default — admins (or anyone with the right) edit it via Configure → List Layout, and that becomes the baseline for everyone. Per-user Personalize List overrides apply on top of it.",
+    "distractor_notes": {
+      "A": "Alphabetical default would be useless — defaults are configured deliberately.",
+      "C": "Personal lists don't influence the shared default.",
+      "D": "List views are scoped to a chosen set of columns, not 'all fields'."
+    },
+    "references": [
+      { "title": "Configure and use list functions", "url": "https://www.servicenow.com/docs/r/zurich/platform-user-interface/configure-use-list-functions.html" }
+    ],
+    "tags": ["lists", "list-layout", "defaults"]
+  },
+  {
+    "id": "cad-aui-009",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Application User Interface",
+    "subdomain": "Form Layout",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A form is becoming unwieldy. The developer wants to surface 'Approval' fields in one tab, 'Asset Details' in a second tab, and 'Notes & Activity' in a third. The cleanest mechanism is:",
+    "options": [
+      { "id": "A", "text": "Create three separate forms and choose one at runtime via a UI Policy." },
+      { "id": "B", "text": "Add three Sections to the form (Approval / Asset Details / Notes & Activity) and assign the relevant fields to each. ServiceNow renders multiple sections as tabs by default." },
+      { "id": "C", "text": "Embed three iframes into the form HTML." },
+      { "id": "D", "text": "Split the table into three child tables." }
+    ],
+    "correct": ["B"],
+    "rationale": "Sections ARE the tabbing mechanism for forms. Define them in Form Designer, drop fields into each, and the form renders them as user-friendly tabs without any scripting.",
+    "distractor_notes": {
+      "A": "Multiple forms via UI Policy is overkill and creates a maintenance burden.",
+      "C": "Forms aren't authored as freeform HTML with iframes.",
+      "D": "Splitting tables to solve a form layout problem is a wildly disproportionate response."
+    },
+    "references": [
+      { "title": "Form designer", "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_FormDesign.html" }
+    ],
+    "tags": ["form-sections", "tabs", "form-layout"]
+  },
+  {
+    "id": "cad-aui-010",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Application User Interface",
+    "subdomain": "Related Lists",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is a Related List on a ServiceNow form?",
+    "options": [
+      { "id": "A", "text": "A list embedded at the bottom of a form that shows records from another table related to the current record (typically via a Reference field)." },
+      { "id": "B", "text": "A printout of every list the user has ever opened." },
+      { "id": "C", "text": "A backup of the current record from the previous day." },
+      { "id": "D", "text": "A list that only displays for users with the 'related' role." }
+    ],
+    "correct": ["A"],
+    "rationale": "Related Lists surface child or referenced records inline at the bottom of a form. For a Loaner Request, you'd typically see Approvals, Tasks, Comments, and Attachments — each driven by a relationship back to the parent record.",
+    "distractor_notes": {
+      "B": "There's no 'history of opened lists' embed.",
+      "C": "Related lists aren't backups — they're live child records.",
+      "D": "There's no special 'related' role gating related lists generally."
+    },
+    "references": [
+      { "title": "Related lists", "url": "https://www.servicenow.com/docs/r/zurich/platform-user-interface/c_RelatedLists.html" }
+    ],
+    "tags": ["related-lists", "forms"]
+  },
+  {
+    "id": "cad-aui-011",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Application User Interface",
+    "subdomain": "Form Layout",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the difference between Form Layout (the legacy editor) and Form Designer in ServiceNow?",
+    "options": [
+      { "id": "A", "text": "They are unrelated — Form Layout edits lists, Form Designer edits forms." },
+      { "id": "B", "text": "Both edit the same form definition; Form Layout is the original list-based editor (Available / Selected boxes), and Form Designer is the modern drag-and-drop visual editor with a field palette." },
+      { "id": "C", "text": "Form Layout is for mobile and Form Designer is for desktop." },
+      { "id": "D", "text": "Form Designer requires a separate plugin to be activated." }
+    ],
+    "correct": ["B"],
+    "rationale": "Both write to the same Form record. Form Layout is the original Available/Selected/Up/Down UI; Form Designer is the modern WYSIWYG with drag-and-drop, sections you can rearrange visually, and a palette for creating new fields. Pick whichever is more comfortable.",
+    "distractor_notes": {
+      "A": "They both edit forms.",
+      "C": "Both are desktop browser tools. Mobile layouts are configured separately.",
+      "D": "Form Designer is part of the baseline platform."
+    },
+    "references": [
+      { "title": "Configuring the form layout", "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/configure-form-layout.html" },
+      { "title": "Form designer", "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_FormDesign.html" }
+    ],
+    "tags": ["form-designer", "form-layout", "comparison"]
+  },
+  {
+    "id": "cad-aui-012",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Application User Interface",
+    "subdomain": "Lists",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A developer enables List Editor on the Loaner Request table so the team can update Status inline. After deploying, users report that some Status values they try to set are rejected. What's the most likely cause?",
+    "options": [
+      { "id": "A", "text": "List Editor randomly drops every fifth keystroke." },
+      { "id": "B", "text": "Field-level ACLs (write rules) on the Status field deny the change for those users, or a Business Rule / Data Policy is blocking the new value. List Editor honors all the same write protections as the form does." },
+      { "id": "C", "text": "List Editor doesn't work on choice fields." },
+      { "id": "D", "text": "The instance is in read-only mode for non-admins." }
+    ],
+    "correct": ["B"],
+    "rationale": "List Editor isn't a security backdoor — it runs through the same ACLs, Business Rules, and Data Policies that the form does. If a user can't write a value via the form, they can't via the list either. Check the field's write ACLs first.",
+    "distractor_notes": {
+      "A": "List Editor doesn't drop keystrokes. It's not an input lag problem.",
+      "C": "List Editor works on choice fields just fine.",
+      "D": "Read-only mode for non-admins isn't a standard platform state."
+    },
+    "references": [
+      { "title": "Use the list editor", "url": "https://www.servicenow.com/docs/r/zurich/platform-user-interface/t_UseTheListEditor.html" }
+    ],
+    "tags": ["lists", "list-editor", "acl", "scenario"]
+  },
+  {
+    "id": "cad-aui-013",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Application User Interface",
+    "subdomain": "Client Scripts",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which of the following is NOT a valid type of Client Script in ServiceNow?",
+    "options": [
+      { "id": "A", "text": "onLoad" },
+      { "id": "B", "text": "onChange" },
+      { "id": "C", "text": "onSubmit" },
+      { "id": "D", "text": "onRender" }
+    ],
+    "correct": ["D"],
+    "rationale": "The four supported Client Script types are onLoad, onChange, onSubmit, and onCellEdit. There is no onRender type. Knowing the four is a recall must — it determines when your code runs.",
+    "distractor_notes": {
+      "A": "onLoad runs when the form is drawn — a real script type.",
+      "B": "onChange runs when a specified field's value changes — a real script type.",
+      "C": "onSubmit runs when the form is submitted — a real script type."
+    },
+    "references": [
+      { "title": "Client scripts", "url": "https://www.servicenow.com/docs/r/zurich/application-development/c_ClientScripts.html" }
+    ],
+    "tags": ["client-scripts", "types", "fundamentals"]
+  },
+  {
+    "id": "cad-aui-014",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Application User Interface",
+    "subdomain": "Client Scripts",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "When does an onLoad Client Script execute?",
+    "options": [
+      { "id": "A", "text": "Just before the form is submitted to the server." },
+      { "id": "B", "text": "After the form is rendered, before the user can interact with any fields — typically used for setup, defaults, and read-only adjustments." },
+      { "id": "C", "text": "Every time the user clicks Save." },
+      { "id": "D", "text": "Only when the record is first inserted into the database." }
+    ],
+    "correct": ["B"],
+    "rationale": "onLoad runs after the form is drawn but before the user touches it. That makes it the right place to set defaults, hide/show fields based on initial state, and any other one-time prep — but a bad place to do anything that depends on a value the user is about to type.",
+    "distractor_notes": {
+      "A": "That's onSubmit, not onLoad.",
+      "C": "onLoad doesn't run on Save. Save fires onSubmit (and server-side rules).",
+      "D": "Database inserts are server-side; client scripts don't run in that path."
+    },
+    "references": [
+      { "title": "Client scripts", "url": "https://www.servicenow.com/docs/r/zurich/application-development/c_ClientScripts.html" }
+    ],
+    "tags": ["client-scripts", "onLoad", "timing"]
+  },
+  {
+    "id": "cad-aui-015",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Application User Interface",
+    "subdomain": "Client Scripts",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A developer wants to validate that a Loaner Request's 'Return Date' is later than its 'Pickup Date' before the record is saved, and block the save with a message if it isn't. Which Client Script type is the right fit?",
+    "options": [
+      { "id": "A", "text": "onLoad — set defaults during the validation." },
+      { "id": "B", "text": "onChange on Return Date — react to each keystroke." },
+      { "id": "C", "text": "onSubmit — run on save, validate the values, return false to block submission and surface a message." },
+      { "id": "D", "text": "onCellEdit — block inline list edits only." }
+    ],
+    "correct": ["C"],
+    "rationale": "onSubmit is the form-save hook. Validate, return false to abort the save, and use getMessage / addErrorMessage to tell the user what went wrong. Returning true (or nothing) lets the save proceed.",
+    "distractor_notes": {
+      "A": "onLoad has no way to block a save that hasn't happened yet.",
+      "B": "onChange runs on each value change but can't actually block the submit step. It's the wrong gate.",
+      "D": "onCellEdit fires only for List Editor cell edits — not the regular form save path."
+    },
+    "references": [
+      { "title": "Client scripts", "url": "https://www.servicenow.com/docs/r/zurich/application-development/c_ClientScripts.html" }
+    ],
+    "tags": ["client-scripts", "onSubmit", "validation"]
+  },
+  {
+    "id": "cad-aui-016",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Application User Interface",
+    "subdomain": "UI Policy",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is a UI Policy in ServiceNow?",
+    "options": [
+      { "id": "A", "text": "A scheduled job that runs every five minutes to clean up form data." },
+      { "id": "B", "text": "A declarative, no-code mechanism for making fields mandatory, read-only, or visible/hidden on a form based on conditions — evaluated entirely on the client." },
+      { "id": "C", "text": "A server-side rule that runs only when records are deleted." },
+      { "id": "D", "text": "A formatting tool for tabular reports." }
+    ],
+    "correct": ["B"],
+    "rationale": "UI Policies are the declarative way to control field state on a form — mandatory, read-only, visible — based on simple conditions. They run client-side, no scripting required for the common cases, and they're the right first tool to reach for over a Client Script.",
+    "distractor_notes": {
+      "A": "UI Policies aren't jobs — they react to user interaction, not a clock.",
+      "C": "Server-side delete logic is handled by Business Rules, not UI Policies.",
+      "D": "UI Policies don't format reports."
+    },
+    "references": [
+      { "title": "UI Policy", "url": "https://www.servicenow.com/docs/r/zurich/application-development/c_UIPolicy.html" }
+    ],
+    "tags": ["ui-policy", "declarative", "fundamentals"]
+  },
+  {
+    "id": "cad-aui-017",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Application User Interface",
+    "subdomain": "UI Policy vs Client Script",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A developer needs to make the 'Notes' field mandatory whenever 'State' = 'Approved'. Both a UI Policy and an onChange Client Script could accomplish this. Which should the developer choose, and why?",
+    "options": [
+      { "id": "A", "text": "Client Script — always prefer code over declarative tools for maintainability." },
+      { "id": "B", "text": "UI Policy — it's declarative, no-code, easier to maintain, and exactly the use case it was designed for. Reach for Client Scripts only when behavior can't be expressed declaratively." },
+      { "id": "C", "text": "Neither — only Business Rules can make fields mandatory." },
+      { "id": "D", "text": "Both — implement the rule twice for redundancy." }
+    ],
+    "correct": ["B"],
+    "rationale": "When a UI Policy can express the rule, use it. Declarative beats code for findability, upgradeability, and clarity to anyone who comes along later. Scripts are for behavior that genuinely can't be expressed in a UI Policy's condition + action vocabulary.",
+    "distractor_notes": {
+      "A": "Defaulting to code is an anti-pattern in ServiceNow. The platform rewards declarative configuration.",
+      "C": "Business Rules are server-side. Mandatory-on-form is a client-side concern — UI Policy fits.",
+      "D": "Duplicating logic across two mechanisms guarantees drift and confusion."
+    },
+    "references": [
+      { "title": "UI Policy", "url": "https://www.servicenow.com/docs/r/zurich/application-development/c_UIPolicy.html" },
+      { "title": "Client scripts", "url": "https://www.servicenow.com/docs/r/zurich/application-development/c_ClientScripts.html" }
+    ],
+    "tags": ["ui-policy", "client-script", "design-decision", "scenario"]
+  },
+  {
+    "id": "cad-aui-018",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Application User Interface",
+    "subdomain": "UI Actions",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is a UI Action in ServiceNow?",
+    "options": [
+      { "id": "A", "text": "A scheduled task that fires once a day." },
+      { "id": "B", "text": "A configurable button, link, or context-menu item on forms and lists that runs server-side (or optionally client-side) code when activated." },
+      { "id": "C", "text": "An access control rule that hides records from non-admins." },
+      { "id": "D", "text": "A dashboard widget." }
+    ],
+    "correct": ["B"],
+    "rationale": "UI Actions are how you put buttons (form header, related-list, list, context-menu) into the UI that run code on activation. By default they run server-side; the Client checkbox flips them to run client-side code instead.",
+    "distractor_notes": {
+      "A": "Schedules belong to Scheduled Jobs, not UI Actions.",
+      "C": "Record visibility is governed by ACLs.",
+      "D": "Dashboards use widgets and Performance Analytics, not UI Actions."
+    },
+    "references": [
+      { "title": "UI Actions", "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_UIActions.html" }
+    ],
+    "tags": ["ui-actions", "buttons", "fundamentals"]
+  },
+  {
+    "id": "cad-aui-019",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Application User Interface",
+    "subdomain": "UI Actions",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A developer adds a 'Mark Returned' button to the Loaner Request form. They want the button to update the current record's State to 'Returned' and save — without leaving the form. What's the most appropriate UI Action configuration?",
+    "options": [
+      { "id": "A", "text": "Form button, server-side script that sets current.state and calls current.update()." },
+      { "id": "B", "text": "List banner button, client-side script that opens a new browser tab." },
+      { "id": "C", "text": "Related-list button, client-side script that deletes the record." },
+      { "id": "D", "text": "UI Actions can't update the current record." }
+    ],
+    "correct": ["A"],
+    "rationale": "For a form button that updates the record being viewed: Form button = true, server-side, script sets current.state and calls current.update(). The platform handles the redirect and refresh.",
+    "distractor_notes": {
+      "B": "Wrong placement (list vs form), wrong behavior (opens a tab vs updates a record).",
+      "C": "Wrong placement (related list) and wrong action (delete is not mark-returned).",
+      "D": "UI Actions absolutely can update the current record — that's a primary use case."
+    },
+    "references": [
+      { "title": "UI Actions", "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_UIActions.html" }
+    ],
+    "tags": ["ui-actions", "form-button", "current-update"]
+  },
+  {
+    "id": "cad-aui-020",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Application User Interface",
+    "subdomain": "Client Scripts",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A developer needs to clear the 'Approver Notes' field whenever 'State' changes from 'Approved' to anything else. Which Client Script type is correct, and which API is appropriate?",
+    "options": [
+      { "id": "A", "text": "onLoad with g_form.getValue('state')." },
+      { "id": "B", "text": "onChange on the 'State' field, using g_form.setValue('approver_notes', '') when the new value indicates a non-Approved state." },
+      { "id": "C", "text": "onSubmit, using gs.getProperty()." },
+      { "id": "D", "text": "onCellEdit, using current.update()." }
+    ],
+    "correct": ["B"],
+    "rationale": "onChange is the right type — it fires when the watched field changes. g_form.setValue is the client-side API to modify another field's value. The script gets oldValue and newValue parameters to detect the specific transition.",
+    "distractor_notes": {
+      "A": "onLoad doesn't react to state changes; it only fires once at draw time.",
+      "C": "gs.* is the server-side GlideSystem API — not available in client scripts.",
+      "D": "onCellEdit is for list-cell edits, not form changes; current.update is server-side."
+    },
+    "references": [
+      { "title": "Client scripts", "url": "https://www.servicenow.com/docs/r/zurich/application-development/c_ClientScripts.html" }
+    ],
+    "tags": ["client-scripts", "onChange", "g_form"]
+  },
+  {
+    "id": "cad-aui-021",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Application User Interface",
+    "subdomain": "UI Policy",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which of the following is NOT something a UI Policy can do declaratively (without scripts)?",
+    "options": [
+      { "id": "A", "text": "Make a field mandatory based on a condition." },
+      { "id": "B", "text": "Make a field read-only based on a condition." },
+      { "id": "C", "text": "Make a field visible or hidden based on a condition." },
+      { "id": "D", "text": "Send an email when a condition is met." }
+    ],
+    "correct": ["D"],
+    "rationale": "UI Policies handle field state on the form: mandatory, read-only, visible. Sending email is a server-side concern handled by Notifications (or Flow Designer). UI Policies don't reach the server in their declarative form.",
+    "distractor_notes": {
+      "A": "Mandatory toggling is a core UI Policy action.",
+      "B": "Read-only toggling is a core UI Policy action.",
+      "C": "Visibility toggling is a core UI Policy action."
+    },
+    "references": [
+      { "title": "UI Policy", "url": "https://www.servicenow.com/docs/r/zurich/application-development/c_UIPolicy.html" }
+    ],
+    "tags": ["ui-policy", "limits"]
+  },
+  {
+    "id": "cad-aui-022",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Application User Interface",
+    "subdomain": "Client vs Server",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which of the following APIs is available in a (standard) Client Script?",
+    "options": [
+      { "id": "A", "text": "GlideRecord (gr = new GlideRecord(...))" },
+      { "id": "B", "text": "g_form (g_form.setValue, g_form.getValue, etc.)" },
+      { "id": "C", "text": "current.update()" },
+      { "id": "D", "text": "gs.eventQueue()" }
+    ],
+    "correct": ["B"],
+    "rationale": "g_form is the canonical client-side form API. GlideRecord, gs.*, and current.* are server-side. (You can call the server from a client script via GlideAjax or callable Script Includes, but those APIs themselves are not directly available client-side.)",
+    "distractor_notes": {
+      "A": "GlideRecord is a server-side API. The closest client equivalent for asynchronous queries is GlideAjax.",
+      "C": "'current' refers to the server-side record context in Business Rules and Script Includes, not the client form.",
+      "D": "gs.* is the server-side GlideSystem API."
+    },
+    "references": [
+      { "title": "Client scripts", "url": "https://www.servicenow.com/docs/r/zurich/application-development/c_ClientScripts.html" }
+    ],
+    "tags": ["client-scripts", "g_form", "client-vs-server"]
+  },
+  {
+    "id": "cad-aui-023",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Application User Interface",
+    "subdomain": "UI Actions",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A developer ships a 'Send Reminder' UI Action that hits an external endpoint via REST. After release, the button works on the developer's account but fails for end users with a permission error. What is the most likely cause and fix?",
+    "options": [
+      { "id": "A", "text": "The button is broken — rebuild it." },
+      { "id": "B", "text": "The UI Action lacks a role restriction (or has a developer-only role). Set the 'Requires role' field to a role that end users actually have, and confirm the underlying integration / outbound REST is permitted for that user context." },
+      { "id": "C", "text": "End users can't run any UI Action by design." },
+      { "id": "D", "text": "Restart the instance to refresh role caches." }
+    ],
+    "correct": ["B"],
+    "rationale": "UI Actions have a 'Requires role' field that gates which users can see and run them. A button works for the developer because they have admin or a privileged role; non-admins fall through. Set the right role and verify the action's downstream calls (outbound REST, ACLs on touched tables) succeed for that user context.",
+    "distractor_notes": {
+      "A": "Rebuilding doesn't fix a permissions issue.",
+      "C": "End users routinely run UI Actions — the platform is full of them.",
+      "D": "Restarting an instance isn't a developer-controllable action and doesn't fix role gating."
+    },
+    "references": [
+      { "title": "UI Actions", "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_UIActions.html" }
+    ],
+    "tags": ["ui-actions", "roles", "permissions", "scenario"]
+  },
+  {
+    "id": "cad-aui-024",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Application User Interface",
+    "subdomain": "Business Rules",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which of the following best describes a Business Rule?",
+    "options": [
+      { "id": "A", "text": "A client-side script that runs in the browser when a form is loaded." },
+      { "id": "B", "text": "A server-side script that runs when a record is queried, inserted, updated, or deleted on a table — used for enforcing logic and side-effects that should not be bypassed by any UI." },
+      { "id": "C", "text": "An ACL that controls who can see fields." },
+      { "id": "D", "text": "A scheduled job that runs nightly." }
+    ],
+    "correct": ["B"],
+    "rationale": "Business Rules are server-side. They run on database operations (query, insert, update, delete) and at one of four orders (before, after, async, display). That's where you put logic that absolutely must run regardless of which UI a record came through.",
+    "distractor_notes": {
+      "A": "That's a Client Script.",
+      "C": "ACLs control access, not business logic.",
+      "D": "Schedules are Scheduled Jobs / Scheduled Script Executions, not Business Rules."
+    },
+    "references": [
+      { "title": "Business rules", "url": "https://www.servicenow.com/docs/r/zurich/application-development/c_BusinessRules.html" }
+    ],
+    "tags": ["business-rules", "server-side", "fundamentals"]
+  },
+  {
+    "id": "cad-aui-025",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Application User Interface",
+    "subdomain": "Business Rules",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which four 'When' values does a Business Rule support, defining at what point in the database operation the rule fires?",
+    "options": [
+      { "id": "A", "text": "before, after, async, display" },
+      { "id": "B", "text": "onLoad, onChange, onSubmit, onCellEdit" },
+      { "id": "C", "text": "create, read, write, delete" },
+      { "id": "D", "text": "immediate, deferred, batched, scheduled" }
+    ],
+    "correct": ["A"],
+    "rationale": "before (modify the record before it's saved), after (react after save, blocking), async (react after save, non-blocking), and display (fire when the form is loaded for read/display). Choosing the right 'when' is the most important design decision in a Business Rule.",
+    "distractor_notes": {
+      "B": "Those are Client Script types, not Business Rule timings.",
+      "C": "Those are operations (the Action checkboxes on the BR), not 'When' values.",
+      "D": "Made up — none of these are platform vocabulary."
+    },
+    "references": [
+      { "title": "Business rules execution order", "url": "https://www.servicenow.com/docs/r/zurich/application-development/r_BusinessRulesExecutionOrder.html" }
+    ],
+    "tags": ["business-rules", "when", "execution-order"]
+  },
+  {
+    "id": "cad-aui-026",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Application User Interface",
+    "subdomain": "Business Rules",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A developer needs to default the 'Loaner Type' to 'Standard' whenever a new Loaner Request is created without one. Which Business Rule configuration is appropriate?",
+    "options": [
+      { "id": "A", "text": "When = display, on Query, script writes current.loaner_type." },
+      { "id": "B", "text": "When = before, on Insert, script sets current.loaner_type = 'standard' if current.loaner_type is empty." },
+      { "id": "C", "text": "When = async, on Delete, script sets current.loaner_type = 'standard'." },
+      { "id": "D", "text": "When = after, on Query, script sets current.loaner_type." }
+    ],
+    "correct": ["B"],
+    "rationale": "Defaulting a value on new records is a classic before/Insert use case. Set the field on current before the save commits and the value persists with the original write.",
+    "distractor_notes": {
+      "A": "display fires when records are read for the form. Writing there doesn't affect saved data.",
+      "C": "Delete and async are completely wrong for setting a default on insert.",
+      "D": "Query/after doesn't write the record back to the database in any useful way."
+    },
+    "references": [
+      { "title": "Business rules", "url": "https://www.servicenow.com/docs/r/zurich/application-development/c_BusinessRules.html" }
+    ],
+    "tags": ["business-rules", "before-insert", "default"]
+  },
+  {
+    "id": "cad-aui-027",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Application User Interface",
+    "subdomain": "Business Rules",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A Business Rule with When=after and Order=100 sends an email and creates a related Task. The developer notices the rule occasionally blocks the UI for 5-10 seconds on save. What's the most appropriate redesign?",
+    "options": [
+      { "id": "A", "text": "Move the When to async — long-running follow-on work that doesn't need to be part of the save transaction belongs there." },
+      { "id": "B", "text": "Move to before/Insert so it runs earlier." },
+      { "id": "C", "text": "Convert it to a Client Script." },
+      { "id": "D", "text": "Disable the rule and recreate it as a UI Policy." }
+    ],
+    "correct": ["A"],
+    "rationale": "async rules run in a separate transaction after the save commits. They don't block the user. Anything that doesn't need to be inside the save transaction — emails, related-record creation, integrations — belongs in async.",
+    "distractor_notes": {
+      "B": "Running earlier (before) makes it block sooner, not less.",
+      "C": "Email send and record creation can't be done from a client script directly.",
+      "D": "UI Policies are declarative field-state rules — they can't send email or create tasks."
+    },
+    "references": [
+      { "title": "Business rules execution order", "url": "https://www.servicenow.com/docs/r/zurich/application-development/r_BusinessRulesExecutionOrder.html" }
+    ],
+    "tags": ["business-rules", "async", "performance", "scenario"]
+  },
+  {
+    "id": "cad-aui-028",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Application User Interface",
+    "subdomain": "Script Includes",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is a Script Include in ServiceNow?",
+    "options": [
+      { "id": "A", "text": "A reusable, server-side JavaScript library (typically a class or function) that other server scripts — or client scripts via GlideAjax — can call." },
+      { "id": "B", "text": "A snippet of CSS injected into every form." },
+      { "id": "C", "text": "A scheduled job that runs every five minutes." },
+      { "id": "D", "text": "A list of users who can edit a record." }
+    ],
+    "correct": ["A"],
+    "rationale": "Script Includes are the platform's mechanism for reusable server-side code. Put shared logic (e.g., LaptopUtils) here once, then call it from any Business Rule, UI Action server-side, or — if marked Client callable — from a client script via GlideAjax.",
+    "distractor_notes": {
+      "B": "CSS comes from theme/UI properties, not Script Includes.",
+      "C": "Scheduling lives on Scheduled Script Executions.",
+      "D": "User lists are governed by ACLs, groups, and roles."
+    },
+    "references": [
+      { "title": "Business rules and Script Includes", "url": "https://www.servicenow.com/docs/r/zurich/application-development/business-rules-and-script-includes.html" }
+    ],
+    "tags": ["script-includes", "server-side", "reusable"]
+  },
+  {
+    "id": "cad-aui-029",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Application User Interface",
+    "subdomain": "Script Includes",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A developer wants a Client Script to look up the manager of the currently-selected user and display it in a message. Which approach is correct?",
+    "options": [
+      { "id": "A", "text": "Use new GlideRecord('sys_user') directly in the client script — it's available everywhere." },
+      { "id": "B", "text": "Create a client-callable Script Include with a method getManager(userId), then call it from the client script via GlideAjax (.addParam, .getXMLAnswer or callback)." },
+      { "id": "C", "text": "Hard-code the manager into the client script." },
+      { "id": "D", "text": "Send an email and parse the response." }
+    ],
+    "correct": ["B"],
+    "rationale": "Client scripts can't run server-side queries directly. The standard bridge is a client-callable Script Include + GlideAjax. The script include does the GlideRecord work server-side and returns a value to the waiting client script.",
+    "distractor_notes": {
+      "A": "GlideRecord is server-side (especially in scoped apps). It is not the right tool inside a client script.",
+      "C": "Hard-coding hierarchical relationships is brittle and wrong.",
+      "D": "Email is asynchronous and inappropriate for an in-form lookup."
+    },
+    "references": [
+      { "title": "Business rules and Script Includes", "url": "https://www.servicenow.com/docs/r/zurich/application-development/business-rules-and-script-includes.html" },
+      { "title": "Client scripts", "url": "https://www.servicenow.com/docs/r/zurich/application-development/c_ClientScripts.html" }
+    ],
+    "tags": ["script-includes", "glideajax", "client-callable"]
+  },
+  {
+    "id": "cad-aui-030",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Application User Interface",
+    "subdomain": "Script Includes",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What does the 'Client callable' checkbox on a Script Include do?",
+    "options": [
+      { "id": "A", "text": "Enables the Script Include to be invoked from a Client Script via GlideAjax. When unchecked, only server-side callers can use it." },
+      { "id": "B", "text": "Automatically generates UI buttons on every form." },
+      { "id": "C", "text": "Marks the Script Include as deprecated." },
+      { "id": "D", "text": "Schedules the script to run nightly." }
+    ],
+    "correct": ["A"],
+    "rationale": "Client callable extends the script's reach to GlideAjax requests from client scripts. Leave it off when you only want server-side callers — keeping a smaller attack surface and a clearer contract.",
+    "distractor_notes": {
+      "B": "Buttons are UI Actions, not Script Includes.",
+      "C": "There's no deprecate flag here.",
+      "D": "Scheduling is separate from script-include configuration."
+    },
+    "references": [
+      { "title": "Business rules and Script Includes", "url": "https://www.servicenow.com/docs/r/zurich/application-development/business-rules-and-script-includes.html" }
+    ],
+    "tags": ["script-includes", "client-callable"]
+  },
+  {
+    "id": "cad-aui-031",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Application User Interface",
+    "subdomain": "GlideRecord",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which is the correct basic pattern to query active Loaner Requests on the server side?",
+    "options": [
+      { "id": "A", "text": "var gr = new GlideRecord('x_acme_loaner_request'); gr.addQuery('active', true); gr.query(); while (gr.next()) { /* use gr */ }" },
+      { "id": "B", "text": "var gr = new GlideAjax('x_acme_loaner_request'); gr.run();" },
+      { "id": "C", "text": "var gr = g_form.getReference('x_acme_loaner_request');" },
+      { "id": "D", "text": "SELECT * FROM x_acme_loaner_request WHERE active = true;" }
+    ],
+    "correct": ["A"],
+    "rationale": "GlideRecord is the platform's server-side query API. Pattern: new GlideRecord(table), addQuery(field, value), query(), then next() in a while loop. ACLs and Business Rules are honored automatically.",
+    "distractor_notes": {
+      "B": "GlideAjax is a client-side bridge to call server-side Script Includes — not a query API.",
+      "C": "g_form is client-side and getReference() loads a single referenced record on a form, not a query.",
+      "D": "Developers don't run raw SQL against the platform — GlideRecord is the supported abstraction."
+    },
+    "references": [
+      { "title": "Business rules and Script Includes", "url": "https://www.servicenow.com/docs/r/zurich/application-development/business-rules-and-script-includes.html" }
+    ],
+    "tags": ["glide-record", "server-side", "query"]
+  },
+  {
+    "id": "cad-aui-032",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Application User Interface",
+    "subdomain": "GlideRecord",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "On the server side, a developer queries a record by sys_id. They want to read one record (or know it doesn't exist) without writing a loop. Which method is most idiomatic?",
+    "options": [
+      { "id": "A", "text": "gr.get(sysIdValue) — returns true if found, false if not, populating gr with the record when found." },
+      { "id": "B", "text": "gr.list() — returns an array of every record." },
+      { "id": "C", "text": "gr.fetchAllAsJSON()" },
+      { "id": "D", "text": "There's no way to get a single record without iterating." }
+    ],
+    "correct": ["A"],
+    "rationale": "gr.get(sysIdOrFieldQuery) is the single-record lookup convenience. It returns a boolean and populates the GlideRecord if found. Idiomatic, readable, and avoids the loop boilerplate.",
+    "distractor_notes": {
+      "B": "list() isn't a standard GlideRecord method.",
+      "C": "Made up.",
+      "D": "Single-record fetch is absolutely supported — gr.get() does exactly that."
+    },
+    "references": [
+      { "title": "Business rules and Script Includes", "url": "https://www.servicenow.com/docs/r/zurich/application-development/business-rules-and-script-includes.html" }
+    ],
+    "tags": ["glide-record", "get", "single-record"]
+  },
+  {
+    "id": "cad-aui-033",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Application User Interface",
+    "subdomain": "GlideRecord",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A developer writes a Business Rule that loops through ALL records on a 5-million-row table, modifying each. Soon after deploy, instance performance tanks. What's the most appropriate fix?",
+    "options": [
+      { "id": "A", "text": "Increase the database server's RAM." },
+      { "id": "B", "text": "Add an explicit setLimit / chunked query / queue the work to a Scheduled Script — don't iterate full-table scans inside an interactive Business Rule. Also confirm the rule's When/Order is appropriate and indexes exist on the queried fields." },
+      { "id": "C", "text": "Add a sleep() between iterations." },
+      { "id": "D", "text": "Disable ACLs on the table to make the query faster." }
+    ],
+    "correct": ["B"],
+    "rationale": "Big-table sweeps inside a synchronous Business Rule are an anti-pattern. Move the work async, batch it via a Scheduled Script (or Flow), use setLimit, and ensure indexes. Don't disable security or paper over with sleeps.",
+    "distractor_notes": {
+      "A": "Customers don't tune their database server. Even if they could, fixing a bad query shape with more RAM is the wrong instinct.",
+      "C": "sleep just stretches the same workload over more wall-clock time — it doesn't reduce platform impact.",
+      "D": "Disabling ACLs to chase speed is a serious security regression."
+    },
+    "references": [
+      { "title": "Business rules", "url": "https://www.servicenow.com/docs/r/zurich/application-development/c_BusinessRules.html" }
+    ],
+    "tags": ["glide-record", "performance", "scenario"]
+  },
+  {
+    "id": "cad-aui-034",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Application User Interface",
+    "subdomain": "Client vs Server",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A developer must enforce a rule that no Loaner Request can be saved with a Return Date earlier than today — regardless of whether the save came from the form, an API, or a Business Rule somewhere else. Which is the right place to enforce it?",
+    "options": [
+      { "id": "A", "text": "A Client Script — the form is where users save records." },
+      { "id": "B", "text": "A before/Insert+Update Business Rule (or a Data Policy) — server-side enforcement guarantees the rule applies regardless of which UI or API the save came through." },
+      { "id": "C", "text": "A UI Policy — the most declarative option always wins." },
+      { "id": "D", "text": "An onLoad Client Script — set the field's min attribute." }
+    ],
+    "correct": ["B"],
+    "rationale": "If the rule must hold for ALL writes (UI, API, integration, scheduled jobs), it has to live server-side. before/Insert+Update Business Rules and Data Policies are the right tools. Client-side gates are easily bypassed by non-UI write paths.",
+    "distractor_notes": {
+      "A": "A Client Script only fires when the form is in play. API writes bypass it.",
+      "C": "UI Policies are also client-side. Same bypass problem as A.",
+      "D": "onLoad doesn't gate the save at all."
+    },
+    "references": [
+      { "title": "Business rules", "url": "https://www.servicenow.com/docs/r/zurich/application-development/c_BusinessRules.html" },
+      { "title": "Client scripts", "url": "https://www.servicenow.com/docs/r/zurich/application-development/c_ClientScripts.html" }
+    ],
+    "tags": ["server-side-enforcement", "client-vs-server", "business-rules"]
+  },
+  {
+    "id": "cad-aui-035",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Application User Interface",
+    "subdomain": "Business Rules",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "On a Business Rule, what does the 'Order' field control?",
+    "options": [
+      { "id": "A", "text": "The display order of the rule in the Application Navigator." },
+      { "id": "B", "text": "The order in which Business Rules with the same When (e.g., before/Insert) fire relative to each other — lower numbers run first." },
+      { "id": "C", "text": "The number of times the rule will retry on failure." },
+      { "id": "D", "text": "The number of records the rule can affect per execution." }
+    ],
+    "correct": ["B"],
+    "rationale": "Order sequences rules with the same When + Action. Lower numbers run earlier. Use it deliberately when you have multiple BRs that need to coordinate (e.g., one sets a value, the next reads it).",
+    "distractor_notes": {
+      "A": "Has nothing to do with navigator order.",
+      "C": "There's no built-in retry count on BRs.",
+      "D": "There's no per-execution record cap. The rule fires per record operation."
+    },
+    "references": [
+      { "title": "Business rules execution order", "url": "https://www.servicenow.com/docs/r/zurich/application-development/r_BusinessRulesExecutionOrder.html" }
+    ],
+    "tags": ["business-rules", "order"]
+  },
+  {
+    "id": "cad-aui-036",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Application User Interface",
+    "subdomain": "Script Includes",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A team has identical 'calculate return-date business days' logic copy-pasted into a Business Rule, two UI Actions, and a Catalog Client Script (server-side). Maintenance is becoming painful. What's the right refactor?",
+    "options": [
+      { "id": "A", "text": "Leave it — copy-paste is fine if it works." },
+      { "id": "B", "text": "Extract the logic into a Script Include with a clear method, then call it from each of the four locations. If any client caller needs it, mark the include client-callable and route through GlideAjax." },
+      { "id": "C", "text": "Move all four callers into a single giant Business Rule." },
+      { "id": "D", "text": "Delete three of the four implementations randomly." }
+    ],
+    "correct": ["B"],
+    "rationale": "DRY belongs in ServiceNow too. Script Includes are exactly this — share logic across BRs, UI Actions, and (via GlideAjax) client scripts. One source of truth, one place to test, one place to fix bugs.",
+    "distractor_notes": {
+      "A": "Copy-pasted business logic always drifts. This is the maintenance pain talking.",
+      "C": "Cramming multiple call sites into one BR doesn't address reuse — it just creates a giant rule.",
+      "D": "Random deletion isn't engineering."
+    },
+    "references": [
+      { "title": "Business rules and Script Includes", "url": "https://www.servicenow.com/docs/r/zurich/application-development/business-rules-and-script-includes.html" }
+    ],
+    "tags": ["script-includes", "refactor", "dry", "scenario"]
+  },
+  {
+    "id": "cad-aui-037",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Application User Interface",
+    "subdomain": "Record Producer",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is a Record Producer in ServiceNow?",
+    "options": [
+      { "id": "A", "text": "A Catalog Item that, when ordered, creates a record on a chosen target table — letting end users submit work via a friendly catalog form instead of editing the table form directly." },
+      { "id": "B", "text": "A scheduled job that produces records every night." },
+      { "id": "C", "text": "A reporting view that aggregates record counts." },
+      { "id": "D", "text": "An ACL that controls who can produce records." }
+    ],
+    "correct": ["A"],
+    "rationale": "Record Producers are catalog-driven intake. The end user sees a clean form (with variables, descriptions, formatting) and on submit the platform writes a record to the configured target table. Great way to expose an app's intake without exposing the raw table form.",
+    "distractor_notes": {
+      "B": "Schedules belong to Scheduled Jobs.",
+      "C": "Aggregation is the job of Reports / Performance Analytics.",
+      "D": "Record-creation access is governed by ACLs, but ACLs aren't Record Producers."
+    },
+    "references": [
+      { "title": "Record Producer", "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/service-catalog/c_RecordProducer.html" }
+    ],
+    "tags": ["record-producer", "service-catalog", "intake"]
+  },
+  {
+    "id": "cad-aui-038",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Application User Interface",
+    "subdomain": "Record Producer",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A developer wants employees to request a loaner laptop without ever seeing the Loaner Request table form — just a friendly Service Portal page with the right fields and helpful descriptions. The cleanest mechanism is to:",
+    "options": [
+      { "id": "A", "text": "Hide the Loaner Request table from end users and email them a Word form instead." },
+      { "id": "B", "text": "Build a Record Producer targeting the Loaner Request table, surface it on the Service Portal catalog, and use Catalog variables for the inputs. The producer creates the record on submit." },
+      { "id": "C", "text": "Give every employee the admin role." },
+      { "id": "D", "text": "Build it in Studio as a static HTML page." }
+    ],
+    "correct": ["B"],
+    "rationale": "Record Producer + Service Portal is exactly the workflow ServiceNow designed for this — friendly catalog intake that writes back to a real table. Catalog variables give you customizable inputs, and you keep the table itself out of end users' faces.",
+    "distractor_notes": {
+      "A": "Email + Word doc bypasses the platform entirely.",
+      "C": "Admin role bypass is a serious security regression.",
+      "D": "Static HTML doesn't integrate with the data model."
+    },
+    "references": [
+      { "title": "Record Producer", "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/service-catalog/c_RecordProducer.html" },
+      { "title": "Service Portal", "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/c_ServicePortal.html" }
+    ],
+    "tags": ["record-producer", "service-portal", "intake"]
+  },
+  {
+    "id": "cad-aui-039",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Application User Interface",
+    "subdomain": "Service Portal",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is Service Portal in ServiceNow?",
+    "options": [
+      { "id": "A", "text": "A modern, configurable, public-facing-friendly web portal framework used to surface catalog, knowledge, requests, and custom widgets to end users — separate from the classic Now Platform UI." },
+      { "id": "B", "text": "A scheduled job that runs nightly." },
+      { "id": "C", "text": "A database server." },
+      { "id": "D", "text": "A built-in Slack integration." }
+    ],
+    "correct": ["A"],
+    "rationale": "Service Portal is the platform's self-service portal framework — pages, widgets, themes, and catalog/knowledge integration. It's the typical home for end-user experiences that shouldn't sit inside the admin/agent UI.",
+    "distractor_notes": {
+      "B": "Schedules aren't portals.",
+      "C": "Database servers are infrastructure, not a portal product.",
+      "D": "Slack integration is separate."
+    },
+    "references": [
+      { "title": "Service Portal", "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/c_ServicePortal.html" }
+    ],
+    "tags": ["service-portal", "end-user-experience"]
+  },
+  {
+    "id": "cad-aui-040",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Application User Interface",
+    "subdomain": "Catalog Variables",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "On a Record Producer or Catalog Item, what are Variables used for?",
+    "options": [
+      { "id": "A", "text": "Storing global JavaScript variables for the instance." },
+      { "id": "B", "text": "Defining the input fields users see and fill out on the catalog form — typed (string, choice, reference, etc.), labeled, validated, and mapped to fields on the target record." },
+      { "id": "C", "text": "Tracking the price of catalog items in real time." },
+      { "id": "D", "text": "Configuring email templates." }
+    ],
+    "correct": ["B"],
+    "rationale": "Catalog Variables ARE the form. Each variable becomes a labeled, typed input on the catalog page; on submit the values are written to the target record (per the producer's mapping) or attached to the request.",
+    "distractor_notes": {
+      "A": "There's no instance-wide global JavaScript variable mechanism here.",
+      "C": "Pricing isn't dynamically tracked through variables.",
+      "D": "Email templates are configured under Notifications."
+    },
+    "references": [
+      { "title": "Catalog variables", "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/c_CatalogVariables.html" }
+    ],
+    "tags": ["catalog-variables", "record-producer", "form-inputs"]
+  },
+  {
+    "id": "cad-aui-041",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Application User Interface",
+    "subdomain": "Embedded Lists",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is an Embedded List on a form?",
+    "options": [
+      { "id": "A", "text": "A list of records from a referenced/child table embedded inline on a parent form so users can view and edit child rows without leaving the parent." },
+      { "id": "B", "text": "A static screenshot of a list pasted onto a form." },
+      { "id": "C", "text": "A spreadsheet attachment." },
+      { "id": "D", "text": "A printout of the form." }
+    ],
+    "correct": ["A"],
+    "rationale": "Embedded Lists let users interact with related child records (e.g., accessories on a Loaner Request) inline on the parent form — add, edit, remove without navigating away. Configured via list collector / glide_list field types and form layout.",
+    "distractor_notes": {
+      "B": "Embedded lists are live data, not screenshots.",
+      "C": "Not related to spreadsheets.",
+      "D": "Not a print artifact."
+    },
+    "references": [
+      { "title": "Embedded lists", "url": "https://www.servicenow.com/docs/r/zurich/platform-user-interface/c_EmbeddedLists.html" }
+    ],
+    "tags": ["embedded-lists", "forms"]
+  },
+  {
+    "id": "cad-aui-042",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Application User Interface",
+    "subdomain": "Dictionary",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "On the Dictionary entry for a field, what does the 'Default value' field do?",
+    "options": [
+      { "id": "A", "text": "Sets the value that will populate this field automatically on new records when no other source supplies one." },
+      { "id": "B", "text": "Sets the maximum number of characters the field will accept." },
+      { "id": "C", "text": "Translates the field label into other languages." },
+      { "id": "D", "text": "Marks the field as read-only on every form." }
+    ],
+    "correct": ["A"],
+    "rationale": "Default value populates new records when nothing else writes the field first. You can set a literal value or a script (javascript: prefix) that runs to compute the default. Either way, it's a 'starter' value, not an enforced one.",
+    "distractor_notes": {
+      "B": "Max length is its own dictionary attribute.",
+      "C": "Translation lives under language records and field label translations.",
+      "D": "Read-only is set by ACLs / UI Policy / dictionary read-only attribute — not by 'Default value'."
+    },
+    "references": [
+      { "title": "System dictionary", "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_SystemDictionary.html" }
+    ],
+    "tags": ["dictionary", "default-value"]
+  },
+  {
+    "id": "cad-aui-043",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Application User Interface",
+    "subdomain": "Dictionary",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A developer wants 'Return Date' to default to 14 days after the record's 'Pickup Date' on new Loaner Requests. The cleanest place to set this is:",
+    "options": [
+      { "id": "A", "text": "An onLoad Client Script that does math in the browser." },
+      { "id": "B", "text": "A before/Insert Business Rule that calculates current.return_date = pickup_date + 14 days when return_date is empty. (A scripted Dictionary default is also acceptable but Business Rule is easier to read and maintain for cross-field math.)" },
+      { "id": "C", "text": "A UI Policy condition." },
+      { "id": "D", "text": "An ACL." }
+    ],
+    "correct": ["B"],
+    "rationale": "Cross-field default math (return = pickup + 14) is server-side defaulting work. A before/Insert Business Rule is the most readable home. Scripted Dictionary defaults can also do it but are less discoverable; UI Policies and ACLs can't do this kind of computation at all.",
+    "distractor_notes": {
+      "A": "Client-side math is bypassable by API writes and isn't the right enforcement point.",
+      "C": "UI Policies don't compute values — they toggle field state.",
+      "D": "ACLs don't compute values."
+    },
+    "references": [
+      { "title": "Business rules", "url": "https://www.servicenow.com/docs/r/zurich/application-development/c_BusinessRules.html" },
+      { "title": "System dictionary", "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_SystemDictionary.html" }
+    ],
+    "tags": ["default-value", "business-rules", "before-insert"]
+  },
+  {
+    "id": "cad-aui-044",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Application User Interface",
+    "subdomain": "Mobile",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "True or false (single-select): The same Form Designer layout drives both the desktop form and the mobile experience identically — no separate mobile configuration is needed.",
+    "options": [
+      { "id": "A", "text": "True — desktop and mobile share the exact same layout configuration." },
+      { "id": "B", "text": "False — mobile experiences are configured separately (in Mobile App Builder / mobile cards), allowing layouts tuned for small screens and touch interactions." },
+      { "id": "C", "text": "True for tablets but false for phones." },
+      { "id": "D", "text": "Mobile rendering is determined randomly per session." }
+    ],
+    "correct": ["B"],
+    "rationale": "Mobile experiences are configured separately — Mobile App Builder (and Mobile Cards) shape what shows up in the Now Mobile app. That separation lets developers tailor mobile UI for small screens and touch without compromising the desktop form.",
+    "distractor_notes": {
+      "A": "Mobile and desktop have different layout needs and configuration paths.",
+      "C": "Tablets render the Now Mobile experience too; they're not desktop forms.",
+      "D": "Rendering isn't random."
+    },
+    "references": [
+      { "title": "Now Mobile app", "url": "https://www.servicenow.com/docs/r/zurich/mobile/now-mobile-app.html" }
+    ],
+    "tags": ["mobile", "now-mobile", "configuration"]
+  },
+  {
+    "id": "cad-aui-045",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Application User Interface",
+    "subdomain": "Service Portal",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "An employee submits a Record Producer on Service Portal. The producer's onSubmit Catalog Client Script validates inputs in the browser. The user clears their browser cookies, replays the same submit by tampering with the JS, and bypasses validation. How should the developer prevent this?",
+    "options": [
+      { "id": "A", "text": "Make the onSubmit client script harder to read by minifying it." },
+      { "id": "B", "text": "Add the same validation as a before/Insert Business Rule (or Data Policy) on the target table — so the rule holds regardless of how the record was submitted. Client-side checks improve UX but never enforce security." },
+      { "id": "C", "text": "Disable Service Portal." },
+      { "id": "D", "text": "Trust the client because most users won't tamper." }
+    ],
+    "correct": ["B"],
+    "rationale": "Client-side validation is for UX, not security. Real enforcement happens server-side — Business Rules and Data Policies on the table. Any rule that must hold needs to live somewhere the user can't bypass.",
+    "distractor_notes": {
+      "A": "Obfuscation is not security.",
+      "C": "Disabling the channel doesn't fix the underlying flaw and breaks the whole portal experience.",
+      "D": "Trusting the client is the bug at the heart of every breach."
+    },
+    "references": [
+      { "title": "Business rules", "url": "https://www.servicenow.com/docs/r/zurich/application-development/c_BusinessRules.html" },
+      { "title": "Record Producer", "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/service-catalog/c_RecordProducer.html" }
+    ],
+    "tags": ["service-portal", "validation", "security", "scenario"]
+  },
+  {
+    "id": "cad-aui-046",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Application User Interface",
+    "subdomain": "Catalog Items",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the practical difference between a Catalog Item and a Record Producer?",
+    "options": [
+      { "id": "A", "text": "There's no difference — the terms are interchangeable." },
+      { "id": "B", "text": "A Catalog Item typically generates a Request (REQ) and Requested Item (RITM) and follows the standard fulfillment workflow; a Record Producer creates a record directly on a target table you specify (e.g., Incident, custom Loaner Request) without the REQ/RITM scaffolding." },
+      { "id": "C", "text": "Catalog Items only work in classic UI, Record Producers only work in Service Portal." },
+      { "id": "D", "text": "Catalog Items are paid features; Record Producers are free." }
+    ],
+    "correct": ["B"],
+    "rationale": "Both surface a friendly intake form, but the back-end differs. Catalog Items spin up Request/RITM workflow plumbing — useful when fulfillment goes through standard catalog approvals and tasks. Record Producers write directly to a target table — useful when you want a clean record on your own app's table without the REQ/RITM ceremony.",
+    "distractor_notes": {
+      "A": "They're related but distinct.",
+      "C": "Both render fine in either UI.",
+      "D": "Both are baseline platform features."
+    },
+    "references": [
+      { "title": "Catalog items", "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/c_CatalogItems.html" },
+      { "title": "Record Producer", "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/service-catalog/c_RecordProducer.html" }
+    ],
+    "tags": ["catalog-items", "record-producer", "comparison"]
+  },
+  {
+    "id": "cad-aui-047",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Application User Interface",
+    "subdomain": "Client Scripts",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A Client Script on a Catalog Item (Record Producer) needs to look up a manager's email server-side. Which is the correct mechanism?",
+    "options": [
+      { "id": "A", "text": "Use g_form.getReference('manager', callback) — it asynchronously fetches the referenced record and returns its fields via the callback. (Or call a client-callable Script Include via GlideAjax.)" },
+      { "id": "B", "text": "Use new GlideRecord('sys_user') directly in the catalog client script." },
+      { "id": "C", "text": "Hard-code the manager's email." },
+      { "id": "D", "text": "Email cannot be looked up from a catalog client script under any condition." }
+    ],
+    "correct": ["A"],
+    "rationale": "From a Catalog Client Script, the supported async paths are g_form.getReference (for fields on a referenced record) and GlideAjax (for arbitrary server work). Both keep the work server-side without blocking the UI.",
+    "distractor_notes": {
+      "B": "GlideRecord in catalog client scripts is not the right tool — and in scoped apps it isn't available client-side at all.",
+      "C": "Hard-coding personal data is brittle and a maintenance disaster.",
+      "D": "It can absolutely be looked up — A is the answer."
+    },
+    "references": [
+      { "title": "Client scripts", "url": "https://www.servicenow.com/docs/r/zurich/application-development/c_ClientScripts.html" }
+    ],
+    "tags": ["client-scripts", "catalog", "getReference", "glideajax"]
+  },
+  {
+    "id": "cad-aui-048",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Application User Interface",
+    "subdomain": "UI Policy",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A complex form has 6 UI Policies, 4 onChange Client Scripts, and 3 Business Rules all touching the 'State' field. Behavior is unpredictable and hard to debug. What's the most maintainable next step?",
+    "options": [
+      { "id": "A", "text": "Add a 7th UI Policy to override the others." },
+      { "id": "B", "text": "Map out which rules fire on what trigger, consolidate overlapping behavior (prefer declarative UI Policies where possible, push enforcement to a single server-side Business Rule), and document the State field's ownership. Reduce the surface area before adding more." },
+      { "id": "C", "text": "Delete every rule and start over without testing." },
+      { "id": "D", "text": "Increase the Order field on each rule to a unique random number." }
+    ],
+    "correct": ["B"],
+    "rationale": "Tangled rule landscapes happen when multiple developers add behavior incrementally. The fix is to step back, document what each rule does, consolidate overlaps, and pick a single source of truth for enforcement. Adding more rules to fix tangles is how the tangle got there.",
+    "distractor_notes": {
+      "A": "Adding more rules is what created the problem.",
+      "C": "Delete-and-rebuild without testing risks regressions.",
+      "D": "Randomizing Order doesn't address the underlying complexity."
+    },
+    "references": [
+      { "title": "UI Policy", "url": "https://www.servicenow.com/docs/r/zurich/application-development/c_UIPolicy.html" },
+      { "title": "Business rules", "url": "https://www.servicenow.com/docs/r/zurich/application-development/c_BusinessRules.html" }
+    ],
+    "tags": ["ui-policy", "business-rules", "refactor", "scenario"]
+  }
+]

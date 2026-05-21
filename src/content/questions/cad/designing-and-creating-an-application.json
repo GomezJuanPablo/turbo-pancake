@@ -1,0 +1,981 @@
+[
+  {
+    "id": "cad-dca-001",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Designing and Creating an Application",
+    "subdomain": "Application Scope",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the primary purpose of Application Scope in ServiceNow?",
+    "options": [
+      { "id": "A", "text": "To control whether records appear in global search results." },
+      { "id": "B", "text": "To isolate an application's artifacts (tables, scripts, UI) from other applications and protect them from unintended changes." },
+      { "id": "C", "text": "To limit how many users can install a custom application." },
+      { "id": "D", "text": "To set the default time zone for records the application creates." }
+    ],
+    "correct": ["B"],
+    "rationale": "Application Scope is a namespace boundary. It isolates the application's tables, scripts, UI, and other artifacts so they can't be casually modified by code or admins working outside the scope, and so the app can be packaged and moved as a unit.",
+    "distractor_notes": {
+      "A": "Search visibility is controlled by ACLs and search configuration, not by Application Scope.",
+      "C": "Scope doesn't govern install/user counts — that's licensing and roles.",
+      "D": "Time zones are user/system properties, not scope features."
+    },
+    "references": [
+      { "title": "Application scope", "url": "https://www.servicenow.com/docs/r/zurich/application-development/c_ApplicationScope.html" }
+    ],
+    "tags": ["application-scope", "isolation", "fundamentals"]
+  },
+  {
+    "id": "cad-dca-002",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Designing and Creating an Application",
+    "subdomain": "Application Scope",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A developer working in the Global scope tries to update a Business Rule that lives in a custom application scope (sn_my_app) where the table's Application Access is set to default values. What happens?",
+    "options": [
+      { "id": "A", "text": "The update succeeds — Global scope can always edit any scope's artifacts." },
+      { "id": "B", "text": "The update is blocked by default scope protection; the developer must switch into sn_my_app's scope to edit." },
+      { "id": "C", "text": "The update is silently logged but not applied." },
+      { "id": "D", "text": "The Business Rule is automatically moved into the Global scope." }
+    ],
+    "correct": ["B"],
+    "rationale": "By default, artifacts in a custom scope are protected from edits made from outside that scope. The developer needs to switch the active application context to sn_my_app before editing the Business Rule, or the owning app must explicitly allow access from other scopes.",
+    "distractor_notes": {
+      "A": "Global isn't a superuser scope — scope protection applies to it like any other scope.",
+      "C": "There's no silent-log behavior. The platform either allows or blocks the change.",
+      "D": "Artifacts don't move scopes by themselves. Scope assignment is set at creation and changed deliberately."
+    },
+    "references": [
+      { "title": "Creation restrictions across application scopes", "url": "https://www.servicenow.com/docs/r/zurich/application-development/r_CreationRestrsAcrossAppScopes.html" }
+    ],
+    "tags": ["application-scope", "global-scope", "protection"]
+  },
+  {
+    "id": "cad-dca-003",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Designing and Creating an Application",
+    "subdomain": "Application Scope",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which prefix is automatically applied to the name of new tables, scripts, and other artifacts created inside a custom application scope?",
+    "options": [
+      { "id": "A", "text": "The literal string 'custom_'." },
+      { "id": "B", "text": "The application's scope identifier (for example, 'x_acme_')." },
+      { "id": "C", "text": "The user's sys_id." },
+      { "id": "D", "text": "No prefix — artifact names are stored exactly as typed." }
+    ],
+    "correct": ["B"],
+    "rationale": "Custom scope artifacts get the scope identifier as a prefix (commonly x_<company>_<app>_). This guarantees a globally unique name across instances and signals which app owns the artifact.",
+    "distractor_notes": {
+      "A": "There's no generic 'custom_' prefix. The prefix is scope-specific.",
+      "C": "User sys_ids never become artifact prefixes.",
+      "D": "Custom scopes always prefix to prevent collisions across apps and instances."
+    },
+    "references": [
+      { "title": "Application scope", "url": "https://www.servicenow.com/docs/r/zurich/application-development/c_ApplicationScope.html" }
+    ],
+    "tags": ["application-scope", "naming", "prefix"]
+  },
+  {
+    "id": "cad-dca-004",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Designing and Creating an Application",
+    "subdomain": "Platform Fit",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A team wants to build a tool to manage employee equipment requests with approvals, an SLA on fulfillment, a portal for end users, and reporting. They're evaluating whether to build this on ServiceNow or as a separate web app. Which factor most strongly favors building on ServiceNow?",
+    "options": [
+      { "id": "A", "text": "The team is fluent in Python and not in JavaScript." },
+      { "id": "B", "text": "The workflow needs approvals, SLAs, a self-service portal, and reporting — all native platform capabilities — and integrates with existing CMDB/HR data already on the instance." },
+      { "id": "C", "text": "The expected user count is fewer than ten people." },
+      { "id": "D", "text": "The team prefers to avoid the Now Platform UI." }
+    ],
+    "correct": ["B"],
+    "rationale": "ServiceNow is a strong fit when the core needs (workflow, approvals, SLAs, portal, reporting) are already built into the platform and the app benefits from data that's already there. You reuse rather than rebuild, and you inherit security, audit, and lifecycle features.",
+    "distractor_notes": {
+      "A": "Server-side scripting on ServiceNow is JavaScript-flavored. Language preference is a real concern, but it doesn't favor ServiceNow.",
+      "C": "A tiny user base doesn't favor building on ServiceNow — if anything, it argues for something simpler.",
+      "D": "Disliking the platform UI is a reason to NOT build on ServiceNow, not a reason to choose it."
+    },
+    "references": [
+      { "title": "Developing your application", "url": "https://www.servicenow.com/docs/r/zurich/application-development/developing-applications.html" }
+    ],
+    "tags": ["platform-fit", "design-decision", "scenario"]
+  },
+  {
+    "id": "cad-dca-005",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Designing and Creating an Application",
+    "subdomain": "Data Model",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What does it mean for a custom table to 'extend' an existing table such as Task in ServiceNow?",
+    "options": [
+      { "id": "A", "text": "The custom table copies the fields of Task at the moment of creation but is otherwise independent." },
+      { "id": "B", "text": "The custom table inherits Task's fields, business rules, and behaviors; records in the child are also accessible via the parent table." },
+      { "id": "C", "text": "The custom table is rendered visually larger on forms." },
+      { "id": "D", "text": "The custom table can only be queried by admins." }
+    ],
+    "correct": ["B"],
+    "rationale": "Table extension establishes a parent-child class relationship. The child inherits fields and platform behavior from the parent, and child records appear in queries against the parent. That's why extending Task gives you assignments, work notes, state, and other plumbing for free.",
+    "distractor_notes": {
+      "A": "Extension is a live inheritance relationship, not a one-time copy.",
+      "C": "Extension has nothing to do with form size.",
+      "D": "Access is governed by ACLs, not by table extension."
+    },
+    "references": [
+      { "title": "Table extension", "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_TableExtension.html" }
+    ],
+    "tags": ["data-model", "table-extension", "inheritance"]
+  },
+  {
+    "id": "cad-dca-006",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Designing and Creating an Application",
+    "subdomain": "Data Model",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A developer is designing a 'Loaner Laptop Request' table. The request needs approvals, a state model (New → In Progress → Closed), an assigned-to user, and SLA tracking. Which base table is the most appropriate parent to extend from?",
+    "options": [
+      { "id": "A", "text": "User [sys_user] — because the request belongs to a user." },
+      { "id": "B", "text": "Task [task] — Task already provides assignment, state, work notes, approvals, and SLA hooks." },
+      { "id": "C", "text": "Configuration Item [cmdb_ci] — because the laptop is a CI." },
+      { "id": "D", "text": "Knowledge [kb_knowledge] — because the request creates a knowledge record." }
+    ],
+    "correct": ["B"],
+    "rationale": "Task is the canonical base for work-tracking records in ServiceNow. Extending Task gives you assignment, state, work notes, SLA support, and approval plumbing without rebuilding any of it.",
+    "distractor_notes": {
+      "A": "sys_user is the people table — extending it would model a kind of person, not a kind of request.",
+      "C": "cmdb_ci models the asset itself, not work being done with it. The laptop may be a CI referenced from the request, but the request isn't a CI.",
+      "D": "kb_knowledge models articles, not requests."
+    },
+    "references": [
+      { "title": "Tables and fields", "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_TablesAndFields.html" },
+      { "title": "Table extension", "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_TableExtension.html" }
+    ],
+    "tags": ["data-model", "task-table", "design-decision"]
+  },
+  {
+    "id": "cad-dca-007",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Designing and Creating an Application",
+    "subdomain": "Data Model",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "When creating a new table in ServiceNow, when can the developer specify that the table extends another table?",
+    "options": [
+      { "id": "A", "text": "Only after the table has been created and at least one record exists." },
+      { "id": "B", "text": "Only at the moment of table creation — extension cannot be added later." },
+      { "id": "C", "text": "Any time, by editing the table's parent field." },
+      { "id": "D", "text": "Only during instance upgrade windows." }
+    ],
+    "correct": ["B"],
+    "rationale": "Table extension is set at creation. After a table exists, you cannot re-parent it — the inheritance relationship is part of how the table is built. Plan the data model before you click Create.",
+    "distractor_notes": {
+      "A": "Records have nothing to do with whether extension can be added.",
+      "C": "The parent table is not a freely editable field — extension is locked in at creation.",
+      "D": "Upgrade windows don't change what fields you can edit on a custom table."
+    },
+    "references": [
+      { "title": "Create a table", "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/table-administration-and-data-management/t_CreateATable.html" }
+    ],
+    "tags": ["data-model", "table-extension", "creation-time"]
+  },
+  {
+    "id": "cad-dca-008",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Designing and Creating an Application",
+    "subdomain": "Modules",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Within the Application Navigator, what is the relationship between an Application Menu and a Module?",
+    "options": [
+      { "id": "A", "text": "Modules contain Application Menus." },
+      { "id": "B", "text": "An Application Menu groups one or more Modules; each Module is a clickable entry that opens a specific page (list, form, report, URL, etc.)." },
+      { "id": "C", "text": "Application Menus and Modules are synonyms for the same record." },
+      { "id": "D", "text": "Application Menus are only visible to admins; Modules are visible to everyone." }
+    ],
+    "correct": ["B"],
+    "rationale": "An Application Menu is the collapsible header (the app's name) in the navigator. Modules are the indented entries beneath it. Click a Module to open the page it points to — typically a list of records or a form, but it can also link to a URL, report, or another resource.",
+    "distractor_notes": {
+      "A": "It's the other way around — menus contain modules, not the reverse.",
+      "C": "They're distinct record types with distinct purposes.",
+      "D": "Visibility is governed by roles on each menu and module independently, not by which is which."
+    },
+    "references": [
+      { "title": "Application Manager", "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/application-manager/application-manager.html" }
+    ],
+    "tags": ["modules", "application-menu", "navigation"]
+  },
+  {
+    "id": "cad-dca-009",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Designing and Creating an Application",
+    "subdomain": "Modules",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A developer wants the user to land on a filtered list of 'Open' loaner laptop requests when they click a navigator entry. What Module type should they choose?",
+    "options": [
+      { "id": "A", "text": "URL (from Arguments:) pointing to an external site." },
+      { "id": "B", "text": "List of Records, with the table set to the loaner request table and an argument filter like state=open." },
+      { "id": "C", "text": "Single Record — modules of this type always open the same single record." },
+      { "id": "D", "text": "Separator — separators run filtered queries on the current table." }
+    ],
+    "correct": ["B"],
+    "rationale": "The List of Records module type opens a filtered list view of a specified table. The filter is supplied via the module's Arguments (or Filter) field, which is a standard encoded query like state=open.",
+    "distractor_notes": {
+      "A": "URL modules open an external link — they don't show a table list.",
+      "C": "Single Record opens one fixed record by sys_id, not a filtered list.",
+      "D": "Separators are visual dividers in the navigator. They don't run queries."
+    },
+    "references": [
+      { "title": "Application Manager", "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/application-manager/application-manager.html" }
+    ],
+    "tags": ["modules", "list-of-records", "encoded-query"]
+  },
+  {
+    "id": "cad-dca-010",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Designing and Creating an Application",
+    "subdomain": "Custom App Record",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the role of the Custom Application record (sys_app) in ServiceNow?",
+    "options": [
+      { "id": "A", "text": "It stores user preferences for each installed application." },
+      { "id": "B", "text": "It defines the application's metadata — name, scope, version, vendor, dependencies — and serves as the anchor that ties all of the app's artifacts together for packaging and deployment." },
+      { "id": "C", "text": "It is a runtime cache of recently executed scripts." },
+      { "id": "D", "text": "It is only created when the application is published to the ServiceNow Store." }
+    ],
+    "correct": ["B"],
+    "rationale": "The Custom Application record (sys_app) is the manifest for the application. It holds the scope, name, version, dependencies, and links to all artifacts. It's how the platform knows which tables, scripts, and UI elements belong to the app for the purposes of deployment, update sets, and store packaging.",
+    "distractor_notes": {
+      "A": "User preferences are stored on different platform tables, not on sys_app.",
+      "C": "There's no 'recently executed scripts' cache exposed as a record.",
+      "D": "The sys_app record is created when the application is created, well before any store interaction."
+    },
+    "references": [
+      { "title": "Custom application record", "url": "https://www.servicenow.com/docs/r/zurich/application-development/c_CustomApplicationRecord.html" }
+    ],
+    "tags": ["sys_app", "custom-application", "metadata"]
+  },
+  {
+    "id": "cad-dca-011",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Designing and Creating an Application",
+    "subdomain": "Mobile",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "When a developer wants to give their custom application a mobile experience without writing native iOS or Android code, which approach does ServiceNow provide?",
+    "options": [
+      { "id": "A", "text": "Export the app to Xcode and Android Studio and rebuild it for each platform." },
+      { "id": "B", "text": "Design mobile experiences using Mobile App Builder / Studio inside the platform; users access them through the Now Mobile app, which renders the configured experience on iOS and Android." },
+      { "id": "C", "text": "Email the app's URL to users so they can open it in a mobile browser." },
+      { "id": "D", "text": "Mobile is only available for ServiceNow-built apps; custom apps cannot have a mobile experience." }
+    ],
+    "correct": ["B"],
+    "rationale": "Mobile App Builder (integrated into ServiceNow Studio in Zurich) lets developers configure mobile screens declaratively. The Now Mobile app on iOS and Android renders those configurations — no native code required, and updates ship the moment they're published.",
+    "distractor_notes": {
+      "A": "ServiceNow apps don't get exported and rebuilt in Xcode. The Now Mobile shell renders configured experiences dynamically.",
+      "C": "Emailing a URL falls back to the responsive web UI — that's not the same as a true mobile experience.",
+      "D": "Custom apps absolutely can have mobile experiences — that's a core CAD use case."
+    },
+    "references": [
+      { "title": "Now Mobile app", "url": "https://www.servicenow.com/docs/r/zurich/mobile/now-mobile-app.html" }
+    ],
+    "tags": ["mobile", "now-mobile", "mobile-app-builder"]
+  },
+  {
+    "id": "cad-dca-012",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Designing and Creating an Application",
+    "subdomain": "App Engine Studio",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A citizen developer with limited scripting experience needs to build a simple intake-and-approval app. Which ServiceNow tool is designed for this audience and use case?",
+    "options": [
+      { "id": "A", "text": "Studio (the classic IDE) — because all custom apps must be built there." },
+      { "id": "B", "text": "App Engine Studio — a low-code/no-code experience that guides users through creating data, experiences, logic, and security visually." },
+      { "id": "C", "text": "System Definition → Scripts Background — the recommended starting point for new apps." },
+      { "id": "D", "text": "Performance Analytics — citizen developers build apps inside PA." }
+    ],
+    "correct": ["B"],
+    "rationale": "App Engine Studio is ServiceNow's low-code app builder. It walks a citizen developer through tables, UI, automation, and roles without requiring deep scripting knowledge. Pro-code developers can still drop into Studio for advanced work.",
+    "distractor_notes": {
+      "A": "Studio (the classic IDE) is for pro-code developers. Citizen developers shouldn't start there.",
+      "C": "Scripts Background is a quick-execute window for ad-hoc scripts, not an app-building tool.",
+      "D": "Performance Analytics is for KPI and trend analysis, not app development."
+    },
+    "references": [
+      { "title": "Plan your app development", "url": "https://www.servicenow.com/docs/r/zurich/application-development/app-engine-studio/before-you-begin.html" }
+    ],
+    "tags": ["app-engine-studio", "low-code", "citizen-developer"]
+  },
+  {
+    "id": "cad-dca-013",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Designing and Creating an Application",
+    "subdomain": "Update Sets",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the primary role of an Update Set in ServiceNow application development?",
+    "options": [
+      { "id": "A", "text": "It locks an application so it can't be edited during business hours." },
+      { "id": "B", "text": "It captures customizations made to the instance so the changes can be moved to another instance (e.g., dev → test → prod)." },
+      { "id": "C", "text": "It schedules automatic backups of the database." },
+      { "id": "D", "text": "It is a database table that stores user passwords." }
+    ],
+    "correct": ["B"],
+    "rationale": "Update Sets are the platform's mechanism for capturing changes (records, scripts, configurations) on one instance and migrating them to another. That's how customizations flow from dev to test to prod without manual recreation.",
+    "distractor_notes": {
+      "A": "Update Sets don't lock anything. They're a record of changes, not a write-locking mechanism.",
+      "C": "Backups are managed separately by ServiceNow operations, not via Update Sets.",
+      "D": "Update Sets have nothing to do with credentials."
+    },
+    "references": [
+      { "title": "System update sets", "url": "https://www.servicenow.com/docs/r/zurich/application-development/system-update-sets/system-update-sets.html" }
+    ],
+    "tags": ["update-sets", "migration", "fundamentals"]
+  },
+  {
+    "id": "cad-dca-014",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Designing and Creating an Application",
+    "subdomain": "Update Sets",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A developer made changes on Dev for two days, then realized they never created or selected an Update Set as their current set — all work went into the Default update set. They need to ship the changes to Test tonight. What is the most accurate next step?",
+    "options": [
+      { "id": "A", "text": "Nothing can be done — changes in Default are permanently lost." },
+      { "id": "B", "text": "Create a new Update Set, then on each modified record use 'Add to Update Set' (or batch-move records via the Default update set) to move the captured changes into the new set, then complete and export it." },
+      { "id": "C", "text": "Re-import the Dev database into Test directly, bypassing Update Sets." },
+      { "id": "D", "text": "Customizations in Default are automatically promoted — no action needed." }
+    ],
+    "correct": ["B"],
+    "rationale": "Changes that landed in Default aren't lost, but Default itself shouldn't be transported. The fix is to create a real Update Set and move the relevant captured records into it (or rebuild the changes there), then complete and export.",
+    "distractor_notes": {
+      "A": "The changes are recorded — they're just in the wrong set. Not lost, just inconvenient.",
+      "C": "Direct database imports between instances aren't a supported developer workflow on the Now Platform.",
+      "D": "Default is explicitly not transportable. Nothing is auto-promoted."
+    },
+    "references": [
+      { "title": "Working with update sets", "url": "https://www.servicenow.com/docs/r/zurich/application-development/system-update-sets/using-system-update-sets.html" },
+      { "title": "Create and select an update set", "url": "https://www.servicenow.com/docs/r/zurich/application-development/system-update-sets/create-select-update-set.html" }
+    ],
+    "tags": ["update-sets", "default-update-set", "scenario"]
+  },
+  {
+    "id": "cad-dca-015",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Designing and Creating an Application",
+    "subdomain": "Update Sets",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "What is the correct order of states when promoting an Update Set from Dev to a target instance?",
+    "options": [
+      { "id": "A", "text": "Complete on source → Retrieve on target → Preview on target → Commit on target." },
+      { "id": "B", "text": "Commit on source → Retrieve on target → Complete on target." },
+      { "id": "C", "text": "Preview on source → Complete on target → Commit on source." },
+      { "id": "D", "text": "Retrieve on source → Commit on target → Preview on source." }
+    ],
+    "correct": ["A"],
+    "rationale": "The pipeline is: mark Complete on the source so it stops accepting changes, Retrieve it on the target (which loads it as a Remote Update Set), Preview to see what it will change and resolve any errors, then Commit to apply.",
+    "distractor_notes": {
+      "B": "Commit happens on the target, not the source. The source uses Complete.",
+      "C": "Preview is a target-side step, after retrieving. The order doesn't make sense as written.",
+      "D": "Retrieve is target-side; this sequence is jumbled."
+    },
+    "references": [
+      { "title": "Commit an update set", "url": "https://www.servicenow.com/docs/r/zurich/application-development/system-update-sets/t_CommitAnUpdateSet.html" },
+      { "title": "Complete an update set", "url": "https://www.servicenow.com/docs/r/zurich/application-development/c_CompleteAnUpdateSet.html" }
+    ],
+    "tags": ["update-sets", "promotion", "lifecycle"]
+  },
+  {
+    "id": "cad-dca-016",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Designing and Creating an Application",
+    "subdomain": "Application Scope",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "Your sn_loaner app needs to read records from the cmdb_ci_computer table (which lives in a different scope). What is the most appropriate way to enable this access while keeping the principle of least privilege?",
+    "options": [
+      { "id": "A", "text": "Grant the admin role to every user of sn_loaner — that bypasses scope restrictions." },
+      { "id": "B", "text": "Configure a cross-scope access privilege (or rely on the scope-to-scope settings) that explicitly allows sn_loaner to read cmdb_ci_computer, leaving other access blocked." },
+      { "id": "C", "text": "Move sn_loaner into the Global scope so it no longer has cross-scope restrictions." },
+      { "id": "D", "text": "Duplicate the cmdb_ci_computer table into sn_loaner so the app doesn't need cross-scope access." }
+    ],
+    "correct": ["B"],
+    "rationale": "Cross-scope access privileges are the supported mechanism for narrowing access to exactly what an app needs from another scope. You allow the specific read on the specific resource and leave everything else denied.",
+    "distractor_notes": {
+      "A": "Handing out admin is wildly more privilege than required. The whole point of scope is to avoid this.",
+      "C": "Moving to Global gives up scope protection entirely. It also doesn't actually grant any access — Global has its own restrictions for other scopes' artifacts.",
+      "D": "Duplicating the CMDB into a custom scope creates a parallel, stale dataset. That's a maintenance disaster, not a design choice."
+    },
+    "references": [
+      { "title": "Scope-to-scope settings", "url": "https://www.servicenow.com/docs/r/zurich/application-development/scope-to-scope-settings.html" }
+    ],
+    "tags": ["application-scope", "cross-scope", "least-privilege", "scenario"]
+  },
+  {
+    "id": "cad-dca-017",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Designing and Creating an Application",
+    "subdomain": "Data Model",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A developer is modeling a 'Vendor' record that is referenced from many other records (Purchase Orders, Invoices, Loaner Laptops). Vendors are independent of the work being tracked. What table base is most appropriate?",
+    "options": [
+      { "id": "A", "text": "Extend Task — every record in the system should extend Task." },
+      { "id": "B", "text": "Create a new base table (no parent), since a Vendor is not work; other tables reference it via a Reference field." },
+      { "id": "C", "text": "Extend Knowledge Base — vendors are documentation." },
+      { "id": "D", "text": "Don't create a table — store vendors as choice list values." }
+    ],
+    "correct": ["B"],
+    "rationale": "Vendor isn't work. It's a master-data entity that other tables reference. A new base (no-parent) table is the right shape, and the other tables get a Reference field pointing to the Vendor table.",
+    "distractor_notes": {
+      "A": "Task is for work-tracking records. Vendors aren't tasks — extending Task would give them assignment, state, and SLA fields that don't apply.",
+      "C": "Knowledge is for articles, not for entities like vendors.",
+      "D": "Choice lists are for small, slow-changing enumerations (priority, state). Vendors have many attributes and grow over time — a real table is required."
+    },
+    "references": [
+      { "title": "Build the data model", "url": "https://www.servicenow.com/docs/r/zurich/application-development/build-data-model.html" },
+      { "title": "Tables and fields", "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_TablesAndFields.html" }
+    ],
+    "tags": ["data-model", "master-data", "reference-fields", "design-decision"]
+  },
+  {
+    "id": "cad-dca-018",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Designing and Creating an Application",
+    "subdomain": "Data Model",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which field type would you use on a Loaner Request table to link each request to the User who borrowed the laptop?",
+    "options": [
+      { "id": "A", "text": "String" },
+      { "id": "B", "text": "Choice" },
+      { "id": "C", "text": "Reference (pointing to sys_user)" },
+      { "id": "D", "text": "URL" }
+    ],
+    "correct": ["C"],
+    "rationale": "Reference fields create a foreign-key link to another table's records. A Reference to sys_user lets the form show the user's name, supports type-ahead lookup, and follows referential integrity if the user is deleted.",
+    "distractor_notes": {
+      "A": "A String stores plain text — no link to a user record, no integrity, no lookup.",
+      "B": "Choice fields are for short closed lists of options, not for tens of thousands of users.",
+      "D": "URL is for storing web addresses, not user references."
+    },
+    "references": [
+      { "title": "Field types", "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/r_FieldTypes.html" }
+    ],
+    "tags": ["data-model", "field-types", "reference"]
+  },
+  {
+    "id": "cad-dca-019",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Designing and Creating an Application",
+    "subdomain": "Modules",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "An application has a 'Manage Loaner Inventory' module that should only be visible to users with the x_acme_loaner.manager role. The developer set the role on the Module record but managers report seeing it; non-managers also see it. What is the most likely cause?",
+    "options": [
+      { "id": "A", "text": "ServiceNow ignores role restrictions on Modules — they're for menus only." },
+      { "id": "B", "text": "The user's browser is cached; clearing cache will fix it." },
+      { "id": "C", "text": "The role was set on the Module's Application Menu (parent) but not on the Module itself, or vice versa — role checks apply to whichever record is being filtered. Confirm the role is on the right record." },
+      { "id": "D", "text": "The instance is in maintenance mode and ignores roles temporarily." }
+    ],
+    "correct": ["C"],
+    "rationale": "Both Application Menus and Modules can carry role restrictions, and they're enforced independently. If a developer sets the role in the wrong place — or only on the menu, not the module — visibility will not behave as expected. Confirm the role is set on the specific record being controlled.",
+    "distractor_notes": {
+      "A": "Role restrictions absolutely apply to Modules.",
+      "B": "Browser cache won't make a role show a module to a user who doesn't have the role. Server-side checks render the menu.",
+      "D": "Maintenance mode doesn't ignore roles. This isn't a thing."
+    },
+    "references": [
+      { "title": "Application Manager", "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/application-manager/application-manager.html" }
+    ],
+    "tags": ["modules", "roles", "visibility", "scenario"]
+  },
+  {
+    "id": "cad-dca-020",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Designing and Creating an Application",
+    "subdomain": "Application Scope",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What does the 'Application Access' setting 'This application scope' on a table indicate?",
+    "options": [
+      { "id": "A", "text": "Only scripts running in this application's scope can read/write the table by default; scripts in other scopes are blocked unless cross-scope access is granted." },
+      { "id": "B", "text": "Anyone with admin role can edit, regardless of scope." },
+      { "id": "C", "text": "The table is visible only on mobile devices." },
+      { "id": "D", "text": "The table contents are encrypted at rest." }
+    ],
+    "correct": ["A"],
+    "rationale": "'This application scope' is the most restrictive Application Access setting for a table. It locks routine access to scripts running in the owning scope. Other scopes have to be granted explicit cross-scope privileges.",
+    "distractor_notes": {
+      "B": "Admin role doesn't bypass scope rules. Scope is a separate axis from role.",
+      "C": "Mobile visibility has nothing to do with Application Access.",
+      "D": "Encryption is configured elsewhere and is independent of scope settings."
+    },
+    "references": [
+      { "title": "Creation restrictions across application scopes", "url": "https://www.servicenow.com/docs/r/zurich/application-development/r_CreationRestrsAcrossAppScopes.html" }
+    ],
+    "tags": ["application-scope", "application-access", "table-protection"]
+  },
+  {
+    "id": "cad-dca-021",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Designing and Creating an Application",
+    "subdomain": "Custom App Record",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A developer needs to ship a new version of their custom app to test. After bumping the version number on the sys_app record, what should they typically do next?",
+    "options": [
+      { "id": "A", "text": "Nothing — version changes are purely cosmetic." },
+      { "id": "B", "text": "Publish the application (to an Update Set or to the appropriate store/repo) so the new version can be installed on the target instance." },
+      { "id": "C", "text": "Delete the Update Sets associated with the previous version." },
+      { "id": "D", "text": "Restart the instance to clear the cache." }
+    ],
+    "correct": ["B"],
+    "rationale": "Bumping the version is the metadata change; the deployable artifact comes from publishing. Publishing to an Update Set captures the app and its components so the new version can be retrieved and committed on the target instance.",
+    "distractor_notes": {
+      "A": "Version numbers drive install/upgrade behavior on the target — they're not cosmetic.",
+      "C": "Deleting old Update Sets erases history without producing the new artifact. Don't do this.",
+      "D": "Customers don't restart shared instances. Cache flushing is rarely the answer."
+    },
+    "references": [
+      { "title": "Custom application record", "url": "https://www.servicenow.com/docs/r/zurich/application-development/c_CustomApplicationRecord.html" },
+      { "title": "System update sets", "url": "https://www.servicenow.com/docs/r/zurich/application-development/system-update-sets/system-update-sets.html" }
+    ],
+    "tags": ["sys_app", "versioning", "deployment"]
+  },
+  {
+    "id": "cad-dca-022",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Designing and Creating an Application",
+    "subdomain": "Modules",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which of the following CANNOT be set as the Link Type for a Module?",
+    "options": [
+      { "id": "A", "text": "List of Records" },
+      { "id": "B", "text": "Single Record" },
+      { "id": "C", "text": "URL (from Arguments:)" },
+      { "id": "D", "text": "Database Reorganize" }
+    ],
+    "correct": ["D"],
+    "rationale": "Modules support a fixed catalogue of Link Types: List of Records, New Record, Single Record, URL (from Arguments), Separator, HTML Editor, Map Page, Survey, Timeline Page, Homepage, and others. 'Database Reorganize' is not a Module type — it's not a thing.",
+    "distractor_notes": {
+      "A": "List of Records is a standard module type.",
+      "B": "Single Record is a standard module type.",
+      "C": "URL (from Arguments) is a standard module type, used for external links."
+    },
+    "references": [
+      { "title": "Application Manager", "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/application-manager/application-manager.html" }
+    ],
+    "tags": ["modules", "link-types"]
+  },
+  {
+    "id": "cad-dca-023",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Designing and Creating an Application",
+    "subdomain": "Platform Fit",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A stakeholder asks you to rebuild a public-facing marketing website (heavy SEO, custom CSS animations, anonymous visitors) inside ServiceNow because 'we already pay for it.' What's the most defensible recommendation?",
+    "options": [
+      { "id": "A", "text": "Build it on ServiceNow — anything can be built on the Now Platform." },
+      { "id": "B", "text": "Decline the use case for ServiceNow. Public marketing sites with heavy SEO/CSS demands aren't a platform fit — better to use a dedicated CMS or static site host, and only surface ServiceNow workflows where they add value (e.g., contact forms posting into a CSM workflow)." },
+      { "id": "C", "text": "Build it as a Service Portal — Service Portal is designed for high-traffic anonymous public marketing." },
+      { "id": "D", "text": "Move the entire ServiceNow instance behind a CDN." }
+    ],
+    "correct": ["B"],
+    "rationale": "Knowing what NOT to build on the platform is a real CAD skill. Public marketing sites are outside the typical use case for ServiceNow. Keep the platform for workflow, data, and authenticated experiences — and integrate with marketing tools rather than replicate them.",
+    "distractor_notes": {
+      "A": "'Anything can be built' is technically possible but not a reasonable design recommendation.",
+      "C": "Service Portal serves authenticated workflows well. It's not built for public marketing SEO and design demands.",
+      "D": "A CDN in front of the instance doesn't change the fact that the workload is wrong for the platform."
+    },
+    "references": [
+      { "title": "Developing your application", "url": "https://www.servicenow.com/docs/r/zurich/application-development/developing-applications.html" }
+    ],
+    "tags": ["platform-fit", "anti-pattern", "scenario"]
+  },
+  {
+    "id": "cad-dca-024",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Designing and Creating an Application",
+    "subdomain": "Application Scope",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A developer is building inside sn_loaner and needs to call a Script Include named LaptopUtils that lives in another scope (sn_inventory). The first call fails with a cross-scope security error. The fastest correct fix is to:",
+    "options": [
+      { "id": "A", "text": "Move LaptopUtils into the Global scope." },
+      { "id": "B", "text": "On the sn_inventory side, grant a cross-scope access privilege that allows sn_loaner to execute LaptopUtils; the privilege record is what unblocks the call." },
+      { "id": "C", "text": "Disable application scope on the instance." },
+      { "id": "D", "text": "Run the call from a Scripts Background window — that ignores scope rules." }
+    ],
+    "correct": ["B"],
+    "rationale": "Cross-scope access privilege records on the resource-owning scope are how you grant the caller (sn_loaner) permission to use a specific artifact (LaptopUtils). The owning app stays the source of truth for what it shares.",
+    "distractor_notes": {
+      "A": "Moving an artifact out of its scope to dodge security checks is the wrong instinct. Use the privilege model.",
+      "C": "Application scope can't be disabled — it's foundational to the platform.",
+      "D": "Scripts Background also enforces scope rules. There is no scope-ignoring backdoor."
+    },
+    "references": [
+      { "title": "Scope-to-scope settings", "url": "https://www.servicenow.com/docs/r/zurich/application-development/scope-to-scope-settings.html" }
+    ],
+    "tags": ["application-scope", "cross-scope", "privileges"]
+  },
+  {
+    "id": "cad-dca-025",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Designing and Creating an Application",
+    "subdomain": "Data Model",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "Mid-development, a developer realizes the table they extended from Task should have been a new base table — Task's fields aren't relevant and clutter the form. Records exist on the table. What's the realistic recovery path?",
+    "options": [
+      { "id": "A", "text": "Edit the table's parent field to remove the Task parent." },
+      { "id": "B", "text": "Table extension is set at creation and cannot be changed. The pragmatic path is to create a new base table, migrate the existing records (export/import or a transform), update references, and retire the old extended table." },
+      { "id": "C", "text": "Delete every record and try again — extension automatically resets when the table is empty." },
+      { "id": "D", "text": "Switch the instance into 'restructure mode' to allow re-parenting." }
+    ],
+    "correct": ["B"],
+    "rationale": "Once a table is created with a parent, that lineage is permanent on the platform. The repair is a data migration to a correctly-shaped new table, then deprecate the old one. Painful, but the platform's mechanism is intentional — it prevents subtle data-integrity bugs from re-parenting.",
+    "distractor_notes": {
+      "A": "The parent isn't a freely editable field. Extension is locked at creation.",
+      "C": "Deletion doesn't reset extension. The table definition still carries the parent.",
+      "D": "No such mode exists. Plan the data model up front so this doesn't happen."
+    },
+    "references": [
+      { "title": "Table extension", "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_TableExtension.html" },
+      { "title": "Create a table", "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/table-administration-and-data-management/t_CreateATable.html" }
+    ],
+    "tags": ["data-model", "table-extension", "recovery", "scenario"]
+  },
+  {
+    "id": "cad-dca-026",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Designing and Creating an Application",
+    "subdomain": "Update Sets",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "On the target instance, a developer commits a retrieved Update Set but Preview reported several errors. They commit anyway. What is the most likely consequence?",
+    "options": [
+      { "id": "A", "text": "Nothing — Preview errors are advisory only and never affect commit." },
+      { "id": "B", "text": "Records flagged with unresolved errors may be skipped or applied incorrectly, leaving the target instance in an inconsistent state. Errors should be reviewed and resolved (Accept Remote / Skip / Resolve Conflict) before committing." },
+      { "id": "C", "text": "The instance will refuse to start." },
+      { "id": "D", "text": "ServiceNow Support will be automatically paged." }
+    ],
+    "correct": ["B"],
+    "rationale": "Preview errors are the platform's way of warning that a remote change can't be cleanly applied (e.g., conflict with a local customization, missing dependency). Committing past them risks subtle, partial, or incorrect application of the set. Resolve errors first.",
+    "distractor_notes": {
+      "A": "Preview errors are not advisory — they affect what gets applied.",
+      "C": "Instances don't refuse to start over an Update Set commit.",
+      "D": "Support pagers don't fire from commit errors."
+    },
+    "references": [
+      { "title": "Commit an update set", "url": "https://www.servicenow.com/docs/r/zurich/application-development/system-update-sets/t_CommitAnUpdateSet.html" }
+    ],
+    "tags": ["update-sets", "preview", "commit", "errors"]
+  },
+  {
+    "id": "cad-dca-027",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Designing and Creating an Application",
+    "subdomain": "Application Scope",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which of the following statements about the Global scope is accurate?",
+    "options": [
+      { "id": "A", "text": "Global scope artifacts are NOT prefixed with a scope identifier; many baseline ServiceNow tables and scripts live in Global." },
+      { "id": "B", "text": "The Global scope cannot contain Business Rules." },
+      { "id": "C", "text": "Global scope is identical to admin role." },
+      { "id": "D", "text": "Records in Global cannot be referenced from custom scopes." }
+    ],
+    "correct": ["A"],
+    "rationale": "Global is the default scope that pre-existed Application Scope. Baseline platform artifacts live there, and Global-scope records don't carry the x_<vendor>_<app>_ prefix that custom scopes get.",
+    "distractor_notes": {
+      "B": "Global absolutely contains Business Rules. It's where most of the platform's baseline rules live.",
+      "C": "Scope is a namespace; admin is a role. They're independent.",
+      "D": "Custom scopes routinely reference Global tables (sys_user, task, cmdb_ci) — Global is the most-referenced scope on the platform."
+    },
+    "references": [
+      { "title": "Application scope", "url": "https://www.servicenow.com/docs/r/zurich/application-development/c_ApplicationScope.html" }
+    ],
+    "tags": ["application-scope", "global-scope", "fundamentals"]
+  },
+  {
+    "id": "cad-dca-028",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Designing and Creating an Application",
+    "subdomain": "Data Model",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Where does ServiceNow store metadata about every field on every table — name, type, label, max length, reference target, default value?",
+    "options": [
+      { "id": "A", "text": "The Dictionary (sys_dictionary) table." },
+      { "id": "B", "text": "The Choice (sys_choice) table." },
+      { "id": "C", "text": "The ACL (sys_security_acl) table." },
+      { "id": "D", "text": "The User Profile (sys_user) table." }
+    ],
+    "correct": ["A"],
+    "rationale": "The Dictionary table is the platform's metadata catalogue. Every field on every table has a sys_dictionary record describing its shape. This is how the platform renders forms, runs queries, and enforces typing.",
+    "distractor_notes": {
+      "B": "sys_choice stores the option values for choice-type fields. It's downstream of dictionary entries.",
+      "C": "sys_security_acl stores access control rules, not field metadata.",
+      "D": "sys_user holds user accounts. It's a table, not a metadata catalogue."
+    },
+    "references": [
+      { "title": "System dictionary", "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_SystemDictionary.html" }
+    ],
+    "tags": ["data-model", "dictionary", "metadata"]
+  },
+  {
+    "id": "cad-dca-029",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Designing and Creating an Application",
+    "subdomain": "Data Model",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A developer wants a field on the Loaner Request table to hold one of: 'New', 'Approved', 'Picked Up', 'Returned', 'Cancelled'. What's the most appropriate field type?",
+    "options": [
+      { "id": "A", "text": "Reference (to a new States table) — most flexible." },
+      { "id": "B", "text": "Choice — a fixed small set of values, stored as integers with labels in sys_choice." },
+      { "id": "C", "text": "String — type the value directly." },
+      { "id": "D", "text": "URL — encode the state as a path." }
+    ],
+    "correct": ["B"],
+    "rationale": "Choice is the right shape for a fixed, small set of options that change rarely. It enforces valid values, supports translated labels, and works seamlessly with state-related platform features.",
+    "distractor_notes": {
+      "A": "A Reference table is overkill for a five-value enum — and harder to localize and harder for workflow tooling to consume.",
+      "C": "String allows free-text entry — typos, casing differences, and untranslatable values. Don't use String for closed enums.",
+      "D": "URL is the wrong type."
+    },
+    "references": [
+      { "title": "Field types", "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/r_FieldTypes.html" }
+    ],
+    "tags": ["data-model", "choice", "state-field"]
+  },
+  {
+    "id": "cad-dca-030",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Designing and Creating an Application",
+    "subdomain": "Application Scope",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What does the 'Vendor Prefix' field on the Custom Application form (sys_app) control?",
+    "options": [
+      { "id": "A", "text": "The default vendor of new records created by the app." },
+      { "id": "B", "text": "The prefix used in the application's scope identifier (e.g., x_acme_) — typically a short, instance-unique vendor or org identifier." },
+      { "id": "C", "text": "The order in which the application appears in the navigator." },
+      { "id": "D", "text": "The license key for paid apps." }
+    ],
+    "correct": ["B"],
+    "rationale": "Vendor Prefix is the namespace anchor. Combined with the app's short name, it produces the scope identifier (x_<vendor>_<app>_) that prefixes every artifact the app creates. Choosing a stable vendor prefix early avoids painful renames later.",
+    "distractor_notes": {
+      "A": "Has nothing to do with vendor records on data tables.",
+      "C": "Navigator order is controlled by Application Menu order, not by the vendor prefix.",
+      "D": "Licensing is separate from scope identification."
+    },
+    "references": [
+      { "title": "Custom application record", "url": "https://www.servicenow.com/docs/r/zurich/application-development/c_CustomApplicationRecord.html" }
+    ],
+    "tags": ["sys_app", "vendor-prefix", "scope-naming"]
+  },
+  {
+    "id": "cad-dca-031",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Designing and Creating an Application",
+    "subdomain": "Data Model",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is a Dictionary Override?",
+    "options": [
+      { "id": "A", "text": "A mechanism on an extended (child) table to change selected dictionary attributes of an inherited field — for example, making a parent-defined field mandatory only on this child." },
+      { "id": "B", "text": "An admin's ability to bypass all field validations." },
+      { "id": "C", "text": "A way to translate field labels at runtime." },
+      { "id": "D", "text": "A property that disables the Dictionary entirely." }
+    ],
+    "correct": ["A"],
+    "rationale": "Dictionary Overrides let a child table specialize attributes (mandatory, default value, etc.) of an inherited field without touching the parent. That's how, for example, a custom Task child can require a field that's optional on Task itself.",
+    "distractor_notes": {
+      "B": "There's no admin 'skip validation' switch — validations are enforced by the platform.",
+      "C": "Translation lives in language and choice records, not dictionary overrides.",
+      "D": "The Dictionary can't be disabled — it's the platform's metadata backbone."
+    },
+    "references": [
+      { "title": "System dictionary", "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_SystemDictionary.html" }
+    ],
+    "tags": ["data-model", "dictionary-override", "table-extension"]
+  },
+  {
+    "id": "cad-dca-032",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Designing and Creating an Application",
+    "subdomain": "Modules",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A developer adds a new Module under the Loaner Tracking app. After saving, it doesn't appear in the navigator for users who have the correct role. What should they check first?",
+    "options": [
+      { "id": "A", "text": "Whether the module is Active and whether the user's role matches both the Module and (if restricted) the parent Application Menu." },
+      { "id": "B", "text": "Whether they paid the ServiceNow Module Activation fee." },
+      { "id": "C", "text": "Whether the user installed the ServiceNow mobile app." },
+      { "id": "D", "text": "Whether the development instance is older than 30 days." }
+    ],
+    "correct": ["A"],
+    "rationale": "Two common causes: the Module wasn't marked Active, or the visibility role doesn't match what the user actually has (and remember, both the menu and the module can carry role restrictions). Confirm Active = true and that the role on both records is satisfied.",
+    "distractor_notes": {
+      "B": "There's no per-module activation fee.",
+      "C": "Modules are visible in the desktop Application Navigator regardless of mobile install.",
+      "D": "Instance age has nothing to do with module visibility."
+    },
+    "references": [
+      { "title": "Application Manager", "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/application-manager/application-manager.html" }
+    ],
+    "tags": ["modules", "troubleshooting", "active"]
+  },
+  {
+    "id": "cad-dca-033",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Designing and Creating an Application",
+    "subdomain": "Data Model",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A new feature requires storing a list of accessories (cables, mice, headsets) per Loaner Request. Each request may have zero or many accessories, and accessories have their own attributes (asset tag, condition). What's the cleanest data model?",
+    "options": [
+      { "id": "A", "text": "Add 10 String columns to the Loaner Request table — accessory_1 through accessory_10." },
+      { "id": "B", "text": "Store the accessories as a comma-separated string on the Loaner Request record." },
+      { "id": "C", "text": "Create a Loaner Accessory child table with a Reference field pointing back to the Loaner Request. Each accessory becomes its own record, and the request shows them as a Related List." },
+      { "id": "D", "text": "Duplicate the Loaner Request record per accessory." }
+    ],
+    "correct": ["C"],
+    "rationale": "One-to-many relationships are modeled with a related table that holds a Reference back to the parent. The parent form shows them via a Related List. That's how you preserve each accessory's attributes, allow zero-to-many cardinality, and keep the data normalized.",
+    "distractor_notes": {
+      "A": "Fixed-width column patterns (accessory_1..10) cap cardinality and make queries painful.",
+      "B": "Comma-separated strings throw away structure — you can't filter, report, or attach attributes per accessory.",
+      "D": "Duplicating the parent breaks the meaning of the record and creates referential confusion."
+    },
+    "references": [
+      { "title": "Build the data model", "url": "https://www.servicenow.com/docs/r/zurich/application-development/build-data-model.html" },
+      { "title": "Tables and fields", "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_TablesAndFields.html" }
+    ],
+    "tags": ["data-model", "one-to-many", "related-list", "scenario"]
+  },
+  {
+    "id": "cad-dca-034",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Designing and Creating an Application",
+    "subdomain": "Custom App Record",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the purpose of the 'Dependencies' related list on the Custom Application record (sys_app)?",
+    "options": [
+      { "id": "A", "text": "It tracks the open work items assigned to the app's developer." },
+      { "id": "B", "text": "It records other applications or plugins this app requires to function so the platform can ensure they are present (and the correct version) when the app is installed elsewhere." },
+      { "id": "C", "text": "It logs every user who has opened the app." },
+      { "id": "D", "text": "It contains the app's billing history." }
+    ],
+    "correct": ["B"],
+    "rationale": "Dependencies declare which other apps/plugins the app needs at install time. The platform uses this to refuse install (or warn) when the target instance is missing a dependency, and to install missing plugins as part of the app's installation.",
+    "distractor_notes": {
+      "A": "App dependencies are about software, not assignments.",
+      "C": "Usage logs are stored elsewhere on the platform.",
+      "D": "Billing is not part of the sys_app record."
+    },
+    "references": [
+      { "title": "Custom application record", "url": "https://www.servicenow.com/docs/r/zurich/application-development/c_CustomApplicationRecord.html" }
+    ],
+    "tags": ["sys_app", "dependencies", "deployment"]
+  },
+  {
+    "id": "cad-dca-035",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Designing and Creating an Application",
+    "subdomain": "Application Scope",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A developer wants to inspect the records that belong to their custom app — every table, business rule, script include, UI policy, etc. Which is the most direct path?",
+    "options": [
+      { "id": "A", "text": "Run a global text search for the app's name." },
+      { "id": "B", "text": "Open the Custom Application record (sys_app) — it surfaces related lists for the app's artifacts (tables, scripts, UI, etc.) so the developer can see exactly what belongs to the application." },
+      { "id": "C", "text": "Check the instance's audit log." },
+      { "id": "D", "text": "Filter the sys_user table by application." }
+    ],
+    "correct": ["B"],
+    "rationale": "The sys_app record is the app's manifest. Open it and you get a structured view of every artifact (and every dependency) the app contains. That's the canonical inventory.",
+    "distractor_notes": {
+      "A": "Global text search is too broad and won't reliably surface every artifact.",
+      "C": "Audit logs show changes, not the current artifact inventory.",
+      "D": "sys_user is the people table — irrelevant to app inventory."
+    },
+    "references": [
+      { "title": "Custom application record", "url": "https://www.servicenow.com/docs/r/zurich/application-development/c_CustomApplicationRecord.html" }
+    ],
+    "tags": ["sys_app", "inventory", "artifacts"]
+  },
+  {
+    "id": "cad-dca-036",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Designing and Creating an Application",
+    "subdomain": "Platform Fit",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A business team asks you to add a 'real-time location tracking' feature to a custom app, polling every device's GPS every 5 seconds and storing each ping. The instance is shared with 30 other apps. What's the most responsible design response?",
+    "options": [
+      { "id": "A", "text": "Build it as specified — performance concerns are the platform team's problem." },
+      { "id": "B", "text": "Push back: 5-second high-volume telemetry across a shared instance will create write amplification and performance noise. Recommend an external time-series store for the high-frequency data and surface aggregated/summary records into ServiceNow at a lower cadence." },
+      { "id": "C", "text": "Build it but disable Business Rules and ACLs on the telemetry table to make writes faster." },
+      { "id": "D", "text": "Build it on the global scope so it's faster." }
+    ],
+    "correct": ["B"],
+    "rationale": "High-frequency telemetry is not a Now-Platform-shaped workload. A CAD-level developer should recognize the mismatch and propose a split architecture: heavy ingest goes to a purpose-built store; ServiceNow holds aggregates, alerts, and workflow.",
+    "distractor_notes": {
+      "A": "Shipping bad shape and blaming the platform team is not a defensible engineering decision.",
+      "C": "Disabling Business Rules and ACLs to chase throughput dismantles the platform's safety net. Don't.",
+      "D": "Scope doesn't change DB performance characteristics; this is a misconception."
+    },
+    "references": [
+      { "title": "Developing your application", "url": "https://www.servicenow.com/docs/r/zurich/application-development/developing-applications.html" }
+    ],
+    "tags": ["platform-fit", "performance", "architecture", "scenario"]
+  }
+]

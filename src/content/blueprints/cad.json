@@ -1,0 +1,16 @@
+{
+  "exam": "CAD",
+  "name": "Certified Application Developer",
+  "release": "Zurich",
+  "kb": "KB0011498",
+  "totalQuestions": 240,
+  "format_note": "Live exam is 60 questions / 90 min. GlideUp bank scales to 240 for practice depth.",
+  "domains": [
+    { "id": "designing-and-creating-an-application", "name": "Designing and Creating an Application", "weight": 15, "target": 36 },
+    { "id": "application-user-interface",            "name": "Application User Interface",            "weight": 20, "target": 48 },
+    { "id": "security-and-restricting-access",       "name": "Security and Restricting Access",       "weight": 20, "target": 48 },
+    { "id": "application-automation",                "name": "Application Automation",                "weight": 20, "target": 48 },
+    { "id": "working-with-external-data",            "name": "Working with External Data",            "weight": 10, "target": 24 },
+    { "id": "managing-applications",                 "name": "Managing Applications",                 "weight": 15, "target": 36 }
+  ]
+}
