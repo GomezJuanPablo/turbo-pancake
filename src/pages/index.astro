@@ -5,18 +5,24 @@ import CosmicHero from '../components/CosmicHero.astro';
 import StatCard from '../components/StatCard.astro';
 import { getEntry, getCollection } from 'astro:content';
 
-// CSA is the live exam; the others render as "coming soon" cards.
+// CSA and CAD are live; the others render as "coming soon" cards.
 const csaBlueprint = await getEntry('blueprints', 'csa');
+const cadBlueprint = await getEntry('blueprints', 'cad');
 const allQuestions = await getCollection('questions');
 
-// Flatten across exams (today: just CSA). Each entry is an array of question objects.
 const csaQuestions = allQuestions
   .filter((e) => e.id.startsWith('csa/'))
+  .flatMap((e) => e.data);
+const cadQuestions = allQuestions
+  .filter((e) => e.id.startsWith('cad/'))
   .flatMap((e) => e.data);
 
 const csaTarget = csaBlueprint!.data.totalQuestions;
 const csaAuthored = csaQuestions.length;
 const csaPct = csaTarget > 0 ? Math.round((csaAuthored / csaTarget) * 100) : 0;
+
+const cadTarget = cadBlueprint!.data.totalQuestions;
+const cadAuthored = cadQuestions.length;
 
 const exams = [
   {
@@ -31,11 +37,11 @@ const exams = [
   {
     code: 'CAD',
     name: 'Certified Application Developer',
-    description: 'Building applications on the Now Platform. Coming next.',
+    description: 'Building applications on the Now Platform.',
     href: '/cad/',
-    status: 'soon',
-    questions: 0,
-    target: 240,
+    status: 'live',
+    questions: cadAuthored,
+    target: cadTarget,
   },
   {
     code: 'CIS-ITSM',
@@ -76,8 +82,8 @@ const exams = [
   />
 
   <div class="stat-grid">
-    <StatCard label="Exams" value={`${exams.length}`} delta="CSA live" deltaTone="up" />
-    <StatCard label="CSA questions" value={`${csaAuthored}`} delta={csaAuthored >= csaTarget ? 'complete' : `${csaTarget - csaAuthored} to go`} deltaTone={csaAuthored >= csaTarget ? 'up' : 'neutral'} />
+    <StatCard label="Exams" value={`${exams.length}`} delta="CSA + CAD live" deltaTone="up" />
+    <StatCard label="Questions live" value={`${csaAuthored + cadAuthored}`} delta="across CSA + CAD" deltaTone="up" />
     <StatCard label="Doc-anchored" value="100%" delta="every question" deltaTone="up" />
   </div>
 

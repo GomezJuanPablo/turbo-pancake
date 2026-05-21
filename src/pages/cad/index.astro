@@ -1,0 +1,71 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import CosmicHero from '../../components/CosmicHero.astro';
+import StatCard from '../../components/StatCard.astro';
+import DomainCard from '../../components/DomainCard.astro';
+import { getEntry, getCollection } from 'astro:content';
+
+const blueprint = await getEntry('blueprints', 'cad');
+const allQuestions = await getCollection('questions');
+const cadEntries = allQuestions.filter((e) => e.id.startsWith('cad/'));
+const cadQuestions = cadEntries.flatMap((e) => e.data);
+
+const totalTarget = blueprint!.data.totalQuestions;
+const totalAuthored = cadQuestions.length;
+const heroPct = totalTarget > 0 ? Math.round((totalAuthored / totalTarget) * 100) : 0;
+
+const authoredByDomain = blueprint!.data.domains.map((d) => ({
+  ...d,
+  authored: cadQuestions.filter((q) => q.domain === d.name).length,
+}));
+---
+<BaseLayout
+  title="CAD Practice — GlideUp.net"
+  description="Practice the ServiceNow Certified Application Developer exam. 240 doc-anchored questions across all six blueprint domains."
+  activeNav="cad"
+>
+  <Breadcrumb crumbs={[
+    { label: 'Practice', href: '/' },
+    { label: 'CAD' },
+    { label: 'Dashboard' },
+  ]} />
+
+  <CosmicHero
+    title="Certified Application Developer"
+    subtitle={`${totalAuthored} of ${totalTarget} questions ready • Zurich release`}
+    progressPct={heroPct}
+    ctaLabel="Practice"
+    ctaHref="/cad/practice/"
+  />
+
+  <div class="stat-grid">
+    <StatCard label="Questions ready" value={`${totalAuthored}`} delta={totalAuthored >= totalTarget ? 'complete' : `${totalTarget - totalAuthored} to go`} deltaTone={totalAuthored >= totalTarget ? 'up' : 'neutral'} />
+    <StatCard label="Domains" value={`${blueprint!.data.domains.length}`} />
+    <StatCard label="Your accuracy" value="—" delta="answer some to see" deltaTone="neutral" />
+    <StatCard label="Best streak" value="0 days" />
+  </div>
+
+  <div class="tabs">
+    <span class="tab is-active">Overview</span>
+    <span class="tab" style="opacity:0.5;cursor:default;">History</span>
+    <span class="tab" style="opacity:0.5;cursor:default;">Blueprint</span>
+  </div>
+
+  <h2 style="font-size:16px;font-weight:600;margin-bottom:12px;">Domain mastery</h2>
+  <div class="card-grid">
+    {authoredByDomain.map((d) => (
+      <DomainCard
+        title={d.name}
+        weight={`${d.weight}%`}
+        answered={0}
+        total={d.target}
+      />
+    ))}
+  </div>
+
+  <p style="margin-top:24px;font-size:12px;color:var(--text-muted);">
+    Every question is anchored to <a href="https://docs.servicenow.com" target="_blank" rel="noopener">docs.servicenow.com</a>.
+    No dumps. No login. Your progress lives only in your browser.
+  </p>
+</BaseLayout>
