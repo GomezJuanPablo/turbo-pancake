@@ -6,6 +6,7 @@ import StatCard from '../../components/StatCard.astro';
 import DomainCard from '../../components/DomainCard.astro';
 import { getEntry, getCollection } from 'astro:content';
 
+const EXAM = 'CAD';
 const blueprint = await getEntry('blueprints', 'cad');
 const allQuestions = await getCollection('questions');
 const cadEntries = allQuestions.filter((e) => e.id.startsWith('cad/'));
@@ -18,6 +19,13 @@ const heroPct = totalTarget > 0 ? Math.round((totalAuthored / totalTarget) * 100
 const authoredByDomain = blueprint!.data.domains.map((d) => ({
   ...d,
   authored: cadQuestions.filter((q) => q.domain === d.name).length,
+}));
+
+const bankIndex = cadQuestions.map((q) => ({
+  id: q.id,
+  stem: q.stem,
+  domain: q.domain,
+  ref: q.references?.[0]?.url ?? null,
 }));
 ---
 <BaseLayout
@@ -42,30 +50,326 @@ const authoredByDomain = blueprint!.data.domains.map((d) => ({
   <div class="stat-grid">
     <StatCard label="Questions ready" value={`${totalAuthored}`} delta={totalAuthored >= totalTarget ? 'complete' : `${totalTarget - totalAuthored} to go`} deltaTone={totalAuthored >= totalTarget ? 'up' : 'neutral'} />
     <StatCard label="Domains" value={`${blueprint!.data.domains.length}`} />
-    <StatCard label="Your accuracy" value="—" delta="answer some to see" deltaTone="neutral" />
-    <StatCard label="Best streak" value="0 days" />
+    <StatCard label="Your accuracy" value="—" delta="answer some to see" deltaTone="neutral" data-stat="accuracy" />
+    <StatCard label="Best streak" value="0 days" data-stat="streak" />
   </div>
 
-  <div class="tabs">
-    <span class="tab is-active">Overview</span>
-    <span class="tab" style="opacity:0.5;cursor:default;">History</span>
-    <span class="tab" style="opacity:0.5;cursor:default;">Blueprint</span>
+  <div class="tabs" role="tablist" aria-label="Dashboard sections">
+    <button type="button" class="tab is-active" role="tab" aria-selected="true"  data-tab-btn="overview">Overview</button>
+    <button type="button" class="tab"           role="tab" aria-selected="false" data-tab-btn="history">History</button>
+    <button type="button" class="tab"           role="tab" aria-selected="false" data-tab-btn="blueprint">Blueprint</button>
   </div>
 
-  <h2 style="font-size:16px;font-weight:600;margin-bottom:12px;">Domain mastery</h2>
-  <div class="card-grid">
-    {authoredByDomain.map((d) => (
-      <DomainCard
-        title={d.name}
-        weight={`${d.weight}%`}
-        answered={0}
-        total={d.target}
-      />
-    ))}
-  </div>
+  <!-- ============= OVERVIEW ============= -->
+  <section data-tab-panel="overview">
+    <h2 style="font-size:16px;font-weight:600;margin-bottom:12px;">Domain mastery</h2>
+    <div class="card-grid" data-domain-grid>
+      {authoredByDomain.map((d) => (
+        <DomainCard
+          title={d.name}
+          weight={`${d.weight}%`}
+          answered={0}
+          total={d.target}
+        />
+      ))}
+    </div>
+  </section>
+
+  <!-- ============= HISTORY ============= -->
+  <section data-tab-panel="history" hidden>
+    <h2 style="font-size:16px;font-weight:600;margin-bottom:6px;">Recent answers</h2>
+    <p style="font-size:12px;color:var(--text-muted);margin-bottom:14px;">
+      Your last 50 answered questions on this exam. Stored only in your browser.
+    </p>
+    <div data-history-empty hidden>
+      <article class="card">
+        <p style="font-size:13px;color:var(--text-muted);margin:0;">
+          You haven't answered any CAD questions yet — open <a href="/cad/practice/">Practice</a> to begin.
+          The 🧌 will be encouraging.
+        </p>
+      </article>
+    </div>
+    <ul class="history-list" data-history-list></ul>
+  </section>
+
+  <!-- ============= BLUEPRINT ============= -->
+  <section data-tab-panel="blueprint" hidden>
+    <h2 style="font-size:16px;font-weight:600;margin-bottom:6px;">CAD blueprint</h2>
+    <p style="font-size:12px;color:var(--text-muted);margin-bottom:14px;">
+      Source: ServiceNow Learning <a href="https://learning.servicenow.com/lxp/en/credentials/certified-application-developer-mainline-exam-blueprint?id=kb_article_view&sysparm_article=KB0011498" target="_blank" rel="noopener">KB0011498</a>.
+      Question counts are weighted to the live exam's domain split.
+    </p>
+    <div class="card" style="padding:0;overflow:hidden;">
+      <table class="bp-table">
+        <thead>
+          <tr>
+            <th style="text-align:left;">Domain</th>
+            <th style="text-align:right;">Weight</th>
+            <th style="text-align:right;">In bank</th>
+            <th style="text-align:right;">Answered</th>
+            <th style="text-align:right;">Accuracy</th>
+          </tr>
+        </thead>
+        <tbody data-blueprint-body>
+          {authoredByDomain.map((d) => (
+            <tr data-bp-domain={d.name}>
+              <td>{d.name}</td>
+              <td style="text-align:right;">{d.weight}%</td>
+              <td style="text-align:right;">{d.authored} / {d.target}</td>
+              <td style="text-align:right;" data-bp-answered>0</td>
+              <td style="text-align:right;" data-bp-accuracy>—</td>
+            </tr>
+          ))}
+        </tbody>
+        <tfoot>
+          <tr>
+            <td><strong>Total</strong></td>
+            <td style="text-align:right;"><strong>100%</strong></td>
+            <td style="text-align:right;"><strong>{totalAuthored} / {totalTarget}</strong></td>
+            <td style="text-align:right;" data-bp-total-answered><strong>0</strong></td>
+            <td style="text-align:right;" data-bp-total-accuracy><strong>—</strong></td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </section>
 
   <p style="margin-top:24px;font-size:12px;color:var(--text-muted);">
     Every question is anchored to <a href="https://docs.servicenow.com" target="_blank" rel="noopener">docs.servicenow.com</a>.
     No dumps. No login. Your progress lives only in your browser.
   </p>
 </BaseLayout>
+
+<script
+  type="application/json"
+  id="glideup-bank-index"
+  set:html={JSON.stringify({ exam: EXAM, bank: bankIndex })}
+/>
+
+<script>
+  import { load, domainSummary } from '../../lib/progress.js';
+
+  const EXAM = 'CAD';
+  const bankIndex = JSON.parse(
+    document.getElementById('glideup-bank-index')?.textContent || '{"bank":[]}'
+  ).bank;
+  const byId = new Map(bankIndex.map((q) => [q.id, q]));
+
+  // ---------- Tab switching ----------
+  const tabButtons = document.querySelectorAll('[data-tab-btn]');
+  const tabPanels = document.querySelectorAll('[data-tab-panel]');
+  function showTab(name) {
+    for (const btn of tabButtons) {
+      const active = btn.dataset.tabBtn === name;
+      btn.classList.toggle('is-active', active);
+      btn.setAttribute('aria-selected', active ? 'true' : 'false');
+    }
+    for (const panel of tabPanels) {
+      panel.hidden = panel.dataset.tabPanel !== name;
+    }
+  }
+  for (const btn of tabButtons) {
+    btn.addEventListener('click', () => showTab(btn.dataset.tabBtn));
+  }
+
+  // ---------- Top-of-page stats ----------
+  function refreshStats() {
+    const state = load();
+    const byDom = state.byDomain || {};
+    let answered = 0, correct = 0;
+    for (const [k, v] of Object.entries(byDom)) {
+      if (!k.startsWith(EXAM + '::')) continue;
+      answered += v.answered || 0;
+      correct += v.correct || 0;
+    }
+    const accuracy = answered > 0 ? Math.round((correct / answered) * 100) : null;
+
+    const accCard = document.querySelector('[data-stat="accuracy"] .stat-card__value');
+    const accDelta = document.querySelector('[data-stat="accuracy"] .stat-card__delta');
+    if (accCard) accCard.textContent = accuracy === null ? '—' : `${accuracy}%`;
+    if (accDelta) accDelta.textContent = answered === 0
+      ? 'answer some to see'
+      : `${answered} answered`;
+
+    const streakCard = document.querySelector('[data-stat="streak"] .stat-card__value');
+    if (streakCard) {
+      const days = state?.streak?.count ?? 0;
+      streakCard.textContent = `${days} day${days === 1 ? '' : 's'}`;
+    }
+  }
+
+  // ---------- Domain cards (Overview) ----------
+  function refreshDomainCards() {
+    const cards = document.querySelectorAll('[data-domain-grid] .domain-card');
+    for (const card of cards) {
+      const title = card.querySelector('.domain-card__title')?.textContent?.trim();
+      if (!title) continue;
+      const totalText = card.querySelector('.domain-card__meta span')?.textContent || '';
+      const total = parseInt(totalText.split('/')[1], 10) || 0;
+      const sum = domainSummary(EXAM, title, total);
+
+      const fill = card.querySelector('.domain-card__progress-fill');
+      const pct = total > 0 ? Math.round((sum.answered / total) * 100) : 0;
+      if (fill) fill.style.width = `${pct}%`;
+      const bar = card.querySelector('.domain-card__progress');
+      if (bar) bar.setAttribute('aria-valuenow', String(pct));
+
+      const metaParts = card.querySelector('.domain-card__meta');
+      if (metaParts) {
+        metaParts.innerHTML = '';
+        const left = document.createElement('span');
+        left.textContent = `${sum.answered} / ${total} answered`;
+        metaParts.appendChild(left);
+        if (sum.answered > 0) {
+          const right = document.createElement('span');
+          right.textContent = `${sum.accuracy}% accuracy`;
+          metaParts.appendChild(right);
+        }
+      }
+
+      const tierEl = card.querySelector('.tier');
+      if (tierEl) {
+        tierEl.classList.remove('is-locked', 'is-bronze', 'is-silver', 'is-gold');
+        tierEl.classList.add(`is-${sum.tier}`);
+        tierEl.textContent = {
+          locked: 'Locked',
+          bronze: '🥉 Bronze',
+          silver: '🥈 Silver',
+          gold:   '🏆 Gold',
+        }[sum.tier];
+      }
+    }
+  }
+
+  // ---------- History panel ----------
+  function timeAgo(iso) {
+    if (!iso) return '';
+    const ms = Date.now() - Date.parse(iso);
+    const s = Math.floor(ms / 1000);
+    if (s < 60) return `${s}s ago`;
+    const m = Math.floor(s / 60);
+    if (m < 60) return `${m}m ago`;
+    const h = Math.floor(m / 60);
+    if (h < 24) return `${h}h ago`;
+    const d = Math.floor(h / 24);
+    return `${d}d ago`;
+  }
+  function escapeHtml(s) {
+    return String(s)
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+  function renderHistory() {
+    const state = load();
+    const byQ = state.byQuestion || {};
+    const rows = Object.entries(byQ)
+      .filter(([id]) => byId.has(id))
+      .map(([id, rec]) => ({ id, ...rec, meta: byId.get(id) }))
+      .filter((r) => r.lastAt)
+      .sort((a, b) => Date.parse(b.lastAt) - Date.parse(a.lastAt))
+      .slice(0, 50);
+
+    const list = document.querySelector('[data-history-list]');
+    const empty = document.querySelector('[data-history-empty]');
+    if (!list || !empty) return;
+
+    if (rows.length === 0) {
+      empty.hidden = false;
+      list.innerHTML = '';
+      return;
+    }
+    empty.hidden = true;
+    list.innerHTML = rows.map((r) => {
+      const verdict = r.correct
+        ? '<span class="hist__verdict hist__verdict--ok">✓ Correct</span>'
+        : '<span class="hist__verdict hist__verdict--bad">✗ Incorrect</span>';
+      const ref = r.meta.ref
+        ? `<a class="hist__ref" href="${escapeHtml(r.meta.ref)}" target="_blank" rel="noopener">Docs ↗</a>`
+        : '';
+      return `
+        <li class="hist">
+          <div class="hist__head">
+            ${verdict}
+            <span class="hist__domain">${escapeHtml(r.meta.domain || '')}</span>
+            <span class="hist__when">${escapeHtml(timeAgo(r.lastAt))}</span>
+          </div>
+          <div class="hist__stem">${escapeHtml(r.meta.stem || r.id)}</div>
+          <div class="hist__foot">
+            <span class="hist__id">${escapeHtml(r.id)}</span>
+            ${r.attempts > 1 ? `<span class="hist__attempts">${r.attempts} attempts</span>` : ''}
+            ${ref}
+          </div>
+        </li>
+      `;
+    }).join('');
+  }
+
+  // ---------- Blueprint panel ----------
+  function renderBlueprint() {
+    const tbody = document.querySelector('[data-blueprint-body]');
+    if (!tbody) return;
+    let totalAnswered = 0, totalCorrect = 0;
+    for (const tr of tbody.querySelectorAll('tr')) {
+      const name = tr.dataset.bpDomain;
+      const totalText = tr.children[2].textContent || '';
+      const total = parseInt(totalText.split('/')[1], 10) || 0;
+      const sum = domainSummary(EXAM, name, total);
+      tr.querySelector('[data-bp-answered]').textContent = String(sum.answered);
+      tr.querySelector('[data-bp-accuracy]').textContent = sum.answered === 0 ? '—' : `${sum.accuracy}%`;
+      totalAnswered += sum.answered;
+      totalCorrect += sum.correct;
+    }
+    const totA = document.querySelector('[data-bp-total-answered]');
+    const totAcc = document.querySelector('[data-bp-total-accuracy]');
+    if (totA) totA.innerHTML = `<strong>${totalAnswered}</strong>`;
+    if (totAcc) {
+      const pct = totalAnswered > 0 ? Math.round((totalCorrect / totalAnswered) * 100) : null;
+      totAcc.innerHTML = `<strong>${pct === null ? '—' : pct + '%'}</strong>`;
+    }
+  }
+
+  refreshStats();
+  refreshDomainCards();
+  renderHistory();
+  renderBlueprint();
+</script>
+
+<style>
+  .tab { font: inherit; cursor: pointer; }
+
+  .history-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
+  .hist {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 12px 14px;
+    box-shadow: var(--shadow-sm);
+  }
+  .hist__head {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 11px; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.05em;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+  }
+  .hist__verdict { padding: 2px 8px; border-radius: 999px; font-size: 11px; }
+  .hist__verdict--ok  { background: rgba(22,167,92,0.10);  color: var(--success); }
+  .hist__verdict--bad { background: rgba(230,57,70,0.08); color: var(--rose); }
+  .hist__domain { font-weight: 500; }
+  .hist__when { margin-left: auto; text-transform: none; letter-spacing: 0; font-weight: 400; }
+  .hist__stem { font-size: 13px; color: var(--text); line-height: 1.45; margin-bottom: 6px; }
+  .hist__foot { display: flex; gap: 12px; font-size: 11px; color: var(--text-dim); align-items: center; }
+  .hist__id { font-family: var(--font-mono); }
+  .hist__ref { margin-left: auto; color: var(--primary); }
+
+  .bp-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .bp-table th, .bp-table td { padding: 10px 14px; border-bottom: 1px solid var(--border); }
+  .bp-table thead th {
+    background: var(--bg);
+    font-size: 11px; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.06em;
+    color: var(--text-muted);
+  }
+  .bp-table tbody tr:last-child td { border-bottom: 1px solid var(--border); }
+  .bp-table tfoot td { background: var(--bg); font-size: 13px; }
+</style>

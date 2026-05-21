@@ -4,12 +4,13 @@ interface Props {
   value: string | number;
   delta?: string;
   deltaTone?: 'up' | 'down' | 'neutral';
+  [key: `data-${string}`]: string | undefined;
 }
-const { label, value, delta, deltaTone = 'up' } = Astro.props;
+const { label, value, delta, deltaTone = 'up', ...rest } = Astro.props as any;
 const deltaClass = deltaTone === 'down' ? 'is-down'
                  : deltaTone === 'neutral' ? 'is-neutral' : '';
 ---
-<div class="stat-card">
+<div class="stat-card" {...rest}>
   <div class="stat-card__label">{label}</div>
   <div class="stat-card__value">{value}</div>
   {delta && <div class={`stat-card__delta ${deltaClass}`}>{delta}</div>}
