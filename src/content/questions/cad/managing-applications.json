@@ -9,12 +9,26 @@
     "type": "single_select",
     "stem": "What are the typical mechanisms for installing a custom or third-party application on a ServiceNow instance?",
     "options": [
-      { "id": "A", "text": "ServiceNow Store (purchasable / free certified apps), the developer / company's private application repository, and Update Sets (for non-Store distribution between owned instances)." },
-      { "id": "B", "text": "Only ServiceNow Support can install apps." },
-      { "id": "C", "text": "By copy-pasting JavaScript into the console." },
-      { "id": "D", "text": "By emailing the app's sys_app sys_id to ServiceNow." }
+      {
+        "id": "A",
+        "text": "ServiceNow Store (purchasable / free certified apps), the developer / company's private application repository, and Update Sets (for non-Store distribution between owned instances)."
+      },
+      {
+        "id": "B",
+        "text": "Only ServiceNow Support can install apps."
+      },
+      {
+        "id": "C",
+        "text": "By copy-pasting JavaScript into the console."
+      },
+      {
+        "id": "D",
+        "text": "By emailing the app's sys_app sys_id to ServiceNow."
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "Three common install paths: ServiceNow Store (the marketplace), an internal/private repo (App Manager → company's apps), and Update Set transfers for direct between-instance moves. The right choice depends on audience and how you distribute.",
     "distractor_notes": {
       "B": "Customers install apps themselves.",
@@ -22,9 +36,16 @@
       "D": "Not a real workflow."
     },
     "references": [
-      { "title": "Application Manager", "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/application-manager/application-manager.html" }
+      {
+        "title": "Application Manager",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/application-manager/application-manager.html"
+      }
     ],
-    "tags": ["installation", "store", "repository"]
+    "tags": [
+      "installation",
+      "store",
+      "repository"
+    ]
   },
   {
     "id": "cad-mgr-002",
@@ -36,12 +57,26 @@
     "type": "single_select",
     "stem": "What is the ServiceNow Store?",
     "options": [
-      { "id": "A", "text": "The marketplace for certified ServiceNow applications — both free and paid — that customers can install from their instance's App Manager. Apps in the Store have passed ServiceNow's certification process." },
-      { "id": "B", "text": "A shopping mall in Santa Clara." },
-      { "id": "C", "text": "An ACL." },
-      { "id": "D", "text": "A scheduled job." }
+      {
+        "id": "A",
+        "text": "The marketplace for certified ServiceNow applications — both free and paid — that customers can install from their instance's App Manager. Apps in the Store have passed ServiceNow's certification process."
+      },
+      {
+        "id": "B",
+        "text": "A shopping mall in Santa Clara."
+      },
+      {
+        "id": "C",
+        "text": "An ACL."
+      },
+      {
+        "id": "D",
+        "text": "A scheduled job."
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "ServiceNow Store is the curated marketplace. Listed apps have passed certification (security, quality, packaging). Customers browse and install through their instance's App Manager.",
     "distractor_notes": {
       "B": "Not a physical place.",
@@ -49,9 +84,16 @@
       "D": "Not a scheduled job."
     },
     "references": [
-      { "title": "Application Manager", "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/application-manager/application-manager.html" }
+      {
+        "title": "Application Manager",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/application-manager/application-manager.html"
+      }
     ],
-    "tags": ["store", "marketplace", "certified"]
+    "tags": [
+      "store",
+      "marketplace",
+      "certified"
+    ]
   },
   {
     "id": "cad-mgr-003",
@@ -63,12 +105,26 @@
     "type": "single_select",
     "stem": "On the Custom Application record, what does the Version field control?",
     "options": [
-      { "id": "A", "text": "The version of the application — used by the platform during install/upgrade to determine whether an incoming version is newer, the same, or older than what's currently installed. Bump the version with each release." },
-      { "id": "B", "text": "The number of users licensed to use the app." },
-      { "id": "C", "text": "The instance's ServiceNow release version." },
-      { "id": "D", "text": "The Java runtime version." }
+      {
+        "id": "A",
+        "text": "The version of the application — used by the platform during install/upgrade to determine whether an incoming version is newer, the same, or older than what's currently installed. Bump the version with each release."
+      },
+      {
+        "id": "B",
+        "text": "The number of users licensed to use the app."
+      },
+      {
+        "id": "C",
+        "text": "The instance's ServiceNow release version."
+      },
+      {
+        "id": "D",
+        "text": "The Java runtime version."
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "Version drives install/upgrade decisions. The platform compares incoming-app version with installed version; if newer, it upgrades; if same, it can either skip or reinstall depending on options. Bump it every release so users get upgrades cleanly.",
     "distractor_notes": {
       "B": "Licensing is separate.",
@@ -76,9 +132,15 @@
       "D": "Java runtime is unrelated."
     },
     "references": [
-      { "title": "Custom application record", "url": "https://www.servicenow.com/docs/r/zurich/application-development/c_CustomApplicationRecord.html" }
+      {
+        "title": "Custom application record",
+        "url": "https://www.servicenow.com/docs/r/zurich/application-development/c_CustomApplicationRecord.html"
+      }
     ],
-    "tags": ["version", "upgrade"]
+    "tags": [
+      "version",
+      "upgrade"
+    ]
   },
   {
     "id": "cad-mgr-004",
@@ -90,12 +152,26 @@
     "type": "single_select",
     "stem": "Your custom app depends on the 'Customer Service Management' plugin. A customer tries to install your app on an instance that doesn't have CSM activated. What's the expected behavior, and the right design choice?",
     "options": [
-      { "id": "A", "text": "The app installs normally and silently fails at runtime when CSM features are touched." },
-      { "id": "B", "text": "Declare the dependency on the sys_app record's Dependencies related list. At install time, the platform checks for the dependency (activates it or refuses to install with a clear message) — so the app never lands on an instance that can't support it." },
-      { "id": "C", "text": "Email customers asking if they have CSM." },
-      { "id": "D", "text": "Skip CSM features for those installs without warning the customer." }
+      {
+        "id": "A",
+        "text": "The app installs normally and silently fails at runtime when CSM features are touched."
+      },
+      {
+        "id": "B",
+        "text": "Declare the dependency on the sys_app record's Dependencies related list. At install time, the platform checks for the dependency (activates it or refuses to install with a clear message) — so the app never lands on an instance that can't support it."
+      },
+      {
+        "id": "C",
+        "text": "Email customers asking if they have CSM."
+      },
+      {
+        "id": "D",
+        "text": "Skip CSM features for those installs without warning the customer."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "Declared dependencies = explicit install-time checks. The platform either activates the dependency or refuses to install with a meaningful message. Silent runtime failure is the worst outcome and exactly what dependency metadata prevents.",
     "distractor_notes": {
       "A": "Silent runtime failure isn't acceptable.",
@@ -103,9 +179,16 @@
       "D": "Silently skipping breaks the customer's expectations."
     },
     "references": [
-      { "title": "Custom application record", "url": "https://www.servicenow.com/docs/r/zurich/application-development/c_CustomApplicationRecord.html" }
+      {
+        "title": "Custom application record",
+        "url": "https://www.servicenow.com/docs/r/zurich/application-development/c_CustomApplicationRecord.html"
+      }
     ],
-    "tags": ["dependencies", "install-time", "design"]
+    "tags": [
+      "dependencies",
+      "install-time",
+      "design"
+    ]
   },
   {
     "id": "cad-mgr-005",
@@ -117,12 +200,26 @@
     "type": "single_select",
     "stem": "What does 'publish an application' mean in ServiceNow?",
     "options": [
-      { "id": "A", "text": "Package the current state of the application (with a specific version) into a deployable artifact — either to an Update Set, your company's app repository, or the ServiceNow Store. Publishing freezes a release version that other instances can install." },
-      { "id": "B", "text": "Print the app's source code." },
-      { "id": "C", "text": "Email the app to ServiceNow Support." },
-      { "id": "D", "text": "Delete the application." }
+      {
+        "id": "A",
+        "text": "Package the current state of the application (with a specific version) into a deployable artifact — either to an Update Set, your company's app repository, or the ServiceNow Store. Publishing freezes a release version that other instances can install."
+      },
+      {
+        "id": "B",
+        "text": "Print the app's source code."
+      },
+      {
+        "id": "C",
+        "text": "Email the app to ServiceNow Support."
+      },
+      {
+        "id": "D",
+        "text": "Delete the application."
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "Publishing captures the app's current state as a versioned release artifact. The artifact is what target instances install. From there, you bump the source app's version for the next release and start the next cycle.",
     "distractor_notes": {
       "B": "Not printing.",
@@ -130,9 +227,15 @@
       "D": "Not deletion."
     },
     "references": [
-      { "title": "Custom application record", "url": "https://www.servicenow.com/docs/r/zurich/application-development/c_CustomApplicationRecord.html" }
+      {
+        "title": "Custom application record",
+        "url": "https://www.servicenow.com/docs/r/zurich/application-development/c_CustomApplicationRecord.html"
+      }
     ],
-    "tags": ["publishing", "release"]
+    "tags": [
+      "publishing",
+      "release"
+    ]
   },
   {
     "id": "cad-mgr-006",
@@ -142,14 +245,28 @@
     "subdomain": "Update Sets",
     "difficulty": "application",
     "type": "single_select",
-    "stem": "A developer wants to ship their custom app to a customer's instance, but the customer isn't on the ServiceNow Store and won't be. The supported workflow is:",
+    "stem": "A developer wants to ship their custom app to a customer's instance, but the customer isn't on the ServiceNow Store and won't be. What is the supported workflow?",
     "options": [
-      { "id": "A", "text": "Refuse to deliver." },
-      { "id": "B", "text": "Publish the app to an Update Set (Publish to Update Set), export the Update Set XML, the customer Retrieves and Commits it on their instance. The app installs as if from a private channel — no Store required." },
-      { "id": "C", "text": "Hand-build every table on the customer's instance." },
-      { "id": "D", "text": "Use a USB drive to copy files between instances." }
+      {
+        "id": "A",
+        "text": "Refuse to deliver."
+      },
+      {
+        "id": "B",
+        "text": "Publish the app to an Update Set (Publish to Update Set), export the Update Set XML, the customer Retrieves and Commits it on their instance. The app installs as if from a private channel — no Store required."
+      },
+      {
+        "id": "C",
+        "text": "Hand-build every table on the customer's instance."
+      },
+      {
+        "id": "D",
+        "text": "Use a USB drive to copy files between instances."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "Publish-to-Update-Set + customer Retrieve/Commit is the off-Store distribution path. Works fine for one-to-one delivery or internal distribution where the Store isn't appropriate.",
     "distractor_notes": {
       "A": "Refusing isn't a workflow.",
@@ -157,9 +274,16 @@
       "D": "Not a platform pattern."
     },
     "references": [
-      { "title": "Publish application to update set", "url": "https://www.servicenow.com/docs/r/zurich/application-development/system-update-sets/system-update-sets.html" }
+      {
+        "title": "Publish application to update set",
+        "url": "https://www.servicenow.com/docs/r/zurich/application-development/system-update-sets/system-update-sets.html"
+      }
     ],
-    "tags": ["update-sets", "distribution", "off-store"]
+    "tags": [
+      "update-sets",
+      "distribution",
+      "off-store"
+    ]
   },
   {
     "id": "cad-mgr-007",
@@ -171,12 +295,26 @@
     "type": "single_select",
     "stem": "A customer wants to uninstall a custom app. They click Uninstall in App Manager. What's true about the result?",
     "options": [
-      { "id": "A", "text": "Uninstall removes the application's artifacts (tables, scripts, UI, etc.) but may NOT automatically remove data created by the app (record rows). Plan for data retention/migration before uninstalling; once tables are dropped, the data is gone." },
-      { "id": "B", "text": "Uninstall is reversible — click Reinstall and the data comes back." },
-      { "id": "C", "text": "Uninstall has no effect at all." },
-      { "id": "D", "text": "Uninstall requires an Anthropic license." }
+      {
+        "id": "A",
+        "text": "Uninstall removes the application's artifacts (tables, scripts, UI, etc.) but may NOT automatically remove data created by the app (record rows). Plan for data retention/migration before uninstalling; once tables are dropped, the data is gone."
+      },
+      {
+        "id": "B",
+        "text": "Uninstall is reversible — click Reinstall and the data comes back."
+      },
+      {
+        "id": "C",
+        "text": "Uninstall has no effect at all."
+      },
+      {
+        "id": "D",
+        "text": "Uninstall requires an Anthropic license."
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "Uninstall drops the app's artifacts and any tables they own. The records living in those tables go with them. Plan a data export or migration before uninstalling. (Some apps offer 'soft' uninstalls that leave data — read the app's docs first.)",
     "distractor_notes": {
       "B": "Reinstall doesn't restore dropped data.",
@@ -184,9 +322,16 @@
       "D": "Anthropic has nothing to do with ServiceNow licensing."
     },
     "references": [
-      { "title": "Application Manager", "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/application-manager/application-manager.html" }
+      {
+        "title": "Application Manager",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/application-manager/application-manager.html"
+      }
     ],
-    "tags": ["uninstall", "data-loss", "scenario"]
+    "tags": [
+      "uninstall",
+      "data-loss",
+      "scenario"
+    ]
   },
   {
     "id": "cad-mgr-008",
@@ -198,12 +343,26 @@
     "type": "single_select",
     "stem": "What is App Engine Management Center (AEMC)?",
     "options": [
-      { "id": "A", "text": "A centralized admin console for managing custom apps across an organization — visibility into installed apps, versions, environments, deployment status, and lifecycle." },
-      { "id": "B", "text": "An IDE for writing scripts." },
-      { "id": "C", "text": "A type of UI Action." },
-      { "id": "D", "text": "A user role." }
+      {
+        "id": "A",
+        "text": "A centralized admin console for managing custom apps across an organization — visibility into installed apps, versions, environments, deployment status, and lifecycle."
+      },
+      {
+        "id": "B",
+        "text": "An IDE for writing scripts."
+      },
+      {
+        "id": "C",
+        "text": "A type of UI Action."
+      },
+      {
+        "id": "D",
+        "text": "A user role."
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "AEMC is the org-level app management view — installed apps, where they're deployed, what versions, lifecycle status. Useful when an organization has many custom apps in flight across many instances.",
     "distractor_notes": {
       "B": "AEMC isn't the IDE.",
@@ -211,9 +370,15 @@
       "D": "Not a role."
     },
     "references": [
-      { "title": "Application Manager", "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/application-manager/application-manager.html" }
+      {
+        "title": "Application Manager",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/application-manager/application-manager.html"
+      }
     ],
-    "tags": ["aemc", "app-management"]
+    "tags": [
+      "aemc",
+      "app-management"
+    ]
   },
   {
     "id": "cad-mgr-009",
@@ -225,12 +390,26 @@
     "type": "single_select",
     "stem": "When the platform installs a NEW version of an app on an instance that already has an older version, what happens?",
     "options": [
-      { "id": "A", "text": "Nothing — the older version stays, the new install is ignored." },
-      { "id": "B", "text": "The platform performs an upgrade: applies the differences between versions to the existing artifacts, runs any data-fix-up scripts the app declares, and updates the installed version on sys_app. Existing data is preserved." },
-      { "id": "C", "text": "The platform refuses to install anything." },
-      { "id": "D", "text": "Both versions install side-by-side." }
+      {
+        "id": "A",
+        "text": "Nothing — the older version stays, the new install is ignored."
+      },
+      {
+        "id": "B",
+        "text": "The platform performs an upgrade: applies the differences between versions to the existing artifacts, runs any data-fix-up scripts the app declares, and updates the installed version on sys_app. Existing data is preserved."
+      },
+      {
+        "id": "C",
+        "text": "The platform refuses to install anything."
+      },
+      {
+        "id": "D",
+        "text": "Both versions install side-by-side."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "Newer-version installs are upgrades. The platform diffs and applies. Data on existing app tables is preserved. (You can also script upgrade-specific logic if data needs to be migrated between schema versions.)",
     "distractor_notes": {
       "A": "Newer versions install.",
@@ -238,9 +417,15 @@
       "D": "Apps don't run multiple versions side-by-side."
     },
     "references": [
-      { "title": "Custom application record", "url": "https://www.servicenow.com/docs/r/zurich/application-development/c_CustomApplicationRecord.html" }
+      {
+        "title": "Custom application record",
+        "url": "https://www.servicenow.com/docs/r/zurich/application-development/c_CustomApplicationRecord.html"
+      }
     ],
-    "tags": ["upgrade", "versioning"]
+    "tags": [
+      "upgrade",
+      "versioning"
+    ]
   },
   {
     "id": "cad-mgr-010",
@@ -250,14 +435,28 @@
     "subdomain": "Application Repository",
     "difficulty": "application",
     "type": "single_select",
-    "stem": "Your company maintains its own private library of internal apps that should NOT appear in the public ServiceNow Store. The right distribution mechanism is:",
+    "stem": "Your company maintains its own private library of internal apps that should NOT appear in the public ServiceNow Store. What is the right distribution mechanism?",
     "options": [
-      { "id": "A", "text": "Publish to the company's private application repository (via the App Manager 'Company applications' channel). Internal instances see and install from there; the public Store doesn't list them." },
-      { "id": "B", "text": "Upload them to GitHub publicly." },
-      { "id": "C", "text": "Email .zip files to every administrator." },
-      { "id": "D", "text": "Refuse to ship internal apps." }
+      {
+        "id": "A",
+        "text": "Publish to the company's private application repository (via the App Manager 'Company applications' channel). Internal instances see and install from there; the public Store doesn't list them."
+      },
+      {
+        "id": "B",
+        "text": "Upload them to GitHub publicly."
+      },
+      {
+        "id": "C",
+        "text": "Email .zip files to every administrator."
+      },
+      {
+        "id": "D",
+        "text": "Refuse to ship internal apps."
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "Company applications give internal-only distribution. Instances belonging to your organization see them in App Manager; the public Store doesn't list them. The right channel for internal-only apps.",
     "distractor_notes": {
       "B": "Public GitHub leaks internal apps.",
@@ -265,9 +464,15 @@
       "D": "Internal apps are common and supported."
     },
     "references": [
-      { "title": "Application Manager", "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/application-manager/application-manager.html" }
+      {
+        "title": "Application Manager",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/application-manager/application-manager.html"
+      }
     ],
-    "tags": ["company-applications", "private-repo"]
+    "tags": [
+      "company-applications",
+      "private-repo"
+    ]
   },
   {
     "id": "cad-mgr-011",
@@ -279,12 +484,26 @@
     "type": "single_select",
     "stem": "A developer is using semantic versioning (MAJOR.MINOR.PATCH). For an internal-only bug fix that doesn't change the schema or add features, which version bump is appropriate?",
     "options": [
-      { "id": "A", "text": "Bump MAJOR." },
-      { "id": "B", "text": "Bump PATCH (e.g., 1.4.7 → 1.4.8) — small, backwards-compatible bug fixes. MINOR for backwards-compatible features; MAJOR for breaking changes." },
-      { "id": "C", "text": "Don't bump anything." },
-      { "id": "D", "text": "Bump MAJOR every release regardless." }
+      {
+        "id": "A",
+        "text": "Bump MAJOR."
+      },
+      {
+        "id": "B",
+        "text": "Bump PATCH (e.g., 1.4.7 → 1.4.8) — small, backwards-compatible bug fixes. MINOR for backwards-compatible features; MAJOR for breaking changes."
+      },
+      {
+        "id": "C",
+        "text": "Don't bump anything."
+      },
+      {
+        "id": "D",
+        "text": "Bump MAJOR every release regardless."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "SemVer convention: PATCH for bug fixes, MINOR for backwards-compatible features, MAJOR for breaking. Following the convention makes upgrade decisions easier for downstream consumers.",
     "distractor_notes": {
       "A": "MAJOR signals breaking changes — overkill for a fix.",
@@ -292,9 +511,15 @@
       "D": "Bumping MAJOR every time turns versions into noise."
     },
     "references": [
-      { "title": "Custom application record", "url": "https://www.servicenow.com/docs/r/zurich/application-development/c_CustomApplicationRecord.html" }
+      {
+        "title": "Custom application record",
+        "url": "https://www.servicenow.com/docs/r/zurich/application-development/c_CustomApplicationRecord.html"
+      }
     ],
-    "tags": ["versioning", "semver"]
+    "tags": [
+      "versioning",
+      "semver"
+    ]
   },
   {
     "id": "cad-mgr-012",
@@ -304,14 +529,28 @@
     "subdomain": "App Lifecycle",
     "difficulty": "scenario",
     "type": "single_select",
-    "stem": "A team's release process is: developer commits to update set on Dev → manually transfers to Test → manually transfers to Prod. Releases take 2 days of clicking and frequently miss artifacts. The right improvement is:",
+    "stem": "A team's release process is: developer commits to update set on Dev → manually transfers to Test → manually transfers to Prod. Releases take 2 days of clicking and frequently miss artifacts. What is the right improvement?",
     "options": [
-      { "id": "A", "text": "Hire more clickers." },
-      { "id": "B", "text": "Treat the app as a publishable artifact: publish a versioned release to an Update Set (or repository), then retrieve+commit on each target instance in a consistent sequence. Document the release checklist; consider automating retrieves with the platform's APIs or using AEMC for deployment orchestration." },
-      { "id": "C", "text": "Skip Test." },
-      { "id": "D", "text": "Develop directly in Prod." }
+      {
+        "id": "A",
+        "text": "Hire more clickers."
+      },
+      {
+        "id": "B",
+        "text": "Treat the app as a publishable artifact: publish a versioned release to an Update Set (or repository), then retrieve+commit on each target instance in a consistent sequence. Document the release checklist; consider automating retrieves with the platform's APIs or using AEMC for deployment orchestration."
+      },
+      {
+        "id": "C",
+        "text": "Skip Test."
+      },
+      {
+        "id": "D",
+        "text": "Develop directly in Prod."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "Mature release pipelines treat the app as an artifact, version it, and move the same artifact through environments. AEMC and platform APIs make this more automatable. Skipping environments or developing in prod is how disasters happen.",
     "distractor_notes": {
       "A": "More clickers isn't a process improvement.",
@@ -319,9 +558,16 @@
       "D": "Developing in Prod is unsafe."
     },
     "references": [
-      { "title": "Application Manager", "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/application-manager/application-manager.html" }
+      {
+        "title": "Application Manager",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/application-manager/application-manager.html"
+      }
     ],
-    "tags": ["release-pipeline", "lifecycle", "scenario"]
+    "tags": [
+      "release-pipeline",
+      "lifecycle",
+      "scenario"
+    ]
   },
   {
     "id": "cad-mgr-013",
@@ -333,12 +579,26 @@
     "type": "single_select",
     "stem": "What is Team Development in ServiceNow?",
     "options": [
-      { "id": "A", "text": "A platform feature that lets multiple developers collaborate on an app across multiple development instances — pushing, pulling, comparing record versions between parent/child instances, with code review built in. Think 'git for ServiceNow records' (at a high level)." },
-      { "id": "B", "text": "A user role." },
-      { "id": "C", "text": "An ACL." },
-      { "id": "D", "text": "An external Slack channel." }
+      {
+        "id": "A",
+        "text": "A platform feature that lets multiple developers collaborate on an app across multiple development instances — pushing, pulling, comparing record versions between parent/child instances, with code review built in. Think 'git for ServiceNow records' (at a high level)."
+      },
+      {
+        "id": "B",
+        "text": "A user role."
+      },
+      {
+        "id": "C",
+        "text": "An ACL."
+      },
+      {
+        "id": "D",
+        "text": "An external Slack channel."
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "Team Development is the platform's built-in source-control-style collaboration tool. Multiple dev instances coordinate via a parent instance; developers push/pull changes, compare versions, and review.",
     "distractor_notes": {
       "B": "Not a role.",
@@ -346,9 +606,15 @@
       "D": "Not external chat."
     },
     "references": [
-      { "title": "Application Manager", "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/application-manager/application-manager.html" }
+      {
+        "title": "Application Manager",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/application-manager/application-manager.html"
+      }
     ],
-    "tags": ["team-development", "collaboration"]
+    "tags": [
+      "team-development",
+      "collaboration"
+    ]
   },
   {
     "id": "cad-mgr-014",
@@ -360,12 +626,26 @@
     "type": "single_select",
     "stem": "In Team Development, what does the platform use to back its versioning system?",
     "options": [
-      { "id": "A", "text": "Git as the underlying VCS." },
-      { "id": "B", "text": "An internal ServiceNow version-tracking mechanism (sys_update_version, etc.) — Team Development is its own system on the platform, not Git. ServiceNow ALSO offers separate Git integration for source-control-style workflows alongside Team Development." },
-      { "id": "C", "text": "Subversion (SVN)." },
-      { "id": "D", "text": "A flat file in the filesystem." }
+      {
+        "id": "A",
+        "text": "Git as the underlying VCS."
+      },
+      {
+        "id": "B",
+        "text": "An internal ServiceNow version-tracking mechanism (sys_update_version, etc.) — Team Development is its own system on the platform, not Git. ServiceNow ALSO offers separate Git integration for source-control-style workflows alongside Team Development."
+      },
+      {
+        "id": "C",
+        "text": "Subversion (SVN)."
+      },
+      {
+        "id": "D",
+        "text": "A flat file in the filesystem."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "Team Development is platform-native versioning (not Git). The platform separately offers Git integration for source-control-style workflows that DO use Git. Don't confuse the two — they solve related but different problems. (A common CAD exam trick.)",
     "distractor_notes": {
       "A": "Team Development is NOT Git-backed. Git is a separate, complementary integration.",
@@ -373,9 +653,16 @@
       "D": "Not flat files."
     },
     "references": [
-      { "title": "Application Manager", "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/application-manager/application-manager.html" }
+      {
+        "title": "Application Manager",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/application-manager/application-manager.html"
+      }
     ],
-    "tags": ["team-development", "vs-git", "internals"]
+    "tags": [
+      "team-development",
+      "vs-git",
+      "internals"
+    ]
   },
   {
     "id": "cad-mgr-015",
@@ -385,14 +672,28 @@
     "subdomain": "Team Development",
     "difficulty": "application",
     "type": "single_select",
-    "stem": "Five developers are working on the same app across five development instances. Team Development is configured. Developer A wants to publish her finished changes so Developer B can pull them. The workflow is:",
+    "stem": "Five developers are working on the same app across five development instances. Team Development is configured. Developer A wants to publish her finished changes so Developer B can pull them. What is the workflow?",
     "options": [
-      { "id": "A", "text": "Developer A emails her Update Set XML to Developer B." },
-      { "id": "B", "text": "Developer A pushes her changes (record versions) up to the parent instance via Team Development; Developer B pulls them down from the parent into B's instance. The parent acts as the shared baseline." },
-      { "id": "C", "text": "Developer A asks an admin to copy records by hand." },
-      { "id": "D", "text": "Both developers stop working until Friday." }
+      {
+        "id": "A",
+        "text": "Developer A emails her Update Set XML to Developer B."
+      },
+      {
+        "id": "B",
+        "text": "Developer A pushes her changes (record versions) up to the parent instance via Team Development; Developer B pulls them down from the parent into B's instance. The parent acts as the shared baseline."
+      },
+      {
+        "id": "C",
+        "text": "Developer A asks an admin to copy records by hand."
+      },
+      {
+        "id": "D",
+        "text": "Both developers stop working until Friday."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "Parent-child push/pull is the Team Development model. The parent is the shared baseline. Devs push their work up, pull peers' work down. Conflicts get resolved via the version-comparison UI.",
     "distractor_notes": {
       "A": "Email isn't the workflow.",
@@ -400,9 +701,16 @@
       "D": "Stopping work isn't collaboration."
     },
     "references": [
-      { "title": "Application Manager", "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/application-manager/application-manager.html" }
+      {
+        "title": "Application Manager",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/application-manager/application-manager.html"
+      }
     ],
-    "tags": ["team-development", "push-pull", "parent-child"]
+    "tags": [
+      "team-development",
+      "push-pull",
+      "parent-child"
+    ]
   },
   {
     "id": "cad-mgr-016",
@@ -414,12 +722,26 @@
     "type": "single_select",
     "stem": "What is the central instance in a Team Development setup typically called?",
     "options": [
-      { "id": "A", "text": "Production." },
-      { "id": "B", "text": "Parent instance — the shared baseline that child (developer) instances push to and pull from." },
-      { "id": "C", "text": "Sub instance." },
-      { "id": "D", "text": "Snapshot instance." }
+      {
+        "id": "A",
+        "text": "Production."
+      },
+      {
+        "id": "B",
+        "text": "Parent instance — the shared baseline that child (developer) instances push to and pull from."
+      },
+      {
+        "id": "C",
+        "text": "Sub instance."
+      },
+      {
+        "id": "D",
+        "text": "Snapshot instance."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "Parent and child are the canonical Team Development terms. The parent is the shared origin; children are developer working instances.",
     "distractor_notes": {
       "A": "Production isn't typically the Team Development parent.",
@@ -427,9 +749,16 @@
       "D": "Not the term."
     },
     "references": [
-      { "title": "Application Manager", "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/application-manager/application-manager.html" }
+      {
+        "title": "Application Manager",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/application-manager/application-manager.html"
+      }
     ],
-    "tags": ["team-development", "parent", "terminology"]
+    "tags": [
+      "team-development",
+      "parent",
+      "terminology"
+    ]
   },
   {
     "id": "cad-mgr-017",
@@ -441,12 +770,26 @@
     "type": "single_select",
     "stem": "What does ServiceNow's Git integration enable for app developers?",
     "options": [
-      { "id": "A", "text": "An external real Git repository (GitHub, GitLab, Bitbucket) becomes a version-control backend for the application — developers can push application records to a Git repo as files, branch/merge, run code review off-platform, then import back into instances." },
-      { "id": "B", "text": "ServiceNow ships a free Git client." },
-      { "id": "C", "text": "Git integration replaces ACLs." },
-      { "id": "D", "text": "Git is required for all Team Development setups." }
+      {
+        "id": "A",
+        "text": "An external real Git repository (GitHub, GitLab, Bitbucket) becomes a version-control backend for the application — developers can push application records to a Git repo as files, branch/merge, run code review off-platform, then import back into instances."
+      },
+      {
+        "id": "B",
+        "text": "ServiceNow ships a free Git client."
+      },
+      {
+        "id": "C",
+        "text": "Git integration replaces ACLs."
+      },
+      {
+        "id": "D",
+        "text": "Git is required for all Team Development setups."
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "ServiceNow Git integration links an application to a real Git repo (GitHub/GitLab/Bitbucket). Records are serialized to files, you branch/merge/review off-platform, and apply changes back. Useful for engineering teams that want their full SDLC stack.",
     "distractor_notes": {
       "B": "Not a client product.",
@@ -454,9 +797,15 @@
       "D": "Team Development and Git are independent options."
     },
     "references": [
-      { "title": "Application Manager", "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/application-manager/application-manager.html" }
+      {
+        "title": "Application Manager",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/application-manager/application-manager.html"
+      }
     ],
-    "tags": ["git", "source-control"]
+    "tags": [
+      "git",
+      "source-control"
+    ]
   },
   {
     "id": "cad-mgr-018",
@@ -468,12 +817,26 @@
     "type": "single_select",
     "stem": "A team is choosing between Team Development and the Git integration. Team Development is integrated with ServiceNow records natively; Git allows external code review tools and branching workflows. Which is the right choice?",
     "options": [
-      { "id": "A", "text": "Always Team Development." },
-      { "id": "B", "text": "Depends on the team's workflow: Team Development is simpler and stays on-platform — good when the team is ServiceNow-centric. Git is heavier but plugs into the broader engineering SDLC (PRs in GitHub, CI, branching, off-platform review). Some teams use BOTH for different purposes. There's no universal right answer." },
-      { "id": "C", "text": "Always Git." },
-      { "id": "D", "text": "Neither — develop directly in production." }
+      {
+        "id": "A",
+        "text": "Always Team Development."
+      },
+      {
+        "id": "B",
+        "text": "Depends on the team's workflow: Team Development is simpler and stays on-platform — good when the team is ServiceNow-centric. Git is heavier but plugs into the broader engineering SDLC (PRs in GitHub, CI, branching, off-platform review). Some teams use BOTH for different purposes. There's no universal right answer."
+      },
+      {
+        "id": "C",
+        "text": "Always Git."
+      },
+      {
+        "id": "D",
+        "text": "Neither — develop directly in production."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "Team Development is the on-platform answer; Git is the bring-your-engineering-SDLC answer. Use whichever fits the team. The trap is doctrinal certainty — there's no universal best.",
     "distractor_notes": {
       "A": "Doctrinal absolute.",
@@ -481,9 +844,17 @@
       "D": "Developing in production is unsafe."
     },
     "references": [
-      { "title": "Application Manager", "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/application-manager/application-manager.html" }
+      {
+        "title": "Application Manager",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/application-manager/application-manager.html"
+      }
     ],
-    "tags": ["team-development", "git", "design-decision", "scenario"]
+    "tags": [
+      "team-development",
+      "git",
+      "design-decision",
+      "scenario"
+    ]
   },
   {
     "id": "cad-mgr-019",
@@ -495,12 +866,26 @@
     "type": "single_select",
     "stem": "A team wants peer review on every change before it goes to test. With Team Development, what's the natural way to do this?",
     "options": [
-      { "id": "A", "text": "Use Team Development's version comparison views: a reviewer can compare a developer's pushed changes against the baseline at the parent instance, see record-level diffs, comment, and approve or request changes before pulling/promoting downstream." },
-      { "id": "B", "text": "Tell developers to be careful." },
-      { "id": "C", "text": "Skip code review entirely." },
-      { "id": "D", "text": "Use Microsoft Word to compare scripts." }
+      {
+        "id": "A",
+        "text": "Use Team Development's version comparison views: a reviewer can compare a developer's pushed changes against the baseline at the parent instance, see record-level diffs, comment, and approve or request changes before pulling/promoting downstream."
+      },
+      {
+        "id": "B",
+        "text": "Tell developers to be careful."
+      },
+      {
+        "id": "C",
+        "text": "Skip code review entirely."
+      },
+      {
+        "id": "D",
+        "text": "Use Microsoft Word to compare scripts."
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "Team Development supports record-level diff, comparison, and review workflows. Reviewers see exactly what changed and gate the promotion. That's the platform-native code review story.",
     "distractor_notes": {
       "B": "Wishful thinking isn't a review process.",
@@ -508,9 +893,15 @@
       "D": "Word isn't a review tool for the platform."
     },
     "references": [
-      { "title": "Application Manager", "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/application-manager/application-manager.html" }
+      {
+        "title": "Application Manager",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/application-manager/application-manager.html"
+      }
     ],
-    "tags": ["team-development", "code-review"]
+    "tags": [
+      "team-development",
+      "code-review"
+    ]
   },
   {
     "id": "cad-mgr-020",
@@ -522,12 +913,26 @@
     "type": "single_select",
     "stem": "Which is true about Update Sets and applications?",
     "options": [
-      { "id": "A", "text": "Update Sets are part of every ServiceNow developer's life: ANY developer change (Business Rule, Script Include, table change, UI Policy, etc.) is captured in the currently-selected Update Set for transport. Even Team Development users use Update Sets for cross-environment promotions." },
-      { "id": "B", "text": "Update Sets only apply to apps from the ServiceNow Store." },
-      { "id": "C", "text": "Update Sets are deprecated." },
-      { "id": "D", "text": "Update Sets only apply to UI Policies." }
+      {
+        "id": "A",
+        "text": "Update Sets are part of every ServiceNow developer's life: ANY developer change (Business Rule, Script Include, table change, UI Policy, etc.) is captured in the currently-selected Update Set for transport. Even Team Development users use Update Sets for cross-environment promotions."
+      },
+      {
+        "id": "B",
+        "text": "Update Sets only apply to apps from the ServiceNow Store."
+      },
+      {
+        "id": "C",
+        "text": "Update Sets are deprecated."
+      },
+      {
+        "id": "D",
+        "text": "Update Sets only apply to UI Policies."
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "Update Sets capture customizations everywhere. They're foundational regardless of whether you're using Team Development or Git on top. New developers sometimes try to skip Update Sets and discover, late, that their changes are stuck on Dev.",
     "distractor_notes": {
       "B": "Update Sets apply to all customizations.",
@@ -535,9 +940,15 @@
       "D": "Not limited to UI Policies."
     },
     "references": [
-      { "title": "Working with update sets", "url": "https://www.servicenow.com/docs/r/zurich/application-development/system-update-sets/using-system-update-sets.html" }
+      {
+        "title": "Working with update sets",
+        "url": "https://www.servicenow.com/docs/r/zurich/application-development/system-update-sets/using-system-update-sets.html"
+      }
     ],
-    "tags": ["update-sets", "fundamentals"]
+    "tags": [
+      "update-sets",
+      "fundamentals"
+    ]
   },
   {
     "id": "cad-mgr-021",
@@ -549,12 +960,26 @@
     "type": "single_select",
     "stem": "Two developers on different instances both edit the same Business Rule. They both push to parent. What happens?",
     "options": [
-      { "id": "A", "text": "The second push is silently discarded." },
-      { "id": "B", "text": "Team Development surfaces a conflict — the same record was changed in incompatible ways. The developers (or a designated owner) resolve via the comparison UI: keep one version, merge changes by hand, or revise and re-push. Conflicts are part of normal collaborative work, not a bug." },
-      { "id": "C", "text": "The instance crashes." },
-      { "id": "D", "text": "Both versions install side-by-side." }
+      {
+        "id": "A",
+        "text": "The second push is silently discarded."
+      },
+      {
+        "id": "B",
+        "text": "Team Development surfaces a conflict — the same record was changed in incompatible ways. The developers (or a designated owner) resolve via the comparison UI: keep one version, merge changes by hand, or revise and re-push. Conflicts are part of normal collaborative work, not a bug."
+      },
+      {
+        "id": "C",
+        "text": "The instance crashes."
+      },
+      {
+        "id": "D",
+        "text": "Both versions install side-by-side."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "Concurrent changes to the same record = conflict. The platform surfaces it for resolution rather than silently overwriting. That's how any version-control system has to behave — and how to teach teams to coordinate.",
     "distractor_notes": {
       "A": "Silent loss would be worse than a conflict.",
@@ -562,9 +987,16 @@
       "D": "One Business Rule record can't be two versions."
     },
     "references": [
-      { "title": "Application Manager", "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/application-manager/application-manager.html" }
+      {
+        "title": "Application Manager",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/application-manager/application-manager.html"
+      }
     ],
-    "tags": ["team-development", "conflicts", "scenario"]
+    "tags": [
+      "team-development",
+      "conflicts",
+      "scenario"
+    ]
   },
   {
     "id": "cad-mgr-022",
@@ -576,12 +1008,26 @@
     "type": "single_select",
     "stem": "Which best describes branching in ServiceNow's Git integration?",
     "options": [
-      { "id": "A", "text": "An app linked to Git can be developed on a branch (feature-x), and the Git workflow (merge to main, etc.) drives what reaches each instance. Branching is supported via the Git integration — Team Development on its own doesn't expose Git-style branching." },
-      { "id": "B", "text": "Branching doesn't exist in ServiceNow." },
-      { "id": "C", "text": "Branching means duplicating instances." },
-      { "id": "D", "text": "Branching is automatic and can't be controlled." }
+      {
+        "id": "A",
+        "text": "An app linked to Git can be developed on a branch (feature-x), and the Git workflow (merge to main, etc.) drives what reaches each instance. Branching is supported via the Git integration — Team Development on its own doesn't expose Git-style branching."
+      },
+      {
+        "id": "B",
+        "text": "Branching doesn't exist in ServiceNow."
+      },
+      {
+        "id": "C",
+        "text": "Branching means duplicating instances."
+      },
+      {
+        "id": "D",
+        "text": "Branching is automatic and can't be controlled."
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "Git-style branching belongs to the Git integration path. The team works on branches in the connected repo, and instance state follows whichever branch is chosen. Team Development on its own doesn't model Git branches.",
     "distractor_notes": {
       "B": "Branching exists (via Git).",
@@ -589,9 +1035,15 @@
       "D": "Branches are explicitly managed."
     },
     "references": [
-      { "title": "Application Manager", "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/application-manager/application-manager.html" }
+      {
+        "title": "Application Manager",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/application-manager/application-manager.html"
+      }
     ],
-    "tags": ["git", "branching"]
+    "tags": [
+      "git",
+      "branching"
+    ]
   },
   {
     "id": "cad-mgr-023",
@@ -603,12 +1055,26 @@
     "type": "single_select",
     "stem": "Where do developers typically see a unified view of Team Development activity — pushes, pulls, conflicts, comparisons?",
     "options": [
-      { "id": "A", "text": "The Team Development Dashboard — the central UI for the feature, showing recent activity, status across instances, and entry points to the comparison/resolution tools." },
-      { "id": "B", "text": "The Slack #servicenow channel." },
-      { "id": "C", "text": "The Reports module." },
-      { "id": "D", "text": "Email logs." }
+      {
+        "id": "A",
+        "text": "The Team Development Dashboard — the central UI for the feature, showing recent activity, status across instances, and entry points to the comparison/resolution tools."
+      },
+      {
+        "id": "B",
+        "text": "The Slack #servicenow channel."
+      },
+      {
+        "id": "C",
+        "text": "The Reports module."
+      },
+      {
+        "id": "D",
+        "text": "Email logs."
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "The Team Development Dashboard is the feature's hub — recent pushes/pulls, pending conflicts, comparison entry points. Bookmark it if you're using Team Development.",
     "distractor_notes": {
       "B": "Not Slack.",
@@ -616,9 +1082,15 @@
       "D": "Not email logs."
     },
     "references": [
-      { "title": "Application Manager", "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/application-manager/application-manager.html" }
+      {
+        "title": "Application Manager",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/application-manager/application-manager.html"
+      }
     ],
-    "tags": ["team-development", "dashboard"]
+    "tags": [
+      "team-development",
+      "dashboard"
+    ]
   },
   {
     "id": "cad-mgr-024",
@@ -628,14 +1100,28 @@
     "subdomain": "Best Practices",
     "difficulty": "scenario",
     "type": "single_select",
-    "stem": "A team has 6 developers, 6 dev instances, no Team Development, no Git, and a folder of XML Update Sets they email each other. Releases are chaotic. The most impactful next step is:",
+    "stem": "A team has 6 developers, 6 dev instances, no Team Development, no Git, and a folder of XML Update Sets they email each other. Releases are chaotic. What is the most impactful next step?",
     "options": [
-      { "id": "A", "text": "Hire two more developers." },
-      { "id": "B", "text": "Adopt a shared parent (Team Development) or a Git integration so changes flow through one shared source of truth instead of email. Train the team on the workflow. Versioning chaos is almost always a process-and-tooling problem, not a hiring problem." },
-      { "id": "C", "text": "Email more carefully." },
-      { "id": "D", "text": "Stop developing new features." }
+      {
+        "id": "A",
+        "text": "Hire two more developers."
+      },
+      {
+        "id": "B",
+        "text": "Adopt a shared parent (Team Development) or a Git integration so changes flow through one shared source of truth instead of email. Train the team on the workflow. Versioning chaos is almost always a process-and-tooling problem, not a hiring problem."
+      },
+      {
+        "id": "C",
+        "text": "Email more carefully."
+      },
+      {
+        "id": "D",
+        "text": "Stop developing new features."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "Email-shuffled Update Sets is the failure mode the platform solves with Team Development or Git. Adopt a shared origin and the rest of the chaos calms down. Hiring or stopping work doesn't address the underlying problem.",
     "distractor_notes": {
       "A": "More devs would multiply the chaos.",
@@ -643,9 +1129,16 @@
       "D": "Stopping is not a process improvement."
     },
     "references": [
-      { "title": "Application Manager", "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/application-manager/application-manager.html" }
+      {
+        "title": "Application Manager",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/application-manager/application-manager.html"
+      }
     ],
-    "tags": ["team-development", "process", "scenario"]
+    "tags": [
+      "team-development",
+      "process",
+      "scenario"
+    ]
   },
   {
     "id": "cad-mgr-025",
@@ -657,12 +1150,26 @@
     "type": "single_select",
     "stem": "What is a 'customer update' in ServiceNow's parlance?",
     "options": [
-      { "id": "A", "text": "An update to a record that originated as a customization (i.e., a change tracked in sys_update_xml as part of an Update Set). The platform marks records as having customer updates so it knows what to ship between instances." },
-      { "id": "B", "text": "A purchase from the customer." },
-      { "id": "C", "text": "A scheduled job." },
-      { "id": "D", "text": "An ACL." }
+      {
+        "id": "A",
+        "text": "An update to a record that originated as a customization (i.e., a change tracked in sys_update_xml as part of an Update Set). The platform marks records as having customer updates so it knows what to ship between instances."
+      },
+      {
+        "id": "B",
+        "text": "A purchase from the customer."
+      },
+      {
+        "id": "C",
+        "text": "A scheduled job."
+      },
+      {
+        "id": "D",
+        "text": "An ACL."
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "Customer updates are tracked customizations — Business Rules, scripts, dictionary changes, etc. — captured as sys_update_xml records. They are the units that Update Sets carry between instances.",
     "distractor_notes": {
       "B": "Not a purchase.",
@@ -670,9 +1177,15 @@
       "D": "Not an ACL."
     },
     "references": [
-      { "title": "Working with update sets", "url": "https://www.servicenow.com/docs/r/zurich/application-development/system-update-sets/using-system-update-sets.html" }
+      {
+        "title": "Working with update sets",
+        "url": "https://www.servicenow.com/docs/r/zurich/application-development/system-update-sets/using-system-update-sets.html"
+      }
     ],
-    "tags": ["customer-updates", "sys_update_xml"]
+    "tags": [
+      "customer-updates",
+      "sys_update_xml"
+    ]
   },
   {
     "id": "cad-mgr-026",
@@ -684,12 +1197,26 @@
     "type": "single_select",
     "stem": "On committing an Update Set, the Preview reports several 'skipped' records: incoming changes that the platform refused to apply because the target instance already has a newer or conflicting version. What's the right next step?",
     "options": [
-      { "id": "A", "text": "Click Commit and hope." },
-      { "id": "B", "text": "Investigate each skipped record. Decide per row whether to Accept Remote Update (overwrite target with incoming), keep the target as-is, or merge by hand. Skipped records can be the difference between a clean upgrade and a subtly broken one." },
-      { "id": "C", "text": "Delete the Update Set." },
-      { "id": "D", "text": "Reinstall the entire instance." }
+      {
+        "id": "A",
+        "text": "Click Commit and hope."
+      },
+      {
+        "id": "B",
+        "text": "Investigate each skipped record. Decide per row whether to Accept Remote Update (overwrite target with incoming), keep the target as-is, or merge by hand. Skipped records can be the difference between a clean upgrade and a subtly broken one."
+      },
+      {
+        "id": "C",
+        "text": "Delete the Update Set."
+      },
+      {
+        "id": "D",
+        "text": "Reinstall the entire instance."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "Skipped records are calls for human judgment. The platform won't decide between conflicting versions — you have to. Spend time here rather than rushing the commit.",
     "distractor_notes": {
       "A": "Hoping isn't a strategy.",
@@ -697,9 +1224,16 @@
       "D": "Wildly disproportionate."
     },
     "references": [
-      { "title": "Commit an update set", "url": "https://www.servicenow.com/docs/r/zurich/application-development/system-update-sets/t_CommitAnUpdateSet.html" }
+      {
+        "title": "Commit an update set",
+        "url": "https://www.servicenow.com/docs/r/zurich/application-development/system-update-sets/t_CommitAnUpdateSet.html"
+      }
     ],
-    "tags": ["update-sets", "skipped", "scenario"]
+    "tags": [
+      "update-sets",
+      "skipped",
+      "scenario"
+    ]
   },
   {
     "id": "cad-mgr-027",
@@ -709,14 +1243,28 @@
     "subdomain": "Application Scope",
     "difficulty": "recall",
     "type": "single_select",
-    "stem": "When changes are made inside a custom application scope, they are typically captured in:",
+    "stem": "When changes are made inside a custom application scope, where are they typically captured?",
     "options": [
-      { "id": "A", "text": "The Default Update Set of the Global scope." },
-      { "id": "B", "text": "A 'Default' Update Set associated with that application scope (not Global's Default). Each scope has its own Default; switching to a different update set within the scope captures subsequent changes there." },
-      { "id": "C", "text": "Nowhere — scope changes don't transport." },
-      { "id": "D", "text": "Always in Global." }
+      {
+        "id": "A",
+        "text": "The Default Update Set of the Global scope."
+      },
+      {
+        "id": "B",
+        "text": "A 'Default' Update Set associated with that application scope (not Global's Default). Each scope has its own Default; switching to a different update set within the scope captures subsequent changes there."
+      },
+      {
+        "id": "C",
+        "text": "Nowhere — scope changes don't transport."
+      },
+      {
+        "id": "D",
+        "text": "Always in Global."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "Each application scope has its own current Update Set context. New scope-changes land in that scope's Default unless the developer has selected a different Update Set in the scope. This is why 'I switched scope and now my changes are missing' panic happens — they're in the scope's Default.",
     "distractor_notes": {
       "A": "Different scope, different Default.",
@@ -724,9 +1272,15 @@
       "D": "Not always Global."
     },
     "references": [
-      { "title": "Working with update sets", "url": "https://www.servicenow.com/docs/r/zurich/application-development/system-update-sets/using-system-update-sets.html" }
+      {
+        "title": "Working with update sets",
+        "url": "https://www.servicenow.com/docs/r/zurich/application-development/system-update-sets/using-system-update-sets.html"
+      }
     ],
-    "tags": ["update-sets", "scope-default"]
+    "tags": [
+      "update-sets",
+      "scope-default"
+    ]
   },
   {
     "id": "cad-mgr-028",
@@ -738,12 +1292,26 @@
     "type": "single_select",
     "stem": "What is Instance Scan in ServiceNow?",
     "options": [
-      { "id": "A", "text": "A platform feature that runs a suite of checks against the instance to identify quality, performance, security, and best-practice issues — producing a report with actionable findings. Great for auditing custom apps and identifying technical debt." },
-      { "id": "B", "text": "A type of UI Action." },
-      { "id": "C", "text": "An ACL." },
-      { "id": "D", "text": "A Service Portal page." }
+      {
+        "id": "A",
+        "text": "A platform feature that runs a suite of checks against the instance to identify quality, performance, security, and best-practice issues — producing a report with actionable findings. Great for auditing custom apps and identifying technical debt."
+      },
+      {
+        "id": "B",
+        "text": "A type of UI Action."
+      },
+      {
+        "id": "C",
+        "text": "An ACL."
+      },
+      {
+        "id": "D",
+        "text": "A Service Portal page."
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "Instance Scan is the platform's automated quality auditor. It evaluates code, configuration, and platform usage against built-in (and customer-defined) check rules. Use it before releases to catch known anti-patterns and tech debt.",
     "distractor_notes": {
       "B": "Not a UI Action.",
@@ -751,9 +1319,15 @@
       "D": "Not a portal page."
     },
     "references": [
-      { "title": "Application Manager", "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/application-manager/application-manager.html" }
+      {
+        "title": "Application Manager",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/application-manager/application-manager.html"
+      }
     ],
-    "tags": ["instance-scan", "quality"]
+    "tags": [
+      "instance-scan",
+      "quality"
+    ]
   },
   {
     "id": "cad-mgr-029",
@@ -765,12 +1339,26 @@
     "type": "single_select",
     "stem": "What is the Automated Test Framework (ATF) in ServiceNow?",
     "options": [
-      { "id": "A", "text": "A platform-native test framework for authoring and running automated tests against ServiceNow — UI tests (clicks, form interactions), record-level tests (assert field values, ACLs), REST tests, etc. Tests can run on demand or as part of an upgrade/release pipeline." },
-      { "id": "B", "text": "An external Selenium installer." },
-      { "id": "C", "text": "A UI Action." },
-      { "id": "D", "text": "A type of ACL." }
+      {
+        "id": "A",
+        "text": "A platform-native test framework for authoring and running automated tests against ServiceNow — UI tests (clicks, form interactions), record-level tests (assert field values, ACLs), REST tests, etc. Tests can run on demand or as part of an upgrade/release pipeline."
+      },
+      {
+        "id": "B",
+        "text": "An external Selenium installer."
+      },
+      {
+        "id": "C",
+        "text": "A UI Action."
+      },
+      {
+        "id": "D",
+        "text": "A type of ACL."
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "ATF is ServiceNow's built-in test harness. Author tests in the platform, run them on demand, integrate with release workflows. Great for regression testing custom apps — and ServiceNow strongly recommends running ATF suites before upgrading versions.",
     "distractor_notes": {
       "B": "Not Selenium.",
@@ -778,9 +1366,15 @@
       "D": "Not an ACL."
     },
     "references": [
-      { "title": "Application Manager", "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/application-manager/application-manager.html" }
+      {
+        "title": "Application Manager",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/application-manager/application-manager.html"
+      }
     ],
-    "tags": ["atf", "testing"]
+    "tags": [
+      "atf",
+      "testing"
+    ]
   },
   {
     "id": "cad-mgr-030",
@@ -790,14 +1384,28 @@
     "subdomain": "ATF",
     "difficulty": "application",
     "type": "single_select",
-    "stem": "A team is upgrading their instance to a new ServiceNow release. They have 40 custom apps. The recommended quality gate for the upgrade is:",
+    "stem": "A team is upgrading their instance to a new ServiceNow release. They have 40 custom apps. What is the recommended quality gate for the upgrade?",
     "options": [
-      { "id": "A", "text": "Click Upgrade and hope nothing breaks." },
-      { "id": "B", "text": "Run the existing ATF suite (and any ServiceNow-provided regression suites) on a clone of prod before upgrading the real instance. Fix anything that breaks. Then upgrade the actual instance and re-run tests to confirm. ATF is exactly designed for this gate." },
-      { "id": "C", "text": "Email all users to test by hand." },
-      { "id": "D", "text": "Disable all custom apps before upgrade." }
+      {
+        "id": "A",
+        "text": "Click Upgrade and hope nothing breaks."
+      },
+      {
+        "id": "B",
+        "text": "Run the existing ATF suite (and any ServiceNow-provided regression suites) on a clone of prod before upgrading the real instance. Fix anything that breaks. Then upgrade the actual instance and re-run tests to confirm. ATF is exactly designed for this gate."
+      },
+      {
+        "id": "C",
+        "text": "Email all users to test by hand."
+      },
+      {
+        "id": "D",
+        "text": "Disable all custom apps before upgrade."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "ATF + clone-of-prod is the responsible upgrade gate. Catch regressions on the clone, fix them, then upgrade the real instance with confidence. Disabling apps to skip testing means you didn't actually upgrade safely.",
     "distractor_notes": {
       "A": "Hoping isn't a process.",
@@ -805,9 +1413,16 @@
       "D": "Disabled apps don't get tested."
     },
     "references": [
-      { "title": "Application Manager", "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/application-manager/application-manager.html" }
+      {
+        "title": "Application Manager",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/application-manager/application-manager.html"
+      }
     ],
-    "tags": ["atf", "upgrade", "quality-gate"]
+    "tags": [
+      "atf",
+      "upgrade",
+      "quality-gate"
+    ]
   },
   {
     "id": "cad-mgr-031",
@@ -819,12 +1434,26 @@
     "type": "single_select",
     "stem": "Which is a typical multi-instance environment topology for a ServiceNow customer?",
     "options": [
-      { "id": "A", "text": "Dev → Test → Prod (with optional staging, training, or sandbox instances) — apps and update sets flow Dev → Test → Prod, with promotion gates and testing at each step." },
-      { "id": "B", "text": "One instance for everything." },
-      { "id": "C", "text": "Production only." },
-      { "id": "D", "text": "Each developer's laptop." }
+      {
+        "id": "A",
+        "text": "Dev → Test → Prod (with optional staging, training, or sandbox instances) — apps and update sets flow Dev → Test → Prod, with promotion gates and testing at each step."
+      },
+      {
+        "id": "B",
+        "text": "One instance for everything."
+      },
+      {
+        "id": "C",
+        "text": "Production only."
+      },
+      {
+        "id": "D",
+        "text": "Each developer's laptop."
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "Dev → Test → Prod is the canonical topology, sometimes with extras (UAT, staging, training, sandbox). Each environment has its purpose; promotions flow through them with gates so prod never sees untested code.",
     "distractor_notes": {
       "B": "Single-instance everything is reckless.",
@@ -832,9 +1461,15 @@
       "D": "Customers don't run ServiceNow on laptops."
     },
     "references": [
-      { "title": "Application Manager", "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/application-manager/application-manager.html" }
+      {
+        "title": "Application Manager",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/application-manager/application-manager.html"
+      }
     ],
-    "tags": ["environments", "topology"]
+    "tags": [
+      "environments",
+      "topology"
+    ]
   },
   {
     "id": "cad-mgr-032",
@@ -846,12 +1481,26 @@
     "type": "single_select",
     "stem": "A developer commits an Update Set on Test with no preview errors, but on Prod the same Update Set throws an error about a missing referenced table. What's the most likely cause?",
     "options": [
-      { "id": "A", "text": "The referenced table existed on Test (perhaps from a prior unrelated install) but not on Prod. The Update Set assumed the table was present but didn't carry it. Either include the table creation in the set, or install the prerequisite plugin/app first on Prod." },
-      { "id": "B", "text": "Prod is broken." },
-      { "id": "C", "text": "The Update Set is corrupted." },
-      { "id": "D", "text": "ServiceNow Support deleted the table." }
+      {
+        "id": "A",
+        "text": "The referenced table existed on Test (perhaps from a prior unrelated install) but not on Prod. The Update Set assumed the table was present but didn't carry it. Either include the table creation in the set, or install the prerequisite plugin/app first on Prod."
+      },
+      {
+        "id": "B",
+        "text": "Prod is broken."
+      },
+      {
+        "id": "C",
+        "text": "The Update Set is corrupted."
+      },
+      {
+        "id": "D",
+        "text": "ServiceNow Support deleted the table."
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "Environment drift is the silent killer of 'works on my machine' — Test had something Prod doesn't. Either include the prerequisite in the set, deploy the prerequisite first, or check the source environment for dependencies you forgot to track.",
     "distractor_notes": {
       "B": "Don't blame the environment as the first hypothesis.",
@@ -859,9 +1508,17 @@
       "D": "Support isn't deleting customer tables."
     },
     "references": [
-      { "title": "Commit an update set", "url": "https://www.servicenow.com/docs/r/zurich/application-development/system-update-sets/t_CommitAnUpdateSet.html" }
+      {
+        "title": "Commit an update set",
+        "url": "https://www.servicenow.com/docs/r/zurich/application-development/system-update-sets/t_CommitAnUpdateSet.html"
+      }
     ],
-    "tags": ["update-sets", "drift", "prerequisites", "scenario"]
+    "tags": [
+      "update-sets",
+      "drift",
+      "prerequisites",
+      "scenario"
+    ]
   },
   {
     "id": "cad-mgr-033",
@@ -871,14 +1528,28 @@
     "subdomain": "Application Scope",
     "difficulty": "application",
     "type": "single_select",
-    "stem": "A developer wants to delete their custom app from the dev instance cleanly. The right path is:",
+    "stem": "A developer wants to delete their custom app from the dev instance cleanly. What is the right path?",
     "options": [
-      { "id": "A", "text": "Manually delete the sys_app record." },
-      { "id": "B", "text": "Use the platform's Delete Application workflow from App Manager — it removes the app's tables, scripts, UI elements, and customer updates in the correct order. Manual sys_app deletion can leave orphan records." },
-      { "id": "C", "text": "Drop the database." },
-      { "id": "D", "text": "Just stop using the app." }
+      {
+        "id": "A",
+        "text": "Manually delete the sys_app record."
+      },
+      {
+        "id": "B",
+        "text": "Use the platform's Delete Application workflow from App Manager — it removes the app's tables, scripts, UI elements, and customer updates in the correct order. Manual sys_app deletion can leave orphan records."
+      },
+      {
+        "id": "C",
+        "text": "Drop the database."
+      },
+      {
+        "id": "D",
+        "text": "Just stop using the app."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "Use the supported Delete Application workflow. It handles the dependency-graph correctly. Hand-deleting sys_app leaves orphans (the artifacts, the customer updates) and creates exactly the kind of mess that makes future deploys painful.",
     "distractor_notes": {
       "A": "Manual deletion leaves debris.",
@@ -886,9 +1557,15 @@
       "D": "Stopping use doesn't reclaim resources or clean up."
     },
     "references": [
-      { "title": "Application Manager", "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/application-manager/application-manager.html" }
+      {
+        "title": "Application Manager",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/application-manager/application-manager.html"
+      }
     ],
-    "tags": ["delete-app", "uninstall"]
+    "tags": [
+      "delete-app",
+      "uninstall"
+    ]
   },
   {
     "id": "cad-mgr-034",
@@ -898,14 +1575,28 @@
     "subdomain": "Best Practices",
     "difficulty": "scenario",
     "type": "single_select",
-    "stem": "A team gets a quality complaint: their app is buggy after every release. They want to ship more confidently. The most impactful single improvement is:",
+    "stem": "A team gets a quality complaint: their app is buggy after every release. They want to ship more confidently. What is the most impactful single improvement?",
     "options": [
-      { "id": "A", "text": "Hire a contractor to test the app once at the end of the year." },
-      { "id": "B", "text": "Invest in a real test discipline: ATF tests for the critical user journeys, run them as part of every promotion (Dev → Test → Prod), and refuse to promote when tests fail. Catching regressions in CI/CD is dramatically cheaper than in production." },
-      { "id": "C", "text": "Stop releasing new features." },
-      { "id": "D", "text": "Tell users to expect bugs." }
+      {
+        "id": "A",
+        "text": "Hire a contractor to test the app once at the end of the year."
+      },
+      {
+        "id": "B",
+        "text": "Invest in a real test discipline: ATF tests for the critical user journeys, run them as part of every promotion (Dev → Test → Prod), and refuse to promote when tests fail. Catching regressions in CI/CD is dramatically cheaper than in production."
+      },
+      {
+        "id": "C",
+        "text": "Stop releasing new features."
+      },
+      {
+        "id": "D",
+        "text": "Tell users to expect bugs."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "Automated tests + promotion gates is THE quality lever. One-shot manual testing doesn't scale. ATF is the platform's built-in test framework — use it.",
     "distractor_notes": {
       "A": "Annual contractor testing is too sparse.",
@@ -913,9 +1604,16 @@
       "D": "Asking users to expect bugs is the wrong response."
     },
     "references": [
-      { "title": "Application Manager", "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/application-manager/application-manager.html" }
+      {
+        "title": "Application Manager",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/application-manager/application-manager.html"
+      }
     ],
-    "tags": ["quality", "testing", "scenario"]
+    "tags": [
+      "quality",
+      "testing",
+      "scenario"
+    ]
   },
   {
     "id": "cad-mgr-035",
@@ -927,12 +1625,26 @@
     "type": "single_select",
     "stem": "Why is it considered a best practice to keep Update Sets small and focused (one feature or bug fix per set), rather than letting one giant set accumulate weeks of unrelated changes?",
     "options": [
-      { "id": "A", "text": "There's no benefit — bigger is fine." },
-      { "id": "B", "text": "Small, focused Update Sets make reviews easier, reduce blast radius if you need to skip/revert a feature, simplify conflict resolution on commit, and make the deployment record an audit trail of intent. Huge sets are hard to review, hard to revert partially, and easy to commit by mistake." },
-      { "id": "C", "text": "Bigger sets crash the instance." },
-      { "id": "D", "text": "Smaller sets take longer to commit." }
+      {
+        "id": "A",
+        "text": "There's no benefit — bigger is fine."
+      },
+      {
+        "id": "B",
+        "text": "Small, focused Update Sets make reviews easier, reduce blast radius if you need to skip/revert a feature, simplify conflict resolution on commit, and make the deployment record an audit trail of intent. Huge sets are hard to review, hard to revert partially, and easy to commit by mistake."
+      },
+      {
+        "id": "C",
+        "text": "Bigger sets crash the instance."
+      },
+      {
+        "id": "D",
+        "text": "Smaller sets take longer to commit."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "Small, focused sets are an engineering hygiene best practice — easier to review, easier to revert, lower blast radius. Treat each Update Set like a pull request: a clear, scoped, mergeable change.",
     "distractor_notes": {
       "A": "Bigger isn't fine.",
@@ -940,9 +1652,16 @@
       "D": "Commit time isn't the issue."
     },
     "references": [
-      { "title": "Working with update sets", "url": "https://www.servicenow.com/docs/r/zurich/application-development/system-update-sets/using-system-update-sets.html" }
+      {
+        "title": "Working with update sets",
+        "url": "https://www.servicenow.com/docs/r/zurich/application-development/system-update-sets/using-system-update-sets.html"
+      }
     ],
-    "tags": ["update-sets", "hygiene", "best-practices"]
+    "tags": [
+      "update-sets",
+      "hygiene",
+      "best-practices"
+    ]
   },
   {
     "id": "cad-mgr-036",
@@ -954,12 +1673,26 @@
     "type": "single_select",
     "stem": "Looking at the full lifecycle of a custom ServiceNow application, which sequence reflects mature engineering practice?",
     "options": [
-      { "id": "A", "text": "Plan platform fit → design data model and scope → develop on Dev with Update Sets and (Team Development or Git) → run ATF tests → promote through Test (with review) → promote to Prod (with version bump) → run Instance Scan / monitor → iterate. Documentation, dependencies, and roles are maintained alongside." },
-      { "id": "B", "text": "Build directly in Prod, no testing, no version." },
-      { "id": "C", "text": "Develop the entire app on a USB drive, then plug it into Prod." },
-      { "id": "D", "text": "Skip data model design and figure it out later." }
+      {
+        "id": "A",
+        "text": "Plan platform fit → design data model and scope → develop on Dev with Update Sets and (Team Development or Git) → run ATF tests → promote through Test (with review) → promote to Prod (with version bump) → run Instance Scan / monitor → iterate. Documentation, dependencies, and roles are maintained alongside."
+      },
+      {
+        "id": "B",
+        "text": "Build directly in Prod, no testing, no version."
+      },
+      {
+        "id": "C",
+        "text": "Develop the entire app on a USB drive, then plug it into Prod."
+      },
+      {
+        "id": "D",
+        "text": "Skip data model design and figure it out later."
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "That's the responsible lifecycle in compressed form: deliberate design, source control, testing, gated promotion, monitoring. Every shortcut from this list eventually gets paid back — usually with interest, in production.",
     "distractor_notes": {
       "B": "Prod-only development is the path to disaster.",
@@ -967,8 +1700,15 @@
       "D": "Data-model afterthoughts cause expensive re-models."
     },
     "references": [
-      { "title": "Application Manager", "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/application-manager/application-manager.html" }
+      {
+        "title": "Application Manager",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/application-manager/application-manager.html"
+      }
     ],
-    "tags": ["lifecycle", "engineering-discipline", "scenario"]
+    "tags": [
+      "lifecycle",
+      "engineering-discipline",
+      "scenario"
+    ]
   }
 ]

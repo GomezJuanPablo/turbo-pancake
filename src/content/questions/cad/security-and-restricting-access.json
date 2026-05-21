@@ -9,12 +9,26 @@
     "type": "single_select",
     "stem": "What does ACL stand for in ServiceNow, and what is its purpose?",
     "options": [
-      { "id": "A", "text": "Active Content Loader — preloads forms in the user's browser." },
-      { "id": "B", "text": "Access Control List rule — a record that defines whether a user can perform a specific operation (read, write, create, delete) on a specific resource (table, field, or specific record set)." },
-      { "id": "C", "text": "Audit Change Log — tracks every record change." },
-      { "id": "D", "text": "Application Catalog Lookup — searches the App Store." }
+      {
+        "id": "A",
+        "text": "Active Content Loader — preloads forms in the user's browser."
+      },
+      {
+        "id": "B",
+        "text": "Access Control List rule — a record that defines whether a user can perform a specific operation (read, write, create, delete) on a specific resource (table, field, or specific record set)."
+      },
+      {
+        "id": "C",
+        "text": "Audit Change Log — tracks every record change."
+      },
+      {
+        "id": "D",
+        "text": "Application Catalog Lookup — searches the App Store."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "ACLs are the platform's fine-grained authorization layer. Each ACL rule answers: 'Can THIS user perform THIS operation on THIS resource?' They're how you restrict access at the table, field, or row level — not just by role.",
     "distractor_notes": {
       "A": "Made up — not a platform feature.",
@@ -22,9 +36,16 @@
       "D": "App Store search is unrelated to ACLs."
     },
     "references": [
-      { "title": "Access Control List rules", "url": "https://www.servicenow.com/docs/r/zurich/platform-security/access-control/access-control-rules.html" }
+      {
+        "title": "Access Control List rules",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/access-control/access-control-rules.html"
+      }
     ],
-    "tags": ["acl", "fundamentals", "authorization"]
+    "tags": [
+      "acl",
+      "fundamentals",
+      "authorization"
+    ]
   },
   {
     "id": "cad-sec-002",
@@ -36,12 +57,26 @@
     "type": "single_select",
     "stem": "Which of these is NOT one of the standard ACL operation types?",
     "options": [
-      { "id": "A", "text": "read" },
-      { "id": "B", "text": "write" },
-      { "id": "C", "text": "create" },
-      { "id": "D", "text": "rename" }
+      {
+        "id": "A",
+        "text": "read"
+      },
+      {
+        "id": "B",
+        "text": "write"
+      },
+      {
+        "id": "C",
+        "text": "create"
+      },
+      {
+        "id": "D",
+        "text": "rename"
+      }
     ],
-    "correct": ["D"],
+    "correct": [
+      "D"
+    ],
     "rationale": "ACL operations are read, write, create, delete (and a few specialty types like report_on, execute, edit_task_relations for specific records). 'rename' is not an ACL operation — field/table renames happen via the Dictionary, not via ACLs.",
     "distractor_notes": {
       "A": "read is the operation for viewing.",
@@ -49,9 +84,15 @@
       "C": "create is the operation for inserts."
     },
     "references": [
-      { "title": "Access Control List rules", "url": "https://www.servicenow.com/docs/r/zurich/platform-security/access-control/access-control-rules.html" }
+      {
+        "title": "Access Control List rules",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/access-control/access-control-rules.html"
+      }
     ],
-    "tags": ["acl", "operations"]
+    "tags": [
+      "acl",
+      "operations"
+    ]
   },
   {
     "id": "cad-sec-003",
@@ -63,12 +104,26 @@
     "type": "single_select",
     "stem": "ACLs can be defined at which of the following levels of granularity?",
     "options": [
-      { "id": "A", "text": "Only the entire table." },
-      { "id": "B", "text": "Table (all rows), Field (specific column on a table), and record-set-by-condition — letting you control access at row and column granularity." },
-      { "id": "C", "text": "Only at the field level." },
-      { "id": "D", "text": "Only at the instance level." }
+      {
+        "id": "A",
+        "text": "Only the entire table."
+      },
+      {
+        "id": "B",
+        "text": "Table (all rows), Field (specific column on a table), and record-set-by-condition — letting you control access at row and column granularity."
+      },
+      {
+        "id": "C",
+        "text": "Only at the field level."
+      },
+      {
+        "id": "D",
+        "text": "Only at the instance level."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "ACLs target table (table.None), field (table.field), and can include row-level conditions that restrict which records the rule applies to. That layered model is what makes ACL design rich — and complex.",
     "distractor_notes": {
       "A": "Field-level ACLs exist and are heavily used.",
@@ -76,9 +131,16 @@
       "D": "There's no single instance-wide ACL — ACLs are per-resource."
     },
     "references": [
-      { "title": "Access Control List rules", "url": "https://www.servicenow.com/docs/r/zurich/platform-security/access-control/access-control-rules.html" }
+      {
+        "title": "Access Control List rules",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/access-control/access-control-rules.html"
+      }
     ],
-    "tags": ["acl", "granularity", "field-level"]
+    "tags": [
+      "acl",
+      "granularity",
+      "field-level"
+    ]
   },
   {
     "id": "cad-sec-004",
@@ -90,12 +152,26 @@
     "type": "single_select",
     "stem": "An ACL rule contains a Condition, a Role list, and a Script. For the rule to ALLOW the operation, what must be true?",
     "options": [
-      { "id": "A", "text": "Any one of (condition, role, script) must pass — the others are ignored." },
-      { "id": "B", "text": "All three must pass: the Condition must evaluate true, the user must have at least one of the listed Roles (if any are specified), AND the Script must return true (if a script is specified). All three are ANDed together." },
-      { "id": "C", "text": "Only the Role check matters; condition and script are advisory." },
-      { "id": "D", "text": "Only the Script matters; condition and roles are advisory." }
+      {
+        "id": "A",
+        "text": "Any one of (condition, role, script) must pass — the others are ignored."
+      },
+      {
+        "id": "B",
+        "text": "All three must pass: the Condition must evaluate true, the user must have at least one of the listed Roles (if any are specified), AND the Script must return true (if a script is specified). All three are ANDed together."
+      },
+      {
+        "id": "C",
+        "text": "Only the Role check matters; condition and script are advisory."
+      },
+      {
+        "id": "D",
+        "text": "Only the Script matters; condition and roles are advisory."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "Within one ACL rule, Condition AND Role AND Script must all pass. An empty field is treated as 'no constraint' (always passes). Knowing this is foundational — and it's where most ACL bugs come from when developers expect OR behavior.",
     "distractor_notes": {
       "A": "ACL fields are ANDed, not ORed.",
@@ -103,9 +179,16 @@
       "D": "Roles absolutely matter."
     },
     "references": [
-      { "title": "ACL rule processing", "url": "https://www.servicenow.com/docs/r/zurich/platform-security/r_ACLRuleProcessing.html" }
+      {
+        "title": "ACL rule processing",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/r_ACLRuleProcessing.html"
+      }
     ],
-    "tags": ["acl", "evaluation", "and-logic"]
+    "tags": [
+      "acl",
+      "evaluation",
+      "and-logic"
+    ]
   },
   {
     "id": "cad-sec-005",
@@ -115,14 +198,28 @@
     "subdomain": "ACL Evaluation",
     "difficulty": "application",
     "type": "single_select",
-    "stem": "Multiple ACL rules apply to the same resource and operation (e.g., 3 different write ACLs on the incident table). The user must satisfy:",
+    "stem": "Multiple ACL rules apply to the same resource and operation (e.g., 3 different write ACLs on the incident table). What must the user satisfy?",
     "options": [
-      { "id": "A", "text": "All of them — all rules are ANDed across the resource." },
-      { "id": "B", "text": "At least one of them — when multiple ACLs apply to the same operation+resource, they're ORed; if any rule grants access, the operation is allowed." },
-      { "id": "C", "text": "Only the rule with the most specific match." },
-      { "id": "D", "text": "Only the most recently created rule." }
+      {
+        "id": "A",
+        "text": "All of them — all rules are ANDed across the resource."
+      },
+      {
+        "id": "B",
+        "text": "At least one of them — when multiple ACLs apply to the same operation+resource, they're ORed; if any rule grants access, the operation is allowed."
+      },
+      {
+        "id": "C",
+        "text": "Only the rule with the most specific match."
+      },
+      {
+        "id": "D",
+        "text": "Only the most recently created rule."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "Across rules for the same operation+resource, ACLs are ORed — if any rule grants, access is granted. (Within a single rule, the condition/role/script are ANDed.) This 'AND inside, OR across' model is the single most important ACL concept to internalize.",
     "distractor_notes": {
       "A": "Cross-rule AND would make adding any new ACL impossible — that's not how it works.",
@@ -130,9 +227,17 @@
       "D": "Recency doesn't determine which rule wins."
     },
     "references": [
-      { "title": "ACL rule processing", "url": "https://www.servicenow.com/docs/r/zurich/platform-security/r_ACLRuleProcessing.html" }
+      {
+        "title": "ACL rule processing",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/r_ACLRuleProcessing.html"
+      }
     ],
-    "tags": ["acl", "evaluation", "or-across", "and-inside"]
+    "tags": [
+      "acl",
+      "evaluation",
+      "or-across",
+      "and-inside"
+    ]
   },
   {
     "id": "cad-sec-006",
@@ -144,12 +249,26 @@
     "type": "single_select",
     "stem": "When evaluating access to a field on a table that extends another table, in what order does the platform check ACLs?",
     "options": [
-      { "id": "A", "text": "Only the most-specific rule on the field is consulted; everything else is ignored." },
-      { "id": "B", "text": "The platform evaluates from most-specific to least-specific: table.field, then table.None (table-wide), then up the table-extension chain to parent tables. If access is granted at any level, the operation is allowed; if no rule grants access at any level, the operation is denied." },
-      { "id": "C", "text": "Only ACLs on the root parent table are consulted." },
-      { "id": "D", "text": "ACLs do not inherit; each child table must redefine all rules." }
+      {
+        "id": "A",
+        "text": "Only the most-specific rule on the field is consulted; everything else is ignored."
+      },
+      {
+        "id": "B",
+        "text": "The platform evaluates from most-specific to least-specific: table.field, then table.None (table-wide), then up the table-extension chain to parent tables. If access is granted at any level, the operation is allowed; if no rule grants access at any level, the operation is denied."
+      },
+      {
+        "id": "C",
+        "text": "Only ACLs on the root parent table are consulted."
+      },
+      {
+        "id": "D",
+        "text": "ACLs do not inherit; each child table must redefine all rules."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "ACL evaluation walks from specific to general: field-level rule, then table-level rule, then up the parent-table chain. Inheritance means a child table picks up rules from its parents — handy, but also a source of confusion if you forget what's inherited.",
     "distractor_notes": {
       "A": "Multiple levels are consulted in sequence.",
@@ -157,9 +276,16 @@
       "D": "ACLs do inherit. That's the whole point of the table-extension chain."
     },
     "references": [
-      { "title": "ACL rule processing", "url": "https://www.servicenow.com/docs/r/zurich/platform-security/r_ACLRuleProcessing.html" }
+      {
+        "title": "ACL rule processing",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/r_ACLRuleProcessing.html"
+      }
     ],
-    "tags": ["acl", "inheritance", "table-extension"]
+    "tags": [
+      "acl",
+      "inheritance",
+      "table-extension"
+    ]
   },
   {
     "id": "cad-sec-007",
@@ -171,12 +297,26 @@
     "type": "single_select",
     "stem": "A developer adds a write ACL on x_acme_loaner_request.notes that requires the x_acme_loaner.manager role. A test user with the manager role still can't write to Notes. What's the most likely cause and best next step?",
     "options": [
-      { "id": "A", "text": "ACLs are working as intended; the test user simply doesn't have permission." },
-      { "id": "B", "text": "There may be a separate table-level write ACL (table.None) on x_acme_loaner_request that denies the write for this user. Remember that the FIELD write needs the table write to ALSO be allowed. Check ACL evaluation by elevating to security_admin and running the ACL Debug, or review both field and table ACLs." },
-      { "id": "C", "text": "The instance is offline." },
-      { "id": "D", "text": "The user must have the admin role to write any field." }
+      {
+        "id": "A",
+        "text": "ACLs are working as intended; the test user simply doesn't have permission."
+      },
+      {
+        "id": "B",
+        "text": "There may be a separate table-level write ACL (table.None) on x_acme_loaner_request that denies the write for this user. Remember that the FIELD write needs the table write to ALSO be allowed. Check ACL evaluation by elevating to security_admin and running the ACL Debug, or review both field and table ACLs."
+      },
+      {
+        "id": "C",
+        "text": "The instance is offline."
+      },
+      {
+        "id": "D",
+        "text": "The user must have the admin role to write any field."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "Field writes require both a field-level write ACL AND the table-level write ACL to grant access. Granting on the field but being denied on the table = no write. ACL Debug is the canonical way to see exactly which rule blocked the operation.",
     "distractor_notes": {
       "A": "If they have the role, the rule should grant — something else is blocking. Don't assume the obvious.",
@@ -184,10 +324,21 @@
       "D": "Admin role is not required for ordinary writes."
     },
     "references": [
-      { "title": "ACL debugging tools", "url": "https://www.servicenow.com/docs/r/zurich/platform-security/access-control/c_AccessControlRulesDebug.html" },
-      { "title": "ACL rule processing", "url": "https://www.servicenow.com/docs/r/zurich/platform-security/r_ACLRuleProcessing.html" }
+      {
+        "title": "ACL debugging tools",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/access-control/c_AccessControlRulesDebug.html"
+      },
+      {
+        "title": "ACL rule processing",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/r_ACLRuleProcessing.html"
+      }
     ],
-    "tags": ["acl", "debugging", "field-vs-table", "scenario"]
+    "tags": [
+      "acl",
+      "debugging",
+      "field-vs-table",
+      "scenario"
+    ]
   },
   {
     "id": "cad-sec-008",
@@ -199,12 +350,26 @@
     "type": "single_select",
     "stem": "Which elevated role does a user typically need to create, edit, or delete ACLs themselves?",
     "options": [
-      { "id": "A", "text": "itil" },
-      { "id": "B", "text": "security_admin (must be elevated via the elevate roles dialog)." },
-      { "id": "C", "text": "asset" },
-      { "id": "D", "text": "knowledge_manager" }
+      {
+        "id": "A",
+        "text": "itil"
+      },
+      {
+        "id": "B",
+        "text": "security_admin (must be elevated via the elevate roles dialog)."
+      },
+      {
+        "id": "C",
+        "text": "asset"
+      },
+      {
+        "id": "D",
+        "text": "knowledge_manager"
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "Editing ACLs requires the security_admin role, which is gated behind explicit role elevation (the user must click Elevate Roles → security_admin). That extra friction prevents accidentally changing the platform's security posture.",
     "distractor_notes": {
       "A": "itil grants ITIL workflow access, not ACL admin.",
@@ -212,9 +377,16 @@
       "D": "knowledge_manager grants KB admin, not ACL admin."
     },
     "references": [
-      { "title": "Configure an ACL rule", "url": "https://www.servicenow.com/docs/r/zurich/platform-security/access-control/t_CreateAnACLRule.html" }
+      {
+        "title": "Configure an ACL rule",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/access-control/t_CreateAnACLRule.html"
+      }
     ],
-    "tags": ["acl", "security_admin", "elevation"]
+    "tags": [
+      "acl",
+      "security_admin",
+      "elevation"
+    ]
   },
   {
     "id": "cad-sec-009",
@@ -224,14 +396,28 @@
     "subdomain": "ACL Authoring",
     "difficulty": "application",
     "type": "single_select",
-    "stem": "A developer creates a new x_acme_loaner_request table. They want roles automatically wired so the app has working access out of the box. The fastest way to scaffold this is:",
+    "stem": "A developer creates a new x_acme_loaner_request table. They want roles automatically wired so the app has working access out of the box. What is the fastest way to scaffold this?",
     "options": [
-      { "id": "A", "text": "Manually create 12 ACLs by hand." },
-      { "id": "B", "text": "Use the Application Access form on the table (or table-creation wizard) to auto-generate baseline application ACLs and the app's default roles, then refine from there. The platform writes the create/read/write/delete table ACLs aligned to the auto-generated role." },
-      { "id": "C", "text": "Disable ACLs on the table for development." },
-      { "id": "D", "text": "Wait until production for ACLs." }
+      {
+        "id": "A",
+        "text": "Manually create 12 ACLs by hand."
+      },
+      {
+        "id": "B",
+        "text": "Use the Application Access form on the table (or table-creation wizard) to auto-generate baseline application ACLs and the app's default roles, then refine from there. The platform writes the create/read/write/delete table ACLs aligned to the auto-generated role."
+      },
+      {
+        "id": "C",
+        "text": "Disable ACLs on the table for development."
+      },
+      {
+        "id": "D",
+        "text": "Wait until production for ACLs."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "Auto-create application access generates the baseline role and ACLs in one step. Most apps tune from there — but starting from a working baseline beats hand-rolling every rule.",
     "distractor_notes": {
       "A": "Hand-crafting from scratch is slow and error-prone.",
@@ -239,9 +425,16 @@
       "D": "ACLs without dev coverage means you'll discover security gaps in production. Not great."
     },
     "references": [
-      { "title": "Configure an ACL rule", "url": "https://www.servicenow.com/docs/r/zurich/platform-security/access-control/t_CreateAnACLRule.html" }
+      {
+        "title": "Configure an ACL rule",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/access-control/t_CreateAnACLRule.html"
+      }
     ],
-    "tags": ["acl", "auto-generate", "application-access"]
+    "tags": [
+      "acl",
+      "auto-generate",
+      "application-access"
+    ]
   },
   {
     "id": "cad-sec-010",
@@ -253,12 +446,26 @@
     "type": "single_select",
     "stem": "What is the difference between a Role and a Group in ServiceNow?",
     "options": [
-      { "id": "A", "text": "They're synonyms — both mean the same thing." },
-      { "id": "B", "text": "A Role is a permission token referenced by ACLs and other access checks. A Group is a collection of users (and can have roles attached); group membership grants users the group's roles transitively." },
-      { "id": "C", "text": "Groups are only for email distribution." },
-      { "id": "D", "text": "Roles are for users; Groups are for records." }
+      {
+        "id": "A",
+        "text": "They're synonyms — both mean the same thing."
+      },
+      {
+        "id": "B",
+        "text": "A Role is a permission token referenced by ACLs and other access checks. A Group is a collection of users (and can have roles attached); group membership grants users the group's roles transitively."
+      },
+      {
+        "id": "C",
+        "text": "Groups are only for email distribution."
+      },
+      {
+        "id": "D",
+        "text": "Roles are for users; Groups are for records."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "Roles carry permissions. Groups bundle users. Attaching a role to a group is how you say 'everyone in this group gets this permission' — and it's the typical way to assign roles at scale instead of one user at a time.",
     "distractor_notes": {
       "A": "They're distinct concepts.",
@@ -266,9 +473,16 @@
       "D": "Both apply to users."
     },
     "references": [
-      { "title": "Base system roles", "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/user-administration/r_BaseSystemRoles.html" }
+      {
+        "title": "Base system roles",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/user-administration/r_BaseSystemRoles.html"
+      }
     ],
-    "tags": ["roles", "groups", "permissions"]
+    "tags": [
+      "roles",
+      "groups",
+      "permissions"
+    ]
   },
   {
     "id": "cad-sec-011",
@@ -280,12 +494,26 @@
     "type": "single_select",
     "stem": "When a developer writes a Script in an ACL rule, what variable can they assign to indicate whether the operation is allowed?",
     "options": [
-      { "id": "A", "text": "Set answer = true to allow or answer = false to deny — the platform reads the answer variable as the script's verdict." },
-      { "id": "B", "text": "Return the string 'OK' from the script." },
-      { "id": "C", "text": "Throw an exception to allow." },
-      { "id": "D", "text": "Set window.allow = true." }
+      {
+        "id": "A",
+        "text": "Set answer = true to allow or answer = false to deny — the platform reads the answer variable as the script's verdict."
+      },
+      {
+        "id": "B",
+        "text": "Return the string 'OK' from the script."
+      },
+      {
+        "id": "C",
+        "text": "Throw an exception to allow."
+      },
+      {
+        "id": "D",
+        "text": "Set window.allow = true."
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "ACL scripts communicate their decision via the special variable answer. true = grant (subject to the rule's other AND conditions), false = deny. This is one of the platform's defining ACL idioms.",
     "distractor_notes": {
       "B": "Strings aren't how the verdict is communicated.",
@@ -293,9 +521,16 @@
       "D": "window.* is client-side; ACL scripts are server-side."
     },
     "references": [
-      { "title": "Configure an ACL rule", "url": "https://www.servicenow.com/docs/r/zurich/platform-security/access-control/t_CreateAnACLRule.html" }
+      {
+        "title": "Configure an ACL rule",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/access-control/t_CreateAnACLRule.html"
+      }
     ],
-    "tags": ["acl", "script", "answer-variable"]
+    "tags": [
+      "acl",
+      "script",
+      "answer-variable"
+    ]
   },
   {
     "id": "cad-sec-012",
@@ -307,12 +542,26 @@
     "type": "single_select",
     "stem": "A developer wonders why a user keeps seeing a record they thought was hidden. They've checked one specific ACL and it correctly denies — yet access is allowed. What is the most likely explanation and best diagnostic?",
     "options": [
-      { "id": "A", "text": "ACLs are caching and need 24 hours to refresh." },
-      { "id": "B", "text": "Another ACL on the same operation+resource is granting access (remember: across-rule OR). Use ACL Debug as the user (or impersonate them) to see EXACTLY which rule granted the access, then decide whether to tighten the granting rule or replace it." },
-      { "id": "C", "text": "The user is a hacker." },
-      { "id": "D", "text": "ACLs are advisory; the platform doesn't enforce them." }
+      {
+        "id": "A",
+        "text": "ACLs are caching and need 24 hours to refresh."
+      },
+      {
+        "id": "B",
+        "text": "Another ACL on the same operation+resource is granting access (remember: across-rule OR). Use ACL Debug as the user (or impersonate them) to see EXACTLY which rule granted the access, then decide whether to tighten the granting rule or replace it."
+      },
+      {
+        "id": "C",
+        "text": "The user is a hacker."
+      },
+      {
+        "id": "D",
+        "text": "ACLs are advisory; the platform doesn't enforce them."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "OR-across-rules is the silent killer of 'I added a deny ACL and it didn't work.' One deny doesn't override another grant — every rule that applies is evaluated, and any grant wins. ACL Debug shows which rule actually granted access for a given operation.",
     "distractor_notes": {
       "A": "There's no 24-hour ACL cache propagation.",
@@ -320,10 +569,21 @@
       "D": "ACLs are absolutely enforced."
     },
     "references": [
-      { "title": "ACL debugging tools", "url": "https://www.servicenow.com/docs/r/zurich/platform-security/access-control/c_AccessControlRulesDebug.html" },
-      { "title": "ACL rule processing", "url": "https://www.servicenow.com/docs/r/zurich/platform-security/r_ACLRuleProcessing.html" }
+      {
+        "title": "ACL debugging tools",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/access-control/c_AccessControlRulesDebug.html"
+      },
+      {
+        "title": "ACL rule processing",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/r_ACLRuleProcessing.html"
+      }
     ],
-    "tags": ["acl", "debugging", "or-across", "scenario"]
+    "tags": [
+      "acl",
+      "debugging",
+      "or-across",
+      "scenario"
+    ]
   },
   {
     "id": "cad-sec-013",
@@ -335,12 +595,26 @@
     "type": "single_select",
     "stem": "What is Contextual (or row-level) security in ServiceNow?",
     "options": [
-      { "id": "A", "text": "An ACL pattern that restricts access to specific records based on conditions about the record's data (e.g., 'only the assigned_to user can write this record') — not just role-based table access." },
-      { "id": "B", "text": "A scheduled job that audits records nightly." },
-      { "id": "C", "text": "A login screen for non-admins." },
-      { "id": "D", "text": "Encrypted field storage." }
+      {
+        "id": "A",
+        "text": "An ACL pattern that restricts access to specific records based on conditions about the record's data (e.g., 'only the assigned_to user can write this record') — not just role-based table access."
+      },
+      {
+        "id": "B",
+        "text": "A scheduled job that audits records nightly."
+      },
+      {
+        "id": "C",
+        "text": "A login screen for non-admins."
+      },
+      {
+        "id": "D",
+        "text": "Encrypted field storage."
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "Contextual security uses ACL Conditions (and/or scripts) to restrict access at the row level — based on the record's own values (assigned_to, caller_id, state, etc.) and the current user. That's how you do 'managers see their team only' or 'only the requester sees their request.'",
     "distractor_notes": {
       "B": "Scheduled jobs and contextual security are unrelated.",
@@ -348,9 +622,16 @@
       "D": "Encryption is a separate platform feature."
     },
     "references": [
-      { "title": "Contextual security", "url": "https://www.servicenow.com/docs/r/zurich/platform-security/contextual-security.html" }
+      {
+        "title": "Contextual security",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/contextual-security.html"
+      }
     ],
-    "tags": ["contextual-security", "row-level", "fundamentals"]
+    "tags": [
+      "contextual-security",
+      "row-level",
+      "fundamentals"
+    ]
   },
   {
     "id": "cad-sec-014",
@@ -362,12 +643,26 @@
     "type": "single_select",
     "stem": "Which GlideSystem method is the canonical way to check whether the current user has a specific role from a server-side script?",
     "options": [
-      { "id": "A", "text": "gs.hasRole('x_acme_loaner.manager')" },
-      { "id": "B", "text": "gs.userIsAdmin()" },
-      { "id": "C", "text": "current.role.has('x_acme_loaner.manager')" },
-      { "id": "D", "text": "g_user.hasRole('x_acme_loaner.manager')" }
+      {
+        "id": "A",
+        "text": "gs.hasRole('x_acme_loaner.manager')"
+      },
+      {
+        "id": "B",
+        "text": "gs.userIsAdmin()"
+      },
+      {
+        "id": "C",
+        "text": "current.role.has('x_acme_loaner.manager')"
+      },
+      {
+        "id": "D",
+        "text": "g_user.hasRole('x_acme_loaner.manager')"
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "gs.hasRole(roleName) is the standard server-side role check. It evaluates against the current session user, and admins implicitly satisfy any role check (so guard scripts with this in mind for testing).",
     "distractor_notes": {
       "B": "userIsAdmin only checks admin specifically, not arbitrary roles.",
@@ -375,9 +670,16 @@
       "D": "g_user is client-side."
     },
     "references": [
-      { "title": "Configure an ACL rule", "url": "https://www.servicenow.com/docs/r/zurich/platform-security/access-control/t_CreateAnACLRule.html" }
+      {
+        "title": "Configure an ACL rule",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/access-control/t_CreateAnACLRule.html"
+      }
     ],
-    "tags": ["gs", "hasRole", "server-side"]
+    "tags": [
+      "gs",
+      "hasRole",
+      "server-side"
+    ]
   },
   {
     "id": "cad-sec-015",
@@ -389,12 +691,26 @@
     "type": "single_select",
     "stem": "A developer needs to ensure that users can only read Loaner Requests where they are the requester. What's the cleanest ACL design?",
     "options": [
-      { "id": "A", "text": "Write a Business Rule to delete records the user shouldn't see." },
-      { "id": "B", "text": "Create a read ACL on x_acme_loaner_request.None with a Condition (or script setting answer) that requires requester = current.user.getID() — and add appropriate role-based ACLs for managers/admins that should see all rows." },
-      { "id": "C", "text": "Hide the table from the navigator." },
-      { "id": "D", "text": "Set the table's Application Access to 'This application scope'." }
+      {
+        "id": "A",
+        "text": "Write a Business Rule to delete records the user shouldn't see."
+      },
+      {
+        "id": "B",
+        "text": "Create a read ACL on x_acme_loaner_request.None with a Condition (or script setting answer) that requires requester = current.user.getID() — and add appropriate role-based ACLs for managers/admins that should see all rows."
+      },
+      {
+        "id": "C",
+        "text": "Hide the table from the navigator."
+      },
+      {
+        "id": "D",
+        "text": "Set the table's Application Access to 'This application scope'."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "Row-level read restrictions are an ACL condition (or script) job. Constrain by record-vs-user comparison (requester = current user) and pair with broader role-gated rules for the people who should see everything. Remember OR-across-rules: those broader rules grant additional reads as needed.",
     "distractor_notes": {
       "A": "Deleting hidden records is destructive — you'd lose data the wrong users 'shouldn't see' from everyone.",
@@ -402,10 +718,20 @@
       "D": "Scope settings govern cross-scope access, not per-user row visibility."
     },
     "references": [
-      { "title": "Configure an ACL rule", "url": "https://www.servicenow.com/docs/r/zurich/platform-security/access-control/t_CreateAnACLRule.html" },
-      { "title": "Contextual security", "url": "https://www.servicenow.com/docs/r/zurich/platform-security/contextual-security.html" }
+      {
+        "title": "Configure an ACL rule",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/access-control/t_CreateAnACLRule.html"
+      },
+      {
+        "title": "Contextual security",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/contextual-security.html"
+      }
     ],
-    "tags": ["acl", "condition", "row-level"]
+    "tags": [
+      "acl",
+      "condition",
+      "row-level"
+    ]
   },
   {
     "id": "cad-sec-016",
@@ -417,12 +743,26 @@
     "type": "single_select",
     "stem": "Inside a Business Rule, how do you reliably get the sys_id of the currently logged-in user (the user whose action triggered the rule)?",
     "options": [
-      { "id": "A", "text": "gs.getUserID()" },
-      { "id": "B", "text": "current.user" },
-      { "id": "C", "text": "g_form.getValue('user')" },
-      { "id": "D", "text": "window.user" }
+      {
+        "id": "A",
+        "text": "gs.getUserID()"
+      },
+      {
+        "id": "B",
+        "text": "current.user"
+      },
+      {
+        "id": "C",
+        "text": "g_form.getValue('user')"
+      },
+      {
+        "id": "D",
+        "text": "window.user"
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "gs.getUserID() returns the current session user's sys_id from a server-side context. gs.getUser() returns the user object (with helpers like hasRole). Both are the right shape for server-side; the client-side equivalents (g_form, g_user) don't apply here.",
     "distractor_notes": {
       "B": "current refers to the record being processed, not the user.",
@@ -430,9 +770,16 @@
       "D": "window is browser-side."
     },
     "references": [
-      { "title": "Configure an ACL rule", "url": "https://www.servicenow.com/docs/r/zurich/platform-security/access-control/t_CreateAnACLRule.html" }
+      {
+        "title": "Configure an ACL rule",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/access-control/t_CreateAnACLRule.html"
+      }
     ],
-    "tags": ["gs", "getUserID", "server-side"]
+    "tags": [
+      "gs",
+      "getUserID",
+      "server-side"
+    ]
   },
   {
     "id": "cad-sec-017",
@@ -444,12 +791,26 @@
     "type": "single_select",
     "stem": "A developer writes an ACL script: var u = gs.getUser(); answer = (u.hasRole('x_acme_loaner.manager') || current.requester == u.getID()); — what does this allow?",
     "options": [
-      { "id": "A", "text": "Anyone can perform the operation." },
-      { "id": "B", "text": "Either a user with the loaner manager role OR the user whose ID matches the record's requester field can perform the operation." },
-      { "id": "C", "text": "Only the developer can perform the operation." },
-      { "id": "D", "text": "Only on weekends." }
+      {
+        "id": "A",
+        "text": "Anyone can perform the operation."
+      },
+      {
+        "id": "B",
+        "text": "Either a user with the loaner manager role OR the user whose ID matches the record's requester field can perform the operation."
+      },
+      {
+        "id": "C",
+        "text": "Only the developer can perform the operation."
+      },
+      {
+        "id": "D",
+        "text": "Only on weekends."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "The script ORs two conditions: manager role OR is-the-requester. answer = true if either holds. Pair this script with the rule's role and condition fields (remember — within a rule everything ANDs together, so the script is one of the components).",
     "distractor_notes": {
       "A": "The OR has real constraints — random users without the role and not the requester are denied.",
@@ -457,9 +818,17 @@
       "D": "No date/time logic is present."
     },
     "references": [
-      { "title": "Configure an ACL rule", "url": "https://www.servicenow.com/docs/r/zurich/platform-security/access-control/t_CreateAnACLRule.html" }
+      {
+        "title": "Configure an ACL rule",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/access-control/t_CreateAnACLRule.html"
+      }
     ],
-    "tags": ["acl", "script", "answer-variable", "or-logic"]
+    "tags": [
+      "acl",
+      "script",
+      "answer-variable",
+      "or-logic"
+    ]
   },
   {
     "id": "cad-sec-018",
@@ -471,12 +840,26 @@
     "type": "single_select",
     "stem": "What special behavior does the 'admin' role have with respect to ACL evaluation?",
     "options": [
-      { "id": "A", "text": "Admin has no special role behavior — they're treated like any other user." },
-      { "id": "B", "text": "Admin implicitly satisfies every role check on ACLs; in practice, admins bypass most role-gated rules. This is why you must test ACL changes as a non-admin." },
-      { "id": "C", "text": "Admin can only read records they created." },
-      { "id": "D", "text": "Admin cannot use the platform without elevation." }
+      {
+        "id": "A",
+        "text": "Admin has no special role behavior — they're treated like any other user."
+      },
+      {
+        "id": "B",
+        "text": "Admin implicitly satisfies every role check on ACLs; in practice, admins bypass most role-gated rules. This is why you must test ACL changes as a non-admin."
+      },
+      {
+        "id": "C",
+        "text": "Admin can only read records they created."
+      },
+      {
+        "id": "D",
+        "text": "Admin cannot use the platform without elevation."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "Admin is the trump card — it satisfies any role check. That makes testing tricky: a rule can look broken to non-admins but fine to you as admin. Always test ACL changes by impersonating a real end user.",
     "distractor_notes": {
       "A": "Admin absolutely has special handling.",
@@ -484,9 +867,16 @@
       "D": "Admin doesn't require elevation for normal use; elevation is for security_admin specifically."
     },
     "references": [
-      { "title": "Base system roles", "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/user-administration/r_BaseSystemRoles.html" }
+      {
+        "title": "Base system roles",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/user-administration/r_BaseSystemRoles.html"
+      }
     ],
-    "tags": ["admin", "roles", "impersonation"]
+    "tags": [
+      "admin",
+      "roles",
+      "impersonation"
+    ]
   },
   {
     "id": "cad-sec-019",
@@ -496,14 +886,28 @@
     "subdomain": "ACL Debugging",
     "difficulty": "application",
     "type": "single_select",
-    "stem": "A developer needs to test what end users will actually see. The most appropriate platform-supported approach is:",
+    "stem": "A developer needs to test what end users will actually see. What is the most appropriate platform-supported approach?",
     "options": [
-      { "id": "A", "text": "Create a test user with the role and log out and back in." },
-      { "id": "B", "text": "Impersonate the test user (System Administration → Impersonate User) while logged in as admin. The platform applies that user's roles and ACLs to the session." },
-      { "id": "C", "text": "Open a private browser window and guess." },
-      { "id": "D", "text": "Disable ACLs temporarily." }
+      {
+        "id": "A",
+        "text": "Create a test user with the role and log out and back in."
+      },
+      {
+        "id": "B",
+        "text": "Impersonate the test user (System Administration → Impersonate User) while logged in as admin. The platform applies that user's roles and ACLs to the session."
+      },
+      {
+        "id": "C",
+        "text": "Open a private browser window and guess."
+      },
+      {
+        "id": "D",
+        "text": "Disable ACLs temporarily."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "Impersonate User is the canonical 'see-the-platform-as-them' tool. The admin remains logged in but the session adopts the target user's roles and ACL evaluations. It's the right tool — and the friction of impersonating is itself audit-logged.",
     "distractor_notes": {
       "A": "Logging out works but is slow; impersonation is the supported workflow.",
@@ -511,10 +915,20 @@
       "D": "Disabling ACLs to 'test' defeats the test."
     },
     "references": [
-      { "title": "Base system roles", "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/user-administration/r_BaseSystemRoles.html" },
-      { "title": "ACL debugging tools", "url": "https://www.servicenow.com/docs/r/zurich/platform-security/access-control/c_AccessControlRulesDebug.html" }
+      {
+        "title": "Base system roles",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/user-administration/r_BaseSystemRoles.html"
+      },
+      {
+        "title": "ACL debugging tools",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/access-control/c_AccessControlRulesDebug.html"
+      }
     ],
-    "tags": ["impersonation", "testing", "acl-debug"]
+    "tags": [
+      "impersonation",
+      "testing",
+      "acl-debug"
+    ]
   },
   {
     "id": "cad-sec-020",
@@ -526,12 +940,26 @@
     "type": "single_select",
     "stem": "By default, what happens when a Business Rule's GlideRecord query encounters records the current session user cannot read (per ACLs)?",
     "options": [
-      { "id": "A", "text": "The query returns 0 rows and silently logs nothing." },
-      { "id": "B", "text": "A standard GlideRecord query in a Business Rule runs with the system's privileges by default — Business Rules execute server-side and honor scope rules but are not filtered by the calling user's ACLs unless the developer explicitly queries with user context." },
-      { "id": "C", "text": "The query always raises an exception." },
-      { "id": "D", "text": "The records are returned but their field values are nulled out." }
+      {
+        "id": "A",
+        "text": "The query returns 0 rows and silently logs nothing."
+      },
+      {
+        "id": "B",
+        "text": "A standard GlideRecord query in a Business Rule runs with the system's privileges by default — Business Rules execute server-side and honor scope rules but are not filtered by the calling user's ACLs unless the developer explicitly queries with user context."
+      },
+      {
+        "id": "C",
+        "text": "The query always raises an exception."
+      },
+      {
+        "id": "D",
+        "text": "The records are returned but their field values are nulled out."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "Business Rule scripts execute server-side and don't have read ACLs applied on their internal GlideRecord queries the way a user's UI request does. That's deliberate — server logic often needs to see records the calling user can't. The flip side: developers must be careful not to leak data the user shouldn't see.",
     "distractor_notes": {
       "A": "It doesn't silently filter to 0 — server-side scripts run with elevated visibility.",
@@ -539,9 +967,16 @@
       "D": "Records aren't filtered with nulled fields."
     },
     "references": [
-      { "title": "Access Control List rules", "url": "https://www.servicenow.com/docs/r/zurich/platform-security/access-control/access-control-rules.html" }
+      {
+        "title": "Access Control List rules",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/access-control/access-control-rules.html"
+      }
     ],
-    "tags": ["glide-record", "server-side", "acl-bypass"]
+    "tags": [
+      "glide-record",
+      "server-side",
+      "acl-bypass"
+    ]
   },
   {
     "id": "cad-sec-021",
@@ -553,12 +988,26 @@
     "type": "single_select",
     "stem": "A developer needs to hide a sensitive 'Salary' field from non-HR users on a form, but admins need it. Setting the field 'visible' to false in a UI Policy works on the form. Is this sufficient?",
     "options": [
-      { "id": "A", "text": "Yes — UI Policy visibility is enforced server-side." },
-      { "id": "B", "text": "No — UI Policy only hides the field on the form. A non-HR user could still read the value via the list view, the API, or by inspecting page source. For real security, add a read ACL on the field (table.field, read, requires HR role) so the platform refuses to return the value." },
-      { "id": "C", "text": "Yes — hidden fields are dropped from the API response automatically." },
-      { "id": "D", "text": "No — UI Policies are non-functional in Zurich." }
+      {
+        "id": "A",
+        "text": "Yes — UI Policy visibility is enforced server-side."
+      },
+      {
+        "id": "B",
+        "text": "No — UI Policy only hides the field on the form. A non-HR user could still read the value via the list view, the API, or by inspecting page source. For real security, add a read ACL on the field (table.field, read, requires HR role) so the platform refuses to return the value."
+      },
+      {
+        "id": "C",
+        "text": "Yes — hidden fields are dropped from the API response automatically."
+      },
+      {
+        "id": "D",
+        "text": "No — UI Policies are non-functional in Zurich."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "UI Policy is presentation logic, not security. Field-level read ACLs are how you actually prevent disclosure across UI, list, API, and export. Visibility tweaks without an ACL leak data through other channels.",
     "distractor_notes": {
       "A": "UI Policies are client-side. Server doesn't filter responses based on them.",
@@ -566,10 +1015,21 @@
       "D": "UI Policies work fine — they just aren't security."
     },
     "references": [
-      { "title": "Contextual security", "url": "https://www.servicenow.com/docs/r/zurich/platform-security/contextual-security.html" },
-      { "title": "Access Control List rules", "url": "https://www.servicenow.com/docs/r/zurich/platform-security/access-control/access-control-rules.html" }
+      {
+        "title": "Contextual security",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/contextual-security.html"
+      },
+      {
+        "title": "Access Control List rules",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/access-control/access-control-rules.html"
+      }
     ],
-    "tags": ["acl", "field-level", "ui-policy-vs-acl", "scenario"]
+    "tags": [
+      "acl",
+      "field-level",
+      "ui-policy-vs-acl",
+      "scenario"
+    ]
   },
   {
     "id": "cad-sec-022",
@@ -581,12 +1041,26 @@
     "type": "single_select",
     "stem": "When an application is created with auto-generated application access, what does the platform typically produce?",
     "options": [
-      { "id": "A", "text": "Nothing — the developer must hand-write every ACL." },
-      { "id": "B", "text": "A baseline application role (e.g., x_acme_loaner.user / .admin) and a starter set of table-level ACLs that gate the app's tables behind that role — giving the developer a working foundation to refine." },
-      { "id": "C", "text": "A nightly job that cleans up unused records." },
-      { "id": "D", "text": "A copy of the entire base instance's ACL set." }
+      {
+        "id": "A",
+        "text": "Nothing — the developer must hand-write every ACL."
+      },
+      {
+        "id": "B",
+        "text": "A baseline application role (e.g., x_acme_loaner.user / .admin) and a starter set of table-level ACLs that gate the app's tables behind that role — giving the developer a working foundation to refine."
+      },
+      {
+        "id": "C",
+        "text": "A nightly job that cleans up unused records."
+      },
+      {
+        "id": "D",
+        "text": "A copy of the entire base instance's ACL set."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "Auto-generated app access scaffolds a role and the four standard table-level ACLs gated on that role. It's a starting point — most apps refine from there.",
     "distractor_notes": {
       "A": "The platform does scaffold; the developer doesn't start from zero.",
@@ -594,9 +1068,16 @@
       "D": "It doesn't duplicate the instance's ACLs."
     },
     "references": [
-      { "title": "Configure an ACL rule", "url": "https://www.servicenow.com/docs/r/zurich/platform-security/access-control/t_CreateAnACLRule.html" }
+      {
+        "title": "Configure an ACL rule",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/access-control/t_CreateAnACLRule.html"
+      }
     ],
-    "tags": ["application-access", "auto-generate", "roles"]
+    "tags": [
+      "application-access",
+      "auto-generate",
+      "roles"
+    ]
   },
   {
     "id": "cad-sec-023",
@@ -608,12 +1089,26 @@
     "type": "single_select",
     "stem": "How does Application Scope contribute to securing an application's artifacts (beyond table ACLs)?",
     "options": [
-      { "id": "A", "text": "Scope doesn't contribute to security at all." },
-      { "id": "B", "text": "Scope provides a namespace boundary — scripts in other scopes can't casually read, write, or call the app's artifacts unless the owning scope grants cross-scope privileges. It's a second layer of protection alongside ACLs." },
-      { "id": "C", "text": "Scope encrypts every artifact in the database." },
-      { "id": "D", "text": "Scope only matters for navigation order." }
+      {
+        "id": "A",
+        "text": "Scope doesn't contribute to security at all."
+      },
+      {
+        "id": "B",
+        "text": "Scope provides a namespace boundary — scripts in other scopes can't casually read, write, or call the app's artifacts unless the owning scope grants cross-scope privileges. It's a second layer of protection alongside ACLs."
+      },
+      {
+        "id": "C",
+        "text": "Scope encrypts every artifact in the database."
+      },
+      {
+        "id": "D",
+        "text": "Scope only matters for navigation order."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "Scope is a complementary protection axis to ACLs. ACLs answer 'can THIS USER do THIS operation?' Scope answers 'can THIS APP'S CODE touch ANOTHER APP'S ARTIFACT?' Two layers, two threat models.",
     "distractor_notes": {
       "A": "Scope is part of the security story.",
@@ -621,9 +1116,15 @@
       "D": "Scope is much more than display order."
     },
     "references": [
-      { "title": "Contextual security", "url": "https://www.servicenow.com/docs/r/zurich/platform-security/contextual-security.html" }
+      {
+        "title": "Contextual security",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/contextual-security.html"
+      }
     ],
-    "tags": ["application-scope", "security-layers"]
+    "tags": [
+      "application-scope",
+      "security-layers"
+    ]
   },
   {
     "id": "cad-sec-024",
@@ -635,12 +1136,26 @@
     "type": "single_select",
     "stem": "A non-admin user complains 'I can't open my own Loaner Request.' The developer impersonates the user and confirms the error. What's the right first diagnostic step?",
     "options": [
-      { "id": "A", "text": "Restart the instance." },
-      { "id": "B", "text": "Enable ACL Debug (Elevate → security_admin → enable Debug Security Rules) while impersonating the user. Replay the action and read the trace to see which ACL rule denied access (or which rule was missing that should have granted)." },
-      { "id": "C", "text": "Delete the user's record and recreate it." },
-      { "id": "D", "text": "Add the admin role to the user." }
+      {
+        "id": "A",
+        "text": "Restart the instance."
+      },
+      {
+        "id": "B",
+        "text": "Enable ACL Debug (Elevate → security_admin → enable Debug Security Rules) while impersonating the user. Replay the action and read the trace to see which ACL rule denied access (or which rule was missing that should have granted)."
+      },
+      {
+        "id": "C",
+        "text": "Delete the user's record and recreate it."
+      },
+      {
+        "id": "D",
+        "text": "Add the admin role to the user."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "ACL Debug shows exactly which rules were consulted, which passed, which failed, and what the final verdict was. It is the single most useful tool for diagnosing access problems. Adding admin would fix the symptom but corrupt the security model.",
     "distractor_notes": {
       "A": "Restarting instances isn't a developer-controllable action and isn't the right diagnostic.",
@@ -648,9 +1163,16 @@
       "D": "Granting admin is a 'turn off the alarm' fix that creates a security regression."
     },
     "references": [
-      { "title": "ACL debugging tools", "url": "https://www.servicenow.com/docs/r/zurich/platform-security/access-control/c_AccessControlRulesDebug.html" }
+      {
+        "title": "ACL debugging tools",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/access-control/c_AccessControlRulesDebug.html"
+      }
     ],
-    "tags": ["acl-debug", "diagnostics", "scenario"]
+    "tags": [
+      "acl-debug",
+      "diagnostics",
+      "scenario"
+    ]
   },
   {
     "id": "cad-sec-025",
@@ -662,12 +1184,26 @@
     "type": "single_select",
     "stem": "Which statement about ServiceNow Encryption Support is accurate?",
     "options": [
-      { "id": "A", "text": "All field values are encrypted by default with no configuration." },
-      { "id": "B", "text": "ServiceNow provides encryption options (such as Edge Encryption and Column-level Encryption Enterprise) that admins configure for specific fields/tables; encryption is not on for every field automatically." },
-      { "id": "C", "text": "Encryption can only be configured by ServiceNow Support." },
-      { "id": "D", "text": "Encryption is only available on the Service Portal." }
+      {
+        "id": "A",
+        "text": "All field values are encrypted by default with no configuration."
+      },
+      {
+        "id": "B",
+        "text": "ServiceNow provides encryption options (such as Edge Encryption and Column-level Encryption Enterprise) that admins configure for specific fields/tables; encryption is not on for every field automatically."
+      },
+      {
+        "id": "C",
+        "text": "Encryption can only be configured by ServiceNow Support."
+      },
+      {
+        "id": "D",
+        "text": "Encryption is only available on the Service Portal."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "Field encryption is configured per field/table using the platform's encryption options. It's deliberate, not blanket — you encrypt the sensitive things and pay the performance/complexity cost only where it's worth it.",
     "distractor_notes": {
       "A": "Field-level encryption isn't on for every field by default.",
@@ -675,9 +1211,15 @@
       "D": "Encryption is platform-wide, not Service-Portal-only."
     },
     "references": [
-      { "title": "Encryption support", "url": "https://www.servicenow.com/docs/r/zurich/platform-security/c_EncryptionSupport.html" }
+      {
+        "title": "Encryption support",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/c_EncryptionSupport.html"
+      }
     ],
-    "tags": ["encryption", "platform-security"]
+    "tags": [
+      "encryption",
+      "platform-security"
+    ]
   },
   {
     "id": "cad-sec-026",
@@ -689,12 +1231,26 @@
     "type": "single_select",
     "stem": "From an application developer's perspective, what role does authentication (e.g., MFA, SAML) play vs. ACLs?",
     "options": [
-      { "id": "A", "text": "Authentication and ACLs are the same thing." },
-      { "id": "B", "text": "Authentication answers WHO the user is (login). ACLs answer WHAT the user can do once authenticated. They're separate layers — an app developer usually configures ACLs and lets the instance's authentication infrastructure handle login." },
-      { "id": "C", "text": "Authentication is configured per app." },
-      { "id": "D", "text": "ACLs replace authentication if used." }
+      {
+        "id": "A",
+        "text": "Authentication and ACLs are the same thing."
+      },
+      {
+        "id": "B",
+        "text": "Authentication answers WHO the user is (login). ACLs answer WHAT the user can do once authenticated. They're separate layers — an app developer usually configures ACLs and lets the instance's authentication infrastructure handle login."
+      },
+      {
+        "id": "C",
+        "text": "Authentication is configured per app."
+      },
+      {
+        "id": "D",
+        "text": "ACLs replace authentication if used."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "Two distinct concerns: authn (who you are) and authz (what you can do). Authn is instance-wide configuration; ACLs are application-level access logic. CAD developers focus mostly on ACLs.",
     "distractor_notes": {
       "A": "They're related but distinct.",
@@ -702,9 +1258,16 @@
       "D": "ACLs don't replace authn — they need a logged-in user to evaluate."
     },
     "references": [
-      { "title": "Authentication overview", "url": "https://www.servicenow.com/docs/r/zurich/platform-security/c_AuthenticationOverview.html" }
+      {
+        "title": "Authentication overview",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/c_AuthenticationOverview.html"
+      }
     ],
-    "tags": ["authentication", "authorization", "layers"]
+    "tags": [
+      "authentication",
+      "authorization",
+      "layers"
+    ]
   },
   {
     "id": "cad-sec-027",
@@ -716,12 +1279,26 @@
     "type": "single_select",
     "stem": "Which best describes the role of MFA (Multi-Factor Authentication) in ServiceNow?",
     "options": [
-      { "id": "A", "text": "MFA is a CAD-only feature that authenticates application requests." },
-      { "id": "B", "text": "MFA is a platform authentication enhancement requiring a second factor (e.g., authenticator app, FIDO2 key) in addition to the password — and in Zurich, MFA is enabled by default for new customers' internal local/LDAP logins." },
-      { "id": "C", "text": "MFA replaces ACLs." },
-      { "id": "D", "text": "MFA is configured per record." }
+      {
+        "id": "A",
+        "text": "MFA is a CAD-only feature that authenticates application requests."
+      },
+      {
+        "id": "B",
+        "text": "MFA is a platform authentication enhancement requiring a second factor (e.g., authenticator app, FIDO2 key) in addition to the password — and in Zurich, MFA is enabled by default for new customers' internal local/LDAP logins."
+      },
+      {
+        "id": "C",
+        "text": "MFA replaces ACLs."
+      },
+      {
+        "id": "D",
+        "text": "MFA is configured per record."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "MFA is an authentication-layer hardening. Zurich expanded MFA factor policy support (including FIDO2) and enables MFA by default for new customers' internal local/LDAP login. From an app developer's view, MFA happens before your code ever runs.",
     "distractor_notes": {
       "A": "MFA is instance-wide, not CAD-specific.",
@@ -729,9 +1306,15 @@
       "D": "MFA is per-user/session, not per-record."
     },
     "references": [
-      { "title": "Multi-factor authentication", "url": "https://www.servicenow.com/docs/r/zurich/platform-security/c_MultifactorAuthentication.html" }
+      {
+        "title": "Multi-factor authentication",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/c_MultifactorAuthentication.html"
+      }
     ],
-    "tags": ["mfa", "authentication"]
+    "tags": [
+      "mfa",
+      "authentication"
+    ]
   },
   {
     "id": "cad-sec-028",
@@ -743,12 +1326,26 @@
     "type": "single_select",
     "stem": "A developer wants to restrict access to an entire Application Menu and its Modules so that only users with the x_acme_loaner.manager role can see them in the navigator. What's the right approach?",
     "options": [
-      { "id": "A", "text": "Set the 'Roles' field on both the Application Menu and the relevant Modules to x_acme_loaner.manager. The navigator filters menus and modules based on these role restrictions." },
-      { "id": "B", "text": "Write a Business Rule that deletes the menu entries each morning." },
-      { "id": "C", "text": "Edit the user's profile to hide menus they shouldn't see." },
-      { "id": "D", "text": "Modules can't be role-restricted." }
+      {
+        "id": "A",
+        "text": "Set the 'Roles' field on both the Application Menu and the relevant Modules to x_acme_loaner.manager. The navigator filters menus and modules based on these role restrictions."
+      },
+      {
+        "id": "B",
+        "text": "Write a Business Rule that deletes the menu entries each morning."
+      },
+      {
+        "id": "C",
+        "text": "Edit the user's profile to hide menus they shouldn't see."
+      },
+      {
+        "id": "D",
+        "text": "Modules can't be role-restricted."
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "Application Menu and Module records each have a Roles field. Set it, and only users with at least one of those roles see the entry in the navigator. Pair with ACLs on the underlying tables for full enforcement (the navigator restriction is presentation; the table ACL is enforcement).",
     "distractor_notes": {
       "B": "Deleting records is destructive and not how visibility works.",
@@ -756,9 +1353,16 @@
       "D": "Modules absolutely accept role restrictions."
     },
     "references": [
-      { "title": "Configure an ACL rule", "url": "https://www.servicenow.com/docs/r/zurich/platform-security/access-control/t_CreateAnACLRule.html" }
+      {
+        "title": "Configure an ACL rule",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/access-control/t_CreateAnACLRule.html"
+      }
     ],
-    "tags": ["modules", "roles", "navigation"]
+    "tags": [
+      "modules",
+      "roles",
+      "navigation"
+    ]
   },
   {
     "id": "cad-sec-029",
@@ -770,12 +1374,26 @@
     "type": "single_select",
     "stem": "A developer wants the 'Manager Notes' field on x_acme_loaner_request to be writable by managers and read-only for everyone else who can read the record. What's the cleanest setup?",
     "options": [
-      { "id": "A", "text": "Make the field 'read-only' in the Dictionary so nobody can write it." },
-      { "id": "B", "text": "Create a write ACL on x_acme_loaner_request.manager_notes requiring the x_acme_loaner.manager role. Anyone with the table read ACL can read the field by default; only manager-role users pass the field-level write ACL." },
-      { "id": "C", "text": "Use a UI Policy to set read-only based on role." },
-      { "id": "D", "text": "Encrypt the field." }
+      {
+        "id": "A",
+        "text": "Make the field 'read-only' in the Dictionary so nobody can write it."
+      },
+      {
+        "id": "B",
+        "text": "Create a write ACL on x_acme_loaner_request.manager_notes requiring the x_acme_loaner.manager role. Anyone with the table read ACL can read the field by default; only manager-role users pass the field-level write ACL."
+      },
+      {
+        "id": "C",
+        "text": "Use a UI Policy to set read-only based on role."
+      },
+      {
+        "id": "D",
+        "text": "Encrypt the field."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "Field-level write ACL is the right primitive. Read is governed by separate ACLs (typically table-level), write is locked behind the manager role. UI Policies are presentation, not security.",
     "distractor_notes": {
       "A": "Dictionary read-only locks it for everyone — including managers.",
@@ -783,9 +1401,16 @@
       "D": "Encryption protects data at rest, not write access."
     },
     "references": [
-      { "title": "Configure an ACL rule", "url": "https://www.servicenow.com/docs/r/zurich/platform-security/access-control/t_CreateAnACLRule.html" }
+      {
+        "title": "Configure an ACL rule",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/access-control/t_CreateAnACLRule.html"
+      }
     ],
-    "tags": ["field-acl", "write", "read-only"]
+    "tags": [
+      "field-acl",
+      "write",
+      "read-only"
+    ]
   },
   {
     "id": "cad-sec-030",
@@ -797,12 +1422,26 @@
     "type": "single_select",
     "stem": "From a SECURITY (not just functionality) standpoint, why does Application Scope use a cross-scope privilege model?",
     "options": [
-      { "id": "A", "text": "It's a UI convenience with no security implication." },
-      { "id": "B", "text": "Cross-scope privileges enforce explicit, minimal grants between applications, so a vulnerability or bug in one app cannot freely traverse and modify another app's tables, scripts, or APIs without an explicit privilege record." },
-      { "id": "C", "text": "It's purely a billing mechanism." },
-      { "id": "D", "text": "It encrypts cross-scope calls." }
+      {
+        "id": "A",
+        "text": "It's a UI convenience with no security implication."
+      },
+      {
+        "id": "B",
+        "text": "Cross-scope privileges enforce explicit, minimal grants between applications, so a vulnerability or bug in one app cannot freely traverse and modify another app's tables, scripts, or APIs without an explicit privilege record."
+      },
+      {
+        "id": "C",
+        "text": "It's purely a billing mechanism."
+      },
+      {
+        "id": "D",
+        "text": "It encrypts cross-scope calls."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "Cross-scope privileges are containment. They limit blast radius — an exploit in one app can't pivot into others without explicit privilege records. That's a core defense-in-depth feature, not just plumbing.",
     "distractor_notes": {
       "A": "It's a real security control.",
@@ -810,9 +1449,16 @@
       "D": "Not transport-level encryption."
     },
     "references": [
-      { "title": "Scope-to-scope settings", "url": "https://www.servicenow.com/docs/r/zurich/application-development/scope-to-scope-settings.html" }
+      {
+        "title": "Scope-to-scope settings",
+        "url": "https://www.servicenow.com/docs/r/zurich/application-development/scope-to-scope-settings.html"
+      }
     ],
-    "tags": ["cross-scope", "security", "defense-in-depth"]
+    "tags": [
+      "cross-scope",
+      "security",
+      "defense-in-depth"
+    ]
   },
   {
     "id": "cad-sec-031",
@@ -824,12 +1470,26 @@
     "type": "single_select",
     "stem": "A custom table x_acme_loaner_request extends Task. A developer notices users with the 'itil' role can read records on x_acme_loaner_request even though they didn't intend that. Why?",
     "options": [
-      { "id": "A", "text": "The platform randomly grants access." },
-      { "id": "B", "text": "Task has read ACLs that allow itil to read; because x_acme_loaner_request extends Task, those ACLs are inherited. To restrict to a more specific audience, add tighter ACLs on x_acme_loaner_request or design the table not to extend Task." },
-      { "id": "C", "text": "itil role can read every table on the instance." },
-      { "id": "D", "text": "Task is in the same scope as x_acme_loaner_request." }
+      {
+        "id": "A",
+        "text": "The platform randomly grants access."
+      },
+      {
+        "id": "B",
+        "text": "Task has read ACLs that allow itil to read; because x_acme_loaner_request extends Task, those ACLs are inherited. To restrict to a more specific audience, add tighter ACLs on x_acme_loaner_request or design the table not to extend Task."
+      },
+      {
+        "id": "C",
+        "text": "itil role can read every table on the instance."
+      },
+      {
+        "id": "D",
+        "text": "Task is in the same scope as x_acme_loaner_request."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "Inheritance from Task brings Task's ACLs with it. That's a feature for ITIL-shaped apps and a footgun for apps that wanted strict isolation. The fix is either tighter rules on the child table or rethinking the parent choice.",
     "distractor_notes": {
       "A": "Access isn't random — it's inherited.",
@@ -837,9 +1497,17 @@
       "D": "Scope is independent of table extension."
     },
     "references": [
-      { "title": "ACL rule processing", "url": "https://www.servicenow.com/docs/r/zurich/platform-security/r_ACLRuleProcessing.html" }
+      {
+        "title": "ACL rule processing",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/r_ACLRuleProcessing.html"
+      }
     ],
-    "tags": ["acl", "inheritance", "task-table", "scenario"]
+    "tags": [
+      "acl",
+      "inheritance",
+      "task-table",
+      "scenario"
+    ]
   },
   {
     "id": "cad-sec-032",
@@ -851,12 +1519,26 @@
     "type": "single_select",
     "stem": "What's the difference between an ACL whose Type is 'record' versus 'processor'?",
     "options": [
-      { "id": "A", "text": "There's no difference." },
-      { "id": "B", "text": "record ACLs control access to table rows/fields (the common case). processor ACLs control access to specific UI Pages / scripts that handle URL requests outside the standard record CRUD path." },
-      { "id": "C", "text": "record ACLs run server-side; processor ACLs run client-side." },
-      { "id": "D", "text": "processor ACLs are deprecated and no longer used." }
+      {
+        "id": "A",
+        "text": "There's no difference."
+      },
+      {
+        "id": "B",
+        "text": "record ACLs control access to table rows/fields (the common case). processor ACLs control access to specific UI Pages / scripts that handle URL requests outside the standard record CRUD path."
+      },
+      {
+        "id": "C",
+        "text": "record ACLs run server-side; processor ACLs run client-side."
+      },
+      {
+        "id": "D",
+        "text": "processor ACLs are deprecated and no longer used."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "The Type field on an ACL sets what kind of resource it protects. record is the standard CRUD case. processor is for protecting custom URL endpoints (UI Pages, Scripts) that aren't table-based. Most apps stick to record ACLs.",
     "distractor_notes": {
       "A": "They protect different resources.",
@@ -864,9 +1546,16 @@
       "D": "processor ACLs are still part of the platform."
     },
     "references": [
-      { "title": "Configure an ACL rule", "url": "https://www.servicenow.com/docs/r/zurich/platform-security/access-control/t_CreateAnACLRule.html" }
+      {
+        "title": "Configure an ACL rule",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/access-control/t_CreateAnACLRule.html"
+      }
     ],
-    "tags": ["acl", "type", "processor"]
+    "tags": [
+      "acl",
+      "type",
+      "processor"
+    ]
   },
   {
     "id": "cad-sec-033",
@@ -876,14 +1565,28 @@
     "subdomain": "Roles",
     "difficulty": "application",
     "type": "single_select",
-    "stem": "A developer needs a 'super manager' role for their loaner app that includes all the permissions of the standard manager role plus a few extras. The most appropriate design is:",
+    "stem": "A developer needs a 'super manager' role for their loaner app that includes all the permissions of the standard manager role plus a few extras. What is the most appropriate design?",
     "options": [
-      { "id": "A", "text": "Manually duplicate every ACL and re-grant it to the new role." },
-      { "id": "B", "text": "Define x_acme_loaner.super_manager and add x_acme_loaner.manager to it as a CONTAINED role (or list it on the role's 'Contains roles' field). The user with super_manager effectively gets manager too. Then add the few extras as new ACLs against super_manager." },
-      { "id": "C", "text": "Tell users to log in with two accounts." },
-      { "id": "D", "text": "Use only one role for the entire app." }
+      {
+        "id": "A",
+        "text": "Manually duplicate every ACL and re-grant it to the new role."
+      },
+      {
+        "id": "B",
+        "text": "Define x_acme_loaner.super_manager and add x_acme_loaner.manager to it as a CONTAINED role (or list it on the role's 'Contains roles' field). The user with super_manager effectively gets manager too. Then add the few extras as new ACLs against super_manager."
+      },
+      {
+        "id": "C",
+        "text": "Tell users to log in with two accounts."
+      },
+      {
+        "id": "D",
+        "text": "Use only one role for the entire app."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "Role nesting (Contains roles) is exactly this pattern. super_manager 'contains' manager and inherits its access; add new ACLs on super_manager for the extras. This avoids ACL duplication and keeps the role model clear.",
     "distractor_notes": {
       "A": "ACL duplication breeds drift and bugs.",
@@ -891,9 +1594,16 @@
       "D": "One role for everyone removes least-privilege."
     },
     "references": [
-      { "title": "Base system roles", "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/user-administration/r_BaseSystemRoles.html" }
+      {
+        "title": "Base system roles",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/user-administration/r_BaseSystemRoles.html"
+      }
     ],
-    "tags": ["roles", "contains-roles", "nesting"]
+    "tags": [
+      "roles",
+      "contains-roles",
+      "nesting"
+    ]
   },
   {
     "id": "cad-sec-034",
@@ -905,12 +1615,26 @@
     "type": "single_select",
     "stem": "Which platform mechanism records the history of changes to a record (who changed what, when) for security auditing?",
     "options": [
-      { "id": "A", "text": "sys_audit (the Audit table) — fields marked as audited are recorded, and the Activity / Audit related list surfaces the history per record." },
-      { "id": "B", "text": "ACL debug logs only." },
-      { "id": "C", "text": "Browser history." },
-      { "id": "D", "text": "There's no auditing in ServiceNow." }
+      {
+        "id": "A",
+        "text": "sys_audit (the Audit table) — fields marked as audited are recorded, and the Activity / Audit related list surfaces the history per record."
+      },
+      {
+        "id": "B",
+        "text": "ACL debug logs only."
+      },
+      {
+        "id": "C",
+        "text": "Browser history."
+      },
+      {
+        "id": "D",
+        "text": "There's no auditing in ServiceNow."
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "Field auditing writes change records to sys_audit. Forms surface that history via Activity / Audit history. It's the platform's record-keeping for accountability, separate from ACLs.",
     "distractor_notes": {
       "B": "ACL debug shows access decisions, not change history.",
@@ -918,9 +1642,15 @@
       "D": "Auditing is core to the platform."
     },
     "references": [
-      { "title": "Access Control List rules", "url": "https://www.servicenow.com/docs/r/zurich/platform-security/access-control/access-control-rules.html" }
+      {
+        "title": "Access Control List rules",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/access-control/access-control-rules.html"
+      }
     ],
-    "tags": ["auditing", "sys_audit"]
+    "tags": [
+      "auditing",
+      "sys_audit"
+    ]
   },
   {
     "id": "cad-sec-035",
@@ -932,12 +1662,26 @@
     "type": "single_select",
     "stem": "A developer writes a one-off ACL script that calls a Script Include in a DIFFERENT scope. Tests pass for admins, fails for end users. What's likely happening?",
     "options": [
-      { "id": "A", "text": "End users have a typo in their browser." },
-      { "id": "B", "text": "Cross-scope privilege rules require that the calling scope (where the ACL lives) be granted access to invoke the Script Include in the other scope. Without that privilege, the call fails for non-admin users (admins implicitly bypass many checks). Add a cross-scope privilege or move the helper logic into a same-scope Script Include." },
-      { "id": "C", "text": "Restart the instance." },
-      { "id": "D", "text": "Admin role disables Script Includes." }
+      {
+        "id": "A",
+        "text": "End users have a typo in their browser."
+      },
+      {
+        "id": "B",
+        "text": "Cross-scope privilege rules require that the calling scope (where the ACL lives) be granted access to invoke the Script Include in the other scope. Without that privilege, the call fails for non-admin users (admins implicitly bypass many checks). Add a cross-scope privilege or move the helper logic into a same-scope Script Include."
+      },
+      {
+        "id": "C",
+        "text": "Restart the instance."
+      },
+      {
+        "id": "D",
+        "text": "Admin role disables Script Includes."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "Cross-scope calls require explicit privileges. Admins routinely bypass these checks (intentional admin behavior), which hides the bug during admin testing. Either grant a cross-scope privilege or keep the helper in the same scope.",
     "distractor_notes": {
       "A": "Browser typos don't selectively affect non-admins.",
@@ -945,9 +1689,17 @@
       "D": "Admin doesn't disable Script Includes."
     },
     "references": [
-      { "title": "Scope-to-scope settings", "url": "https://www.servicenow.com/docs/r/zurich/application-development/scope-to-scope-settings.html" }
+      {
+        "title": "Scope-to-scope settings",
+        "url": "https://www.servicenow.com/docs/r/zurich/application-development/scope-to-scope-settings.html"
+      }
     ],
-    "tags": ["cross-scope", "acl-script", "admin-bypass", "scenario"]
+    "tags": [
+      "cross-scope",
+      "acl-script",
+      "admin-bypass",
+      "scenario"
+    ]
   },
   {
     "id": "cad-sec-036",
@@ -959,12 +1711,26 @@
     "type": "single_select",
     "stem": "Which of these is a security best practice when designing a custom ServiceNow application?",
     "options": [
-      { "id": "A", "text": "Grant every user the admin role — it makes testing easier." },
-      { "id": "B", "text": "Apply least privilege: give users only the roles required for their job, design ACLs to deny by default and grant explicitly, encrypt sensitive data, and test access by impersonating real end users (not from an admin session)." },
-      { "id": "C", "text": "Disable ACLs in production for the first 30 days to gather usage data." },
-      { "id": "D", "text": "Hide admin features by adding CSS to hide buttons." }
+      {
+        "id": "A",
+        "text": "Grant every user the admin role — it makes testing easier."
+      },
+      {
+        "id": "B",
+        "text": "Apply least privilege: give users only the roles required for their job, design ACLs to deny by default and grant explicitly, encrypt sensitive data, and test access by impersonating real end users (not from an admin session)."
+      },
+      {
+        "id": "C",
+        "text": "Disable ACLs in production for the first 30 days to gather usage data."
+      },
+      {
+        "id": "D",
+        "text": "Hide admin features by adding CSS to hide buttons."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "Least privilege, deny-by-default, real-user testing, encryption where warranted — these are the foundations. None of the other options are defensible; each is an anti-pattern that sounds tempting and is dangerous.",
     "distractor_notes": {
       "A": "Granting admin to everyone destroys least privilege.",
@@ -972,9 +1738,15 @@
       "D": "CSS-hiding admin buttons doesn't restrict access — it just hides the doorbell."
     },
     "references": [
-      { "title": "Contextual security", "url": "https://www.servicenow.com/docs/r/zurich/platform-security/contextual-security.html" }
+      {
+        "title": "Contextual security",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/contextual-security.html"
+      }
     ],
-    "tags": ["best-practices", "least-privilege"]
+    "tags": [
+      "best-practices",
+      "least-privilege"
+    ]
   },
   {
     "id": "cad-sec-037",
@@ -986,12 +1758,26 @@
     "type": "single_select",
     "stem": "What is a Data Policy in ServiceNow, and how does it differ from a UI Policy?",
     "options": [
-      { "id": "A", "text": "Data Policies and UI Policies are synonyms." },
-      { "id": "B", "text": "Data Policies enforce field-level rules (mandatory, read-only) server-side regardless of how a record is saved (form, list, API, import). UI Policies enforce the same kinds of rules but only on the form, client-side." },
-      { "id": "C", "text": "Data Policies are client-side; UI Policies are server-side." },
-      { "id": "D", "text": "Data Policies only apply to imported data." }
+      {
+        "id": "A",
+        "text": "Data Policies and UI Policies are synonyms."
+      },
+      {
+        "id": "B",
+        "text": "Data Policies enforce field-level rules (mandatory, read-only) server-side regardless of how a record is saved (form, list, API, import). UI Policies enforce the same kinds of rules but only on the form, client-side."
+      },
+      {
+        "id": "C",
+        "text": "Data Policies are client-side; UI Policies are server-side."
+      },
+      {
+        "id": "D",
+        "text": "Data Policies only apply to imported data."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "Data Policy = server-side enforcement. UI Policy = client-side presentation. When you need a rule to hold across UI, API, imports, and integrations, Data Policy is the right tool. UI Policy improves UX but is bypassable.",
     "distractor_notes": {
       "A": "They are distinct.",
@@ -999,9 +1785,16 @@
       "D": "Data Policies apply to every save path, not just imports."
     },
     "references": [
-      { "title": "Contextual security", "url": "https://www.servicenow.com/docs/r/zurich/platform-security/contextual-security.html" }
+      {
+        "title": "Contextual security",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/contextual-security.html"
+      }
     ],
-    "tags": ["data-policy", "ui-policy", "comparison"]
+    "tags": [
+      "data-policy",
+      "ui-policy",
+      "comparison"
+    ]
   },
   {
     "id": "cad-sec-038",
@@ -1011,14 +1804,28 @@
     "subdomain": "Data Policy",
     "difficulty": "application",
     "type": "single_select",
-    "stem": "A developer needs to ensure 'requester' is always filled in on x_acme_loaner_request, no matter where the record comes from (form, REST API, import set, business rule). The right tool is:",
+    "stem": "A developer needs to ensure 'requester' is always filled in on x_acme_loaner_request, no matter where the record comes from (form, REST API, import set, business rule). What is the right tool?",
     "options": [
-      { "id": "A", "text": "A UI Policy with mandatory = true." },
-      { "id": "B", "text": "A Data Policy with the requester field marked Mandatory — Data Policies enforce on the server-side for all save paths, including API and imports." },
-      { "id": "C", "text": "A Client Script onSubmit." },
-      { "id": "D", "text": "An ACL with a script." }
+      {
+        "id": "A",
+        "text": "A UI Policy with mandatory = true."
+      },
+      {
+        "id": "B",
+        "text": "A Data Policy with the requester field marked Mandatory — Data Policies enforce on the server-side for all save paths, including API and imports."
+      },
+      {
+        "id": "C",
+        "text": "A Client Script onSubmit."
+      },
+      {
+        "id": "D",
+        "text": "An ACL with a script."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "Data Policy is the right primitive for 'always required regardless of channel'. UI Policy and Client Scripts only fire on the form; ACLs gate access but aren't typically used for mandatoriness.",
     "distractor_notes": {
       "A": "UI Policy only enforces on the form.",
@@ -1026,9 +1833,16 @@
       "D": "ACLs grant/deny — they don't enforce 'must be filled in'."
     },
     "references": [
-      { "title": "Contextual security", "url": "https://www.servicenow.com/docs/r/zurich/platform-security/contextual-security.html" }
+      {
+        "title": "Contextual security",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/contextual-security.html"
+      }
     ],
-    "tags": ["data-policy", "mandatory", "all-channels"]
+    "tags": [
+      "data-policy",
+      "mandatory",
+      "all-channels"
+    ]
   },
   {
     "id": "cad-sec-039",
@@ -1040,12 +1854,26 @@
     "type": "single_select",
     "stem": "When a Data Policy is created with the 'Apply to existing data' option checked, what happens?",
     "options": [
-      { "id": "A", "text": "Nothing — that checkbox is decorative." },
-      { "id": "B", "text": "An equivalent UI Policy is created so the form also enforces the rule, AND the constraints can be applied to existing records as you go. Together, that ensures both legacy data and new writes meet the rule." },
-      { "id": "C", "text": "Existing records are auto-deleted if they don't match." },
-      { "id": "D", "text": "It encrypts every record on the table." }
+      {
+        "id": "A",
+        "text": "Nothing — that checkbox is decorative."
+      },
+      {
+        "id": "B",
+        "text": "An equivalent UI Policy is created so the form also enforces the rule, AND the constraints can be applied to existing records as you go. Together, that ensures both legacy data and new writes meet the rule."
+      },
+      {
+        "id": "C",
+        "text": "Existing records are auto-deleted if they don't match."
+      },
+      {
+        "id": "D",
+        "text": "It encrypts every record on the table."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "Data Policies can spawn a matching UI Policy so forms behave consistently with the server-side rule, and the rule can apply to existing records when they're touched. Records aren't auto-deleted; you'll see the constraint enforced as records are accessed/modified.",
     "distractor_notes": {
       "A": "The option is functional.",
@@ -1053,9 +1881,16 @@
       "D": "Not encryption."
     },
     "references": [
-      { "title": "Contextual security", "url": "https://www.servicenow.com/docs/r/zurich/platform-security/contextual-security.html" }
+      {
+        "title": "Contextual security",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/contextual-security.html"
+      }
     ],
-    "tags": ["data-policy", "ui-policy", "existing-data"]
+    "tags": [
+      "data-policy",
+      "ui-policy",
+      "existing-data"
+    ]
   },
   {
     "id": "cad-sec-040",
@@ -1067,12 +1902,26 @@
     "type": "single_select",
     "stem": "Which best describes SAML 2.0 in the context of ServiceNow authentication?",
     "options": [
-      { "id": "A", "text": "SAML 2.0 is a record-locking mechanism." },
-      { "id": "B", "text": "SAML 2.0 is an XML-based, federated single sign-on protocol the instance can use as its identity provider integration — so users authenticate against an external IdP (Okta, ADFS, etc.) instead of (or in addition to) local credentials." },
-      { "id": "C", "text": "SAML is only used for outbound integrations." },
-      { "id": "D", "text": "SAML is an encryption algorithm." }
+      {
+        "id": "A",
+        "text": "SAML 2.0 is a record-locking mechanism."
+      },
+      {
+        "id": "B",
+        "text": "SAML 2.0 is an XML-based, federated single sign-on protocol the instance can use as its identity provider integration — so users authenticate against an external IdP (Okta, ADFS, etc.) instead of (or in addition to) local credentials."
+      },
+      {
+        "id": "C",
+        "text": "SAML is only used for outbound integrations."
+      },
+      {
+        "id": "D",
+        "text": "SAML is an encryption algorithm."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "SAML 2.0 is federated SSO. ServiceNow as a Service Provider trusts an external Identity Provider; users get redirected to the IdP, authenticate there, and come back with an assertion that the instance accepts. Standard enterprise pattern.",
     "distractor_notes": {
       "A": "Not record locking.",
@@ -1080,9 +1929,16 @@
       "D": "SAML is a protocol, not an encryption algorithm."
     },
     "references": [
-      { "title": "SAML 2.0 Web", "url": "https://www.servicenow.com/docs/r/zurich/platform-security/c_SAML20Web.html" }
+      {
+        "title": "SAML 2.0 Web",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/c_SAML20Web.html"
+      }
     ],
-    "tags": ["saml", "sso", "authentication"]
+    "tags": [
+      "saml",
+      "sso",
+      "authentication"
+    ]
   },
   {
     "id": "cad-sec-041",
@@ -1094,12 +1950,26 @@
     "type": "single_select",
     "stem": "Which table holds the link between users and the roles they've been granted?",
     "options": [
-      { "id": "A", "text": "sys_user_role — every record represents (user, role) along with whether it was inherited via a group and when it was granted." },
-      { "id": "B", "text": "sys_role_user" },
-      { "id": "C", "text": "sys_grants" },
-      { "id": "D", "text": "sys_audit_role" }
+      {
+        "id": "A",
+        "text": "sys_user_role — every record represents (user, role) along with whether it was inherited via a group and when it was granted."
+      },
+      {
+        "id": "B",
+        "text": "sys_role_user"
+      },
+      {
+        "id": "C",
+        "text": "sys_grants"
+      },
+      {
+        "id": "D",
+        "text": "sys_audit_role"
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "sys_user_role is the user-to-role mapping table. It records direct grants and inheritance via group membership and contained roles. Querying it is how you answer 'who has role X?' programmatically.",
     "distractor_notes": {
       "B": "Not the platform table name.",
@@ -1107,9 +1977,16 @@
       "D": "Auditing lives elsewhere (sys_audit)."
     },
     "references": [
-      { "title": "Base system roles", "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/user-administration/r_BaseSystemRoles.html" }
+      {
+        "title": "Base system roles",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/user-administration/r_BaseSystemRoles.html"
+      }
     ],
-    "tags": ["roles", "sys_user_role", "table-knowledge"]
+    "tags": [
+      "roles",
+      "sys_user_role",
+      "table-knowledge"
+    ]
   },
   {
     "id": "cad-sec-042",
@@ -1121,12 +1998,26 @@
     "type": "single_select",
     "stem": "What is the Instance Security Center?",
     "options": [
-      { "id": "A", "text": "A third-party plugin for ad-blocking." },
-      { "id": "B", "text": "A platform dashboard that surfaces the instance's security posture — security score, recommended hardening actions, and configuration insights — useful for admins to maintain a strong security baseline." },
-      { "id": "C", "text": "A login screen for guests." },
-      { "id": "D", "text": "A user role." }
+      {
+        "id": "A",
+        "text": "A third-party plugin for ad-blocking."
+      },
+      {
+        "id": "B",
+        "text": "A platform dashboard that surfaces the instance's security posture — security score, recommended hardening actions, and configuration insights — useful for admins to maintain a strong security baseline."
+      },
+      {
+        "id": "C",
+        "text": "A login screen for guests."
+      },
+      {
+        "id": "D",
+        "text": "A user role."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "Instance Security Center is the admin's at-a-glance security posture tool. App developers don't typically configure it but should know it exists, since instance-level hardening recommendations sometimes affect what apps can do.",
     "distractor_notes": {
       "A": "Not a third-party plugin.",
@@ -1134,9 +2025,16 @@
       "D": "Not a role."
     },
     "references": [
-      { "title": "Instance Security Center", "url": "https://www.servicenow.com/docs/r/zurich/platform-security/instance-security-center.html" }
+      {
+        "title": "Instance Security Center",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/instance-security-center.html"
+      }
     ],
-    "tags": ["security-center", "hardening", "admin"]
+    "tags": [
+      "security-center",
+      "hardening",
+      "admin"
+    ]
   },
   {
     "id": "cad-sec-043",
@@ -1148,12 +2046,26 @@
     "type": "single_select",
     "stem": "A developer wants a Service Portal page that anonymous (not logged in) users can view. They notice anonymous users can't see records the page tries to load. What's the most appropriate platform-level configuration to enable this safely?",
     "options": [
-      { "id": "A", "text": "Disable all ACLs on the affected tables." },
-      { "id": "B", "text": "Use the platform's public-access patterns: grant the 'public' role (or 'snc_internal' / 'public_user' depending on use case) to the specific table read ACLs that should be reachable by anonymous users, narrowly scoping which tables and fields are publicly readable. Don't disable ACLs — extend them." },
-      { "id": "C", "text": "Email the records to anonymous users." },
-      { "id": "D", "text": "Anonymous users cannot view anything on ServiceNow." }
+      {
+        "id": "A",
+        "text": "Disable all ACLs on the affected tables."
+      },
+      {
+        "id": "B",
+        "text": "Use the platform's public-access patterns: grant the 'public' role (or 'snc_internal' / 'public_user' depending on use case) to the specific table read ACLs that should be reachable by anonymous users, narrowly scoping which tables and fields are publicly readable. Don't disable ACLs — extend them."
+      },
+      {
+        "id": "C",
+        "text": "Email the records to anonymous users."
+      },
+      {
+        "id": "D",
+        "text": "Anonymous users cannot view anything on ServiceNow."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "Public-facing requires narrow grants, not blanket disabling. Add ACL rules that explicitly permit reads on specific tables/fields for the 'public' role (or equivalent). Keep the surface area minimal — anything reachable anonymously is internet-reachable.",
     "distractor_notes": {
       "A": "Disabling ACLs is a security disaster on a public page.",
@@ -1161,9 +2073,17 @@
       "D": "Anonymous access exists; it's just controlled carefully."
     },
     "references": [
-      { "title": "Configure an ACL rule", "url": "https://www.servicenow.com/docs/r/zurich/platform-security/access-control/t_CreateAnACLRule.html" }
+      {
+        "title": "Configure an ACL rule",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/access-control/t_CreateAnACLRule.html"
+      }
     ],
-    "tags": ["public", "anonymous", "service-portal", "scenario"]
+    "tags": [
+      "public",
+      "anonymous",
+      "service-portal",
+      "scenario"
+    ]
   },
   {
     "id": "cad-sec-044",
@@ -1173,14 +2093,28 @@
     "subdomain": "Application Scope",
     "difficulty": "application",
     "type": "single_select",
-    "stem": "A developer in scope sn_inventory wants their LaptopUtils Script Include to be callable from scope sn_loaner — but only specific methods, not all of them. The best approach is:",
+    "stem": "A developer in scope sn_inventory wants their LaptopUtils Script Include to be callable from scope sn_loaner — but only specific methods, not all of them. What is the best approach?",
     "options": [
-      { "id": "A", "text": "Make every method public; cross-scope is all-or-nothing." },
-      { "id": "B", "text": "Design the Script Include so the only methods exposed via the prototype (and intended for external callers) are the safe ones; private helpers stay non-prototyped. Pair with cross-scope privilege records that grant sn_loaner access to the specific resource. Combined with code design, this limits the externally-callable surface area." },
-      { "id": "C", "text": "Move the Script Include to global scope." },
-      { "id": "D", "text": "Disable scope protection entirely." }
+      {
+        "id": "A",
+        "text": "Make every method public; cross-scope is all-or-nothing."
+      },
+      {
+        "id": "B",
+        "text": "Design the Script Include so the only methods exposed via the prototype (and intended for external callers) are the safe ones; private helpers stay non-prototyped. Pair with cross-scope privilege records that grant sn_loaner access to the specific resource. Combined with code design, this limits the externally-callable surface area."
+      },
+      {
+        "id": "C",
+        "text": "Move the Script Include to global scope."
+      },
+      {
+        "id": "D",
+        "text": "Disable scope protection entirely."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "Method-level scoping is enforced through a combination of class design (only expose what should be exposed) and explicit cross-scope privilege records. There's no all-or-nothing fall-through — careful design plus narrow grants is the model.",
     "distractor_notes": {
       "A": "Cross-scope is not all-or-nothing.",
@@ -1188,9 +2122,16 @@
       "D": "Scope protection can't be disabled."
     },
     "references": [
-      { "title": "Scope-to-scope settings", "url": "https://www.servicenow.com/docs/r/zurich/application-development/scope-to-scope-settings.html" }
+      {
+        "title": "Scope-to-scope settings",
+        "url": "https://www.servicenow.com/docs/r/zurich/application-development/scope-to-scope-settings.html"
+      }
     ],
-    "tags": ["cross-scope", "script-include", "minimal-surface"]
+    "tags": [
+      "cross-scope",
+      "script-include",
+      "minimal-surface"
+    ]
   },
   {
     "id": "cad-sec-045",
@@ -1202,12 +2143,26 @@
     "type": "single_select",
     "stem": "An ACL with an empty 'Roles' list and no Condition or Script — what's the effect?",
     "options": [
-      { "id": "A", "text": "It denies everyone, because nothing is specified." },
-      { "id": "B", "text": "It grants access to anyone the rule applies to, because empty fields are treated as 'no constraint' — every required check trivially passes. (This is why a wide-open ACL is so easy to ship accidentally.)" },
-      { "id": "C", "text": "The platform refuses to save it." },
-      { "id": "D", "text": "It grants admin only." }
+      {
+        "id": "A",
+        "text": "It denies everyone, because nothing is specified."
+      },
+      {
+        "id": "B",
+        "text": "It grants access to anyone the rule applies to, because empty fields are treated as 'no constraint' — every required check trivially passes. (This is why a wide-open ACL is so easy to ship accidentally.)"
+      },
+      {
+        "id": "C",
+        "text": "The platform refuses to save it."
+      },
+      {
+        "id": "D",
+        "text": "It grants admin only."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "Empty constraint = no constraint = always grants. That's why audit your auto-generated ACLs — and why narrowing rules to specific roles or conditions matters. A 'forgot to set roles' ACL is the most common accidental security regression.",
     "distractor_notes": {
       "A": "Empty fields don't deny — they don't constrain.",
@@ -1215,9 +2170,16 @@
       "D": "Empty roles isn't equivalent to admin-only — it's everyone."
     },
     "references": [
-      { "title": "ACL rule processing", "url": "https://www.servicenow.com/docs/r/zurich/platform-security/r_ACLRuleProcessing.html" }
+      {
+        "title": "ACL rule processing",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/r_ACLRuleProcessing.html"
+      }
     ],
-    "tags": ["acl", "empty-fields", "auditing"]
+    "tags": [
+      "acl",
+      "empty-fields",
+      "auditing"
+    ]
   },
   {
     "id": "cad-sec-046",
@@ -1227,14 +2189,28 @@
     "subdomain": "ACL Authoring",
     "difficulty": "scenario",
     "type": "single_select",
-    "stem": "A developer is shipping a new release and wants to confirm no unintended access changes. The best workflow is:",
+    "stem": "A developer is shipping a new release and wants to confirm no unintended access changes. What is the best workflow?",
     "options": [
-      { "id": "A", "text": "Push to prod and let users report any issues." },
-      { "id": "B", "text": "Review the Update Set for any sys_security_acl changes, compare to expected scope of the release, test on a clone of prod by impersonating representative end users, and document any intended access changes for the change record. Use ACL Debug if anything looks off." },
-      { "id": "C", "text": "Disable ACLs and re-enable them after deploy." },
-      { "id": "D", "text": "Ask end users to test in prod after deploy." }
+      {
+        "id": "A",
+        "text": "Push to prod and let users report any issues."
+      },
+      {
+        "id": "B",
+        "text": "Review the Update Set for any sys_security_acl changes, compare to expected scope of the release, test on a clone of prod by impersonating representative end users, and document any intended access changes for the change record. Use ACL Debug if anything looks off."
+      },
+      {
+        "id": "C",
+        "text": "Disable ACLs and re-enable them after deploy."
+      },
+      {
+        "id": "D",
+        "text": "Ask end users to test in prod after deploy."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "Review Update Set diffs, test as real users on a representative environment, use ACL Debug. That's the responsible deployment workflow for anything touching authorization.",
     "distractor_notes": {
       "A": "Letting users find security regressions in prod is a serious failure mode.",
@@ -1242,9 +2218,17 @@
       "D": "Pre-production testing is the right model."
     },
     "references": [
-      { "title": "ACL debugging tools", "url": "https://www.servicenow.com/docs/r/zurich/platform-security/access-control/c_AccessControlRulesDebug.html" }
+      {
+        "title": "ACL debugging tools",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/access-control/c_AccessControlRulesDebug.html"
+      }
     ],
-    "tags": ["deployment", "review", "best-practices", "scenario"]
+    "tags": [
+      "deployment",
+      "review",
+      "best-practices",
+      "scenario"
+    ]
   },
   {
     "id": "cad-sec-047",
@@ -1254,14 +2238,28 @@
     "subdomain": "Field Security",
     "difficulty": "application",
     "type": "single_select",
-    "stem": "A developer wants 'Salary' read-only for everyone (no UI for editing, no API write) but visible to readers. The most enforce-everywhere approach is:",
+    "stem": "A developer wants 'Salary' read-only for everyone (no UI for editing, no API write) but visible to readers. What is the most enforce-everywhere approach?",
     "options": [
-      { "id": "A", "text": "Set the field's Dictionary 'read-only' attribute to true — server-side, applies everywhere a write would be attempted." },
-      { "id": "B", "text": "Add a UI Policy that sets read-only on the form." },
-      { "id": "C", "text": "Add a Client Script that disables the field." },
-      { "id": "D", "text": "Tell users not to edit it." }
+      {
+        "id": "A",
+        "text": "Set the field's Dictionary 'read-only' attribute to true — server-side, applies everywhere a write would be attempted."
+      },
+      {
+        "id": "B",
+        "text": "Add a UI Policy that sets read-only on the form."
+      },
+      {
+        "id": "C",
+        "text": "Add a Client Script that disables the field."
+      },
+      {
+        "id": "D",
+        "text": "Tell users not to edit it."
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "Dictionary read-only is the platform-enforced 'this field cannot be written, period' setting. It applies to UI, API, and any write path. UI Policy and Client Script only cover the form.",
     "distractor_notes": {
       "B": "Form-only enforcement.",
@@ -1269,9 +2267,16 @@
       "D": "Hope isn't a control."
     },
     "references": [
-      { "title": "System dictionary", "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_SystemDictionary.html" }
+      {
+        "title": "System dictionary",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_SystemDictionary.html"
+      }
     ],
-    "tags": ["dictionary", "read-only", "enforce-everywhere"]
+    "tags": [
+      "dictionary",
+      "read-only",
+      "enforce-everywhere"
+    ]
   },
   {
     "id": "cad-sec-048",
@@ -1283,12 +2288,26 @@
     "type": "single_select",
     "stem": "Six months after launch, a developer audits their app and finds the auto-generated ACLs allow create, read, write, AND delete to anyone with the application's role — including delete, which they don't actually want anyone but admins to do. What's the best path forward?",
     "options": [
-      { "id": "A", "text": "Leave it — users haven't reported issues." },
-      { "id": "B", "text": "Tighten the delete ACL: change it to require an admin (or a more privileged app role like x_acme_loaner.manager), test impersonating an ordinary user to confirm delete is now denied, capture the change in an Update Set, and ship. Audit and tighten is normal lifecycle hygiene." },
-      { "id": "C", "text": "Delete the auto-generated ACLs entirely." },
-      { "id": "D", "text": "Add an extra ACL alongside without changing the existing one." }
+      {
+        "id": "A",
+        "text": "Leave it — users haven't reported issues."
+      },
+      {
+        "id": "B",
+        "text": "Tighten the delete ACL: change it to require an admin (or a more privileged app role like x_acme_loaner.manager), test impersonating an ordinary user to confirm delete is now denied, capture the change in an Update Set, and ship. Audit and tighten is normal lifecycle hygiene."
+      },
+      {
+        "id": "C",
+        "text": "Delete the auto-generated ACLs entirely."
+      },
+      {
+        "id": "D",
+        "text": "Add an extra ACL alongside without changing the existing one."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "Tighten the rule, test as a non-admin, ship via Update Set. That's the textbook hardening workflow. Adding a second rule alongside (D) doesn't help because ACLs OR across rules — the over-permissive original would still grant.",
     "distractor_notes": {
       "A": "No reports doesn't mean no risk.",
@@ -1296,9 +2315,20 @@
       "D": "Adding alongside doesn't restrict — OR-across-rules means the original still grants."
     },
     "references": [
-      { "title": "Configure an ACL rule", "url": "https://www.servicenow.com/docs/r/zurich/platform-security/access-control/t_CreateAnACLRule.html" },
-      { "title": "ACL rule processing", "url": "https://www.servicenow.com/docs/r/zurich/platform-security/r_ACLRuleProcessing.html" }
+      {
+        "title": "Configure an ACL rule",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/access-control/t_CreateAnACLRule.html"
+      },
+      {
+        "title": "ACL rule processing",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/r_ACLRuleProcessing.html"
+      }
     ],
-    "tags": ["audit", "tighten", "or-across-trap", "scenario"]
+    "tags": [
+      "audit",
+      "tighten",
+      "or-across-trap",
+      "scenario"
+    ]
   }
 ]

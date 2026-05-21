@@ -9,12 +9,26 @@
     "type": "single_select",
     "stem": "What is an Import Set in ServiceNow?",
     "options": [
-      { "id": "A", "text": "A staging table that holds raw rows from an external source (CSV, Excel, JDBC, etc.); Transform Maps then move data from staging into target platform tables — preserving the original import for re-runs and debugging." },
-      { "id": "B", "text": "A snapshot of a database for backup." },
-      { "id": "C", "text": "A type of UI Action." },
-      { "id": "D", "text": "A scheduled job that runs every hour." }
+      {
+        "id": "A",
+        "text": "A staging table that holds raw rows from an external source (CSV, Excel, JDBC, etc.); Transform Maps then move data from staging into target platform tables — preserving the original import for re-runs and debugging."
+      },
+      {
+        "id": "B",
+        "text": "A snapshot of a database for backup."
+      },
+      {
+        "id": "C",
+        "text": "A type of UI Action."
+      },
+      {
+        "id": "D",
+        "text": "A scheduled job that runs every hour."
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "Import Sets are the staging pattern. Raw rows land in a staging table (sys_import_set_row + a per-import schema), then Transform Maps shape and move the data into target tables. Two-step design lets you re-run transforms, debug, and audit.",
     "distractor_notes": {
       "B": "Not a database snapshot.",
@@ -22,9 +36,15 @@
       "D": "Schedules can run imports, but an Import Set itself is the staging concept."
     },
     "references": [
-      { "title": "Import Sets", "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_ImportSets.html" }
+      {
+        "title": "Import Sets",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_ImportSets.html"
+      }
     ],
-    "tags": ["import-sets", "staging"]
+    "tags": [
+      "import-sets",
+      "staging"
+    ]
   },
   {
     "id": "cad-ext-002",
@@ -36,12 +56,26 @@
     "type": "single_select",
     "stem": "What is a Transform Map?",
     "options": [
-      { "id": "A", "text": "A record that maps fields from an Import Set staging row to fields on a target table, with per-field transformations and conditions — defining HOW the staged data becomes target records." },
-      { "id": "B", "text": "A reporting visualization." },
-      { "id": "C", "text": "A type of ACL." },
-      { "id": "D", "text": "A backup mechanism." }
+      {
+        "id": "A",
+        "text": "A record that maps fields from an Import Set staging row to fields on a target table, with per-field transformations and conditions — defining HOW the staged data becomes target records."
+      },
+      {
+        "id": "B",
+        "text": "A reporting visualization."
+      },
+      {
+        "id": "C",
+        "text": "A type of ACL."
+      },
+      {
+        "id": "D",
+        "text": "A backup mechanism."
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "Transform Maps define the field-by-field mapping from staging to target, with optional source scripts to compute target values. Multiple maps can run against the same Import Set (one row → many tables, for example).",
     "distractor_notes": {
       "B": "Not a report.",
@@ -49,9 +83,15 @@
       "D": "Not a backup."
     },
     "references": [
-      { "title": "Transform Maps", "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_TransformMaps.html" }
+      {
+        "title": "Transform Maps",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_TransformMaps.html"
+      }
     ],
-    "tags": ["transform-maps", "mapping"]
+    "tags": [
+      "transform-maps",
+      "mapping"
+    ]
   },
   {
     "id": "cad-ext-003",
@@ -63,12 +103,26 @@
     "type": "single_select",
     "stem": "On a Transform Map, what does a Field Map define?",
     "options": [
-      { "id": "A", "text": "Which source (staging) field provides the value for which target field, with optional Choice Action handling and Coalesce flag." },
-      { "id": "B", "text": "The font of every field." },
-      { "id": "C", "text": "Which records to delete after import." },
-      { "id": "D", "text": "An ACL rule." }
+      {
+        "id": "A",
+        "text": "Which source (staging) field provides the value for which target field, with optional Choice Action handling and Coalesce flag."
+      },
+      {
+        "id": "B",
+        "text": "The font of every field."
+      },
+      {
+        "id": "C",
+        "text": "Which records to delete after import."
+      },
+      {
+        "id": "D",
+        "text": "An ACL rule."
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "Each Field Map is a single source→target field rule. Configure Choice Actions (Reject, Create, etc.), the Coalesce flag (use this field to find existing records to update), and optionally a source script to compute the value.",
     "distractor_notes": {
       "B": "Not fonts.",
@@ -76,9 +130,15 @@
       "D": "Not ACL."
     },
     "references": [
-      { "title": "Create a field map", "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/t_CreateAFieldMap.html" }
+      {
+        "title": "Create a field map",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/t_CreateAFieldMap.html"
+      }
     ],
-    "tags": ["field-maps", "transform-maps"]
+    "tags": [
+      "field-maps",
+      "transform-maps"
+    ]
   },
   {
     "id": "cad-ext-004",
@@ -88,14 +148,28 @@
     "subdomain": "Coalesce",
     "difficulty": "application",
     "type": "single_select",
-    "stem": "A nightly import brings 50,000 user records. Some users already exist; the import should update them, not duplicate them. The mechanism is:",
+    "stem": "A nightly import brings 50,000 user records. Some users already exist; the import should update them, not duplicate them. What is the mechanism?",
     "options": [
-      { "id": "A", "text": "Set Coalesce = true on the Field Map for the unique key (e.g., employee_id mapping to sys_user.employee_number). On each row, the transform queries the target by the coalesce field — if found, it updates; if not, it inserts." },
-      { "id": "B", "text": "Delete the target table before each import." },
-      { "id": "C", "text": "Run a Business Rule to manually deduplicate after import." },
-      { "id": "D", "text": "Disable ACLs during import." }
+      {
+        "id": "A",
+        "text": "Set Coalesce = true on the Field Map for the unique key (e.g., employee_id mapping to sys_user.employee_number). On each row, the transform queries the target by the coalesce field — if found, it updates; if not, it inserts."
+      },
+      {
+        "id": "B",
+        "text": "Delete the target table before each import."
+      },
+      {
+        "id": "C",
+        "text": "Run a Business Rule to manually deduplicate after import."
+      },
+      {
+        "id": "D",
+        "text": "Disable ACLs during import."
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "Coalesce is the upsert mechanism. Mark the unique-identifier field map as Coalesce = true, and the transform does find-or-create per row. Multiple coalesce fields combine as AND.",
     "distractor_notes": {
       "B": "Truncating before each load destroys history and isn't idempotent.",
@@ -103,9 +177,16 @@
       "D": "Disabling ACLs is a security regression."
     },
     "references": [
-      { "title": "Coalesce fields", "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/r_CoalesceFields.html" }
+      {
+        "title": "Coalesce fields",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/r_CoalesceFields.html"
+      }
     ],
-    "tags": ["coalesce", "upsert", "import"]
+    "tags": [
+      "coalesce",
+      "upsert",
+      "import"
+    ]
   },
   {
     "id": "cad-ext-005",
@@ -117,12 +198,26 @@
     "type": "single_select",
     "stem": "What is a Data Source record in the import context?",
     "options": [
-      { "id": "A", "text": "A configuration record that describes WHERE imported data comes from — file (CSV/Excel), JDBC database, REST endpoint, LDAP, etc. — including credentials, paths, and refresh schedule. Pairs with an Import Set table that defines the staging schema." },
-      { "id": "B", "text": "A type of ACL." },
-      { "id": "C", "text": "A scheduled email." },
-      { "id": "D", "text": "A subset of the User table." }
+      {
+        "id": "A",
+        "text": "A configuration record that describes WHERE imported data comes from — file (CSV/Excel), JDBC database, REST endpoint, LDAP, etc. — including credentials, paths, and refresh schedule. Pairs with an Import Set table that defines the staging schema."
+      },
+      {
+        "id": "B",
+        "text": "A type of ACL."
+      },
+      {
+        "id": "C",
+        "text": "A scheduled email."
+      },
+      {
+        "id": "D",
+        "text": "A subset of the User table."
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "Data Source = where and how to fetch the raw data. The platform pulls per the configuration (or accepts file uploads), and lands rows in the associated Import Set staging table. Then transforms run.",
     "distractor_notes": {
       "B": "Not an ACL.",
@@ -130,9 +225,15 @@
       "D": "Not user data."
     },
     "references": [
-      { "title": "Create a data source", "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/t_CreateADataSource.html" }
+      {
+        "title": "Create a data source",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/t_CreateADataSource.html"
+      }
     ],
-    "tags": ["data-source", "import"]
+    "tags": [
+      "data-source",
+      "import"
+    ]
   },
   {
     "id": "cad-ext-006",
@@ -142,14 +243,28 @@
     "subdomain": "Import Process",
     "difficulty": "application",
     "type": "single_select",
-    "stem": "A developer needs to load a one-time CSV of asset records into a custom table. The correct platform-supported path is:",
+    "stem": "A developer needs to load a one-time CSV of asset records into a custom table. What is the correct platform-supported path?",
     "options": [
-      { "id": "A", "text": "Paste the CSV contents into a Business Rule." },
-      { "id": "B", "text": "Load the data using Import Sets (Data Source = file with the CSV, Import Set table to stage, Transform Map to target the custom table with appropriate coalesce). Run the import, review the Transform History for errors, fix and re-run as needed." },
-      { "id": "C", "text": "Type each row by hand into the table form." },
-      { "id": "D", "text": "Email the CSV to ServiceNow Support." }
+      {
+        "id": "A",
+        "text": "Paste the CSV contents into a Business Rule."
+      },
+      {
+        "id": "B",
+        "text": "Load the data using Import Sets (Data Source = file with the CSV, Import Set table to stage, Transform Map to target the custom table with appropriate coalesce). Run the import, review the Transform History for errors, fix and re-run as needed."
+      },
+      {
+        "id": "C",
+        "text": "Type each row by hand into the table form."
+      },
+      {
+        "id": "D",
+        "text": "Email the CSV to ServiceNow Support."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "Import Sets are exactly the supported one-time and ongoing load path. Stage → transform → review → repeat. The Transform History gives you per-row success/error visibility.",
     "distractor_notes": {
       "A": "Not how BRs work.",
@@ -157,9 +272,16 @@
       "D": "Support doesn't load customer data."
     },
     "references": [
-      { "title": "Load data using Import Sets", "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/t_LoadDataUsingImportSets.html" }
+      {
+        "title": "Load data using Import Sets",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/t_LoadDataUsingImportSets.html"
+      }
     ],
-    "tags": ["import-sets", "process", "csv"]
+    "tags": [
+      "import-sets",
+      "process",
+      "csv"
+    ]
   },
   {
     "id": "cad-ext-007",
@@ -171,12 +293,26 @@
     "type": "single_select",
     "stem": "What do Transform Map scripts (e.g., onBefore, onAfter, onForeignInsert) allow you to do?",
     "options": [
-      { "id": "A", "text": "Hook into specific points of the transform — for example, modify the target record before insert, run logic after a successful import, or handle the case where a foreign reference doesn't resolve." },
-      { "id": "B", "text": "Replace ACLs during the import." },
-      { "id": "C", "text": "Send marketing emails." },
-      { "id": "D", "text": "Configure SAML." }
+      {
+        "id": "A",
+        "text": "Hook into specific points of the transform — for example, modify the target record before insert, run logic after a successful import, or handle the case where a foreign reference doesn't resolve."
+      },
+      {
+        "id": "B",
+        "text": "Replace ACLs during the import."
+      },
+      {
+        "id": "C",
+        "text": "Send marketing emails."
+      },
+      {
+        "id": "D",
+        "text": "Configure SAML."
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "Transform Map scripts are the hooks: onBefore (modify target before insert/update), onAfter (post-transform logic per record), onForeignInsert (handle missing referenced records), onStart/onComplete (per-import boundary work). Powerful — but use only when field maps alone can't do it.",
     "distractor_notes": {
       "B": "Not ACL replacement.",
@@ -184,9 +320,16 @@
       "D": "Not SAML."
     },
     "references": [
-      { "title": "Transform Map scripts", "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_TransformMapScripts.html" }
+      {
+        "title": "Transform Map scripts",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_TransformMapScripts.html"
+      }
     ],
-    "tags": ["transform-maps", "scripts", "hooks"]
+    "tags": [
+      "transform-maps",
+      "scripts",
+      "hooks"
+    ]
   },
   {
     "id": "cad-ext-008",
@@ -198,12 +341,26 @@
     "type": "single_select",
     "stem": "After a nightly import, a developer notices duplicates appearing on the target table. The Field Map has Coalesce = true on employee_number. What's the most likely cause?",
     "options": [
-      { "id": "A", "text": "ServiceNow randomly duplicates records." },
-      { "id": "B", "text": "The source employee_number values have inconsistent formatting (leading zeros, whitespace, varying case) so the coalesce match fails for some rows and inserts a 'new' record alongside the existing one. Normalize the field in a source script before the coalesce." },
-      { "id": "C", "text": "The instance is corrupted." },
-      { "id": "D", "text": "Coalesce never worked in Zurich." }
+      {
+        "id": "A",
+        "text": "ServiceNow randomly duplicates records."
+      },
+      {
+        "id": "B",
+        "text": "The source employee_number values have inconsistent formatting (leading zeros, whitespace, varying case) so the coalesce match fails for some rows and inserts a 'new' record alongside the existing one. Normalize the field in a source script before the coalesce."
+      },
+      {
+        "id": "C",
+        "text": "The instance is corrupted."
+      },
+      {
+        "id": "D",
+        "text": "Coalesce never worked in Zurich."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "Coalesce is an exact-match query. ' 00123 ' != '123'. Inconsistent source formatting is the classic duplicate-creator. Normalize in the source script (or upstream) so coalesce sees a single canonical value.",
     "distractor_notes": {
       "A": "Not random.",
@@ -211,9 +368,17 @@
       "D": "Coalesce works fine."
     },
     "references": [
-      { "title": "Coalesce fields", "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/r_CoalesceFields.html" }
+      {
+        "title": "Coalesce fields",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/r_CoalesceFields.html"
+      }
     ],
-    "tags": ["coalesce", "duplicates", "normalization", "scenario"]
+    "tags": [
+      "coalesce",
+      "duplicates",
+      "normalization",
+      "scenario"
+    ]
   },
   {
     "id": "cad-ext-009",
@@ -225,12 +390,26 @@
     "type": "single_select",
     "stem": "Which utility automatically matches source field names in an Import Set to identically-named field names on the target table, creating Field Map records as a starting point?",
     "options": [
-      { "id": "A", "text": "Auto Map Matching Fields." },
-      { "id": "B", "text": "Transform Map Generator." },
-      { "id": "C", "text": "CI Relationship Builder." },
-      { "id": "D", "text": "Business Service Management Map." }
+      {
+        "id": "A",
+        "text": "Auto Map Matching Fields."
+      },
+      {
+        "id": "B",
+        "text": "Transform Map Generator."
+      },
+      {
+        "id": "C",
+        "text": "CI Relationship Builder."
+      },
+      {
+        "id": "D",
+        "text": "Business Service Management Map."
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "Auto Map Matching Fields scaffolds Field Maps where source and target field names match. Saves clicking when your source data has been pre-shaped to match target column names.",
     "distractor_notes": {
       "B": "Not a real utility.",
@@ -238,9 +417,15 @@
       "D": "BSM Map is for service-relationship visualization."
     },
     "references": [
-      { "title": "Transform Maps", "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_TransformMaps.html" }
+      {
+        "title": "Transform Maps",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_TransformMaps.html"
+      }
     ],
-    "tags": ["auto-map", "field-maps"]
+    "tags": [
+      "auto-map",
+      "field-maps"
+    ]
   },
   {
     "id": "cad-ext-010",
@@ -250,14 +435,28 @@
     "subdomain": "Import Sets",
     "difficulty": "application",
     "type": "single_select",
-    "stem": "An import is finished; the developer wants to verify exactly how many rows were inserted, updated, ignored, or errored. The right tool is:",
+    "stem": "An import is finished; the developer wants to verify exactly how many rows were inserted, updated, ignored, or errored. What is the right tool?",
     "options": [
-      { "id": "A", "text": "Transform History — per-import-set record showing inserts/updates/ignored/errors, with drill-down to per-row results. Read it before declaring success." },
-      { "id": "B", "text": "The Email logs." },
-      { "id": "C", "text": "ACL Debug." },
-      { "id": "D", "text": "Browser DevTools." }
+      {
+        "id": "A",
+        "text": "Transform History — per-import-set record showing inserts/updates/ignored/errors, with drill-down to per-row results. Read it before declaring success."
+      },
+      {
+        "id": "B",
+        "text": "The Email logs."
+      },
+      {
+        "id": "C",
+        "text": "ACL Debug."
+      },
+      {
+        "id": "D",
+        "text": "Browser DevTools."
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "Transform History (sys_import_set_run / Transform History) is the source of truth: counts per outcome and links to per-row results. Always inspect it after meaningful imports.",
     "distractor_notes": {
       "B": "Email logs are unrelated.",
@@ -265,9 +464,15 @@
       "D": "DevTools are client-side."
     },
     "references": [
-      { "title": "Transform Maps", "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_TransformMaps.html" }
+      {
+        "title": "Transform Maps",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_TransformMaps.html"
+      }
     ],
-    "tags": ["transform-history", "diagnostics"]
+    "tags": [
+      "transform-history",
+      "diagnostics"
+    ]
   },
   {
     "id": "cad-ext-011",
@@ -279,12 +484,26 @@
     "type": "single_select",
     "stem": "How do you set up an Import Set to run automatically on a schedule (e.g., nightly)?",
     "options": [
-      { "id": "A", "text": "Configure a Scheduled Import / Scheduled Data Import on the Data Source — specify the cadence (cron-style or simple), and the platform runs the load + transform pipeline at that time, recording each run in Transform History." },
-      { "id": "B", "text": "Email yourself to do it." },
-      { "id": "C", "text": "Hard-code the schedule in a Business Rule." },
-      { "id": "D", "text": "There's no scheduled import; it has to be manual." }
+      {
+        "id": "A",
+        "text": "Configure a Scheduled Import / Scheduled Data Import on the Data Source — specify the cadence (cron-style or simple), and the platform runs the load + transform pipeline at that time, recording each run in Transform History."
+      },
+      {
+        "id": "B",
+        "text": "Email yourself to do it."
+      },
+      {
+        "id": "C",
+        "text": "Hard-code the schedule in a Business Rule."
+      },
+      {
+        "id": "D",
+        "text": "There's no scheduled import; it has to be manual."
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "Scheduled Imports attach a cadence to a Data Source. The platform pulls, stages, and transforms on schedule. Each run is logged so you can see results and re-run if needed.",
     "distractor_notes": {
       "B": "Manual nudges aren't automation.",
@@ -292,9 +511,15 @@
       "D": "Scheduled imports are core to the feature."
     },
     "references": [
-      { "title": "Load data using Import Sets", "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/t_LoadDataUsingImportSets.html" }
+      {
+        "title": "Load data using Import Sets",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/t_LoadDataUsingImportSets.html"
+      }
     ],
-    "tags": ["scheduled-imports", "automation"]
+    "tags": [
+      "scheduled-imports",
+      "automation"
+    ]
   },
   {
     "id": "cad-ext-012",
@@ -306,12 +531,26 @@
     "type": "single_select",
     "stem": "A developer's import is mapping department_name from CSV to department (a Reference field to cmn_department). Most rows transform fine, but some report an 'unresolvable reference' error. What's likely happening and the right fix?",
     "options": [
-      { "id": "A", "text": "The platform is broken." },
-      { "id": "B", "text": "Some department_name values in the CSV don't exactly match any cmn_department record's display name. Either clean the source data, add the missing departments, or set the field's Choice Action / onForeignInsert script to handle the unresolved case (create the department, log it, or set null) instead of erroring." },
-      { "id": "C", "text": "Reference fields can't be imported." },
-      { "id": "D", "text": "Disable ACLs to fix it." }
+      {
+        "id": "A",
+        "text": "The platform is broken."
+      },
+      {
+        "id": "B",
+        "text": "Some department_name values in the CSV don't exactly match any cmn_department record's display name. Either clean the source data, add the missing departments, or set the field's Choice Action / onForeignInsert script to handle the unresolved case (create the department, log it, or set null) instead of erroring."
+      },
+      {
+        "id": "C",
+        "text": "Reference fields can't be imported."
+      },
+      {
+        "id": "D",
+        "text": "Disable ACLs to fix it."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "Reference fields in imports require resolution. Unresolvable means the source string didn't match any target record. Fix the source data, add missing referenced records, or use a Choice Action / onForeignInsert hook to handle it gracefully.",
     "distractor_notes": {
       "A": "Not broken — your data is mismatched.",
@@ -319,9 +558,17 @@
       "D": "Not an ACL issue."
     },
     "references": [
-      { "title": "Transform Map scripts", "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_TransformMapScripts.html" }
+      {
+        "title": "Transform Map scripts",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_TransformMapScripts.html"
+      }
     ],
-    "tags": ["transform-maps", "reference", "unresolved", "scenario"]
+    "tags": [
+      "transform-maps",
+      "reference",
+      "unresolved",
+      "scenario"
+    ]
   },
   {
     "id": "cad-ext-013",
@@ -333,12 +580,26 @@
     "type": "single_select",
     "stem": "What is the Inbound REST API in ServiceNow?",
     "options": [
-      { "id": "A", "text": "A built-in set of REST endpoints (and the ability to define Scripted REST APIs) that allow external systems to read and write platform data over HTTP — authenticated, ACL-respecting, and JSON-serialized." },
-      { "id": "B", "text": "A scheduled job that polls external sites." },
-      { "id": "C", "text": "A UI Action." },
-      { "id": "D", "text": "An ACL rule." }
+      {
+        "id": "A",
+        "text": "A built-in set of REST endpoints (and the ability to define Scripted REST APIs) that allow external systems to read and write platform data over HTTP — authenticated, ACL-respecting, and JSON-serialized."
+      },
+      {
+        "id": "B",
+        "text": "A scheduled job that polls external sites."
+      },
+      {
+        "id": "C",
+        "text": "A UI Action."
+      },
+      {
+        "id": "D",
+        "text": "An ACL rule."
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "Inbound REST = external callers hitting your instance. The platform provides standard table APIs (/api/now/table/...) and lets you define Scripted REST APIs (/api/{namespace}/...) for custom endpoints. ACLs and authentication apply.",
     "distractor_notes": {
       "B": "Polling outward is Outbound REST.",
@@ -346,9 +607,15 @@
       "D": "Not an ACL."
     },
     "references": [
-      { "title": "Inbound REST", "url": "https://www.servicenow.com/docs/r/zurich/integrate-applications/c_RESTAPI.html" }
+      {
+        "title": "Inbound REST",
+        "url": "https://www.servicenow.com/docs/r/zurich/integrate-applications/c_RESTAPI.html"
+      }
     ],
-    "tags": ["rest", "inbound"]
+    "tags": [
+      "rest",
+      "inbound"
+    ]
   },
   {
     "id": "cad-ext-014",
@@ -360,12 +627,26 @@
     "type": "single_select",
     "stem": "What does Outbound REST allow?",
     "options": [
-      { "id": "A", "text": "The platform makes HTTP calls to external REST endpoints — typically configured as REST Message records with endpoints, methods, headers, auth, and parameters — and used from Flow Designer actions, Business Rules, and Script Includes." },
-      { "id": "B", "text": "Disabling the instance's ACLs." },
-      { "id": "C", "text": "Browsing the web from the navigator." },
-      { "id": "D", "text": "Receiving HTTP from external callers." }
+      {
+        "id": "A",
+        "text": "The platform makes HTTP calls to external REST endpoints — typically configured as REST Message records with endpoints, methods, headers, auth, and parameters — and used from Flow Designer actions, Business Rules, and Script Includes."
+      },
+      {
+        "id": "B",
+        "text": "Disabling the instance's ACLs."
+      },
+      {
+        "id": "C",
+        "text": "Browsing the web from the navigator."
+      },
+      {
+        "id": "D",
+        "text": "Receiving HTTP from external callers."
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "Outbound REST is the instance reaching out. Configure a REST Message (or use Flow's REST Step / IntegrationHub spoke), and the instance calls the external endpoint with auth, headers, params, and body. Results come back into the calling script or flow.",
     "distractor_notes": {
       "B": "Outbound REST doesn't disable ACLs.",
@@ -373,9 +654,16 @@
       "D": "Inbound is the opposite direction."
     },
     "references": [
-      { "title": "Outbound REST", "url": "https://www.servicenow.com/docs/r/zurich/integrate-applications/c_OutboundRESTWebService.html" }
+      {
+        "title": "Outbound REST",
+        "url": "https://www.servicenow.com/docs/r/zurich/integrate-applications/c_OutboundRESTWebService.html"
+      }
     ],
-    "tags": ["rest", "outbound", "rest-message"]
+    "tags": [
+      "rest",
+      "outbound",
+      "rest-message"
+    ]
   },
   {
     "id": "cad-ext-015",
@@ -387,12 +675,26 @@
     "type": "single_select",
     "stem": "What is SOAP, and how does ServiceNow support it?",
     "options": [
-      { "id": "A", "text": "SOAP is a legacy XML-based web services protocol; ServiceNow supports both inbound (the platform exposes SOAP endpoints) and outbound (SOAP Message records call external SOAP services) — though for new integrations, REST is generally preferred." },
-      { "id": "B", "text": "SOAP is the platform's encryption library." },
-      { "id": "C", "text": "SOAP is a type of ACL." },
-      { "id": "D", "text": "SOAP is a UI theme." }
+      {
+        "id": "A",
+        "text": "SOAP is a legacy XML-based web services protocol; ServiceNow supports both inbound (the platform exposes SOAP endpoints) and outbound (SOAP Message records call external SOAP services) — though for new integrations, REST is generally preferred."
+      },
+      {
+        "id": "B",
+        "text": "SOAP is the platform's encryption library."
+      },
+      {
+        "id": "C",
+        "text": "SOAP is a type of ACL."
+      },
+      {
+        "id": "D",
+        "text": "SOAP is a UI theme."
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "SOAP is the older XML-based web services protocol. The platform supports it for compatibility with legacy systems, but for new work REST is the modern default. Know SOAP exists; prefer REST.",
     "distractor_notes": {
       "B": "Not encryption.",
@@ -400,9 +702,16 @@
       "D": "Not a theme."
     },
     "references": [
-      { "title": "SOAP web services", "url": "https://www.servicenow.com/docs/r/zurich/integrate-applications/c_SOAPWebService.html" }
+      {
+        "title": "SOAP web services",
+        "url": "https://www.servicenow.com/docs/r/zurich/integrate-applications/c_SOAPWebService.html"
+      }
     ],
-    "tags": ["soap", "web-services", "legacy"]
+    "tags": [
+      "soap",
+      "web-services",
+      "legacy"
+    ]
   },
   {
     "id": "cad-ext-016",
@@ -412,14 +721,28 @@
     "subdomain": "REST Message",
     "difficulty": "application",
     "type": "single_select",
-    "stem": "A developer needs to call an external REST API from a Business Rule. The recommended platform pattern is:",
+    "stem": "A developer needs to call an external REST API from a Business Rule. What is the recommended platform pattern?",
     "options": [
-      { "id": "A", "text": "Configure a REST Message record (endpoint, auth, default headers, methods like GET/POST) and call it from script via new sn_ws.RESTMessageV2('My Message', 'method') — keeps endpoint config out of code and centralizes credentials." },
-      { "id": "B", "text": "Write raw socket code in JavaScript." },
-      { "id": "C", "text": "Email the API team to do the call manually." },
-      { "id": "D", "text": "Store credentials in plain text in the script." }
+      {
+        "id": "A",
+        "text": "Configure a REST Message record (endpoint, auth, default headers, methods like GET/POST) and call it from script via new sn_ws.RESTMessageV2('My Message', 'method') — keeps endpoint config out of code and centralizes credentials."
+      },
+      {
+        "id": "B",
+        "text": "Write raw socket code in JavaScript."
+      },
+      {
+        "id": "C",
+        "text": "Email the API team to do the call manually."
+      },
+      {
+        "id": "D",
+        "text": "Store credentials in plain text in the script."
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "REST Message records separate config (endpoint, auth, default params) from code (which method to call, what to pass). That makes credentials manageable, auth changes safe, and the script readable. Use it.",
     "distractor_notes": {
       "B": "Not how the platform calls REST.",
@@ -427,9 +750,16 @@
       "D": "Plaintext credentials in code is a serious security issue."
     },
     "references": [
-      { "title": "Outbound REST", "url": "https://www.servicenow.com/docs/r/zurich/integrate-applications/c_OutboundRESTWebService.html" }
+      {
+        "title": "Outbound REST",
+        "url": "https://www.servicenow.com/docs/r/zurich/integrate-applications/c_OutboundRESTWebService.html"
+      }
     ],
-    "tags": ["rest-message", "outbound", "auth"]
+    "tags": [
+      "rest-message",
+      "outbound",
+      "auth"
+    ]
   },
   {
     "id": "cad-ext-017",
@@ -441,12 +771,26 @@
     "type": "single_select",
     "stem": "Which authentication options are typically available for outbound REST calls from ServiceNow?",
     "options": [
-      { "id": "A", "text": "Basic Auth, OAuth 2.0 (multiple grant types), mutual TLS, and API key (custom header), among others — configured on the REST Message or via a shared Connection & Credential Alias." },
-      { "id": "B", "text": "Only Basic Auth." },
-      { "id": "C", "text": "No auth — REST is always anonymous." },
-      { "id": "D", "text": "Only SAML." }
+      {
+        "id": "A",
+        "text": "Basic Auth, OAuth 2.0 (multiple grant types), mutual TLS, and API key (custom header), among others — configured on the REST Message or via a shared Connection & Credential Alias."
+      },
+      {
+        "id": "B",
+        "text": "Only Basic Auth."
+      },
+      {
+        "id": "C",
+        "text": "No auth — REST is always anonymous."
+      },
+      {
+        "id": "D",
+        "text": "Only SAML."
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "ServiceNow supports the common auth flavors for outbound REST: Basic, OAuth 2.0, mutual TLS, API keys, etc. Use Connection & Credential Aliases to share credentials across multiple REST Messages without duplicating secrets.",
     "distractor_notes": {
       "B": "Far more options than Basic.",
@@ -454,9 +798,16 @@
       "D": "SAML is for SSO, not API auth."
     },
     "references": [
-      { "title": "Outbound REST", "url": "https://www.servicenow.com/docs/r/zurich/integrate-applications/c_OutboundRESTWebService.html" }
+      {
+        "title": "Outbound REST",
+        "url": "https://www.servicenow.com/docs/r/zurich/integrate-applications/c_OutboundRESTWebService.html"
+      }
     ],
-    "tags": ["auth", "oauth", "rest"]
+    "tags": [
+      "auth",
+      "oauth",
+      "rest"
+    ]
   },
   {
     "id": "cad-ext-018",
@@ -468,12 +819,26 @@
     "type": "single_select",
     "stem": "What is a Scripted REST API?",
     "options": [
-      { "id": "A", "text": "A custom REST endpoint defined on the instance, with one or more resources (paths) backed by server-side scripts that handle GET/POST/PUT/DELETE — used when the built-in Table API doesn't fit the integration shape." },
-      { "id": "B", "text": "An old name for the Table API." },
-      { "id": "C", "text": "A client-side library." },
-      { "id": "D", "text": "A type of UI Action." }
+      {
+        "id": "A",
+        "text": "A custom REST endpoint defined on the instance, with one or more resources (paths) backed by server-side scripts that handle GET/POST/PUT/DELETE — used when the built-in Table API doesn't fit the integration shape."
+      },
+      {
+        "id": "B",
+        "text": "An old name for the Table API."
+      },
+      {
+        "id": "C",
+        "text": "A client-side library."
+      },
+      {
+        "id": "D",
+        "text": "A type of UI Action."
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "Scripted REST APIs let you expose custom endpoints with arbitrary URL paths and per-method scripts. Use them when the standard Table API would be a clumsy fit — for example, an endpoint that aggregates several tables into a single response.",
     "distractor_notes": {
       "B": "Table API is built-in and separate.",
@@ -481,9 +846,15 @@
       "D": "Not a UI Action."
     },
     "references": [
-      { "title": "Inbound REST", "url": "https://www.servicenow.com/docs/r/zurich/integrate-applications/c_RESTAPI.html" }
+      {
+        "title": "Inbound REST",
+        "url": "https://www.servicenow.com/docs/r/zurich/integrate-applications/c_RESTAPI.html"
+      }
     ],
-    "tags": ["scripted-rest-api", "custom-endpoint"]
+    "tags": [
+      "scripted-rest-api",
+      "custom-endpoint"
+    ]
   },
   {
     "id": "cad-ext-019",
@@ -495,12 +866,26 @@
     "type": "single_select",
     "stem": "A developer's outbound REST call is failing intermittently with timeouts. What's the most appropriate next step?",
     "options": [
-      { "id": "A", "text": "Disable the integration permanently." },
-      { "id": "B", "text": "Check the outbound REST logs (System Logs → Outbound HTTP requests) for the exact failures, the response codes/durations, and confirm timeouts, then increase the timeout on the REST Message, add retry with backoff, or coordinate with the external API team. Confirm whether the issue is sustained or correlated with their downtime." },
-      { "id": "C", "text": "Email each user manually." },
-      { "id": "D", "text": "Run the call from your laptop instead." }
+      {
+        "id": "A",
+        "text": "Disable the integration permanently."
+      },
+      {
+        "id": "B",
+        "text": "Check the outbound REST logs (System Logs → Outbound HTTP requests) for the exact failures, the response codes/durations, and confirm timeouts, then increase the timeout on the REST Message, add retry with backoff, or coordinate with the external API team. Confirm whether the issue is sustained or correlated with their downtime."
+      },
+      {
+        "id": "C",
+        "text": "Email each user manually."
+      },
+      {
+        "id": "D",
+        "text": "Run the call from your laptop instead."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "Outbound HTTP logs are the source of truth — status codes, durations, error responses. From there, decide whether to tune the message (timeout, retry), the calling code (resilience), or to coordinate with the external API. Don't fly blind.",
     "distractor_notes": {
       "A": "Disabling is a last resort.",
@@ -508,9 +893,16 @@
       "D": "Personal laptops aren't a substitute for the platform."
     },
     "references": [
-      { "title": "Outbound REST", "url": "https://www.servicenow.com/docs/r/zurich/integrate-applications/c_OutboundRESTWebService.html" }
+      {
+        "title": "Outbound REST",
+        "url": "https://www.servicenow.com/docs/r/zurich/integrate-applications/c_OutboundRESTWebService.html"
+      }
     ],
-    "tags": ["outbound-rest", "debugging", "logs"]
+    "tags": [
+      "outbound-rest",
+      "debugging",
+      "logs"
+    ]
   },
   {
     "id": "cad-ext-020",
@@ -522,12 +914,26 @@
     "type": "single_select",
     "stem": "What is a MID Server, and when is it used?",
     "options": [
-      { "id": "A", "text": "A small Java application installed inside the customer's network that the ServiceNow instance can task with executing actions on internal resources (calling REST endpoints, running JDBC queries, running shell commands) — bridging the cloud instance and on-prem systems." },
-      { "id": "B", "text": "A type of UI Action." },
-      { "id": "C", "text": "A scheduled job." },
-      { "id": "D", "text": "A Service Portal page." }
+      {
+        "id": "A",
+        "text": "A small Java application installed inside the customer's network that the ServiceNow instance can task with executing actions on internal resources (calling REST endpoints, running JDBC queries, running shell commands) — bridging the cloud instance and on-prem systems."
+      },
+      {
+        "id": "B",
+        "text": "A type of UI Action."
+      },
+      {
+        "id": "C",
+        "text": "A scheduled job."
+      },
+      {
+        "id": "D",
+        "text": "A Service Portal page."
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "MID Server is the agent-in-the-customer's-network. The cloud instance posts work to it; the MID Server executes locally (where firewalls allow it to reach internal systems) and returns results. That's how integrations to on-prem systems usually work.",
     "distractor_notes": {
       "B": "Not a UI Action.",
@@ -535,9 +941,15 @@
       "D": "Not a portal page."
     },
     "references": [
-      { "title": "MID Server", "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/mid-server/mid-server-landing.html" }
+      {
+        "title": "MID Server",
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/mid-server/mid-server-landing.html"
+      }
     ],
-    "tags": ["mid-server", "on-prem"]
+    "tags": [
+      "mid-server",
+      "on-prem"
+    ]
   },
   {
     "id": "cad-ext-021",
@@ -549,12 +961,26 @@
     "type": "single_select",
     "stem": "A team needs to integrate with an external system that exposes BOTH REST and SOAP endpoints. Which should they prefer for a new ServiceNow integration?",
     "options": [
-      { "id": "A", "text": "SOAP — it's more verbose so it's safer." },
-      { "id": "B", "text": "REST — typically simpler, JSON-based, better tooling support in Flow Designer (REST Step, spokes), and more aligned with ServiceNow's modern direction. SOAP remains acceptable when REST isn't available, but pick REST when you have a choice." },
-      { "id": "C", "text": "Neither — only use Import Sets." },
-      { "id": "D", "text": "Both — for redundancy." }
+      {
+        "id": "A",
+        "text": "SOAP — it's more verbose so it's safer."
+      },
+      {
+        "id": "B",
+        "text": "REST — typically simpler, JSON-based, better tooling support in Flow Designer (REST Step, spokes), and more aligned with ServiceNow's modern direction. SOAP remains acceptable when REST isn't available, but pick REST when you have a choice."
+      },
+      {
+        "id": "C",
+        "text": "Neither — only use Import Sets."
+      },
+      {
+        "id": "D",
+        "text": "Both — for redundancy."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "When both exist, REST is the modern default for new ServiceNow integrations. Better Flow Designer support, JSON over XML, simpler payloads. SOAP is the answer when the external system only offers SOAP.",
     "distractor_notes": {
       "A": "Verbosity isn't safety.",
@@ -562,10 +988,20 @@
       "D": "Building both doubles maintenance for no benefit."
     },
     "references": [
-      { "title": "Outbound REST", "url": "https://www.servicenow.com/docs/r/zurich/integrate-applications/c_OutboundRESTWebService.html" },
-      { "title": "SOAP web services", "url": "https://www.servicenow.com/docs/r/zurich/integrate-applications/c_SOAPWebService.html" }
+      {
+        "title": "Outbound REST",
+        "url": "https://www.servicenow.com/docs/r/zurich/integrate-applications/c_OutboundRESTWebService.html"
+      },
+      {
+        "title": "SOAP web services",
+        "url": "https://www.servicenow.com/docs/r/zurich/integrate-applications/c_SOAPWebService.html"
+      }
     ],
-    "tags": ["rest-vs-soap", "design-decision", "scenario"]
+    "tags": [
+      "rest-vs-soap",
+      "design-decision",
+      "scenario"
+    ]
   },
   {
     "id": "cad-ext-022",
@@ -575,14 +1011,28 @@
     "subdomain": "Import Sets",
     "difficulty": "application",
     "type": "single_select",
-    "stem": "A nightly import takes 6 hours and overlaps the business day. The right optimization is generally:",
+    "stem": "A nightly import takes 6 hours and overlaps the business day. What is generally the right optimization?",
     "options": [
-      { "id": "A", "text": "Add more rows to make it run faster by paradox." },
-      { "id": "B", "text": "Audit the transform: are field-map source scripts inefficient, are queries on the target table un-indexed, is the data source returning more rows than needed? Right-size by querying only changed rows (delta loads via 'last modified since'), simplifying scripts, and adding indexes on coalesce fields. Also consider running off-hours and on a dedicated schedule." },
-      { "id": "C", "text": "Run it manually on the developer's PDI." },
-      { "id": "D", "text": "Disable ACLs on the target table." }
+      {
+        "id": "A",
+        "text": "Add more rows to make it run faster by paradox."
+      },
+      {
+        "id": "B",
+        "text": "Audit the transform: are field-map source scripts inefficient, are queries on the target table un-indexed, is the data source returning more rows than needed? Right-size by querying only changed rows (delta loads via 'last modified since'), simplifying scripts, and adding indexes on coalesce fields. Also consider running off-hours and on a dedicated schedule."
+      },
+      {
+        "id": "C",
+        "text": "Run it manually on the developer's PDI."
+      },
+      {
+        "id": "D",
+        "text": "Disable ACLs on the target table."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "Long-running imports usually have inefficient field maps, missing indexes on coalesce fields, or pull more rows than needed. Audit the slow parts, ship deltas instead of full loads where possible, and schedule wisely.",
     "distractor_notes": {
       "A": "Paradox isn't an optimization.",
@@ -590,9 +1040,16 @@
       "D": "Disabling ACLs introduces a security regression."
     },
     "references": [
-      { "title": "Load data using Import Sets", "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/t_LoadDataUsingImportSets.html" }
+      {
+        "title": "Load data using Import Sets",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/t_LoadDataUsingImportSets.html"
+      }
     ],
-    "tags": ["import-sets", "performance", "delta-loads"]
+    "tags": [
+      "import-sets",
+      "performance",
+      "delta-loads"
+    ]
   },
   {
     "id": "cad-ext-023",
@@ -602,14 +1059,28 @@
     "subdomain": "Scripted REST API",
     "difficulty": "scenario",
     "type": "single_select",
-    "stem": "A developer exposes a Scripted REST API endpoint that returns Loaner Request data. They want to ensure only their app's external partner can call it. The right approach is:",
+    "stem": "A developer exposes a Scripted REST API endpoint that returns Loaner Request data. They want to ensure only their app's external partner can call it. What is the right approach?",
     "options": [
-      { "id": "A", "text": "Allow anonymous access — anyone needs to be able to hit it." },
-      { "id": "B", "text": "Require authentication on the endpoint (or a specific role/credential), restrict the resource via ACLs to the partner's integration user, and consider IP-allowlisting. Never expose a Scripted REST endpoint anonymously unless that's explicitly the design." },
-      { "id": "C", "text": "Add obfuscated URLs." },
-      { "id": "D", "text": "Disable the endpoint and tell the partner sorry." }
+      {
+        "id": "A",
+        "text": "Allow anonymous access — anyone needs to be able to hit it."
+      },
+      {
+        "id": "B",
+        "text": "Require authentication on the endpoint (or a specific role/credential), restrict the resource via ACLs to the partner's integration user, and consider IP-allowlisting. Never expose a Scripted REST endpoint anonymously unless that's explicitly the design."
+      },
+      {
+        "id": "C",
+        "text": "Add obfuscated URLs."
+      },
+      {
+        "id": "D",
+        "text": "Disable the endpoint and tell the partner sorry."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "Authentication + role-gated ACLs are the primary controls. Optionally constrain by source IP if you trust your partner's network controls. Obscurity (long URLs) is not a control.",
     "distractor_notes": {
       "A": "Anonymous is a serious risk.",
@@ -617,9 +1088,16 @@
       "D": "Disabling isn't an integration strategy."
     },
     "references": [
-      { "title": "Inbound REST", "url": "https://www.servicenow.com/docs/r/zurich/integrate-applications/c_RESTAPI.html" }
+      {
+        "title": "Inbound REST",
+        "url": "https://www.servicenow.com/docs/r/zurich/integrate-applications/c_RESTAPI.html"
+      }
     ],
-    "tags": ["scripted-rest-api", "security", "scenario"]
+    "tags": [
+      "scripted-rest-api",
+      "security",
+      "scenario"
+    ]
   },
   {
     "id": "cad-ext-024",
@@ -631,12 +1109,26 @@
     "type": "single_select",
     "stem": "Which is the built-in REST API for performing CRUD operations on platform tables?",
     "options": [
-      { "id": "A", "text": "The Table API — endpoints like /api/now/table/{tableName} that support GET (read), POST (create), PATCH (update), DELETE — with sysparm_query and other query parameters for filtering, sorting, and field selection." },
-      { "id": "B", "text": "The ACL API." },
-      { "id": "C", "text": "There is no built-in API; everything must be a Scripted REST API." },
-      { "id": "D", "text": "The Print API." }
+      {
+        "id": "A",
+        "text": "The Table API — endpoints like /api/now/table/{tableName} that support GET (read), POST (create), PATCH (update), DELETE — with sysparm_query and other query parameters for filtering, sorting, and field selection."
+      },
+      {
+        "id": "B",
+        "text": "The ACL API."
+      },
+      {
+        "id": "C",
+        "text": "There is no built-in API; everything must be a Scripted REST API."
+      },
+      {
+        "id": "D",
+        "text": "The Print API."
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "The Table API is the platform-provided CRUD REST endpoint. /api/now/table/incident does GET/POST/PATCH/DELETE with sysparm_query, sysparm_fields, sysparm_limit, etc. Honors ACLs (so the calling user only sees what they're allowed to). Often the right starting point before writing a custom Scripted REST API.",
     "distractor_notes": {
       "B": "ACLs aren't called as an API.",
@@ -644,8 +1136,15 @@
       "D": "Not a thing."
     },
     "references": [
-      { "title": "Inbound REST", "url": "https://www.servicenow.com/docs/r/zurich/integrate-applications/c_RESTAPI.html" }
+      {
+        "title": "Inbound REST",
+        "url": "https://www.servicenow.com/docs/r/zurich/integrate-applications/c_RESTAPI.html"
+      }
     ],
-    "tags": ["table-api", "rest", "crud"]
+    "tags": [
+      "table-api",
+      "rest",
+      "crud"
+    ]
   }
 ]

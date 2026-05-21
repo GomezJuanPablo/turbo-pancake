@@ -9,12 +9,26 @@
     "type": "single_select",
     "stem": "What is Flow Designer in ServiceNow?",
     "options": [
-      { "id": "A", "text": "A reporting tool that visualizes data trends." },
-      { "id": "B", "text": "A low-code visual automation builder for designing flows — sequences of actions triggered by record events, schedules, or service-catalog requests — replacing many uses of the legacy Workflow engine." },
-      { "id": "C", "text": "A chat interface for end users." },
-      { "id": "D", "text": "A database administration console." }
+      {
+        "id": "A",
+        "text": "A reporting tool that visualizes data trends."
+      },
+      {
+        "id": "B",
+        "text": "A low-code visual automation builder for designing flows — sequences of actions triggered by record events, schedules, or service-catalog requests — replacing many uses of the legacy Workflow engine."
+      },
+      {
+        "id": "C",
+        "text": "A chat interface for end users."
+      },
+      {
+        "id": "D",
+        "text": "A database administration console."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "Flow Designer is the modern automation surface. Triggers fire flows that execute actions (record updates, approvals, integrations, scripts). It's the default automation tool for new ServiceNow apps in Zurich — Workflow is still around for legacy and specific use cases.",
     "distractor_notes": {
       "A": "Reporting belongs to Reports / Performance Analytics.",
@@ -22,9 +36,16 @@
       "D": "DB administration is unrelated."
     },
     "references": [
-      { "title": "Flow Designer", "url": "https://www.servicenow.com/docs/r/zurich/build-workflows/flow-designer.html" }
+      {
+        "title": "Flow Designer",
+        "url": "https://www.servicenow.com/docs/r/zurich/build-workflows/flow-designer.html"
+      }
     ],
-    "tags": ["flow-designer", "automation", "fundamentals"]
+    "tags": [
+      "flow-designer",
+      "automation",
+      "fundamentals"
+    ]
   },
   {
     "id": "cad-aut-002",
@@ -36,12 +57,26 @@
     "type": "single_select",
     "stem": "What is a Flow's Trigger?",
     "options": [
-      { "id": "A", "text": "The first action a flow runs." },
-      { "id": "B", "text": "The event or condition that starts the flow — common triggers include record created/updated on a table, scheduled (time-based), service catalog request, REST inbound, and others." },
-      { "id": "C", "text": "A UI button users click to launch the flow." },
-      { "id": "D", "text": "An ACL on the flow record." }
+      {
+        "id": "A",
+        "text": "The first action a flow runs."
+      },
+      {
+        "id": "B",
+        "text": "The event or condition that starts the flow — common triggers include record created/updated on a table, scheduled (time-based), service catalog request, REST inbound, and others."
+      },
+      {
+        "id": "C",
+        "text": "A UI button users click to launch the flow."
+      },
+      {
+        "id": "D",
+        "text": "An ACL on the flow record."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "The Trigger answers 'when does this flow run?' Record-based, time-based, catalog-based, REST inbound — the menu of triggers determines what kicks off your automation. Triggers are NOT the same as the first action.",
     "distractor_notes": {
       "A": "The first action is the first action — triggers initiate the flow.",
@@ -49,9 +84,15 @@
       "D": "ACLs are unrelated to triggers."
     },
     "references": [
-      { "title": "Flow trigger", "url": "https://www.servicenow.com/docs/r/zurich/build-workflows/flow-trigger.html" }
+      {
+        "title": "Flow trigger",
+        "url": "https://www.servicenow.com/docs/r/zurich/build-workflows/flow-trigger.html"
+      }
     ],
-    "tags": ["flow-designer", "trigger"]
+    "tags": [
+      "flow-designer",
+      "trigger"
+    ]
   },
   {
     "id": "cad-aut-003",
@@ -63,12 +104,26 @@
     "type": "single_select",
     "stem": "What is a Flow Action?",
     "options": [
-      { "id": "A", "text": "A UI Action button that runs a script." },
-      { "id": "B", "text": "A reusable step in a flow that performs work — update a record, send email, ask for approval, call REST, run a script — accepting inputs and producing outputs other actions can use." },
-      { "id": "C", "text": "An ACL that controls who can edit the flow." },
-      { "id": "D", "text": "A scheduled cleanup job." }
+      {
+        "id": "A",
+        "text": "A UI Action button that runs a script."
+      },
+      {
+        "id": "B",
+        "text": "A reusable step in a flow that performs work — update a record, send email, ask for approval, call REST, run a script — accepting inputs and producing outputs other actions can use."
+      },
+      {
+        "id": "C",
+        "text": "An ACL that controls who can edit the flow."
+      },
+      {
+        "id": "D",
+        "text": "A scheduled cleanup job."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "Actions are the verbs in a flow. They take inputs (often from earlier action outputs or trigger data), do something, and emit outputs the rest of the flow can pipe through. ServiceNow ships many built-in actions, and you can author your own.",
     "distractor_notes": {
       "A": "UI Action is a different concept.",
@@ -76,9 +131,15 @@
       "D": "Schedules are triggers, not actions."
     },
     "references": [
-      { "title": "Flow actions", "url": "https://www.servicenow.com/docs/r/zurich/build-workflows/workflow-studio/flow-actions.html" }
+      {
+        "title": "Flow actions",
+        "url": "https://www.servicenow.com/docs/r/zurich/build-workflows/workflow-studio/flow-actions.html"
+      }
     ],
-    "tags": ["flow-designer", "action"]
+    "tags": [
+      "flow-designer",
+      "action"
+    ]
   },
   {
     "id": "cad-aut-004",
@@ -90,12 +151,26 @@
     "type": "single_select",
     "stem": "What is a Subflow in Flow Designer?",
     "options": [
-      { "id": "A", "text": "A flow that runs faster than normal." },
-      { "id": "B", "text": "A reusable flow that has its own inputs and outputs and can be called from other flows or actions — the building block for DRY automation logic, similar to a function in code." },
-      { "id": "C", "text": "A failed flow execution." },
-      { "id": "D", "text": "A subordinate flow that can't be edited." }
+      {
+        "id": "A",
+        "text": "A flow that runs faster than normal."
+      },
+      {
+        "id": "B",
+        "text": "A reusable flow that has its own inputs and outputs and can be called from other flows or actions — the building block for DRY automation logic, similar to a function in code."
+      },
+      {
+        "id": "C",
+        "text": "A failed flow execution."
+      },
+      {
+        "id": "D",
+        "text": "A subordinate flow that can't be edited."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "Subflows are reusable functions. Define one with inputs/outputs, call it from many other flows or actions. That's how you avoid copy-pasting the same 'send approval email' or 'enrich asset record' logic across every flow.",
     "distractor_notes": {
       "A": "Subflows aren't a performance variant.",
@@ -103,9 +178,16 @@
       "D": "Subflows are first-class editable flow records."
     },
     "references": [
-      { "title": "Subflow", "url": "https://www.servicenow.com/docs/r/zurich/build-workflows/subflow.html" }
+      {
+        "title": "Subflow",
+        "url": "https://www.servicenow.com/docs/r/zurich/build-workflows/subflow.html"
+      }
     ],
-    "tags": ["flow-designer", "subflow", "reuse"]
+    "tags": [
+      "flow-designer",
+      "subflow",
+      "reuse"
+    ]
   },
   {
     "id": "cad-aut-005",
@@ -115,14 +197,28 @@
     "subdomain": "Flow Designer",
     "difficulty": "application",
     "type": "single_select",
-    "stem": "A developer needs to: when a Loaner Request is created, send the manager an approval email; if approved, set state to Approved and create a Task; if rejected, set state to Rejected. The most idiomatic Zurich-era build is:",
+    "stem": "A developer needs to: when a Loaner Request is created, send the manager an approval email; if approved, set state to Approved and create a Task; if rejected, set state to Rejected. What is the most idiomatic Zurich-era build?",
     "options": [
-      { "id": "A", "text": "A series of Business Rules and Notifications wired together with current.update() calls." },
-      { "id": "B", "text": "A Flow Designer flow triggered on Loaner Request created, using an Ask for Approval action, then If/Else branching on the approval result, with Update Record and Create Task actions in each branch." },
-      { "id": "C", "text": "A scheduled job that polls every minute." },
-      { "id": "D", "text": "A single big Script Include." }
+      {
+        "id": "A",
+        "text": "A series of Business Rules and Notifications wired together with current.update() calls."
+      },
+      {
+        "id": "B",
+        "text": "A Flow Designer flow triggered on Loaner Request created, using an Ask for Approval action, then If/Else branching on the approval result, with Update Record and Create Task actions in each branch."
+      },
+      {
+        "id": "C",
+        "text": "A scheduled job that polls every minute."
+      },
+      {
+        "id": "D",
+        "text": "A single big Script Include."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "Flow Designer's Ask for Approval + If/Else + Update/Create actions are exactly designed for this shape of workflow. It's visual, declarative, observable in flow execution history, and far easier to maintain than a tangle of Business Rules and Notifications.",
     "distractor_notes": {
       "A": "BRs + Notifications can do it, but it's fragmented across many records.",
@@ -130,10 +226,20 @@
       "D": "A monolithic Script Include is the opposite of a maintainable design."
     },
     "references": [
-      { "title": "Flow Designer", "url": "https://www.servicenow.com/docs/r/zurich/build-workflows/flow-designer.html" },
-      { "title": "Flow actions", "url": "https://www.servicenow.com/docs/r/zurich/build-workflows/workflow-studio/flow-actions.html" }
+      {
+        "title": "Flow Designer",
+        "url": "https://www.servicenow.com/docs/r/zurich/build-workflows/flow-designer.html"
+      },
+      {
+        "title": "Flow actions",
+        "url": "https://www.servicenow.com/docs/r/zurich/build-workflows/workflow-studio/flow-actions.html"
+      }
     ],
-    "tags": ["flow-designer", "approvals", "design-decision"]
+    "tags": [
+      "flow-designer",
+      "approvals",
+      "design-decision"
+    ]
   },
   {
     "id": "cad-aut-006",
@@ -145,12 +251,26 @@
     "type": "single_select",
     "stem": "What is IntegrationHub in the context of ServiceNow?",
     "options": [
-      { "id": "A", "text": "An auditing dashboard." },
-      { "id": "B", "text": "A capability that provides Spokes — pre-built sets of Flow Designer actions for common third-party systems (Slack, Microsoft 365, Jira, etc.) — so you can integrate without writing REST boilerplate." },
-      { "id": "C", "text": "A free version of Flow Designer." },
-      { "id": "D", "text": "A reporting view of failed flows." }
+      {
+        "id": "A",
+        "text": "An auditing dashboard."
+      },
+      {
+        "id": "B",
+        "text": "A capability that provides Spokes — pre-built sets of Flow Designer actions for common third-party systems (Slack, Microsoft 365, Jira, etc.) — so you can integrate without writing REST boilerplate."
+      },
+      {
+        "id": "C",
+        "text": "A free version of Flow Designer."
+      },
+      {
+        "id": "D",
+        "text": "A reporting view of failed flows."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "IntegrationHub provides Spokes — packaged action libraries for popular systems. Drag a 'Post Slack Message' action into your flow instead of hand-coding the REST call, OAuth, and error handling.",
     "distractor_notes": {
       "A": "Not an auditing dashboard.",
@@ -158,9 +278,15 @@
       "D": "Reporting is separate."
     },
     "references": [
-      { "title": "IntegrationHub", "url": "https://www.servicenow.com/docs/r/zurich/build-workflows/integrationhub.html" }
+      {
+        "title": "IntegrationHub",
+        "url": "https://www.servicenow.com/docs/r/zurich/build-workflows/integrationhub.html"
+      }
     ],
-    "tags": ["integration-hub", "spokes"]
+    "tags": [
+      "integration-hub",
+      "spokes"
+    ]
   },
   {
     "id": "cad-aut-007",
@@ -172,12 +298,26 @@
     "type": "single_select",
     "stem": "Which is the recommended automation tool for new ServiceNow applications in Zurich?",
     "options": [
-      { "id": "A", "text": "Legacy Workflow (the old graphical workflow engine)." },
-      { "id": "B", "text": "Flow Designer — for new work, ServiceNow recommends Flow Designer. Legacy Workflow remains supported for existing workflows and certain scenarios, but new automation should default to Flow Designer." },
-      { "id": "C", "text": "Bash scripts running on the MID Server." },
-      { "id": "D", "text": "Excel macros." }
+      {
+        "id": "A",
+        "text": "Legacy Workflow (the old graphical workflow engine)."
+      },
+      {
+        "id": "B",
+        "text": "Flow Designer — for new work, ServiceNow recommends Flow Designer. Legacy Workflow remains supported for existing workflows and certain scenarios, but new automation should default to Flow Designer."
+      },
+      {
+        "id": "C",
+        "text": "Bash scripts running on the MID Server."
+      },
+      {
+        "id": "D",
+        "text": "Excel macros."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "Flow Designer is the modern default. Legacy Workflow is still around for migration and edge cases, but new automation lives in Flow Designer — better tooling, better observability, better integration story.",
     "distractor_notes": {
       "A": "Use it for legacy, not for new work.",
@@ -185,9 +325,16 @@
       "D": "Excel macros are not a ServiceNow primitive."
     },
     "references": [
-      { "title": "Flow Designer", "url": "https://www.servicenow.com/docs/r/zurich/build-workflows/flow-designer.html" }
+      {
+        "title": "Flow Designer",
+        "url": "https://www.servicenow.com/docs/r/zurich/build-workflows/flow-designer.html"
+      }
     ],
-    "tags": ["flow-designer", "workflow", "modern-default"]
+    "tags": [
+      "flow-designer",
+      "workflow",
+      "modern-default"
+    ]
   },
   {
     "id": "cad-aut-008",
@@ -199,12 +346,26 @@
     "type": "single_select",
     "stem": "What is a Scheduled Job (also called Scheduled Script Execution) in ServiceNow?",
     "options": [
-      { "id": "A", "text": "A type of UI Action that runs every time a form is loaded." },
-      { "id": "B", "text": "A server-side script that runs on a defined schedule (e.g., hourly, daily, weekly, cron-style) — used for batch work, cleanup, integrations, and other periodic automation." },
-      { "id": "C", "text": "A client-side script that runs in the user's browser nightly." },
-      { "id": "D", "text": "An ACL that fires periodically." }
+      {
+        "id": "A",
+        "text": "A type of UI Action that runs every time a form is loaded."
+      },
+      {
+        "id": "B",
+        "text": "A server-side script that runs on a defined schedule (e.g., hourly, daily, weekly, cron-style) — used for batch work, cleanup, integrations, and other periodic automation."
+      },
+      {
+        "id": "C",
+        "text": "A client-side script that runs in the user's browser nightly."
+      },
+      {
+        "id": "D",
+        "text": "An ACL that fires periodically."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "Scheduled Jobs run server-side on a defined cadence. The classic 'every night at 2am, do X' tool. For most new work, time-based Flow Designer triggers are often preferred, but raw scheduled scripts remain useful when you need direct scripting.",
     "distractor_notes": {
       "A": "UI Actions run on user interaction, not a schedule.",
@@ -212,9 +373,16 @@
       "D": "ACLs are access checks, not jobs."
     },
     "references": [
-      { "title": "Flow Designer", "url": "https://www.servicenow.com/docs/r/zurich/build-workflows/flow-designer.html" }
+      {
+        "title": "Flow Designer",
+        "url": "https://www.servicenow.com/docs/r/zurich/build-workflows/flow-designer.html"
+      }
     ],
-    "tags": ["scheduled-jobs", "cron", "server-side"]
+    "tags": [
+      "scheduled-jobs",
+      "cron",
+      "server-side"
+    ]
   },
   {
     "id": "cad-aut-009",
@@ -226,12 +394,26 @@
     "type": "single_select",
     "stem": "What are Events in ServiceNow, and what do they enable?",
     "options": [
-      { "id": "A", "text": "Events are Calendar entries on the user's account." },
-      { "id": "B", "text": "Events are server-side notification primitives. Code (typically a Business Rule) calls gs.eventQueue('event.name', record, ...) to emit an event; one or more Script Actions, Notifications, or Flow triggers configured to listen for that event then run — decoupling the producer from consumers." },
-      { "id": "C", "text": "Events are deprecated and unused." },
-      { "id": "D", "text": "Events are UI Actions that fire on form load." }
+      {
+        "id": "A",
+        "text": "Events are Calendar entries on the user's account."
+      },
+      {
+        "id": "B",
+        "text": "Events are server-side notification primitives. Code (typically a Business Rule) calls gs.eventQueue('event.name', record, ...) to emit an event; one or more Script Actions, Notifications, or Flow triggers configured to listen for that event then run — decoupling the producer from consumers."
+      },
+      {
+        "id": "C",
+        "text": "Events are deprecated and unused."
+      },
+      {
+        "id": "D",
+        "text": "Events are UI Actions that fire on form load."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "Events are the platform's pub/sub primitive. Emit with gs.eventQueue, consume with Script Actions / Notifications / event-triggered automations. Useful when you want one place to fire 'this happened' and many independent reactions to consume it.",
     "distractor_notes": {
       "A": "Not calendar entries.",
@@ -239,9 +421,16 @@
       "D": "Different concept."
     },
     "references": [
-      { "title": "Flow Designer", "url": "https://www.servicenow.com/docs/r/zurich/build-workflows/flow-designer.html" }
+      {
+        "title": "Flow Designer",
+        "url": "https://www.servicenow.com/docs/r/zurich/build-workflows/flow-designer.html"
+      }
     ],
-    "tags": ["events", "eventQueue", "pubsub"]
+    "tags": [
+      "events",
+      "eventQueue",
+      "pubsub"
+    ]
   },
   {
     "id": "cad-aut-010",
@@ -251,14 +440,28 @@
     "subdomain": "Flow Designer",
     "difficulty": "application",
     "type": "single_select",
-    "stem": "A developer wants a flow to run every weekday at 9am to email a daily summary of open Loaner Requests. The correct trigger choice is:",
+    "stem": "A developer wants a flow to run every weekday at 9am to email a daily summary of open Loaner Requests. What is the correct trigger choice?",
     "options": [
-      { "id": "A", "text": "Record Created — trigger when a record is created." },
-      { "id": "B", "text": "Scheduled trigger configured for weekdays at 09:00 in the desired timezone." },
-      { "id": "C", "text": "Service Catalog trigger." },
-      { "id": "D", "text": "Inbound Email trigger." }
+      {
+        "id": "A",
+        "text": "Record Created — trigger when a record is created."
+      },
+      {
+        "id": "B",
+        "text": "Scheduled trigger configured for weekdays at 09:00 in the desired timezone."
+      },
+      {
+        "id": "C",
+        "text": "Service Catalog trigger."
+      },
+      {
+        "id": "D",
+        "text": "Inbound Email trigger."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "Time-based 'every weekday at 9' is the Scheduled trigger's purpose. Configure the cadence and timezone; the platform handles the rest.",
     "distractor_notes": {
       "A": "Record Created fires on a record event, not a time.",
@@ -266,9 +469,15 @@
       "D": "Inbound Email triggers fire on email arrival."
     },
     "references": [
-      { "title": "Flow trigger", "url": "https://www.servicenow.com/docs/r/zurich/build-workflows/flow-trigger.html" }
+      {
+        "title": "Flow trigger",
+        "url": "https://www.servicenow.com/docs/r/zurich/build-workflows/flow-trigger.html"
+      }
     ],
-    "tags": ["flow-designer", "scheduled-trigger"]
+    "tags": [
+      "flow-designer",
+      "scheduled-trigger"
+    ]
   },
   {
     "id": "cad-aut-011",
@@ -280,12 +489,26 @@
     "type": "single_select",
     "stem": "Across five different flows, the same 6-step sequence appears: enrich the user, find their manager, send approval email, wait for response, set record state, log audit entry. The team is changing the approval template; updating five flows is painful. What's the right refactor?",
     "options": [
-      { "id": "A", "text": "Add a sixth flow that supersedes the others." },
-      { "id": "B", "text": "Extract the 6 steps into a Subflow with inputs (the record and any context) and outputs (the approval result), then replace the inline steps in each of the five flows with a single Call Subflow action. One template change, one place to update." },
-      { "id": "C", "text": "Disable approvals entirely." },
-      { "id": "D", "text": "Hand-edit each of the five flows every time." }
+      {
+        "id": "A",
+        "text": "Add a sixth flow that supersedes the others."
+      },
+      {
+        "id": "B",
+        "text": "Extract the 6 steps into a Subflow with inputs (the record and any context) and outputs (the approval result), then replace the inline steps in each of the five flows with a single Call Subflow action. One template change, one place to update."
+      },
+      {
+        "id": "C",
+        "text": "Disable approvals entirely."
+      },
+      {
+        "id": "D",
+        "text": "Hand-edit each of the five flows every time."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "This is the textbook subflow refactor. Extract once, call from many places, change in one place. Subflows are how Flow Designer scales beyond the toy phase.",
     "distractor_notes": {
       "A": "Adding more flows doesn't reduce duplication.",
@@ -293,9 +516,17 @@
       "D": "Hand-editing five flows on every change is the pain you're trying to escape."
     },
     "references": [
-      { "title": "Subflow", "url": "https://www.servicenow.com/docs/r/zurich/build-workflows/subflow.html" }
+      {
+        "title": "Subflow",
+        "url": "https://www.servicenow.com/docs/r/zurich/build-workflows/subflow.html"
+      }
     ],
-    "tags": ["subflow", "refactor", "dry", "scenario"]
+    "tags": [
+      "subflow",
+      "refactor",
+      "dry",
+      "scenario"
+    ]
   },
   {
     "id": "cad-aut-012",
@@ -305,14 +536,28 @@
     "subdomain": "Flow Designer",
     "difficulty": "scenario",
     "type": "single_select",
-    "stem": "A flow produces unexpected results in production but works fine on the developer's PDI. The fastest way to diagnose is:",
+    "stem": "A flow produces unexpected results in production but works fine on the developer's PDI. What is the fastest way to diagnose?",
     "options": [
-      { "id": "A", "text": "Add console.log() statements to the flow." },
-      { "id": "B", "text": "Open Flow Designer's execution history (Operations view): pick the failing execution, inspect each action's inputs/outputs and any error messages, and compare with the expected data. Most prod-only bugs become obvious here." },
-      { "id": "C", "text": "Delete the flow and rebuild from scratch." },
-      { "id": "D", "text": "Disable the flow and assume it's fine." }
+      {
+        "id": "A",
+        "text": "Add console.log() statements to the flow."
+      },
+      {
+        "id": "B",
+        "text": "Open Flow Designer's execution history (Operations view): pick the failing execution, inspect each action's inputs/outputs and any error messages, and compare with the expected data. Most prod-only bugs become obvious here."
+      },
+      {
+        "id": "C",
+        "text": "Delete the flow and rebuild from scratch."
+      },
+      {
+        "id": "D",
+        "text": "Disable the flow and assume it's fine."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "Flow Designer's execution history is the killer feature for debugging. Each action's inputs, outputs, status, and timing are recorded. Find the bad execution, click in, and the data trail usually points at the problem.",
     "distractor_notes": {
       "A": "Flow Designer isn't browser JS — console.log doesn't apply.",
@@ -320,9 +565,17 @@
       "D": "Disabling and hoping is not diagnostics."
     },
     "references": [
-      { "title": "Flow Designer", "url": "https://www.servicenow.com/docs/r/zurich/build-workflows/flow-designer.html" }
+      {
+        "title": "Flow Designer",
+        "url": "https://www.servicenow.com/docs/r/zurich/build-workflows/flow-designer.html"
+      }
     ],
-    "tags": ["flow-designer", "debugging", "execution-history", "scenario"]
+    "tags": [
+      "flow-designer",
+      "debugging",
+      "execution-history",
+      "scenario"
+    ]
   },
   {
     "id": "cad-aut-013",
@@ -334,12 +587,26 @@
     "type": "single_select",
     "stem": "What is an Email Notification in ServiceNow?",
     "options": [
-      { "id": "A", "text": "A record that defines an outgoing email — when it should be sent (record events or fired events), who receives it, and the subject/body template (with field substitutions)." },
-      { "id": "B", "text": "An inbound email parser." },
-      { "id": "C", "text": "A scheduled job." },
-      { "id": "D", "text": "A UI Action." }
+      {
+        "id": "A",
+        "text": "A record that defines an outgoing email — when it should be sent (record events or fired events), who receives it, and the subject/body template (with field substitutions)."
+      },
+      {
+        "id": "B",
+        "text": "An inbound email parser."
+      },
+      {
+        "id": "C",
+        "text": "A scheduled job."
+      },
+      {
+        "id": "D",
+        "text": "A UI Action."
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "Email Notifications are the platform's outbound email primitive. Configure the trigger (record event or fired event), recipients, and a template with field variables. The platform handles delivery, throttling, and tracking.",
     "distractor_notes": {
       "B": "Inbound is a separate primitive (Inbound Email Action).",
@@ -347,9 +614,16 @@
       "D": "UI Action is different."
     },
     "references": [
-      { "title": "Notifications", "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/c_Notifications.html" }
+      {
+        "title": "Notifications",
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/c_Notifications.html"
+      }
     ],
-    "tags": ["notifications", "email", "outbound"]
+    "tags": [
+      "notifications",
+      "email",
+      "outbound"
+    ]
   },
   {
     "id": "cad-aut-014",
@@ -361,12 +635,26 @@
     "type": "single_select",
     "stem": "Which of these is NOT a typical 'When to send' option for an Email Notification?",
     "options": [
-      { "id": "A", "text": "Record inserted or updated (with a condition)." },
-      { "id": "B", "text": "Event is fired." },
-      { "id": "C", "text": "Record is deleted." },
-      { "id": "D", "text": "The notification record is opened by an admin." }
+      {
+        "id": "A",
+        "text": "Record inserted or updated (with a condition)."
+      },
+      {
+        "id": "B",
+        "text": "Event is fired."
+      },
+      {
+        "id": "C",
+        "text": "Record is deleted."
+      },
+      {
+        "id": "D",
+        "text": "The notification record is opened by an admin."
+      }
     ],
-    "correct": ["D"],
+    "correct": [
+      "D"
+    ],
     "rationale": "Notifications fire on record inserts/updates/deletes (with conditions), on events, or as scheduled. They do NOT fire when an admin opens the notification record itself — that would be circular and unhelpful.",
     "distractor_notes": {
       "A": "Standard insert/update trigger.",
@@ -374,9 +662,15 @@
       "C": "Delete trigger is supported."
     },
     "references": [
-      { "title": "Notifications", "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/c_Notifications.html" }
+      {
+        "title": "Notifications",
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/c_Notifications.html"
+      }
     ],
-    "tags": ["notifications", "send-when"]
+    "tags": [
+      "notifications",
+      "send-when"
+    ]
   },
   {
     "id": "cad-aut-015",
@@ -386,14 +680,28 @@
     "subdomain": "Notifications",
     "difficulty": "application",
     "type": "single_select",
-    "stem": "A developer wants every approved Loaner Request to send an email to the requester with the pickup date. The most idiomatic setup is:",
+    "stem": "A developer wants every approved Loaner Request to send an email to the requester with the pickup date. What is the most idiomatic setup?",
     "options": [
-      { "id": "A", "text": "Hard-code email text in a Business Rule using gs.eventQueue and a script." },
-      { "id": "B", "text": "Create an Email Notification with When = Record inserted or updated, Condition = state changes to Approved, To = requester (use a reference dot-walk), Subject and Body using ${field} substitutions including ${pickup_date}." },
-      { "id": "C", "text": "Manually email each requester." },
-      { "id": "D", "text": "Use a UI Action that opens the user's email client." }
+      {
+        "id": "A",
+        "text": "Hard-code email text in a Business Rule using gs.eventQueue and a script."
+      },
+      {
+        "id": "B",
+        "text": "Create an Email Notification with When = Record inserted or updated, Condition = state changes to Approved, To = requester (use a reference dot-walk), Subject and Body using ${field} substitutions including ${pickup_date}."
+      },
+      {
+        "id": "C",
+        "text": "Manually email each requester."
+      },
+      {
+        "id": "D",
+        "text": "Use a UI Action that opens the user's email client."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "Email Notifications + field substitution + condition is exactly the right shape. Maintainable, observable in the Email logs, easy to localize.",
     "distractor_notes": {
       "A": "Hard-coding email text in scripts is harder to maintain than a template.",
@@ -401,9 +709,16 @@
       "D": "Opening the user's mail client puts the burden on the developer to compose every time."
     },
     "references": [
-      { "title": "Create an email notification", "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/t_CreateAnEmailNotification.html" }
+      {
+        "title": "Create an email notification",
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/t_CreateAnEmailNotification.html"
+      }
     ],
-    "tags": ["notifications", "template", "substitution"]
+    "tags": [
+      "notifications",
+      "template",
+      "substitution"
+    ]
   },
   {
     "id": "cad-aut-016",
@@ -415,12 +730,26 @@
     "type": "single_select",
     "stem": "What is an Inbound Email Action?",
     "options": [
-      { "id": "A", "text": "A record that defines how the platform reacts to incoming email — typically matching on subject/body patterns and then creating or updating a record, with conditions and a script for processing." },
-      { "id": "B", "text": "A reply-to-all macro." },
-      { "id": "C", "text": "A spam filter." },
-      { "id": "D", "text": "A UI button." }
+      {
+        "id": "A",
+        "text": "A record that defines how the platform reacts to incoming email — typically matching on subject/body patterns and then creating or updating a record, with conditions and a script for processing."
+      },
+      {
+        "id": "B",
+        "text": "A reply-to-all macro."
+      },
+      {
+        "id": "C",
+        "text": "A spam filter."
+      },
+      {
+        "id": "D",
+        "text": "A UI button."
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "Inbound Email Actions are the rules for processing incoming mail. They match on subject/headers/from, and on match they run a script that typically opens a GlideRecord, sets fields, and inserts/updates. That's how you let users create or reply to records by email.",
     "distractor_notes": {
       "B": "Not a reply macro.",
@@ -428,9 +757,15 @@
       "D": "Different concept."
     },
     "references": [
-      { "title": "Inbound email actions", "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/c_InboundEmailActions.html" }
+      {
+        "title": "Inbound email actions",
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/c_InboundEmailActions.html"
+      }
     ],
-    "tags": ["inbound-email", "automation"]
+    "tags": [
+      "inbound-email",
+      "automation"
+    ]
   },
   {
     "id": "cad-aut-017",
@@ -442,12 +777,26 @@
     "type": "single_select",
     "stem": "What is the purpose of an Application Property (sys_properties record) in ServiceNow?",
     "options": [
-      { "id": "A", "text": "It's a per-user preference like theme color." },
-      { "id": "B", "text": "It's an instance-level configuration value (name=value) that scripts and configurations read via gs.getProperty(name). Used for thresholds, toggles, default values, environment URLs, and other settings you don't want hard-coded." },
-      { "id": "C", "text": "It's a column on the User table." },
-      { "id": "D", "text": "It's a UI button." }
+      {
+        "id": "A",
+        "text": "It's a per-user preference like theme color."
+      },
+      {
+        "id": "B",
+        "text": "It's an instance-level configuration value (name=value) that scripts and configurations read via gs.getProperty(name). Used for thresholds, toggles, default values, environment URLs, and other settings you don't want hard-coded."
+      },
+      {
+        "id": "C",
+        "text": "It's a column on the User table."
+      },
+      {
+        "id": "D",
+        "text": "It's a UI button."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "sys_properties is the platform's config-key-value store. Code reads via gs.getProperty('name', default). Use it for tunables, environment-specific URLs, feature toggles — anything that should be configurable without a code change.",
     "distractor_notes": {
       "A": "User preferences are a different table.",
@@ -455,9 +804,16 @@
       "D": "Not a button."
     },
     "references": [
-      { "title": "Available system properties", "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/r_AvailableSystemProperties.html" }
+      {
+        "title": "Available system properties",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/r_AvailableSystemProperties.html"
+      }
     ],
-    "tags": ["application-properties", "sys_properties", "config"]
+    "tags": [
+      "application-properties",
+      "sys_properties",
+      "config"
+    ]
   },
   {
     "id": "cad-aut-018",
@@ -467,14 +823,28 @@
     "subdomain": "Application Properties",
     "difficulty": "application",
     "type": "single_select",
-    "stem": "A developer's app uses a 14-day default loan length. The product manager wants to change it occasionally without a code deploy. The cleanest mechanism is:",
+    "stem": "A developer's app uses a 14-day default loan length. The product manager wants to change it occasionally without a code deploy. What is the cleanest mechanism?",
     "options": [
-      { "id": "A", "text": "Hard-code 14 throughout the app." },
-      { "id": "B", "text": "Create an Application Property x_acme_loaner.default_loan_days = 14. Read it in scripts via gs.getProperty('x_acme_loaner.default_loan_days', 14). Admins (or a scoped property page) can change it without touching code." },
-      { "id": "C", "text": "Store the value in a comment on the Business Rule." },
-      { "id": "D", "text": "Email the value to all developers." }
+      {
+        "id": "A",
+        "text": "Hard-code 14 throughout the app."
+      },
+      {
+        "id": "B",
+        "text": "Create an Application Property x_acme_loaner.default_loan_days = 14. Read it in scripts via gs.getProperty('x_acme_loaner.default_loan_days', 14). Admins (or a scoped property page) can change it without touching code."
+      },
+      {
+        "id": "C",
+        "text": "Store the value in a comment on the Business Rule."
+      },
+      {
+        "id": "D",
+        "text": "Email the value to all developers."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "Application Properties are designed for exactly this — change runtime behavior without a deploy. Provide a default in the getProperty call so the value is never undefined.",
     "distractor_notes": {
       "A": "Hard-coding requires a deploy for every change.",
@@ -482,9 +852,15 @@
       "D": "Email isn't a config system."
     },
     "references": [
-      { "title": "Available system properties", "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/r_AvailableSystemProperties.html" }
+      {
+        "title": "Available system properties",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/r_AvailableSystemProperties.html"
+      }
     ],
-    "tags": ["application-properties", "tunables"]
+    "tags": [
+      "application-properties",
+      "tunables"
+    ]
   },
   {
     "id": "cad-aut-019",
@@ -496,12 +872,26 @@
     "type": "single_select",
     "stem": "How are recipient lists for an Email Notification typically defined?",
     "options": [
-      { "id": "A", "text": "Only by typing literal email addresses on the notification record." },
-      { "id": "B", "text": "Recipients can include literal addresses, user references (dot-walked from the triggering record, e.g., requester or assigned_to), group references, and dynamic recipient scripts — combined as needed." },
-      { "id": "C", "text": "Only the admin can receive any notification." },
-      { "id": "D", "text": "Recipients are randomly chosen." }
+      {
+        "id": "A",
+        "text": "Only by typing literal email addresses on the notification record."
+      },
+      {
+        "id": "B",
+        "text": "Recipients can include literal addresses, user references (dot-walked from the triggering record, e.g., requester or assigned_to), group references, and dynamic recipient scripts — combined as needed."
+      },
+      {
+        "id": "C",
+        "text": "Only the admin can receive any notification."
+      },
+      {
+        "id": "D",
+        "text": "Recipients are randomly chosen."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "Recipients are flexible: literal addresses, references to user fields on the record (dot-walk to anyone), group fields, or scripted (Event recipients via fired-event params). Combine to build the right audience.",
     "distractor_notes": {
       "A": "Literal-only would be very limiting.",
@@ -509,9 +899,16 @@
       "D": "Recipients are deterministic, not random."
     },
     "references": [
-      { "title": "Notifications", "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/c_Notifications.html" }
+      {
+        "title": "Notifications",
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/c_Notifications.html"
+      }
     ],
-    "tags": ["notifications", "recipients", "dot-walking"]
+    "tags": [
+      "notifications",
+      "recipients",
+      "dot-walking"
+    ]
   },
   {
     "id": "cad-aut-020",
@@ -523,12 +920,26 @@
     "type": "single_select",
     "stem": "What do Email Properties (e.g., glide.email.*) control on a ServiceNow instance?",
     "options": [
-      { "id": "A", "text": "Instance-wide email behavior — whether outbound is enabled, the from address, reply-to handling, sub-domains, throttling, and other email plumbing settings." },
-      { "id": "B", "text": "The font of every email." },
-      { "id": "C", "text": "User passwords." },
-      { "id": "D", "text": "ACL evaluation order." }
+      {
+        "id": "A",
+        "text": "Instance-wide email behavior — whether outbound is enabled, the from address, reply-to handling, sub-domains, throttling, and other email plumbing settings."
+      },
+      {
+        "id": "B",
+        "text": "The font of every email."
+      },
+      {
+        "id": "C",
+        "text": "User passwords."
+      },
+      {
+        "id": "D",
+        "text": "ACL evaluation order."
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "Email Properties are the instance-wide knobs for email behavior. Sub-prod instances typically have outbound disabled by default via these properties so dev work doesn't accidentally email real users.",
     "distractor_notes": {
       "B": "Font is template-level, not properties.",
@@ -536,9 +947,15 @@
       "D": "ACL is unrelated."
     },
     "references": [
-      { "title": "Email properties", "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/c_EmailProperties.html" }
+      {
+        "title": "Email properties",
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/c_EmailProperties.html"
+      }
     ],
-    "tags": ["email-properties", "instance-config"]
+    "tags": [
+      "email-properties",
+      "instance-config"
+    ]
   },
   {
     "id": "cad-aut-021",
@@ -548,14 +965,28 @@
     "subdomain": "Inbound Email",
     "difficulty": "application",
     "type": "single_select",
-    "stem": "A developer wants users to be able to add comments to a Loaner Request by replying to the notification email. The right mechanism is:",
+    "stem": "A developer wants users to be able to add comments to a Loaner Request by replying to the notification email. What is the right mechanism?",
     "options": [
-      { "id": "A", "text": "A Business Rule that polls the user's mailbox." },
-      { "id": "B", "text": "An Inbound Email Action that matches the watermark/in-reply-to of the original notification, finds the target record, and appends the email body to the Comments (or Work Notes) field as the sending user." },
-      { "id": "C", "text": "A Client Script that reads the user's email." },
-      { "id": "D", "text": "Manual handling by an agent." }
+      {
+        "id": "A",
+        "text": "A Business Rule that polls the user's mailbox."
+      },
+      {
+        "id": "B",
+        "text": "An Inbound Email Action that matches the watermark/in-reply-to of the original notification, finds the target record, and appends the email body to the Comments (or Work Notes) field as the sending user."
+      },
+      {
+        "id": "C",
+        "text": "A Client Script that reads the user's email."
+      },
+      {
+        "id": "D",
+        "text": "Manual handling by an agent."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "Inbound Email Actions are exactly designed for reply-to-update workflows. The platform writes a watermark into outgoing emails; replies are matched back to the originating record, and your inbound action can append the body to comments.",
     "distractor_notes": {
       "A": "BRs don't poll user mailboxes.",
@@ -563,9 +994,16 @@
       "D": "Manual is not automation."
     },
     "references": [
-      { "title": "Inbound email actions", "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/c_InboundEmailActions.html" }
+      {
+        "title": "Inbound email actions",
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/c_InboundEmailActions.html"
+      }
     ],
-    "tags": ["inbound-email", "reply-to-update", "watermark"]
+    "tags": [
+      "inbound-email",
+      "reply-to-update",
+      "watermark"
+    ]
   },
   {
     "id": "cad-aut-022",
@@ -575,14 +1013,28 @@
     "subdomain": "Application Properties",
     "difficulty": "scenario",
     "type": "single_select",
-    "stem": "A developer creates a property x_acme_loaner.notify_managers = true. They want a clean admin UI for changing it. Best approach:",
+    "stem": "A developer creates a property x_acme_loaner.notify_managers = true. They want a clean admin UI for changing it. What is the best approach?",
     "options": [
-      { "id": "A", "text": "Tell admins to type 'sys_properties.list' into the URL each time." },
-      { "id": "B", "text": "Build a System Property Category for the app (e.g., 'Loaner Request settings') and add the property to that category. Admins get a friendly page under System Properties → [App settings] to edit. Optionally surface the property on an Application Properties page within the app menu." },
-      { "id": "C", "text": "Set permissions so no one can edit it." },
-      { "id": "D", "text": "Hard-code it." }
+      {
+        "id": "A",
+        "text": "Tell admins to type 'sys_properties.list' into the URL each time."
+      },
+      {
+        "id": "B",
+        "text": "Build a System Property Category for the app (e.g., 'Loaner Request settings') and add the property to that category. Admins get a friendly page under System Properties → [App settings] to edit. Optionally surface the property on an Application Properties page within the app menu."
+      },
+      {
+        "id": "C",
+        "text": "Set permissions so no one can edit it."
+      },
+      {
+        "id": "D",
+        "text": "Hard-code it."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "Properties Categories group an app's settings into a friendly admin page. The app feels polished and admins don't have to hunt through the full sys_properties table.",
     "distractor_notes": {
       "A": "Telling admins to URL-hack is poor UX.",
@@ -590,9 +1042,17 @@
       "D": "Hard-coding makes it not a property."
     },
     "references": [
-      { "title": "Available system properties", "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/r_AvailableSystemProperties.html" }
+      {
+        "title": "Available system properties",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/r_AvailableSystemProperties.html"
+      }
     ],
-    "tags": ["application-properties", "categories", "admin-ux", "scenario"]
+    "tags": [
+      "application-properties",
+      "categories",
+      "admin-ux",
+      "scenario"
+    ]
   },
   {
     "id": "cad-aut-023",
@@ -604,12 +1064,26 @@
     "type": "single_select",
     "stem": "Notifications are firing twice for every approval. The developer suspects duplicate triggers. What's the most efficient diagnostic?",
     "options": [
-      { "id": "A", "text": "Disable email entirely until next quarter." },
-      { "id": "B", "text": "Look at the Email logs (System Logs → Emails) to see the actual outbound records: who sent them, when, and what notification triggered each. Then check whether two Notifications match the same condition (or if a notification AND a Flow are both sending)." },
-      { "id": "C", "text": "Tell users to ignore the duplicate." },
-      { "id": "D", "text": "Add a third notification to overshadow the first two." }
+      {
+        "id": "A",
+        "text": "Disable email entirely until next quarter."
+      },
+      {
+        "id": "B",
+        "text": "Look at the Email logs (System Logs → Emails) to see the actual outbound records: who sent them, when, and what notification triggered each. Then check whether two Notifications match the same condition (or if a notification AND a Flow are both sending)."
+      },
+      {
+        "id": "C",
+        "text": "Tell users to ignore the duplicate."
+      },
+      {
+        "id": "D",
+        "text": "Add a third notification to overshadow the first two."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "Email logs show ground truth — every outbound message, the triggering notification or flow, and the recipient. Duplicate fires almost always trace to two records both reacting to the same event.",
     "distractor_notes": {
       "A": "Disabling email is overkill.",
@@ -617,9 +1091,17 @@
       "D": "Adding more notifications multiplies the problem."
     },
     "references": [
-      { "title": "Notifications", "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/c_Notifications.html" }
+      {
+        "title": "Notifications",
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/c_Notifications.html"
+      }
     ],
-    "tags": ["notifications", "debugging", "email-logs", "scenario"]
+    "tags": [
+      "notifications",
+      "debugging",
+      "email-logs",
+      "scenario"
+    ]
   },
   {
     "id": "cad-aut-024",
@@ -631,12 +1113,26 @@
     "type": "single_select",
     "stem": "Which GlideSystem call is the standard way to read an Application Property from a server-side script?",
     "options": [
-      { "id": "A", "text": "gs.getProperty('x_acme_loaner.default_loan_days', 14) — returns the property value (or the second-arg default if not set)." },
-      { "id": "B", "text": "g_form.getProperty()" },
-      { "id": "C", "text": "current.getProperty()" },
-      { "id": "D", "text": "sys_properties.read()" }
+      {
+        "id": "A",
+        "text": "gs.getProperty('x_acme_loaner.default_loan_days', 14) — returns the property value (or the second-arg default if not set)."
+      },
+      {
+        "id": "B",
+        "text": "g_form.getProperty()"
+      },
+      {
+        "id": "C",
+        "text": "current.getProperty()"
+      },
+      {
+        "id": "D",
+        "text": "sys_properties.read()"
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "gs.getProperty(name, default) is the idiom. Always pass a default — properties can be missing, and your script shouldn't crash because someone forgot to seed one.",
     "distractor_notes": {
       "B": "g_form is client-side and not for properties.",
@@ -644,9 +1140,16 @@
       "D": "Made-up API."
     },
     "references": [
-      { "title": "Available system properties", "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/r_AvailableSystemProperties.html" }
+      {
+        "title": "Available system properties",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/r_AvailableSystemProperties.html"
+      }
     ],
-    "tags": ["gs", "getProperty", "default"]
+    "tags": [
+      "gs",
+      "getProperty",
+      "default"
+    ]
   },
   {
     "id": "cad-aut-025",
@@ -658,12 +1161,26 @@
     "type": "single_select",
     "stem": "What is an SLA Definition in ServiceNow's Service Level Management?",
     "options": [
-      { "id": "A", "text": "A record that defines a time-based commitment on a record (e.g., resolve within 8 business hours), including conditions for when it starts, pauses, stops, and breaches — automatically tracked by the platform on matching records." },
-      { "id": "B", "text": "An ACL rule." },
-      { "id": "C", "text": "A scheduled job." },
-      { "id": "D", "text": "An email template." }
+      {
+        "id": "A",
+        "text": "A record that defines a time-based commitment on a record (e.g., resolve within 8 business hours), including conditions for when it starts, pauses, stops, and breaches — automatically tracked by the platform on matching records."
+      },
+      {
+        "id": "B",
+        "text": "An ACL rule."
+      },
+      {
+        "id": "C",
+        "text": "A scheduled job."
+      },
+      {
+        "id": "D",
+        "text": "An email template."
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "SLA Definitions encode the rules of a time-based commitment: start/pause/stop conditions, target duration, business calendars. The platform attaches an instance to each matching record (sla.task or task_sla) and tracks elapsed time, breach state, and resumption.",
     "distractor_notes": {
       "B": "ACLs are access checks.",
@@ -671,9 +1188,15 @@
       "D": "Templates are part of Notifications, not SLAs."
     },
     "references": [
-      { "title": "Service Level Management", "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/c_ServiceLevelManagement.html" }
+      {
+        "title": "Service Level Management",
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/c_ServiceLevelManagement.html"
+      }
     ],
-    "tags": ["sla", "service-level-management"]
+    "tags": [
+      "sla",
+      "service-level-management"
+    ]
   },
   {
     "id": "cad-aut-026",
@@ -685,12 +1208,26 @@
     "type": "single_select",
     "stem": "A developer wants every High-priority Loaner Request to be 'fulfilled' within 4 business hours, with the clock pausing when the request is in 'Awaiting Customer Info' state. What's the right tool?",
     "options": [
-      { "id": "A", "text": "Manually track the clock in a spreadsheet." },
-      { "id": "B", "text": "Define an SLA Definition: Table = x_acme_loaner_request, Condition (Start) = priority is High and state = New, Pause = state is Awaiting Customer Info, Stop = state is Fulfilled, Duration = 4 hours on the business calendar." },
-      { "id": "C", "text": "A UI Policy that warns the user." },
-      { "id": "D", "text": "A Business Rule that runs every second." }
+      {
+        "id": "A",
+        "text": "Manually track the clock in a spreadsheet."
+      },
+      {
+        "id": "B",
+        "text": "Define an SLA Definition: Table = x_acme_loaner_request, Condition (Start) = priority is High and state = New, Pause = state is Awaiting Customer Info, Stop = state is Fulfilled, Duration = 4 hours on the business calendar."
+      },
+      {
+        "id": "C",
+        "text": "A UI Policy that warns the user."
+      },
+      {
+        "id": "D",
+        "text": "A Business Rule that runs every second."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "That's SLA Definitions exactly. The platform attaches a Task SLA record on match, runs the clock against the business schedule, pauses/resumes per conditions, and marks breach state when the duration is exhausted.",
     "distractor_notes": {
       "A": "Spreadsheets aren't an SLA solution.",
@@ -698,9 +1235,16 @@
       "D": "Per-second polling is wasteful and not how SLAs work."
     },
     "references": [
-      { "title": "Define an SLA", "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/t_DefineAnSLA.html" }
+      {
+        "title": "Define an SLA",
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/t_DefineAnSLA.html"
+      }
     ],
-    "tags": ["sla", "definition", "business-calendar"]
+    "tags": [
+      "sla",
+      "definition",
+      "business-calendar"
+    ]
   },
   {
     "id": "cad-aut-027",
@@ -712,12 +1256,26 @@
     "type": "single_select",
     "stem": "Which of the following is a valid report type in ServiceNow Reports?",
     "options": [
-      { "id": "A", "text": "Bar (column / horizontal column / stacked variants)." },
-      { "id": "B", "text": "Crystal Ball." },
-      { "id": "C", "text": "Tarot." },
-      { "id": "D", "text": "Pyramid." }
+      {
+        "id": "A",
+        "text": "Bar (column / horizontal column / stacked variants)."
+      },
+      {
+        "id": "B",
+        "text": "Crystal Ball."
+      },
+      {
+        "id": "C",
+        "text": "Tarot."
+      },
+      {
+        "id": "D",
+        "text": "Pyramid."
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "Bar is one of many supported report types — alongside line, pie, donut, list, single score, map, calendar, etc. Pyramid is NOT a ServiceNow report type (a frequent distractor on the exam — the legacy sample blueprint flagged Chart vs Pyramid; in the modern catalogue Pyramid simply isn't there).",
     "distractor_notes": {
       "B": "Made up.",
@@ -725,9 +1283,15 @@
       "D": "Pyramid is not a ServiceNow report type — that's been a classic CAD trick question."
     },
     "references": [
-      { "title": "Reports overview", "url": "https://www.servicenow.com/docs/r/zurich/now-intelligence/c_ReportsOverview.html" }
+      {
+        "title": "Reports overview",
+        "url": "https://www.servicenow.com/docs/r/zurich/now-intelligence/c_ReportsOverview.html"
+      }
     ],
-    "tags": ["reports", "types"]
+    "tags": [
+      "reports",
+      "types"
+    ]
   },
   {
     "id": "cad-aut-028",
@@ -737,14 +1301,28 @@
     "subdomain": "Reports",
     "difficulty": "application",
     "type": "single_select",
-    "stem": "A developer wants a weekly emailed PDF report of open Loaner Requests grouped by State for the operations team. The cleanest setup is:",
+    "stem": "A developer wants a weekly emailed PDF report of open Loaner Requests grouped by State for the operations team. What is the cleanest setup?",
     "options": [
-      { "id": "A", "text": "Build the report in Excel and attach manually each week." },
-      { "id": "B", "text": "Create a Report (Bar by State, filtered to active=true) and configure Schedule Report to email a PDF to the ops group every Monday at 8am." },
-      { "id": "C", "text": "Tell the team to run it themselves." },
-      { "id": "D", "text": "A Business Rule that emails raw SQL." }
+      {
+        "id": "A",
+        "text": "Build the report in Excel and attach manually each week."
+      },
+      {
+        "id": "B",
+        "text": "Create a Report (Bar by State, filtered to active=true) and configure Schedule Report to email a PDF to the ops group every Monday at 8am."
+      },
+      {
+        "id": "C",
+        "text": "Tell the team to run it themselves."
+      },
+      {
+        "id": "D",
+        "text": "A Business Rule that emails raw SQL."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "Scheduled Reports are the right primitive. Create the visualization once, attach a schedule, name the recipients. The platform renders and delivers automatically.",
     "distractor_notes": {
       "A": "Manual Excel is the opposite of automation.",
@@ -752,9 +1330,16 @@
       "D": "SQL doesn't apply on the platform; Reports are the right tool."
     },
     "references": [
-      { "title": "Create a report", "url": "https://www.servicenow.com/docs/r/zurich/now-intelligence/t_CreateAReport.html" }
+      {
+        "title": "Create a report",
+        "url": "https://www.servicenow.com/docs/r/zurich/now-intelligence/t_CreateAReport.html"
+      }
     ],
-    "tags": ["reports", "schedule", "pdf"]
+    "tags": [
+      "reports",
+      "schedule",
+      "pdf"
+    ]
   },
   {
     "id": "cad-aut-029",
@@ -766,12 +1351,26 @@
     "type": "single_select",
     "stem": "What is a Dashboard in ServiceNow?",
     "options": [
-      { "id": "A", "text": "A configurable page composed of widgets (reports, performance analytics indicators, custom HTML) that surfaces a curated view for a user or team." },
-      { "id": "B", "text": "A scheduled job." },
-      { "id": "C", "text": "A type of ACL." },
-      { "id": "D", "text": "A subset of the Application Navigator." }
+      {
+        "id": "A",
+        "text": "A configurable page composed of widgets (reports, performance analytics indicators, custom HTML) that surfaces a curated view for a user or team."
+      },
+      {
+        "id": "B",
+        "text": "A scheduled job."
+      },
+      {
+        "id": "C",
+        "text": "A type of ACL."
+      },
+      {
+        "id": "D",
+        "text": "A subset of the Application Navigator."
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "Dashboards are widget pages. Drop reports, indicators, lists, and content widgets onto a layout, share it with a role or group, and it's the team's home page.",
     "distractor_notes": {
       "B": "Not a scheduled job.",
@@ -779,9 +1378,15 @@
       "D": "Different concept."
     },
     "references": [
-      { "title": "Dashboards", "url": "https://www.servicenow.com/docs/r/zurich/now-intelligence/dashboards.html" }
+      {
+        "title": "Dashboards",
+        "url": "https://www.servicenow.com/docs/r/zurich/now-intelligence/dashboards.html"
+      }
     ],
-    "tags": ["dashboards", "widgets"]
+    "tags": [
+      "dashboards",
+      "widgets"
+    ]
   },
   {
     "id": "cad-aut-030",
@@ -793,12 +1398,26 @@
     "type": "single_select",
     "stem": "What is Performance Analytics (PA) used for?",
     "options": [
-      { "id": "A", "text": "Real-time keyboard logging of users." },
-      { "id": "B", "text": "Time-series KPI tracking — snapshot indicators on a schedule, then visualize trends, targets, breakdowns, and forecasts over time. Heavier and more configurable than regular Reports." },
-      { "id": "C", "text": "Replacing Business Rules." },
-      { "id": "D", "text": "ACL evaluation." }
+      {
+        "id": "A",
+        "text": "Real-time keyboard logging of users."
+      },
+      {
+        "id": "B",
+        "text": "Time-series KPI tracking — snapshot indicators on a schedule, then visualize trends, targets, breakdowns, and forecasts over time. Heavier and more configurable than regular Reports."
+      },
+      {
+        "id": "C",
+        "text": "Replacing Business Rules."
+      },
+      {
+        "id": "D",
+        "text": "ACL evaluation."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "Performance Analytics is the platform's KPI/trending toolkit. Define an indicator, schedule snapshots, and PA stores them as time-series data for trend, target, breakdown, and forecasting views. Reports show 'right now'; PA shows 'over time'.",
     "distractor_notes": {
       "A": "Not keylogging.",
@@ -806,9 +1425,16 @@
       "D": "Unrelated to ACL."
     },
     "references": [
-      { "title": "Performance Analytics", "url": "https://www.servicenow.com/docs/r/zurich/now-intelligence/performance-analytics/c_PerformanceAnalytics.html" }
+      {
+        "title": "Performance Analytics",
+        "url": "https://www.servicenow.com/docs/r/zurich/now-intelligence/performance-analytics/c_PerformanceAnalytics.html"
+      }
     ],
-    "tags": ["performance-analytics", "kpi", "time-series"]
+    "tags": [
+      "performance-analytics",
+      "kpi",
+      "time-series"
+    ]
   },
   {
     "id": "cad-aut-031",
@@ -820,12 +1446,26 @@
     "type": "single_select",
     "stem": "When sharing a report with a user, what role / mechanism is the canonical way to grant access?",
     "options": [
-      { "id": "A", "text": "Email them a screenshot." },
-      { "id": "B", "text": "Set Visible to (groups, roles, users) on the report record, or share via the Report's sharing UI. The report respects the underlying table ACLs for row/field visibility — sharing the report doesn't bypass them." },
-      { "id": "C", "text": "Give them the admin role." },
-      { "id": "D", "text": "Reports cannot be shared." }
+      {
+        "id": "A",
+        "text": "Email them a screenshot."
+      },
+      {
+        "id": "B",
+        "text": "Set Visible to (groups, roles, users) on the report record, or share via the Report's sharing UI. The report respects the underlying table ACLs for row/field visibility — sharing the report doesn't bypass them."
+      },
+      {
+        "id": "C",
+        "text": "Give them the admin role."
+      },
+      {
+        "id": "D",
+        "text": "Reports cannot be shared."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "Report sharing controls who can see the report record; the report still runs through the viewer's ACLs when fetching rows. That means a shared report 'shows everything I see' as different users — not 'shows the author's data to everyone'.",
     "distractor_notes": {
       "A": "Screenshots aren't sharing.",
@@ -833,9 +1473,16 @@
       "D": "Reports are sharable."
     },
     "references": [
-      { "title": "Reports overview", "url": "https://www.servicenow.com/docs/r/zurich/now-intelligence/c_ReportsOverview.html" }
+      {
+        "title": "Reports overview",
+        "url": "https://www.servicenow.com/docs/r/zurich/now-intelligence/c_ReportsOverview.html"
+      }
     ],
-    "tags": ["reports", "sharing", "acl-aware"]
+    "tags": [
+      "reports",
+      "sharing",
+      "acl-aware"
+    ]
   },
   {
     "id": "cad-aut-032",
@@ -847,12 +1494,26 @@
     "type": "single_select",
     "stem": "A High priority SLA defined for 4 business hours is marking some requests as breached even though work is actively happening. The team suspects the business calendar is wrong. What's the most efficient diagnostic?",
     "options": [
-      { "id": "A", "text": "Restart the instance." },
-      { "id": "B", "text": "Open the affected Task SLA records and inspect the Schedule, business calendar, pause/resume history, and elapsed-time calculation. Common cause: a calendar that omits the team's working hours, or a missing pause condition that should have stopped the clock during certain states." },
-      { "id": "C", "text": "Disable the SLA." },
-      { "id": "D", "text": "Tell users to work faster." }
+      {
+        "id": "A",
+        "text": "Restart the instance."
+      },
+      {
+        "id": "B",
+        "text": "Open the affected Task SLA records and inspect the Schedule, business calendar, pause/resume history, and elapsed-time calculation. Common cause: a calendar that omits the team's working hours, or a missing pause condition that should have stopped the clock during certain states."
+      },
+      {
+        "id": "C",
+        "text": "Disable the SLA."
+      },
+      {
+        "id": "D",
+        "text": "Tell users to work faster."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "Task SLA records carry the full history — when started, paused, resumed, what calendar is applied. That's where the diagnostic lives. Typical fixes are calendar definitions or missing pause conditions, not 'work faster'.",
     "distractor_notes": {
       "A": "Restart doesn't diagnose data.",
@@ -860,9 +1521,17 @@
       "D": "Not a real solution."
     },
     "references": [
-      { "title": "Service Level Management", "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/c_ServiceLevelManagement.html" }
+      {
+        "title": "Service Level Management",
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/c_ServiceLevelManagement.html"
+      }
     ],
-    "tags": ["sla", "debugging", "business-calendar", "scenario"]
+    "tags": [
+      "sla",
+      "debugging",
+      "business-calendar",
+      "scenario"
+    ]
   },
   {
     "id": "cad-aut-033",
@@ -874,12 +1543,26 @@
     "type": "single_select",
     "stem": "What is the Survey feature in ServiceNow used for?",
     "options": [
-      { "id": "A", "text": "Capturing feedback from users via configurable forms — typically triggered after a workflow stage (e.g., after a loaner is returned) and used to score satisfaction or gather structured responses." },
-      { "id": "B", "text": "Tracking which records were viewed." },
-      { "id": "C", "text": "Logging in users." },
-      { "id": "D", "text": "Replacing Reports." }
+      {
+        "id": "A",
+        "text": "Capturing feedback from users via configurable forms — typically triggered after a workflow stage (e.g., after a loaner is returned) and used to score satisfaction or gather structured responses."
+      },
+      {
+        "id": "B",
+        "text": "Tracking which records were viewed."
+      },
+      {
+        "id": "C",
+        "text": "Logging in users."
+      },
+      {
+        "id": "D",
+        "text": "Replacing Reports."
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "Surveys capture structured feedback. Common uses: post-resolution satisfaction, post-onboarding pulse checks, training feedback. Trigger them after a workflow stage and you've closed the feedback loop without any external tool.",
     "distractor_notes": {
       "B": "View tracking is unrelated.",
@@ -887,9 +1570,15 @@
       "D": "Doesn't replace reports."
     },
     "references": [
-      { "title": "Survey management", "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/c_SurveyManagement.html" }
+      {
+        "title": "Survey management",
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/c_SurveyManagement.html"
+      }
     ],
-    "tags": ["surveys", "feedback"]
+    "tags": [
+      "surveys",
+      "feedback"
+    ]
   },
   {
     "id": "cad-aut-034",
@@ -899,14 +1588,28 @@
     "subdomain": "Flow Designer",
     "difficulty": "application",
     "type": "single_select",
-    "stem": "A developer wants a Flow to wait for an approval response that may take days, without holding open resources. Flow Designer's idiomatic approach is:",
+    "stem": "A developer wants a Flow to wait for an approval response that may take days, without holding open resources. What is Flow Designer's idiomatic approach?",
     "options": [
-      { "id": "A", "text": "Use a tight JavaScript while-loop until the user clicks." },
-      { "id": "B", "text": "Use the 'Ask for Approval' action (or a Wait For Condition / Wait For Duration action), which suspends the flow execution and resumes when the trigger condition is met — no busy-waiting." },
-      { "id": "C", "text": "Reschedule the flow to retry every minute." },
-      { "id": "D", "text": "Make the flow run faster." }
+      {
+        "id": "A",
+        "text": "Use a tight JavaScript while-loop until the user clicks."
+      },
+      {
+        "id": "B",
+        "text": "Use the 'Ask for Approval' action (or a Wait For Condition / Wait For Duration action), which suspends the flow execution and resumes when the trigger condition is met — no busy-waiting."
+      },
+      {
+        "id": "C",
+        "text": "Reschedule the flow to retry every minute."
+      },
+      {
+        "id": "D",
+        "text": "Make the flow run faster."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "Flow Designer's wait/approval actions are durable — they suspend the flow and the engine resumes execution on the configured event. No polling, no busy-waiting, days of wait time are fine.",
     "distractor_notes": {
       "A": "Busy-loops are wrong in any environment.",
@@ -914,9 +1617,16 @@
       "D": "Speed isn't the issue."
     },
     "references": [
-      { "title": "Flow actions", "url": "https://www.servicenow.com/docs/r/zurich/build-workflows/workflow-studio/flow-actions.html" }
+      {
+        "title": "Flow actions",
+        "url": "https://www.servicenow.com/docs/r/zurich/build-workflows/workflow-studio/flow-actions.html"
+      }
     ],
-    "tags": ["flow-designer", "wait", "durable"]
+    "tags": [
+      "flow-designer",
+      "wait",
+      "durable"
+    ]
   },
   {
     "id": "cad-aut-035",
@@ -926,14 +1636,28 @@
     "subdomain": "Reports",
     "difficulty": "application",
     "type": "single_select",
-    "stem": "A developer creates a report on x_acme_loaner_request showing counts by 'requester.department'. They notice the report works for them but is empty for some users. Most likely cause:",
+    "stem": "A developer creates a report on x_acme_loaner_request showing counts by 'requester.department'. They notice the report works for them but is empty for some users. What is the most likely cause?",
     "options": [
-      { "id": "A", "text": "The report engine doesn't support dot-walking." },
-      { "id": "B", "text": "Reports respect the viewer's read ACLs. Some users can't read certain records (or the requester or department fields), so the report appears empty or partial for them. Verify their ACLs, not the report itself." },
-      { "id": "C", "text": "The report was deleted." },
-      { "id": "D", "text": "The instance is down." }
+      {
+        "id": "A",
+        "text": "The report engine doesn't support dot-walking."
+      },
+      {
+        "id": "B",
+        "text": "Reports respect the viewer's read ACLs. Some users can't read certain records (or the requester or department fields), so the report appears empty or partial for them. Verify their ACLs, not the report itself."
+      },
+      {
+        "id": "C",
+        "text": "The report was deleted."
+      },
+      {
+        "id": "D",
+        "text": "The instance is down."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "Reports run as the viewer, with the viewer's ACLs. If they can't read the data, the report won't show it. That's a feature — it means sharing a report doesn't leak data — but it's also a common 'why is mine empty?' diagnosis.",
     "distractor_notes": {
       "A": "Dot-walking is supported.",
@@ -941,9 +1665,16 @@
       "D": "Instance down would be obvious."
     },
     "references": [
-      { "title": "Reports overview", "url": "https://www.servicenow.com/docs/r/zurich/now-intelligence/c_ReportsOverview.html" }
+      {
+        "title": "Reports overview",
+        "url": "https://www.servicenow.com/docs/r/zurich/now-intelligence/c_ReportsOverview.html"
+      }
     ],
-    "tags": ["reports", "acl", "dot-walking"]
+    "tags": [
+      "reports",
+      "acl",
+      "dot-walking"
+    ]
   },
   {
     "id": "cad-aut-036",
@@ -955,12 +1686,26 @@
     "type": "single_select",
     "stem": "What is Knowledge Management used for in ServiceNow, and how might it intersect with an application?",
     "options": [
-      { "id": "A", "text": "It's the platform's KB system — authored articles organized into Knowledge Bases (sets of articles by topic). Apps often surface related KB articles to users (e.g., on a request form or in Service Portal) to deflect support load." },
-      { "id": "B", "text": "It's a code repository for developers." },
-      { "id": "C", "text": "It's an ACL feature." },
-      { "id": "D", "text": "It's a scheduled job." }
+      {
+        "id": "A",
+        "text": "It's the platform's KB system — authored articles organized into Knowledge Bases (sets of articles by topic). Apps often surface related KB articles to users (e.g., on a request form or in Service Portal) to deflect support load."
+      },
+      {
+        "id": "B",
+        "text": "It's a code repository for developers."
+      },
+      {
+        "id": "C",
+        "text": "It's an ACL feature."
+      },
+      {
+        "id": "D",
+        "text": "It's a scheduled job."
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "Knowledge Management is the article/KB platform. Embedding related articles into request flows reduces 'how do I…' tickets and gives users answers without waiting for an agent.",
     "distractor_notes": {
       "B": "Not a code repo.",
@@ -968,9 +1713,15 @@
       "D": "Not scheduled jobs."
     },
     "references": [
-      { "title": "Knowledge Management", "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/c_KnowledgeManagement.html" }
+      {
+        "title": "Knowledge Management",
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/c_KnowledgeManagement.html"
+      }
     ],
-    "tags": ["knowledge-management", "kb"]
+    "tags": [
+      "knowledge-management",
+      "kb"
+    ]
   },
   {
     "id": "cad-aut-037",
@@ -982,12 +1733,26 @@
     "type": "single_select",
     "stem": "What is a Knowledge Base in ServiceNow Knowledge Management?",
     "options": [
-      { "id": "A", "text": "A container record (kb_knowledge_base) for organizing articles by topic or audience, with its own access controls (User Criteria) for who can read/contribute to it." },
-      { "id": "B", "text": "A backup of every record in the database." },
-      { "id": "C", "text": "A subset of the navigator." },
-      { "id": "D", "text": "A scheduled job." }
+      {
+        "id": "A",
+        "text": "A container record (kb_knowledge_base) for organizing articles by topic or audience, with its own access controls (User Criteria) for who can read/contribute to it."
+      },
+      {
+        "id": "B",
+        "text": "A backup of every record in the database."
+      },
+      {
+        "id": "C",
+        "text": "A subset of the navigator."
+      },
+      {
+        "id": "D",
+        "text": "A scheduled job."
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "Knowledge Bases group articles. Each KB has its own audience and contribution controls via User Criteria. Apps that ship reference content often create their own KB so the articles travel with the app.",
     "distractor_notes": {
       "B": "Not a backup.",
@@ -995,9 +1760,15 @@
       "D": "Not a scheduled job."
     },
     "references": [
-      { "title": "Knowledge bases", "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/c_KnowledgeBases.html" }
+      {
+        "title": "Knowledge bases",
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/c_KnowledgeBases.html"
+      }
     ],
-    "tags": ["knowledge-bases", "kb"]
+    "tags": [
+      "knowledge-bases",
+      "kb"
+    ]
   },
   {
     "id": "cad-aut-038",
@@ -1009,12 +1780,26 @@
     "type": "single_select",
     "stem": "What does User Criteria control on a Knowledge Base or Catalog Item?",
     "options": [
-      { "id": "A", "text": "The font of every article." },
-      { "id": "B", "text": "Who can read (or contribute to / order) the resource — a rule set referencing roles, groups, departments, locations, companies, and scripts that determines audience eligibility." },
-      { "id": "C", "text": "The maximum number of articles." },
-      { "id": "D", "text": "Whether records can be deleted." }
+      {
+        "id": "A",
+        "text": "The font of every article."
+      },
+      {
+        "id": "B",
+        "text": "Who can read (or contribute to / order) the resource — a rule set referencing roles, groups, departments, locations, companies, and scripts that determines audience eligibility."
+      },
+      {
+        "id": "C",
+        "text": "The maximum number of articles."
+      },
+      {
+        "id": "D",
+        "text": "Whether records can be deleted."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "User Criteria is the audience-rule mechanism. Apply it to a KB to gate readers, or to a Catalog Item to gate who can order. Combine multiple criteria for complex audiences.",
     "distractor_notes": {
       "A": "Not fonts.",
@@ -1022,9 +1807,15 @@
       "D": "Not delete control."
     },
     "references": [
-      { "title": "User criteria overview", "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/user-criteria-overview.html" }
+      {
+        "title": "User criteria overview",
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/user-criteria-overview.html"
+      }
     ],
-    "tags": ["user-criteria", "audience"]
+    "tags": [
+      "user-criteria",
+      "audience"
+    ]
   },
   {
     "id": "cad-aut-039",
@@ -1034,14 +1825,28 @@
     "subdomain": "KB Article",
     "difficulty": "application",
     "type": "single_select",
-    "stem": "A developer wants to ship 10 reference articles with their app. The right pattern is:",
+    "stem": "A developer wants to ship 10 reference articles with their app. What is the right pattern?",
     "options": [
-      { "id": "A", "text": "Email the articles to admins to paste into their instance." },
-      { "id": "B", "text": "Create a Knowledge Base scoped to the app (or referenced from it), author the articles inside that KB, and include the KB + articles in the app's Update Set so installs carry the content." },
-      { "id": "C", "text": "Hard-code the article text into Business Rules." },
-      { "id": "D", "text": "Store the articles as comments on each record." }
+      {
+        "id": "A",
+        "text": "Email the articles to admins to paste into their instance."
+      },
+      {
+        "id": "B",
+        "text": "Create a Knowledge Base scoped to the app (or referenced from it), author the articles inside that KB, and include the KB + articles in the app's Update Set so installs carry the content."
+      },
+      {
+        "id": "C",
+        "text": "Hard-code the article text into Business Rules."
+      },
+      {
+        "id": "D",
+        "text": "Store the articles as comments on each record."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "Bundling reference content as a KB + articles in the app's update set means installs ship with the content already in place. Authors can update them as separate records over time.",
     "distractor_notes": {
       "A": "Manual paste isn't an install path.",
@@ -1049,9 +1854,15 @@
       "D": "Comments aren't articles."
     },
     "references": [
-      { "title": "Create knowledge article", "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/t_CreateKnowledgeArticle.html" }
+      {
+        "title": "Create knowledge article",
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/t_CreateKnowledgeArticle.html"
+      }
     ],
-    "tags": ["knowledge", "shipping-content"]
+    "tags": [
+      "knowledge",
+      "shipping-content"
+    ]
   },
   {
     "id": "cad-aut-040",
@@ -1063,12 +1874,26 @@
     "type": "single_select",
     "stem": "Which best describes the lifecycle a typical Catalog Item triggers when ordered?",
     "options": [
-      { "id": "A", "text": "Nothing — Catalog Items are display-only." },
-      { "id": "B", "text": "On submit the platform creates a Request (REQ) and one or more Requested Items (RITM) that flow through approvals, tasks, and fulfillment workflow as configured on the item. Variables become fields on the RITM and downstream records." },
-      { "id": "C", "text": "It creates an Incident." },
-      { "id": "D", "text": "It emails the catalog admin and stops." }
+      {
+        "id": "A",
+        "text": "Nothing — Catalog Items are display-only."
+      },
+      {
+        "id": "B",
+        "text": "On submit the platform creates a Request (REQ) and one or more Requested Items (RITM) that flow through approvals, tasks, and fulfillment workflow as configured on the item. Variables become fields on the RITM and downstream records."
+      },
+      {
+        "id": "C",
+        "text": "It creates an Incident."
+      },
+      {
+        "id": "D",
+        "text": "It emails the catalog admin and stops."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "Catalog Items spawn REQ → RITM and then workflow plumbing (approvals, tasks, fulfillment). Variables flow as data. That's why Catalog Items are right for fulfillable services and Record Producers are right for direct table inserts.",
     "distractor_notes": {
       "A": "They actively spawn workflow.",
@@ -1076,9 +1901,16 @@
       "D": "Doesn't just email and stop."
     },
     "references": [
-      { "title": "Catalog items", "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/c_CatalogItems.html" }
+      {
+        "title": "Catalog items",
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/c_CatalogItems.html"
+      }
     ],
-    "tags": ["catalog-items", "req-ritm", "lifecycle"]
+    "tags": [
+      "catalog-items",
+      "req-ritm",
+      "lifecycle"
+    ]
   },
   {
     "id": "cad-aut-041",
@@ -1090,12 +1922,26 @@
     "type": "single_select",
     "stem": "What is Request Fulfillment in the ServiceNow Service Catalog context?",
     "options": [
-      { "id": "A", "text": "The lifecycle and workflow that fulfills the work behind a Catalog request — typically driven by Workflow / Flow Designer plus approval and task assignment, ending with the RITM/REQ closing as 'closed_complete'." },
-      { "id": "B", "text": "An email template." },
-      { "id": "C", "text": "A type of ACL." },
-      { "id": "D", "text": "A scheduled job." }
+      {
+        "id": "A",
+        "text": "The lifecycle and workflow that fulfills the work behind a Catalog request — typically driven by Workflow / Flow Designer plus approval and task assignment, ending with the RITM/REQ closing as 'closed_complete'."
+      },
+      {
+        "id": "B",
+        "text": "An email template."
+      },
+      {
+        "id": "C",
+        "text": "A type of ACL."
+      },
+      {
+        "id": "D",
+        "text": "A scheduled job."
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "Request Fulfillment is the workflow that runs after a catalog submission — approvals, tasks, integrations, until the request is fulfilled. ServiceNow ships built-in workflows; developers can replace or extend them per item.",
     "distractor_notes": {
       "B": "Not an email template.",
@@ -1103,9 +1949,15 @@
       "D": "Not a scheduled job."
     },
     "references": [
-      { "title": "Request fulfillment", "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/c_RequestFulfillment.html" }
+      {
+        "title": "Request fulfillment",
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/c_RequestFulfillment.html"
+      }
     ],
-    "tags": ["request-fulfillment", "workflow"]
+    "tags": [
+      "request-fulfillment",
+      "workflow"
+    ]
   },
   {
     "id": "cad-aut-042",
@@ -1117,12 +1969,26 @@
     "type": "single_select",
     "stem": "From an Automation perspective, what role does Service Portal often play in an app's workflow?",
     "options": [
-      { "id": "A", "text": "Service Portal is irrelevant to automation." },
-      { "id": "B", "text": "Service Portal surfaces the front-end (catalog items, record producers, knowledge articles, custom widgets) that triggers the back-end automation. End users interact with the portal, and Flow Designer / Workflow / Business Rules handle the rest." },
-      { "id": "C", "text": "Service Portal hosts the database." },
-      { "id": "D", "text": "Service Portal runs the ServiceNow MID server." }
+      {
+        "id": "A",
+        "text": "Service Portal is irrelevant to automation."
+      },
+      {
+        "id": "B",
+        "text": "Service Portal surfaces the front-end (catalog items, record producers, knowledge articles, custom widgets) that triggers the back-end automation. End users interact with the portal, and Flow Designer / Workflow / Business Rules handle the rest."
+      },
+      {
+        "id": "C",
+        "text": "Service Portal hosts the database."
+      },
+      {
+        "id": "D",
+        "text": "Service Portal runs the ServiceNow MID server."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "Service Portal is the doorway: a user fills out a record producer or a catalog item there, and the platform's automation kicks in behind the scenes. They're complementary halves of an end-to-end app experience.",
     "distractor_notes": {
       "A": "It's deeply relevant.",
@@ -1130,9 +1996,16 @@
       "D": "Not a MID Server."
     },
     "references": [
-      { "title": "Service Portal", "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/c_ServicePortal.html" }
+      {
+        "title": "Service Portal",
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/c_ServicePortal.html"
+      }
     ],
-    "tags": ["service-portal", "front-end", "automation-entry"]
+    "tags": [
+      "service-portal",
+      "front-end",
+      "automation-entry"
+    ]
   },
   {
     "id": "cad-aut-043",
@@ -1142,14 +2015,28 @@
     "subdomain": "Scheduled Cleanup",
     "difficulty": "scenario",
     "type": "single_select",
-    "stem": "A custom app accumulates 'audit log' records that exceed retention. The right automation pattern to delete records older than 90 days is:",
+    "stem": "A custom app accumulates 'audit log' records that exceed retention. What is the right automation pattern to delete records older than 90 days?",
     "options": [
-      { "id": "A", "text": "Click Delete on each record manually each month." },
-      { "id": "B", "text": "A Scheduled Job (or scheduled Flow) that queries the audit table for records older than 90 days and deletes them in batches. Bound the query with setLimit and run async to avoid spikes; document the retention policy." },
-      { "id": "C", "text": "Disable the audit table." },
-      { "id": "D", "text": "Truncate the database manually." }
+      {
+        "id": "A",
+        "text": "Click Delete on each record manually each month."
+      },
+      {
+        "id": "B",
+        "text": "A Scheduled Job (or scheduled Flow) that queries the audit table for records older than 90 days and deletes them in batches. Bound the query with setLimit and run async to avoid spikes; document the retention policy."
+      },
+      {
+        "id": "C",
+        "text": "Disable the audit table."
+      },
+      {
+        "id": "D",
+        "text": "Truncate the database manually."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "Scheduled cleanup is a textbook scheduled job pattern. Batch the deletes, run during quiet hours, document the policy. Don't disable auditing to manage volume — manage volume by retention.",
     "distractor_notes": {
       "A": "Manual deletes don't scale.",
@@ -1157,9 +2044,17 @@
       "D": "Customers don't truncate the platform database directly."
     },
     "references": [
-      { "title": "Flow Designer", "url": "https://www.servicenow.com/docs/r/zurich/build-workflows/flow-designer.html" }
+      {
+        "title": "Flow Designer",
+        "url": "https://www.servicenow.com/docs/r/zurich/build-workflows/flow-designer.html"
+      }
     ],
-    "tags": ["scheduled-job", "retention", "cleanup", "scenario"]
+    "tags": [
+      "scheduled-job",
+      "retention",
+      "cleanup",
+      "scenario"
+    ]
   },
   {
     "id": "cad-aut-044",
@@ -1169,14 +2064,28 @@
     "subdomain": "Flow Designer",
     "difficulty": "application",
     "type": "single_select",
-    "stem": "An app sends 200,000 records through a Flow trigger every Monday morning. After deployment, the queue backs up and other automation slows. The most appropriate adjustment is:",
+    "stem": "An app sends 200,000 records through a Flow trigger every Monday morning. After deployment, the queue backs up and other automation slows. What is the most appropriate adjustment?",
     "options": [
-      { "id": "A", "text": "Delete the trigger and stop processing." },
-      { "id": "B", "text": "Stagger the load: use a Scheduled trigger that batches the work (e.g., process N records per minute, paginate the query), or split into smaller targeted flows. Avoid bursts that overwhelm the worker pool." },
-      { "id": "C", "text": "Run two flows simultaneously." },
-      { "id": "D", "text": "Increase the priority field on the flow." }
+      {
+        "id": "A",
+        "text": "Delete the trigger and stop processing."
+      },
+      {
+        "id": "B",
+        "text": "Stagger the load: use a Scheduled trigger that batches the work (e.g., process N records per minute, paginate the query), or split into smaller targeted flows. Avoid bursts that overwhelm the worker pool."
+      },
+      {
+        "id": "C",
+        "text": "Run two flows simultaneously."
+      },
+      {
+        "id": "D",
+        "text": "Increase the priority field on the flow."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "Bursty 200k-at-once is the wrong shape for the worker pool. Batch and stagger. The same flow can be invoked repeatedly with paginated inputs to spread the load across time without overwhelming the platform.",
     "distractor_notes": {
       "A": "Deleting doesn't solve — it removes the feature.",
@@ -1184,9 +2093,16 @@
       "D": "Priority doesn't shed load."
     },
     "references": [
-      { "title": "Flow trigger", "url": "https://www.servicenow.com/docs/r/zurich/build-workflows/flow-trigger.html" }
+      {
+        "title": "Flow trigger",
+        "url": "https://www.servicenow.com/docs/r/zurich/build-workflows/flow-trigger.html"
+      }
     ],
-    "tags": ["flow-designer", "batching", "load-shedding"]
+    "tags": [
+      "flow-designer",
+      "batching",
+      "load-shedding"
+    ]
   },
   {
     "id": "cad-aut-045",
@@ -1198,12 +2114,26 @@
     "type": "single_select",
     "stem": "Inside an Email Notification template, what is the correct syntax to insert the requester's name field?",
     "options": [
-      { "id": "A", "text": "${requester.name} — field substitution using ${dot.walked.path} resolves to the value at send time." },
-      { "id": "B", "text": "{{requester.name}}" },
-      { "id": "C", "text": "<%= requester.name %>" },
-      { "id": "D", "text": "Just type the literal name." }
+      {
+        "id": "A",
+        "text": "${requester.name} — field substitution using ${dot.walked.path} resolves to the value at send time."
+      },
+      {
+        "id": "B",
+        "text": "{{requester.name}}"
+      },
+      {
+        "id": "C",
+        "text": "<%= requester.name %>"
+      },
+      {
+        "id": "D",
+        "text": "Just type the literal name."
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "${...} is ServiceNow's notification substitution syntax. Dot-walk via reference fields to pull related data. The substitution resolves at send time using the current record context.",
     "distractor_notes": {
       "B": "Mustache-style isn't the platform syntax.",
@@ -1211,9 +2141,15 @@
       "D": "Literal names defeat the point of templating."
     },
     "references": [
-      { "title": "Create an email notification", "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/t_CreateAnEmailNotification.html" }
+      {
+        "title": "Create an email notification",
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/t_CreateAnEmailNotification.html"
+      }
     ],
-    "tags": ["notifications", "substitution"]
+    "tags": [
+      "notifications",
+      "substitution"
+    ]
   },
   {
     "id": "cad-aut-046",
@@ -1225,12 +2161,26 @@
     "type": "single_select",
     "stem": "Application Properties typically follow a naming convention to keep them organized. Which is the recommended pattern?",
     "options": [
-      { "id": "A", "text": "Use a short, unique prefix tied to the app's scope (e.g., x_acme_loaner.default_loan_days) so properties are discoverable, sortable by app, and don't collide with platform or other-app properties." },
-      { "id": "B", "text": "Use generic names like 'days' and 'enabled' — short is better." },
-      { "id": "C", "text": "Use random GUID strings as property names." },
-      { "id": "D", "text": "Use the developer's first name as the prefix." }
+      {
+        "id": "A",
+        "text": "Use a short, unique prefix tied to the app's scope (e.g., x_acme_loaner.default_loan_days) so properties are discoverable, sortable by app, and don't collide with platform or other-app properties."
+      },
+      {
+        "id": "B",
+        "text": "Use generic names like 'days' and 'enabled' — short is better."
+      },
+      {
+        "id": "C",
+        "text": "Use random GUID strings as property names."
+      },
+      {
+        "id": "D",
+        "text": "Use the developer's first name as the prefix."
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "Scope-prefixed names (x_acme_loaner.*) keep properties discoverable, prevent collisions with platform or other-app properties, and group naturally in the sys_properties list. It's the standard convention.",
     "distractor_notes": {
       "B": "Generic names collide and obscure ownership.",
@@ -1238,9 +2188,15 @@
       "D": "Developer names rotate; scope identifiers are stable."
     },
     "references": [
-      { "title": "Available system properties", "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/r_AvailableSystemProperties.html" }
+      {
+        "title": "Available system properties",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/r_AvailableSystemProperties.html"
+      }
     ],
-    "tags": ["application-properties", "naming-convention"]
+    "tags": [
+      "application-properties",
+      "naming-convention"
+    ]
   },
   {
     "id": "cad-aut-047",
@@ -1250,14 +2206,28 @@
     "subdomain": "Flow Designer",
     "difficulty": "scenario",
     "type": "single_select",
-    "stem": "A flow needs to call a custom server-side function the team already wrote (an existing Script Include method). The cleanest integration is:",
+    "stem": "A flow needs to call a custom server-side function the team already wrote (an existing Script Include method). What is the cleanest integration?",
     "options": [
-      { "id": "A", "text": "Use the 'Run Script' action in the flow that calls the Script Include — or, better, wrap the Script Include as a custom Action (with explicit inputs/outputs) that other flows can reuse without ad-hoc scripts." },
-      { "id": "B", "text": "Rewrite the function from scratch inside the flow as a Run Script." },
-      { "id": "C", "text": "Run the function on the user's browser." },
-      { "id": "D", "text": "Email the function to admins." }
+      {
+        "id": "A",
+        "text": "Use the 'Run Script' action in the flow that calls the Script Include — or, better, wrap the Script Include as a custom Action (with explicit inputs/outputs) that other flows can reuse without ad-hoc scripts."
+      },
+      {
+        "id": "B",
+        "text": "Rewrite the function from scratch inside the flow as a Run Script."
+      },
+      {
+        "id": "C",
+        "text": "Run the function on the user's browser."
+      },
+      {
+        "id": "D",
+        "text": "Email the function to admins."
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "Wrap existing code as a custom Action with clear inputs/outputs and you turn a one-off Run Script into a first-class flow primitive that's reusable, testable, and explicit. Run Script is fine for quick bridges; custom Actions are the long-term home.",
     "distractor_notes": {
       "B": "Rewriting duplicates effort and creates drift.",
@@ -1265,9 +2235,17 @@
       "D": "Email isn't an integration."
     },
     "references": [
-      { "title": "Flow actions", "url": "https://www.servicenow.com/docs/r/zurich/build-workflows/workflow-studio/flow-actions.html" }
+      {
+        "title": "Flow actions",
+        "url": "https://www.servicenow.com/docs/r/zurich/build-workflows/workflow-studio/flow-actions.html"
+      }
     ],
-    "tags": ["flow-designer", "custom-action", "integration", "scenario"]
+    "tags": [
+      "flow-designer",
+      "custom-action",
+      "integration",
+      "scenario"
+    ]
   },
   {
     "id": "cad-aut-048",
@@ -1279,12 +2257,26 @@
     "type": "single_select",
     "stem": "A senior developer reviews a junior's app and finds: business logic spread across 8 Business Rules, 3 Workflow definitions, 2 Flow Designer flows, several Client Scripts, and a couple of UI Actions — all touching the same table. Recommendation?",
     "options": [
-      { "id": "A", "text": "Add more rules to fix the tangle." },
-      { "id": "B", "text": "Consolidate: pick a primary automation surface (Flow Designer for new work), migrate logic into clearly-defined flows and subflows, push pure data enforcement into a small number of Business Rules + Data Policies, and remove duplicate logic. The goal is a small, named set of authoritative components per concern." },
-      { "id": "C", "text": "Ship as-is — works in dev." },
-      { "id": "D", "text": "Disable everything and hope for the best." }
+      {
+        "id": "A",
+        "text": "Add more rules to fix the tangle."
+      },
+      {
+        "id": "B",
+        "text": "Consolidate: pick a primary automation surface (Flow Designer for new work), migrate logic into clearly-defined flows and subflows, push pure data enforcement into a small number of Business Rules + Data Policies, and remove duplicate logic. The goal is a small, named set of authoritative components per concern."
+      },
+      {
+        "id": "C",
+        "text": "Ship as-is — works in dev."
+      },
+      {
+        "id": "D",
+        "text": "Disable everything and hope for the best."
+      }
     ],
-    "correct": ["B"],
+    "correct": [
+      "B"
+    ],
     "rationale": "Mature ServiceNow apps look like 'one place for each concern, with reuse via subflows and Script Includes.' Sprawl is a signal to consolidate. The 'works in dev' alibi is how every legacy ServiceNow nightmare started.",
     "distractor_notes": {
       "A": "Adding more rules makes the tangle worse.",
@@ -1292,8 +2284,15 @@
       "D": "Disabling without redesign isn't a path forward."
     },
     "references": [
-      { "title": "Flow Designer", "url": "https://www.servicenow.com/docs/r/zurich/build-workflows/flow-designer.html" }
+      {
+        "title": "Flow Designer",
+        "url": "https://www.servicenow.com/docs/r/zurich/build-workflows/flow-designer.html"
+      }
     ],
-    "tags": ["best-practices", "consolidation", "scenario"]
+    "tags": [
+      "best-practices",
+      "consolidation",
+      "scenario"
+    ]
   }
 ]
