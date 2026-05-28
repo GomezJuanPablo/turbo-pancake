@@ -25,7 +25,6 @@ glideup/
 ├── public/                              # favicon, og-image
 ├── astro.config.mjs
 ├── package.json
-├── CLAUDE.md                            # project instructions (Claude-readable)
 └── README.md
 ```
 ## License
