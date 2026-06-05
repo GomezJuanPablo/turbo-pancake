@@ -2110,5 +2110,581 @@
       "ecc-queue",
       "ready"
     ]
+  },
+  {
+    "id": "cisms-dis-054",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Discovery Configuration",
+    "subdomain": "SSH credentials",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "Discovery reaches a group of Linux hosts but fails to collect data, logging authentication errors. What is the most likely configuration to fix?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Provide valid SSH credentials accessible to the MID Server's credential store"
+      },
+      {
+        "id": "B",
+        "text": "Open an inbound firewall port on each host"
+      },
+      {
+        "id": "C",
+        "text": "Add a watch list to the hosts"
+      },
+      {
+        "id": "D",
+        "text": "Increase the CMDB health threshold"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Linux discovery uses SSH; authentication errors point to missing or invalid SSH credentials. Storing working SSH credentials for the MID Server to use resolves it. The MID Server still connects outbound, so inbound ports aren't the fix.",
+    "distractor_notes": {
+      "B": "The MID Server connects outbound to hosts; inbound ports aren't the issue.",
+      "C": "Watch lists handle notifications, not authentication.",
+      "D": "Health thresholds don't affect host authentication."
+    },
+    "references": [
+      {
+        "title": "SSH credentials",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/mid-server/ssh-credentials.html"
+      }
+    ],
+    "tags": [
+      "discovery",
+      "ssh",
+      "credentials"
+    ]
+  },
+  {
+    "id": "cisms-dis-055",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Discovery Configuration",
+    "subdomain": "MID Server selection",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "Targets live in a network segment that only one MID Server can reach. How do you ensure Discovery uses the right MID Server for those targets?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Use MID Server selection based on capabilities and IP ranges"
+      },
+      {
+        "id": "B",
+        "text": "Delete the other MID Servers"
+      },
+      {
+        "id": "C",
+        "text": "Run Discovery without any MID Server"
+      },
+      {
+        "id": "D",
+        "text": "Add a coalesce field"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "MID Server selection uses capabilities, IP ranges, and applications so the platform picks a MID Server that can actually reach the targets. That routes the segment's discovery to the correct MID Server without removing others.",
+    "distractor_notes": {
+      "B": "Deleting other MID Servers harms coverage elsewhere.",
+      "C": "Discovery of remote targets requires a MID Server.",
+      "D": "Coalesce matches import records."
+    },
+    "references": [
+      {
+        "title": "MID Server capabilities and selection",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/mid-server/mid-server-capabilities.html"
+      }
+    ],
+    "tags": [
+      "mid-server",
+      "selection",
+      "ip-range"
+    ]
+  },
+  {
+    "id": "cisms-dis-056",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Discovery Configuration",
+    "subdomain": "Shazzam",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "At the start of a Discovery run, the platform needs to find which devices are up and which ports are open across an IP range. Which probe performs this port scan?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The Shazzam probe"
+      },
+      {
+        "id": "B",
+        "text": "A transform map"
+      },
+      {
+        "id": "C",
+        "text": "A connection section"
+      },
+      {
+        "id": "D",
+        "text": "A reconciliation rule"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Shazzam is the port-scanning probe that detects active devices and open ports across the range during the scanning phase, guiding which classifiers run next.",
+    "distractor_notes": {
+      "B": "Transform maps move imported data.",
+      "C": "Connection sections are part of Service Mapping patterns, not the initial scan.",
+      "D": "Reconciliation rules manage attribute authority."
+    },
+    "references": [
+      {
+        "title": "Shazzam and port scanning",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/discovery/shazzam-probe.html"
+      }
+    ],
+    "tags": [
+      "discovery",
+      "shazzam",
+      "port-scan"
+    ]
+  },
+  {
+    "id": "cisms-dis-057",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Discovery Configuration",
+    "subdomain": "Classification",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "Discovery detects a running process on a host but doesn't know what application it is, so it isn't classified. Which mechanism determines the application from the process?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Process classifiers"
+      },
+      {
+        "id": "B",
+        "text": "A coalesce field"
+      },
+      {
+        "id": "C",
+        "text": "A UI policy"
+      },
+      {
+        "id": "D",
+        "text": "A watch list"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Process classifiers match running processes (and ports/parameters) to applications, so Discovery can classify and trigger the right pattern to gather details. Without a matching classifier, the app may show as generic.",
+    "distractor_notes": {
+      "B": "Coalesce matches import records.",
+      "C": "UI policies change form behavior.",
+      "D": "Watch lists handle notifications."
+    },
+    "references": [
+      {
+        "title": "Process classifiers",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/discovery/process-classifiers.html"
+      }
+    ],
+    "tags": [
+      "discovery",
+      "classification",
+      "process"
+    ]
+  },
+  {
+    "id": "cisms-dis-058",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Discovery Configuration",
+    "subdomain": "Credential affinity",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "Discovery is slow because it tries many credentials against each target before finding the one that works. Which feature remembers the successful credential to speed future runs?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Credential affinity"
+      },
+      {
+        "id": "B",
+        "text": "A reconciliation rule"
+      },
+      {
+        "id": "C",
+        "text": "A coalesce field"
+      },
+      {
+        "id": "D",
+        "text": "A service group"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Credential affinity records which credential succeeded for a target so subsequent runs try it first, reducing failed attempts and speeding discovery.",
+    "distractor_notes": {
+      "B": "Reconciliation rules govern attribute authority, not credential reuse.",
+      "C": "Coalesce matches import records.",
+      "D": "Service groups organize services, not credentials."
+    },
+    "references": [
+      {
+        "title": "Credential affinity",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/discovery/credential-affinity.html"
+      }
+    ],
+    "tags": [
+      "discovery",
+      "credential-affinity",
+      "performance"
+    ]
+  },
+  {
+    "id": "cisms-dis-059",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Discovery Configuration",
+    "subdomain": "ECC Queue",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "You need to troubleshoot the messages exchanged between the instance and a MID Server during Discovery. Where do you look?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The ECC Queue (input/output records)"
+      },
+      {
+        "id": "B",
+        "text": "The Service Catalog"
+      },
+      {
+        "id": "C",
+        "text": "The update set log"
+      },
+      {
+        "id": "D",
+        "text": "A knowledge base"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The ECC Queue holds the input/output messages between the instance and MID Servers (probes sent, results returned). It's the go-to place to trace what a MID Server was asked to do and what it returned.",
+    "distractor_notes": {
+      "B": "The Service Catalog is for ordering services.",
+      "C": "Update set logs track configuration moves.",
+      "D": "Knowledge bases store articles."
+    },
+    "references": [
+      {
+        "title": "ECC Queue overview",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/mid-server/ecc-queue.html"
+      }
+    ],
+    "tags": [
+      "ecc-queue",
+      "mid-server",
+      "troubleshooting"
+    ]
+  },
+  {
+    "id": "cisms-dis-060",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Discovery Configuration",
+    "subdomain": "SSH sudo",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "Some Linux discovery commands require elevated privileges, but your account isn't root. How is this typically handled?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Configure SSH credentials to use sudo for the elevated commands"
+      },
+      {
+        "id": "B",
+        "text": "Share the root password with all users"
+      },
+      {
+        "id": "C",
+        "text": "Disable the commands that need elevation"
+      },
+      {
+        "id": "D",
+        "text": "Run Discovery as a UI policy"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "SSH credentials can be configured to use sudo so specific commands run with elevation without logging in as root, following least-privilege practice.",
+    "distractor_notes": {
+      "B": "Sharing root credentials is insecure and unnecessary.",
+      "C": "Disabling needed commands leaves the CI incomplete.",
+      "D": "UI policies don't run discovery commands."
+    },
+    "references": [
+      {
+        "title": "Using SSH credentials with sudo",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/mid-server/ssh-sudo-credentials.html"
+      }
+    ],
+    "tags": [
+      "ssh",
+      "sudo",
+      "credentials"
+    ]
+  },
+  {
+    "id": "cisms-dis-061",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Discovery Configuration",
+    "subdomain": "SNMP credentials",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "Network devices like routers and switches need to be discovered. Which credential type does Discovery typically use for them?",
+    "options": [
+      {
+        "id": "A",
+        "text": "SNMP credentials"
+      },
+      {
+        "id": "B",
+        "text": "SSH credentials only"
+      },
+      {
+        "id": "C",
+        "text": "Windows credentials"
+      },
+      {
+        "id": "D",
+        "text": "OAuth tokens"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Network devices are commonly discovered using SNMP, so SNMP credentials (community strings or SNMPv3) are configured for them. SSH/Windows credentials suit servers, not typical network gear.",
+    "distractor_notes": {
+      "B": "SSH is for Unix/Linux hosts, not standard network-device discovery.",
+      "C": "Windows credentials are for Windows hosts.",
+      "D": "OAuth is for web APIs, not SNMP device discovery."
+    },
+    "references": [
+      {
+        "title": "SNMP credentials",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/mid-server/snmp-credentials.html"
+      }
+    ],
+    "tags": [
+      "snmp",
+      "credentials",
+      "network"
+    ]
+  },
+  {
+    "id": "cisms-dis-062",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Discovery Configuration",
+    "subdomain": "Discovery schedules",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "What does a Discovery schedule primarily define?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Which IP ranges to discover and when to run"
+      },
+      {
+        "id": "B",
+        "text": "Which users receive notifications"
+      },
+      {
+        "id": "C",
+        "text": "The authoritative source for an attribute"
+      },
+      {
+        "id": "D",
+        "text": "The branding logo"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "A Discovery schedule defines the targets (IP ranges) and timing (when/how often) for a Discovery run, along with the MID Server behavior. It's the controller for what gets scanned and when.",
+    "distractor_notes": {
+      "B": "Notification recipients are configured on notifications.",
+      "C": "Attribute authority is set by reconciliation rules.",
+      "D": "Branding is unrelated to Discovery."
+    },
+    "references": [
+      {
+        "title": "Discovery IP ranges",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/discovery/discovery-schedules.html"
+      }
+    ],
+    "tags": [
+      "discovery",
+      "schedule",
+      "ip-range"
+    ]
+  },
+  {
+    "id": "cisms-dis-063",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Discovery Configuration",
+    "subdomain": "Discovery phases",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "In horizontal Discovery, which sequence reflects the general phase order?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Scanning (Shazzam) to classification to identification to exploration"
+      },
+      {
+        "id": "B",
+        "text": "Exploration to scanning to classification to identification"
+      },
+      {
+        "id": "C",
+        "text": "Identification to scanning to exploration to classification"
+      },
+      {
+        "id": "D",
+        "text": "Classification to exploration to scanning to identification"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Discovery generally goes scanning (find active devices/ports via Shazzam), classification (what kind of device/app), identification (match/create the CI via IRE), then exploration (gather detailed attributes and relationships).",
+    "distractor_notes": {
+      "B": "Exploration is last, not first.",
+      "C": "Scanning comes first, not identification.",
+      "D": "Scanning is the first phase, not third."
+    },
+    "references": [
+      {
+        "title": "Discovery phases",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/discovery/discovery-phases.html"
+      }
+    ],
+    "tags": [
+      "discovery",
+      "phases",
+      "order"
+    ]
+  },
+  {
+    "id": "cisms-dis-064",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Discovery Configuration",
+    "subdomain": "Credentials",
+    "difficulty": "application",
+    "type": "multi_select",
+    "stem": "Which TWO statements about Discovery credentials are correct?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Credentials are stored securely and used by the MID Server to access targets"
+      },
+      {
+        "id": "B",
+        "text": "Credential affinity speeds runs by reusing the credential that worked"
+      },
+      {
+        "id": "C",
+        "text": "Credentials must be embedded in every probe by hand"
+      },
+      {
+        "id": "D",
+        "text": "SNMP is used for authenticating to the Service Portal"
+      }
+    ],
+    "correct": [
+      "A",
+      "B"
+    ],
+    "rationale": "Credentials live in a secure store and the MID Server uses them to reach targets, while credential affinity reuses successful credentials to speed discovery. Probes don't embed credentials by hand, and SNMP is for network devices, not portal login.",
+    "distractor_notes": {
+      "C": "Credentials are centrally stored, not hand-embedded per probe.",
+      "D": "SNMP discovers network devices; it isn't portal authentication."
+    },
+    "references": [
+      {
+        "title": "Credential management",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/mid-server/credentials.html"
+      }
+    ],
+    "tags": [
+      "credentials",
+      "mid-server",
+      "affinity"
+    ]
+  },
+  {
+    "id": "cisms-dis-065",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Discovery Configuration",
+    "subdomain": "MID Server",
+    "difficulty": "application",
+    "type": "multi_select",
+    "stem": "Which TWO are true of the MID Server in Discovery?",
+    "options": [
+      {
+        "id": "A",
+        "text": "It initiates outbound connections to the instance"
+      },
+      {
+        "id": "B",
+        "text": "It executes probes/patterns against targets inside the network"
+      },
+      {
+        "id": "C",
+        "text": "It requires inbound ports opened to each target from the cloud"
+      },
+      {
+        "id": "D",
+        "text": "It stores the authoritative CMDB"
+      }
+    ],
+    "correct": [
+      "A",
+      "B"
+    ],
+    "rationale": "The MID Server connects outbound to the instance and runs probes/patterns against internal targets — no inbound exposure needed. The CMDB lives on the instance, not the MID Server.",
+    "distractor_notes": {
+      "C": "Outbound connections avoid opening inbound ports.",
+      "D": "The CMDB is on the instance; the MID Server is a connectivity/execution bridge."
+    },
+    "references": [
+      {
+        "title": "MID Server overview",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/mid-server/mid-server-overview.html"
+      }
+    ],
+    "tags": [
+      "mid-server",
+      "discovery",
+      "architecture"
+    ]
   }
 ]

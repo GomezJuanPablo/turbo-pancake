@@ -178,7 +178,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "To discover a network device like a load balancer, Service Mapping must reach its management interface \u2014 the management IP. That's the address the MID Server uses to log in, run commands, and read the device's configuration and pools.",
+    "rationale": "To discover a network device like a load balancer, Service Mapping must reach its management interface — the management IP. That's the address the MID Server uses to log in, run commands, and read the device's configuration and pools.",
     "distractor_notes": {
       "B": "There is no 'MIB address'; a MIB is an SNMP data structure, not an address.",
       "C": "A MAC address is layer-2 and isn't routable for management access.",
@@ -326,7 +326,7 @@
     "distractor_notes": {
       "A": "Change user handles privilege elevation mid-pattern, not initial application credential storage.",
       "B": "'Other' is a generic catch-all and, without a CI-type association, won't be applied to Ignite as intended.",
-      "C": "Credentials are never stored as CI attributes \u2014 that's both insecure and unsupported."
+      "C": "Credentials are never stored as CI attributes — that's both insecure and unsupported."
     },
     "references": [
       {
@@ -466,7 +466,7 @@
     "correct": [
       "C"
     ],
-    "rationale": "The whole flow delivers one business outcome \u2014 process a deposited check \u2014 so it's one service. But it can be entered two ways: the external scan/web-service capture, and the teller's Citrix login to review. Each distinct way in is its own entry point, giving one service with two entry points.",
+    "rationale": "The whole flow delivers one business outcome — process a deposited check — so it's one service. But it can be entered two ways: the external scan/web-service capture, and the teller's Citrix login to review. Each distinct way in is its own entry point, giving one service with two entry points.",
     "distractor_notes": {
       "A": "It's a single service; the two access paths are entry points, not separate services.",
       "B": "The internal stages all serve one logical service; they aren't two services.",
@@ -514,7 +514,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "Traffic flows presentation \u2192 logic \u2192 data: the load balancer fronts the web tier, the web tier hands off to the application tier, and the application tier reads/writes the database last. The database sits at the back, isolated behind the app logic.",
+    "rationale": "Traffic flows presentation → logic → data: the load balancer fronts the web tier, the web tier hands off to the application tier, and the application tier reads/writes the database last. The database sits at the back, isolated behind the app logic.",
     "distractor_notes": {
       "B": "This puts the database before the application tier, reversing the normal processing order.",
       "C": "Inserting WebSphere MQ here and ending at the web tier scrambles the standard layering.",
@@ -754,7 +754,7 @@
     "correct": [
       "B"
     ],
-    "rationale": "Entry points describe where a service is reached \u2014 typically a URL, a hostname, or an IP/port. Service Mapping starts there and discovers downstream. The entry point type then dictates which patterns are eligible to run.",
+    "rationale": "Entry points describe where a service is reached — typically a URL, a hostname, or an IP/port. Service Mapping starts there and discovers downstream. The entry point type then dictates which patterns are eligible to run.",
     "distractor_notes": {
       "A": "A health KPI is a data-quality metric, not a place a service is accessed.",
       "C": "A MID Server executes discovery; it isn't the service's access surface.",
@@ -802,7 +802,7 @@
     "correct": [
       "D"
     ],
-    "rationale": "Schedules keep maps honest over time by re-running discovery on a cadence. Environments drift \u2014 new nodes, version changes, retired hosts \u2014 and a scheduled rediscovery captures those changes so the service map reflects reality rather than a one-time snapshot.",
+    "rationale": "Schedules keep maps honest over time by re-running discovery on a cadence. Environments drift — new nodes, version changes, retired hosts — and a scheduled rediscovery captures those changes so the service map reflects reality rather than a one-time snapshot.",
     "distractor_notes": {
       "A": "Health thresholds are configured in CMDB Health, unrelated to a service schedule.",
       "B": "Entry point type is set on the entry point, not by the schedule.",
@@ -850,7 +850,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "Service Groups bundle related application services so teams can manage, secure, and report on them as a set \u2014 for example all services owned by one business unit. It's an organizational grouping layered over individual service maps.",
+    "rationale": "Service Groups bundle related application services so teams can manage, secure, and report on them as a set — for example all services owned by one business unit. It's an organizational grouping layered over individual service maps.",
     "distractor_notes": {
       "B": "Keys live in credential records, not service groups.",
       "C": "Reconciliation precedence is a CMDB/IRE setting, unrelated to service groups.",
@@ -946,9 +946,9 @@
     "correct": [
       "C"
     ],
-    "rationale": "Service Mapping triggers host discovery as part of mapping, but IRE matches the existing CI and updates only what changed, preserving the same sys_id and its relationships. No churn, no duplicates \u2014 just an in-place refresh.",
+    "rationale": "Service Mapping triggers host discovery as part of mapping, but IRE matches the existing CI and updates only what changed, preserving the same sys_id and its relationships. No churn, no duplicates — just an in-place refresh.",
     "distractor_notes": {
-      "A": "The host is rediscovered, not skipped \u2014 that's how attributes stay current.",
+      "A": "The host is rediscovered, not skipped — that's how attributes stay current.",
       "B": "Duplicating is exactly what IRE prevents through identification.",
       "D": "Delete-and-recreate would break relationships and history; IRE updates in place."
     },
@@ -994,7 +994,7 @@
     "correct": [
       "B"
     ],
-    "rationale": "If the device itself doesn't get discovered at all, the engine couldn't authenticate to it \u2014 a missing or invalid credential. Connection logic and downstream identification only matter after the LB is reachable, so credentials are the first thing to check.",
+    "rationale": "If the device itself doesn't get discovered at all, the engine couldn't authenticate to it — a missing or invalid credential. Connection logic and downstream identification only matter after the LB is reachable, so credentials are the first thing to check.",
     "distractor_notes": {
       "A": "The IP type affects what's reachable, but the documented key cause of non-discovery here is the credential.",
       "C": "A missing connection section would hide downstream links, but the LB itself would still be discovered.",
@@ -1330,7 +1330,7 @@
     "correct": [
       "D"
     ],
-    "rationale": "Application services are the modern, discoverable unit \u2014 they carry entry points and a maintained dependency map. Business services represent broader business offerings; ServiceNow encourages converting legacy business services into application services so they gain a real, maintained topology.",
+    "rationale": "Application services are the modern, discoverable unit — they carry entry points and a maintained dependency map. Business services represent broader business offerings; ServiceNow encourages converting legacy business services into application services so they gain a real, maintained topology.",
     "distractor_notes": {
       "A": "Application services are precisely what Service Mapping discovers.",
       "B": "They're related but distinct concepts, which is why a conversion path exists.",
@@ -1378,7 +1378,7 @@
     "correct": [
       "B"
     ],
-    "rationale": "User-facing VIPs serve traffic but often don't expose management. To run commands and read configuration, Service Mapping needs the device's management interface \u2014 that's where administrative access lives. Pointing discovery at the management IP unblocks full discovery.",
+    "rationale": "User-facing VIPs serve traffic but often don't expose management. To run commands and read configuration, Service Mapping needs the device's management interface — that's where administrative access lives. Pointing discovery at the management IP unblocks full discovery.",
     "distractor_notes": {
       "A": "The DNS server resolves names; it isn't the target device's management interface.",
       "C": "The MID Server is the worker, not the device you're trying to manage.",
@@ -1474,7 +1474,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "A query-based CMDB/Dynamic CI Group defines a reusable population of CIs you can point reporting, certification, and lifecycle actions at \u2014 without rebuilding the same filter each time. It recomputes as the underlying data changes.",
+    "rationale": "A query-based CMDB/Dynamic CI Group defines a reusable population of CIs you can point reporting, certification, and lifecycle actions at — without rebuilding the same filter each time. It recomputes as the underlying data changes.",
     "distractor_notes": {
       "B": "A schedule controls when discovery runs, not a reusable CI population.",
       "C": "UI policies affect form behavior, not CI scoping.",
@@ -1522,7 +1522,7 @@
     "correct": [
       "B"
     ],
-    "rationale": "Credentials can be scoped \u2014 by CI type, by MID Server, or by IP/network range \u2014 so the engine only attempts them where they're relevant. Scoping reduces failed logins, account lockouts, and the time spent cycling through the wrong credentials.",
+    "rationale": "Credentials can be scoped — by CI type, by MID Server, or by IP/network range — so the engine only attempts them where they're relevant. Scoping reduces failed logins, account lockouts, and the time spent cycling through the wrong credentials.",
     "distractor_notes": {
       "A": "The ECC Queue carries payloads; you don't place credentials there.",
       "C": "Disabling IRE corrupts identification and has nothing to do with credential scope.",
@@ -1570,7 +1570,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "For one service, you define its single entry point (URL/host/IP) and start discovery. Service Mapping follows the dependencies from that point and builds the map \u2014 no bulk import or full-environment sweep needed.",
+    "rationale": "For one service, you define its single entry point (URL/host/IP) and start discovery. Service Mapping follows the dependencies from that point and builds the map — no bulk import or full-environment sweep needed.",
     "distractor_notes": {
       "B": "Health rules measure data quality; they don't initiate a service map.",
       "C": "Horizontal Discovery inventories infrastructure; it doesn't map one service top-down.",
@@ -1618,7 +1618,7 @@
     "correct": [
       "D"
     ],
-    "rationale": "The Heartbeat runs a lightweight synthetic transaction against the entry point on a default 5-minute cadence \u2014 frequent enough to catch outages quickly without flooding the target. It's how Service Mapping keeps a near-real-time read on entry-point availability.",
+    "rationale": "The Heartbeat runs a lightweight synthetic transaction against the entry point on a default 5-minute cadence — frequent enough to catch outages quickly without flooding the target. It's how Service Mapping keeps a near-real-time read on entry-point availability.",
     "distractor_notes": {
       "A": "10 minutes is slower than the documented default.",
       "B": "30 minutes is the MID Server upgrade-check default, not the heartbeat interval.",
@@ -1858,7 +1858,7 @@
     "correct": [
       "D"
     ],
-    "rationale": "Conversion upgrades a flat business-service record into an application service that Service Mapping can discover and keep current \u2014 with entry points and a real dependency topology. That topology is what enables impact analysis and change planning.",
+    "rationale": "Conversion upgrades a flat business-service record into an application service that Service Mapping can discover and keep current — with entry points and a real dependency topology. That topology is what enables impact analysis and change planning.",
     "distractor_notes": {
       "A": "Credentials are still needed to discover the now-mapped service.",
       "B": "Conversion adds discovered detail; it doesn't reduce CI counts as a goal.",
@@ -1954,7 +1954,7 @@
     "correct": [
       "C"
     ],
-    "rationale": "Inclusions let you manually add a CI or connection the automated discovery can't find \u2014 say a dependency reached over an unsupported protocol. It complements automatic discovery so the map reflects reality even where patterns can't reach.",
+    "rationale": "Inclusions let you manually add a CI or connection the automated discovery can't find — say a dependency reached over an unsupported protocol. It complements automatic discovery so the map reflects reality even where patterns can't reach.",
     "distractor_notes": {
       "A": "The heartbeat checks availability; it doesn't add connections.",
       "B": "Disabling the schedule stops rediscovery; it doesn't add a connection.",
@@ -2054,7 +2054,7 @@
     "distractor_notes": {
       "A": "Storing secrets on hosts is insecure and unsupported.",
       "C": "An unscoped universal credential maximizes wrong-credential attempts and lockout risk.",
-      "D": "Disabling affinity forces retrying every credential \u2014 the opposite of what reduces lockouts."
+      "D": "Disabling affinity forces retrying every credential — the opposite of what reduces lockouts."
     },
     "references": [
       {
@@ -2066,6 +2066,582 @@
       "service-configuration",
       "credentials",
       "rollout"
+    ]
+  },
+  {
+    "id": "cisms-cfg-061",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Configuration",
+    "subdomain": "Entry points",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "To start mapping a web-based business service, you must tell Service Mapping where users enter it. What do you define?",
+    "options": [
+      {
+        "id": "A",
+        "text": "An entry point (such as a URL or host:port)"
+      },
+      {
+        "id": "B",
+        "text": "A reconciliation rule"
+      },
+      {
+        "id": "C",
+        "text": "A coalesce field"
+      },
+      {
+        "id": "D",
+        "text": "A scheduled report"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "An entry point defines where a service is accessed (URL, load balancer, host:port) and is the seed Service Mapping uses to begin top-down discovery of the service's tiers.",
+    "distractor_notes": {
+      "B": "Reconciliation rules govern attribute authority, not where mapping starts.",
+      "C": "Coalesce matches import records.",
+      "D": "Reports measure data; they don't seed a map."
+    },
+    "references": [
+      {
+        "title": "Entry points in Service Mapping",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/service-mapping-entry-points.html"
+      }
+    ],
+    "tags": [
+      "service-mapping",
+      "entry-point",
+      "configuration"
+    ]
+  },
+  {
+    "id": "cisms-cfg-062",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Configuration",
+    "subdomain": "Import entry points",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "You need to onboard hundreds of services and don't want to create each entry point by hand. What is the efficient approach?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Import entry points in bulk"
+      },
+      {
+        "id": "B",
+        "text": "Create each entry point manually one at a time"
+      },
+      {
+        "id": "C",
+        "text": "Skip entry points entirely"
+      },
+      {
+        "id": "D",
+        "text": "Use a watch list"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Service Mapping supports importing entry points in bulk (for example, from a file), which scales onboarding of many services far better than manual creation.",
+    "distractor_notes": {
+      "B": "Manual creation doesn't scale to hundreds of services.",
+      "C": "Without entry points, top-down mapping has no seed.",
+      "D": "Watch lists handle notifications."
+    },
+    "references": [
+      {
+        "title": "Import entry points",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/import-entry-points.html"
+      }
+    ],
+    "tags": [
+      "entry-points",
+      "import",
+      "onboarding"
+    ]
+  },
+  {
+    "id": "cisms-cfg-063",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Configuration",
+    "subdomain": "Applicative credentials",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "To map the internals of a database tier, Service Mapping must authenticate to the application itself, not just the OS. Which credential type enables this?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Applicative (application-level) credentials"
+      },
+      {
+        "id": "B",
+        "text": "Only OS-level SSH credentials"
+      },
+      {
+        "id": "C",
+        "text": "A coalesce field"
+      },
+      {
+        "id": "D",
+        "text": "A reconciliation rule"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Applicative credentials let Service Mapping log in at the application level (for example, into a database) to discover internal configuration that OS credentials alone can't reach.",
+    "distractor_notes": {
+      "B": "OS credentials get you onto the host but not into the app's internals.",
+      "C": "Coalesce matches import records.",
+      "D": "Reconciliation rules manage attribute authority."
+    },
+    "references": [
+      {
+        "title": "Applicative credentials",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/applicative-credentials.html"
+      }
+    ],
+    "tags": [
+      "applicative-credentials",
+      "mapping",
+      "authentication"
+    ]
+  },
+  {
+    "id": "cisms-cfg-064",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Configuration",
+    "subdomain": "Automated map maintenance",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "Service maps drift as infrastructure changes. How do you keep them current without manual re-runs?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Schedule automated map maintenance (periodic rediscovery)"
+      },
+      {
+        "id": "B",
+        "text": "Re-map everything by hand each week"
+      },
+      {
+        "id": "C",
+        "text": "Disable Service Mapping"
+      },
+      {
+        "id": "D",
+        "text": "Lower the CMDB health threshold"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Scheduling automated map maintenance triggers periodic rediscovery so maps stay accurate as the environment changes, avoiding manual upkeep.",
+    "distractor_notes": {
+      "B": "Manual weekly re-mapping is unsustainable.",
+      "C": "Disabling Service Mapping abandons the maps.",
+      "D": "Thresholds don't refresh maps."
+    },
+    "references": [
+      {
+        "title": "Automated map maintenance",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/schedule-service-discovery.html"
+      }
+    ],
+    "tags": [
+      "map-maintenance",
+      "rediscovery",
+      "schedule"
+    ]
+  },
+  {
+    "id": "cisms-cfg-065",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Configuration",
+    "subdomain": "Map exclusions",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A shared monitoring agent appears on many maps and clutters them without adding value. How do you keep it off the maps?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Exclude the CI from the maps (map exclusions/boundaries)"
+      },
+      {
+        "id": "B",
+        "text": "Delete the CI from the CMDB"
+      },
+      {
+        "id": "C",
+        "text": "Add it to a watch list"
+      },
+      {
+        "id": "D",
+        "text": "Disable IRE"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Map exclusions let you keep specific CIs out of service maps (and set boundaries on how far mapping traverses), reducing noise without deleting the CI from the CMDB.",
+    "distractor_notes": {
+      "B": "Deleting the CI removes legitimate inventory; exclusion is targeted.",
+      "C": "Watch lists handle notifications.",
+      "D": "Disabling IRE harms identification."
+    },
+    "references": [
+      {
+        "title": "Exclude CIs from a map",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/map-exclusions.html"
+      }
+    ],
+    "tags": [
+      "map-exclusions",
+      "boundaries",
+      "noise"
+    ]
+  },
+  {
+    "id": "cisms-cfg-066",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Configuration",
+    "subdomain": "Convert services",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "An older, manually created business service should become a properly mapped Application Service. What action accomplishes this?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Convert the service to an application service"
+      },
+      {
+        "id": "B",
+        "text": "Delete it and hope Discovery recreates it"
+      },
+      {
+        "id": "C",
+        "text": "Add a coalesce field"
+      },
+      {
+        "id": "D",
+        "text": "Mark it read-only"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Service Mapping provides a way to convert existing services into application services so they can be mapped and maintained with the modern model, preserving continuity.",
+    "distractor_notes": {
+      "B": "Deleting risks losing context and isn't the supported conversion.",
+      "C": "Coalesce matches import records.",
+      "D": "Read-only doesn't change the service type or map it."
+    },
+    "references": [
+      {
+        "title": "Convert services to application services",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/convert-application-services.html"
+      }
+    ],
+    "tags": [
+      "convert",
+      "application-service",
+      "migration"
+    ]
+  },
+  {
+    "id": "cisms-cfg-067",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Configuration",
+    "subdomain": "Tag-based services",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "In a cloud environment, services are best identified by resource tags rather than fixed entry points. Which Service Mapping approach suits this?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Tag-based services"
+      },
+      {
+        "id": "B",
+        "text": "Manual host:port entry points only"
+      },
+      {
+        "id": "C",
+        "text": "A reconciliation rule"
+      },
+      {
+        "id": "D",
+        "text": "A coalesce field"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Tag-based services use cloud resource tags to define and group what belongs to a service, fitting dynamic cloud environments better than static entry points.",
+    "distractor_notes": {
+      "B": "Fixed host:port entry points don't fit elastic, tag-driven cloud resources.",
+      "C": "Reconciliation rules govern attribute authority.",
+      "D": "Coalesce matches import records."
+    },
+    "references": [
+      {
+        "title": "Configure tag-based services",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/tag-based-services.html"
+      }
+    ],
+    "tags": [
+      "tag-based",
+      "cloud",
+      "services"
+    ]
+  },
+  {
+    "id": "cisms-cfg-068",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Configuration",
+    "subdomain": "Application Service Readiness",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "Before declaring maps production-ready, a team wants to review which application services mapped successfully and which need attention. Which tool helps?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The Application Service Readiness dashboard"
+      },
+      {
+        "id": "B",
+        "text": "The Service Catalog"
+      },
+      {
+        "id": "C",
+        "text": "A UI policy"
+      },
+      {
+        "id": "D",
+        "text": "A watch list"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The Application Service Readiness dashboard shows the mapping status/quality of application services, helping teams find and fix problem maps before go-live.",
+    "distractor_notes": {
+      "B": "The Service Catalog is for ordering services.",
+      "C": "UI policies change form behavior.",
+      "D": "Watch lists handle notifications."
+    },
+    "references": [
+      {
+        "title": "Application Service Readiness dashboard",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/application-service-readiness.html"
+      }
+    ],
+    "tags": [
+      "readiness",
+      "dashboard",
+      "quality"
+    ]
+  },
+  {
+    "id": "cisms-cfg-069",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Configuration",
+    "subdomain": "Dynamic CI groups",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "You want a set of application services to be grouped automatically based on criteria rather than maintained by hand. Which feature fits?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Dynamic CI groups"
+      },
+      {
+        "id": "B",
+        "text": "Manual static lists only"
+      },
+      {
+        "id": "C",
+        "text": "A coalesce field"
+      },
+      {
+        "id": "D",
+        "text": "A reconciliation rule"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Dynamic CI groups define membership by query/criteria, so services are grouped automatically and stay current as CIs change — less manual maintenance than static lists.",
+    "distractor_notes": {
+      "B": "Static lists require manual upkeep and go stale.",
+      "C": "Coalesce matches import records.",
+      "D": "Reconciliation rules manage attribute authority."
+    },
+    "references": [
+      {
+        "title": "Dynamic CI groups",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/dynamic-ci-groups.html"
+      }
+    ],
+    "tags": [
+      "dynamic-ci-groups",
+      "grouping",
+      "automation"
+    ]
+  },
+  {
+    "id": "cisms-cfg-070",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Configuration",
+    "subdomain": "Business services and entry points",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Which statement best describes the relationship between a business service and an entry point in Service Mapping?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The entry point is where mapping of the service begins and seeds discovery of its dependencies"
+      },
+      {
+        "id": "B",
+        "text": "They are unrelated objects"
+      },
+      {
+        "id": "C",
+        "text": "The entry point replaces the CMDB"
+      },
+      {
+        "id": "D",
+        "text": "A business service cannot have an entry point"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "An entry point is attached to the service as the seed for top-down mapping; from it, Service Mapping discovers the underlying dependencies that make up the service.",
+    "distractor_notes": {
+      "B": "They are directly related — the entry point seeds the service's map.",
+      "C": "The entry point doesn't replace the CMDB; results populate it.",
+      "D": "Business/application services have entry points to be mapped."
+    },
+    "references": [
+      {
+        "title": "Business services and entry points",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/business-services-entry-points.html"
+      }
+    ],
+    "tags": [
+      "business-service",
+      "entry-point",
+      "mapping"
+    ]
+  },
+  {
+    "id": "cisms-cfg-071",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Configuration",
+    "subdomain": "Map maintenance",
+    "difficulty": "application",
+    "type": "multi_select",
+    "stem": "Which TWO help keep service maps accurate and useful over time?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Scheduling periodic rediscovery (automated map maintenance)"
+      },
+      {
+        "id": "B",
+        "text": "Excluding noisy CIs that add no value"
+      },
+      {
+        "id": "C",
+        "text": "Turning off all credentials"
+      },
+      {
+        "id": "D",
+        "text": "Deleting the application service after mapping"
+      }
+    ],
+    "correct": [
+      "A",
+      "B"
+    ],
+    "rationale": "Periodic rediscovery keeps maps current, and excluding noise keeps them readable and relevant. Removing credentials would break discovery, and deleting the service destroys the map.",
+    "distractor_notes": {
+      "C": "Without credentials, Service Mapping can't access targets.",
+      "D": "Deleting the application service removes the map you built."
+    },
+    "references": [
+      {
+        "title": "Automated map maintenance",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/schedule-service-discovery.html"
+      }
+    ],
+    "tags": [
+      "map-maintenance",
+      "exclusions",
+      "accuracy"
+    ]
+  },
+  {
+    "id": "cisms-cfg-072",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Configuration",
+    "subdomain": "Entry points",
+    "difficulty": "application",
+    "type": "multi_select",
+    "stem": "Which TWO are valid ways to create entry points for Service Mapping?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Define them manually for a service"
+      },
+      {
+        "id": "B",
+        "text": "Import them in bulk from a file"
+      },
+      {
+        "id": "C",
+        "text": "Generate them from a UI policy"
+      },
+      {
+        "id": "D",
+        "text": "Derive them from a watch list"
+      }
+    ],
+    "correct": [
+      "A",
+      "B"
+    ],
+    "rationale": "Entry points can be created manually per service or imported in bulk for scale. UI policies and watch lists have nothing to do with entry-point creation.",
+    "distractor_notes": {
+      "C": "UI policies change form behavior, not entry points.",
+      "D": "Watch lists handle notifications."
+    },
+    "references": [
+      {
+        "title": "Import entry points",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/import-entry-points.html"
+      }
+    ],
+    "tags": [
+      "entry-points",
+      "manual",
+      "import"
     ]
   }
 ]
