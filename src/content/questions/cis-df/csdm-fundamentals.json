@@ -77,7 +77,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "CSDM organizes data into service domains \u2014 Foundation (core data), Design, Build, Manage Technical Services, and Sell/Consume \u2014 each holding the appropriate service and CI constructs. The other options are ITSM processes, status colors, and Discovery phases, not CSDM domains.",
+    "rationale": "CSDM organizes data into service domains — Foundation (core data), Design, Build, Manage Technical Services, and Sell/Consume — each holding the appropriate service and CI constructs. The other options are ITSM processes, status colors, and Discovery phases, not CSDM domains.",
     "distractor_notes": {
       "B": "Those are ITSM processes, not CSDM domains.",
       "C": "Status colors aren't CSDM domains.",
@@ -125,7 +125,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "CSDM frames adoption as Crawl \u2192 Walk \u2192 Run \u2192 Fly, building on a Foundation, so organizations mature incrementally rather than attempting everything at once. Each stage unlocks more capability as data completeness and modeling improve.",
+    "rationale": "CSDM frames adoption as Crawl → Walk → Run → Fly, building on a Foundation, so organizations mature incrementally rather than attempting everything at once. Each stage unlocks more capability as data completeness and modeling improve.",
     "distractor_notes": {
       "B": "Bronze/Silver/Gold isn't the CSDM maturity model.",
       "C": "Alpha/Beta/GA are software release phases, not CSDM stages.",
@@ -173,7 +173,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "Foundation holds the core, broadly shared data \u2014 companies, locations, users, groups, product models, and business units \u2014 that everything else builds on. Aligning these is the first step (the basis of the Crawl stage) before modeling services.",
+    "rationale": "Foundation holds the core, broadly shared data — companies, locations, users, groups, product models, and business units — that everything else builds on. Aligning these is the first step (the basis of the Crawl stage) before modeling services.",
     "distractor_notes": {
       "B": "Sell/Consume covers service offerings and business services consumed, not core reference data.",
       "C": "Manage Technical Services covers application/technical services, not product models and locations.",
@@ -221,7 +221,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "A Business Application is the logical, business-level concept of an application (e.g., 'Payroll') \u2014 what the organization recognizes and funds \u2014 separate from its concrete deployed instances. Those deployed instances are modeled as Application Services related to the Business Application.",
+    "rationale": "A Business Application is the logical, business-level concept of an application (e.g., 'Payroll') — what the organization recognizes and funds — separate from its concrete deployed instances. Those deployed instances are modeled as Application Services related to the Business Application.",
     "distractor_notes": {
       "B": "A single running process maps to a deployed Application Service instance, not the Business Application concept.",
       "C": "A switch is infrastructure, not a business application.",
@@ -269,7 +269,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "An Application Service models an actual deployment \u2014 the application instance plus the servers, databases, and other CIs that support it \u2014 typically built by Service Mapping or tags. It's the concrete, mapped service that impact analysis and monitoring use.",
+    "rationale": "An Application Service models an actual deployment — the application instance plus the servers, databases, and other CIs that support it — typically built by Service Mapping or tags. It's the concrete, mapped service that impact analysis and monitoring use.",
     "distractor_notes": {
       "B": "Ownership of a facility isn't what an Application Service models.",
       "C": "A mailbox is an endpoint artifact, not an application service.",
@@ -317,7 +317,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "The Information Object captures the data/information an application handles \u2014 including sensitive categories like PII \u2014 and relates it to the Business Application. That linkage supports privacy, security, and compliance use cases that need to know where regulated data lives.",
+    "rationale": "The Information Object captures the data/information an application handles — including sensitive categories like PII — and relates it to the Business Application. That linkage supports privacy, security, and compliance use cases that need to know where regulated data lives.",
     "distractor_notes": {
       "B": "Business Capability expresses what the business does, not the data handled.",
       "C": "Product Model describes a model of hardware/software, not data categories.",
@@ -365,7 +365,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "A Service is the general thing provided; a Service Offering packages it with specific commitments \u2014 service levels, supported hours, audience, or cost. One service can have multiple offerings (e.g., Gold vs Silver), which is how CSDM expresses tiered or varied delivery.",
+    "rationale": "A Service is the general thing provided; a Service Offering packages it with specific commitments — service levels, supported hours, audience, or cost. One service can have multiple offerings (e.g., Gold vs Silver), which is how CSDM expresses tiered or varied delivery.",
     "distractor_notes": {
       "B": "They're related but distinct: general service vs committed offering.",
       "C": "A Service Offering isn't an incident type.",
@@ -461,7 +461,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "By the Walk stage, services are mapped and related to their supporting CIs, which unlocks service-aware impact analysis \u2014 seeing how an incident, problem, or change affects business and application services. That service context is the core payoff of progressing past Foundation/Crawl.",
+    "rationale": "By the Walk stage, services are mapped and related to their supporting CIs, which unlocks service-aware impact analysis — seeing how an incident, problem, or change affects business and application services. That service context is the core payoff of progressing past Foundation/Crawl.",
     "distractor_notes": {
       "B": "Walk is well beyond raw storage; services are modeled and usable.",
       "C": "CSDM maturity doesn't eliminate incidents.",
@@ -654,7 +654,7 @@
       "A",
       "B"
     ],
-    "rationale": "A good CMDB lets Event Management tie alerts to the exact CIs involved and, through mapped services, show which business/application services an alert threatens. That turns raw alerts into prioritized, impact-aware action \u2014 but it doesn't auto-resolve alerts or replace monitoring tools.",
+    "rationale": "A good CMDB lets Event Management tie alerts to the exact CIs involved and, through mapped services, show which business/application services an alert threatens. That turns raw alerts into prioritized, impact-aware action — but it doesn't auto-resolve alerts or replace monitoring tools.",
     "distractor_notes": {
       "C": "Event Management still requires analysis/correlation; it doesn't blindly auto-resolve.",
       "D": "Monitoring tools generate the events; the CMDB adds context, not replacement."
@@ -1133,7 +1133,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "Technical services that deliver IT/operational capability \u2014 including the application/technical services behind production-line monitoring \u2014 live in the Manage Technical Services domain. Sell/Consume covers business-facing offerings, Foundation holds core data, and Design holds business applications.",
+    "rationale": "Technical services that deliver IT/operational capability — including the application/technical services behind production-line monitoring — live in the Manage Technical Services domain. Sell/Consume covers business-facing offerings, Foundation holds core data, and Design holds business applications.",
     "distractor_notes": {
       "B": "Sell/Consume is about business service offerings consumed, not the technical services delivering them.",
       "C": "Foundation holds core reference data, not technical services.",
@@ -1181,7 +1181,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "Nearly every ServiceNow application consumes CMDB/service data, so getting that foundation right \u2014 structured per CSDM \u2014 is the bedrock the specialty implementations build on. That's why Data Foundations is positioned as a prerequisite across the CIS tracks.",
+    "rationale": "Nearly every ServiceNow application consumes CMDB/service data, so getting that foundation right — structured per CSDM — is the bedrock the specialty implementations build on. That's why Data Foundations is positioned as a prerequisite across the CIS tracks.",
     "distractor_notes": {
       "B": "CSDM is a data framework, not visual theming.",
       "C": "It enables, rather than disables, other applications.",
@@ -1229,7 +1229,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "Understanding operational impact across services depends on mapped services and rich relationships \u2014 capabilities that come at higher CSDM maturity (Walk/Run). The other use cases are basic Foundation-level data entry that requires little maturity to satisfy.",
+    "rationale": "Understanding operational impact across services depends on mapped services and rich relationships — capabilities that come at higher CSDM maturity (Walk/Run). The other use cases are basic Foundation-level data entry that requires little maturity to satisfy.",
     "distractor_notes": {
       "B": "A flat laptop list with no relationships is low-maturity Foundation data.",
       "C": "A single location record is basic Foundation data.",
@@ -1245,6 +1245,582 @@
       "csdm",
       "maturity",
       "use-cases"
+    ]
+  },
+  {
+    "id": "cisdf-csdm-027",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "CSDM Fundamentals",
+    "subdomain": "Maturity stages",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A team is starting their CSDM journey and asks where to begin. Which area should be established first?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The Foundation domain (core data like organizations, locations, users)"
+      },
+      {
+        "id": "B",
+        "text": "Full application service mapping for every app"
+      },
+      {
+        "id": "C",
+        "text": "Predictive Intelligence models"
+      },
+      {
+        "id": "D",
+        "text": "Retiring all existing CIs"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "CSDM maturity starts at 'crawl' with Foundation data — organizations, locations, users, and groups — because everything else depends on it. Service mapping and richer modeling come in later stages.",
+    "distractor_notes": {
+      "B": "Full service mapping is a later (run/fly) activity, not the starting point.",
+      "C": "Predictive Intelligence is unrelated to where CSDM begins.",
+      "D": "Retiring CIs isn't a CSDM starting step."
+    },
+    "references": [
+      {
+        "title": "CSDM overview",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/csdm.html"
+      }
+    ],
+    "tags": [
+      "csdm",
+      "foundation",
+      "maturity"
+    ]
+  },
+  {
+    "id": "cisdf-csdm-028",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "CSDM Fundamentals",
+    "subdomain": "Business Application",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "You need to represent 'SAP' as the deployable piece of software the business recognizes, separate from any running instance. Which CSDM concept fits?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Business Application"
+      },
+      {
+        "id": "B",
+        "text": "Application Service"
+      },
+      {
+        "id": "C",
+        "text": "Service Offering"
+      },
+      {
+        "id": "D",
+        "text": "Technical Service Offering"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "A Business Application represents the recognizable software capability (like SAP) at a design level, while an Application Service represents a specific running/deployed instance that delivers it. Keeping them distinct is core to CSDM.",
+    "distractor_notes": {
+      "B": "An Application Service is the running instance, not the design-level application.",
+      "C": "A Service Offering is a specific offering with commitments, not the application itself.",
+      "D": "A Technical Service Offering is an offering of a technical service."
+    },
+    "references": [
+      {
+        "title": "CSDM overview",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/csdm.html"
+      }
+    ],
+    "tags": [
+      "csdm",
+      "business-application",
+      "design"
+    ]
+  },
+  {
+    "id": "cisdf-csdm-029",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "CSDM Fundamentals",
+    "subdomain": "Application Service",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "Operations needs to see a specific running deployment of an app mapped to the servers and databases it depends on, for impact analysis. Which CSDM CI represents that running, mapped service?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Application Service"
+      },
+      {
+        "id": "B",
+        "text": "Business Application"
+      },
+      {
+        "id": "C",
+        "text": "Information Object"
+      },
+      {
+        "id": "D",
+        "text": "Product Model"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "An Application Service represents a deployed, running instance and is what Service Mapping populates with relationships to its supporting infrastructure — exactly what impact analysis needs.",
+    "distractor_notes": {
+      "B": "A Business Application is the design-level software, not the mapped running instance.",
+      "C": "An Information Object classifies data, not a running service.",
+      "D": "A Product Model describes a model of a product, not a running service."
+    },
+    "references": [
+      {
+        "title": "CSDM overview",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/csdm.html"
+      }
+    ],
+    "tags": [
+      "csdm",
+      "application-service",
+      "impact"
+    ]
+  },
+  {
+    "id": "cisdf-csdm-030",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "CSDM Fundamentals",
+    "subdomain": "Service Offerings",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A service is provided in Gold and Silver tiers with different SLAs and price. How should these tiers be modeled in CSDM?",
+    "options": [
+      {
+        "id": "A",
+        "text": "As separate Service Offerings of the same service"
+      },
+      {
+        "id": "B",
+        "text": "As two unrelated Business Applications"
+      },
+      {
+        "id": "C",
+        "text": "As Information Objects"
+      },
+      {
+        "id": "D",
+        "text": "As duplicate CIs with no relationship"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Different commitment tiers (Gold/Silver) are modeled as distinct Service Offerings under the same service, each carrying its own SLAs and terms. That keeps the catalog and commitments clean.",
+    "distractor_notes": {
+      "B": "Tiers aren't separate applications; they're offerings of one service.",
+      "C": "Information Objects classify data, not service tiers.",
+      "D": "Unrelated duplicates lose the relationship to the parent service."
+    },
+    "references": [
+      {
+        "title": "CSDM overview",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/csdm.html"
+      }
+    ],
+    "tags": [
+      "csdm",
+      "service-offering",
+      "tiers"
+    ]
+  },
+  {
+    "id": "cisdf-csdm-031",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "CSDM Fundamentals",
+    "subdomain": "CSDM purpose",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A CMDB was populated ad hoc, and now Change, Event Management, and SecOps struggle to use the data consistently. What does adopting CSDM provide?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A prescriptive, standard framework for modeling data so downstream products work consistently"
+      },
+      {
+        "id": "B",
+        "text": "A faster MID Server"
+      },
+      {
+        "id": "C",
+        "text": "An encryption mechanism for CIs"
+      },
+      {
+        "id": "D",
+        "text": "A replacement for IRE"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "CSDM is a prescriptive standard for how to structure CMDB data so that service-aware products (Change, Event Management, SecOps, and more) can rely on consistent, well-formed records. It's a blueprint, not a tool you install.",
+    "distractor_notes": {
+      "B": "CSDM is a data model standard, not a performance feature.",
+      "C": "It doesn't encrypt data.",
+      "D": "It complements IRE; it doesn't replace identification/reconciliation."
+    },
+    "references": [
+      {
+        "title": "CSDM overview",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/csdm.html"
+      }
+    ],
+    "tags": [
+      "csdm",
+      "standard",
+      "consistency"
+    ]
+  },
+  {
+    "id": "cisdf-csdm-032",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "CSDM Fundamentals",
+    "subdomain": "Foundation domain",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "Service Offerings and Application Services keep referencing missing companies and locations. Which CSDM area should be completed to fix this dependency?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The Foundation domain data"
+      },
+      {
+        "id": "B",
+        "text": "The pattern library"
+      },
+      {
+        "id": "C",
+        "text": "Predictive Intelligence"
+      },
+      {
+        "id": "D",
+        "text": "The Service Portal theme"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Foundation data (companies, locations, users, groups) underpins the rest of CSDM. If offerings and services reference missing foundation records, completing the Foundation domain resolves the gaps.",
+    "distractor_notes": {
+      "B": "Patterns relate to discovery/service mapping, not foundational reference data.",
+      "C": "Predictive Intelligence is unrelated to foundation data.",
+      "D": "Portal theming is cosmetic."
+    },
+    "references": [
+      {
+        "title": "CSDM overview",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/csdm.html"
+      }
+    ],
+    "tags": [
+      "csdm",
+      "foundation",
+      "dependencies"
+    ]
+  },
+  {
+    "id": "cisdf-csdm-033",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "CSDM Fundamentals",
+    "subdomain": "Application Service mapping",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A team wants their Application Service CIs to accurately reflect real infrastructure dependencies rather than being maintained by hand. Which approach achieves this?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Use Service Mapping/Discovery to populate the Application Service relationships"
+      },
+      {
+        "id": "B",
+        "text": "Type each relationship manually forever"
+      },
+      {
+        "id": "C",
+        "text": "Store dependencies in a knowledge article"
+      },
+      {
+        "id": "D",
+        "text": "Disable IRE"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Service Mapping (and Discovery) automatically populate and maintain the relationships under an Application Service, keeping the map accurate as infrastructure changes — far better than manual upkeep.",
+    "distractor_notes": {
+      "B": "Manual maintenance is unsustainable and goes stale.",
+      "C": "A knowledge article isn't a live, queryable dependency map.",
+      "D": "Disabling IRE harms data integrity."
+    },
+    "references": [
+      {
+        "title": "CSDM overview",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/csdm.html"
+      }
+    ],
+    "tags": [
+      "csdm",
+      "application-service",
+      "service-mapping"
+    ]
+  },
+  {
+    "id": "cisdf-csdm-034",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "CSDM Fundamentals",
+    "subdomain": "Maturity stages",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "An organization has solid Foundation data and some Application Services, and wants a sensible next step in CSDM maturity. What is a reasonable progression?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Advance through the crawl-walk-run-fly stages, expanding service modeling and mapping"
+      },
+      {
+        "id": "B",
+        "text": "Skip straight to retiring the CMDB"
+      },
+      {
+        "id": "C",
+        "text": "Abandon CSDM and model freely"
+      },
+      {
+        "id": "D",
+        "text": "Delete the Foundation data"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "CSDM is adopted incrementally through crawl-walk-run-fly, progressively maturing service modeling and mapping. With Foundation in place, expanding service and mapping coverage is the natural next step.",
+    "distractor_notes": {
+      "B": "Retiring the CMDB defeats the purpose.",
+      "C": "Free-form modeling reintroduces the inconsistency CSDM solves.",
+      "D": "Deleting Foundation data breaks everything that depends on it."
+    },
+    "references": [
+      {
+        "title": "CSDM overview",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/csdm.html"
+      }
+    ],
+    "tags": [
+      "csdm",
+      "maturity",
+      "progression"
+    ]
+  },
+  {
+    "id": "cisdf-csdm-035",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "CSDM Fundamentals",
+    "subdomain": "Technical Service Offering",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "An IT team provides a 'Database Hosting' technical service internally with specific commitments to other IT teams. How is the committed, consumable form of this technical service modeled?",
+    "options": [
+      {
+        "id": "A",
+        "text": "As a Technical Service Offering"
+      },
+      {
+        "id": "B",
+        "text": "As a Business Application"
+      },
+      {
+        "id": "C",
+        "text": "As an Information Object"
+      },
+      {
+        "id": "D",
+        "text": "As a Product Model"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "A Technical Service Offering represents the committed, consumable offering of a technical service (like database hosting) with its terms — the technical counterpart to a business Service Offering.",
+    "distractor_notes": {
+      "B": "A Business Application is design-level software, not a service offering.",
+      "C": "Information Objects classify data.",
+      "D": "Product Models describe product models, not service commitments."
+    },
+    "references": [
+      {
+        "title": "CSDM overview",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/csdm.html"
+      }
+    ],
+    "tags": [
+      "csdm",
+      "technical-service-offering",
+      "services"
+    ]
+  },
+  {
+    "id": "cisdf-csdm-036",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "CSDM Fundamentals",
+    "subdomain": "CSDM value",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "Leadership questions why following CSDM is worth the effort. Which is the strongest justification?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Consistent, service-aware data unlocks reliable reporting, impact analysis, and downstream products"
+      },
+      {
+        "id": "B",
+        "text": "It makes the homepage load faster"
+      },
+      {
+        "id": "C",
+        "text": "It removes the need for any governance"
+      },
+      {
+        "id": "D",
+        "text": "It encrypts the CMDB"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "CSDM's payoff is trustworthy, service-aware data that powers accurate reporting, impact analysis, and the many products that consume the CMDB. It complements governance rather than removing it.",
+    "distractor_notes": {
+      "B": "CSDM is about data structure, not page performance.",
+      "C": "Governance is still essential; CSDM works with it.",
+      "D": "CSDM doesn't encrypt data."
+    },
+    "references": [
+      {
+        "title": "CSDM overview",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/csdm.html"
+      }
+    ],
+    "tags": [
+      "csdm",
+      "value",
+      "business-case"
+    ]
+  },
+  {
+    "id": "cisdf-csdm-037",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "CSDM Fundamentals",
+    "subdomain": "CSDM domains",
+    "difficulty": "application",
+    "type": "multi_select",
+    "stem": "Which TWO statements about CSDM are correct?",
+    "options": [
+      {
+        "id": "A",
+        "text": "It is a prescriptive standard/blueprint for structuring CMDB data"
+      },
+      {
+        "id": "B",
+        "text": "Foundation data underpins the other domains"
+      },
+      {
+        "id": "C",
+        "text": "It is a plugin that auto-populates all CIs for you"
+      },
+      {
+        "id": "D",
+        "text": "It replaces the need for Discovery"
+      }
+    ],
+    "correct": [
+      "A",
+      "B"
+    ],
+    "rationale": "CSDM is a prescriptive framework, and Foundation data is the base the rest builds on. It isn't an auto-populating plugin and it doesn't replace Discovery — those still ingest the data CSDM organizes.",
+    "distractor_notes": {
+      "C": "CSDM is a model/standard, not an auto-populating product.",
+      "D": "Discovery and other ingestion still populate the CMDB; CSDM structures it."
+    },
+    "references": [
+      {
+        "title": "CSDM overview",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/csdm.html"
+      }
+    ],
+    "tags": [
+      "csdm",
+      "framework",
+      "foundation"
+    ]
+  },
+  {
+    "id": "cisdf-csdm-038",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "CSDM Fundamentals",
+    "subdomain": "Business Application",
+    "difficulty": "application",
+    "type": "multi_select",
+    "stem": "Which TWO correctly distinguish a Business Application from an Application Service?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A Business Application is the design-level software the business recognizes"
+      },
+      {
+        "id": "B",
+        "text": "An Application Service is a deployed, running instance mapped to its infrastructure"
+      },
+      {
+        "id": "C",
+        "text": "They are the same record with two names"
+      },
+      {
+        "id": "D",
+        "text": "An Application Service cannot have relationships to CIs"
+      }
+    ],
+    "correct": [
+      "A",
+      "B"
+    ],
+    "rationale": "A Business Application is the recognizable design-level software; an Application Service is the running, mapped instance with relationships to supporting CIs. They are distinct, related records.",
+    "distractor_notes": {
+      "C": "They are separate, related concepts, not one record.",
+      "D": "Application Services are specifically the CIs that carry infrastructure relationships."
+    },
+    "references": [
+      {
+        "title": "CSDM overview",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/csdm.html"
+      }
+    ],
+    "tags": [
+      "csdm",
+      "business-application",
+      "application-service"
     ]
   }
 ]

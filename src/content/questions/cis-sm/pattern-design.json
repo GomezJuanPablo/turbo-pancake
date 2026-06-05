@@ -33,7 +33,7 @@
     "rationale": "A pattern's job is two-fold: first prove what the CI is (Identification Section), then find what it talks to (Connection Section). Identification runs first-match-wins to classify and create/update the CI; Connection sections then run to build outbound relationships. Extension sections are optional add-ons layered on top of these two.",
     "distractor_notes": {
       "A": "An entry point is the starting input that triggers a pattern; it is configured separately on the application service, not a section inside the pattern.",
-      "C": "Reconciliation is an IRE/CMDB concept governing which source may write an attribute \u2014 it is not a pattern section."
+      "C": "Reconciliation is an IRE/CMDB concept governing which source may write an attribute — it is not a pattern section."
     },
     "references": [
       {
@@ -77,10 +77,10 @@
     "correct": [
       "B"
     ],
-    "rationale": "Identification is first-match-wins. The engine evaluates the sections top to bottom and stops the moment one successfully identifies the CI \u2014 there is exactly one right answer for 'what is this CI', so continuing would be wasteful. This is the opposite of Connection sections, which all run to find every dependency.",
+    "rationale": "Identification is first-match-wins. The engine evaluates the sections top to bottom and stops the moment one successfully identifies the CI — there is exactly one right answer for 'what is this CI', so continuing would be wasteful. This is the opposite of Connection sections, which all run to find every dependency.",
     "distractor_notes": {
       "A": "Sections are tried in order regardless of a single 'priority'; the first that matches concludes the phase.",
-      "C": "Merging every section's data describes Connection behavior, not Identification \u2014 identity must resolve to a single CI.",
+      "C": "Merging every section's data describes Connection behavior, not Identification — identity must resolve to a single CI.",
       "D": "Order is deterministic (the listed order), not random, and it's first-success, not last."
     },
     "references": [
@@ -125,7 +125,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "The Connection phase is exhaustive, not first-match. A CI can talk to many downstream CIs, so every Connection Section runs and each success adds a connection. That is how a complete, dependency-rich service map gets built \u2014 stopping at the first success would hide real dependencies.",
+    "rationale": "The Connection phase is exhaustive, not first-match. A CI can talk to many downstream CIs, so every Connection Section runs and each success adds a connection. That is how a complete, dependency-rich service map gets built — stopping at the first success would hide real dependencies.",
     "distractor_notes": {
       "B": "Connection runs after a successful identification, not instead of it.",
       "C": "Every successful section contributes, not just the last.",
@@ -175,9 +175,9 @@
     ],
     "rationale": "The two phases combine their own rules: Identification is first-match-wins (stop at the first success), and Connection is run-to-completion (run them all). So for every pattern that supports the entry point type, the engine identifies the CI with one successful section, then fires all Connection sections to map dependencies.",
     "distractor_notes": {
-      "A": "This reverses both rules \u2014 Identification stops at first success and Connection runs them all.",
+      "A": "This reverses both rules — Identification stops at first success and Connection runs them all.",
       "B": "Identification does not run all sections; it stops at the first success.",
-      "D": "Identification must happen before Connection \u2014 you can't map a CI's links before knowing what it is."
+      "D": "Identification must happen before Connection — you can't map a CI's links before knowing what it is."
     },
     "references": [
       {
@@ -221,7 +221,7 @@
     "correct": [
       "C"
     ],
-    "rationale": "Create Connection is the operation that builds outbound relationships \u2014 it tells Service Mapping which downstream CIs the current CI depends on (for example an app server to its database). Those connections are what extend the map past the entry point into the full dependency tree.",
+    "rationale": "Create Connection is the operation that builds outbound relationships — it tells Service Mapping which downstream CIs the current CI depends on (for example an app server to its database). Those connections are what extend the map past the entry point into the full dependency tree.",
     "distractor_notes": {
       "A": "Host-to-installed-software is a containment relationship handled elsewhere, not by Create Connection.",
       "B": "Cluster membership is modeled differently; Create Connection targets outbound dependencies to other CIs.",
@@ -269,7 +269,7 @@
     "correct": [
       "B"
     ],
-    "rationale": "Match evaluates a condition against the working data. If the condition fails, the section terminates immediately \u2014 that's how a pattern asserts 'this only proceeds if the data looks like X'. It's the primary gatekeeper that keeps a section from producing a wrong identification or connection.",
+    "rationale": "Match evaluates a condition against the working data. If the condition fails, the section terminates immediately — that's how a pattern asserts 'this only proceeds if the data looks like X'. It's the primary gatekeeper that keeps a section from producing a wrong identification or connection.",
     "distractor_notes": {
       "A": "Merge Table combines table data; it has no built-in conditional termination.",
       "C": "Set Parameter Value assigns a value; it doesn't evaluate a pass/fail condition that ends a section.",
@@ -277,7 +277,7 @@
     },
     "references": [
       {
-        "title": "Pattern operations \u2014 Match",
+        "title": "Pattern operations — Match",
         "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/pattern-designer-operations.html"
       }
     ],
@@ -321,7 +321,7 @@
     "distractor_notes": {
       "A": "An update set is a transport container; it isn't where you add discovery logic.",
       "B": "Hand-editing NDL in the baseline is unsupported and not upgrade-safe.",
-      "D": "Editing the baseline Identification Section is exactly what breaks on upgrade \u2014 the opposite of the goal."
+      "D": "Editing the baseline Identification Section is exactly what breaks on upgrade — the opposite of the goal."
     },
     "references": [
       {
@@ -367,7 +367,7 @@
     ],
     "rationale": "Pattern variables are pattern-local. A value captured in the Identification Section (say a config file path) is available later in that same pattern's Connection Sections, which is how identification data feeds the connection logic. It is never shared across different patterns or globally.",
     "distractor_notes": {
-      "A": "Same boundary rule \u2014 no sharing into a different pattern's Connection Sections.",
+      "A": "Same boundary rule — no sharing into a different pattern's Connection Sections.",
       "C": "Variables don't cross pattern boundaries; another pattern can't see them.",
       "D": "Identifier rules are CMDB/IRE constructs, not consumers of pattern-local variables."
     },
@@ -463,7 +463,7 @@
     ],
     "rationale": "The shortcut bootstraps everything needed to recognize the formerly-generic app: a new Discovery Pattern (the logic), a new CI Type/Class (where it lands in the CMDB), and a Process Classifier (the process signature that triggers the pattern). From there you flesh out the identification/connection steps.",
     "distractor_notes": {
-      "A": "A reconciliation rule isn't generated by this action \u2014 it's a separate CMDB governance artifact.",
+      "A": "A reconciliation rule isn't generated by this action — it's a separate CMDB governance artifact.",
       "C": "Connection sections aren't auto-built here; you add them after the scaffold is created.",
       "D": "It also creates the pattern and process classifier, not just identification pieces."
     },
@@ -509,7 +509,7 @@
     "correct": [
       "C"
     ],
-    "rationale": "A pattern needs a destination \u2014 the CI class/table it will populate. You select that CI Type when creating the pattern, so the table must exist first. Process classifiers and identification rules are typically built alongside or after the pattern, not as a hard prerequisite to creating it.",
+    "rationale": "A pattern needs a destination — the CI class/table it will populate. You select that CI Type when creating the pattern, so the table must exist first. Process classifiers and identification rules are typically built alongside or after the pattern, not as a hard prerequisite to creating it.",
     "distractor_notes": {
       "A": "An application service is the output of mapping, not a prerequisite for a pattern.",
       "B": "Process classifiers commonly accompany a pattern but aren't required to exist before creating it.",
@@ -605,7 +605,7 @@
     "correct": [
       "C"
     ],
-    "rationale": "Parse File is the operation that extracts data from command output, config files, or log content, and it offers several parsing strategies \u2014 including Regular Expression and Delimited Text. You point Parse File at the source text and choose how to carve out the value you need.",
+    "rationale": "Parse File is the operation that extracts data from command output, config files, or log content, and it offers several parsing strategies — including Regular Expression and Delimited Text. You point Parse File at the source text and choose how to carve out the value you need.",
     "distractor_notes": {
       "A": "Match evaluates a condition; it isn't where you select a parsing strategy.",
       "B": "Set Variable assigns a value; it doesn't parse source text with strategies.",
@@ -656,7 +656,7 @@
     "rationale": "Splitting on commas yields three fields: Location (1), Denver (2), CO (3). To grab 'CO' you select position 3. The delimited strategy is just split-then-index, so getting both the separator and the 1-based position right is the whole game.",
     "distractor_notes": {
       "B": "Splitting on the literal 'Denver' produces odd fragments and won't cleanly isolate 'CO'.",
-      "C": "Splitting on 'Location' leaves ',Denver,CO' \u2014 position 2 doesn't give 'CO'.",
+      "C": "Splitting on 'Location' leaves ',Denver,CO' — position 2 doesn't give 'CO'.",
       "D": "Position 2 returns 'Denver', not 'CO'."
     },
     "references": [
@@ -701,7 +701,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "Version\\s+ matches the literal word and the whitespace; the capture group (\\d+\\.\\d+\\.\\d+) grabs three dot-separated digit groups \u2014 exactly the X.Y.Z shape of 5.2.0. The escaped dots match literal periods rather than any character.",
+    "rationale": "Version\\s+ matches the literal word and the whitespace; the capture group (\\d+\\.\\d+\\.\\d+) grabs three dot-separated digit groups — exactly the X.Y.Z shape of 5.2.0. The escaped dots match literal periods rather than any character.",
     "distractor_notes": {
       "B": "(\\d+) stops at the first non-digit, capturing only '5'.",
       "C": "Without dots between the groups this won't line up with '5.2.0'.",
@@ -749,7 +749,7 @@
     "correct": [
       "C"
     ],
-    "rationale": "After the literal 'jdbc:', the class [\\d\\.] matches any digit or literal dot, and + repeats it across the whole dotted address \u2014 capturing 198.51.100.207 in one group. That's the minimal correct way to grab an IPv4 after a fixed prefix.",
+    "rationale": "After the literal 'jdbc:', the class [\\d\\.] matches any digit or literal dot, and + repeats it across the whole dotted address — capturing 198.51.100.207 in one group. That's the minimal correct way to grab an IPv4 after a fixed prefix.",
     "distractor_notes": {
       "A": "[\\d]+ stops at the first dot, capturing only '198'.",
       "B": "Invalid/garbled class syntax; it won't represent digit-and-dot groups.",
@@ -797,7 +797,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "The brackets define a character class \u2014 any single character that is a word char (\\w), digit (\\d), literal hyphen, or literal dot. The trailing + means 'one or more', so the group greedily matches a run of those characters (effectively unlimited length).",
+    "rationale": "The brackets define a character class — any single character that is a word char (\\w), digit (\\d), literal hyphen, or literal dot. The trailing + means 'one or more', so the group greedily matches a run of those characters (effectively unlimited length).",
     "distractor_notes": {
       "B": "A {1,3} quantifier would cap it at three; + has no upper bound.",
       "C": "A {1,10} quantifier would cap at ten; + is unbounded.",
@@ -893,7 +893,7 @@
     "correct": [
       "C"
     ],
-    "rationale": "A precondition is evaluated before the step runs. If it's false, the step is skipped and execution moves on to the next step \u2014 that's the supported way to conditionally bypass a step. It's commonly used to branch logic without removing steps.",
+    "rationale": "A precondition is evaluated before the step runs. If it's false, the step is skipped and execution moves on to the next step — that's the supported way to conditionally bypass a step. It's commonly used to branch logic without removing steps.",
     "distractor_notes": {
       "A": "Debug Mode only adds logging verbosity; it doesn't change execution flow.",
       "B": "There's no magic 'skip' variable that bypasses a step on its own.",
@@ -941,11 +941,11 @@
     "correct": [
       "C"
     ],
-    "rationale": "Both CIs exist, so identification and credentials are fine. A missing relationship means the pattern that discovered Apache has no Connection Section that looks for the Tomcat dependency \u2014 connections must be explicitly defined to appear on the map.",
+    "rationale": "Both CIs exist, so identification and credentials are fine. A missing relationship means the pattern that discovered Apache has no Connection Section that looks for the Tomcat dependency — connections must be explicitly defined to appear on the map.",
     "distractor_notes": {
       "A": "An offline process would prevent Tomcat from being discovered; it was discovered.",
       "B": "No CI Type would mean Tomcat couldn't be classified or shown, yet it appears.",
-      "D": "If Tomcat had no identification rule it wouldn't be discovered at all \u2014 but it is."
+      "D": "If Tomcat had no identification rule it wouldn't be discovered at all — but it is."
     },
     "references": [
       {
@@ -989,7 +989,7 @@
     "correct": [
       "D"
     ],
-    "rationale": "The Discovery Log is the step-by-step trace of a mapping run \u2014 it shows each pattern evaluated and which identification/connection sections and steps ran, succeeded, or failed. It's the first place you go to understand why a CI was (or wasn't) discovered.",
+    "rationale": "The Discovery Log is the step-by-step trace of a mapping run — it shows each pattern evaluated and which identification/connection sections and steps ran, succeeded, or failed. It's the first place you go to understand why a CI was (or wasn't) discovered.",
     "distractor_notes": {
       "A": "The ECC Queue holds the probe/sensor payloads exchanged with the MID Server, not the section-by-section trace.",
       "B": "The Email Log tracks notifications and is unrelated.",
@@ -1041,7 +1041,7 @@
     "distractor_notes": {
       "A": "An 'S' under an 'I' node would be an identification step; the question places it under a connection node.",
       "C": "Libraries aren't represented by the step 'S' marker.",
-      "D": "Same \u2014 'S' denotes a step, not a library."
+      "D": "Same — 'S' denotes a step, not a library."
     },
     "references": [
       {
@@ -1089,7 +1089,7 @@
     "rationale": "Exporting 'with CMDB items' bundles the data-model context the pattern needs to work on the target instance: the Identification Rules that decide how its CIs are matched, and the Reconciliation Rules that govern which sources can update those attributes. Without them the imported pattern would misbehave.",
     "distractor_notes": {
       "B": "MID Server config.xml is host-side configuration, never part of a pattern export.",
-      "C": "It doesn't haul along the whole discovered CI population \u2014 that's runtime data, not pattern definition."
+      "C": "It doesn't haul along the whole discovered CI population — that's runtime data, not pattern definition."
     },
     "references": [
       {
@@ -1133,7 +1133,7 @@
     "correct": [
       "B"
     ],
-    "rationale": "Patterns ship as a separately versioned ServiceNow Store app ('Discovery and Service Mapping Patterns'). That's how you get newly validated patterns without waiting for a platform upgrade \u2014 you simply update the Store app.",
+    "rationale": "Patterns ship as a separately versioned ServiceNow Store app ('Discovery and Service Mapping Patterns'). That's how you get newly validated patterns without waiting for a platform upgrade — you simply update the Store app.",
     "distractor_notes": {
       "A": "Community is for discussion; vetted patterns come through the Store.",
       "C": "The docs site explains patterns but isn't the delivery channel for the pattern content itself.",
@@ -1181,11 +1181,11 @@
     "correct": [
       "B"
     ],
-    "rationale": "'Allow fallback to parent's rules' lets the engine back off to a less specific parent identifier when the specific one fails to match. That's exactly the described behavior \u2014 try the precise rule first, then fall back to the broader Application Rule so the CI still resolves.",
+    "rationale": "'Allow fallback to parent's rules' lets the engine back off to a less specific parent identifier when the specific one fails to match. That's exactly the described behavior — try the precise rule first, then fall back to the broader Application Rule so the CI still resolves.",
     "distractor_notes": {
       "A": "'Allow null attribute' lets a criterion attribute be empty and still match; it doesn't drive parent fallback.",
       "C": "Criterion attributes define what is compared, not whether a parent rule is tried next.",
-      "D": "'Independent' marks the identifier as not relying on a parent context \u2014 it actually works against fallback."
+      "D": "'Independent' marks the identifier as not relying on a parent context — it actually works against fallback."
     },
     "references": [
       {
@@ -1232,7 +1232,7 @@
     "rationale": "The installation directory is durable: an in-place upgrade overwrites files in the same folder (so the identity survives the version change), and separate installs live in distinct folders (so two instances on one host stay distinct). That combination of stability and uniqueness is what you want in an identifier.",
     "distractor_notes": {
       "A": "Discovery Source changes with how the data arrived; it doesn't uniquely identify the app.",
-      "B": "Last Discovered is a timestamp that changes every run \u2014 useless for stable identity.",
+      "B": "Last Discovered is a timestamp that changes every run — useless for stable identity.",
       "C": "Version changes on every upgrade, which would force the rule to treat the upgraded app as a new CI."
     },
     "references": [
@@ -1277,7 +1277,7 @@
     "correct": [
       "D"
     ],
-    "rationale": "When a changing attribute like Version is used as a criterion, the engine no longer matches the old record \u2014 the new version produces a different identity, so a second CI is created. This is the cautionary tale for why volatile attributes make poor identifiers.",
+    "rationale": "When a changing attribute like Version is used as a criterion, the engine no longer matches the old record — the new version produces a different identity, so a second CI is created. This is the cautionary tale for why volatile attributes make poor identifiers.",
     "distractor_notes": {
       "A": "In-place update would happen only if the identity attributes were stable; Version isn't.",
       "B": "Changing a version doesn't downgrade the class to generic.",
@@ -1421,7 +1421,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "An entry point is the interaction surface where a service is accessed \u2014 a URL, an IP and port, a load balancer VIP \u2014 i.e., where a user or another CI reaches the service. Service Mapping starts discovery from that point and works downstream into dependencies.",
+    "rationale": "An entry point is the interaction surface where a service is accessed — a URL, an IP and port, a load balancer VIP — i.e., where a user or another CI reaches the service. Service Mapping starts discovery from that point and works downstream into dependencies.",
     "distractor_notes": {
       "B": "That describes an entry point type/template, not the entry point itself.",
       "C": "A Hosted-on relationship is a CMDB relationship, not the service's access surface.",
@@ -1517,7 +1517,7 @@
     "correct": [
       "B"
     ],
-    "rationale": "-a lists all sockets, -n shows numeric addresses/ports, and -p reveals the owning PID/program \u2014 but -p requires elevated rights, so a non-root user must prefix sudo. Piping to grep :8080 filters to the port of interest.",
+    "rationale": "-a lists all sockets, -n shows numeric addresses/ports, and -p reveals the owning PID/program — but -p requires elevated rights, so a non-root user must prefix sudo. Piping to grep :8080 filters to the port of interest.",
     "distractor_notes": {
       "A": "Without sudo, a non-root user typically can't see the PID/program name (-p) for others' sockets.",
       "C": "'-pid *' is not valid netstat syntax.",
@@ -1565,7 +1565,7 @@
     "correct": [
       "B"
     ],
-    "rationale": "netstat -an lists sockets numerically and findstr 8080 filters to that port. The LISTENING line confirms a process is bound to 8080 \u2014 that's how you verify an app's entry-point port is actually open before debugging why the pattern can't reach it.",
+    "rationale": "netstat -an lists sockets numerically and findstr 8080 filters to that port. The LISTENING line confirms a process is bound to 8080 — that's how you verify an app's entry-point port is actually open before debugging why the pattern can't reach it.",
     "distractor_notes": {
       "A": "8080 here is a port, not a process ID.",
       "C": "MID Server health is checked elsewhere, not by a port-8080 netstat on the target.",
@@ -1613,11 +1613,11 @@
     "correct": [
       "A"
     ],
-    "rationale": "The instance authors the command into an ECC Queue task; the MID Server picks it up, runs it against the target using the right credential/protocol, and writes the result back as an XML input payload. The MID Server is the relay, not the brain \u2014 the instance decides what to run.",
+    "rationale": "The instance authors the command into an ECC Queue task; the MID Server picks it up, runs it against the target using the right credential/protocol, and writes the result back as an XML input payload. The MID Server is the relay, not the brain — the instance decides what to run.",
     "distractor_notes": {
       "B": "Targets don't pull commands; the MID Server initiates against them.",
       "C": "The MID Server executes commands but doesn't decide them; the instance/pattern does.",
-      "D": "The instance never connects directly to internal targets \u2014 that's the MID Server's job."
+      "D": "The instance never connects directly to internal targets — that's the MID Server's job."
     },
     "references": [
       {
@@ -1665,7 +1665,7 @@
     "distractor_notes": {
       "A": "Pending means not yet ready for processing; the returned-and-ready record is Ready.",
       "B": "Output is instance-to-MID; a returned result is Input, not Output.",
-      "C": "Both wrong attributes \u2014 it's neither Output nor Pending for a result to be processed."
+      "C": "Both wrong attributes — it's neither Output nor Pending for a result to be processed."
     },
     "references": [
       {
@@ -1757,7 +1757,7 @@
     "correct": [
       "B"
     ],
-    "rationale": "Splitting on '/' gives ['2014', '02', '07-17:49:36']. The first element is '2014'. The pattern designer's delimited strategy uses 1-based positions, so position 1 returns the first token \u2014 2014.",
+    "rationale": "Splitting on '/' gives ['2014', '02', '07-17:49:36']. The first element is '2014'. The pattern designer's delimited strategy uses 1-based positions, so position 1 returns the first token — 2014.",
     "distractor_notes": {
       "A": "Position 0 isn't how the Pattern Designer delimited strategy is indexed (it's 1-based).",
       "C": "There's no space before 2014 to split on at that boundary.",
@@ -1807,7 +1807,7 @@
     ],
     "rationale": "The literal hyphen sits right before the time, and \\d\\d:\\d\\d:\\d\\d matches HH:MM:SS. The only substring after the '-' that fits three two-digit groups separated by colons is 17:49:36, which the capture group returns.",
     "distractor_notes": {
-      "A": "No colons \u2014 doesn't match the colon-separated pattern.",
+      "A": "No colons — doesn't match the colon-separated pattern.",
       "B": "Starts at the wrong field and invents a :00 that isn't in the source.",
       "D": "That stops at MM, but the pattern requires a third :SS group."
     },
@@ -1853,7 +1853,7 @@
     "correct": [
       "D"
     ],
-    "rationale": "After the '//', ([\\w\\.]+) captures the host (localhost), (\\d+) captures the port (3306), and \\/(\\w+) captures the path segment (myDatabase). Three groups, three values \u2014 host, port, path.",
+    "rationale": "After the '//', ([\\w\\.]+) captures the host (localhost), (\\d+) captures the port (3306), and \\/(\\w+) captures the path segment (myDatabase). Three groups, three values — host, port, path.",
     "distractor_notes": {
       "A": "([\\w\\.]) without + matches a single character, so it can't capture 'localhost'.",
       "B": "The character class '[\\w\\.-_]' is malformed (the '-' inside creates a range), and (\\w+) for the port is loose.",
@@ -1954,7 +1954,7 @@
     "correct": [
       "D"
     ],
-    "rationale": "Identification's job is 'what is this?' \u2014 it gathers attributes, matches them against the CI's identifier, and creates or updates the CI accordingly. Only after the CI is positively identified do connection sections run to map what it depends on.",
+    "rationale": "Identification's job is 'what is this?' — it gathers attributes, matches them against the CI's identifier, and creates or updates the CI accordingly. Only after the CI is positively identified do connection sections run to map what it depends on.",
     "distractor_notes": {
       "A": "Scheduling lives on the discovery schedule, not inside a pattern section.",
       "B": "Credentials are managed in the credential store, not assigned by an identification section.",
@@ -2002,11 +2002,11 @@
     "correct": [
       "C"
     ],
-    "rationale": "When incoming data resolves to several CIs, identity is ambiguous. IRE won't guess \u2014 it flags the condition (often as a duplicate/remediation item) so a human can confirm which record is correct, protecting the CMDB from silent, wrong updates.",
+    "rationale": "When incoming data resolves to several CIs, identity is ambiguous. IRE won't guess — it flags the condition (often as a duplicate/remediation item) so a human can confirm which record is correct, protecting the CMDB from silent, wrong updates.",
     "distractor_notes": {
       "A": "Ambiguous identity is exactly the kind of data-quality event that needs attention.",
       "B": "By definition more than one matched, so it isn't a clean single match.",
-      "D": "Deleting all matches would destroy potentially valid CIs \u2014 never the response to ambiguity."
+      "D": "Deleting all matches would destroy potentially valid CIs — never the response to ambiguity."
     },
     "references": [
       {
@@ -2050,7 +2050,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "Boundary icons mark where a connection exits the current service's scope \u2014 an integration point or external dependency. They keep the map readable by showing 'this goes somewhere outside here' without dragging unrelated infrastructure into view.",
+    "rationale": "Boundary icons mark where a connection exits the current service's scope — an integration point or external dependency. They keep the map readable by showing 'this goes somewhere outside here' without dragging unrelated infrastructure into view.",
     "distractor_notes": {
       "B": "Generic applications are unidentified apps, a different icon/state.",
       "C": "Errors have their own status icons (e.g., credential-error markers), not boundaries.",
@@ -2098,7 +2098,7 @@
     "correct": [
       "C"
     ],
-    "rationale": "The inbound arrow at the top of the topmost CI marks the service's entry point \u2014 where discovery began and where traffic enters. It anchors the top-down map: everything below flows from that starting interaction.",
+    "rationale": "The inbound arrow at the top of the topmost CI marks the service's entry point — where discovery began and where traffic enters. It anchors the top-down map: everything below flows from that starting interaction.",
     "distractor_notes": {
       "A": "Firewalls, if modeled, appear as their own CIs, not as the entry-point arrow.",
       "B": "Reconciliation source is metadata on the CI record, not a map arrow.",
@@ -2338,7 +2338,7 @@
     "correct": [
       "D"
     ],
-    "rationale": "Parse URL takes a URL string and splits it into scheme, host, port, and path so later steps can use those pieces \u2014 for example to derive the host and port of a downstream connection. It's purpose-built for URLs, unlike the general-purpose Parse File.",
+    "rationale": "Parse URL takes a URL string and splits it into scheme, host, port, and path so later steps can use those pieces — for example to derive the host and port of a downstream connection. It's purpose-built for URLs, unlike the general-purpose Parse File.",
     "distractor_notes": {
       "A": "Create Connection builds a relationship using values you've already extracted.",
       "B": "Match evaluates a condition; it doesn't decompose a URL.",
@@ -2386,7 +2386,7 @@
     "correct": [
       "D"
     ],
-    "rationale": "Position From End locates data by offset measured backward from the end of the text \u2014 handy for fixed-width or trailing fields that are easier to find from the tail than the head. It's one of several Parse File strategies alongside Delimited Text and Regular Expression.",
+    "rationale": "Position From End locates data by offset measured backward from the end of the text — handy for fixed-width or trailing fields that are easier to find from the tail than the head. It's one of several Parse File strategies alongside Delimited Text and Regular Expression.",
     "distractor_notes": {
       "A": "Match is a conditional operation, not a parsing strategy.",
       "B": "Regular Expression matches patterns anywhere; it isn't offset-from-end.",
@@ -2482,7 +2482,7 @@
     "correct": [
       "B"
     ],
-    "rationale": "Match is a general control operation available in both identification and connection logic. In either section, a failed Match condition terminates that section \u2014 letting you assert prerequisites before the section produces a CI or a connection.",
+    "rationale": "Match is a general control operation available in both identification and connection logic. In either section, a failed Match condition terminates that section — letting you assert prerequisites before the section produces a CI or a connection.",
     "distractor_notes": {
       "A": "Match is equally valid in Connection sections to guard connection creation.",
       "C": "It's also used in Identification to confirm the CI looks right.",
@@ -2532,7 +2532,7 @@
     ],
     "rationale": "Baseline patterns are managed content; hand-editing their NDL means an upgrade or Store update can overwrite your changes. The upgrade-safe path is an Extension Section, which layers your logic on top of the untouched baseline.",
     "distractor_notes": {
-      "B": "Patterns are editable in the designer \u2014 but baseline edits aren't upgrade-safe.",
+      "B": "Patterns are editable in the designer — but baseline edits aren't upgrade-safe.",
       "C": "Editing doesn't delete the pattern.",
       "D": "Pattern edits have nothing to do with disabling the MID Server."
     },
@@ -2578,7 +2578,7 @@
     "correct": [
       "D"
     ],
-    "rationale": "Debug Mode is purely diagnostic: it enriches the log so you can see each step's inputs, outputs, and result. It does not change execution logic \u2014 it just makes what already happens visible so you can find where a pattern goes wrong.",
+    "rationale": "Debug Mode is purely diagnostic: it enriches the log so you can see each step's inputs, outputs, and result. It does not change execution logic — it just makes what already happens visible so you can find where a pattern goes wrong.",
     "distractor_notes": {
       "A": "Publishing is a separate action from enabling debug logging.",
       "B": "Debug Mode doesn't reorder steps.",
@@ -2626,7 +2626,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "Process Classifiers map a process signature (command line/process name) to the pattern that should handle it. When discovery sees a matching process, the classifier hands it to the right pattern \u2014 that's the bridge between 'found a process' and 'run this identification logic'.",
+    "rationale": "Process Classifiers map a process signature (command line/process name) to the pattern that should handle it. When discovery sees a matching process, the classifier hands it to the right pattern — that's the bridge between 'found a process' and 'run this identification logic'.",
     "distractor_notes": {
       "B": "Pattern selection is deterministic via classifiers, not random.",
       "C": "CMDB Health surfaces quality issues; it doesn't dispatch patterns.",
@@ -2674,11 +2674,11 @@
     "correct": [
       "D"
     ],
-    "rationale": "Entry points have a type (e.g., HTTP endpoint, generic host), and only patterns declared to support that type are tried. This keeps discovery efficient and correct \u2014 a web-endpoint entry point won't run database-only patterns.",
+    "rationale": "Entry points have a type (e.g., HTTP endpoint, generic host), and only patterns declared to support that type are tried. This keeps discovery efficient and correct — a web-endpoint entry point won't run database-only patterns.",
     "distractor_notes": {
       "A": "Running every pattern would be wasteful and error-prone; type-matching narrows it.",
       "B": "Selection is rule-based, not random.",
-      "C": "Recency doesn't determine eligibility \u2014 supported entry point type does."
+      "C": "Recency doesn't determine eligibility — supported entry point type does."
     },
     "references": [
       {
@@ -2712,7 +2712,7 @@
       },
       {
         "id": "C",
-        "text": "No relationship \u2014 it only updates attributes"
+        "text": "No relationship — it only updates attributes"
       },
       {
         "id": "D",
@@ -2722,7 +2722,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "Connection sections build the dependency edges of the service map \u2014 typically Depends on/Used by between a consumer CI and the downstream CI it relies on. Those edges are what make impact analysis and the service topology meaningful.",
+    "rationale": "Connection sections build the dependency edges of the service map — typically Depends on/Used by between a consumer CI and the downstream CI it relies on. Those edges are what make impact analysis and the service topology meaningful.",
     "distractor_notes": {
       "B": "Cluster membership is modeled separately; it isn't the general connection output.",
       "C": "The whole point of a connection section is to create a relationship, not just attributes.",
@@ -2866,7 +2866,7 @@
     "correct": [
       "D"
     ],
-    "rationale": "The port sits between the colon after the host and the slash before the path. :(\\d+)\\/ anchors on that colon and slash and captures the digits in between \u2014 3306 \u2014 without grabbing other numbers in the string.",
+    "rationale": "The port sits between the colon after the host and the slash before the path. :(\\d+)\\/ anchors on that colon and slash and captures the digits in between — 3306 — without grabbing other numbers in the string.",
     "distractor_notes": {
       "A": "Bare (\\d+) would also match other digit runs (e.g., parts of the path or a numeric host).",
       "B": "There's no digit immediately after 'localhost'; a colon separates them.",
@@ -2914,7 +2914,7 @@
     "correct": [
       "B"
     ],
-    "rationale": "Dashed/boundary nodes mark where the map's discovered scope ends \u2014 the connection is known to leave toward something outside the current service. They keep the picture clean by acknowledging external dependencies without expanding into unrelated infrastructure.",
+    "rationale": "Dashed/boundary nodes mark where the map's discovered scope ends — the connection is known to leave toward something outside the current service. They keep the picture clean by acknowledging external dependencies without expanding into unrelated infrastructure.",
     "distractor_notes": {
       "A": "Credential vault is a storage concept, not a map node.",
       "C": "Cluster links are drawn within a cluster grouping, not as boundary exits.",
@@ -2962,7 +2962,7 @@
     "correct": [
       "C"
     ],
-    "rationale": "Targeted iteration beats blanket rediscovery. Running the pattern in debug against one host and reading the log shows exactly which steps ran, what they returned, and where it failed \u2014 fast feedback without touching the rest of the environment.",
+    "rationale": "Targeted iteration beats blanket rediscovery. Running the pattern in debug against one host and reading the log shows exactly which steps ran, what they returned, and where it failed — fast feedback without touching the rest of the environment.",
     "distractor_notes": {
       "A": "Health thresholds don't help you test pattern logic.",
       "B": "Rediscovering a subnet is slow and changes far more than the one pattern you're testing.",
@@ -3010,7 +3010,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "Get Registry Key fetches a value from the Windows registry \u2014 useful for reading install paths, versions, or service configuration that an app records there. The returned value feeds identification or connection logic just like process or file data.",
+    "rationale": "Get Registry Key fetches a value from the Windows registry — useful for reading install paths, versions, or service configuration that an app records there. The returned value feeds identification or connection logic just like process or file data.",
     "distractor_notes": {
       "B": "Parse URL works on URL strings, not the registry.",
       "C": "Create Connection builds relationships; it doesn't read the registry.",
@@ -3106,11 +3106,11 @@
     "correct": [
       "A"
     ],
-    "rationale": "Connection Sections all run, so a missing second link means that section's steps didn't produce a connection \u2014 most often the second database's connection string wasn't parsed (different config location/format). The log will show that section's step failing.",
+    "rationale": "Connection Sections all run, so a missing second link means that section's steps didn't produce a connection — most often the second database's connection string wasn't parsed (different config location/format). The log will show that section's step failing.",
     "distractor_notes": {
       "B": "If identification failed, the app server itself wouldn't be on the map.",
       "C": "The MID Server can return many connections in one run; there's no one-per-run limit.",
-      "D": "Connection Sections do NOT stop at first success \u2014 that's identification behavior."
+      "D": "Connection Sections do NOT stop at first success — that's identification behavior."
     },
     "references": [
       {
@@ -3184,7 +3184,7 @@
     "options": [
       {
         "id": "A",
-        "text": "No \u2014 variables never cross sections"
+        "text": "No — variables never cross sections"
       },
       {
         "id": "B",
@@ -3192,7 +3192,7 @@
       },
       {
         "id": "C",
-        "text": "Yes \u2014 variables from the Identification Section are available to Connection Sections of the same pattern"
+        "text": "Yes — variables from the Identification Section are available to Connection Sections of the same pattern"
       },
       {
         "id": "D",
@@ -3204,7 +3204,7 @@
     ],
     "rationale": "Within one pattern, identification-stage variables flow forward into that pattern's connection logic. This is by design: identification often captures the paths and endpoints the connection steps then use to find dependencies.",
     "distractor_notes": {
-      "A": "Variables do carry between sections of the same pattern \u2014 just not across different patterns.",
+      "A": "Variables do carry between sections of the same pattern — just not across different patterns.",
       "B": "Debug Mode only adds logging; it doesn't change variable scope.",
       "D": "There's no global publish for pattern variables; scope is the pattern itself."
     },
@@ -3250,7 +3250,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "Parse File works on any text content the pattern has captured \u2014 including command output and config/log text, not just files literally on disk. That flexibility is why it's the workhorse for turning raw command results into usable attributes.",
+    "rationale": "Parse File works on any text content the pattern has captured — including command output and config/log text, not just files literally on disk. That flexibility is why it's the workhorse for turning raw command results into usable attributes.",
     "distractor_notes": {
       "B": "It parses content, not just ECC headers.",
       "C": "Registry values are read by Get Registry Key; Parse File handles text content broadly.",
@@ -3298,11 +3298,11 @@
     "correct": [
       "D"
     ],
-    "rationale": "Division of labor: the pattern's job is to collect the right attributes; the IRE identifier's job is to use those attributes (its criterion attributes) to resolve identity \u2014 update the existing CI or insert a new one. Both are needed and they work together.",
+    "rationale": "Division of labor: the pattern's job is to collect the right attributes; the IRE identifier's job is to use those attributes (its criterion attributes) to resolve identity — update the existing CI or insert a new one. Both are needed and they work together.",
     "distractor_notes": {
       "A": "Patterns don't replace IRE; all data still goes through identification.",
-      "B": "It's reversed \u2014 the pattern collects, the identifier matches.",
-      "C": "They're distinct constructs \u2014 collection vs. identity resolution."
+      "B": "It's reversed — the pattern collects, the identifier matches.",
+      "C": "They're distinct constructs — collection vs. identity resolution."
     },
     "references": [
       {
@@ -3350,7 +3350,7 @@
     "distractor_notes": {
       "A": "Parent fallback is the separate 'Allow fallback to parent's rules' option.",
       "C": "It changes matching behavior, not lifecycle/deletion.",
-      "D": "It does the opposite \u2014 it permits nulls rather than forbidding them."
+      "D": "It does the opposite — it permits nulls rather than forbidding them."
     },
     "references": [
       {
@@ -3394,10 +3394,10 @@
     "correct": [
       "B"
     ],
-    "rationale": "An independent identifier resolves a CI on its own attributes (e.g., a server by serial number). The opposite \u2014 a dependent identifier \u2014 needs a qualifying related CI (e.g., a database identified only in the context of its host).",
+    "rationale": "An independent identifier resolves a CI on its own attributes (e.g., a server by serial number). The opposite — a dependent identifier — needs a qualifying related CI (e.g., a database identified only in the context of its host).",
     "distractor_notes": {
       "A": "That describes a dependent identifier, the opposite of independent.",
-      "C": "Independent identifiers still use criterion attributes \u2014 they just don't need a parent context.",
+      "C": "Independent identifiers still use criterion attributes — they just don't need a parent context.",
       "D": "Independence is about identity context, not toggling reconciliation."
     },
     "references": [
@@ -3458,6 +3458,582 @@
       "pattern-design",
       "publish",
       "activation"
+    ]
+  },
+  {
+    "id": "cisms-pat-073",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Pattern Design",
+    "subdomain": "Top-down mapping",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "You're mapping a customer-facing web service and need mapping to begin where users access it and follow the dependencies down. What does Service Mapping start from?",
+    "options": [
+      {
+        "id": "A",
+        "text": "An entry point (such as the service URL or load balancer)"
+      },
+      {
+        "id": "B",
+        "text": "A random server in the data center"
+      },
+      {
+        "id": "C",
+        "text": "The CMDB Health dashboard"
+      },
+      {
+        "id": "D",
+        "text": "An incident record"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Top-down Service Mapping begins at an entry point — the access point like a URL or load balancer — and traverses connections downward to discover each tier. The entry point defines where the map starts.",
+    "distractor_notes": {
+      "B": "Mapping is directed from the entry point, not a random server.",
+      "C": "The health dashboard measures quality; it isn't a mapping starting point.",
+      "D": "An incident is a ticket, not a mapping entry point."
+    },
+    "references": [
+      {
+        "title": "Top-down service mapping",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/top-down-mapping.html"
+      }
+    ],
+    "tags": [
+      "service-mapping",
+      "entry-point",
+      "top-down"
+    ]
+  },
+  {
+    "id": "cisms-pat-074",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Pattern Design",
+    "subdomain": "Generic applications",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "During mapping, a tier shows up as a 'generic application' because no pattern recognized it. What is the appropriate next step to map it properly?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Create a pattern from the generic application so it's identified correctly"
+      },
+      {
+        "id": "B",
+        "text": "Delete the application service"
+      },
+      {
+        "id": "C",
+        "text": "Ignore it; generic applications can't be improved"
+      },
+      {
+        "id": "D",
+        "text": "Disable the MID Server"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "When Service Mapping can't identify an app, it records a generic application. You can create a pattern from that generic application so future mapping identifies it specifically and continues traversal.",
+    "distractor_notes": {
+      "B": "Deleting the service loses the map; the fix is to build a pattern.",
+      "C": "Generic applications are exactly what you improve by creating patterns.",
+      "D": "Disabling the MID Server stops discovery entirely."
+    },
+    "references": [
+      {
+        "title": "Create a pattern from a generic application",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/create-pattern-from-generic-application.html"
+      }
+    ],
+    "tags": [
+      "pattern",
+      "generic-application",
+      "mapping"
+    ]
+  },
+  {
+    "id": "cisms-pat-075",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Pattern Design",
+    "subdomain": "Connection sections",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "In a pattern, you need the step that determines which downstream CI the current tier talks to, so mapping can continue to the next tier. Which pattern section does this?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A connection section"
+      },
+      {
+        "id": "B",
+        "text": "An identification section"
+      },
+      {
+        "id": "C",
+        "text": "A reconciliation rule"
+      },
+      {
+        "id": "D",
+        "text": "A UI policy"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Connection sections find the outgoing connections from the current CI to the next tier, letting the map traverse further. Identification sections, by contrast, identify and populate the current CI.",
+    "distractor_notes": {
+      "B": "Identification sections identify the current CI; they don't find the next connection.",
+      "C": "Reconciliation rules govern attribute authority in the CMDB, not pattern traversal.",
+      "D": "UI policies change form behavior."
+    },
+    "references": [
+      {
+        "title": "Pattern connection sections",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/pattern-connection-sections.html"
+      }
+    ],
+    "tags": [
+      "pattern",
+      "connection-section",
+      "traversal"
+    ]
+  },
+  {
+    "id": "cisms-pat-076",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Pattern Design",
+    "subdomain": "Identification sections",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A pattern needs to identify the current application and populate its CI attributes (like version and install path). Which pattern section handles this?",
+    "options": [
+      {
+        "id": "A",
+        "text": "An identification section"
+      },
+      {
+        "id": "B",
+        "text": "A connection section"
+      },
+      {
+        "id": "C",
+        "text": "A data policy"
+      },
+      {
+        "id": "D",
+        "text": "A watch list"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Identification sections identify the current CI and gather its attributes, so the CI is correctly recognized and populated. Connection sections then find what it connects to next.",
+    "distractor_notes": {
+      "B": "Connection sections find the next CI, not identify the current one.",
+      "C": "Data policies enforce field rules, not pattern identification.",
+      "D": "Watch lists handle notifications."
+    },
+    "references": [
+      {
+        "title": "Pattern identification sections",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/pattern-identification-sections.html"
+      }
+    ],
+    "tags": [
+      "pattern",
+      "identification-section",
+      "attributes"
+    ]
+  },
+  {
+    "id": "cisms-pat-077",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Pattern Design",
+    "subdomain": "Traffic-based connections",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A dependency exists between two tiers, but no pattern step discovers the connection. Which capability can infer it from observed network connections?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Traffic-based connections"
+      },
+      {
+        "id": "B",
+        "text": "A reconciliation rule"
+      },
+      {
+        "id": "C",
+        "text": "A scheduled report"
+      },
+      {
+        "id": "D",
+        "text": "A coalesce field"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Traffic-based connections use observed network traffic (for example, netstat data) to infer connections that pattern steps didn't find, helping complete the map where explicit pattern logic falls short.",
+    "distractor_notes": {
+      "B": "Reconciliation rules manage attribute authority, not connection discovery.",
+      "C": "Reports measure data; they don't infer connections.",
+      "D": "Coalesce matches import records."
+    },
+    "references": [
+      {
+        "title": "Traffic-based connections",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/traffic-based-connections.html"
+      }
+    ],
+    "tags": [
+      "traffic-based",
+      "connections",
+      "mapping"
+    ]
+  },
+  {
+    "id": "cisms-pat-078",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Pattern Design",
+    "subdomain": "Manual connections",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A known dependency still doesn't appear on the map even after pattern and traffic-based attempts. How can an implementer ensure it's represented?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Add a manual connection (inclusion) to the map"
+      },
+      {
+        "id": "B",
+        "text": "Delete the service and start over"
+      },
+      {
+        "id": "C",
+        "text": "Lower the CMDB health threshold"
+      },
+      {
+        "id": "D",
+        "text": "Disable IRE"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "When automatic methods miss a real dependency, implementers can add a manual connection (inclusion) so the map reflects reality. It's the documented fallback for hard-to-discover links.",
+    "distractor_notes": {
+      "B": "Restarting won't help if the connection is genuinely undiscoverable automatically.",
+      "C": "Health thresholds don't add map connections.",
+      "D": "Disabling IRE harms identification, not map completeness."
+    },
+    "references": [
+      {
+        "title": "Manual connections and inclusions",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/manual-connections.html"
+      }
+    ],
+    "tags": [
+      "manual-connection",
+      "inclusion",
+      "mapping"
+    ]
+  },
+  {
+    "id": "cisms-pat-079",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Pattern Design",
+    "subdomain": "Pattern debug",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A pattern fails to identify an application on a specific host, and you need to step through the operations to see where it breaks. Which tool helps?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Debug mode in Pattern Designer"
+      },
+      {
+        "id": "B",
+        "text": "The CMDB Health dashboard"
+      },
+      {
+        "id": "C",
+        "text": "A UI policy"
+      },
+      {
+        "id": "D",
+        "text": "A scheduled job"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Pattern Designer's debug mode runs the pattern against a host and shows each operation's input/output, so you can pinpoint the failing step. It's the primary troubleshooting tool for pattern logic.",
+    "distractor_notes": {
+      "B": "The health dashboard measures CMDB quality, not pattern execution.",
+      "C": "UI policies change form behavior.",
+      "D": "Scheduled jobs run on timers."
+    },
+    "references": [
+      {
+        "title": "Debug mode in Pattern Designer",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/pattern-debug-mode.html"
+      }
+    ],
+    "tags": [
+      "pattern",
+      "debug",
+      "troubleshooting"
+    ]
+  },
+  {
+    "id": "cisms-pat-080",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Pattern Design",
+    "subdomain": "Pattern variables",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "Within a pattern, you need to capture a value from one operation (like a discovered port) and reuse it in later steps. What should you use?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A pattern variable"
+      },
+      {
+        "id": "B",
+        "text": "A coalesce field"
+      },
+      {
+        "id": "C",
+        "text": "A watch list"
+      },
+      {
+        "id": "D",
+        "text": "A system property only"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Pattern variables hold values captured during pattern execution (such as a port or path) so later operations can reference them. They're how data flows between steps in a pattern.",
+    "distractor_notes": {
+      "B": "Coalesce matches import records.",
+      "C": "Watch lists handle notifications.",
+      "D": "A system property is global config, not per-execution pattern data."
+    },
+    "references": [
+      {
+        "title": "Working with pattern variables",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/pattern-variables.html"
+      }
+    ],
+    "tags": [
+      "pattern",
+      "variables",
+      "operations"
+    ]
+  },
+  {
+    "id": "cisms-pat-081",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Pattern Design",
+    "subdomain": "Extension sections",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "You want to add custom identification logic to a ServiceNow-provided pattern without losing the ability to receive pattern updates. What is the recommended approach?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Use an extension section to add your logic"
+      },
+      {
+        "id": "B",
+        "text": "Edit the base pattern's core steps directly"
+      },
+      {
+        "id": "C",
+        "text": "Copy the whole pattern and abandon updates"
+      },
+      {
+        "id": "D",
+        "text": "Disable the pattern"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Extension sections let you add custom logic to a provided pattern while keeping it upgrade-safe, so you still benefit from vendor pattern updates. Editing core steps risks losing changes on update.",
+    "distractor_notes": {
+      "B": "Editing core steps directly is fragile and can be overwritten by updates.",
+      "C": "Cloning and abandoning updates loses future improvements.",
+      "D": "Disabling the pattern removes the mapping entirely."
+    },
+    "references": [
+      {
+        "title": "Extending patterns with extension sections",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/pattern-extension-sections.html"
+      }
+    ],
+    "tags": [
+      "pattern",
+      "extension-section",
+      "upgrade-safe"
+    ]
+  },
+  {
+    "id": "cisms-pat-082",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Pattern Design",
+    "subdomain": "Discovery vs Service Mapping",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "How does top-down Service Mapping differ from horizontal Discovery in what it produces?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Service Mapping builds a service-centric map of dependencies from an entry point; horizontal Discovery inventories devices broadly"
+      },
+      {
+        "id": "B",
+        "text": "They produce identical results"
+      },
+      {
+        "id": "C",
+        "text": "Service Mapping only finds printers"
+      },
+      {
+        "id": "D",
+        "text": "Discovery cannot populate the CMDB"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Service Mapping is top-down and service-centric, tracing dependencies from an entry point to build a map of one service. Horizontal Discovery broadly inventories infrastructure. They complement each other.",
+    "distractor_notes": {
+      "B": "They have different goals and outputs.",
+      "C": "Service Mapping maps services, not just printers.",
+      "D": "Discovery is a primary way to populate the CMDB."
+    },
+    "references": [
+      {
+        "title": "Discovery vs Service Mapping",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/service-mapping-overview.html"
+      }
+    ],
+    "tags": [
+      "service-mapping",
+      "discovery",
+      "comparison"
+    ]
+  },
+  {
+    "id": "cisms-pat-083",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Pattern Design",
+    "subdomain": "Pattern sections",
+    "difficulty": "application",
+    "type": "multi_select",
+    "stem": "Which TWO describe the roles of pattern sections in Service Mapping?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Identification sections identify and populate the current CI"
+      },
+      {
+        "id": "B",
+        "text": "Connection sections find the next CIs to continue the map"
+      },
+      {
+        "id": "C",
+        "text": "Both sections send SLA emails"
+      },
+      {
+        "id": "D",
+        "text": "Both sections encrypt the CMDB"
+      }
+    ],
+    "correct": [
+      "A",
+      "B"
+    ],
+    "rationale": "Identification sections handle the current CI; connection sections traverse to the next. Together they drive the top-down map. Neither sends SLA emails or encrypts data.",
+    "distractor_notes": {
+      "C": "SLA emails are part of service-level management.",
+      "D": "Encryption is a data-security feature, not pattern logic."
+    },
+    "references": [
+      {
+        "title": "Discovery patterns and sections",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/discovery-patterns.html"
+      }
+    ],
+    "tags": [
+      "pattern",
+      "sections",
+      "mapping"
+    ]
+  },
+  {
+    "id": "cisms-pat-084",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Pattern Design",
+    "subdomain": "Completing maps",
+    "difficulty": "application",
+    "type": "multi_select",
+    "stem": "Which TWO techniques help complete a service map when patterns alone miss a dependency?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Traffic-based connections"
+      },
+      {
+        "id": "B",
+        "text": "Manual connections (inclusions)"
+      },
+      {
+        "id": "C",
+        "text": "Lowering CMDB health thresholds"
+      },
+      {
+        "id": "D",
+        "text": "Disabling the MID Server"
+      }
+    ],
+    "correct": [
+      "A",
+      "B"
+    ],
+    "rationale": "Traffic-based connections infer links from observed traffic, and manual connections let you add known dependencies explicitly. Lowering thresholds or disabling the MID Server doesn't add real connections.",
+    "distractor_notes": {
+      "C": "Health thresholds don't create map connections.",
+      "D": "Disabling the MID Server stops discovery."
+    },
+    "references": [
+      {
+        "title": "Manual connections and inclusions",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/manual-connections.html"
+      }
+    ],
+    "tags": [
+      "mapping",
+      "traffic-based",
+      "manual-connection"
     ]
   }
 ]
