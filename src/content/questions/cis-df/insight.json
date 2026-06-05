@@ -125,7 +125,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "Completeness asks 'is the expected data there?' \u2014 required attributes filled in and the expected relationships present. A CI missing its owner, support group, or key relationships fails completeness even if every value it does have is accurate.",
+    "rationale": "Completeness asks 'is the expected data there?' — required attributes filled in and the expected relationships present. A CI missing its owner, support group, or key relationships fails completeness even if every value it does have is accurate.",
     "distractor_notes": {
       "B": "Compliance checks conformance to defined rules/standards, not whether fields are filled.",
       "C": "Correctness is about accuracy and duplicates, not presence of data.",
@@ -173,7 +173,7 @@
     "correct": [
       "C"
     ],
-    "rationale": "Correctness measures whether the data is actually right \u2014 no duplicate CIs, values that reflect reality, identifiers resolving cleanly. You can have complete and compliant-looking data that's still wrong, which is why correctness is its own dimension.",
+    "rationale": "Correctness measures whether the data is actually right — no duplicate CIs, values that reflect reality, identifiers resolving cleanly. You can have complete and compliant-looking data that's still wrong, which is why correctness is its own dimension.",
     "distractor_notes": {
       "A": "Completeness is about presence of data, not its accuracy.",
       "B": "Compliance is about conforming to rules/standards, not duplicates per se.",
@@ -221,7 +221,7 @@
     "correct": [
       "B"
     ],
-    "rationale": "Compliance checks conformance to defined rules and standards \u2014 naming conventions, allowed value formats, mandatory policy. The data is present (completeness passes) but breaks a standard, so it's a compliance failure specifically.",
+    "rationale": "Compliance checks conformance to defined rules and standards — naming conventions, allowed value formats, mandatory policy. The data is present (completeness passes) but breaks a standard, so it's a compliance failure specifically.",
     "distractor_notes": {
       "A": "Completeness passes because the attributes are populated.",
       "C": "Correctness centers on accuracy/duplicates; a standards violation is compliance.",
@@ -269,7 +269,7 @@
     "correct": [
       "B"
     ],
-    "rationale": "A CMDB's analytical value comes from how CIs connect \u2014 relationships drive service mapping, dependency views, and impact analysis. Health therefore measures relationship quality (orphans, missing expected relationships) because attribute-perfect but disconnected CIs still can't answer 'what depends on what.'",
+    "rationale": "A CMDB's analytical value comes from how CIs connect — relationships drive service mapping, dependency views, and impact analysis. Health therefore measures relationship quality (orphans, missing expected relationships) because attribute-perfect but disconnected CIs still can't answer 'what depends on what.'",
     "distractor_notes": {
       "A": "Relationships are functionally essential, not decorative.",
       "C": "Login rights are an identity concern, unrelated to CI relationships.",
@@ -317,7 +317,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "An orphan is a CI that stands alone with no relationships \u2014 it can't appear in any service map or dependency chain. Health flags orphans because relationship-less CIs contribute little analytical value and often indicate incomplete modeling or ingestion.",
+    "rationale": "An orphan is a CI that stands alone with no relationships — it can't appear in any service map or dependency chain. Health flags orphans because relationship-less CIs contribute little analytical value and often indicate incomplete modeling or ingestion.",
     "distractor_notes": {
       "B": "A stale owner is an ownership/data issue, not the definition of orphan.",
       "C": "Age of creation doesn't make a CI an orphan.",
@@ -509,7 +509,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "CMDB Query Builder lets you graphically construct queries that walk CIs and relationships \u2014 e.g., 'show me all servers supporting this application and their databases.' It's an exploration/insight tool for getting answers out of the relationship graph without writing code.",
+    "rationale": "CMDB Query Builder lets you graphically construct queries that walk CIs and relationships — e.g., 'show me all servers supporting this application and their databases.' It's an exploration/insight tool for getting answers out of the relationship graph without writing code.",
     "distractor_notes": {
       "B": "Pattern authoring is a Discovery design task, not Query Builder.",
       "C": "Change approval is a Change Management function.",
@@ -605,7 +605,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "Staleness measures recency \u2014 how long it's been since an authoritative source last updated or confirmed the CI. Stale CIs may no longer reflect reality (decommissioned, changed), so the metric flags candidates for re-verification or lifecycle action.",
+    "rationale": "Staleness measures recency — how long it's been since an authoritative source last updated or confirmed the CI. Stale CIs may no longer reflect reality (decommissioned, changed), so the metric flags candidates for re-verification or lifecycle action.",
     "distractor_notes": {
       "B": "Hardware temperature is an operational metric, not a CMDB data-quality indicator.",
       "C": "Incident count is an ITSM relationship, not a staleness measure.",
@@ -653,7 +653,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "High completeness means the fields are populated; low correctness means what's in them is wrong or duplicated. This combination is classic for CMDBs that ingest a lot of data without strong identification \u2014 plenty of values, but duplicates and inaccuracies undermine trust.",
+    "rationale": "High completeness means the fields are populated; low correctness means what's in them is wrong or duplicated. This combination is classic for CMDBs that ingest a lot of data without strong identification — plenty of values, but duplicates and inaccuracies undermine trust.",
     "distractor_notes": {
       "B": "Missing attributes would lower completeness, contradicting the high score.",
       "C": "An empty CMDB couldn't produce a high completeness score.",
@@ -701,7 +701,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "Health dashboards are built for the people accountable for the CMDB \u2014 configuration managers and data owners \u2014 who use them to spot, prioritize, and drive remediation. They're an internal governance instrument, not a public-facing or vendor tool.",
+    "rationale": "Health dashboards are built for the people accountable for the CMDB — configuration managers and data owners — who use them to spot, prioritize, and drive remediation. They're an internal governance instrument, not a public-facing or vendor tool.",
     "distractor_notes": {
       "B": "External customers have no role in CMDB data quality.",
       "C": "Vendor sales teams aren't the audience for internal health metrics.",
@@ -727,7 +727,7 @@
     "subdomain": "Relationship health",
     "difficulty": "application",
     "type": "single_select",
-    "stem": "A service map for a business application looks incomplete \u2014 several supporting servers don't appear. From an Insight perspective, what should you investigate first?",
+    "stem": "A service map for a business application looks incomplete — several supporting servers don't appear. From an Insight perspective, what should you investigate first?",
     "options": [
       {
         "id": "A",
@@ -749,7 +749,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "Service maps are drawn from CI relationships. If servers are missing from the map, the most likely cause is missing or broken relationships between them and the application \u2014 a relationship-health gap. Checking those relationships is the first diagnostic step.",
+    "rationale": "Service maps are drawn from CI relationships. If servers are missing from the map, the most likely cause is missing or broken relationships between them and the application — a relationship-health gap. Checking those relationships is the first diagnostic step.",
     "distractor_notes": {
       "B": "Font size is cosmetic and unrelated to which CIs appear.",
       "C": "Company-wide incident counts don't affect this map's structure.",
@@ -799,7 +799,7 @@
     ],
     "rationale": "Insight feeds Govern: the metrics surface and size data-quality defects, and those findings become the remediation backlog that owners work. Measuring without fixing is just reporting; the metrics exist precisely to drive corrective action.",
     "distractor_notes": {
-      "B": "Metrics reveal problems; they don't fix them \u2014 remediation does.",
+      "B": "Metrics reveal problems; they don't fix them — remediation does.",
       "C": "They're tightly linked: detection (Insight) drives action (remediation).",
       "D": "Health measures data quality, not network traffic generated by fixes."
     },
@@ -845,7 +845,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "Multi-hop questions ('what eventually supports this service') require walking the relationship graph, which is exactly what Query Builder does \u2014 chaining CI classes and relationship types across hops. A flat list filter can't follow relationships, so it can't answer dependency questions.",
+    "rationale": "Multi-hop questions ('what eventually supports this service') require walking the relationship graph, which is exactly what Query Builder does — chaining CI classes and relationship types across hops. A flat list filter can't follow relationships, so it can't answer dependency questions.",
     "distractor_notes": {
       "B": "A simple list filter can't traverse relationships across multiple hops.",
       "C": "The incident list shows incidents, not CI dependency chains.",
@@ -893,7 +893,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "What counts as complete or compliant varies by organization \u2014 different required attributes, different standards. Configurable health rules let each organization encode its own definition of quality, so the score reflects their real expectations instead of a generic default.",
+    "rationale": "What counts as complete or compliant varies by organization — different required attributes, different standards. Configurable health rules let each organization encode its own definition of quality, so the score reflects their real expectations instead of a generic default.",
     "distractor_notes": {
       "B": "Color changes are a trivial display detail, not the reason rules are configurable.",
       "C": "Health rule configuration doesn't speed up Discovery.",
@@ -941,7 +941,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "A scoped, scheduled dashboard stays current automatically \u2014 filter to the Tier-1 supporting CIs and let the health jobs refresh it. Static artifacts like screenshots or printouts are stale the moment they're made, and disabling health removes the very insight being asked for.",
+    "rationale": "A scoped, scheduled dashboard stays current automatically — filter to the Tier-1 supporting CIs and let the health jobs refresh it. Static artifacts like screenshots or printouts are stale the moment they're made, and disabling health removes the very insight being asked for.",
     "distractor_notes": {
       "B": "A one-time screenshot can't reflect 'current' health.",
       "C": "A printout is immediately outdated and not refreshable.",
@@ -990,7 +990,7 @@
       "A",
       "B"
     ],
-    "rationale": "Measurement gives governance two practical powers: it pinpoints where to spend remediation effort first, and it provides evidence of progress to leadership. It doesn't write software or eliminate the need to ingest data \u2014 those aren't functions of a health metric.",
+    "rationale": "Measurement gives governance two practical powers: it pinpoints where to spend remediation effort first, and it provides evidence of progress to leadership. It doesn't write software or eliminate the need to ingest data — those aren't functions of a health metric.",
     "distractor_notes": {
       "C": "Health metrics measure data quality; they don't generate code.",
       "D": "You still need sources to populate the CMDB; metrics just assess it."
@@ -1089,7 +1089,7 @@
     "distractor_notes": {
       "B": "They're related but distinct: granular check vs aggregate.",
       "C": "Neither is fixed at a constant value; both vary with the data.",
-      "D": "Reversed and inaccurate \u2014 metrics are the granular checks, not the score."
+      "D": "Reversed and inaccurate — metrics are the granular checks, not the score."
     },
     "references": [
       {
@@ -1133,7 +1133,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "Deleting a rule you're failing just stops measuring the problem \u2014 the data is no better, but the dashboard looks healthier. That's gaming the metric. Governance should fix the underlying data (or deliberately revise standards), not quietly remove inconvenient checks.",
+    "rationale": "Deleting a rule you're failing just stops measuring the problem — the data is no better, but the dashboard looks healthier. That's gaming the metric. Governance should fix the underlying data (or deliberately revise standards), not quietly remove inconvenient checks.",
     "distractor_notes": {
       "B": "Removing a health rule doesn't delete CIs.",
       "C": "Health rules don't control Discovery speed.",
@@ -1181,7 +1181,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "Beyond fully orphaned CIs, health watches for missing expected relationships \u2014 an application that should connect to hosting servers but doesn't, for instance. These gaps leave dependency views incomplete even when the CIs themselves exist.",
+    "rationale": "Beyond fully orphaned CIs, health watches for missing expected relationships — an application that should connect to hosting servers but doesn't, for instance. These gaps leave dependency views incomplete even when the CIs themselves exist.",
     "distractor_notes": {
       "B": "Form fonts aren't a relationship-health concern.",
       "C": "Printer speed is unrelated to CI relationships.",
@@ -1421,7 +1421,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "Leadership needs the headline (overall score), the 'why' (breakdown by completeness/compliance/correctness), and the direction (trend). Together these answer 'how good is our data, where are the weaknesses, and are we improving?' \u2014 far more useful than counts or uptime.",
+    "rationale": "Leadership needs the headline (overall score), the 'why' (breakdown by completeness/compliance/correctness), and the direction (trend). Together these answer 'how good is our data, where are the weaknesses, and are we improving?' — far more useful than counts or uptime.",
     "distractor_notes": {
       "B": "A CI count says nothing about quality.",
       "C": "Instance uptime is an availability metric, not data quality.",
@@ -1547,15 +1547,15 @@
     "options": [
       {
         "id": "A",
-        "text": "The Insight stage \u2014 measuring and understanding the quality of data that has been ingested"
+        "text": "The Insight stage — measuring and understanding the quality of data that has been ingested"
       },
       {
         "id": "B",
-        "text": "The Ingest stage \u2014 bringing data in"
+        "text": "The Ingest stage — bringing data in"
       },
       {
         "id": "C",
-        "text": "The Configuration stage \u2014 defining the class model"
+        "text": "The Configuration stage — defining the class model"
       },
       {
         "id": "D",
@@ -1565,7 +1565,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "In the Data Foundations lifecycle (Ingest \u2192 Insight \u2192 Govern), CMDB Health is the Insight stage: once data is in, Health measures and explains its quality so governance can act. It sits squarely between bringing data in and managing it.",
+    "rationale": "In the Data Foundations lifecycle (Ingest → Insight → Govern), CMDB Health is the Insight stage: once data is in, Health measures and explains its quality so governance can act. It sits squarely between bringing data in and managing it.",
     "distractor_notes": {
       "B": "Ingest is about getting data in (Discovery, connectors), not measuring quality.",
       "C": "Configuration defines the model; Health measures the data within it.",
@@ -1709,7 +1709,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "CMDBs are living systems \u2014 new CIs arrive, sources change, relationships shift \u2014 so quality naturally drifts. Regular health review catches emerging completeness, compliance, and correctness problems before they compound, which is why Insight is a continuous practice, not a one-time check.",
+    "rationale": "CMDBs are living systems — new CIs arrive, sources change, relationships shift — so quality naturally drifts. Regular health review catches emerging completeness, compliance, and correctness problems before they compound, which is why Insight is a continuous practice, not a one-time check.",
     "distractor_notes": {
       "B": "The score changes constantly as the environment changes.",
       "C": "Reviewing health doesn't delete CIs.",
@@ -1739,7 +1739,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Correctness \u2014 the values may be present and rule-conformant yet inaccurate or duplicated"
+        "text": "Correctness — the values may be present and rule-conformant yet inaccurate or duplicated"
       },
       {
         "id": "B",
@@ -1757,7 +1757,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "Completeness and compliance can both pass while the data is still wrong \u2014 a duplicate CI or a plausible-but-incorrect value satisfies 'field present' and 'format valid' yet fails correctness. When trust lags despite high scores, correctness is the usual blind spot.",
+    "rationale": "Completeness and compliance can both pass while the data is still wrong — a duplicate CI or a plausible-but-incorrect value satisfies 'field present' and 'format valid' yet fails correctness. When trust lags despite high scores, correctness is the usual blind spot.",
     "distractor_notes": {
       "B": "Distrust despite high scores is exactly the signal that a dimension is being missed.",
       "C": "Completeness is stated at 100%; it isn't secretly zero.",
@@ -1805,7 +1805,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "Impact questions traverse relationships upward from the CI to the services that depend on it \u2014 precisely what Query Builder and relationship/impact views provide. The quality of that answer depends on relationship health, tying Insight measurement directly to usefulness.",
+    "rationale": "Impact questions traverse relationships upward from the CI to the services that depend on it — precisely what Query Builder and relationship/impact views provide. The quality of that answer depends on relationship health, tying Insight measurement directly to usefulness.",
     "distractor_notes": {
       "B": "KB search returns articles, not dependency impact.",
       "C": "The survey designer builds surveys, not impact maps.",
@@ -1853,7 +1853,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "Actionable means a metric doesn't just report a problem, it leads to one: drill to the failing CIs, understand the rule, and assign a fix. Metrics that can't be decomposed into concrete remediation are vanity numbers \u2014 the point of Insight is to enable action.",
+    "rationale": "Actionable means a metric doesn't just report a problem, it leads to one: drill to the failing CIs, understand the rule, and assign a fix. Metrics that can't be decomposed into concrete remediation are vanity numbers — the point of Insight is to enable action.",
     "distractor_notes": {
       "B": "Hiding metrics from fixers makes them un-actionable.",
       "C": "A lone number with no detail can't be acted on.",
@@ -1901,7 +1901,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "Relationship completeness checks flag CIs that should be connected but aren't \u2014 for instance a known application class with no hosting relationship. Surfacing these gaps lets teams fill them, producing the complete service maps that impact analysis depends on.",
+    "rationale": "Relationship completeness checks flag CIs that should be connected but aren't — for instance a known application class with no hosting relationship. Surfacing these gaps lets teams fill them, producing the complete service maps that impact analysis depends on.",
     "distractor_notes": {
       "B": "These checks identify missing relationships; they don't delete existing ones.",
       "C": "They're functionally important for accurate dependency views, not cosmetic.",
@@ -1997,7 +1997,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "'Fit for purpose' means the CMDB is reliable enough for the decisions made on it \u2014 change impact, incident routing, security. Insight quantifies exactly that fitness through completeness, compliance, and correctness, so you can judge whether the data can be trusted for its intended uses.",
+    "rationale": "'Fit for purpose' means the CMDB is reliable enough for the decisions made on it — change impact, incident routing, security. Insight quantifies exactly that fitness through completeness, compliance, and correctness, so you can judge whether the data can be trusted for its intended uses.",
     "distractor_notes": {
       "B": "Data-center size is a physical fact, not data fitness.",
       "C": "Employee satisfaction is an HR metric, not CMDB fitness.",
@@ -2093,7 +2093,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "To compare data quality, compare health scores scoped to each unit \u2014 by owning group, service, or CI scope. That yields an apples-to-apples quality comparison. Incident counts, locations, and headcounts measure other things entirely.",
+    "rationale": "To compare data quality, compare health scores scoped to each unit — by owning group, service, or CI scope. That yields an apples-to-apples quality comparison. Incident counts, locations, and headcounts measure other things entirely.",
     "distractor_notes": {
       "B": "Incident volume reflects operations, not CMDB data quality.",
       "C": "Office location says nothing about data quality.",
@@ -2141,10 +2141,10 @@
     "correct": [
       "A"
     ],
-    "rationale": "CSDM defines how services and CIs should be modeled; Health can measure conformance to that model \u2014 are service relationships populated, are the right classes used. So Insight doubles as a way to gauge how cleanly CSDM has been adopted.",
+    "rationale": "CSDM defines how services and CIs should be modeled; Health can measure conformance to that model — are service relationships populated, are the right classes used. So Insight doubles as a way to gauge how cleanly CSDM has been adopted.",
     "distractor_notes": {
       "B": "They reinforce each other: Health can assess CSDM conformance.",
-      "C": "CSDM is a model; Health is measurement \u2014 neither replaces the other.",
+      "C": "CSDM is a model; Health is measurement — neither replaces the other.",
       "D": "Health works alongside CSDM, not only when it's off."
     },
     "references": [
@@ -2240,7 +2240,7 @@
     "rationale": "It's a front-line/scoreboard relationship: IRE is the prevention at the door (matching, flagging, de-duplication tasks), while Insight measures how many duplicates remain and surfaces them for cleanup. Together they reduce duplicates and keep them visible.",
     "distractor_notes": {
       "B": "Insight doesn't ingest from the network; it measures the resulting data.",
-      "C": "Reversed \u2014 Insight measures duplicates; it doesn't create them.",
+      "C": "Reversed — Insight measures duplicates; it doesn't create them.",
       "D": "Both are central to managing duplicate CIs."
     },
     "references": [
@@ -2301,6 +2301,582 @@
       "insight",
       "summary-plus-detail",
       "reporting"
+    ]
+  },
+  {
+    "id": "cisdf-ins-049",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Insight",
+    "subdomain": "CMDB Health dashboards",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "The CMDB Health dashboard shows a low Completeness score for servers. What does this most directly indicate?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Required attributes or relationships are missing on many server CIs"
+      },
+      {
+        "id": "B",
+        "text": "There are duplicate server CIs"
+      },
+      {
+        "id": "C",
+        "text": "Servers belong to the wrong class"
+      },
+      {
+        "id": "D",
+        "text": "The MID Server is offline"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Completeness measures whether required attributes and relationships are populated. A low score means many server CIs are missing required data — distinct from Correctness (duplicates/stale) and Compliance (conformance to required structure).",
+    "distractor_notes": {
+      "B": "Duplicates fall under Correctness, not Completeness.",
+      "C": "Wrong-class issues are Compliance concerns.",
+      "D": "MID Server status isn't what the Completeness KPI measures."
+    },
+    "references": [
+      {
+        "title": "CMDB Health dashboard",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/cmdb-health.html"
+      }
+    ],
+    "tags": [
+      "cmdb-health",
+      "completeness",
+      "kpi"
+    ]
+  },
+  {
+    "id": "cisdf-ins-050",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Insight",
+    "subdomain": "Correctness and duplicates",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A health review finds many CIs that are duplicates or haven't been updated in months. Which CMDB Health pillar covers these issues?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Correctness"
+      },
+      {
+        "id": "B",
+        "text": "Completeness"
+      },
+      {
+        "id": "C",
+        "text": "Compliance"
+      },
+      {
+        "id": "D",
+        "text": "Capacity"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Correctness covers data accuracy problems like duplicates, stale CIs, and orphaned relationships. Completeness is about missing data; Compliance is about conforming to the required model.",
+    "distractor_notes": {
+      "B": "Completeness is about missing required attributes/relationships, not duplicates or staleness.",
+      "C": "Compliance is about conformance to required classes/rules.",
+      "D": "Capacity is not a CMDB Health pillar."
+    },
+    "references": [
+      {
+        "title": "CMDB Health dashboard",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/cmdb-health.html"
+      }
+    ],
+    "tags": [
+      "cmdb-health",
+      "correctness",
+      "duplicates"
+    ]
+  },
+  {
+    "id": "cisdf-ins-051",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Insight",
+    "subdomain": "Compliance",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "An audit finds CIs that don't conform to the organization's required class model and identification rules. Which CMDB Health pillar reflects this?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Compliance"
+      },
+      {
+        "id": "B",
+        "text": "Completeness"
+      },
+      {
+        "id": "C",
+        "text": "Correctness"
+      },
+      {
+        "id": "D",
+        "text": "Availability"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Compliance measures whether CIs conform to required standards — proper class, required identifier rules, and policy. Completeness and Correctness address missing data and accuracy respectively.",
+    "distractor_notes": {
+      "B": "Completeness is about missing attributes/relationships.",
+      "C": "Correctness is about duplicates and stale/accurate data.",
+      "D": "Availability isn't a CMDB Health pillar."
+    },
+    "references": [
+      {
+        "title": "CMDB Health dashboard",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/cmdb-health.html"
+      }
+    ],
+    "tags": [
+      "cmdb-health",
+      "compliance",
+      "standards"
+    ]
+  },
+  {
+    "id": "cisdf-ins-052",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Insight",
+    "subdomain": "CMDB query and exploration",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "An analyst needs to visually find all application servers related to a specific business service, traversing CI relationships. Which tool fits best?",
+    "options": [
+      {
+        "id": "A",
+        "text": "CMDB Query Builder"
+      },
+      {
+        "id": "B",
+        "text": "A transform map"
+      },
+      {
+        "id": "C",
+        "text": "A coalesce field"
+      },
+      {
+        "id": "D",
+        "text": "The Service Catalog"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "CMDB Query Builder lets you visually build queries across CI classes and their relationships, ideal for traversing from a business service to its related servers without scripting.",
+    "distractor_notes": {
+      "B": "Transform maps move imported data; they don't explore relationships.",
+      "C": "Coalesce matches records on import.",
+      "D": "The Service Catalog is for ordering services."
+    },
+    "references": [
+      {
+        "title": "CMDB Query Builder",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/cmdb-query-builder.html"
+      }
+    ],
+    "tags": [
+      "query-builder",
+      "relationships",
+      "exploration"
+    ]
+  },
+  {
+    "id": "cisdf-ins-053",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Insight",
+    "subdomain": "Relationship health",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "Many CIs exist with no relationships to any service or other CI. Under which aspect of CMDB Health do these 'orphan' CIs typically surface?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Correctness (relationship health)"
+      },
+      {
+        "id": "B",
+        "text": "Compliance only"
+      },
+      {
+        "id": "C",
+        "text": "They never appear in health metrics"
+      },
+      {
+        "id": "D",
+        "text": "Capacity planning"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Orphaned CIs (no relationships) are a relationship-health/correctness concern — they reduce the CMDB's usefulness for impact analysis. Health metrics specifically surface these for remediation.",
+    "distractor_notes": {
+      "B": "Compliance is about conformance to required structure, not orphan relationships specifically.",
+      "C": "Health metrics do surface orphan/relationship issues.",
+      "D": "Capacity planning isn't a CMDB Health measure."
+    },
+    "references": [
+      {
+        "title": "CMDB Health dashboard",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/cmdb-health.html"
+      }
+    ],
+    "tags": [
+      "relationship-health",
+      "orphan",
+      "correctness"
+    ]
+  },
+  {
+    "id": "cisdf-ins-054",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Insight",
+    "subdomain": "Health metrics and KPIs",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "Leadership asks for a single, trackable measure of CMDB quality that can be improved over time. What do the CMDB Health dashboards provide?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Scored KPIs for completeness, correctness, and compliance"
+      },
+      {
+        "id": "B",
+        "text": "A list of open incidents"
+      },
+      {
+        "id": "C",
+        "text": "The instance's CPU usage"
+      },
+      {
+        "id": "D",
+        "text": "A catalog of orderable items"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "CMDB Health expresses quality as scored KPIs across completeness, correctness, and compliance, so teams can track improvement over time and target remediation where scores are low.",
+    "distractor_notes": {
+      "B": "Open incidents aren't a CMDB quality measure.",
+      "C": "CPU usage is infrastructure monitoring, not CMDB health.",
+      "D": "A catalog lists services to order."
+    },
+    "references": [
+      {
+        "title": "CMDB Health dashboard",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/cmdb-health.html"
+      }
+    ],
+    "tags": [
+      "kpi",
+      "health-score",
+      "measurement"
+    ]
+  },
+  {
+    "id": "cisdf-ins-055",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Insight",
+    "subdomain": "Correctness and duplicates",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "After the Correctness dashboard flags duplicate CIs, what is the appropriate remediation path?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Work the de-duplication tasks to merge duplicates into one CI"
+      },
+      {
+        "id": "B",
+        "text": "Delete the entire CI class"
+      },
+      {
+        "id": "C",
+        "text": "Disable the CMDB Health dashboard"
+      },
+      {
+        "id": "D",
+        "text": "Create more duplicates to balance them"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Duplicates are resolved by working de-duplication tasks, which let a data manager merge the records into a single authoritative CI. Deleting classes or disabling dashboards hides the problem instead of fixing it.",
+    "distractor_notes": {
+      "B": "Deleting a whole class is destructive and unnecessary.",
+      "C": "Disabling the dashboard removes visibility, not the duplicates.",
+      "D": "Adding duplicates makes the problem worse."
+    },
+    "references": [
+      {
+        "title": "De-duplication tasks",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/cmdb-deduplication-tasks.html"
+      }
+    ],
+    "tags": [
+      "duplicates",
+      "remediation",
+      "correctness"
+    ]
+  },
+  {
+    "id": "cisdf-ins-056",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Insight",
+    "subdomain": "Reporting and dashboards",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A data manager wants to focus health scoring on only the CIs that support a critical service rather than the entire CMDB. How can they scope it?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Apply a CMDB group that defines the relevant CIs"
+      },
+      {
+        "id": "B",
+        "text": "Delete unrelated CIs"
+      },
+      {
+        "id": "C",
+        "text": "Use a coalesce field"
+      },
+      {
+        "id": "D",
+        "text": "Turn off IRE"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "CMDB groups define a targeted subset of CIs, letting health dashboards and remediation focus on a specific service or business unit instead of the whole CMDB.",
+    "distractor_notes": {
+      "B": "Deleting unrelated CIs is destructive and unrelated to scoping a view.",
+      "C": "Coalesce matches import records.",
+      "D": "Turning off IRE would harm data integrity, not scope a dashboard."
+    },
+    "references": [
+      {
+        "title": "CMDB Groups",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/cmdb-groups.html"
+      }
+    ],
+    "tags": [
+      "cmdb-groups",
+      "scoping",
+      "health"
+    ]
+  },
+  {
+    "id": "cisdf-ins-057",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Insight",
+    "subdomain": "Health metrics and KPIs",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "Two months after a cleanup effort, leadership wants proof the CMDB improved. How do the health dashboards support this?",
+    "options": [
+      {
+        "id": "A",
+        "text": "By tracking KPI scores over time to show trend improvement"
+      },
+      {
+        "id": "B",
+        "text": "By counting how many users logged in"
+      },
+      {
+        "id": "C",
+        "text": "By listing all update sets committed"
+      },
+      {
+        "id": "D",
+        "text": "By measuring email volume"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Health KPIs are tracked over time, so you can show that completeness/correctness/compliance scores trended up after remediation — concrete evidence of improvement.",
+    "distractor_notes": {
+      "B": "Login counts don't reflect CMDB quality.",
+      "C": "Update set counts track config moves, not data quality.",
+      "D": "Email volume is unrelated to CMDB health."
+    },
+    "references": [
+      {
+        "title": "CMDB Health dashboard",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/cmdb-health.html"
+      }
+    ],
+    "tags": [
+      "kpi",
+      "trend",
+      "improvement"
+    ]
+  },
+  {
+    "id": "cisdf-ins-058",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Insight",
+    "subdomain": "CMDB query and exploration",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An analyst wants to reuse a complex multi-class CMDB query and share it with teammates. What does CMDB Query Builder allow?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Saving queries for reuse and sharing"
+      },
+      {
+        "id": "B",
+        "text": "Encrypting the CMDB"
+      },
+      {
+        "id": "C",
+        "text": "Scheduling instance upgrades"
+      },
+      {
+        "id": "D",
+        "text": "Sending SLA emails"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Query Builder lets you save complex relationship queries so they can be rerun and shared — useful for repeatable analysis across CI classes.",
+    "distractor_notes": {
+      "B": "Query Builder explores data; it doesn't encrypt the CMDB.",
+      "C": "Upgrades are unrelated to querying.",
+      "D": "SLA emails are part of service-level management."
+    },
+    "references": [
+      {
+        "title": "CMDB Query Builder",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/cmdb-query-builder.html"
+      }
+    ],
+    "tags": [
+      "query-builder",
+      "reuse",
+      "sharing"
+    ]
+  },
+  {
+    "id": "cisdf-ins-059",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Insight",
+    "subdomain": "CMDB Health dashboards",
+    "difficulty": "application",
+    "type": "multi_select",
+    "stem": "Which TWO are pillars measured by CMDB Health?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Completeness"
+      },
+      {
+        "id": "B",
+        "text": "Correctness"
+      },
+      {
+        "id": "C",
+        "text": "Capacity"
+      },
+      {
+        "id": "D",
+        "text": "Connectivity"
+      }
+    ],
+    "correct": [
+      "A",
+      "B"
+    ],
+    "rationale": "CMDB Health measures Completeness, Correctness, and Compliance. Capacity and connectivity are not CMDB Health pillars.",
+    "distractor_notes": {
+      "C": "Capacity is not a CMDB Health pillar.",
+      "D": "Connectivity is not a CMDB Health pillar."
+    },
+    "references": [
+      {
+        "title": "CMDB Health dashboard",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/cmdb-health.html"
+      }
+    ],
+    "tags": [
+      "cmdb-health",
+      "pillars",
+      "kpi"
+    ]
+  },
+  {
+    "id": "cisdf-ins-060",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Insight",
+    "subdomain": "Reporting and dashboards",
+    "difficulty": "application",
+    "type": "multi_select",
+    "stem": "Which TWO actions help improve a low CMDB Health score?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Populate missing required attributes/relationships (completeness)"
+      },
+      {
+        "id": "B",
+        "text": "Resolve de-duplication tasks (correctness)"
+      },
+      {
+        "id": "C",
+        "text": "Hide the dashboard from view"
+      },
+      {
+        "id": "D",
+        "text": "Disable identification rules"
+      }
+    ],
+    "correct": [
+      "A",
+      "B"
+    ],
+    "rationale": "Filling in required data improves completeness and merging duplicates improves correctness — both raise the health score. Hiding the dashboard or disabling identification rules would mask or worsen the problem.",
+    "distractor_notes": {
+      "C": "Hiding the dashboard removes visibility, not the underlying issues.",
+      "D": "Disabling identification rules causes more duplicates, lowering correctness."
+    },
+    "references": [
+      {
+        "title": "CMDB Health dashboard",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/cmdb-health.html"
+      }
+    ],
+    "tags": [
+      "health",
+      "remediation",
+      "improvement"
     ]
   }
 ]

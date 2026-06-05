@@ -7,7 +7,7 @@
     "subdomain": "CMDB governance roles and responsibilities",
     "difficulty": "recall",
     "type": "single_select",
-    "stem": "In a well-governed CMDB, who is accountable for defining policy, standards, and the data model \u2014 the strategic ownership of CMDB data quality across the organization?",
+    "stem": "In a well-governed CMDB, who is accountable for defining policy, standards, and the data model — the strategic ownership of CMDB data quality across the organization?",
     "options": [
       {
         "id": "A",
@@ -29,7 +29,7 @@
     "correct": [
       "B"
     ],
-    "rationale": "Governance is a people-and-process responsibility before it is a tool. ServiceNow's CMDB governance model puts a governance board / CMDB owner at the top: they set policy, define standards, approve the data model, and hold accountability for data quality. Tools like Data Manager and Discovery execute against that policy \u2014 they don't define it.",
+    "rationale": "Governance is a people-and-process responsibility before it is a tool. ServiceNow's CMDB governance model puts a governance board / CMDB owner at the top: they set policy, define standards, approve the data model, and hold accountability for data quality. Tools like Data Manager and Discovery execute against that policy — they don't define it.",
     "distractor_notes": {
       "A": "The Data Manager is an execution tool (and an operational role) for lifecycle actions; it carries out policy, it doesn't author it.",
       "C": "Discovery is an ingestion source. Automating population doesn't make it the accountable owner of quality or standards.",
@@ -55,7 +55,7 @@
     "subdomain": "CMDB Data Manager and CI lifecycle",
     "difficulty": "application",
     "type": "single_select",
-    "stem": "You need to automatically retire CIs that Discovery has not seen for 90 days, then delete them 30 days after that \u2014 applied consistently and at scale. Which tool is purpose-built for this?",
+    "stem": "You need to automatically retire CIs that Discovery has not seen for 90 days, then delete them 30 days after that — applied consistently and at scale. Which tool is purpose-built for this?",
     "options": [
       {
         "id": "A",
@@ -77,9 +77,9 @@
     "correct": [
       "A"
     ],
-    "rationale": "CMDB Data Manager exists precisely to manage the CI lifecycle \u2014 defining policies and rules that move CIs through stages such as retire, then archive or destroy/delete, on conditions like 'last discovered' age. It applies actions consistently across large CI populations without ad-hoc scripting.",
+    "rationale": "CMDB Data Manager exists precisely to manage the CI lifecycle — defining policies and rules that move CIs through stages such as retire, then archive or destroy/delete, on conditions like 'last discovered' age. It applies actions consistently across large CI populations without ad-hoc scripting.",
     "distractor_notes": {
-      "B": "Deleting rows directly skips relationship cleanup, audit, and the lifecycle states Data Manager manages \u2014 it's exactly the un-governed approach Data Manager replaces.",
+      "B": "Deleting rows directly skips relationship cleanup, audit, and the lifecycle states Data Manager manages — it's exactly the un-governed approach Data Manager replaces.",
       "C": "Health remediation surfaces and fixes quality issues; it isn't the scheduled lifecycle (retire/archive/delete) engine.",
       "D": "IRE identifies and reconciles incoming data into CIs; it doesn't run retirement/deletion lifecycle policies."
     },
@@ -115,7 +115,7 @@
       },
       {
         "id": "C",
-        "text": "They are identical \u2014 both just set the CI's install_status to Retired"
+        "text": "They are identical — both just set the CI's install_status to Retired"
       },
       {
         "id": "D",
@@ -173,7 +173,7 @@
     "correct": [
       "B"
     ],
-    "rationale": "Data Certification is a governance control that periodically generates certification tasks (filters) and routes them to accountable users to confirm \u2014 or correct \u2014 that the data still reflects reality. It's how an organization keeps human-maintained data honest between automated scans.",
+    "rationale": "Data Certification is a governance control that periodically generates certification tasks (filters) and routes them to accountable users to confirm — or correct — that the data still reflects reality. It's how an organization keeps human-maintained data honest between automated scans.",
     "distractor_notes": {
       "A": "That's Discovery. Certification verifies existing data; it doesn't probe the network.",
       "C": "Merging duplicates is de-duplication / IRE remediation, not certification.",
@@ -223,7 +223,7 @@
     ],
     "rationale": "Identification rules answer the question 'is this the same CI I already have?' Each rule contains one or more identifier entries whose criterion attributes (e.g., serial number, name) are matched against existing records to identify an exact match, create a new CI, or flag a duplicate.",
     "distractor_notes": {
-      "A": "That's a reconciliation rule's job \u2014 deciding the authoritative source per attribute.",
+      "A": "That's a reconciliation rule's job — deciding the authoritative source per attribute.",
       "C": "Retention/deletion is Data Manager lifecycle, not identification.",
       "D": "Edit access is controlled by roles/ACLs, not IRE identification rules."
     },
@@ -367,7 +367,7 @@
     ],
     "rationale": "The CMDB Workspace is the manager's cockpit: health KPIs, remediation queues, and data management surfaced together so a configuration manager can see quality problems and act on them without hopping across disparate modules.",
     "distractor_notes": {
-      "A": "It's far more than a table view \u2014 it's an analytics-and-action workspace.",
+      "A": "It's far more than a table view — it's an analytics-and-action workspace.",
       "C": "Pattern authoring lives in Discovery / Pattern Designer, not the CMDB manager workspace.",
       "D": "Incident notifications are an ITSM concern, unrelated to the CMDB workspace's purpose."
     },
@@ -461,9 +461,9 @@
     "correct": [
       "B"
     ],
-    "rationale": "A CMDB decays without continuous care \u2014 environments change, sources drift, duplicates creep in. Governance is therefore a standing program: defined owners, recurring certification, health monitoring, and lifecycle management that persist long after the implementation 'project' ends.",
+    "rationale": "A CMDB decays without continuous care — environments change, sources drift, duplicates creep in. Governance is therefore a standing program: defined owners, recurring certification, health monitoring, and lifecycle management that persist long after the implementation 'project' ends.",
     "distractor_notes": {
-      "A": "The opposite is true \u2014 the environment changes constantly, which is exactly why governance must be ongoing.",
+      "A": "The opposite is true — the environment changes constantly, which is exactly why governance must be ongoing.",
       "C": "Governance defines who maintains data, but it isn't about freezing edit rights to a project team forever.",
       "D": "Governance must outlive the rollout; limiting it to initial Discovery is how CMDBs rot."
     },
@@ -535,7 +535,7 @@
     "subdomain": "Identification and Reconciliation Engine",
     "difficulty": "application",
     "type": "single_select",
-    "stem": "A database instance CI cannot be uniquely identified by its own attributes alone \u2014 it only makes sense in the context of the server that hosts it. Which IRE concept models this?",
+    "stem": "A database instance CI cannot be uniquely identified by its own attributes alone — it only makes sense in the context of the server that hosts it. Which IRE concept models this?",
     "options": [
       {
         "id": "A",
@@ -559,7 +559,7 @@
     ],
     "rationale": "Dependent identifiers handle CIs that aren't unique on their own. The engine identifies them only in combination with a qualifying related CI (e.g., the hosting server), using the relationship plus the dependent CI's attributes to pin down identity.",
     "distractor_notes": {
-      "A": "An independent identifier would assume the CI is uniquely identifiable by its own attributes \u2014 exactly what's not true here.",
+      "A": "An independent identifier would assume the CI is uniquely identifiable by its own attributes — exactly what's not true here.",
       "C": "Reconciliation governs which source writes attributes, not contextual identity.",
       "D": "Certification is a human verification process, not an identity-resolution mechanism."
     },
@@ -608,7 +608,7 @@
     "rationale": "Policies turn governance intent into automated, repeatable enforcement: conditions select the CIs, actions define what happens (retire, archive, remediate), and the rule runs consistently so quality standards aren't dependent on someone remembering to act.",
     "distractor_notes": {
       "B": "Policies govern data already in the CMDB; they don't substitute for ingestion sources.",
-      "C": "Governance restricts and assigns responsibility \u2014 it doesn't hand admin to everyone.",
+      "C": "Governance restricts and assigns responsibility — it doesn't hand admin to everyone.",
       "D": "Disabling relationships would damage the service model; that's not what policies are for."
     },
     "references": [
@@ -703,7 +703,7 @@
     ],
     "rationale": "Certification is a detect step; remediation is the act. A failed certification flags data that no longer matches reality, and the governance loop closes when someone corrects the record (or the underlying source). Failing certification doesn't delete CIs or trigger platform-wide rule reruns.",
     "distractor_notes": {
-      "A": "Failing certification signals 'fix me', not 'destroy me' \u2014 deletion is a deliberate lifecycle action.",
+      "A": "Failing certification signals 'fix me', not 'destroy me' — deletion is a deliberate lifecycle action.",
       "C": "Certification results don't cascade into a global IRE rerun.",
       "D": "Health scores recompute on each scan; certification doesn't lock them."
     },
@@ -727,7 +727,7 @@
     "subdomain": "CMDB governance roles and responsibilities",
     "difficulty": "recall",
     "type": "single_select",
-    "stem": "Which role is typically responsible for the day-to-day operational health of the CMDB \u2014 monitoring quality, triaging remediation, and running lifecycle actions?",
+    "stem": "Which role is typically responsible for the day-to-day operational health of the CMDB — monitoring quality, triaging remediation, and running lifecycle actions?",
     "options": [
       {
         "id": "A",
@@ -749,7 +749,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "Above the strategic governance board sits an operational owner \u2014 the Configuration/CMDB Manager \u2014 who lives in the health dashboards and workspace, drives remediation, oversees certification, and executes lifecycle policy. They turn governance standards into daily upkeep.",
+    "rationale": "Above the strategic governance board sits an operational owner — the Configuration/CMDB Manager — who lives in the health dashboards and workspace, drives remediation, oversees certification, and executes lifecycle policy. They turn governance standards into daily upkeep.",
     "distractor_notes": {
       "B": "Incident users consume services; they don't own CMDB operational health.",
       "C": "A firewall is infrastructure, not a governance role.",
@@ -775,7 +775,7 @@
     "subdomain": "Identification and Reconciliation Engine",
     "difficulty": "recall",
     "type": "single_select",
-    "stem": "Why is it strongly recommended that all data entering the CMDB \u2014 Discovery, integrations, imports \u2014 go through IRE rather than writing directly to CI tables?",
+    "stem": "Why is it strongly recommended that all data entering the CMDB — Discovery, integrations, imports — go through IRE rather than writing directly to CI tables?",
     "options": [
       {
         "id": "A",
@@ -799,7 +799,7 @@
     ],
     "rationale": "IRE is the single front door to the CMDB. Routing every source through it means the same identification logic prevents duplicate CIs and the same reconciliation rules stop a weak source from overwriting authoritative data. Bypassing it is the fastest way to corrupt the CMDB.",
     "distractor_notes": {
-      "A": "The benefit is data integrity and consistency, not raw speed \u2014 IRE adds processing.",
+      "A": "The benefit is data integrity and consistency, not raw speed — IRE adds processing.",
       "C": "Direct inserts are possible; they're just strongly discouraged because they skip governance.",
       "D": "IRE governs identity and reconciliation; it isn't an encryption layer."
     },
@@ -827,19 +827,19 @@
     "options": [
       {
         "id": "A",
-        "text": "Destroy \u2192 Archive \u2192 Retire"
+        "text": "Destroy → Archive → Retire"
       },
       {
         "id": "B",
-        "text": "Retire \u2192 Archive \u2192 Destroy"
+        "text": "Retire → Archive → Destroy"
       },
       {
         "id": "C",
-        "text": "Archive \u2192 Retire \u2192 Discover"
+        "text": "Archive → Retire → Discover"
       },
       {
         "id": "D",
-        "text": "Certify \u2192 Reconcile \u2192 Identify"
+        "text": "Certify → Reconcile → Identify"
       }
     ],
     "correct": [
@@ -847,7 +847,7 @@
     ],
     "rationale": "The lifecycle escalates in finality: first Retire (mark the CI out of active operation), then Archive (move it off active tables but keep it recoverable), then Destroy (permanent removal). Each stage is a more irreversible step than the last.",
     "distractor_notes": {
-      "A": "Reversed \u2014 you don't destroy before retiring; that's the opposite of controlled retirement.",
+      "A": "Reversed — you don't destroy before retiring; that's the opposite of controlled retirement.",
       "C": "Discover is an ingestion action, not the tail end of a retirement lifecycle.",
       "D": "Those are IRE/certification concepts, not the retire/archive/destroy lifecycle."
     },
@@ -895,7 +895,7 @@
     ],
     "rationale": "Enforcement at entry beats clean-up after the fact. Defining the attributes as mandatory (via data policy / required-field governance on the class) prevents incomplete CIs from being saved in the first place, which is exactly the governance principle of preventing bad data rather than chasing it.",
     "distractor_notes": {
-      "B": "Reminders rely on human diligence and let bad data in \u2014 weak governance.",
+      "B": "Reminders rely on human diligence and let bad data in — weak governance.",
       "C": "Mass-deleting incomplete CIs destroys potentially real infrastructure records; prevention is preferred.",
       "D": "Disabling Discovery sacrifices the CMDB's whole purpose to avoid a data-quality rule."
     },
@@ -941,7 +941,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "Each payload carries a data source (e.g., 'ServiceNow', a specific Service Graph Connector, an import). Reconciliation rules reference these sources to decide who's authoritative for which attributes \u2014 so identifying the source is what makes 'don't let source X overwrite source Y' possible.",
+    "rationale": "Each payload carries a data source (e.g., 'ServiceNow', a specific Service Graph Connector, an import). Reconciliation rules reference these sources to decide who's authoritative for which attributes — so identifying the source is what makes 'don't let source X overwrite source Y' possible.",
     "distractor_notes": {
       "B": "Data source is a logical origin label, not physical storage.",
       "C": "Viewing a CI doesn't make someone a data source.",
@@ -989,7 +989,7 @@
     "correct": [
       "B"
     ],
-    "rationale": "The CMDB earns its keep through relationships \u2014 they power service mapping, impact analysis, and dependency views. An orphan CI is data with no context: it can't show what it supports or depends on, so relationship health is a core governance KPI and orphans are flagged for remediation.",
+    "rationale": "The CMDB earns its keep through relationships — they power service mapping, impact analysis, and dependency views. An orphan CI is data with no context: it can't show what it supports or depends on, so relationship health is a core governance KPI and orphans are flagged for remediation.",
     "distractor_notes": {
       "A": "Storage is trivial; the real cost is lost analytical value, not disk.",
       "C": "Orphan CIs don't delete incidents.",
@@ -1037,7 +1037,7 @@
     "correct": [
       "B"
     ],
-    "rationale": "Automated scans catch what machines can see; certification covers what they can't \u2014 business ownership, accuracy of human-maintained fields, contextual correctness. It's a manual attestation layer that complements Discovery and Health, closing gaps automation alone leaves.",
+    "rationale": "Automated scans catch what machines can see; certification covers what they can't — business ownership, accuracy of human-maintained fields, contextual correctness. It's a manual attestation layer that complements Discovery and Health, closing gaps automation alone leaves.",
     "distractor_notes": {
       "A": "Certification is explicitly the human counterpart to automated discovery, not another machine scan.",
       "C": "It governs data accuracy, not network security.",
@@ -1087,7 +1087,7 @@
     ],
     "rationale": "Duplicates from a payload usually mean IRE has nothing reliable to match on. The fix is to supply the criterion attributes the identifier expects (or revise the identification rule to match what the source can provide) so IRE can resolve identity instead of inserting new records.",
     "distractor_notes": {
-      "A": "Disabling IRE removes the guardrail and guarantees more duplicates \u2014 the opposite of governance.",
+      "A": "Disabling IRE removes the guardrail and guarantees more duplicates — the opposite of governance.",
       "C": "Deleting the class destroys legitimate CIs and doesn't address the matching gap.",
       "D": "Hiding duplicates on a dashboard doesn't fix the underlying identity problem."
     },
@@ -1133,7 +1133,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "The value of Data Manager is governance, not magic: lifecycle actions become declarative policies with conditions, previews, scheduling, and an audit trail \u2014 repeatable and consistent \u2014 instead of one-off scripts that are hard to review, easy to get wrong, and invisible after they run.",
+    "rationale": "The value of Data Manager is governance, not magic: lifecycle actions become declarative policies with conditions, previews, scheduling, and an audit trail — repeatable and consistent — instead of one-off scripts that are hard to review, easy to get wrong, and invisible after they run.",
     "distractor_notes": {
       "B": "Data Manager manages existing CIs' lifecycle; it doesn't perform network discovery.",
       "C": "It complements but does not replace change management.",
@@ -1183,7 +1183,7 @@
     ],
     "rationale": "Multisource CMDB keeps a per-source record of what each integration reported for an attribute and what the reconciled (winning) value is. That transparency lets governance teams see exactly where sources disagree and why a particular value won, instead of silently overwriting and losing the trail.",
     "distractor_notes": {
-      "A": "It surfaces source contributions rather than hiding them \u2014 the opposite of obscuring sources.",
+      "A": "It surfaces source contributions rather than hiding them — the opposite of obscuring sources.",
       "C": "It doesn't block Discovery; it records what Discovery and other sources each reported.",
       "D": "Multiple sources on one CI is normal and expected; nothing is deleted for it."
     },
@@ -1373,7 +1373,7 @@
     "correct": [
       "B"
     ],
-    "rationale": "That's the entire point of reconciliation: the rule designates SCCM as authoritative for OS, so Discovery \u2014 though it can update other attributes \u2014 cannot clobber the OS field. The authoritative source's value stands, keeping the attribute trustworthy.",
+    "rationale": "That's the entire point of reconciliation: the rule designates SCCM as authoritative for OS, so Discovery — though it can update other attributes — cannot clobber the OS field. The authoritative source's value stands, keeping the attribute trustworthy.",
     "distractor_notes": {
       "A": "Discovery does not automatically win; reconciliation rules override that assumption per attribute.",
       "C": "Conflicting attribute values don't delete CIs.",
@@ -1517,7 +1517,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "Inclusion (and exclusion) rules let governance decide what IRE acts on \u2014 filtering or qualifying the payload items the engine should process versus ignore. They give fine-grained control so unwanted or low-quality records don't flow into the CMDB.",
+    "rationale": "Inclusion (and exclusion) rules let governance decide what IRE acts on — filtering or qualifying the payload items the engine should process versus ignore. They give fine-grained control so unwanted or low-quality records don't flow into the CMDB.",
     "distractor_notes": {
       "B": "List view columns are a UI concern, not IRE processing.",
       "C": "Adding CIs to changes is a change-management activity.",
@@ -1565,7 +1565,7 @@
     "correct": [
       "B"
     ],
-    "rationale": "Conventions aren't cosmetic. Consistent names and attribute formats help IRE match records correctly (fewer duplicates), make data readable and joinable across ITSM/ITOM, and reduce the manual cleanup burden \u2014 all core governance wins.",
+    "rationale": "Conventions aren't cosmetic. Consistent names and attribute formats help IRE match records correctly (fewer duplicates), make data readable and joinable across ITSM/ITOM, and reduce the manual cleanup burden — all core governance wins.",
     "distractor_notes": {
       "A": "Appearance is irrelevant; the benefit is data integrity and usability.",
       "C": "Standards complement IRE; they don't replace identity resolution.",
@@ -1613,7 +1613,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "The filter defines the population \u2014 which records the certification campaign will ask owners to verify. Scope it well and the right people review the right CIs; scope it poorly and you either miss data or overwhelm reviewers.",
+    "rationale": "The filter defines the population — which records the certification campaign will ask owners to verify. Scope it well and the right people review the right CIs; scope it poorly and you either miss data or overwhelm reviewers.",
     "distractor_notes": {
       "B": "There's no governance value in banner color; the filter is about record selection.",
       "C": "MID Server performance is unrelated to certification filters.",
@@ -1661,10 +1661,10 @@
     "correct": [
       "B"
     ],
-    "rationale": "A workspace turns remediation into managed work: it ranks issues by impact, assigns and tracks owners, offers guided fixes, and leaves an audit trail. Ad-hoc table edits do the change but skip prioritization, accountability, and traceability \u2014 the governance parts.",
+    "rationale": "A workspace turns remediation into managed work: it ranks issues by impact, assigns and tracks owners, offers guided fixes, and leaves an audit trail. Ad-hoc table edits do the change but skip prioritization, accountability, and traceability — the governance parts.",
     "distractor_notes": {
       "A": "CMDB tables are editable; the issue is governance, not technical lock.",
-      "C": "Editing tables isn't illegal \u2014 it's just ungoverned.",
+      "C": "Editing tables isn't illegal — it's just ungoverned.",
       "D": "The workspace doesn't stop Discovery; it organizes remediation."
     },
     "references": [
@@ -1709,9 +1709,9 @@
     "correct": [
       "B"
     ],
-    "rationale": "Matching multiple CIs means identity is ambiguous \u2014 often a symptom of pre-existing duplicates or weak identifiers. IRE flags these rather than guessing, so governance can resolve the ambiguity (merge duplicates, tighten identifiers) instead of silently corrupting a record.",
+    "rationale": "Matching multiple CIs means identity is ambiguous — often a symptom of pre-existing duplicates or weak identifiers. IRE flags these rather than guessing, so governance can resolve the ambiguity (merge duplicates, tighten identifiers) instead of silently corrupting a record.",
     "distractor_notes": {
-      "A": "It's specifically not a clean single match \u2014 several CIs qualified.",
+      "A": "It's specifically not a clean single match — several CIs qualified.",
       "C": "Deleting all matches would destroy legitimate data; review and merge is correct.",
       "D": "Ambiguous matches absolutely warrant attention; ignoring them entrenches duplicates."
     },
@@ -1805,7 +1805,7 @@
     "correct": [
       "B"
     ],
-    "rationale": "Trustworthiness is quality, not quantity. The CMDB Health score rolls completeness, compliance, and correctness into a defensible measure of how reliable the data is \u2014 exactly the kind of summary governance reports upward. Raw CI counts say nothing about accuracy.",
+    "rationale": "Trustworthiness is quality, not quantity. The CMDB Health score rolls completeness, compliance, and correctness into a defensible measure of how reliable the data is — exactly the kind of summary governance reports upward. Raw CI counts say nothing about accuracy.",
     "distractor_notes": {
       "A": "A big CMDB full of bad data is worse than a small accurate one; counts don't equal trust.",
       "C": "Admin headcount is a security metric, not a data-trust metric.",
@@ -1901,7 +1901,7 @@
     "correct": [
       "B"
     ],
-    "rationale": "IRE data source rules can constrain what a given source is permitted to do \u2014 for instance allowing updates but blocking new CI creation for classes it shouldn't own. That keeps weak sources from polluting the CMDB with records they have no authority to create.",
+    "rationale": "IRE data source rules can constrain what a given source is permitted to do — for instance allowing updates but blocking new CI creation for classes it shouldn't own. That keeps weak sources from polluting the CMDB with records they have no authority to create.",
     "distractor_notes": {
       "A": "Precedence arbitrates attribute values; it doesn't by itself gate insert-vs-update permission.",
       "C": "Remediation cleans up after the fact; the goal here is prevention at ingestion.",
@@ -1999,7 +1999,7 @@
     ],
     "rationale": "Scale plus consistency is the argument. A policy guarantees every CI in scope is handled the same way, with the same conditions and follow-on archive/destroy timing, all logged. Hundreds of teams retiring CIs by hand produces uneven states, missed relationships, and no central record.",
     "distractor_notes": {
-      "A": "Manual retirement is possible \u2014 it's just inconsistent at scale.",
+      "A": "Manual retirement is possible — it's just inconsistent at scale.",
       "C": "Speed framing is nonsense; the benefit is consistency and auditability.",
       "D": "Manual retirement doesn't wipe the CMDB."
     },
@@ -2045,7 +2045,7 @@
     "correct": [
       "B"
     ],
-    "rationale": "CI Class Manager is the admin surface \u2014 it presents each class's identification rules, reconciliation rules, identifier entries, and dependent relationships in one place. IRE is the runtime that applies those definitions during ingestion. Design in Class Manager, execution in IRE.",
+    "rationale": "CI Class Manager is the admin surface — it presents each class's identification rules, reconciliation rules, identifier entries, and dependent relationships in one place. IRE is the runtime that applies those definitions during ingestion. Design in Class Manager, execution in IRE.",
     "distractor_notes": {
       "A": "They're tightly coupled: one configures, the other executes.",
       "C": "Class Manager configures rules; it doesn't replace the engine that runs them.",
@@ -2093,7 +2093,7 @@
     "correct": [
       "B"
     ],
-    "rationale": "Manual entry has a place (for things automation can't see) but it's a common source of duplicates and gaps. Governance keeps it controlled: restrict who can create, require key attributes, and still route through IRE \u2014 so manual records meet the same standards as automated ones.",
+    "rationale": "Manual entry has a place (for things automation can't see) but it's a common source of duplicates and gaps. Governance keeps it controlled: restrict who can create, require key attributes, and still route through IRE — so manual records meet the same standards as automated ones.",
     "distractor_notes": {
       "A": "Uncontrolled manual creation is a top cause of poor CMDB quality.",
       "C": "An outright ban is impractical; some CIs must be entered manually.",
@@ -2192,7 +2192,7 @@
     "rationale": "The distinction is human vs machine judgment. Certification asks a responsible person to vouch for the data; Health computes scores automatically against completeness/compliance/correctness rules. Used together they cover both what automation can measure and what only a human can confirm.",
     "distractor_notes": {
       "B": "They are complementary, distinct controls, not the same feature.",
-      "C": "Reversed \u2014 Health is automated, certification is the manual attestation.",
+      "C": "Reversed — Health is automated, certification is the manual attestation.",
       "D": "Both involve rules/criteria; certification also involves people."
     },
     "references": [
@@ -2240,7 +2240,7 @@
     "rationale": "One rule prevents most CMDB chaos: everything goes through IRE. Centralizing ingestion means identification stops duplicates and reconciliation protects authoritative attributes uniformly, no matter how many connectors feed the CMDB. Bypassing IRE for any source breaks that guarantee.",
     "distractor_notes": {
       "A": "Direct writes skip the very protections you want and breed duplicates.",
-      "C": "Separate CMDBs fragment the single source of truth \u2014 the opposite goal.",
+      "C": "Separate CMDBs fragment the single source of truth — the opposite goal.",
       "D": "Disabling identification removes duplicate prevention entirely."
     },
     "references": [
@@ -2285,9 +2285,9 @@
     "correct": [
       "B"
     ],
-    "rationale": "Archiving is the middle ground: the CI leaves active tables so it stops cluttering operational views and reports, yet a recoverable copy remains for audit, compliance, or trend analysis. You get cleanliness now without losing history \u2014 and can still destroy later if policy requires.",
+    "rationale": "Archiving is the middle ground: the CI leaves active tables so it stops cluttering operational views and reports, yet a recoverable copy remains for audit, compliance, or trend analysis. You get cleanliness now without losing history — and can still destroy later if policy requires.",
     "distractor_notes": {
-      "A": "That describes destroy, not archive \u2014 archive is recoverable.",
+      "A": "That describes destroy, not archive — archive is recoverable.",
       "C": "Archiving deactivates; it doesn't republish CIs as active.",
       "D": "CIs aren't transformed into incidents by archiving."
     },
@@ -2333,7 +2333,7 @@
     "correct": [
       "B"
     ],
-    "rationale": "Governance defends a single, reconciled CMDB that ITSM, ITOM, security, and reporting all rely on. The value collapses the moment teams maintain rival spreadsheets and shadow databases \u2014 decisions then rest on conflicting data. One trusted, continuously reconciled source is the goal.",
+    "rationale": "Governance defends a single, reconciled CMDB that ITSM, ITOM, security, and reporting all rely on. The value collapses the moment teams maintain rival spreadsheets and shadow databases — decisions then rest on conflicting data. One trusted, continuously reconciled source is the goal.",
     "distractor_notes": {
       "A": "Independent copies are exactly the silos governance exists to eliminate.",
       "C": "Many processes read the CMDB; Discovery is just one writer.",
@@ -2381,7 +2381,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "IRE evaluates identifier entries in priority order. A hit on the higher-priority serial_number entry resolves identity, so it updates that existing CI \u2014 and a changed name is just an attribute update, not a reason to spawn a duplicate. Ordering identifiers by reliability is exactly how you avoid duplicates.",
+    "rationale": "IRE evaluates identifier entries in priority order. A hit on the higher-priority serial_number entry resolves identity, so it updates that existing CI — and a changed name is just an attribute update, not a reason to spawn a duplicate. Ordering identifiers by reliability is exactly how you avoid duplicates.",
     "distractor_notes": {
       "B": "A differing lower-priority attribute doesn't override a strong higher-priority match.",
       "C": "A valid match isn't rejected; it's updated.",
@@ -2477,7 +2477,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "Attribute-level authority is exactly what reconciliation rules express. Naming the HR integration authoritative for 'managed by' means every other source is blocked from overwriting it at the engine level \u2014 enforcement that holds regardless of which integration tries to write.",
+    "rationale": "Attribute-level authority is exactly what reconciliation rules express. Naming the HR integration authoritative for 'managed by' means every other source is blocked from overwriting it at the engine level — enforcement that holds regardless of which integration tries to write.",
     "distractor_notes": {
       "B": "Reminders don't enforce anything technically and won't stop integrations.",
       "C": "Deleting the field destroys needed data instead of governing who writes it.",
@@ -2525,7 +2525,7 @@
     "correct": [
       "B"
     ],
-    "rationale": "Certification is scheduled so verification keeps pace with drift \u2014 monthly, quarterly, or whatever cadence fits the data's volatility. Periodic re-attestation is what stops human-maintained fields from quietly becoming wrong between automated scans.",
+    "rationale": "Certification is scheduled so verification keeps pace with drift — monthly, quarterly, or whatever cadence fits the data's volatility. Periodic re-attestation is what stops human-maintained fields from quietly becoming wrong between automated scans.",
     "distractor_notes": {
       "A": "Randomness defeats the purpose; certification is deliberately scheduled.",
       "C": "Certification isn't incident-triggered; it's a proactive cadence.",
@@ -2621,7 +2621,7 @@
     "correct": [
       "B"
     ],
-    "rationale": "Identification rules are how IRE recognizes 'this is the same CI.' Without a strong rule, the engine has nothing dependable to match on and keeps inserting new records for things that already exist \u2014 the classic root cause of duplicate sprawl.",
+    "rationale": "Identification rules are how IRE recognizes 'this is the same CI.' Without a strong rule, the engine has nothing dependable to match on and keeps inserting new records for things that already exist — the classic root cause of duplicate sprawl.",
     "distractor_notes": {
       "A": "Weak identification produces more (duplicate) records, not fewer/cleaner ones.",
       "C": "Missing rules don't lock the class; they degrade matching.",
@@ -2669,7 +2669,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "A governance policy or charter is where scope, ownership, roles, and measurable quality targets are written down and agreed. It's the reference point that makes accountability real \u2014 without it, 'who owns this data and how good must it be' stays a matter of opinion.",
+    "rationale": "A governance policy or charter is where scope, ownership, roles, and measurable quality targets are written down and agreed. It's the reference point that makes accountability real — without it, 'who owns this data and how good must it be' stays a matter of opinion.",
     "distractor_notes": {
       "B": "Firewall rules govern network traffic, not CMDB data ownership.",
       "C": "Mailbox rules are personal email settings.",
@@ -2895,7 +2895,7 @@
       },
       {
         "id": "B",
-        "text": "Authority should be based on which source is most reliable for that attribute, enforced by reconciliation \u2014 not merely recency"
+        "text": "Authority should be based on which source is most reliable for that attribute, enforced by reconciliation — not merely recency"
       },
       {
         "id": "C",
@@ -2957,7 +2957,7 @@
     "correct": [
       "B"
     ],
-    "rationale": "CMDB governance crosses team boundaries, so it needs authority that crosses them too. Executive sponsorship provides the mandate, budget, and cooperation to enforce shared standards \u2014 without it, governance stalls whenever a team declines to participate.",
+    "rationale": "CMDB governance crosses team boundaries, so it needs authority that crosses them too. Executive sponsorship provides the mandate, budget, and cooperation to enforce shared standards — without it, governance stalls whenever a team declines to participate.",
     "distractor_notes": {
       "A": "Executives sponsor and empower; they don't do the data entry.",
       "C": "Sponsorship strengthens quality efforts; it doesn't waive them.",
@@ -2991,7 +2991,7 @@
       },
       {
         "id": "B",
-        "text": "Accountability \u2014 someone is responsible for fixing each issue, and progress can be tracked to closure"
+        "text": "Accountability — someone is responsible for fixing each issue, and progress can be tracked to closure"
       },
       {
         "id": "C",
@@ -3197,7 +3197,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "A data owner is accountable for a slice of CI data being correct and kept up to date \u2014 they're who certification routes to and who answers for quality in their domain. Ownership is about accountability, not who sold the gear or who happened to open the record.",
+    "rationale": "A data owner is accountable for a slice of CI data being correct and kept up to date — they're who certification routes to and who answers for quality in their domain. Ownership is about accountability, not who sold the gear or who happened to open the record.",
     "distractor_notes": {
       "B": "The hardware vendor has no accountability for your CMDB data accuracy.",
       "C": "Viewing a record doesn't confer ownership responsibility.",
@@ -3227,7 +3227,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Align identification \u2014 either have the integration supply serial numbers or add a reliable MAC-based identifier entry \u2014 so IRE can match correctly"
+        "text": "Align identification — either have the integration supply serial numbers or add a reliable MAC-based identifier entry — so IRE can match correctly"
       },
       {
         "id": "B",
@@ -3295,8 +3295,8 @@
     ],
     "rationale": "Insight (Health) is the sensor; Govern (remediation) is the actuator. Health surfaces and quantifies completeness, compliance, and correctness issues; remediation assigns and resolves them. Detection without action is just reporting; the loop only closes when remediation follows.",
     "distractor_notes": {
-      "B": "They're distinct, complementary stages \u2014 measurement vs action.",
-      "C": "Reversed \u2014 Health detects, remediation fixes.",
+      "B": "They're distinct, complementary stages — measurement vs action.",
+      "C": "Reversed — Health detects, remediation fixes.",
       "D": "Both are squarely about CMDB data quality."
     },
     "references": [
@@ -3390,7 +3390,7 @@
       "A",
       "B"
     ],
-    "rationale": "Data Manager operates on the CI lifecycle: it can retire CIs and then archive or destroy them based on conditions. It does not configure physical network hardware or send marketing communications \u2014 those are outside the CMDB data lifecycle entirely.",
+    "rationale": "Data Manager operates on the CI lifecycle: it can retire CIs and then archive or destroy them based on conditions. It does not configure physical network hardware or send marketing communications — those are outside the CMDB data lifecycle entirely.",
     "distractor_notes": {
       "C": "Configuring switches is network engineering, not CMDB lifecycle management.",
       "D": "Marketing email is unrelated to CI lifecycle actions."
@@ -3437,9 +3437,9 @@
     "correct": [
       "B"
     ],
-    "rationale": "Out-of-box rules are a strong starting point, but the attributes your sources actually populate vary by environment. Reviewing and tuning the identifiers to your real data is how you keep matching accurate and prevent duplicates \u2014 a standard part of CMDB onboarding governance.",
+    "rationale": "Out-of-box rules are a strong starting point, but the attributes your sources actually populate vary by environment. Reviewing and tuning the identifiers to your real data is how you keep matching accurate and prevent duplicates — a standard part of CMDB onboarding governance.",
     "distractor_notes": {
-      "A": "OOB rules are sensible defaults, not always wrong \u2014 they just may need tuning.",
+      "A": "OOB rules are sensible defaults, not always wrong — they just may need tuning.",
       "C": "Identification rules are configurable, not frozen.",
       "D": "Tuning rules refines IRE behavior; it doesn't disable the engine."
     },
@@ -3463,7 +3463,7 @@
     "subdomain": "CMDB governance roles and responsibilities",
     "difficulty": "recall",
     "type": "single_select",
-    "stem": "Which governance practice most directly prevents 'CMDB sprawl' \u2014 uncontrolled growth of low-value or duplicate CIs?",
+    "stem": "Which governance practice most directly prevents 'CMDB sprawl' — uncontrolled growth of low-value or duplicate CIs?",
     "options": [
       {
         "id": "A",
@@ -3488,7 +3488,7 @@
     "rationale": "Sprawl is controlled at three points: decide what belongs in the CMDB (scope), force all ingestion through IRE so duplicates are caught, and run lifecycle management so dead CIs leave. Letting every tool dump everything and never retiring is exactly how sprawl happens.",
     "distractor_notes": {
       "B": "Ingesting everything indiscriminately is a primary cause of sprawl.",
-      "C": "Killing all sources leaves the CMDB empty and useless \u2014 an overcorrection.",
+      "C": "Killing all sources leaves the CMDB empty and useless — an overcorrection.",
       "D": "Never retiring lets dead CIs accumulate forever."
     },
     "references": [
@@ -3533,7 +3533,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "Authority is a governance decision, so changing it is a governed change to the reconciliation rule \u2014 not a workaround. Update which source is authoritative for that attribute, and IRE will enforce the new, agreed authority consistently. Bypassing IRE or duplicating CIs just creates new problems.",
+    "rationale": "Authority is a governance decision, so changing it is a governed change to the reconciliation rule — not a workaround. Update which source is authoritative for that attribute, and IRE will enforce the new, agreed authority consistently. Bypassing IRE or duplicating CIs just creates new problems.",
     "distractor_notes": {
       "B": "Direct writes defeat reconciliation and reintroduce uncontrolled overwrites.",
       "C": "Duplicating CIs fragments the record and breaks the single source of truth.",
@@ -3680,7 +3680,7 @@
     "rationale": "Trustworthy data needs traceability. An audit trail records who/what changed an attribute and when, which supports accountability, root-cause analysis when data looks wrong, and compliance evidence. Governance leans on this history to manage and defend data quality.",
     "distractor_notes": {
       "B": "Auditing is about traceability, not performance.",
-      "C": "An audit trail exposes changes to auditors \u2014 the opposite of hiding them.",
+      "C": "An audit trail exposes changes to auditors — the opposite of hiding them.",
       "D": "History records changes; it doesn't freeze the record."
     },
     "references": [
@@ -3725,7 +3725,7 @@
     "correct": [
       "B"
     ],
-    "rationale": "Unmerged duplicates quietly corrupt everything that reads the CMDB: counts are inflated, impact analysis misses or double-counts dependencies, and service maps fracture. Working the de-duplication queue is how governance keeps the data \u2014 and the decisions made on it \u2014 trustworthy.",
+    "rationale": "Unmerged duplicates quietly corrupt everything that reads the CMDB: counts are inflated, impact analysis misses or double-counts dependencies, and service maps fracture. Working the de-duplication queue is how governance keeps the data — and the decisions made on it — trustworthy.",
     "distractor_notes": {
       "A": "Duplicates are far from harmless; they undermine the CMDB's core value.",
       "C": "Duplicates degrade data quality, not instance memory in that dramatic way.",
@@ -3773,7 +3773,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "A useful governance KPI is quantifiable and tied to data quality \u2014 completeness (percent of CIs with required attributes filled) is a textbook example, alongside compliance and correctness rates. Cosmetic or irrelevant items can't tell you whether the CMDB is trustworthy.",
+    "rationale": "A useful governance KPI is quantifiable and tied to data quality — completeness (percent of CIs with required attributes filled) is a textbook example, alongside compliance and correctness rates. Cosmetic or irrelevant items can't tell you whether the CMDB is trustworthy.",
     "distractor_notes": {
       "B": "Form fonts have no bearing on data quality.",
       "C": "Coffee breaks are unrelated to CMDB governance.",
@@ -3821,9 +3821,9 @@
     "correct": [
       "A"
     ],
-    "rationale": "Because CIs are nodes in a dependency graph, retiring one ripples into the service maps and impact paths it touches. Governed lifecycle management considers those relationships deliberately \u2014 exactly why controlled tooling beats blunt deletion that can silently break a service view.",
+    "rationale": "Because CIs are nodes in a dependency graph, retiring one ripples into the service maps and impact paths it touches. Governed lifecycle management considers those relationships deliberately — exactly why controlled tooling beats blunt deletion that can silently break a service view.",
     "distractor_notes": {
-      "B": "Relationships are highly relevant \u2014 they're what makes the CMDB valuable.",
+      "B": "Relationships are highly relevant — they're what makes the CMDB valuable.",
       "C": "Retirement doesn't magically improve relationships.",
       "D": "Viewing a CI doesn't require deleting its relationships."
     },
@@ -3917,7 +3917,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "Merging duplicates treats the symptom; preventing them treats the cause. The durable fix is upstream \u2014 tighter identification rules and cleaner source payloads so IRE matches correctly and stops minting duplicates. Then the backlog shrinks naturally instead of being perpetually drained.",
+    "rationale": "Merging duplicates treats the symptom; preventing them treats the cause. The durable fix is upstream — tighter identification rules and cleaner source payloads so IRE matches correctly and stops minting duplicates. Then the backlog shrinks naturally instead of being perpetually drained.",
     "distractor_notes": {
       "B": "Endless faster merging never addresses why duplicates keep appearing.",
       "C": "Refresh rate doesn't change how many duplicates are created.",
@@ -3951,7 +3951,7 @@
       },
       {
         "id": "B",
-        "text": "Business value depends directly on data quality \u2014 poor data makes downstream processes (impact analysis, change, security) unreliable"
+        "text": "Business value depends directly on data quality — poor data makes downstream processes (impact analysis, change, security) unreliable"
       },
       {
         "id": "C",
@@ -3965,7 +3965,7 @@
     "correct": [
       "B"
     ],
-    "rationale": "Every consumer of the CMDB \u2014 change impact, incident routing, security posture, service mapping \u2014 is only as reliable as the data underneath. That's why governance frames data quality as the foundation of business value: improve the data and every dependent process gets more trustworthy.",
+    "rationale": "Every consumer of the CMDB — change impact, incident routing, security posture, service mapping — is only as reliable as the data underneath. That's why governance frames data quality as the foundation of business value: improve the data and every dependent process gets more trustworthy.",
     "distractor_notes": {
       "A": "Value is tightly coupled to quality; bad data poisons every downstream use.",
       "C": "Size without quality is a liability, not value.",
@@ -4029,6 +4029,582 @@
       "govern",
       "data-manager",
       "verification"
+    ]
+  },
+  {
+    "id": "cisdf-gov-085",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "Identification and Reconciliation Engine",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "Two ingestion sources both report the same physical server, and you're worried about creating duplicate CIs. Which engine is responsible for matching them to a single CI?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The Identification and Reconciliation Engine (IRE) using identifier rules"
+      },
+      {
+        "id": "B",
+        "text": "A transform map coalesce field only"
+      },
+      {
+        "id": "C",
+        "text": "A UI policy on the cmdb_ci form"
+      },
+      {
+        "id": "D",
+        "text": "The Service Portal"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "IRE applies identifier rules (like serial number or name+IP) to match incoming data to existing CIs, so multiple sources resolve to one record instead of duplicates. It's the gatekeeper for all CMDB writes, regardless of source.",
+    "distractor_notes": {
+      "B": "Coalesce helps a single import, but cross-source CI identity is IRE's job.",
+      "C": "UI policies change form behavior, not CI identification.",
+      "D": "The Service Portal is an end-user interface, unrelated to identification."
+    },
+    "references": [
+      {
+        "title": "Ingestion through IRE",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/c_CMDBIdentifyandReconcile.html"
+      }
+    ],
+    "tags": [
+      "ire",
+      "identification",
+      "duplicates"
+    ]
+  },
+  {
+    "id": "cisdf-gov-086",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "Reconciliation",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A less-trusted integration keeps overwriting the operating-system attribute that Discovery populates accurately. How do you make Discovery the authority for that attribute?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Configure reconciliation rules so only Discovery can update that attribute"
+      },
+      {
+        "id": "B",
+        "text": "Delete the other data source"
+      },
+      {
+        "id": "C",
+        "text": "Add a watch list to the CI"
+      },
+      {
+        "id": "D",
+        "text": "Mark the attribute read-only on the form"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Reconciliation rules define which data source is authoritative for specific attributes. Granting Discovery precedence for the OS attribute stops the weaker source from overwriting it, without removing that source entirely.",
+    "distractor_notes": {
+      "B": "Deleting the source is heavy-handed and loses its other useful data.",
+      "C": "Watch lists notify people; they don't govern attribute precedence.",
+      "D": "A read-only form field doesn't stop server-side ingestion from other sources."
+    },
+    "references": [
+      {
+        "title": "Ingestion through IRE",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/c_CMDBIdentifyandReconcile.html"
+      }
+    ],
+    "tags": [
+      "reconciliation",
+      "authoritative-source",
+      "precedence"
+    ]
+  },
+  {
+    "id": "cisdf-gov-087",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "Data Certification",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "Governance wants CI owners to periodically confirm that key attributes on their CIs are still accurate. Which capability schedules and tracks these verification tasks?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Data Certification"
+      },
+      {
+        "id": "B",
+        "text": "A transform map"
+      },
+      {
+        "id": "C",
+        "text": "A coalesce field"
+      },
+      {
+        "id": "D",
+        "text": "The MID Server"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Data Certification generates scheduled tasks asking responsible users to confirm (certify) that specified records/attributes are accurate, creating an auditable cadence for data quality. It's a governance staple for keeping the CMDB trustworthy.",
+    "distractor_notes": {
+      "B": "Transform maps move imported data; they don't run certification cycles.",
+      "C": "Coalesce matches records on import.",
+      "D": "The MID Server bridges connectivity; it doesn't certify data."
+    },
+    "references": [
+      {
+        "title": "Data Certification",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/c_DataCertification.html"
+      }
+    ],
+    "tags": [
+      "data-certification",
+      "governance",
+      "quality"
+    ]
+  },
+  {
+    "id": "cisdf-gov-088",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "CMDB Workspace and remediation",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A data manager needs a single place to triage CMDB health issues and work de-duplication and remediation tasks. Where should they work?",
+    "options": [
+      {
+        "id": "A",
+        "text": "CMDB Workspace"
+      },
+      {
+        "id": "B",
+        "text": "The Service Catalog"
+      },
+      {
+        "id": "C",
+        "text": "The Application Navigator favorites"
+      },
+      {
+        "id": "D",
+        "text": "An update set"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "CMDB Workspace centralizes health insights and remediation, including de-duplication tasks and Service Graph Connector status, so data managers can triage and act in one place.",
+    "distractor_notes": {
+      "B": "The Service Catalog is for requesting items, not CMDB remediation.",
+      "C": "Favorites are navigation shortcuts.",
+      "D": "Update sets move configuration between instances."
+    },
+    "references": [
+      {
+        "title": "Service Graph Connector Central in CMDB Workspace",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/cmdb-workspace.html"
+      }
+    ],
+    "tags": [
+      "cmdb-workspace",
+      "remediation",
+      "de-duplication"
+    ]
+  },
+  {
+    "id": "cisdf-gov-089",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "De-duplication",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "IRE detects two CIs that appear to be the same asset. What does it generate so a data manager can resolve the duplication?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A de-duplication task"
+      },
+      {
+        "id": "B",
+        "text": "A change request"
+      },
+      {
+        "id": "C",
+        "text": "A knowledge article"
+      },
+      {
+        "id": "D",
+        "text": "A catalog item"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "When duplicates are detected, IRE/CMDB health creates de-duplication tasks that let a data manager review and merge the records to a single CI, cleaning up the duplication rather than guessing.",
+    "distractor_notes": {
+      "B": "A change request manages changes, not CI duplicate resolution.",
+      "C": "Knowledge articles document information.",
+      "D": "Catalog items are orderable services."
+    },
+    "references": [
+      {
+        "title": "De-duplication tasks",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/cmdb-deduplication-tasks.html"
+      }
+    ],
+    "tags": [
+      "de-duplication",
+      "ire",
+      "remediation"
+    ]
+  },
+  {
+    "id": "cisdf-gov-090",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "Multisource CMDB",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "Several sources report different values for the same CI attribute, and you want to see each source's value plus which one is authoritative. Which capability shows this?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Multisource CMDB (CMDB 360)"
+      },
+      {
+        "id": "B",
+        "text": "A coalesce field"
+      },
+      {
+        "id": "C",
+        "text": "A UI policy"
+      },
+      {
+        "id": "D",
+        "text": "The watch list"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Multisource CMDB (CMDB 360) records each data source's reported value per attribute and shows the reconciled authoritative value, giving transparency into where data came from and why a value won.",
+    "distractor_notes": {
+      "B": "Coalesce matches import records; it doesn't track per-source values.",
+      "C": "UI policies change form behavior.",
+      "D": "Watch lists handle notifications."
+    },
+    "references": [
+      {
+        "title": "Multisource CMDB / CMDB 360",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/multisource-cmdb.html"
+      }
+    ],
+    "tags": [
+      "multisource",
+      "cmdb-360",
+      "attributes"
+    ]
+  },
+  {
+    "id": "cisdf-gov-091",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "CMDB Data Manager and CI lifecycle",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "An organization wants automated handling of CI lifecycle stages, like retiring and eventually deleting CIs that are no longer in the environment. Which tool manages this policy-driven lifecycle?",
+    "options": [
+      {
+        "id": "A",
+        "text": "CMDB Data Manager"
+      },
+      {
+        "id": "B",
+        "text": "A transform map"
+      },
+      {
+        "id": "C",
+        "text": "A catalog UI policy"
+      },
+      {
+        "id": "D",
+        "text": "The MID Server"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "CMDB Data Manager applies policies across the CI lifecycle — for example, marking absent CIs for retirement and later cleanup — so stale data doesn't accumulate. It's a governance tool for lifecycle hygiene.",
+    "distractor_notes": {
+      "B": "Transform maps move imported data; they don't run lifecycle policies.",
+      "C": "Catalog UI policies control catalog variables.",
+      "D": "The MID Server is a connectivity bridge."
+    },
+    "references": [
+      {
+        "title": "Class ownership and Data Manager",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/cmdb-data-manager.html"
+      }
+    ],
+    "tags": [
+      "data-manager",
+      "ci-lifecycle",
+      "retirement"
+    ]
+  },
+  {
+    "id": "cisdf-gov-092",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "CMDB policies",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "Leadership wants new CIs blocked or flagged when required attributes are missing at creation. Which governance mechanism enforces such data-quality rules?",
+    "options": [
+      {
+        "id": "A",
+        "text": "CMDB data policies / required-attribute rules"
+      },
+      {
+        "id": "B",
+        "text": "A coalesce field"
+      },
+      {
+        "id": "C",
+        "text": "A favorite"
+      },
+      {
+        "id": "D",
+        "text": "A scheduled report"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "CMDB policies (including required-attribute and data-quality rules) enforce standards on CI data so incomplete records are caught at the source. This is core to keeping completeness high.",
+    "distractor_notes": {
+      "B": "Coalesce matches records on import; it doesn't enforce required attributes.",
+      "C": "Favorites are shortcuts.",
+      "D": "A scheduled report measures but doesn't enforce."
+    },
+    "references": [
+      {
+        "title": "CMDB governance",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/c_CMDBGovernance.html"
+      }
+    ],
+    "tags": [
+      "cmdb-policy",
+      "data-quality",
+      "completeness"
+    ]
+  },
+  {
+    "id": "cisdf-gov-093",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "Identification and Reconciliation Engine",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A team plans to load CIs through Discovery, a Service Graph Connector, and an import set. They worry each path needs its own duplicate-prevention logic. What's true about IRE?",
+    "options": [
+      {
+        "id": "A",
+        "text": "IRE centrally identifies and reconciles CIs no matter which ingestion path is used"
+      },
+      {
+        "id": "B",
+        "text": "IRE only runs for Discovery data"
+      },
+      {
+        "id": "C",
+        "text": "Each ingestion path must implement its own matching"
+      },
+      {
+        "id": "D",
+        "text": "IRE only runs during nightly maintenance"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "IRE is the single, central point that identifies and reconciles CMDB writes from any source — Discovery, Service Graph Connectors, ETL, import, or API. That's why duplicate-prevention logic doesn't need to be rebuilt per path.",
+    "distractor_notes": {
+      "B": "IRE governs all ingestion paths, not just Discovery.",
+      "C": "Centralizing matching in IRE is exactly what avoids per-path logic.",
+      "D": "IRE runs as data is written, not only on a nightly schedule."
+    },
+    "references": [
+      {
+        "title": "Ingestion through IRE",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/c_CMDBIdentifyandReconcile.html"
+      }
+    ],
+    "tags": [
+      "ire",
+      "ingestion",
+      "central"
+    ]
+  },
+  {
+    "id": "cisdf-gov-094",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "CMDB groups",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "You want to scope a health dashboard and remediation effort to just the CIs supporting a particular business unit. Which feature lets you define that subset of CIs?",
+    "options": [
+      {
+        "id": "A",
+        "text": "CMDB groups"
+      },
+      {
+        "id": "B",
+        "text": "A coalesce field"
+      },
+      {
+        "id": "C",
+        "text": "A watch list"
+      },
+      {
+        "id": "D",
+        "text": "An update set"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "CMDB groups define a saved set of CIs (by query) that you can target for health scoring, dashboards, and remediation — useful for focusing on one business unit or service.",
+    "distractor_notes": {
+      "B": "Coalesce is an import-matching concept.",
+      "C": "Watch lists handle notifications.",
+      "D": "Update sets move configuration."
+    },
+    "references": [
+      {
+        "title": "CMDB Groups",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/cmdb-groups.html"
+      }
+    ],
+    "tags": [
+      "cmdb-groups",
+      "scoping",
+      "health"
+    ]
+  },
+  {
+    "id": "cisdf-gov-095",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "Identification and Reconciliation Engine",
+    "difficulty": "application",
+    "type": "multi_select",
+    "stem": "Which TWO responsibilities belong to the Identification and Reconciliation Engine?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Identifying whether incoming data matches an existing CI"
+      },
+      {
+        "id": "B",
+        "text": "Reconciling which source is authoritative for an attribute"
+      },
+      {
+        "id": "C",
+        "text": "Rendering the Service Portal homepage"
+      },
+      {
+        "id": "D",
+        "text": "Sending SLA breach emails"
+      }
+    ],
+    "correct": [
+      "A",
+      "B"
+    ],
+    "rationale": "IRE's two core jobs are identification (match incoming data to the right CI) and reconciliation (decide which source's value is authoritative). Portal rendering and SLA emails are unrelated platform features.",
+    "distractor_notes": {
+      "C": "The Service Portal is a separate end-user interface.",
+      "D": "SLA notifications are part of service-level management, not IRE."
+    },
+    "references": [
+      {
+        "title": "Ingestion through IRE",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/c_CMDBIdentifyandReconcile.html"
+      }
+    ],
+    "tags": [
+      "ire",
+      "identification",
+      "reconciliation"
+    ]
+  },
+  {
+    "id": "cisdf-gov-096",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "CMDB governance roles and responsibilities",
+    "difficulty": "application",
+    "type": "multi_select",
+    "stem": "Which TWO are sound CMDB governance practices?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Use reconciliation rules to define authoritative sources per attribute"
+      },
+      {
+        "id": "B",
+        "text": "Run data certification so owners periodically verify CI accuracy"
+      },
+      {
+        "id": "C",
+        "text": "Let every integration overwrite any attribute freely"
+      },
+      {
+        "id": "D",
+        "text": "Skip identification rules to speed up ingestion"
+      }
+    ],
+    "correct": [
+      "A",
+      "B"
+    ],
+    "rationale": "Defining authoritative sources via reconciliation rules and running data certification are core governance practices that protect data quality. Letting everything overwrite freely or skipping identification invites duplicates and bad data.",
+    "distractor_notes": {
+      "C": "Unrestricted overwrites destroy data integrity; that's what reconciliation prevents.",
+      "D": "Skipping identification rules causes duplicate CIs."
+    },
+    "references": [
+      {
+        "title": "CMDB governance",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/c_CMDBGovernance.html"
+      }
+    ],
+    "tags": [
+      "governance",
+      "reconciliation",
+      "certification"
     ]
   }
 ]
