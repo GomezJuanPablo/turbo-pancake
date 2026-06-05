@@ -59,14 +59,9 @@ export function buildExamSet(bank, weights, setNum) {
     }
   }
 
-  // Deterministic shuffle using setNum as seed so the same set always looks the same
-  let seed = setNum * 99991;
-  const rand = () => {
-    seed = (seed * 16807) % 2147483647;
-    return (seed - 1) / 2147483646;
-  };
+  // Random shuffle every session — prevents question order memorization
   for (let i = result.length - 1; i > 0; i--) {
-    const j = Math.floor(rand() * (i + 1));
+    const j = Math.floor(Math.random() * (i + 1));
     [result[i], result[j]] = [result[j], result[i]];
   }
 
