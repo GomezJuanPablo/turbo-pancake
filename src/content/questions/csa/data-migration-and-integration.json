@@ -32,7 +32,7 @@
     "rationale": "Import Sets are staging tables. Incoming data lands there first; transform maps then move and reshape it into the target table. Staging gives you a chance to inspect and transform before touching live data.",
     "distractor_notes": {
       "B": "Import sets aren't mirrors of production tables.",
-      "C": "Saved queries are stored on sys_user_filter or similar — not import sets.",
+      "C": "Saved queries are stored on sys_user_filter or similar \u2014 not import sets.",
       "D": "UI policies govern form behavior."
     },
     "references": [
@@ -76,7 +76,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "Data Sources tell the platform where the data is coming from and how to retrieve and parse it — file, FTP, REST, JDBC, etc. They feed import sets, which feed transform maps.",
+    "rationale": "Data Sources tell the platform where the data is coming from and how to retrieve and parse it \u2014 file, FTP, REST, JDBC, etc. They feed import sets, which feed transform maps.",
     "distractor_notes": {
       "B": "Audit rows are change history.",
       "C": "KB categories are unrelated.",
@@ -105,7 +105,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Create a Data Source pointing at the CSV → Load the data into an Import Set staging table → Build a Transform Map to the target table → Run the transform."
+        "text": "Create a Data Source pointing at the CSV \u2192 Load the data into an Import Set staging table \u2192 Build a Transform Map to the target table \u2192 Run the transform."
       },
       {
         "id": "B",
@@ -123,7 +123,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "Data Source → Import Set → Transform Map → Target is the canonical pipeline. Each step is inspectable and reusable.",
+    "rationale": "Data Source \u2192 Import Set \u2192 Transform Map \u2192 Target is the canonical pipeline. Each step is inspectable and reusable.",
     "distractor_notes": {
       "B": "Manual editing doesn't scale and skips every safeguard.",
       "C": "Copy/paste isn't a supported pattern.",
@@ -218,7 +218,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "Out-of-the-box import data sources support CSV, Excel, XML/JSON, and similar structured formats — plus JDBC, REST, FTP. Word documents are document format, not a structured data source.",
+    "rationale": "Out-of-the-box import data sources support CSV, Excel, XML/JSON, and similar structured formats \u2014 plus JDBC, REST, FTP. Word documents are document format, not a structured data source.",
     "distractor_notes": {
       "B": "CSV is supported.",
       "C": "Excel (XLS/XLSX) is supported.",
@@ -294,7 +294,7 @@
     "options": [
       {
         "id": "A",
-        "text": "ACLs evaluate at insert/update on the target table when transforms write records, the same way they evaluate any other write — so import users still need the right permissions."
+        "text": "ACLs evaluate at insert/update on the target table when transforms write records, the same way they evaluate any other write \u2014 so import users still need the right permissions."
       },
       {
         "id": "B",
@@ -312,7 +312,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "Transforms write to the target like any other server-side write, and ACLs evaluate accordingly. Import users (or the configured run-as user) need the right permissions on the target — otherwise the writes fail.",
+    "rationale": "Transforms write to the target like any other server-side write, and ACLs evaluate accordingly. Import users (or the configured run-as user) need the right permissions on the target \u2014 otherwise the writes fail.",
     "distractor_notes": {
       "B": "Imports don't bypass ACLs.",
       "C": "ACLs evaluate at write-time, not on a delay.",
@@ -455,7 +455,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "Each staging row tracks what happened to it during the transform — useful for both auditing and re-running just the failed rows.",
+    "rationale": "Each staging row tracks what happened to it during the transform \u2014 useful for both auditing and re-running just the failed rows.",
     "distractor_notes": {
       "B": "Staging is separate from the target.",
       "C": "Staging rows can be cleaned up.",
@@ -502,7 +502,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "Parsing options on the Data Source — including whether the first row is headers, what delimiter to use, and what character encoding to assume — control how the file is interpreted.",
+    "rationale": "Parsing options on the Data Source \u2014 including whether the first row is headers, what delimiter to use, and what character encoding to assume \u2014 control how the file is interpreted.",
     "distractor_notes": {
       "B": "User profile doesn't influence CSV parsing.",
       "C": "Favicon is unrelated.",
@@ -550,7 +550,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "Coalesce on the transform map makes the same pipeline handle both initial and delta loads — match by a stable key, update existing, insert new. Reusing the artifacts keeps maintenance manageable.",
+    "rationale": "Coalesce on the transform map makes the same pipeline handle both initial and delta loads \u2014 match by a stable key, update existing, insert new. Reusing the artifacts keeps maintenance manageable.",
     "distractor_notes": {
       "B": "Duplicate pipelines drift.",
       "C": "Weekly full reloads waste resources and can churn user records.",
@@ -674,7 +674,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Marks the field as a match key — if a target record exists with the same value, the transform updates it; otherwise it inserts a new record."
+        "text": "Marks the field as a match key \u2014 if a target record exists with the same value, the transform updates it; otherwise it inserts a new record."
       },
       {
         "id": "B",
@@ -769,7 +769,7 @@
     "options": [
       {
         "id": "A",
-        "text": "All coalesce fields together form a composite match key — the transform matches a target only when all coalesce values match."
+        "text": "All coalesce fields together form a composite match key \u2014 the transform matches a target only when all coalesce values match."
       },
       {
         "id": "B",
@@ -834,7 +834,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "onStart fires once at the beginning of the transform run — useful for setting up counters, looking up reference data, or one-time logging.",
+    "rationale": "onStart fires once at the beginning of the transform run \u2014 useful for setting up counters, looking up reference data, or one-time logging.",
     "distractor_notes": {
       "B": "onBefore runs before each row.",
       "C": "onAfter runs after each row.",
@@ -928,7 +928,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "onBefore is where per-row filtering belongs. Inspect the source, decide whether to process, and skip when the rule says skip — all before the target write.",
+    "rationale": "onBefore is where per-row filtering belongs. Inspect the source, decide whether to process, and skip when the rule says skip \u2014 all before the target write.",
     "distractor_notes": {
       "B": "Form UI policies don't affect imports.",
       "C": "Cleanup after the fact is brittle and expensive.",
@@ -1165,7 +1165,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "Inbound REST exposes the instance's tables (and custom endpoints) over HTTP with JSON. External systems use it to push and pull data — the canonical 'how things talk to ServiceNow' interface.",
+    "rationale": "Inbound REST exposes the instance's tables (and custom endpoints) over HTTP with JSON. External systems use it to push and pull data \u2014 the canonical 'how things talk to ServiceNow' interface.",
     "distractor_notes": {
       "B": "USB key login isn't a thing here.",
       "C": "Marketing pages aren't the REST API.",
@@ -1195,7 +1195,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Letting the instance call external HTTP/JSON APIs — for integrations, notifications, lookups, and triggering external systems."
+        "text": "Letting the instance call external HTTP/JSON APIs \u2014 for integrations, notifications, lookups, and triggering external systems."
       },
       {
         "id": "B",
@@ -1261,7 +1261,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "SOAP support is still there — important for legacy integrations. New work typically uses REST because it's lighter and easier to debug, but SOAP isn't going anywhere yet.",
+    "rationale": "SOAP support is still there \u2014 important for legacy integrations. New work typically uses REST because it's lighter and easier to debug, but SOAP isn't going anywhere yet.",
     "distractor_notes": {
       "B": "SOAP is supported.",
       "C": "REST exists alongside SOAP.",
@@ -1385,7 +1385,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A framework that extends Flow Designer with integration capabilities — including spokes (pre-built integration packs), custom actions, and connection management — for connecting to external systems with low code."
+        "text": "A framework that extends Flow Designer with integration capabilities \u2014 including spokes (pre-built integration packs), custom actions, and connection management \u2014 for connecting to external systems with low code."
       },
       {
         "id": "B",
@@ -1451,7 +1451,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "A spoke bundles ready-made actions targeting a specific system — install, configure the connection, and you've got low-code actions to use inside flows.",
+    "rationale": "A spoke bundles ready-made actions targeting a specific system \u2014 install, configure the connection, and you've got low-code actions to use inside flows.",
     "distractor_notes": {
       "B": "Different kind of spoke.",
       "C": "Not a field type.",
@@ -1498,7 +1498,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "Table API uses GET on /api/now/table/incident/{sys_id} for retrieve-by-id. POST creates, PATCH/PUT updates, DELETE deletes — REST verb semantics map to the underlying operations.",
+    "rationale": "Table API uses GET on /api/now/table/incident/{sys_id} for retrieve-by-id. POST creates, PATCH/PUT updates, DELETE deletes \u2014 REST verb semantics map to the underlying operations.",
     "distractor_notes": {
       "B": "DELETE would remove the record.",
       "C": "POST creates a new record.",
@@ -1706,6 +1706,4014 @@
       "mid-server",
       "service-account",
       "least-privilege"
+    ]
+  },
+  {
+    "id": "csa-dmi-037",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Data Migration and Integration",
+    "subdomain": "Import Sets",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which Import Set data source type retrieves a file from an FTP or SFTP server on a schedule?",
+    "options": [
+      {
+        "id": "A",
+        "text": "HTTP"
+      },
+      {
+        "id": "B",
+        "text": "File (FTP/SFTP)"
+      },
+      {
+        "id": "C",
+        "text": "JDBC"
+      },
+      {
+        "id": "D",
+        "text": "Email"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The File (FTP/SFTP) data source type is configured to retrieve a file from an FTP or SFTP server, enabling scheduled automated ingestion of files placed on remote servers.",
+    "distractor_notes": {
+      "A": "HTTP data sources retrieve content from a web URL, not FTP/SFTP.",
+      "C": "JDBC data sources connect directly to a relational database, not a file server.",
+      "D": "Email data sources process inbound email content, not FTP/SFTP files."
+    },
+    "references": [
+      {
+        "title": "Data migration and integration",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "import-sets",
+      "data-source",
+      "ftp"
+    ]
+  },
+  {
+    "id": "csa-dmi-038",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Data Migration and Integration",
+    "subdomain": "Import Sets",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the purpose of the Import Set staging table?",
+    "options": [
+      {
+        "id": "A",
+        "text": "To permanently store all imported records as a data archive"
+      },
+      {
+        "id": "B",
+        "text": "To hold raw imported data temporarily before it is transformed into the target table"
+      },
+      {
+        "id": "C",
+        "text": "To validate imported data against ACL rules"
+      },
+      {
+        "id": "D",
+        "text": "To replicate data to a secondary instance"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The Import Set staging table temporarily holds raw imported data. The transform map then processes these rows and writes them to the target table. The staging table acts as a buffer between the source data and the target.",
+    "distractor_notes": {
+      "A": "Import Set tables are temporary staging areas, not permanent archives.",
+      "C": "ACL validation happens on target table records, not the staging table.",
+      "D": "Import Sets are for data ingestion, not instance replication."
+    },
+    "references": [
+      {
+        "title": "Data migration and integration",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "import-sets",
+      "staging-table"
+    ]
+  },
+  {
+    "id": "csa-dmi-039",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Data Migration and Integration",
+    "subdomain": "Import Sets",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What are the possible row states for an Import Set row after a transform run?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Success, Failed, Skipped, Ignored"
+      },
+      {
+        "id": "B",
+        "text": "Inserted, Updated, Deleted, Errored"
+      },
+      {
+        "id": "C",
+        "text": "Inserted, Updated, Ignored, Error"
+      },
+      {
+        "id": "D",
+        "text": "Committed, Rolled Back, Pending"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "After a transform, each Import Set row receives a state of Inserted (new record created), Updated (existing record modified), Ignored (row skipped per script logic), or Error (transform failed for that row).",
+    "distractor_notes": {
+      "A": "'Skipped' and 'Failed' are not the standard row state labels.",
+      "B": "'Deleted' and 'Errored' are not the standard row states for Import Sets.",
+      "D": "Committed/Rolled Back are database transaction concepts, not Import Set row states."
+    },
+    "references": [
+      {
+        "title": "Data migration and integration",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "import-sets",
+      "row-states"
+    ]
+  },
+  {
+    "id": "csa-dmi-040",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Data Migration and Integration",
+    "subdomain": "Import Sets",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is a JDBC data source in the context of ServiceNow Import Sets?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A connection to a remote REST API endpoint"
+      },
+      {
+        "id": "B",
+        "text": "A direct database connection that queries a relational database to retrieve records for import"
+      },
+      {
+        "id": "C",
+        "text": "A file-based source that reads CSV files from a local directory"
+      },
+      {
+        "id": "D",
+        "text": "A connection to a SOAP web service"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "A JDBC (Java Database Connectivity) data source establishes a direct connection to a relational database system (such as Oracle, SQL Server, or MySQL) to retrieve records for import into ServiceNow via Import Sets.",
+    "distractor_notes": {
+      "A": "REST API connections use the REST data source type, not JDBC.",
+      "C": "CSV files use the File or HTTP data source types.",
+      "D": "SOAP connections use the SOAP web service data source type."
+    },
+    "references": [
+      {
+        "title": "Data migration and integration",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "import-sets",
+      "jdbc",
+      "data-source"
+    ]
+  },
+  {
+    "id": "csa-dmi-041",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Data Migration and Integration",
+    "subdomain": "Import Sets",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An import run completes with 500 Ignored rows. What is the most likely cause?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The coalesce field found matching records and skipped the update because nothing changed"
+      },
+      {
+        "id": "B",
+        "text": "A transform script returned IGNORE for those rows based on a condition"
+      },
+      {
+        "id": "C",
+        "text": "The data source file was corrupted for those rows"
+      },
+      {
+        "id": "D",
+        "text": "The user running the import lacked write access to the target table"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Ignored rows in an Import Set transform run are typically caused by a transform script (onBefore, onTransform) explicitly returning IGNORE, instructing the system to skip processing of that row.",
+    "distractor_notes": {
+      "A": "Coalesce matching that finds no changes typically results in an Updated row with no changes, not Ignored.",
+      "C": "Corrupted rows would typically result in Error state, not Ignored.",
+      "D": "ACL issues would cause errors, not Ignored rows."
+    },
+    "references": [
+      {
+        "title": "Data migration and integration",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "import-sets",
+      "ignored",
+      "transform-scripts"
+    ]
+  },
+  {
+    "id": "csa-dmi-042",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Data Migration and Integration",
+    "subdomain": "Import Sets",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which Transform Map script type runs once after ALL rows have been processed?",
+    "options": [
+      {
+        "id": "A",
+        "text": "onBefore"
+      },
+      {
+        "id": "B",
+        "text": "onStart"
+      },
+      {
+        "id": "C",
+        "text": "onAfter"
+      },
+      {
+        "id": "D",
+        "text": "onComplete"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "The onComplete script in a Transform Map runs once after all rows have been processed, making it suitable for post-import cleanup, summary logging, or sending a completion notification.",
+    "distractor_notes": {
+      "A": "onBefore runs per row, before the row is transformed.",
+      "B": "onStart runs once before any rows are processed (pre-transform initialization).",
+      "C": "onAfter runs per row, after the row has been transformed."
+    },
+    "references": [
+      {
+        "title": "Data migration and integration",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "transform-map",
+      "onComplete"
+    ]
+  },
+  {
+    "id": "csa-dmi-043",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Data Migration and Integration",
+    "subdomain": "Import Sets",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What does a Reference Lookup in a Transform Map Field Map do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "It validates the field value against a list of allowed values"
+      },
+      {
+        "id": "B",
+        "text": "It looks up a record in another table by a specified field to resolve a reference field value"
+      },
+      {
+        "id": "C",
+        "text": "It creates a new record in the target table if no match is found"
+      },
+      {
+        "id": "D",
+        "text": "It copies the field value verbatim without transformation"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "A Reference Lookup in a Field Map resolves a reference field by looking up a record in the referenced table using a specified field value (e.g., finding a User record by email address to populate the Assigned To field).",
+    "distractor_notes": {
+      "A": "Choice field validation is a different mechanism; Reference Lookup resolves reference fields.",
+      "C": "Creating a new record on no match is an option on the transform map, not specifically a Reference Lookup behavior.",
+      "D": "Copying verbatim is a direct field map without any lookup."
+    },
+    "references": [
+      {
+        "title": "Data migration and integration",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "transform-map",
+      "reference-lookup"
+    ]
+  },
+  {
+    "id": "csa-dmi-044",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Data Migration and Integration",
+    "subdomain": "REST Integration",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which Table API endpoint retrieves a list of records from a specified table?",
+    "options": [
+      {
+        "id": "A",
+        "text": "GET /api/now/table/{tableName}/{sys_id}"
+      },
+      {
+        "id": "B",
+        "text": "GET /api/now/table/{tableName}"
+      },
+      {
+        "id": "C",
+        "text": "POST /api/now/table/{tableName}"
+      },
+      {
+        "id": "D",
+        "text": "GET /api/now/attachment/{tableName}"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The GET /api/now/table/{tableName} endpoint retrieves multiple records from the specified table. Adding /{sys_id} at the end retrieves a single specific record.",
+    "distractor_notes": {
+      "A": "Including /{sys_id} retrieves a single record, not a list.",
+      "C": "POST creates a new record, it does not retrieve records.",
+      "D": "The attachment endpoint is for file attachments, not table records."
+    },
+    "references": [
+      {
+        "title": "REST API integration",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "table-api",
+      "rest",
+      "get"
+    ]
+  },
+  {
+    "id": "csa-dmi-045",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Data Migration and Integration",
+    "subdomain": "REST Integration",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which Table API parameter limits the number of records returned in a GET request?",
+    "options": [
+      {
+        "id": "A",
+        "text": "sysparm_fields"
+      },
+      {
+        "id": "B",
+        "text": "sysparm_query"
+      },
+      {
+        "id": "C",
+        "text": "sysparm_limit"
+      },
+      {
+        "id": "D",
+        "text": "sysparm_count"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "The sysparm_limit parameter in a Table API GET request controls the maximum number of records returned. For example, sysparm_limit=10 returns at most 10 records.",
+    "distractor_notes": {
+      "A": "sysparm_fields controls which fields are returned in the response, not the record count.",
+      "B": "sysparm_query filters records by condition, not by count.",
+      "D": "sysparm_count is used to return only the count of matching records, not to limit a list result."
+    },
+    "references": [
+      {
+        "title": "REST API integration",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "table-api",
+      "sysparm_limit"
+    ]
+  },
+  {
+    "id": "csa-dmi-046",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Data Migration and Integration",
+    "subdomain": "REST Integration",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which Table API parameter specifies a comma-separated list of fields to return in the response?",
+    "options": [
+      {
+        "id": "A",
+        "text": "sysparm_limit"
+      },
+      {
+        "id": "B",
+        "text": "sysparm_fields"
+      },
+      {
+        "id": "C",
+        "text": "sysparm_select"
+      },
+      {
+        "id": "D",
+        "text": "sysparm_columns"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The sysparm_fields parameter accepts a comma-separated list of field names to include in the API response, reducing payload size by returning only the needed fields.",
+    "distractor_notes": {
+      "A": "sysparm_limit controls the number of records returned, not which fields.",
+      "C": "sysparm_select is not a documented Table API parameter.",
+      "D": "sysparm_columns is not the correct parameter name; sysparm_fields is."
+    },
+    "references": [
+      {
+        "title": "REST API integration",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "table-api",
+      "sysparm_fields"
+    ]
+  },
+  {
+    "id": "csa-dmi-047",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Data Migration and Integration",
+    "subdomain": "REST Integration",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What HTTP method is used to create a new record using the ServiceNow Table API?",
+    "options": [
+      {
+        "id": "A",
+        "text": "GET"
+      },
+      {
+        "id": "B",
+        "text": "PUT"
+      },
+      {
+        "id": "C",
+        "text": "POST"
+      },
+      {
+        "id": "D",
+        "text": "PATCH"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "The POST method on the Table API endpoint /api/now/table/{tableName} creates a new record in the specified table with the field values provided in the request body.",
+    "distractor_notes": {
+      "A": "GET retrieves records; it does not create them.",
+      "B": "PUT replaces an existing record entirely; it requires a sys_id.",
+      "D": "PATCH partially updates an existing record; it requires a sys_id."
+    },
+    "references": [
+      {
+        "title": "REST API integration",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "table-api",
+      "post",
+      "create"
+    ]
+  },
+  {
+    "id": "csa-dmi-048",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Data Migration and Integration",
+    "subdomain": "REST Integration",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which HTTP method partially updates an existing ServiceNow record via the Table API?",
+    "options": [
+      {
+        "id": "A",
+        "text": "POST"
+      },
+      {
+        "id": "B",
+        "text": "GET"
+      },
+      {
+        "id": "C",
+        "text": "PATCH"
+      },
+      {
+        "id": "D",
+        "text": "DELETE"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "PATCH on /api/now/table/{tableName}/{sys_id} partially updates an existing record, modifying only the fields included in the request body without replacing the entire record.",
+    "distractor_notes": {
+      "A": "POST creates a new record.",
+      "B": "GET retrieves records.",
+      "D": "DELETE removes a record."
+    },
+    "references": [
+      {
+        "title": "REST API integration",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "table-api",
+      "patch",
+      "update"
+    ]
+  },
+  {
+    "id": "csa-dmi-049",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Data Migration and Integration",
+    "subdomain": "REST Integration",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is Basic Authentication in the context of ServiceNow REST API calls?",
+    "options": [
+      {
+        "id": "A",
+        "text": "An OAuth 2.0 token exchange flow"
+      },
+      {
+        "id": "B",
+        "text": "Passing a username and password encoded in Base64 in the Authorization header"
+      },
+      {
+        "id": "C",
+        "text": "A mutual TLS certificate exchange"
+      },
+      {
+        "id": "D",
+        "text": "An API key passed as a query parameter"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Basic Authentication passes the username and password encoded in Base64 in the HTTP Authorization header. It is the simplest authentication method for ServiceNow REST APIs.",
+    "distractor_notes": {
+      "A": "OAuth 2.0 token exchange is a different, more secure authentication method than Basic Auth.",
+      "C": "Mutual TLS is a certificate-based method, not Basic Auth.",
+      "D": "API keys passed as query parameters is a different authentication pattern, not Basic Auth."
+    },
+    "references": [
+      {
+        "title": "REST API integration",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "rest",
+      "authentication",
+      "basic-auth"
+    ]
+  },
+  {
+    "id": "csa-dmi-050",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Data Migration and Integration",
+    "subdomain": "REST Integration",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What does the sysparm_query parameter in a Table API GET request do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Specifies the fields to return in the response"
+      },
+      {
+        "id": "B",
+        "text": "Filters records using an encoded query string"
+      },
+      {
+        "id": "C",
+        "text": "Sets the maximum number of records to return"
+      },
+      {
+        "id": "D",
+        "text": "Specifies the response format (JSON or XML)"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "sysparm_query filters the records returned by the API using an encoded query string (e.g., sysparm_query=active=true^priority=1) \u2014 the same query format used in the platform URL.",
+    "distractor_notes": {
+      "A": "sysparm_fields specifies which fields to return.",
+      "C": "sysparm_limit sets the maximum number of records.",
+      "D": "Response format is controlled by the Accept header or sysparm_excludeReferenceLink, not sysparm_query."
+    },
+    "references": [
+      {
+        "title": "REST API integration",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "table-api",
+      "sysparm_query"
+    ]
+  },
+  {
+    "id": "csa-dmi-051",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Data Migration and Integration",
+    "subdomain": "IntegrationHub",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is a Spoke in IntegrationHub?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A MID Server component that connects to external networks"
+      },
+      {
+        "id": "B",
+        "text": "A package of pre-built actions for a specific third-party application or service"
+      },
+      {
+        "id": "C",
+        "text": "A REST endpoint exposed by ServiceNow for external consumption"
+      },
+      {
+        "id": "D",
+        "text": "A SOAP web service definition"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "A Spoke in IntegrationHub is a scoped application containing pre-built actions for integrating with a specific third-party platform (e.g., Slack, Jira, AWS). Spokes are available from the ServiceNow Store.",
+    "distractor_notes": {
+      "A": "MID Servers are mid-tier connection agents; Spokes are Flow Designer action packages.",
+      "C": "REST endpoints exposed by ServiceNow are part of the Scripted REST API feature, not Spokes.",
+      "D": "SOAP web service definitions are a separate integration mechanism."
+    },
+    "references": [
+      {
+        "title": "IntegrationHub",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "integrationhub",
+      "spoke"
+    ]
+  },
+  {
+    "id": "csa-dmi-052",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Data Migration and Integration",
+    "subdomain": "IntegrationHub",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is a Step in IntegrationHub Flow Designer?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A trigger that starts a flow"
+      },
+      {
+        "id": "B",
+        "text": "A single operation within an action, such as an HTTP call or a script"
+      },
+      {
+        "id": "C",
+        "text": "A subflow that groups multiple actions"
+      },
+      {
+        "id": "D",
+        "text": "A condition that branches flow execution"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "A Step is the smallest unit of work within an IntegrationHub Action. A step might perform an HTTP request, run a script, or process data. Actions are composed of one or more steps.",
+    "distractor_notes": {
+      "A": "Triggers start flows; they are not steps within actions.",
+      "C": "Subflows group multiple actions into a reusable unit; they are not individual steps.",
+      "D": "Conditions branch flow logic; they are not IntegrationHub steps."
+    },
+    "references": [
+      {
+        "title": "IntegrationHub",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "integrationhub",
+      "step"
+    ]
+  },
+  {
+    "id": "csa-dmi-053",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Data Migration and Integration",
+    "subdomain": "MID Server",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the primary purpose of a MID Server?",
+    "options": [
+      {
+        "id": "A",
+        "text": "To run ServiceNow import sets in parallel for faster ingestion"
+      },
+      {
+        "id": "B",
+        "text": "To facilitate communication between the ServiceNow instance and resources on a private network"
+      },
+      {
+        "id": "C",
+        "text": "To host the ServiceNow web application server"
+      },
+      {
+        "id": "D",
+        "text": "To replicate the ServiceNow database to a disaster recovery site"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "A MID (Management, Instrumentation, and Discovery) Server is a Java application installed on a server within a private network. It facilitates communication and data transfer between the ServiceNow cloud instance and internal network resources that are not directly accessible from the internet.",
+    "distractor_notes": {
+      "A": "MID Servers do not parallelize Import Sets; they bridge network boundaries.",
+      "C": "ServiceNow runs as a cloud SaaS application; the MID Server is not the application host.",
+      "D": "Database replication and DR are handled by ServiceNow infrastructure, not MID Servers."
+    },
+    "references": [
+      {
+        "title": "MID Server",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/mid-server/mid-server-landing-page.html"
+      }
+    ],
+    "tags": [
+      "mid-server",
+      "network"
+    ]
+  },
+  {
+    "id": "csa-dmi-054",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Data Migration and Integration",
+    "subdomain": "MID Server",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Where is a MID Server typically installed?",
+    "options": [
+      {
+        "id": "A",
+        "text": "On the ServiceNow cloud infrastructure"
+      },
+      {
+        "id": "B",
+        "text": "On a server within the customer's internal network"
+      },
+      {
+        "id": "C",
+        "text": "On the user's local workstation"
+      },
+      {
+        "id": "D",
+        "text": "On a dedicated ServiceNow-managed server"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "A MID Server is installed as a Java application on a server that exists within the customer's internal (private) network, allowing it to access on-premises resources while communicating back to the cloud instance.",
+    "distractor_notes": {
+      "A": "The MID Server runs on customer infrastructure, not ServiceNow's cloud.",
+      "C": "MID Servers are server-class installations, not workstations.",
+      "D": "ServiceNow does not manage MID Server hardware; the customer manages it."
+    },
+    "references": [
+      {
+        "title": "MID Server",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/mid-server/mid-server-landing-page.html"
+      }
+    ],
+    "tags": [
+      "mid-server",
+      "installation"
+    ]
+  },
+  {
+    "id": "csa-dmi-055",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Data Migration and Integration",
+    "subdomain": "MID Server",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Which MID Server capability would an admin use to automatically discover network devices and create CI records in the CMDB?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Probes and Sensors"
+      },
+      {
+        "id": "B",
+        "text": "Import Set processing"
+      },
+      {
+        "id": "C",
+        "text": "Outbound REST calls"
+      },
+      {
+        "id": "D",
+        "text": "Table API queries"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "MID Server Probes send instructions out to network devices to gather information, and Sensors process the returned data, creating or updating CI records in the CMDB. This is the core mechanism for ServiceNow Discovery.",
+    "distractor_notes": {
+      "B": "Import Set processing handles file-based data ingestion, not live network discovery.",
+      "C": "Outbound REST calls are used for API integrations, not CMDB discovery.",
+      "D": "Table API queries retrieve existing records; they do not discover new network devices."
+    },
+    "references": [
+      {
+        "title": "MID Server",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/mid-server/mid-server-landing-page.html"
+      }
+    ],
+    "tags": [
+      "mid-server",
+      "probes",
+      "sensors",
+      "discovery"
+    ]
+  },
+  {
+    "id": "csa-dmi-056",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Data Migration and Integration",
+    "subdomain": "Outbound REST",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is an Outbound REST Message in ServiceNow?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A notification sent to users via REST webhook"
+      },
+      {
+        "id": "B",
+        "text": "A configured definition for calling an external REST API from ServiceNow"
+      },
+      {
+        "id": "C",
+        "text": "An inbound REST endpoint that external systems call"
+      },
+      {
+        "id": "D",
+        "text": "A REST-based import set data source"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "An Outbound REST Message (REST Message record) defines the connection details, authentication, and HTTP methods for calling an external REST API from ServiceNow, typically used in scripts or business rules.",
+    "distractor_notes": {
+      "A": "Outbound REST Messages are API call configurations, not user notification webhooks.",
+      "C": "Inbound endpoints are Scripted REST APIs; Outbound REST Messages are for calling external APIs.",
+      "D": "Import Set data sources are a different configuration from Outbound REST Messages."
+    },
+    "references": [
+      {
+        "title": "REST API integration",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "outbound-rest",
+      "rest-message"
+    ]
+  },
+  {
+    "id": "csa-dmi-057",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Data Migration and Integration",
+    "subdomain": "REST Integration",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What does the sysparm_display_value parameter control in a Table API GET response?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Whether to return the record's display value (label) or internal value for reference and choice fields"
+      },
+      {
+        "id": "B",
+        "text": "Whether to show the form view or list view of the record"
+      },
+      {
+        "id": "C",
+        "text": "Whether to include null field values in the response"
+      },
+      {
+        "id": "D",
+        "text": "Whether the response is paginated"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "sysparm_display_value controls whether the API returns the display value (human-readable label) or internal value (sys_id or choice value) for reference and choice fields. Setting it to 'true' returns display values; 'false' returns internal values; 'all' returns both.",
+    "distractor_notes": {
+      "B": "Form vs. list view is a UI concept, not an API parameter.",
+      "C": "Null fields are handled differently; sysparm_display_value controls reference/choice value format.",
+      "D": "Pagination is controlled by sysparm_limit and sysparm_offset, not sysparm_display_value."
+    },
+    "references": [
+      {
+        "title": "REST API integration",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "table-api",
+      "sysparm_display_value"
+    ]
+  },
+  {
+    "id": "csa-dmi-058",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Data Migration and Integration",
+    "subdomain": "REST Integration",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is OAuth 2.0 used for in ServiceNow integrations?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Encrypting the payload of REST API calls"
+      },
+      {
+        "id": "B",
+        "text": "Providing token-based authentication for API access without passing credentials on every request"
+      },
+      {
+        "id": "C",
+        "text": "Defining the structure of REST API request bodies"
+      },
+      {
+        "id": "D",
+        "text": "Logging all inbound REST API calls for auditing"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "OAuth 2.0 provides a token-based authentication mechanism. A client obtains an access token by authenticating once, then uses that token on subsequent API calls instead of passing credentials (username/password) every time.",
+    "distractor_notes": {
+      "A": "OAuth 2.0 is about authentication/authorization, not payload encryption.",
+      "C": "Request body structure is defined by the API contract, not OAuth.",
+      "D": "API logging is a separate auditing feature, not OAuth."
+    },
+    "references": [
+      {
+        "title": "REST API integration",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "rest",
+      "oauth",
+      "authentication"
+    ]
+  },
+  {
+    "id": "csa-dmi-059",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Data Migration and Integration",
+    "subdomain": "Import Sets",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What happens to Import Set staging tables over time if they are not cleaned up?",
+    "options": [
+      {
+        "id": "A",
+        "text": "They are automatically purged every 7 days by default"
+      },
+      {
+        "id": "B",
+        "text": "They accumulate rows and can consume significant database space"
+      },
+      {
+        "id": "C",
+        "text": "They are merged into the target table automatically"
+      },
+      {
+        "id": "D",
+        "text": "They are archived to a cold storage read-only table"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Import Set staging tables accumulate rows with each import run and do not clean themselves automatically. Admins should periodically clean up or configure scheduled cleanup to prevent excessive database growth.",
+    "distractor_notes": {
+      "A": "There is no universal 7-day auto-purge for Import Set tables; cleanup must be configured.",
+      "C": "Staging tables are not merged into target tables; they hold the raw source data separately.",
+      "D": "Import Set tables are not automatically archived to cold storage."
+    },
+    "references": [
+      {
+        "title": "Data migration and integration",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "import-sets",
+      "cleanup",
+      "maintenance"
+    ]
+  },
+  {
+    "id": "csa-dmi-060",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Data Migration and Integration",
+    "subdomain": "Transform Maps",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the purpose of the 'Run Business Rules' option on a Transform Map?",
+    "options": [
+      {
+        "id": "A",
+        "text": "It triggers Business Rules on the Import Set staging table during transform"
+      },
+      {
+        "id": "B",
+        "text": "It controls whether Business Rules on the target table run for records created or updated by the transform"
+      },
+      {
+        "id": "C",
+        "text": "It prevents duplicate records by running coalesce rules before inserting"
+      },
+      {
+        "id": "D",
+        "text": "It schedules the transform to run as a Business Rule instead of a scheduled job"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The 'Run Business Rules' option on a Transform Map determines whether Business Rules defined on the target table (e.g., the Incident table) will execute for records created or updated during the transform. It is unchecked by default for performance.",
+    "distractor_notes": {
+      "A": "Business Rules on the Import Set staging table are not the subject of this option.",
+      "C": "Coalesce is a separate field map attribute for deduplication, not related to this option.",
+      "D": "This is not a scheduling option; it controls Business Rule execution on the target table."
+    },
+    "references": [
+      {
+        "title": "Data migration and integration",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "transform-map",
+      "business-rules"
+    ]
+  },
+  {
+    "id": "csa-dmi-061",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Data Migration and Integration",
+    "subdomain": "SOAP",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What format do SOAP web services use for request and response messages?",
+    "options": [
+      {
+        "id": "A",
+        "text": "JSON"
+      },
+      {
+        "id": "B",
+        "text": "XML"
+      },
+      {
+        "id": "C",
+        "text": "CSV"
+      },
+      {
+        "id": "D",
+        "text": "YAML"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "SOAP (Simple Object Access Protocol) web services use XML for both request and response messages. This distinguishes SOAP from REST, which commonly uses JSON.",
+    "distractor_notes": {
+      "A": "JSON is the common format for REST APIs, not SOAP.",
+      "C": "CSV is used for data file exchange, not SOAP messaging.",
+      "D": "YAML is a configuration format, not used for SOAP messages."
+    },
+    "references": [
+      {
+        "title": "Data migration and integration",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "soap",
+      "xml"
+    ]
+  },
+  {
+    "id": "csa-dmi-062",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Data Migration and Integration",
+    "subdomain": "REST Integration",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An external application needs to retrieve incident records where priority=1 via the Table API. Which URL is correct?",
+    "options": [
+      {
+        "id": "A",
+        "text": "/api/now/table/incident?sysparm_query=priority,1"
+      },
+      {
+        "id": "B",
+        "text": "/api/now/table/incident?sysparm_query=priority=1"
+      },
+      {
+        "id": "C",
+        "text": "/api/now/table/incident/priority=1"
+      },
+      {
+        "id": "D",
+        "text": "/api/now/table/incident?filter=priority:1"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The correct format uses sysparm_query with the encoded query syntax: /api/now/table/incident?sysparm_query=priority=1. The encoded query format matches the platform's standard query string.",
+    "distractor_notes": {
+      "A": "priority,1 is not valid encoded query syntax; it must use the = operator.",
+      "C": "Query conditions cannot be appended directly to the table path without a parameter name.",
+      "D": "filter= is not a valid Table API parameter; sysparm_query is the correct parameter."
+    },
+    "references": [
+      {
+        "title": "REST API integration",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "table-api",
+      "sysparm_query",
+      "application"
+    ]
+  },
+  {
+    "id": "csa-dmi-063",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Data Migration and Integration",
+    "subdomain": "IntegrationHub",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which IntegrationHub feature allows a flow to call an external REST API without writing custom code?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Scripted REST API"
+      },
+      {
+        "id": "B",
+        "text": "REST Step in a Flow Designer Action"
+      },
+      {
+        "id": "C",
+        "text": "MID Server REST probe"
+      },
+      {
+        "id": "D",
+        "text": "Outbound Email Action"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "IntegrationHub provides a REST Step that can be added to a Flow Designer Action, allowing flows to call external REST APIs declaratively without writing custom scripts.",
+    "distractor_notes": {
+      "A": "Scripted REST APIs are for exposing inbound endpoints, not for calling external APIs.",
+      "C": "MID Server REST probes are for network device interaction, not general outbound REST calls in flows.",
+      "D": "Outbound Email Action sends emails, not REST calls."
+    },
+    "references": [
+      {
+        "title": "IntegrationHub",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "integrationhub",
+      "rest-step"
+    ]
+  },
+  {
+    "id": "csa-dmi-064",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Data Migration and Integration",
+    "subdomain": "Transform Maps",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A transform map has Run Business Rules unchecked. An admin reports that assignment notifications are not firing for imported incidents. What is the most likely cause?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The notification is defined on the Import Set table, not the Incident table"
+      },
+      {
+        "id": "B",
+        "text": "With Run Business Rules disabled, event-based notifications triggered by Business Rules also do not fire"
+      },
+      {
+        "id": "C",
+        "text": "The MID Server is blocking email delivery"
+      },
+      {
+        "id": "D",
+        "text": "The transform map needs to be run in foreground mode"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "When 'Run Business Rules' is unchecked on a transform map, Business Rules on the target table do not execute. If the assignment notification is triggered by a Business Rule (firing an event), it will not fire during the transform.",
+    "distractor_notes": {
+      "A": "Notifications on the Import Set table would not send assignment alerts; they belong on the Incident table.",
+      "C": "MID Servers facilitate network connectivity; they do not block instance email delivery.",
+      "D": "Foreground vs background mode affects visibility of progress, not Business Rule execution."
+    },
+    "references": [
+      {
+        "title": "Data migration and integration",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "transform-map",
+      "business-rules",
+      "notifications",
+      "scenario"
+    ]
+  },
+  {
+    "id": "csa-dmi-065",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Data Migration and Integration",
+    "subdomain": "Import Sets",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the difference between a scheduled transform and running a transform manually?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Scheduled transforms can only run on JDBC data sources"
+      },
+      {
+        "id": "B",
+        "text": "Scheduled transforms run automatically at defined intervals without admin intervention"
+      },
+      {
+        "id": "C",
+        "text": "Manual transforms use a MID Server; scheduled transforms run on the server directly"
+      },
+      {
+        "id": "D",
+        "text": "Scheduled transforms skip the coalesce check for performance"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Scheduled transforms are configured to run automatically at defined time intervals (e.g., nightly) without requiring an admin to manually trigger them, enabling automated recurring data ingestion.",
+    "distractor_notes": {
+      "A": "Scheduled transforms work with all supported data source types, not just JDBC.",
+      "C": "Both scheduled and manual transforms run on the server; MID Server usage depends on data source configuration.",
+      "D": "Coalesce checks always apply regardless of how the transform is triggered."
+    },
+    "references": [
+      {
+        "title": "Data migration and integration",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "import-sets",
+      "scheduled-transform"
+    ]
+  },
+  {
+    "id": "csa-dmi-066",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Data Migration and Integration",
+    "subdomain": "MID Server",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "How does a MID Server communicate with the ServiceNow instance?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The instance pushes jobs to the MID Server via SSH"
+      },
+      {
+        "id": "B",
+        "text": "The MID Server initiates an outbound HTTPS connection to the instance and polls for work"
+      },
+      {
+        "id": "C",
+        "text": "The MID Server and instance communicate over a dedicated VPN tunnel"
+      },
+      {
+        "id": "D",
+        "text": "The instance connects directly to the MID Server via RDP"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The MID Server initiates an outbound HTTPS connection to the ServiceNow cloud instance and polls for work (ECC queue). This outbound connection model means only port 443 outbound from the customer network needs to be open.",
+    "distractor_notes": {
+      "A": "SSH is not used for MID Server-instance communication; HTTPS is.",
+      "C": "No dedicated VPN tunnel is required; the HTTPS connection over port 443 is sufficient.",
+      "D": "RDP is a desktop remote access protocol, not used for MID Server communication."
+    },
+    "references": [
+      {
+        "title": "MID Server",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/mid-server/mid-server-landing-page.html"
+      }
+    ],
+    "tags": [
+      "mid-server",
+      "communication",
+      "https"
+    ]
+  },
+  {
+    "id": "csa-dmi-067",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Data Migration and Integration",
+    "subdomain": "Import Sets",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A transform run is processing 50,000 rows but is very slow. An admin wants to improve performance without disabling coalesce. What is a recommended optimization?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Add an index on the coalesce field in the target table"
+      },
+      {
+        "id": "B",
+        "text": "Switch the data source to JDBC instead of CSV"
+      },
+      {
+        "id": "C",
+        "text": "Disable the Run Business Rules option on the transform map"
+      },
+      {
+        "id": "D",
+        "text": "Run the transform from a MID Server"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Disabling 'Run Business Rules' on the transform map prevents Business Rules on the target table from executing for each imported row, which can significantly improve transform performance for large datasets.",
+    "distractor_notes": {
+      "A": "Adding a database index is not directly configurable through the ServiceNow admin UI for this purpose.",
+      "B": "Switching data source type does not affect transform processing speed.",
+      "D": "MID Server handles data retrieval, not the server-side transform processing speed."
+    },
+    "references": [
+      {
+        "title": "Data migration and integration",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "transform-map",
+      "performance",
+      "business-rules"
+    ]
+  },
+  {
+    "id": "csa-dmi-068",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Data Migration and Integration",
+    "subdomain": "REST Integration",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which Table API parameter returns only the count of records matching a query without returning the record data?",
+    "options": [
+      {
+        "id": "A",
+        "text": "sysparm_limit=0"
+      },
+      {
+        "id": "B",
+        "text": "sysparm_fields=count"
+      },
+      {
+        "id": "C",
+        "text": "sysparm_count=true"
+      },
+      {
+        "id": "D",
+        "text": "sysparm_no_count=false"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Adding sysparm_count=true to a Table API GET request returns only the count of matching records in the response, without returning actual record data. Useful for pagination planning.",
+    "distractor_notes": {
+      "A": "sysparm_limit=0 would attempt to return zero records, not a count.",
+      "B": "sysparm_fields=count is not a valid parameter for record counting.",
+      "D": "sysparm_no_count=false is not the documented parameter for returning counts."
+    },
+    "references": [
+      {
+        "title": "REST API integration",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "table-api",
+      "sysparm_count"
+    ]
+  },
+  {
+    "id": "csa-dmi-069",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Data Migration and Integration",
+    "subdomain": "IntegrationHub",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Where are IntegrationHub Spokes obtained?",
+    "options": [
+      {
+        "id": "A",
+        "text": "They are built-in and available on all instances by default"
+      },
+      {
+        "id": "B",
+        "text": "They are downloaded from the ServiceNow Store as scoped applications"
+      },
+      {
+        "id": "C",
+        "text": "They are generated automatically when a MID Server connects"
+      },
+      {
+        "id": "D",
+        "text": "They must be developed by the admin using the REST Message tool"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "IntegrationHub Spokes are scoped applications available in the ServiceNow Store. Admins install them from the Store to gain pre-built actions for specific third-party platforms.",
+    "distractor_notes": {
+      "A": "Spokes are not built-in; they require Store installation.",
+      "C": "MID Servers enable connectivity; they do not generate Spokes.",
+      "D": "While custom actions can be built, pre-built Spokes come from the Store."
+    },
+    "references": [
+      {
+        "title": "IntegrationHub",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "integrationhub",
+      "spoke",
+      "servicenow-store"
+    ]
+  },
+  {
+    "id": "csa-dmi-070",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Data Migration and Integration",
+    "subdomain": "Transform Maps",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which Transform Map script type runs once before ANY rows are processed?",
+    "options": [
+      {
+        "id": "A",
+        "text": "onBefore"
+      },
+      {
+        "id": "B",
+        "text": "onStart"
+      },
+      {
+        "id": "C",
+        "text": "onAfter"
+      },
+      {
+        "id": "D",
+        "text": "onComplete"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The onStart script runs once before the transform processes any rows. It is suitable for initialization tasks, such as setting up variables used across the entire transform run.",
+    "distractor_notes": {
+      "A": "onBefore runs per row, before each individual row is processed.",
+      "C": "onAfter runs per row, after each individual row is processed.",
+      "D": "onComplete runs once after all rows have been processed."
+    },
+    "references": [
+      {
+        "title": "Data migration and integration",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "transform-map",
+      "onStart"
+    ]
+  },
+  {
+    "id": "csa-dmi-071",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Data Migration and Integration",
+    "subdomain": "REST Integration",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An external system uses a service account (not a user) to integrate with ServiceNow. What authentication type should be configured for this integration?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Basic Authentication with a shared admin password"
+      },
+      {
+        "id": "B",
+        "text": "A dedicated integration user with the web_service_access_only role using Basic Auth or OAuth"
+      },
+      {
+        "id": "C",
+        "text": "A shared itil user with full ITSM access"
+      },
+      {
+        "id": "D",
+        "text": "A certificate-only authentication with no user account"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Best practice is to create a dedicated integration user with the web_service_access_only role, which restricts the account to API access only. This account uses Basic Auth or OAuth, limiting its footprint and impact if compromised.",
+    "distractor_notes": {
+      "A": "Using a shared admin password is a security risk; dedicated integration accounts with limited roles are recommended.",
+      "C": "A shared itil user provides broader access than needed and creates an audit trail issue.",
+      "D": "Certificate-only authentication without a user account is not a standard ServiceNow REST integration pattern."
+    },
+    "references": [
+      {
+        "title": "REST API integration",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "rest",
+      "authentication",
+      "web_service_access_only"
+    ]
+  },
+  {
+    "id": "csa-dmi-072",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Data Migration and Integration",
+    "subdomain": "Import Sets",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the effect of selecting 'Insert if no match found' on a Transform Map field with Coalesce enabled?",
+    "options": [
+      {
+        "id": "A",
+        "text": "If the coalesce lookup finds no matching record, a new record is created in the target table"
+      },
+      {
+        "id": "B",
+        "text": "If the coalesce lookup finds no matching record, the row is skipped"
+      },
+      {
+        "id": "C",
+        "text": "If the coalesce lookup finds multiple matches, only the first is updated"
+      },
+      {
+        "id": "D",
+        "text": "The coalesce check is bypassed and all rows are inserted as new records"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "When Coalesce is enabled and 'Insert if no match found' (or the equivalent option) is set, the transform creates a new record in the target table when the coalesce lookup finds no matching record, instead of skipping the row.",
+    "distractor_notes": {
+      "B": "Skipping no-match rows is the default behavior without the insert option; enabling it creates new records.",
+      "C": "Multiple coalesce matches generate an error or use the first match, independent of this option.",
+      "D": "The coalesce check still runs; this option only governs the behavior when no match is found."
+    },
+    "references": [
+      {
+        "title": "Data migration and integration",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "transform-map",
+      "coalesce",
+      "insert"
+    ]
+  },
+  {
+    "id": "csa-dmi-073",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Data Migration and Integration",
+    "subdomain": "REST Integration",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What does the Scripted REST API feature in ServiceNow allow?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Calling external REST APIs from server-side scripts"
+      },
+      {
+        "id": "B",
+        "text": "Creating custom inbound REST API endpoints on the ServiceNow instance"
+      },
+      {
+        "id": "C",
+        "text": "Automatically documenting existing Table API endpoints"
+      },
+      {
+        "id": "D",
+        "text": "Restricting which IP addresses can call the Table API"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Scripted REST APIs allow admins to create custom inbound REST endpoints on the ServiceNow instance, with configurable paths, HTTP methods, and server-side script logic for handling requests.",
+    "distractor_notes": {
+      "A": "Calling external REST APIs uses Outbound REST Messages, not Scripted REST APIs.",
+      "C": "Documentation is separate from Scripted REST API functionality.",
+      "D": "IP restrictions are a security configuration, not a Scripted REST API feature."
+    },
+    "references": [
+      {
+        "title": "REST API integration",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "scripted-rest-api",
+      "inbound"
+    ]
+  },
+  {
+    "id": "csa-dmi-074",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Data Migration and Integration",
+    "subdomain": "MID Server",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the ECC Queue in the context of MID Server communication?",
+    "options": [
+      {
+        "id": "A",
+        "text": "An email distribution list for MID Server alerts"
+      },
+      {
+        "id": "B",
+        "text": "A database table on the ServiceNow instance where input/output messages between the instance and MID Servers are stored"
+      },
+      {
+        "id": "C",
+        "text": "A message queue on the MID Server that holds outbound network requests"
+      },
+      {
+        "id": "D",
+        "text": "A dedicated server that routes traffic between multiple MID Servers"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The ECC (External Communication Channel) Queue is a table (ecc_queue) on the ServiceNow instance that stores input and output messages exchanged between the instance and MID Servers. The MID Server polls this queue for work.",
+    "distractor_notes": {
+      "A": "The ECC Queue is a database table, not an email list.",
+      "C": "The queue is on the ServiceNow instance, not on the MID Server itself.",
+      "D": "The ECC Queue is not a separate server; it is a table within the instance."
+    },
+    "references": [
+      {
+        "title": "MID Server",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/mid-server/mid-server-landing-page.html"
+      }
+    ],
+    "tags": [
+      "mid-server",
+      "ecc-queue"
+    ]
+  },
+  {
+    "id": "csa-dmi-075",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Data Migration and Integration",
+    "subdomain": "Import Sets",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What does the 'Create Transform Map' shortcut on the Import Set table record do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Automatically generates a complete transform map by matching column names to target table fields"
+      },
+      {
+        "id": "B",
+        "text": "Creates a blank transform map pointing to a user-specified target table for manual configuration"
+      },
+      {
+        "id": "C",
+        "text": "Generates a scheduled transform for the import set"
+      },
+      {
+        "id": "D",
+        "text": "Runs the existing transform map on the current import set"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The 'Auto Map Matching Fields' or 'Create Transform Map' shortcut helps generate a transform map by automatically matching source column names from the Import Set to field names in the target table, saving manual field mapping effort.",
+    "distractor_notes": {
+      "B": "It does not create a fully blank map; it auto-matches fields where names align.",
+      "C": "Scheduled transforms are configured separately.",
+      "D": "Running the transform is a separate action."
+    },
+    "references": [
+      {
+        "title": "Data migration and integration",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "transform-map",
+      "auto-map"
+    ]
+  },
+  {
+    "id": "csa-dmi-076",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Data Migration and Integration",
+    "subdomain": "REST Integration",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which role is commonly assigned to a dedicated ServiceNow integration user to restrict it to API access only?",
+    "options": [
+      {
+        "id": "A",
+        "text": "admin"
+      },
+      {
+        "id": "B",
+        "text": "itil"
+      },
+      {
+        "id": "C",
+        "text": "web_service_access_only"
+      },
+      {
+        "id": "D",
+        "text": "rest_api_explorer"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "The web_service_access_only role restricts the user account to API interactions only, preventing them from logging into the UI. This is the recommended role for integration service accounts.",
+    "distractor_notes": {
+      "A": "Admin grants full access, which is excessive for an integration account.",
+      "B": "itil grants ITSM operational access, not just API access.",
+      "D": "rest_api_explorer is a role for testing APIs in the browser, not for service account restrictions."
+    },
+    "references": [
+      {
+        "title": "REST API integration",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "rest",
+      "web_service_access_only",
+      "security"
+    ]
+  },
+  {
+    "id": "csa-dmi-077",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Data Migration and Integration",
+    "subdomain": "IntegrationHub",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the relationship between an IntegrationHub Action and a Flow Designer Flow?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Actions and Flows are the same thing with different names"
+      },
+      {
+        "id": "B",
+        "text": "Actions are reusable units of work that can be called as steps within a Flow"
+      },
+      {
+        "id": "C",
+        "text": "Flows trigger Actions; Actions cannot call Flows"
+      },
+      {
+        "id": "D",
+        "text": "Actions run on the MID Server; Flows run on the instance"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "IntegrationHub Actions are reusable, pre-built or custom operations that can be called as steps within a Flow Designer Flow. Flows orchestrate the overall process by using Actions as building blocks.",
+    "distractor_notes": {
+      "A": "Actions and Flows are distinct constructs; Actions are called within Flows.",
+      "C": "Flows can call Actions, and Flows can also call Subflows; Actions are not limited from calling Flows, but typically they are self-contained operations.",
+      "D": "Both Actions and Flows execute on the ServiceNow server; MID Server is for external network operations."
+    },
+    "references": [
+      {
+        "title": "IntegrationHub",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "integrationhub",
+      "flow-designer",
+      "actions"
+    ]
+  },
+  {
+    "id": "csa-dmi-078",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Data Migration and Integration",
+    "subdomain": "Import Sets",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "After importing a CSV of 10,000 user records, an admin notices 2,000 rows have state 'Error'. The error message references a missing mandatory field in the target table. What should the admin do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Delete the Import Set and start over with a new file"
+      },
+      {
+        "id": "B",
+        "text": "Fix the source data or transform script to populate the mandatory field, then re-run the transform on the errored rows"
+      },
+      {
+        "id": "C",
+        "text": "Disable the mandatory flag on the target field and re-run the transform"
+      },
+      {
+        "id": "D",
+        "text": "Manually update the 2,000 error records in the Import Set table"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The correct approach is to fix the root cause \u2014 either the source data is missing the value or the transform script is not populating the mandatory field \u2014 then re-run the transform for the errored rows.",
+    "distractor_notes": {
+      "A": "Deleting and re-importing is unnecessary; transform errors can be corrected and re-run.",
+      "C": "Disabling mandatory flags in production data structures is risky and should be avoided.",
+      "D": "Manually updating 2,000 records in the staging table is impractical and error-prone."
+    },
+    "references": [
+      {
+        "title": "Data migration and integration",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "import-sets",
+      "error",
+      "scenario"
+    ]
+  },
+  {
+    "id": "csa-dmi-079",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Data Migration and Integration",
+    "subdomain": "REST Integration",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What does sysparm_offset do in a Table API GET request?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Sets the starting record position for pagination"
+      },
+      {
+        "id": "B",
+        "text": "Excludes the first N fields from the response"
+      },
+      {
+        "id": "C",
+        "text": "Skips the first N characters of string fields"
+      },
+      {
+        "id": "D",
+        "text": "Applies a time offset for date fields"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "sysparm_offset specifies the starting index for the records returned, enabling pagination. Combined with sysparm_limit, it allows retrieving records in pages (e.g., offset=0, limit=100 for page 1; offset=100, limit=100 for page 2).",
+    "distractor_notes": {
+      "B": "sysparm_offset does not affect fields; it controls record position.",
+      "C": "String field truncation is not what sysparm_offset does.",
+      "D": "Date field offsets are unrelated to sysparm_offset."
+    },
+    "references": [
+      {
+        "title": "REST API integration",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "table-api",
+      "sysparm_offset",
+      "pagination"
+    ]
+  },
+  {
+    "id": "csa-dmi-080",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Data Migration and Integration",
+    "subdomain": "MID Server",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A company has a ServiceNow instance but needs to run Discovery against servers in a network segment with no internet access. What must be installed in that segment?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A Scripted REST API endpoint"
+      },
+      {
+        "id": "B",
+        "text": "A MID Server"
+      },
+      {
+        "id": "C",
+        "text": "An IntegrationHub Spoke"
+      },
+      {
+        "id": "D",
+        "text": "An Import Set data source connector"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "A MID Server must be installed inside the network segment to act as a bridge between ServiceNow and the internally-accessible servers. The MID Server reaches the servers locally and communicates results back to the cloud instance.",
+    "distractor_notes": {
+      "A": "Scripted REST APIs are inbound endpoints on ServiceNow, not network bridge agents.",
+      "C": "IntegrationHub Spokes extend Flow Designer capabilities; they do not provide network discovery access.",
+      "D": "Import Set connectors handle data ingestion from files or databases, not live network discovery."
+    },
+    "references": [
+      {
+        "title": "MID Server",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/mid-server/mid-server-landing-page.html"
+      }
+    ],
+    "tags": [
+      "mid-server",
+      "discovery",
+      "network",
+      "scenario"
+    ]
+  },
+  {
+    "id": "csa-dmi-081",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Data Migration and Integration",
+    "subdomain": "Import Sets",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the purpose of a Data Policy compared to a Transform Script in Import Sets?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Data Policies enforce mandatory and read-only rules on fields when data is loaded via Import Sets and APIs"
+      },
+      {
+        "id": "B",
+        "text": "Data Policies run per-row transform logic like onBefore scripts"
+      },
+      {
+        "id": "C",
+        "text": "Data Policies replace transform maps for simple CSV imports"
+      },
+      {
+        "id": "D",
+        "text": "Data Policies define which users can run transform maps"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Data Policies enforce field-level rules (such as making fields mandatory or read-only) when records are created or updated via Import Sets, REST API, or other non-UI methods, complementing transform script logic.",
+    "distractor_notes": {
+      "B": "Per-row transform logic is handled by transform scripts (onBefore, onAfter), not Data Policies.",
+      "C": "Data Policies supplement transform maps; they do not replace them.",
+      "D": "Transform map access is controlled by roles and ACLs, not Data Policies."
+    },
+    "references": [
+      {
+        "title": "Data migration and integration",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "import-sets",
+      "data-policy"
+    ]
+  },
+  {
+    "id": "csa-dmi-082",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Data Migration and Integration",
+    "subdomain": "REST Integration",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What does the Table API return by default when no sysparm_fields parameter is specified?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Only the sys_id and number fields"
+      },
+      {
+        "id": "B",
+        "text": "All fields on the record"
+      },
+      {
+        "id": "C",
+        "text": "The fields visible in the default list view"
+      },
+      {
+        "id": "D",
+        "text": "The fields specified in the user's personal list preferences"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "When sysparm_fields is not specified, the Table API returns all fields on the record by default. This can result in large response payloads, which is why specifying sysparm_fields is recommended for efficiency.",
+    "distractor_notes": {
+      "A": "Only returning sys_id and number would require specifying those in sysparm_fields.",
+      "C": "The API returns all fields, not just those in the default list view.",
+      "D": "Personal list preferences do not affect API responses."
+    },
+    "references": [
+      {
+        "title": "REST API integration",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "table-api",
+      "default-response",
+      "all-fields"
+    ]
+  },
+  {
+    "id": "csa-dmi-083",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Data Migration and Integration",
+    "subdomain": "Transform Maps",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "In a Transform Map Field Map, what does a Choice Action of 'Reject' do when an unrecognized choice value is encountered?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Ignores the field and leaves it blank"
+      },
+      {
+        "id": "B",
+        "text": "Marks the entire row as Error and stops processing it"
+      },
+      {
+        "id": "C",
+        "text": "Creates a new choice entry in the target field's choice list"
+      },
+      {
+        "id": "D",
+        "text": "Sets the field to the first valid choice value"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "A Choice Action of 'Reject' causes the entire row to be set to Error state when an unrecognized choice value is encountered in the source data, halting further processing of that row.",
+    "distractor_notes": {
+      "A": "Ignoring and leaving blank is the behavior of 'Ignore' choice action, not 'Reject'.",
+      "C": "Creating new choice entries is the behavior of 'Create' choice action.",
+      "D": "Using the first valid choice is not a standard choice action behavior."
+    },
+    "references": [
+      {
+        "title": "Data migration and integration",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "transform-map",
+      "choice-action",
+      "reject"
+    ]
+  },
+  {
+    "id": "csa-dmi-084",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Data Migration and Integration",
+    "subdomain": "REST Integration",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which Table API verb deletes a specific record identified by its sys_id?",
+    "options": [
+      {
+        "id": "A",
+        "text": "REMOVE"
+      },
+      {
+        "id": "B",
+        "text": "POST with action=delete"
+      },
+      {
+        "id": "C",
+        "text": "DELETE"
+      },
+      {
+        "id": "D",
+        "text": "PATCH with active=false"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "The HTTP DELETE method on /api/now/table/{tableName}/{sys_id} removes the specified record from the table.",
+    "distractor_notes": {
+      "A": "REMOVE is not a standard HTTP method; DELETE is the correct verb.",
+      "B": "There is no action=delete parameter on POST; DELETE is the standard HTTP method for this.",
+      "D": "Setting active=false deactivates the record but does not delete it; DELETE removes the record."
+    },
+    "references": [
+      {
+        "title": "REST API integration",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "table-api",
+      "delete"
+    ]
+  },
+  {
+    "id": "csa-dmi-085",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Data Migration and Integration",
+    "subdomain": "Import Sets",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is an HTTP data source in Import Sets used for?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Exposing a ServiceNow table as an HTTP endpoint"
+      },
+      {
+        "id": "B",
+        "text": "Retrieving a file from a web URL (HTTP/HTTPS) for import"
+      },
+      {
+        "id": "C",
+        "text": "Receiving push notifications from external HTTP webhooks"
+      },
+      {
+        "id": "D",
+        "text": "Calling a REST API and importing the JSON response"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "An HTTP data source type retrieves a file from a specified HTTP or HTTPS URL, allowing ServiceNow to pull a remote file (such as a CSV) for import into an Import Set.",
+    "distractor_notes": {
+      "A": "Exposing ServiceNow tables as HTTP endpoints is the function of the Table API or Scripted REST APIs.",
+      "C": "Inbound webhooks are handled through Scripted REST APIs, not Import Set HTTP data sources.",
+      "D": "REST API JSON responses can be imported but require a specific REST data source type configuration."
+    },
+    "references": [
+      {
+        "title": "Data migration and integration",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "import-sets",
+      "http-data-source"
+    ]
+  },
+  {
+    "id": "csa-dmi-086",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Data Migration and Integration",
+    "subdomain": "REST Integration",
+    "difficulty": "application",
+    "type": "multi_select",
+    "stem": "Which two sysparm parameters are commonly combined for paginating through a large result set in the Table API?",
+    "options": [
+      {
+        "id": "A",
+        "text": "sysparm_limit"
+      },
+      {
+        "id": "B",
+        "text": "sysparm_fields"
+      },
+      {
+        "id": "C",
+        "text": "sysparm_offset"
+      },
+      {
+        "id": "D",
+        "text": "sysparm_display_value"
+      }
+    ],
+    "correct": [
+      "A",
+      "C"
+    ],
+    "rationale": "Pagination requires sysparm_limit (to set the page size, e.g., 100 records per page) and sysparm_offset (to set the starting index for each page, e.g., 0, 100, 200...).",
+    "distractor_notes": {
+      "B": "sysparm_fields controls which fields are returned, not pagination.",
+      "D": "sysparm_display_value controls value format, not pagination."
+    },
+    "references": [
+      {
+        "title": "REST API integration",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "table-api",
+      "pagination",
+      "multi-select"
+    ]
+  },
+  {
+    "id": "csa-dmi-087",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Data Migration and Integration",
+    "subdomain": "IntegrationHub",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A flow needs to create a ticket in Jira every time an incident is created in ServiceNow. What is the most efficient approach using IntegrationHub?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Write a Business Rule using GlideHTTPRequest to call the Jira REST API"
+      },
+      {
+        "id": "B",
+        "text": "Use the Jira Spoke in IntegrationHub within a Flow Designer flow triggered on incident insert"
+      },
+      {
+        "id": "C",
+        "text": "Configure an Import Set to push records to Jira via JDBC"
+      },
+      {
+        "id": "D",
+        "text": "Install a MID Server in the Jira network to relay the data"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The Jira Spoke provides pre-built actions for Jira integration. Combined with a Flow Designer flow triggered on incident insert, this is the most efficient and low-code approach.",
+    "distractor_notes": {
+      "A": "A scripted Business Rule using GlideHTTPRequest works but requires custom code and is more maintenance-heavy than using a Spoke.",
+      "C": "Import Sets are for pulling data into ServiceNow, not pushing to external systems.",
+      "D": "MID Servers facilitate internal network access; they are not the primary mechanism for pushing to cloud SaaS like Jira."
+    },
+    "references": [
+      {
+        "title": "IntegrationHub",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "integrationhub",
+      "jira",
+      "spoke",
+      "scenario"
+    ]
+  },
+  {
+    "id": "csa-dmi-088",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Data Migration and Integration",
+    "subdomain": "Import Sets",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "After a transform run, what does the Import Set log show?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A record for each user who accessed the import set"
+      },
+      {
+        "id": "B",
+        "text": "Details of each row's transform result including state, errors, and target record sys_id"
+      },
+      {
+        "id": "C",
+        "text": "The business rules that fired during the transform"
+      },
+      {
+        "id": "D",
+        "text": "A diff of changes made to system properties during the import"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The Import Set log provides details of each row's transform outcome, including its final state (Inserted, Updated, Ignored, Error), any error messages, and a link to the created or updated target record.",
+    "distractor_notes": {
+      "A": "User access logs are captured in the system audit, not the Import Set log.",
+      "C": "Business rule execution details are in the system log, not the Import Set transform log.",
+      "D": "System property changes are tracked in the update set, not the Import Set log."
+    },
+    "references": [
+      {
+        "title": "Data migration and integration",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "import-sets",
+      "transform-log"
+    ]
+  },
+  {
+    "id": "csa-dmi-089",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Data Migration and Integration",
+    "subdomain": "REST Integration",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which Table API parameter excludes reference link information from the response to reduce payload size?",
+    "options": [
+      {
+        "id": "A",
+        "text": "sysparm_no_links=true"
+      },
+      {
+        "id": "B",
+        "text": "sysparm_excludeReferenceLink=true"
+      },
+      {
+        "id": "C",
+        "text": "sysparm_fields=no_ref"
+      },
+      {
+        "id": "D",
+        "text": "sysparm_references=false"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "sysparm_excludeReferenceLink=true removes the link property from reference fields in the response, reducing payload size when the caller only needs the display value or sys_id.",
+    "distractor_notes": {
+      "A": "sysparm_no_links is not a documented Table API parameter.",
+      "C": "sysparm_fields=no_ref is not a valid parameter value.",
+      "D": "sysparm_references=false is not the documented parameter; sysparm_excludeReferenceLink is."
+    },
+    "references": [
+      {
+        "title": "REST API integration",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "table-api",
+      "sysparm_excludeReferenceLink"
+    ]
+  },
+  {
+    "id": "csa-dmi-090",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Data Migration and Integration",
+    "subdomain": "MID Server",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is a MID Server cluster used for?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Running multiple ServiceNow instances on the same hardware"
+      },
+      {
+        "id": "B",
+        "text": "Providing high availability and load distribution across multiple MID Servers for a single function"
+      },
+      {
+        "id": "C",
+        "text": "Grouping unrelated MID Servers for management purposes only"
+      },
+      {
+        "id": "D",
+        "text": "Isolating MID Servers into separate network zones"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "A MID Server cluster groups multiple MID Servers to provide high availability and load distribution. If one MID Server in a cluster becomes unavailable, others in the cluster continue processing work.",
+    "distractor_notes": {
+      "A": "MID Servers are agents on customer networks, not ServiceNow instance hosts.",
+      "C": "Clustering provides active redundancy, not just management grouping.",
+      "D": "Network zone isolation is an infrastructure concept separate from MID Server clustering."
+    },
+    "references": [
+      {
+        "title": "MID Server",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/mid-server/mid-server-landing-page.html"
+      }
+    ],
+    "tags": [
+      "mid-server",
+      "cluster",
+      "high-availability"
+    ]
+  },
+  {
+    "id": "csa-dmi-091",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Data Migration and Integration",
+    "subdomain": "Import Sets",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the purpose of the 'Target table' field on a Transform Map?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Specifies the Import Set staging table to read from"
+      },
+      {
+        "id": "B",
+        "text": "Specifies the ServiceNow table where transformed records will be created or updated"
+      },
+      {
+        "id": "C",
+        "text": "Defines which fields are mandatory in the imported data"
+      },
+      {
+        "id": "D",
+        "text": "Sets the role required to run the transform"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The Target table field on a Transform Map defines which ServiceNow table (e.g., sys_user, incident) will receive the records after transformation. The transform map maps source columns to target table fields.",
+    "distractor_notes": {
+      "A": "The Import Set staging table is the source; Target table is the destination.",
+      "C": "Mandatory field definitions are in the data dictionary, not the transform map target table setting.",
+      "D": "Role requirements for running transforms are not defined on the transform map's target table field."
+    },
+    "references": [
+      {
+        "title": "Data migration and integration",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "transform-map",
+      "target-table"
+    ]
+  },
+  {
+    "id": "csa-dmi-092",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Data Migration and Integration",
+    "subdomain": "REST Integration",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A developer wants to retrieve the display value of the 'assigned_to' reference field (the user's name) rather than their sys_id from the Table API. Which parameter achieves this?",
+    "options": [
+      {
+        "id": "A",
+        "text": "sysparm_fields=assigned_to.name"
+      },
+      {
+        "id": "B",
+        "text": "sysparm_display_value=true"
+      },
+      {
+        "id": "C",
+        "text": "sysparm_resolve_refs=true"
+      },
+      {
+        "id": "D",
+        "text": "sysparm_reference_format=display"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Setting sysparm_display_value=true causes the Table API to return display values (like a user's full name) for reference and choice fields instead of their internal values (sys_ids or raw choice values).",
+    "distractor_notes": {
+      "A": "sysparm_fields controls which fields are returned, not the value format of reference fields.",
+      "C": "sysparm_resolve_refs is not a documented Table API parameter.",
+      "D": "sysparm_reference_format is not a documented Table API parameter."
+    },
+    "references": [
+      {
+        "title": "REST API integration",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "table-api",
+      "sysparm_display_value",
+      "reference-fields"
+    ]
+  },
+  {
+    "id": "csa-dmi-093",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Data Migration and Integration",
+    "subdomain": "Import Sets",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "How does a scheduled import using a data source and transform map typically execute in ServiceNow?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A Scheduled Job triggers the load and transform steps automatically"
+      },
+      {
+        "id": "B",
+        "text": "A user must manually click Load and Transform each time"
+      },
+      {
+        "id": "C",
+        "text": "The MID Server initiates the import on its own schedule"
+      },
+      {
+        "id": "D",
+        "text": "An email notification triggers the import when the source file arrives"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Scheduled imports use a Scheduled Job that automatically triggers the data source load and transform map execution at the configured interval, enabling hands-free recurring data ingestion.",
+    "distractor_notes": {
+      "B": "Manual triggering defeats the purpose of scheduling; scheduled imports run automatically.",
+      "C": "MID Servers facilitate connectivity but do not independently schedule import runs.",
+      "D": "Email-triggered imports would require a custom integration; scheduled imports use Scheduled Jobs."
+    },
+    "references": [
+      {
+        "title": "Data migration and integration",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "import-sets",
+      "scheduled-import",
+      "scheduled-job"
+    ]
+  },
+  {
+    "id": "csa-dmi-094",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Data Migration and Integration",
+    "subdomain": "REST Integration",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the Aggregate API in ServiceNow used for?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Combining multiple REST requests into a single batch request"
+      },
+      {
+        "id": "B",
+        "text": "Performing aggregate operations like COUNT, SUM, AVG on table data"
+      },
+      {
+        "id": "C",
+        "text": "Aggregating records from multiple tables into a single response"
+      },
+      {
+        "id": "D",
+        "text": "Compressing REST API responses to reduce bandwidth"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The ServiceNow Aggregate API (/api/now/stats/{tableName}) allows callers to perform aggregate operations such as COUNT, SUM, MIN, MAX, and AVG on table data, useful for reporting and statistics without retrieving individual records.",
+    "distractor_notes": {
+      "A": "Batch requests are handled by the Batch API, not the Aggregate API.",
+      "C": "Aggregating across multiple tables is not the function of the Aggregate API.",
+      "D": "Response compression is an HTTP-level concern, not an API feature."
+    },
+    "references": [
+      {
+        "title": "REST API integration",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "aggregate-api",
+      "rest"
+    ]
+  },
+  {
+    "id": "csa-dmi-095",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Data Migration and Integration",
+    "subdomain": "Import Sets",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "An admin sets up a nightly CSV import of cost center data into a custom table. The next morning, 300 rows show as Updated but the manager field is blank for all of them. What is the most likely cause?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The coalesce field matched records and the manager field was not in the source CSV"
+      },
+      {
+        "id": "B",
+        "text": "A UI Policy is hiding the manager field in the form view"
+      },
+      {
+        "id": "C",
+        "text": "The target table's manager field is read-only via an ACL"
+      },
+      {
+        "id": "D",
+        "text": "The MID Server was offline during the import"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "If the source CSV does not include the manager column, or the transform map does not have a field map for the manager field, the existing manager value would be left unchanged (or blanked if overwrite is configured). The most likely cause here is the manager field not being in the source data or mapped.",
+    "distractor_notes": {
+      "B": "UI Policies affect form display, not data import outcomes.",
+      "C": "If the ACL blocked the write, the rows would show as Error, not Updated.",
+      "D": "A MID Server outage would prevent the import from running at all; 300 Updated rows means the import ran successfully."
+    },
+    "references": [
+      {
+        "title": "Data migration and integration",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "import-sets",
+      "transform-map",
+      "field-mapping",
+      "scenario"
+    ]
+  },
+  {
+    "id": "csa-dmi-096",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Data Migration and Integration",
+    "subdomain": "Transform Maps",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A source CSV contains department names like 'engineering', 'Engineering', and 'ENGINEERING' that must all map to the same Choice value 'Engineering' in the target table. Which transform map feature handles this normalization?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A coalesce field set on the department column ensures case-insensitive matching against the target table"
+      },
+      {
+        "id": "B",
+        "text": "A choice action of 'Translate' combined with a transform script that calls .toLowerCase() and then capitalizes the first letter"
+      },
+      {
+        "id": "C",
+        "text": "A Reference Lookup against the sys_choice table to find the canonical label value"
+      },
+      {
+        "id": "D",
+        "text": "A Field Map script on the department field that normalizes the value to the correct case before the choice action evaluates it"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "A Field Map script can transform the raw source value before it is evaluated by the choice action. Running a normalization script (e.g., lowercase then capitalize) ensures that all variants map to the correct canonical choice value.",
+    "distractor_notes": {
+      "A": "Coalesce is for deduplication against the target table based on a matching field, not for normalizing text case within a field value.",
+      "B": "A 'Translate' choice action and a separate script are not a built-in combination; the transform script on the field map is the right mechanism.",
+      "C": "sys_choice lookup would only confirm the choice exists, not normalize inconsistent incoming values."
+    },
+    "references": [
+      {
+        "title": "Data migration and integration",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "transform-map",
+      "field-map-script",
+      "choice-normalization"
+    ]
+  },
+  {
+    "id": "csa-dmi-097",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Data Migration and Integration",
+    "subdomain": "REST Integration",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What does the 'Content-Type: application/json' header tell the ServiceNow Table API when included in a POST request?",
+    "options": [
+      {
+        "id": "A",
+        "text": "That the caller wants the response returned in JSON format"
+      },
+      {
+        "id": "B",
+        "text": "That the request body is formatted as JSON, so the API should parse it as JSON"
+      },
+      {
+        "id": "C",
+        "text": "That the API should compress the response using JSON encoding"
+      },
+      {
+        "id": "D",
+        "text": "That the caller is using OAuth token authentication"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The Content-Type header tells the server how the request body is formatted. Setting it to application/json instructs the Table API to parse the incoming request body as JSON.",
+    "distractor_notes": {
+      "A": "The response format preference is communicated through the Accept header, not Content-Type.",
+      "C": "Content-Type describes the body format, not compression \u2014 compression uses the Accept-Encoding header.",
+      "D": "Authentication is communicated through the Authorization header, not Content-Type."
+    },
+    "references": [
+      {
+        "title": "REST API integration",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "rest",
+      "content-type",
+      "headers"
+    ]
+  },
+  {
+    "id": "csa-dmi-098",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Data Migration and Integration",
+    "subdomain": "MID Server",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which operating systems does ServiceNow support for MID Server installation?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Windows only"
+      },
+      {
+        "id": "B",
+        "text": "Linux only"
+      },
+      {
+        "id": "C",
+        "text": "Windows and Linux (both supported)"
+      },
+      {
+        "id": "D",
+        "text": "macOS, Windows, and Linux"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "ServiceNow MID Server supports installation on both Windows and Linux operating systems, giving organizations flexibility to deploy on their existing server infrastructure.",
+    "distractor_notes": {
+      "A": "Limiting to Windows is incorrect; Linux is also fully supported and commonly used.",
+      "B": "Linux-only is incorrect; Windows is also a fully supported MID Server platform.",
+      "D": "macOS is not a supported MID Server OS; only Windows and Linux are officially supported."
+    },
+    "references": [
+      {
+        "title": "MID Server",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/mid-server/mid-server-landing-page.html"
+      }
+    ],
+    "tags": [
+      "mid-server",
+      "os-support"
+    ]
+  },
+  {
+    "id": "csa-dmi-099",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Data Migration and Integration",
+    "subdomain": "Import Sets",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the recommended approach for cleaning up large Import Set staging tables that have accumulated rows over many import runs?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Manually delete rows using a GlideRecord script in a background script"
+      },
+      {
+        "id": "B",
+        "text": "Use the 'Clean up import sets' scheduled job or the cleanup option on the Import Set record to remove processed rows"
+      },
+      {
+        "id": "C",
+        "text": "Drop and recreate the staging table after each import run"
+      },
+      {
+        "id": "D",
+        "text": "Export the rows to a CSV and then truncate the table directly in the database"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "ServiceNow provides a built-in 'Clean up import sets' mechanism (available as a scheduled job or manual option) to remove processed rows from staging tables, keeping them manageable without direct database manipulation.",
+    "distractor_notes": {
+      "A": "While a GlideRecord script could work, it is not the recommended built-in approach for routine cleanup.",
+      "C": "Dropping and recreating the table would destroy the table definition and transform map relationships.",
+      "D": "Direct database truncation bypasses ServiceNow's application layer and is not a supported maintenance approach."
+    },
+    "references": [
+      {
+        "title": "Data migration and integration",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "import-sets",
+      "cleanup"
+    ]
+  },
+  {
+    "id": "csa-dmi-100",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Data Migration and Integration",
+    "subdomain": "REST Integration",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An external system makes a GET request to /api/now/table/incident and receives 10,000 records. The developer wants to retrieve only records where active=true and only 3 fields (number, short_description, assigned_to). Which parameter combination is correct?",
+    "options": [
+      {
+        "id": "A",
+        "text": "sysparm_query=active=true&sysparm_fields=number,short_description,assigned_to"
+      },
+      {
+        "id": "B",
+        "text": "sysparm_filter=active:true&sysparm_select=number|short_description|assigned_to"
+      },
+      {
+        "id": "C",
+        "text": "sysparm_query=active==true&sysparm_columns=number;short_description;assigned_to"
+      },
+      {
+        "id": "D",
+        "text": "filter=active=true&fields=number,short_description,assigned_to"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "sysparm_query uses encoded query syntax (active=true) and sysparm_fields accepts a comma-separated list of field names. Together they filter records and limit the response payload efficiently.",
+    "distractor_notes": {
+      "B": "sysparm_filter and sysparm_select are not valid Table API parameters; the correct names are sysparm_query and sysparm_fields.",
+      "C": "sysparm_query uses single = (not ==) for equality, and sysparm_columns is not the correct parameter name for field selection.",
+      "D": "filter= and fields= without the sysparm_ prefix are not valid Table API parameter names."
+    },
+    "references": [
+      {
+        "title": "REST API integration",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "table-api",
+      "sysparm_query",
+      "sysparm_fields",
+      "scenario"
+    ]
+  },
+  {
+    "id": "csa-dmi-101",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Data Migration and Integration",
+    "subdomain": "SOAP",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What file describes the operations, input parameters, and output structure of a SOAP web service?",
+    "options": [
+      {
+        "id": "A",
+        "text": "JSON Schema file"
+      },
+      {
+        "id": "B",
+        "text": "OpenAPI/Swagger specification"
+      },
+      {
+        "id": "C",
+        "text": "WSDL (Web Services Description Language) file"
+      },
+      {
+        "id": "D",
+        "text": "XSD (XML Schema Definition) file"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "A WSDL (Web Services Description Language) file describes a SOAP web service's operations, the parameters required for each operation, and the structure of input/output messages, allowing clients to understand and consume the service.",
+    "distractor_notes": {
+      "A": "JSON Schema describes JSON data structures, not SOAP services.",
+      "B": "OpenAPI/Swagger describes REST APIs, not SOAP services.",
+      "D": "XSD describes XML document structure and is often referenced by a WSDL but is not itself the service description."
+    },
+    "references": [
+      {
+        "title": "Data migration and integration",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "soap",
+      "wsdl"
+    ]
+  },
+  {
+    "id": "csa-dmi-102",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Data Migration and Integration",
+    "subdomain": "IntegrationHub",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A developer wants to create a reusable integration action that calls a Slack API to post messages and can be used across multiple flows. What is the correct IntegrationHub construct to build?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A Subflow that contains a hardcoded Slack API REST call and is shared via a Flow Designer template"
+      },
+      {
+        "id": "B",
+        "text": "A custom IntegrationHub Action with a REST Step configured for the Slack API, published as a reusable spoke action"
+      },
+      {
+        "id": "C",
+        "text": "A Business Rule that triggers on any record update and calls the Slack API using GlideHTTPRequest"
+      },
+      {
+        "id": "D",
+        "text": "A Scheduled Job that periodically checks for new records and posts updates to Slack"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "A custom IntegrationHub Action with a REST Step is the correct construct for a reusable, flow-callable integration unit. It encapsulates the Slack API call and its inputs/outputs, making it consumable across multiple flows like a spoke action.",
+    "distractor_notes": {
+      "A": "Subflows are for orchestrating multi-step processes, not for encapsulating a single API call as a reusable action primitive.",
+      "C": "A Business Rule with GlideHTTPRequest is a valid scripted approach but is less reusable, harder to maintain, and bypasses the low-code IntegrationHub approach.",
+      "D": "A Scheduled Job is for time-based execution, not for creating a reusable on-demand integration action."
+    },
+    "references": [
+      {
+        "title": "IntegrationHub",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "integrationhub",
+      "custom-action",
+      "rest-step"
+    ]
+  },
+  {
+    "id": "csa-dmi-103",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Data Migration and Integration",
+    "subdomain": "Import Sets",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the Import Set API used for?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Querying records in an Import Set staging table via REST"
+      },
+      {
+        "id": "B",
+        "text": "Loading data directly into an Import Set staging table via a REST API call, without needing a file upload"
+      },
+      {
+        "id": "C",
+        "text": "Triggering a scheduled transform run via an external API call"
+      },
+      {
+        "id": "D",
+        "text": "Exporting completed Import Set logs to a CSV via REST"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The Import Set API (/api/now/import/{stagingTableName}) allows external systems to POST data directly into an Import Set staging table and optionally trigger a transform, without needing to upload a file through the UI.",
+    "distractor_notes": {
+      "A": "Querying staging table records is done via the Table API, not the Import Set API.",
+      "C": "Triggering scheduled transforms is done through Scheduled Jobs or the transform map run option, not a dedicated Import Set API endpoint.",
+      "D": "Log export functionality is not the purpose of the Import Set API."
+    },
+    "references": [
+      {
+        "title": "Data migration and integration",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "import-sets",
+      "import-set-api"
+    ]
+  },
+  {
+    "id": "csa-dmi-104",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Data Migration and Integration",
+    "subdomain": "REST Integration",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the purpose of the 'Accept: application/json' header in a Table API request?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Tells the API server that the request body is formatted as JSON"
+      },
+      {
+        "id": "B",
+        "text": "Tells the API server that the caller wants the response body formatted as JSON"
+      },
+      {
+        "id": "C",
+        "text": "Authenticates the request using a JSON Web Token"
+      },
+      {
+        "id": "D",
+        "text": "Restricts the response to only JSON-type fields from the target table"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The Accept header communicates the desired response format to the server. Setting Accept: application/json tells the Table API to return the response body as JSON. This is distinct from Content-Type, which describes the request body format.",
+    "distractor_notes": {
+      "A": "The request body format is indicated by Content-Type, not Accept.",
+      "C": "JWT authentication uses the Authorization header, not Accept.",
+      "D": "The Accept header controls response serialization format, not which database fields are included."
+    },
+    "references": [
+      {
+        "title": "REST API integration",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "rest",
+      "accept-header",
+      "response-format"
+    ]
+  },
+  {
+    "id": "csa-dmi-105",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Data Migration and Integration",
+    "subdomain": "Transform Maps",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A weekly HR file import creates duplicate user records because the employee number appears in both 'emp_number' and 'legacy_id' columns depending on the row. The admin needs coalesce to check both fields. What is the solution?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Create two separate transform maps \u2014 one coalescing on emp_number and one on legacy_id \u2014 and run them sequentially"
+      },
+      {
+        "id": "B",
+        "text": "Set the Coalesce flag on both the emp_number and legacy_id field maps; the transform will check all coalesced fields together as a compound key"
+      },
+      {
+        "id": "C",
+        "text": "Write an onBefore script that sets a single canonical field from whichever source column is populated, then coalesce on that canonical field"
+      },
+      {
+        "id": "D",
+        "text": "Enable the 'Multiple coalesce' system property and list both columns in the coalesce field list"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "When coalesce needs to handle variable source fields, an onBefore transform script can normalize the data by setting a canonical target field from whichever source column is populated. Coalescing on that single canonical field then works reliably.",
+    "distractor_notes": {
+      "A": "Two sequential transform maps could create race conditions and still produce duplicates on the second run.",
+      "B": "Setting Coalesce on multiple field maps creates a compound key (AND condition) \u2014 all fields must match \u2014 which would not handle the OR scenario described.",
+      "D": "There is no 'Multiple coalesce' system property for this purpose; the logic must be handled in a transform script."
+    },
+    "references": [
+      {
+        "title": "Data migration and integration",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "transform-map",
+      "coalesce",
+      "scenario"
+    ]
+  },
+  {
+    "id": "csa-dmi-106",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Data Migration and Integration",
+    "subdomain": "MID Server",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the recommended minimum network requirement for a MID Server to communicate with the ServiceNow instance?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Inbound port 8080 open from the ServiceNow instance to the MID Server"
+      },
+      {
+        "id": "B",
+        "text": "Outbound port 443 (HTTPS) open from the MID Server to the ServiceNow instance"
+      },
+      {
+        "id": "C",
+        "text": "A dedicated leased line between the customer data center and ServiceNow's data center"
+      },
+      {
+        "id": "D",
+        "text": "Both inbound port 443 and inbound port 80 open to the MID Server from the internet"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The MID Server only needs outbound port 443 (HTTPS) open from the server to the ServiceNow instance. It initiates the connection outbound, so no inbound ports need to be opened on the customer firewall.",
+    "distractor_notes": {
+      "A": "Inbound connections from ServiceNow to the customer network are not required; the MID Server makes outbound connections only.",
+      "C": "A dedicated leased line is not required; standard internet HTTPS connectivity is sufficient.",
+      "D": "The MID Server makes outbound connections only; no inbound ports need to be opened to the MID Server from the internet."
+    },
+    "references": [
+      {
+        "title": "MID Server",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/mid-server/mid-server-landing-page.html"
+      }
+    ],
+    "tags": [
+      "mid-server",
+      "network",
+      "port-443"
+    ]
+  },
+  {
+    "id": "csa-dmi-107",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Data Migration and Integration",
+    "subdomain": "Import Sets",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What does enabling the 'Force Update' option on a Transform Map field map do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Forces a new record to be created even if a coalesce match is found"
+      },
+      {
+        "id": "B",
+        "text": "Overwrites the target field value even when the incoming source value is empty or null"
+      },
+      {
+        "id": "C",
+        "text": "Forces the transform to run synchronously in the foreground regardless of row count"
+      },
+      {
+        "id": "D",
+        "text": "Makes the coalesce check case-sensitive for that field"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The Force Update option on a field map forces the target field to be overwritten even if the incoming source value is empty or null. Without it, null source values typically do not overwrite existing target field values.",
+    "distractor_notes": {
+      "A": "Creating a new record despite a coalesce match is not what Force Update does; it controls whether null values overwrite existing data.",
+      "C": "Transform execution mode (foreground vs background) is not controlled by Force Update on a field map.",
+      "D": "Case sensitivity in coalesce matching is not controlled by Force Update."
+    },
+    "references": [
+      {
+        "title": "Data migration and integration",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "transform-map",
+      "force-update"
+    ]
+  },
+  {
+    "id": "csa-dmi-108",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Data Migration and Integration",
+    "subdomain": "REST Integration",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which REST API in ServiceNow is specifically designed for performing CRUD operations on records through a named API rather than the generic Table API?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Table API"
+      },
+      {
+        "id": "B",
+        "text": "Aggregate API"
+      },
+      {
+        "id": "C",
+        "text": "Scripted REST API"
+      },
+      {
+        "id": "D",
+        "text": "Import Set API"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "The Scripted REST API allows developers to create custom named REST endpoints with configurable URLs, HTTP methods, and server-side script logic, providing more control over the API contract than the generic Table API.",
+    "distractor_notes": {
+      "A": "The Table API provides generic CRUD on any table by table name, not a named custom API endpoint.",
+      "B": "The Aggregate API is for statistics operations (COUNT, SUM, AVG), not general CRUD.",
+      "D": "The Import Set API loads data into staging tables, not general CRUD on any record type."
+    },
+    "references": [
+      {
+        "title": "REST API integration",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "scripted-rest-api",
+      "custom-api"
+    ]
+  },
+  {
+    "id": "csa-dmi-109",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Data Migration and Integration",
+    "subdomain": "IntegrationHub",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the primary advantage of using IntegrationHub over custom GlideHTTPRequest scripting for REST integrations?",
+    "options": [
+      {
+        "id": "A",
+        "text": "IntegrationHub bypasses authentication requirements for external APIs"
+      },
+      {
+        "id": "B",
+        "text": "IntegrationHub provides a declarative, low-code interface with pre-built error handling, retry logic, and reusable actions that reduce custom script maintenance"
+      },
+      {
+        "id": "C",
+        "text": "IntegrationHub automatically generates API documentation for all configured integrations"
+      },
+      {
+        "id": "D",
+        "text": "IntegrationHub is the only way to call external REST APIs from ServiceNow flows"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "IntegrationHub's primary advantage is its declarative, low-code approach with built-in features like error handling, retry logic, connection management, and reusable Spoke actions, reducing the complexity and maintenance burden of hand-coded GlideHTTPRequest scripts.",
+    "distractor_notes": {
+      "A": "IntegrationHub still requires proper authentication configuration; it does not bypass security.",
+      "C": "While IntegrationHub provides visibility into integrations, it does not auto-generate external API documentation.",
+      "D": "GlideHTTPRequest and Outbound REST Messages also allow external REST calls; IntegrationHub is not the exclusive mechanism."
+    },
+    "references": [
+      {
+        "title": "IntegrationHub",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "integrationhub",
+      "low-code",
+      "advantages"
+    ]
+  },
+  {
+    "id": "csa-dmi-110",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Data Migration and Integration",
+    "subdomain": "Transform Maps",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What does the 'Copy empty fields' option on a Transform Map control?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Whether the import creates a copy of each transformed record in an archive table"
+      },
+      {
+        "id": "B",
+        "text": "Whether empty/null source values in a field map will overwrite existing non-null values in the target record during an update"
+      },
+      {
+        "id": "C",
+        "text": "Whether the transform copies all fields not explicitly mapped from the staging table to the target table"
+      },
+      {
+        "id": "D",
+        "text": "Whether transform errors are copied to a separate error log table"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The 'Copy empty fields' option determines whether a null or empty incoming value in a mapped field will overwrite an existing non-null value in the target record when updating via coalesce. If unchecked, empty values do not overwrite existing data.",
+    "distractor_notes": {
+      "A": "There is no archive table copying behavior tied to this option.",
+      "C": "Unmapped fields are not automatically copied; each field requires an explicit field map.",
+      "D": "Error logging is a separate transform map feature unrelated to 'Copy empty fields'."
+    },
+    "references": [
+      {
+        "title": "Data migration and integration",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "transform-map",
+      "copy-empty-fields"
+    ]
+  },
+  {
+    "id": "csa-dmi-111",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Data Migration and Integration",
+    "subdomain": "REST Integration",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An API integration user reports that their requests return 401 Unauthorized errors. Their credentials are correct and they have the web_service_access_only role. What is the most likely missing configuration?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The user needs the admin role in addition to web_service_access_only"
+      },
+      {
+        "id": "B",
+        "text": "The user's account is locked or inactive, or their instance requires MFA that is not configured for the API user"
+      },
+      {
+        "id": "C",
+        "text": "The Table API requires a separate API key that must be generated in the user's profile"
+      },
+      {
+        "id": "D",
+        "text": "The 401 error is always caused by incorrect sysparm_query syntax"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "A 401 Unauthorized with correct credentials most commonly indicates the user account is locked, inactive, or the instance has MFA enabled for all users including API accounts (which requires special configuration for service accounts).",
+    "distractor_notes": {
+      "A": "web_service_access_only is the correct and sufficient role for API access; adding admin is not the solution.",
+      "C": "ServiceNow's Table API does not use a separate API key mechanism separate from user credentials or OAuth tokens.",
+      "D": "Incorrect sysparm_query syntax produces 200 responses with empty result sets, not 401 errors."
+    },
+    "references": [
+      {
+        "title": "REST API integration",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "rest",
+      "authentication",
+      "401",
+      "troubleshooting"
+    ]
+  },
+  {
+    "id": "csa-dmi-112",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Data Migration and Integration",
+    "subdomain": "Import Sets",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the default behavior of a transform when a coalesce match finds multiple records in the target table?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The transform updates all matching records"
+      },
+      {
+        "id": "B",
+        "text": "The transform updates the most recently modified matching record"
+      },
+      {
+        "id": "C",
+        "text": "The row is marked as Error because the coalesce match is ambiguous"
+      },
+      {
+        "id": "D",
+        "text": "The transform skips the row and marks it as Ignored"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "When a coalesce lookup finds multiple matching records in the target table, the row is marked as Error because the match is ambiguous \u2014 the system cannot determine which record to update.",
+    "distractor_notes": {
+      "A": "Updating all matching records would risk unintended bulk updates; ServiceNow marks the row as Error instead.",
+      "B": "Selecting the most recently modified record is not the default behavior; ambiguous matches produce an error.",
+      "D": "Multiple matches produce an Error state, not Ignored \u2014 Ignored is used when a transform script explicitly skips the row."
+    },
+    "references": [
+      {
+        "title": "Data migration and integration",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "transform-map",
+      "coalesce",
+      "multiple-matches",
+      "error"
+    ]
+  },
+  {
+    "id": "csa-dmi-113",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Data Migration and Integration",
+    "subdomain": "REST Integration",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the purpose of the ServiceNow Attachment API?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Managing email attachments in the notification system"
+      },
+      {
+        "id": "B",
+        "text": "Uploading and downloading file attachments to and from ServiceNow records via REST"
+      },
+      {
+        "id": "C",
+        "text": "Configuring allowed file extensions for the import set data source"
+      },
+      {
+        "id": "D",
+        "text": "Attaching Scripted REST API definitions to specific table records"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The ServiceNow Attachment API (/api/now/attachment) allows external systems to upload file attachments to records and download existing attachments from records via REST, enabling file-based integration workflows.",
+    "distractor_notes": {
+      "A": "Email notification attachments are managed through the notification configuration, not the REST Attachment API.",
+      "C": "Import set file extension settings are a system property configuration, not the Attachment API.",
+      "D": "Scripted REST API definitions are their own configuration artifacts, not attached to records via the Attachment API."
+    },
+    "references": [
+      {
+        "title": "REST API integration",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "attachment-api",
+      "rest"
+    ]
+  },
+  {
+    "id": "csa-dmi-114",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Data Migration and Integration",
+    "subdomain": "MID Server",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A company has two geographically separated data centers, each with servers that need to be discovered. What is the recommended MID Server deployment?",
+    "options": [
+      {
+        "id": "A",
+        "text": "One MID Server with a VPN connection bridging both data centers"
+      },
+      {
+        "id": "B",
+        "text": "One MID Server per data center, each reporting to the same ServiceNow instance"
+      },
+      {
+        "id": "C",
+        "text": "A single MID Server cluster in the primary data center, relying on routing to reach the secondary"
+      },
+      {
+        "id": "D",
+        "text": "Two separate ServiceNow instances, one per data center, each with its own MID Server"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Deploying one MID Server per data center, each connected to the same ServiceNow instance, ensures local network access to servers in each location. This avoids cross-data-center network dependencies and improves discovery reliability.",
+    "distractor_notes": {
+      "A": "A VPN bridge approach introduces complexity and a single point of failure; separate MID Servers per location is cleaner.",
+      "C": "Relying on routing through the primary data center for secondary discovery is unreliable and may not reach all servers.",
+      "D": "Two separate ServiceNow instances would require duplicate configuration and cannot consolidate CMDB data easily."
+    },
+    "references": [
+      {
+        "title": "MID Server",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/mid-server/mid-server-landing-page.html"
+      }
+    ],
+    "tags": [
+      "mid-server",
+      "deployment",
+      "multi-datacenter",
+      "scenario"
+    ]
+  },
+  {
+    "id": "csa-dmi-115",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Data Migration and Integration",
+    "subdomain": "REST Integration",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What does the 'Link' property returned for reference fields in a Table API JSON response contain?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A hyperlink to the ServiceNow form for that referenced record"
+      },
+      {
+        "id": "B",
+        "text": "A REST API URL that can be called to retrieve the full referenced record"
+      },
+      {
+        "id": "C",
+        "text": "The display value of the referenced record"
+      },
+      {
+        "id": "D",
+        "text": "The internal choice key for the referenced table"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "For reference fields in a Table API response, the link property contains a REST API URL (e.g., /api/now/table/{table}/{sys_id}) that callers can use to fetch the full details of the referenced record.",
+    "distractor_notes": {
+      "A": "The link is a REST API endpoint URL, not a browser navigation link to a form.",
+      "C": "The display value is returned in the display_value property, not the link property.",
+      "D": "Choice keys are for choice fields; reference fields return a link to the referenced record's API endpoint."
+    },
+    "references": [
+      {
+        "title": "REST API integration",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "table-api",
+      "reference-fields",
+      "link-property"
+    ]
+  },
+  {
+    "id": "csa-dmi-116",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Data Migration and Integration",
+    "subdomain": "Import Sets",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What does the 'Run as' field on a Transform Map specify?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The user account whose permissions are used when the transform writes records to the target table"
+      },
+      {
+        "id": "B",
+        "text": "The scheduled time at which the transform should run automatically"
+      },
+      {
+        "id": "C",
+        "text": "The MID Server that should execute the transform processing"
+      },
+      {
+        "id": "D",
+        "text": "The application scope in which the transform map is registered"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The 'Run as' field on a Transform Map specifies which user account's permissions are used when the transform creates or updates records in the target table. This controls ACL evaluation during the transform.",
+    "distractor_notes": {
+      "B": "Scheduled execution time is configured on the Scheduled Job associated with the data source, not the Run as field on the Transform Map.",
+      "C": "Transform maps execute on the ServiceNow application server, not on a MID Server.",
+      "D": "Application scope is a different attribute; Run as controls the executing user context."
+    },
+    "references": [
+      {
+        "title": "Data migration and integration",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "transform-map",
+      "run-as",
+      "permissions"
+    ]
+  },
+  {
+    "id": "csa-dmi-117",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Data Migration and Integration",
+    "subdomain": "REST Integration",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A developer receives a 403 Forbidden response when calling the Table API for the HR table, despite the user having the web_service_access_only role. What is the most likely cause?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The web_service_access_only role does not permit any data access and must be paired with table-specific roles"
+      },
+      {
+        "id": "B",
+        "text": "The user's account has expired and needs to be renewed"
+      },
+      {
+        "id": "C",
+        "text": "The HR table has ACL rules that require a specific HR role (such as sn_hr_core.admin) which the integration user lacks"
+      },
+      {
+        "id": "D",
+        "text": "Port 443 is blocked on the integration user's network"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "A 403 Forbidden means authentication succeeded but authorization failed. The most likely cause is that the HR table has specific ACL rules requiring an HR role the integration user does not have, even with web_service_access_only.",
+    "distractor_notes": {
+      "A": "web_service_access_only restricts to API access; it does not itself grant data access \u2014 the user still needs appropriate data roles. But the issue is a missing HR-specific role, not that web_service_access_only forbids all data access.",
+      "B": "An expired account would produce a 401 Unauthorized, not a 403 Forbidden.",
+      "D": "A network port block would prevent the connection entirely, resulting in a connection timeout rather than a 403 response from the server."
+    },
+    "references": [
+      {
+        "title": "REST API integration",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "rest",
+      "403",
+      "acl",
+      "troubleshooting",
+      "scenario"
+    ]
+  },
+  {
+    "id": "csa-dmi-118",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Data Migration and Integration",
+    "subdomain": "IntegrationHub",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What does the Connection and Credential alias feature in IntegrationHub provide?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A way to store multiple MID Server configurations under a single name"
+      },
+      {
+        "id": "B",
+        "text": "A named configuration for external system connection details and credentials that can be referenced across multiple actions and flows"
+      },
+      {
+        "id": "C",
+        "text": "An alias for a Scripted REST API endpoint that masks the actual URL"
+      },
+      {
+        "id": "D",
+        "text": "A group of import set data sources managed under a single alias"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Connection and Credential aliases in IntegrationHub provide a centralized, named configuration for external system connection URLs and authentication credentials, which can then be referenced by multiple actions and flows. Updating the alias updates all references at once.",
+    "distractor_notes": {
+      "A": "MID Server configurations are separate from Connection aliases; they serve different purposes.",
+      "C": "Scripted REST API endpoint aliasing is not the purpose of Connection and Credential aliases.",
+      "D": "Import set data sources are not grouped through Connection aliases."
+    },
+    "references": [
+      {
+        "title": "IntegrationHub",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "integrationhub",
+      "connection-alias",
+      "credentials"
+    ]
+  },
+  {
+    "id": "csa-dmi-119",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Data Migration and Integration",
+    "subdomain": "Import Sets",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which script type in a transform map can abort the entire transform run (all remaining rows) when a critical error is detected?",
+    "options": [
+      {
+        "id": "A",
+        "text": "onBefore \u2014 by returning IGNORE for the current row"
+      },
+      {
+        "id": "B",
+        "text": "onAfter \u2014 by setting the row state to Error"
+      },
+      {
+        "id": "C",
+        "text": "onStart \u2014 by calling abort() to stop before any rows are processed"
+      },
+      {
+        "id": "D",
+        "text": "onBefore \u2014 by calling producer.abort() or setting the answer to ERROR and stopping the thread"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "The onStart script runs once before any rows are processed. If a critical pre-condition fails (such as a required configuration being absent), calling the appropriate abort mechanism in onStart prevents any rows from being processed.",
+    "distractor_notes": {
+      "A": "Returning IGNORE in onBefore skips only the current row, not the entire remaining transform run.",
+      "B": "Setting a row state to Error in onAfter marks only that row as failed; subsequent rows continue processing.",
+      "D": "While onBefore scripts can mark individual rows, the cleanest way to abort the entire run before any processing is in onStart."
+    },
+    "references": [
+      {
+        "title": "Data migration and integration",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "transform-map",
+      "onStart",
+      "abort"
+    ]
+  },
+  {
+    "id": "csa-dmi-120",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Data Migration and Integration",
+    "subdomain": "REST Integration",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A nightly integration creates 500 new incident records via the Table API POST. The next morning, 500 duplicates exist for each run. What is the most likely cause and fix?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The integration user lacks write permissions \u2014 switching to admin credentials will prevent duplicates"
+      },
+      {
+        "id": "B",
+        "text": "The POST calls are being retried on timeout, and each retry creates a new record because POST is not idempotent \u2014 implementing deduplication logic or using a coalesce-capable import set API would fix this"
+      },
+      {
+        "id": "C",
+        "text": "The Table API adds duplicate records when sysparm_limit is not set \u2014 adding sysparm_limit=1 to POST requests prevents this"
+      },
+      {
+        "id": "D",
+        "text": "The incident table has an auto-generate rule that creates a second copy for audit purposes"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "POST requests are not idempotent \u2014 each call creates a new record regardless of existing data. If the integration retries on timeouts, each retry creates a duplicate. Using the Import Set API with a coalesce-capable transform, or checking for existing records before POSTing, prevents duplicates.",
+    "distractor_notes": {
+      "A": "Permissions affect whether records can be created at all, not whether duplicates are created; the issue is the non-idempotent POST pattern.",
+      "C": "sysparm_limit is a query parameter for GET requests and does not affect POST behavior or prevent duplicates.",
+      "D": "No built-in audit duplication rule exists in ServiceNow's Incident table."
+    },
+    "references": [
+      {
+        "title": "REST API integration",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "rest",
+      "post",
+      "idempotent",
+      "duplicates",
+      "scenario"
     ]
   }
 ]

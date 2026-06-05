@@ -3748,5 +3748,1940 @@
       "preview",
       "scenario"
     ]
+  },
+  {
+    "id": "csa-ic-080",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "Business Rules",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is a Business Rule in ServiceNow?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A client-side script that runs in the browser when a form loads"
+      },
+      {
+        "id": "B",
+        "text": "A server-side script that runs when a record is read, created, updated, or deleted"
+      },
+      {
+        "id": "C",
+        "text": "A UI policy that shows or hides fields based on conditions"
+      },
+      {
+        "id": "D",
+        "text": "A scheduled job that runs at defined time intervals"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "A Business Rule is a server-side script that executes automatically when a record is read, created, updated, or deleted in the database. Business rules run on the server, not the browser.",
+    "distractor_notes": {
+      "A": "Client-side scripts run in the browser \u2014 that describes Client Scripts, not Business Rules.",
+      "C": "Showing/hiding fields based on conditions describes UI Policies.",
+      "D": "Scheduled jobs run on a time-based schedule \u2014 that is a different automation type."
+    },
+    "references": [
+      {
+        "title": "Administer the ServiceNow AI Platform",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "business-rules",
+      "server-side"
+    ]
+  },
+  {
+    "id": "csa-ic-081",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "Business Rules",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which Business Rule timing executes the script BEFORE the database operation?",
+    "options": [
+      {
+        "id": "A",
+        "text": "After"
+      },
+      {
+        "id": "B",
+        "text": "Display"
+      },
+      {
+        "id": "C",
+        "text": "Before"
+      },
+      {
+        "id": "D",
+        "text": "Async"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "A 'Before' Business Rule runs its script before the record is written to the database, allowing field values to be modified before the insert or update is committed.",
+    "distractor_notes": {
+      "A": "After rules run after the database write; changes made in After rules require an additional update() call.",
+      "B": "Display rules run when a form is loaded to set values for display, not before a DB write.",
+      "D": "Async rules run after the DB commit in a separate thread, good for non-blocking operations."
+    },
+    "references": [
+      {
+        "title": "Administer the ServiceNow AI Platform",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "business-rules",
+      "timing"
+    ]
+  },
+  {
+    "id": "csa-ic-082",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "Business Rules",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An admin needs a business rule to send an email notification after an incident is saved without slowing down the save operation. Which timing should they use?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Before"
+      },
+      {
+        "id": "B",
+        "text": "After"
+      },
+      {
+        "id": "C",
+        "text": "Display"
+      },
+      {
+        "id": "D",
+        "text": "Async"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "Async Business Rules execute after the database commit in a background thread, which means the save operation returns to the user immediately without waiting for the script to complete \u2014 ideal for non-critical operations like sending notifications.",
+    "distractor_notes": {
+      "A": "Before rules run before the DB write; they would delay the user's save.",
+      "B": "After rules run synchronously after the DB write; they still block the user's response.",
+      "C": "Display rules run when a form loads to set display values \u2014 they are not for post-save non-blocking operations."
+    },
+    "references": [
+      {
+        "title": "Administer the ServiceNow AI Platform",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "business-rules",
+      "async"
+    ]
+  },
+  {
+    "id": "csa-ic-083",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "Client Scripts",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which Client Script type runs when a form first loads?",
+    "options": [
+      {
+        "id": "A",
+        "text": "onChange"
+      },
+      {
+        "id": "B",
+        "text": "onSubmit"
+      },
+      {
+        "id": "C",
+        "text": "onLoad"
+      },
+      {
+        "id": "D",
+        "text": "onCellEdit"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "An onLoad Client Script runs each time a form is loaded into the browser, before the user sees or interacts with the form. It is typically used to set initial field values or visibility.",
+    "distractor_notes": {
+      "A": "onChange runs when the value of a specific field changes.",
+      "B": "onSubmit runs when the user saves or submits the form.",
+      "D": "onCellEdit runs when a value is edited inline in a list view."
+    },
+    "references": [
+      {
+        "title": "Administer the ServiceNow AI Platform",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "client-scripts",
+      "onLoad"
+    ]
+  },
+  {
+    "id": "csa-ic-084",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "Client Scripts",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which Client Script type executes when the user changes the value of a specific field?",
+    "options": [
+      {
+        "id": "A",
+        "text": "onLoad"
+      },
+      {
+        "id": "B",
+        "text": "onSubmit"
+      },
+      {
+        "id": "C",
+        "text": "onChange"
+      },
+      {
+        "id": "D",
+        "text": "onCellEdit"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "An onChange Client Script runs when the value of the specified field changes on the form. It is commonly used to set other field values or visibility based on the changed field.",
+    "distractor_notes": {
+      "A": "onLoad runs when the form loads, not when a field changes.",
+      "B": "onSubmit runs at form save/submit, not on field value change.",
+      "D": "onCellEdit runs for list-based inline cell edits, not form field changes."
+    },
+    "references": [
+      {
+        "title": "Administer the ServiceNow AI Platform",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "client-scripts",
+      "onChange"
+    ]
+  },
+  {
+    "id": "csa-ic-085",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "Client Scripts",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An admin needs to validate that the Priority field is not 1 when the user tries to save a non-critical hardware request. Which Client Script type is most appropriate?",
+    "options": [
+      {
+        "id": "A",
+        "text": "onLoad"
+      },
+      {
+        "id": "B",
+        "text": "onChange"
+      },
+      {
+        "id": "C",
+        "text": "onSubmit"
+      },
+      {
+        "id": "D",
+        "text": "onCellEdit"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "An onSubmit Client Script runs when the user saves/submits the form and can return false to block the save if validation fails. This is appropriate for save-time validation.",
+    "distractor_notes": {
+      "A": "onLoad runs when the form opens and cannot block a save.",
+      "B": "onChange runs on field change and is better for reactive field updates, not final save validation.",
+      "D": "onCellEdit applies to list inline editing, not form save validation."
+    },
+    "references": [
+      {
+        "title": "Administer the ServiceNow AI Platform",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "client-scripts",
+      "onSubmit",
+      "validation"
+    ]
+  },
+  {
+    "id": "csa-ic-086",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "UI Policies",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the primary purpose of a UI Policy in ServiceNow?",
+    "options": [
+      {
+        "id": "A",
+        "text": "To run server-side logic when a record is saved"
+      },
+      {
+        "id": "B",
+        "text": "To dynamically control field attributes (mandatory, read-only, visible) on a form based on conditions"
+      },
+      {
+        "id": "C",
+        "text": "To define ACL rules for field-level security"
+      },
+      {
+        "id": "D",
+        "text": "To send notifications when a form condition is met"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "UI Policies dynamically control form field attributes \u2014 making fields mandatory, read-only, or hidden/visible \u2014 based on configurable conditions, without requiring scripting.",
+    "distractor_notes": {
+      "A": "Server-side logic on record save is handled by Business Rules.",
+      "C": "Field-level security is handled by ACL rules, not UI Policies.",
+      "D": "Notifications are handled by the Notifications module, not UI Policies."
+    },
+    "references": [
+      {
+        "title": "Administer the ServiceNow AI Platform",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "ui-policies"
+    ]
+  },
+  {
+    "id": "csa-ic-087",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "UI Policies",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What does the 'Reverse if false' option on a UI Policy do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Deletes the UI Policy when the condition becomes false"
+      },
+      {
+        "id": "B",
+        "text": "Automatically reverses the policy's field actions when the condition is no longer true"
+      },
+      {
+        "id": "C",
+        "text": "Runs a separate script when the condition evaluates to false"
+      },
+      {
+        "id": "D",
+        "text": "Makes the UI Policy apply globally regardless of condition"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The 'Reverse if false' option causes the UI Policy to automatically undo its field actions (e.g., make a field non-mandatory, visible) when the condition evaluates to false.",
+    "distractor_notes": {
+      "A": "The policy is not deleted; it remains and reverses its actions.",
+      "C": "There is no separate script triggered by reverse if false; it automatically undoes the actions.",
+      "D": "Reverse if false does not make the policy global; it governs the policy's behavior on condition state change."
+    },
+    "references": [
+      {
+        "title": "Administer the ServiceNow AI Platform",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "ui-policies",
+      "reverse-if-false"
+    ]
+  },
+  {
+    "id": "csa-ic-088",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "Access Controls",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What does an ACL (Access Control Rule) protect in ServiceNow?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The network connection between the browser and the instance"
+      },
+      {
+        "id": "B",
+        "text": "Records, fields, and operations on tables"
+      },
+      {
+        "id": "C",
+        "text": "The physical server running the ServiceNow instance"
+      },
+      {
+        "id": "D",
+        "text": "The ServiceNow upgrade process"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "ACL rules in ServiceNow protect access to records, specific fields, and operations (read, write, create, delete) on tables, ensuring users can only perform actions they are authorized for.",
+    "distractor_notes": {
+      "A": "Network security is handled at the infrastructure level, not by ServiceNow ACLs.",
+      "C": "Physical server security is outside the scope of ServiceNow ACL rules.",
+      "D": "The upgrade process is managed by ServiceNow operations, not ACL rules."
+    },
+    "references": [
+      {
+        "title": "User administration",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/user-administration/application-specific-roles.html"
+      }
+    ],
+    "tags": [
+      "acl",
+      "access-control"
+    ]
+  },
+  {
+    "id": "csa-ic-089",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "Access Controls",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which operation does an ACL rule with type 'record' and operation 'write' control?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Whether a user can see a record in a list or form"
+      },
+      {
+        "id": "B",
+        "text": "Whether a user can save changes to a record"
+      },
+      {
+        "id": "C",
+        "text": "Whether a user can delete a record"
+      },
+      {
+        "id": "D",
+        "text": "Whether a user can create a new record"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "A 'write' operation ACL on a record type controls whether a user can save (write) changes to that record.",
+    "distractor_notes": {
+      "A": "Seeing a record is controlled by the 'read' operation ACL.",
+      "C": "Deleting a record is controlled by the 'delete' operation ACL.",
+      "D": "Creating a record is controlled by the 'create' operation ACL."
+    },
+    "references": [
+      {
+        "title": "User administration",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/user-administration/application-specific-roles.html"
+      }
+    ],
+    "tags": [
+      "acl",
+      "write-operation"
+    ]
+  },
+  {
+    "id": "csa-ic-090",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "Access Controls",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An admin wants to prevent a specific field from being visible to users who do not have the hr_admin role. Which type of ACL should they create?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Table-level read ACL"
+      },
+      {
+        "id": "B",
+        "text": "Record-level write ACL"
+      },
+      {
+        "id": "C",
+        "text": "Field-level read ACL"
+      },
+      {
+        "id": "D",
+        "text": "Table-level create ACL"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "A field-level read ACL controls visibility of a specific field. Setting it to require the hr_admin role means only users with that role can see the field.",
+    "distractor_notes": {
+      "A": "Table-level ACLs control access to the entire table, not a specific field.",
+      "B": "A write ACL controls editing, not visibility/reading.",
+      "D": "A create ACL controls new record creation, not field visibility."
+    },
+    "references": [
+      {
+        "title": "User administration",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/user-administration/application-specific-roles.html"
+      }
+    ],
+    "tags": [
+      "acl",
+      "field-level"
+    ]
+  },
+  {
+    "id": "csa-ic-091",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "Service Catalog",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is a Catalog Item in the ServiceNow Service Catalog?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A business rule that triggers when a user accesses the catalog"
+      },
+      {
+        "id": "B",
+        "text": "A requestable offering that users can order through the Service Catalog"
+      },
+      {
+        "id": "C",
+        "text": "A report showing catalog usage metrics"
+      },
+      {
+        "id": "D",
+        "text": "An ACL rule that restricts catalog access by role"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "A Catalog Item is a requestable offering presented to users in the Service Catalog. When a user orders a catalog item, a request and request item are created.",
+    "distractor_notes": {
+      "A": "Business rules are server-side automations, not catalog offerings.",
+      "C": "Catalog usage metrics are reports, not catalog items.",
+      "D": "ACL rules control access; they are not catalog items."
+    },
+    "references": [
+      {
+        "title": "ServiceNow Platform service catalog",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/service-catalog/service-catalog-landing-page.html"
+      }
+    ],
+    "tags": [
+      "service-catalog",
+      "catalog-item"
+    ]
+  },
+  {
+    "id": "csa-ic-092",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "Service Catalog",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What are catalog variables used for?",
+    "options": [
+      {
+        "id": "A",
+        "text": "To define which users can view a catalog item"
+      },
+      {
+        "id": "B",
+        "text": "To collect input from the user when they order a catalog item"
+      },
+      {
+        "id": "C",
+        "text": "To set the pricing of catalog items"
+      },
+      {
+        "id": "D",
+        "text": "To schedule when a catalog item becomes available"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Catalog variables are form fields that collect input from users when they are submitting a catalog item request, such as the name of the new hire or the type of equipment needed.",
+    "distractor_notes": {
+      "A": "User access to catalog items is controlled by user criteria, not variables.",
+      "C": "Pricing in the catalog uses a different pricing mechanism, not variables.",
+      "D": "Availability scheduling is separate from variables."
+    },
+    "references": [
+      {
+        "title": "ServiceNow Platform service catalog",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/service-catalog/service-catalog-landing-page.html"
+      }
+    ],
+    "tags": [
+      "service-catalog",
+      "variables"
+    ]
+  },
+  {
+    "id": "csa-ic-093",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "Service Catalog",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which catalog item type creates a record in a table other than the default sc_req_item table when submitted?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Standard catalog item"
+      },
+      {
+        "id": "B",
+        "text": "Record Producer"
+      },
+      {
+        "id": "C",
+        "text": "Order Guide"
+      },
+      {
+        "id": "D",
+        "text": "Content Item"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "A Record Producer is a special type of catalog item that creates a record in a specified target table (e.g., Incident or HR Case) when submitted, rather than creating a standard request item.",
+    "distractor_notes": {
+      "A": "Standard catalog items create records in sc_req_item.",
+      "C": "Order Guides group multiple catalog items into a single request, they do not target a custom table.",
+      "D": "Content Items are informational catalog entries, not request-generating items."
+    },
+    "references": [
+      {
+        "title": "ServiceNow Platform service catalog",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/service-catalog/service-catalog-landing-page.html"
+      }
+    ],
+    "tags": [
+      "service-catalog",
+      "record-producer"
+    ]
+  },
+  {
+    "id": "csa-ic-094",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "Service Catalog",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is an Order Guide in the Service Catalog?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A document explaining how to configure the Service Catalog"
+      },
+      {
+        "id": "B",
+        "text": "A catalog item that groups multiple items for a user to request together in a single order"
+      },
+      {
+        "id": "C",
+        "text": "A workflow that automates fulfillment of catalog requests"
+      },
+      {
+        "id": "D",
+        "text": "A category used to organize catalog items visually"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "An Order Guide groups multiple catalog items into a single guided ordering experience, allowing users to request several related items together in one request.",
+    "distractor_notes": {
+      "A": "Order Guides are functional catalog constructs, not documentation.",
+      "C": "Fulfillment workflows are separate from order guides.",
+      "D": "Categories organize items visually; order guides group items for ordering."
+    },
+    "references": [
+      {
+        "title": "ServiceNow Platform service catalog",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/service-catalog/service-catalog-landing-page.html"
+      }
+    ],
+    "tags": [
+      "service-catalog",
+      "order-guide"
+    ]
+  },
+  {
+    "id": "csa-ic-095",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "Scheduled Jobs",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is a Scheduled Job (Scheduled Script Execution) in ServiceNow?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A client-side script that runs when a user logs in"
+      },
+      {
+        "id": "B",
+        "text": "A server-side script configured to run automatically at specified time intervals"
+      },
+      {
+        "id": "C",
+        "text": "A notification triggered by a calendar event"
+      },
+      {
+        "id": "D",
+        "text": "A flow that activates on a record insert"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "A Scheduled Job is a server-side script configured to run automatically at defined time intervals (e.g., daily, hourly, weekly). They are stored in the sys_trigger table.",
+    "distractor_notes": {
+      "A": "Client-side scripts run in the browser; scheduled jobs are server-side.",
+      "C": "Scheduled jobs are not calendar notifications; they execute scripts automatically.",
+      "D": "Flows triggered on record insert are Flow Designer triggers, not scheduled jobs."
+    },
+    "references": [
+      {
+        "title": "Administer the ServiceNow AI Platform",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "scheduled-jobs",
+      "sys_trigger"
+    ]
+  },
+  {
+    "id": "csa-ic-096",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "Scheduled Jobs",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which table stores Scheduled Job records in ServiceNow?",
+    "options": [
+      {
+        "id": "A",
+        "text": "sys_job"
+      },
+      {
+        "id": "B",
+        "text": "sys_schedule"
+      },
+      {
+        "id": "C",
+        "text": "sys_trigger"
+      },
+      {
+        "id": "D",
+        "text": "sys_event"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Scheduled Job records (Scheduled Script Executions) are stored in the sys_trigger table in ServiceNow.",
+    "distractor_notes": {
+      "A": "sys_job is not the standard table for scheduled jobs.",
+      "B": "sys_schedule is used for schedules (work hours definitions), not scheduled jobs.",
+      "D": "sys_event stores platform events, not scheduled jobs."
+    },
+    "references": [
+      {
+        "title": "Administer the ServiceNow AI Platform",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "scheduled-jobs",
+      "sys_trigger"
+    ]
+  },
+  {
+    "id": "csa-ic-097",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "Branding",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Where does an administrator change the company logo displayed in the Next Experience top bar?",
+    "options": [
+      {
+        "id": "A",
+        "text": "System Properties > CSS"
+      },
+      {
+        "id": "B",
+        "text": "System Properties > Basic Configuration UI16"
+      },
+      {
+        "id": "C",
+        "text": "System Definition > Tables"
+      },
+      {
+        "id": "D",
+        "text": "User Preferences > Theme"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The company logo shown in the Next Experience top bar is configured in System Properties > Basic Configuration UI16, which includes banner/branding settings.",
+    "distractor_notes": {
+      "A": "System Properties > CSS controls custom styling, not the logo upload.",
+      "C": "System Definition > Tables is for data model management, not branding.",
+      "D": "User Preferences > Theme lets individual users change their theme, not the instance-wide company logo."
+    },
+    "references": [
+      {
+        "title": "Administer the ServiceNow AI Platform",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "branding",
+      "company-logo"
+    ]
+  },
+  {
+    "id": "csa-ic-098",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "Business Rules",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which Business Rule timing is used to set display-only values visible to the user on a form, without modifying the database record?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Before"
+      },
+      {
+        "id": "B",
+        "text": "After"
+      },
+      {
+        "id": "C",
+        "text": "Display"
+      },
+      {
+        "id": "D",
+        "text": "Async"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "A Display Business Rule runs when a record is loaded into a form and can set display-only (g_scratchpad) values that are visible to the user without modifying the actual database record.",
+    "distractor_notes": {
+      "A": "Before rules run before the DB write; they modify actual record values.",
+      "B": "After rules run after the DB write; they are not for display-only values.",
+      "D": "Async rules run after commit in a background thread, not for display value computation."
+    },
+    "references": [
+      {
+        "title": "Administer the ServiceNow AI Platform",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "business-rules",
+      "display"
+    ]
+  },
+  {
+    "id": "csa-ic-099",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "Client Scripts",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which Client Script type runs when a user edits a cell value directly in a list view?",
+    "options": [
+      {
+        "id": "A",
+        "text": "onLoad"
+      },
+      {
+        "id": "B",
+        "text": "onChange"
+      },
+      {
+        "id": "C",
+        "text": "onSubmit"
+      },
+      {
+        "id": "D",
+        "text": "onCellEdit"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "An onCellEdit Client Script runs when a user edits a cell value directly in a list, as opposed to editing on a form. This is specific to inline list editing.",
+    "distractor_notes": {
+      "A": "onLoad runs when a form is loaded, not during list cell edits.",
+      "B": "onChange runs on form fields, not list cell edits specifically.",
+      "C": "onSubmit runs when a form is saved, not during list cell edits."
+    },
+    "references": [
+      {
+        "title": "Administer the ServiceNow AI Platform",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "client-scripts",
+      "onCellEdit"
+    ]
+  },
+  {
+    "id": "csa-ic-100",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "UI Policies",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An admin creates a UI Policy that makes the Resolution Notes field mandatory when State is 'Resolved'. What must they also configure to ensure the field is no longer mandatory when State changes away from Resolved?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Create a second UI Policy for all other states"
+      },
+      {
+        "id": "B",
+        "text": "Enable the 'Reverse if false' option on the UI Policy"
+      },
+      {
+        "id": "C",
+        "text": "Add an onLoad Client Script to reset mandatory flags"
+      },
+      {
+        "id": "D",
+        "text": "Set the field mandatory flag to false in the dictionary"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The 'Reverse if false' option automatically removes the mandatory attribute from Resolution Notes when the condition (State = Resolved) is no longer true, without needing a second UI Policy.",
+    "distractor_notes": {
+      "A": "A second UI Policy is unnecessary when Reverse if false handles the reversal automatically.",
+      "C": "An onLoad Client Script could achieve this but is more complex and not the intended approach for UI Policies.",
+      "D": "Setting mandatory in the dictionary makes it always mandatory, which is the opposite of what is needed."
+    },
+    "references": [
+      {
+        "title": "Administer the ServiceNow AI Platform",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "ui-policies",
+      "reverse-if-false",
+      "scenario"
+    ]
+  },
+  {
+    "id": "csa-ic-101",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "Access Controls",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "In a ServiceNow ACL, what does it mean when the 'Role' field is left empty?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The ACL is disabled and does not apply"
+      },
+      {
+        "id": "B",
+        "text": "Any authenticated user can perform the operation"
+      },
+      {
+        "id": "C",
+        "text": "Only the admin role can perform the operation"
+      },
+      {
+        "id": "D",
+        "text": "The ACL applies only to guest (unauthenticated) users"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "When the Role field in an ACL rule is left empty, any authenticated user can perform the protected operation, regardless of their roles, as long as any script conditions also pass.",
+    "distractor_notes": {
+      "A": "An empty role means open access, not disabled.",
+      "C": "Admin-only access requires explicitly specifying the admin role.",
+      "D": "Guest user access is controlled separately; an empty role applies to authenticated users."
+    },
+    "references": [
+      {
+        "title": "User administration",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/user-administration/application-specific-roles.html"
+      }
+    ],
+    "tags": [
+      "acl",
+      "empty-role"
+    ]
+  },
+  {
+    "id": "csa-ic-102",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "Business Rules",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A 'Before' Business Rule sets current.priority = 1 on an incident. When is this value written to the database?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Immediately when the script executes"
+      },
+      {
+        "id": "B",
+        "text": "At the end of the Before rule execution, before the DB insert/update"
+      },
+      {
+        "id": "C",
+        "text": "After all After rules have also run"
+      },
+      {
+        "id": "D",
+        "text": "Only if the user saves the form manually again"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "In a Before Business Rule, changes to current fields (like current.priority = 1) are applied to the record object and then written to the database as part of the pending insert/update that happens at the end of the Before phase.",
+    "distractor_notes": {
+      "A": "The value is queued to be written as part of the database operation, not immediately in isolation.",
+      "C": "After rules run after the DB write; the Before rule's changes are already committed by then.",
+      "D": "The user does not need to save again; the Before rule's changes are included in the current save operation."
+    },
+    "references": [
+      {
+        "title": "Administer the ServiceNow AI Platform",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "business-rules",
+      "before",
+      "database"
+    ]
+  },
+  {
+    "id": "csa-ic-103",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "Notifications",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is an email layout in the context of ServiceNow notifications?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The CSS stylesheet applied to all instance pages"
+      },
+      {
+        "id": "B",
+        "text": "Reusable content for the message body of email templates"
+      },
+      {
+        "id": "C",
+        "text": "The page structure definition for Service Portal"
+      },
+      {
+        "id": "D",
+        "text": "A responsive dashboard layout for email clients"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Email layouts provide reusable content for the message body of email templates, allowing admins to create consistent HTML structures that can be applied across multiple templates.",
+    "distractor_notes": {
+      "A": "CSS stylesheets control instance page appearance, not email notification layouts.",
+      "C": "Service Portal page structure uses separate layout components, not email layouts.",
+      "D": "Email layouts are for notification templates, not dashboards."
+    },
+    "references": [
+      {
+        "title": "Email and SMS notifications",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/c_EmailNotifications.html"
+      }
+    ],
+    "tags": [
+      "notifications",
+      "email-layouts"
+    ]
+  },
+  {
+    "id": "csa-ic-104",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "Roles",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A scoped application defines a role with the 'Elevated privilege' flag set. What is the significance of this flag?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The role is automatically assigned to all admin users"
+      },
+      {
+        "id": "B",
+        "text": "The role can only be used in production instances"
+      },
+      {
+        "id": "C",
+        "text": "Users must explicitly elevate to this role during a session to use it, even if it is assigned to them"
+      },
+      {
+        "id": "D",
+        "text": "The role grants access to all tables in global scope"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Roles with the 'Elevated privilege' flag require users to explicitly request elevation to that role within their session, adding a layer of security for sensitive operations. Simply being assigned the role is not enough \u2014 elevation is required each session.",
+    "distractor_notes": {
+      "A": "Elevated privilege roles are not auto-assigned to admins.",
+      "B": "Elevated privilege is a session security feature, not an environment restriction.",
+      "D": "The role's elevated privilege flag does not automatically grant access to all global tables."
+    },
+    "references": [
+      {
+        "title": "User roles",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/user-administration/application-specific-roles.html"
+      }
+    ],
+    "tags": [
+      "roles",
+      "elevated-privilege"
+    ]
+  },
+  {
+    "id": "csa-ic-105",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "Scheduled Jobs",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An admin needs to run a GlideRecord cleanup script every night at midnight. What is the correct tool to use?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A Flow Designer scheduled trigger"
+      },
+      {
+        "id": "B",
+        "text": "A Business Rule with Async timing"
+      },
+      {
+        "id": "C",
+        "text": "A Scheduled Job (Scheduled Script Execution)"
+      },
+      {
+        "id": "D",
+        "text": "An onLoad Client Script with a time check"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "A Scheduled Job (Scheduled Script Execution) is designed exactly for running server-side scripts on a defined time schedule such as nightly at midnight.",
+    "distractor_notes": {
+      "A": "Flow Designer scheduled triggers can also work but Scheduled Jobs are the traditional and direct tool for time-based GlideRecord scripts.",
+      "B": "Async Business Rules trigger on database operations, not on a clock schedule.",
+      "D": "Client Scripts run in the browser and cannot execute timed server-side cleanup scripts."
+    },
+    "references": [
+      {
+        "title": "Administer the ServiceNow AI Platform",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "scheduled-jobs",
+      "cleanup"
+    ]
+  },
+  {
+    "id": "csa-ic-106",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "Access Controls",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What does a 'table' type ACL with operation 'read' protect?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Whether a specific field value can be read"
+      },
+      {
+        "id": "B",
+        "text": "Whether a user can see ANY records from that table"
+      },
+      {
+        "id": "C",
+        "text": "Whether a user can run a specific UI action"
+      },
+      {
+        "id": "D",
+        "text": "Whether a user can see the table in the system dictionary"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "A table-level read ACL determines whether a user can see any records from that table at all. If a user fails the table-level read ACL, they cannot see any records even if they would pass row-level checks.",
+    "distractor_notes": {
+      "A": "Field-value read access is controlled by field-level ACLs, not table-level ACLs.",
+      "C": "UI action access is controlled by UI Action conditions, not table read ACLs.",
+      "D": "System dictionary visibility is an admin-level concern, not governed by table read ACLs for end users."
+    },
+    "references": [
+      {
+        "title": "User administration",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/user-administration/application-specific-roles.html"
+      }
+    ],
+    "tags": [
+      "acl",
+      "table-level",
+      "read"
+    ]
+  },
+  {
+    "id": "csa-ic-107",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "Update Sets",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which Update Set state indicates that changes have been successfully applied to the target instance?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Complete"
+      },
+      {
+        "id": "B",
+        "text": "Loaded"
+      },
+      {
+        "id": "C",
+        "text": "Previewed"
+      },
+      {
+        "id": "D",
+        "text": "Committed"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "After running commit on a target instance, the update set enters the Committed state, indicating all configuration changes have been successfully applied.",
+    "distractor_notes": {
+      "A": "Complete is set on the source instance before export, not the target after applying.",
+      "B": "Loaded means the update set has been imported but not yet previewed or committed.",
+      "C": "Previewed means the system has checked for collisions but has not yet applied the changes."
+    },
+    "references": [
+      {
+        "title": "Update sets",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/ia-update-set.html"
+      }
+    ],
+    "tags": [
+      "update-sets",
+      "committed"
+    ]
+  },
+  {
+    "id": "csa-ic-108",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "Service Catalog",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which table stores Requested Item records created when a catalog item is ordered?",
+    "options": [
+      {
+        "id": "A",
+        "text": "sc_catalog"
+      },
+      {
+        "id": "B",
+        "text": "sc_request"
+      },
+      {
+        "id": "C",
+        "text": "sc_req_item"
+      },
+      {
+        "id": "D",
+        "text": "sc_cat_item"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "When a user orders a catalog item, a Requested Item record is created in the sc_req_item table. The sc_request table holds the parent request record.",
+    "distractor_notes": {
+      "A": "sc_catalog stores catalog definitions, not ordered items.",
+      "B": "sc_request holds the parent request, not the individual line item.",
+      "D": "sc_cat_item stores the catalog item definitions (the offerings), not the orders."
+    },
+    "references": [
+      {
+        "title": "ServiceNow Platform service catalog",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/service-catalog/service-catalog-landing-page.html"
+      }
+    ],
+    "tags": [
+      "service-catalog",
+      "sc_req_item"
+    ]
+  },
+  {
+    "id": "csa-ic-109",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "Business Rules",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A Business Rule updates related change records when an Incident priority changes to 1. During testing, the developer notices the rule fires even when the priority does not change. What condition should they add?",
+    "options": [
+      {
+        "id": "A",
+        "text": "current.active == true"
+      },
+      {
+        "id": "B",
+        "text": "current.priority.changesTo(1)"
+      },
+      {
+        "id": "C",
+        "text": "previous.priority != 1"
+      },
+      {
+        "id": "D",
+        "text": "current.priority == 1 && previous.priority != current.priority"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Using current.priority.changesTo(1) in the Business Rule condition ensures it only fires when the priority field changes TO the value 1, preventing unnecessary executions when the record is updated for other reasons.",
+    "distractor_notes": {
+      "A": "Checking active status does not prevent the rule from firing on unchanged priority updates.",
+      "C": "previous.priority != 1 would fire when priority was not previously 1, which could include updates where priority didn't change.",
+      "D": "This condition works logically but current.priority.changesTo(1) is the cleaner and more idiomatic ServiceNow approach."
+    },
+    "references": [
+      {
+        "title": "Administer the ServiceNow AI Platform",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "business-rules",
+      "changesTo",
+      "scenario"
+    ]
+  },
+  {
+    "id": "csa-ic-110",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "Access Controls",
+    "difficulty": "application",
+    "type": "multi_select",
+    "stem": "Which two elements in an ACL rule must BOTH evaluate to true for access to be granted?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The user must have the specified role"
+      },
+      {
+        "id": "B",
+        "text": "The user must be in the global domain"
+      },
+      {
+        "id": "C",
+        "text": "Any script condition must return true"
+      },
+      {
+        "id": "D",
+        "text": "The record must be in an active state"
+      }
+    ],
+    "correct": [
+      "A",
+      "C"
+    ],
+    "rationale": "For an ACL rule to grant access, the user must have the required role (if specified) AND any script condition defined on the ACL must return true. Both conditions must be satisfied.",
+    "distractor_notes": {
+      "B": "Domain membership is not a universal ACL requirement unless domain separation is configured.",
+      "D": "Record active state is not a built-in ACL evaluation criterion."
+    },
+    "references": [
+      {
+        "title": "User administration",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/user-administration/application-specific-roles.html"
+      }
+    ],
+    "tags": [
+      "acl",
+      "conditions",
+      "multi-select"
+    ]
+  },
+  {
+    "id": "csa-ic-111",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "Service Catalog",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the purpose of User Criteria on a catalog item?",
+    "options": [
+      {
+        "id": "A",
+        "text": "To collect input from users ordering the item"
+      },
+      {
+        "id": "B",
+        "text": "To control which users can see or order the catalog item"
+      },
+      {
+        "id": "C",
+        "text": "To define approval workflows for the item"
+      },
+      {
+        "id": "D",
+        "text": "To set pricing rules for different user groups"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "User Criteria on a catalog item defines which users can see or order the item, based on conditions such as role, department, location, or company. This replaces the older role-based catalog visibility approach.",
+    "distractor_notes": {
+      "A": "Collecting user input is the purpose of catalog variables, not user criteria.",
+      "C": "Approval workflows are defined in the catalog item's workflow/flow, not user criteria.",
+      "D": "Pricing rules are a separate catalog configuration, not user criteria."
+    },
+    "references": [
+      {
+        "title": "ServiceNow Platform service catalog",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/service-catalog/service-catalog-landing-page.html"
+      }
+    ],
+    "tags": [
+      "service-catalog",
+      "user-criteria"
+    ]
+  },
+  {
+    "id": "csa-ic-112",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "Roles",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the purpose of the 'itil' role in ServiceNow?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Grants full administrative access to all platform settings"
+      },
+      {
+        "id": "B",
+        "text": "Grants access to ITSM process modules such as Incident, Problem, and Change"
+      },
+      {
+        "id": "C",
+        "text": "Grants read-only access to all tables"
+      },
+      {
+        "id": "D",
+        "text": "Grants access to the Service Catalog only"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The itil role grants users access to ITSM process modules including Incident, Problem, Change, and related applications. It is the standard role for service desk agents and ITSM practitioners.",
+    "distractor_notes": {
+      "A": "Full admin access is granted by the admin role, not itil.",
+      "C": "Read-only access to all tables is not what itil provides; it grants ITSM operational access.",
+      "D": "Service Catalog access is controlled by user criteria, not specifically by the itil role."
+    },
+    "references": [
+      {
+        "title": "User roles",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/user-administration/application-specific-roles.html"
+      }
+    ],
+    "tags": [
+      "roles",
+      "itil"
+    ]
+  },
+  {
+    "id": "csa-ic-113",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "Notifications",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What does the 'Notification Categories' feature allow admins to do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Group and identify related notifications in user notification settings"
+      },
+      {
+        "id": "B",
+        "text": "Set priority levels for notification delivery"
+      },
+      {
+        "id": "C",
+        "text": "Archive notifications after a defined period"
+      },
+      {
+        "id": "D",
+        "text": "Restrict notifications to specific user groups"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Notification categories let admins create groupings that identify related notifications in user notification settings, making it easier for users to manage their subscription preferences.",
+    "distractor_notes": {
+      "B": "Notification priority/delivery order is not set through categories.",
+      "C": "Archival is handled by email retention, not notification categories.",
+      "D": "Restricting notifications to user groups is done through the notification's Who receives settings, not categories."
+    },
+    "references": [
+      {
+        "title": "Email and SMS notifications",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/c_EmailNotifications.html"
+      }
+    ],
+    "tags": [
+      "notifications",
+      "categories"
+    ]
+  },
+  {
+    "id": "csa-ic-114",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "Business Rules",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Where does a Business Rule execute compared to a Client Script?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Business Rules run in the browser; Client Scripts run on the server"
+      },
+      {
+        "id": "B",
+        "text": "Both run on the server"
+      },
+      {
+        "id": "C",
+        "text": "Business Rules run on the server; Client Scripts run in the browser"
+      },
+      {
+        "id": "D",
+        "text": "Both run in the browser"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Business Rules are server-side scripts that execute on the ServiceNow server. Client Scripts are client-side scripts that execute in the user's browser.",
+    "distractor_notes": {
+      "A": "This is backwards \u2014 Business Rules are server-side, Client Scripts are client-side.",
+      "B": "Client Scripts specifically run in the browser, not the server.",
+      "D": "Business Rules specifically run on the server, not the browser."
+    },
+    "references": [
+      {
+        "title": "Administer the ServiceNow AI Platform",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "business-rules",
+      "client-scripts",
+      "server-vs-client"
+    ]
+  },
+  {
+    "id": "csa-ic-115",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "Update Sets",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the significance of the 'Retrieve Update Sets' step on a target instance?",
+    "options": [
+      {
+        "id": "A",
+        "text": "It pushes update sets from source to target via the network"
+      },
+      {
+        "id": "B",
+        "text": "It pulls update sets from a remote source instance into the current target instance"
+      },
+      {
+        "id": "C",
+        "text": "It validates that all update sets are collision-free before import"
+      },
+      {
+        "id": "D",
+        "text": "It creates a backup of the current target configuration"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The Retrieve Update Sets step allows a target instance to pull update sets directly from a connected source instance over the network, rather than requiring a manual XML export and import.",
+    "distractor_notes": {
+      "A": "The target pulls, the source does not push \u2014 the direction is pull from target.",
+      "C": "Validation happens during Preview, which is a separate step after retrieval.",
+      "D": "No backup is created during the retrieve step."
+    },
+    "references": [
+      {
+        "title": "Update sets",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/ia-update-set.html"
+      }
+    ],
+    "tags": [
+      "update-sets",
+      "retrieve"
+    ]
+  },
+  {
+    "id": "csa-ic-116",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "System Properties",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An admin needs to display a custom base URL in all outbound email notifications instead of the default instance URL. Which system property should they set?",
+    "options": [
+      {
+        "id": "A",
+        "text": "glide.email.from.address"
+      },
+      {
+        "id": "B",
+        "text": "glide.email.override.url"
+      },
+      {
+        "id": "C",
+        "text": "glide.email.base_url"
+      },
+      {
+        "id": "D",
+        "text": "glide.system.url"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The glide.email.override.url property is used to display a custom base URL in email notifications instead of the default instance URL.",
+    "distractor_notes": {
+      "A": "glide.email.from.address controls the sender email address, not the base URL.",
+      "C": "glide.email.base_url is not a documented standard property for this purpose.",
+      "D": "glide.system.url is not the documented property for overriding email notification URLs."
+    },
+    "references": [
+      {
+        "title": "Available system properties",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/r_AvailableSystemProperties.html"
+      }
+    ],
+    "tags": [
+      "system-properties",
+      "email-url"
+    ]
+  },
+  {
+    "id": "csa-ic-117",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "Service Catalog",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which table stores the catalog item definitions (the offerings available to users)?",
+    "options": [
+      {
+        "id": "A",
+        "text": "sc_request"
+      },
+      {
+        "id": "B",
+        "text": "sc_req_item"
+      },
+      {
+        "id": "C",
+        "text": "sc_cat_item"
+      },
+      {
+        "id": "D",
+        "text": "sc_catalog"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Catalog item definitions \u2014 the offerings shown to users in the Service Catalog \u2014 are stored in the sc_cat_item table.",
+    "distractor_notes": {
+      "A": "sc_request stores the parent request record when a user places an order.",
+      "B": "sc_req_item stores the request item (ordered instance) records.",
+      "D": "sc_catalog stores the catalog containers/groupings, not individual item definitions."
+    },
+    "references": [
+      {
+        "title": "ServiceNow Platform service catalog",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/service-catalog/service-catalog-landing-page.html"
+      }
+    ],
+    "tags": [
+      "service-catalog",
+      "sc_cat_item"
+    ]
+  },
+  {
+    "id": "csa-ic-118",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "Business Rules",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which Business Rule condition method checks if a field value has changed from any previous value to a specific new value?",
+    "options": [
+      {
+        "id": "A",
+        "text": "current.field.changed()"
+      },
+      {
+        "id": "B",
+        "text": "current.field.changesTo(value)"
+      },
+      {
+        "id": "C",
+        "text": "current.field.changesFrom(value)"
+      },
+      {
+        "id": "D",
+        "text": "previous.field != current.field"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "current.field.changesTo(value) returns true when the field's value has changed to the specified value during this update. It checks both that the field changed AND that the new value equals the specified value.",
+    "distractor_notes": {
+      "A": "current.field.changed() returns true if the field changed to any value, not a specific one.",
+      "C": "current.field.changesFrom(value) checks if the field changed FROM a specific previous value, not TO one.",
+      "D": "previous.field != current.field checks if the value changed at all, not if it changed to a specific value."
+    },
+    "references": [
+      {
+        "title": "Administer the ServiceNow AI Platform",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "business-rules",
+      "changesTo"
+    ]
+  },
+  {
+    "id": "csa-ic-119",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "Client Scripts",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A developer needs to make the Resolution Code field visible only when an incident's State is set to 'Resolved' via a client-side mechanism. What is the recommended approach?",
+    "options": [
+      {
+        "id": "A",
+        "text": "An onChange Client Script that checks State and shows/hides the field"
+      },
+      {
+        "id": "B",
+        "text": "A UI Policy with condition State = Resolved and the Visible action on Resolution Code"
+      },
+      {
+        "id": "C",
+        "text": "A Business Rule that sets the field's mandatory flag"
+      },
+      {
+        "id": "D",
+        "text": "An ACL that hides the field for non-Resolved states"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "A UI Policy is the recommended no-code/low-code approach for showing or hiding fields based on field conditions. It handles the toggle automatically including the Reverse if false behavior.",
+    "distractor_notes": {
+      "A": "An onChange Client Script can work but requires scripting; UI Policy is the recommended declarative approach.",
+      "C": "Business Rules are server-side and cannot control UI field visibility in real-time.",
+      "D": "ACLs control access based on roles, not real-time form state conditions."
+    },
+    "references": [
+      {
+        "title": "Administer the ServiceNow AI Platform",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "ui-policies",
+      "client-scripts",
+      "best-practice"
+    ]
+  },
+  {
+    "id": "csa-ic-120",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "Roles",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An admin needs to audit which users have a specific role, including those who inherited it through group membership. Where should they look?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The sys_user table, filtering by role field"
+      },
+      {
+        "id": "B",
+        "text": "The Roles related list on the role record, which shows all users including those with inherited roles"
+      },
+      {
+        "id": "C",
+        "text": "The sys_user_has_role table, filtering by role sys_id"
+      },
+      {
+        "id": "D",
+        "text": "The audit log for recent role assignment changes"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The Roles related list on a role record shows all users who have that role, including those who have it directly and those who inherited it through group membership.",
+    "distractor_notes": {
+      "A": "The sys_user table does not have a direct 'role' field that lists all assigned roles.",
+      "C": "sys_user_has_role is not the standard table name for this query; sys_user_role is the junction table.",
+      "D": "The audit log shows changes, not a current list of all users with a role."
+    },
+    "references": [
+      {
+        "title": "User roles",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/user-administration/audit-user-roles.html"
+      }
+    ],
+    "tags": [
+      "roles",
+      "audit",
+      "role-assignment"
+    ]
   }
 ]
