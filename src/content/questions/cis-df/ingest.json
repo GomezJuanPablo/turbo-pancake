@@ -9,12 +9,26 @@
     "type": "single_select",
     "stem": "What is the primary role of ServiceNow Discovery in populating the CMDB?",
     "options": [
-      { "id": "A", "text": "To automatically find devices and applications on the network and create/update their CIs" },
-      { "id": "B", "text": "To approve change requests for new hardware" },
-      { "id": "C", "text": "To calculate CMDB Health scores" },
-      { "id": "D", "text": "To define the CSDM service model" }
+      {
+        "id": "A",
+        "text": "To automatically find devices and applications on the network and create/update their CIs"
+      },
+      {
+        "id": "B",
+        "text": "To approve change requests for new hardware"
+      },
+      {
+        "id": "C",
+        "text": "To calculate CMDB Health scores"
+      },
+      {
+        "id": "D",
+        "text": "To define the CSDM service model"
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "Discovery is an ingestion engine: it probes the network, identifies devices, servers, and the software running on them, and creates or updates the corresponding CIs (through IRE). It's one of the main automated ways the CMDB stays populated and current.",
     "distractor_notes": {
       "B": "Change approval is a Change Management process, not Discovery.",
@@ -22,9 +36,16 @@
       "D": "CSDM is a modeling framework; Discovery feeds data into it but doesn't define it."
     },
     "references": [
-      { "title": "Discovery", "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/discovery.html" }
+      {
+        "title": "Discovery",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/discovery.html"
+      }
     ],
-    "tags": ["ingest", "discovery", "purpose"]
+    "tags": [
+      "ingest",
+      "discovery",
+      "purpose"
+    ]
   },
   {
     "id": "cisdf-ing-002",
@@ -36,12 +57,26 @@
     "type": "single_select",
     "stem": "What is the function of a MID Server in Discovery and integrations?",
     "options": [
-      { "id": "A", "text": "It is a lightweight application that runs inside the customer network to securely execute probes/commands and relay data to the ServiceNow instance" },
-      { "id": "B", "text": "It is a cloud-only service that never touches the customer network" },
-      { "id": "C", "text": "It is a CMDB table" },
-      { "id": "D", "text": "It is a type of CI relationship" }
+      {
+        "id": "A",
+        "text": "It is a lightweight application that runs inside the customer network to securely execute probes/commands and relay data to the ServiceNow instance"
+      },
+      {
+        "id": "B",
+        "text": "It is a cloud-only service that never touches the customer network"
+      },
+      {
+        "id": "C",
+        "text": "It is a CMDB table"
+      },
+      {
+        "id": "D",
+        "text": "It is a type of CI relationship"
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "The MID (Management, Instrumentation, and Discovery) Server sits inside the customer's network. It executes probes and patterns against local devices and passes results back to the instance — bridging the cloud instance and on-prem infrastructure without exposing internal systems directly.",
     "distractor_notes": {
       "B": "The MID Server's whole point is to operate within the customer network.",
@@ -49,9 +84,16 @@
       "D": "It isn't a relationship type; it's an execution agent."
     },
     "references": [
-      { "title": "MID Server", "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/mid-server.html" }
+      {
+        "title": "MID Server",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/mid-server.html"
+      }
     ],
-    "tags": ["ingest", "mid-server", "architecture"]
+    "tags": [
+      "ingest",
+      "mid-server",
+      "architecture"
+    ]
   },
   {
     "id": "cisdf-ing-003",
@@ -63,12 +105,26 @@
     "type": "single_select",
     "stem": "What is a Service Graph Connector?",
     "options": [
-      { "id": "A", "text": "A productized, IRE-based integration that imports third-party data into the CMDB following CSDM and identification rules" },
-      { "id": "B", "text": "A physical cable connecting two servers" },
-      { "id": "C", "text": "A dashboard widget" },
-      { "id": "D", "text": "A type of incident" }
+      {
+        "id": "A",
+        "text": "A productized, IRE-based integration that imports third-party data into the CMDB following CSDM and identification rules"
+      },
+      {
+        "id": "B",
+        "text": "A physical cable connecting two servers"
+      },
+      {
+        "id": "C",
+        "text": "A dashboard widget"
+      },
+      {
+        "id": "D",
+        "text": "A type of incident"
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "Service Graph Connectors are pre-built integrations that bring external data sources into the CMDB the right way — through IRE, mapped to the correct classes, aligned to CSDM. They standardize third-party ingestion so it respects identification and reconciliation rather than dumping raw data.",
     "distractor_notes": {
       "B": "It's a software integration, not a physical cable.",
@@ -76,9 +132,16 @@
       "D": "It has nothing to do with incidents."
     },
     "references": [
-      { "title": "Service Graph Connectors", "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/service-graph-connectors.html" }
+      {
+        "title": "Service Graph Connectors",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/service-graph-connectors.html"
+      }
     ],
-    "tags": ["ingest", "service-graph-connector", "integration"]
+    "tags": [
+      "ingest",
+      "service-graph-connector",
+      "integration"
+    ]
   },
   {
     "id": "cisdf-ing-004",
@@ -90,12 +153,26 @@
     "type": "single_select",
     "stem": "When Discovery or a Service Graph Connector brings data in, why should it pass through IRE rather than writing directly to CI tables?",
     "options": [
-      { "id": "A", "text": "So identification prevents duplicates and reconciliation protects authoritative attributes" },
-      { "id": "B", "text": "So the data loads more slowly" },
-      { "id": "C", "text": "So the MID Server can be turned off" },
-      { "id": "D", "text": "So Discovery patterns are deleted" }
+      {
+        "id": "A",
+        "text": "So identification prevents duplicates and reconciliation protects authoritative attributes"
+      },
+      {
+        "id": "B",
+        "text": "So the data loads more slowly"
+      },
+      {
+        "id": "C",
+        "text": "So the MID Server can be turned off"
+      },
+      {
+        "id": "D",
+        "text": "So Discovery patterns are deleted"
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "IRE is the single front door regardless of source. Routing ingestion through it means every incoming record is matched (no duplicates) and reconciled (no unauthorized overwrites). Bypassing IRE on ingestion is the fastest route to a polluted CMDB.",
     "distractor_notes": {
       "B": "The benefit is data integrity, not slower loading.",
@@ -103,9 +180,16 @@
       "D": "IRE processing doesn't delete patterns."
     },
     "references": [
-      { "title": "Ingestion through IRE", "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/c_CMDBIdentifyandReconcile.html" }
+      {
+        "title": "Ingestion through IRE",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/c_CMDBIdentifyandReconcile.html"
+      }
     ],
-    "tags": ["ingest", "ire", "single-entry-point"]
+    "tags": [
+      "ingest",
+      "ire",
+      "single-entry-point"
+    ]
   },
   {
     "id": "cisdf-ing-005",
@@ -117,12 +201,26 @@
     "type": "single_select",
     "stem": "What is IntegrationHub ETL used for in the context of CMDB ingestion?",
     "options": [
-      { "id": "A", "text": "A guided tool to transform and map third-party import data to CMDB classes/attributes and load it via IRE" },
-      { "id": "B", "text": "A tool for editing email templates" },
-      { "id": "C", "text": "A network packet sniffer" },
-      { "id": "D", "text": "A change calendar" }
+      {
+        "id": "A",
+        "text": "A guided tool to transform and map third-party import data to CMDB classes/attributes and load it via IRE"
+      },
+      {
+        "id": "B",
+        "text": "A tool for editing email templates"
+      },
+      {
+        "id": "C",
+        "text": "A network packet sniffer"
+      },
+      {
+        "id": "D",
+        "text": "A change calendar"
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "IntegrationHub ETL provides a guided, low-code way to map and transform incoming third-party data onto the right CMDB classes and attributes, then load it through IRE. It's how custom data sources are onboarded cleanly when no packaged connector exists.",
     "distractor_notes": {
       "B": "It's a data transformation/mapping tool, not an email editor.",
@@ -130,9 +228,16 @@
       "D": "It has nothing to do with change calendars."
     },
     "references": [
-      { "title": "IntegrationHub ETL", "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/integrationhub-etl.html" }
+      {
+        "title": "IntegrationHub ETL",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/integrationhub-etl.html"
+      }
     ],
-    "tags": ["ingest", "integrationhub-etl", "transform"]
+    "tags": [
+      "ingest",
+      "integrationhub-etl",
+      "transform"
+    ]
   },
   {
     "id": "cisdf-ing-006",
@@ -144,12 +249,26 @@
     "type": "single_select",
     "stem": "Horizontal Discovery and Top-down (Service) Mapping differ in what fundamental way?",
     "options": [
-      { "id": "A", "text": "Horizontal Discovery finds infrastructure CIs broadly; Service Mapping builds service-aware maps top-down from an entry point" },
-      { "id": "B", "text": "They are the same feature" },
-      { "id": "C", "text": "Horizontal Discovery only works on printers" },
-      { "id": "D", "text": "Service Mapping deletes CIs" }
+      {
+        "id": "A",
+        "text": "Horizontal Discovery finds infrastructure CIs broadly; Service Mapping builds service-aware maps top-down from an entry point"
+      },
+      {
+        "id": "B",
+        "text": "They are the same feature"
+      },
+      {
+        "id": "C",
+        "text": "Horizontal Discovery only works on printers"
+      },
+      {
+        "id": "D",
+        "text": "Service Mapping deletes CIs"
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "Horizontal Discovery scans broadly to populate infrastructure CIs and their direct relationships. Service Mapping works top-down from a defined entry point (like a URL) to trace the specific CIs and dependencies that make up a business service — a targeted, service-centric view rather than a broad sweep.",
     "distractor_notes": {
       "B": "They're complementary but distinct approaches.",
@@ -157,9 +276,16 @@
       "D": "Service Mapping builds maps; it doesn't delete CIs."
     },
     "references": [
-      { "title": "Discovery vs Service Mapping", "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/discovery.html" }
+      {
+        "title": "Discovery vs Service Mapping",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/discovery.html"
+      }
     ],
-    "tags": ["ingest", "discovery", "service-mapping"]
+    "tags": [
+      "ingest",
+      "discovery",
+      "service-mapping"
+    ]
   },
   {
     "id": "cisdf-ing-007",
@@ -171,12 +297,26 @@
     "type": "single_select",
     "stem": "What is the role of an import set table and transform map in data ingestion?",
     "options": [
-      { "id": "A", "text": "The import set stages incoming source rows; the transform map maps and moves them to the target CMDB table (ideally via IRE)" },
-      { "id": "B", "text": "They approve changes automatically" },
-      { "id": "C", "text": "They are used only for sending emails" },
-      { "id": "D", "text": "They store user passwords" }
+      {
+        "id": "A",
+        "text": "The import set stages incoming source rows; the transform map maps and moves them to the target CMDB table (ideally via IRE)"
+      },
+      {
+        "id": "B",
+        "text": "They approve changes automatically"
+      },
+      {
+        "id": "C",
+        "text": "They are used only for sending emails"
+      },
+      {
+        "id": "D",
+        "text": "They store user passwords"
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "Imports use a two-step staging pattern: raw source rows land in an import set table, then a transform map defines how each field maps to the target CMDB table and applies any coalescing/transform logic. For CMDB targets this should route through IRE so identification and reconciliation apply.",
     "distractor_notes": {
       "B": "Imports load data; they don't approve changes.",
@@ -184,9 +324,16 @@
       "D": "They don't store passwords."
     },
     "references": [
-      { "title": "Import sets and transform maps", "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/import-sets.html" }
+      {
+        "title": "Import sets and transform maps",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/import-sets.html"
+      }
     ],
-    "tags": ["ingest", "import-set", "transform-map"]
+    "tags": [
+      "ingest",
+      "import-set",
+      "transform-map"
+    ]
   },
   {
     "id": "cisdf-ing-008",
@@ -198,12 +345,26 @@
     "type": "single_select",
     "stem": "An organization wants to import data from a well-known third-party tool into the CMDB with minimal custom development and full CSDM alignment. What should they look for first?",
     "options": [
-      { "id": "A", "text": "A certified Service Graph Connector for that tool on the ServiceNow Store" },
-      { "id": "B", "text": "A way to write directly to cmdb_ci with a script" },
-      { "id": "C", "text": "A new incident category" },
-      { "id": "D", "text": "A UI policy" }
+      {
+        "id": "A",
+        "text": "A certified Service Graph Connector for that tool on the ServiceNow Store"
+      },
+      {
+        "id": "B",
+        "text": "A way to write directly to cmdb_ci with a script"
+      },
+      {
+        "id": "C",
+        "text": "A new incident category"
+      },
+      {
+        "id": "D",
+        "text": "A UI policy"
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "For popular sources, a certified Service Graph Connector is the preferred path: it's pre-built, IRE-based, and CSDM-aligned, minimizing custom work and ensuring clean ingestion. You only fall back to ETL or custom integration when no suitable connector exists.",
     "distractor_notes": {
       "B": "Direct scripted writes bypass IRE and CSDM alignment — the opposite of the goal.",
@@ -211,9 +372,16 @@
       "D": "A UI policy controls form behavior, not data import."
     },
     "references": [
-      { "title": "Choosing a Service Graph Connector", "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/service-graph-connectors.html" }
+      {
+        "title": "Choosing a Service Graph Connector",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/service-graph-connectors.html"
+      }
     ],
-    "tags": ["ingest", "service-graph-connector", "selection"]
+    "tags": [
+      "ingest",
+      "service-graph-connector",
+      "selection"
+    ]
   },
   {
     "id": "cisdf-ing-009",
@@ -225,12 +393,26 @@
     "type": "single_select",
     "stem": "In modern Discovery, what is a 'pattern'?",
     "options": [
-      { "id": "A", "text": "A set of declarative operations that defines how to probe a target and extract CI data, used instead of legacy probe/sensor scripting" },
-      { "id": "B", "text": "A scheduled email" },
-      { "id": "C", "text": "A CMDB Health threshold" },
-      { "id": "D", "text": "A type of business service" }
+      {
+        "id": "A",
+        "text": "A set of declarative operations that defines how to probe a target and extract CI data, used instead of legacy probe/sensor scripting"
+      },
+      {
+        "id": "B",
+        "text": "A scheduled email"
+      },
+      {
+        "id": "C",
+        "text": "A CMDB Health threshold"
+      },
+      {
+        "id": "D",
+        "text": "A type of business service"
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "Discovery patterns are declarative definitions — built in Pattern Designer — that specify how to interrogate a target and parse out CI attributes and relationships. They're the maintainable, low-code successor to the older probe-and-sensor scripting approach.",
     "distractor_notes": {
       "B": "Patterns drive discovery logic, not email scheduling.",
@@ -238,9 +420,16 @@
       "D": "A pattern is discovery logic, not a service object."
     },
     "references": [
-      { "title": "Discovery patterns", "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/discovery.html" }
+      {
+        "title": "Discovery patterns",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/discovery.html"
+      }
     ],
-    "tags": ["ingest", "discovery", "pattern"]
+    "tags": [
+      "ingest",
+      "discovery",
+      "pattern"
+    ]
   },
   {
     "id": "cisdf-ing-010",
@@ -252,12 +441,26 @@
     "type": "single_select",
     "stem": "A Discovery schedule fails for an entire subnet with credential errors. Which area is the most likely first thing to check?",
     "options": [
-      { "id": "A", "text": "The credentials configured for the MID Server to access those targets" },
-      { "id": "B", "text": "The CMDB Health dashboard colors" },
-      { "id": "C", "text": "The CSDM domain definitions" },
-      { "id": "D", "text": "The incident SLA policy" }
+      {
+        "id": "A",
+        "text": "The credentials configured for the MID Server to access those targets"
+      },
+      {
+        "id": "B",
+        "text": "The CMDB Health dashboard colors"
+      },
+      {
+        "id": "C",
+        "text": "The CSDM domain definitions"
+      },
+      {
+        "id": "D",
+        "text": "The incident SLA policy"
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "Credential errors across a subnet point straight at access: the credentials the MID Server uses to authenticate to those devices are missing, wrong, or lack permission. Verifying and fixing the credential configuration is the logical first diagnostic step.",
     "distractor_notes": {
       "B": "Dashboard colors have nothing to do with discovery credentials.",
@@ -265,9 +468,16 @@
       "D": "Incident SLAs are unrelated to Discovery access."
     },
     "references": [
-      { "title": "Discovery credentials and MID Server", "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/discovery.html" }
+      {
+        "title": "Discovery credentials and MID Server",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/discovery.html"
+      }
     ],
-    "tags": ["ingest", "mid-server", "credentials"]
+    "tags": [
+      "ingest",
+      "mid-server",
+      "credentials"
+    ]
   },
   {
     "id": "cisdf-ing-011",
@@ -279,12 +489,26 @@
     "type": "single_select",
     "stem": "A custom integration loads servers via an import set but creates duplicates each run. Inspection shows the transform writes straight to cmdb_ci_server. What is the recommended correction?",
     "options": [
-      { "id": "A", "text": "Route the load through the Identification and Reconciliation engine (e.g., IRE-based transform / CMDB API) so matching applies" },
-      { "id": "B", "text": "Run the import twice as fast" },
-      { "id": "C", "text": "Disable the CMDB Health dashboard" },
-      { "id": "D", "text": "Add more columns to the import set table" }
+      {
+        "id": "A",
+        "text": "Route the load through the Identification and Reconciliation engine (e.g., IRE-based transform / CMDB API) so matching applies"
+      },
+      {
+        "id": "B",
+        "text": "Run the import twice as fast"
+      },
+      {
+        "id": "C",
+        "text": "Disable the CMDB Health dashboard"
+      },
+      {
+        "id": "D",
+        "text": "Add more columns to the import set table"
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "Writing directly to the CI table skips identification, so every run inserts anew — hence the duplicates. The fix is to send the load through IRE (via an IRE-aware transform or the CMDB API) so incoming rows are matched to existing CIs instead of blindly inserted.",
     "distractor_notes": {
       "B": "Speed doesn't address the missing identification step.",
@@ -292,9 +516,16 @@
       "D": "Extra columns don't make the load match existing CIs."
     },
     "references": [
-      { "title": "Loading CMDB data via IRE", "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/c_CMDBIdentifyandReconcile.html" }
+      {
+        "title": "Loading CMDB data via IRE",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/c_CMDBIdentifyandReconcile.html"
+      }
     ],
-    "tags": ["ingest", "ire", "duplicate-fix"]
+    "tags": [
+      "ingest",
+      "ire",
+      "duplicate-fix"
+    ]
   },
   {
     "id": "cisdf-ing-012",
@@ -306,21 +537,43 @@
     "type": "multi_select",
     "stem": "Which TWO advantages do certified Service Graph Connectors provide over building a custom integration from scratch?",
     "options": [
-      { "id": "A", "text": "They are pre-mapped to CMDB classes and use IRE for clean identification" },
-      { "id": "B", "text": "They are tested/certified for CSDM alignment, reducing implementation risk" },
-      { "id": "C", "text": "They eliminate the need for any data source" },
-      { "id": "D", "text": "They automatically write the company's financial reports" }
+      {
+        "id": "A",
+        "text": "They are pre-mapped to CMDB classes and use IRE for clean identification"
+      },
+      {
+        "id": "B",
+        "text": "They are tested/certified for CSDM alignment, reducing implementation risk"
+      },
+      {
+        "id": "C",
+        "text": "They eliminate the need for any data source"
+      },
+      {
+        "id": "D",
+        "text": "They automatically write the company's financial reports"
+      }
     ],
-    "correct": ["A", "B"],
+    "correct": [
+      "A",
+      "B"
+    ],
     "rationale": "Packaged connectors save effort and risk: the class mapping and IRE integration are already built, and the connector is certified to align with CSDM. You still need the underlying source, and they certainly don't produce financial reports — but they get third-party data in correctly with far less custom work.",
     "distractor_notes": {
       "C": "Connectors ingest from a source; they don't remove the need for one.",
       "D": "Financial reporting is entirely unrelated to CMDB connectors."
     },
     "references": [
-      { "title": "Service Graph Connector benefits", "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/service-graph-connectors.html" }
+      {
+        "title": "Service Graph Connector benefits",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/service-graph-connectors.html"
+      }
     ],
-    "tags": ["ingest", "service-graph-connector", "benefits"]
+    "tags": [
+      "ingest",
+      "service-graph-connector",
+      "benefits"
+    ]
   },
   {
     "id": "cisdf-ing-013",
@@ -332,12 +585,26 @@
     "type": "single_select",
     "stem": "A Configuration Manager has configured multiple data sources that are all authorized to update the same class and the same set of class attributes in the CMDB. What can the Configuration Manager do to control which data source's value should be kept?",
     "options": [
-      { "id": "A", "text": "Assign a priority to each data source in the reconciliation rules" },
-      { "id": "B", "text": "Manually run the data source updates in the correct order each time" },
-      { "id": "C", "text": "Configure data refresh rules with a specific time period" },
-      { "id": "D", "text": "Assign a run order to each data source in the identification rules" }
+      {
+        "id": "A",
+        "text": "Assign a priority to each data source in the reconciliation rules"
+      },
+      {
+        "id": "B",
+        "text": "Manually run the data source updates in the correct order each time"
+      },
+      {
+        "id": "C",
+        "text": "Configure data refresh rules with a specific time period"
+      },
+      {
+        "id": "D",
+        "text": "Assign a run order to each data source in the identification rules"
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "When several authorized sources write the same attributes, reconciliation rules with data-source priority decide the winner. The higher-priority source's value is retained, giving deterministic control instead of last-write-wins — exactly the multisource problem reconciliation is built to solve.",
     "distractor_notes": {
       "B": "Manual ordering doesn't scale and isn't how the platform arbitrates attribute authority.",
@@ -345,9 +612,16 @@
       "D": "Identification rules resolve identity (which CI), not which source is authoritative for an attribute — that's reconciliation."
     },
     "references": [
-      { "title": "Reconciliation rules and data source priority", "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/c_CMDBIdentifyandReconcile.html" }
+      {
+        "title": "Reconciliation rules and data source priority",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/c_CMDBIdentifyandReconcile.html"
+      }
     ],
-    "tags": ["ingest", "reconciliation", "data-source-priority"]
+    "tags": [
+      "ingest",
+      "reconciliation",
+      "data-source-priority"
+    ]
   },
   {
     "id": "cisdf-ing-014",
@@ -359,12 +633,26 @@
     "type": "single_select",
     "stem": "An Apache Web Server identification rule uses criterion attributes Class, Configuration file, and Version. An Apache Web Server CI discovered yesterday is discovered again today with the same identifying values. What happens?",
     "options": [
-      { "id": "A", "text": "The existing Apache Web Server CI is reconciled and its attributes (e.g., version) are updated" },
-      { "id": "B", "text": "A duplicate CI error stops all discovery" },
-      { "id": "C", "text": "The CI is reclassified to a generic Web Server CI" },
-      { "id": "D", "text": "A new, separate Apache Web Server CI is created" }
+      {
+        "id": "A",
+        "text": "The existing Apache Web Server CI is reconciled and its attributes (e.g., version) are updated"
+      },
+      {
+        "id": "B",
+        "text": "A duplicate CI error stops all discovery"
+      },
+      {
+        "id": "C",
+        "text": "The CI is reclassified to a generic Web Server CI"
+      },
+      {
+        "id": "D",
+        "text": "A new, separate Apache Web Server CI is created"
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "Because the criterion attributes match an existing CI, IRE identifies it as the same record and updates it rather than inserting a new one. That match-and-update behavior is precisely how identification rules prevent duplicates across repeated discoveries.",
     "distractor_notes": {
       "B": "A successful match isn't an error; IRE updates the matched CI.",
@@ -372,9 +660,16 @@
       "D": "Creating a new CI is what happens when nothing matches — here the criteria match."
     },
     "references": [
-      { "title": "Identification and reconciliation on rediscovery", "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/c_CMDBIdentifyandReconcile.html" }
+      {
+        "title": "Identification and reconciliation on rediscovery",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/c_CMDBIdentifyandReconcile.html"
+      }
     ],
-    "tags": ["ingest", "ire", "rediscovery"]
+    "tags": [
+      "ingest",
+      "ire",
+      "rediscovery"
+    ]
   },
   {
     "id": "cisdf-ing-015",
@@ -386,12 +681,26 @@
     "type": "single_select",
     "stem": "A CMDB Administrator imported data from a third-party source using a Service Graph Connector and wants to review the specific field-to-field mappings used for the import. Which feature shows that information?",
     "options": [
-      { "id": "A", "text": "IntegrationHub ETL" },
-      { "id": "B", "text": "Integration Hub (spokes/flows)" },
-      { "id": "C", "text": "CMDB Integrations Dashboard" },
-      { "id": "D", "text": "The incident form" }
+      {
+        "id": "A",
+        "text": "IntegrationHub ETL"
+      },
+      {
+        "id": "B",
+        "text": "Integration Hub (spokes/flows)"
+      },
+      {
+        "id": "C",
+        "text": "CMDB Integrations Dashboard"
+      },
+      {
+        "id": "D",
+        "text": "The incident form"
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "Service Graph Connectors are built on IntegrationHub ETL, and the ETL interface is where the field-to-field mappings (source attribute to CMDB class/attribute) are defined and reviewed. That's the guided view an admin opens to inspect how imported data was mapped.",
     "distractor_notes": {
       "B": "IntegrationHub provides spokes/flows for actions; the ETL mapping view is the specific tool for CMDB field mappings.",
@@ -399,9 +708,16 @@
       "D": "The incident form is unrelated to import mappings."
     },
     "references": [
-      { "title": "IntegrationHub ETL mappings", "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/integrationhub-etl.html" }
+      {
+        "title": "IntegrationHub ETL mappings",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/integrationhub-etl.html"
+      }
     ],
-    "tags": ["ingest", "integrationhub-etl", "field-mapping"]
+    "tags": [
+      "ingest",
+      "integrationhub-etl",
+      "field-mapping"
+    ]
   },
   {
     "id": "cisdf-ing-016",
@@ -413,12 +729,26 @@
     "type": "single_select",
     "stem": "A CMDB Administrator needs the fastest time-to-value solution to ingest, manage, and maintain Windows computer CIs and relationships from Microsoft SCCM. Which approach accomplishes this?",
     "options": [
-      { "id": "A", "text": "The SCCM Service Graph Connector" },
-      { "id": "B", "text": "An import set with a JDBC data source and custom transform maps" },
-      { "id": "C", "text": "IntegrationHub ETL built from scratch with the Robust Transform Engine" },
-      { "id": "D", "text": "The SCCM Usage Metering spoke" }
+      {
+        "id": "A",
+        "text": "The SCCM Service Graph Connector"
+      },
+      {
+        "id": "B",
+        "text": "An import set with a JDBC data source and custom transform maps"
+      },
+      {
+        "id": "C",
+        "text": "IntegrationHub ETL built from scratch with the Robust Transform Engine"
+      },
+      {
+        "id": "D",
+        "text": "The SCCM Usage Metering spoke"
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "For a well-known source like SCCM, the certified Service Graph Connector is the fastest path to value: the class mappings, IRE integration, and CSDM alignment are pre-built. Custom import sets or ground-up ETL work all require significant configuration the connector already provides.",
     "distractor_notes": {
       "B": "A JDBC import with custom transforms is more build-and-maintain effort than a packaged connector.",
@@ -426,9 +756,16 @@
       "D": "Usage metering is a different function, not a CMDB ingestion connector for computer CIs."
     },
     "references": [
-      { "title": "SCCM Service Graph Connector", "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/service-graph-connectors.html" }
+      {
+        "title": "SCCM Service Graph Connector",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/service-graph-connectors.html"
+      }
     ],
-    "tags": ["ingest", "service-graph-connector", "sccm"]
+    "tags": [
+      "ingest",
+      "service-graph-connector",
+      "sccm"
+    ]
   },
   {
     "id": "cisdf-ing-017",
@@ -440,12 +777,26 @@
     "type": "single_select",
     "stem": "A CMDB Administrator changes the query for the SCCM Service Graph Connector (a customization). What is an impact of this change?",
     "options": [
-      { "id": "A", "text": "Updates for the SCCM Service Graph Connector will be skipped during upgrades because the mapping was customized" },
-      { "id": "B", "text": "The connector's scheduled jobs are deleted automatically" },
-      { "id": "C", "text": "The data source for the connector is marked Inactive" },
-      { "id": "D", "text": "The customization is fully supported and auto-merged on upgrade" }
+      {
+        "id": "A",
+        "text": "Updates for the SCCM Service Graph Connector will be skipped during upgrades because the mapping was customized"
+      },
+      {
+        "id": "B",
+        "text": "The connector's scheduled jobs are deleted automatically"
+      },
+      {
+        "id": "C",
+        "text": "The data source for the connector is marked Inactive"
+      },
+      {
+        "id": "D",
+        "text": "The customization is fully supported and auto-merged on upgrade"
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "Customizing a connector's out-of-box mappings/queries means those records are no longer the shipped version, so connector updates that touch them are skipped on upgrade to avoid overwriting your changes. Customizations also fall outside ServiceNow support, which is the trade-off for modifying a packaged connector.",
     "distractor_notes": {
       "B": "Changing the query doesn't delete scheduled jobs.",
@@ -453,9 +804,16 @@
       "D": "Customizations are not auto-merged and are customer-supported, not vendor-supported."
     },
     "references": [
-      { "title": "Customizing Service Graph Connectors", "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/service-graph-connectors.html" }
+      {
+        "title": "Customizing Service Graph Connectors",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/service-graph-connectors.html"
+      }
     ],
-    "tags": ["ingest", "service-graph-connector", "customization-upgrade"]
+    "tags": [
+      "ingest",
+      "service-graph-connector",
+      "customization-upgrade"
+    ]
   },
   {
     "id": "cisdf-ing-018",
@@ -467,12 +825,26 @@
     "type": "single_select",
     "stem": "A CMDB Administrator must prevent duplicate CI creation when import sets load CI data from vendor shipment files. What is the recommended way to do this?",
     "options": [
-      { "id": "A", "text": "Call the CMDBTransformUtil API in the transform script so the load runs through IRE identification" },
-      { "id": "B", "text": "Set coalesce on two fields in the transform map and write directly to the CI table" },
-      { "id": "C", "text": "Manually delete duplicates after each import" },
-      { "id": "D", "text": "Disable the transform map" }
+      {
+        "id": "A",
+        "text": "Call the CMDBTransformUtil API in the transform script so the load runs through IRE identification"
+      },
+      {
+        "id": "B",
+        "text": "Set coalesce on two fields in the transform map and write directly to the CI table"
+      },
+      {
+        "id": "C",
+        "text": "Manually delete duplicates after each import"
+      },
+      {
+        "id": "D",
+        "text": "Disable the transform map"
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "To get identification (and thus duplicate prevention) from a transform map, route the load through IRE using the CMDBTransformUtil script API. That applies the class's identifier entries during the import so incoming rows match existing CIs instead of inserting new ones.",
     "distractor_notes": {
       "B": "Coalescing on a couple of fields and writing straight to the CI table bypasses IRE's full identification and still risks duplicates.",
@@ -480,9 +852,16 @@
       "D": "Disabling the transform map stops the import entirely rather than fixing duplication."
     },
     "references": [
-      { "title": "Using IRE from transform maps (CMDBTransformUtil)", "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/c_CMDBIdentifyandReconcile.html" }
+      {
+        "title": "Using IRE from transform maps (CMDBTransformUtil)",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/c_CMDBIdentifyandReconcile.html"
+      }
     ],
-    "tags": ["ingest", "import-set", "cmdbtransformutil"]
+    "tags": [
+      "ingest",
+      "import-set",
+      "cmdbtransformutil"
+    ]
   },
   {
     "id": "cisdf-ing-019",
@@ -494,21 +873,43 @@
     "type": "multi_select",
     "stem": "Which TWO categories of Service Graph Connectors are available to integrate third-party solutions into the CMDB?",
     "options": [
-      { "id": "A", "text": "Cloud" },
-      { "id": "B", "text": "Observability" },
-      { "id": "C", "text": "Workflow Automation" },
-      { "id": "D", "text": "Spreadsheet Macros" }
+      {
+        "id": "A",
+        "text": "Cloud"
+      },
+      {
+        "id": "B",
+        "text": "Observability"
+      },
+      {
+        "id": "C",
+        "text": "Workflow Automation"
+      },
+      {
+        "id": "D",
+        "text": "Spreadsheet Macros"
+      }
     ],
-    "correct": ["A", "B"],
+    "correct": [
+      "A",
+      "B"
+    ],
     "rationale": "Service Graph Connectors are organized into categories such as Cloud (AWS, Azure, GCP) and Observability (monitoring/event sources). These group the certified connectors by the kind of source they ingest. 'Workflow Automation' and 'Spreadsheet Macros' aren't connector categories.",
     "distractor_notes": {
       "C": "Workflow Automation isn't a Service Graph Connector category.",
       "D": "Spreadsheet Macros is not a connector category at all."
     },
     "references": [
-      { "title": "Service Graph Connector categories", "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/service-graph-connectors.html" }
+      {
+        "title": "Service Graph Connector categories",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/service-graph-connectors.html"
+      }
     ],
-    "tags": ["ingest", "service-graph-connector", "categories"]
+    "tags": [
+      "ingest",
+      "service-graph-connector",
+      "categories"
+    ]
   },
   {
     "id": "cisdf-ing-020",
@@ -520,21 +921,43 @@
     "type": "multi_select",
     "stem": "Which TWO ServiceNow solutions automatically create relationships between the CIs/applications that make up an Application Service?",
     "options": [
-      { "id": "A", "text": "Discovery" },
-      { "id": "B", "text": "Service Mapping" },
-      { "id": "C", "text": "IntegrationHub ETL" },
-      { "id": "D", "text": "Event Management" }
+      {
+        "id": "A",
+        "text": "Discovery"
+      },
+      {
+        "id": "B",
+        "text": "Service Mapping"
+      },
+      {
+        "id": "C",
+        "text": "IntegrationHub ETL"
+      },
+      {
+        "id": "D",
+        "text": "Event Management"
+      }
     ],
-    "correct": ["A", "B"],
+    "correct": [
+      "A",
+      "B"
+    ],
     "rationale": "Discovery (horizontal) and Service Mapping (top-down) both build CI relationships automatically as they run — Discovery from infrastructure scanning and Service Mapping from tracing service dependencies. ETL imports/transforms data and Event Management handles alerts; neither auto-builds the application-service relationship graph.",
     "distractor_notes": {
       "C": "IntegrationHub ETL imports and maps data but doesn't itself discover and create dependency relationships.",
       "D": "Event Management processes events/alerts; it doesn't construct CI relationships."
     },
     "references": [
-      { "title": "Discovery and Service Mapping relationships", "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/discovery.html" }
+      {
+        "title": "Discovery and Service Mapping relationships",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/discovery.html"
+      }
     ],
-    "tags": ["ingest", "relationships", "discovery-service-mapping"]
+    "tags": [
+      "ingest",
+      "relationships",
+      "discovery-service-mapping"
+    ]
   },
   {
     "id": "cisdf-ing-021",
@@ -546,12 +969,26 @@
     "type": "single_select",
     "stem": "A CMDB Administrator installs a Service Graph Connector and then customizes its mappings. Which statement describes a consequence?",
     "options": [
-      { "id": "A", "text": "The customized mappings are not supported by ServiceNow; the customer is responsible for maintaining them" },
-      { "id": "B", "text": "Customized fields are automatically tagged as certified in the CMDB" },
-      { "id": "C", "text": "The connector will not run until a change request is attached to each mapping" },
-      { "id": "D", "text": "Customizations are guaranteed to survive every future upgrade untouched" }
+      {
+        "id": "A",
+        "text": "The customized mappings are not supported by ServiceNow; the customer is responsible for maintaining them"
+      },
+      {
+        "id": "B",
+        "text": "Customized fields are automatically tagged as certified in the CMDB"
+      },
+      {
+        "id": "C",
+        "text": "The connector will not run until a change request is attached to each mapping"
+      },
+      {
+        "id": "D",
+        "text": "Customizations are guaranteed to survive every future upgrade untouched"
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "Once you deviate from the certified, out-of-box mappings, those customizations sit outside ServiceNow's support boundary and you own their upkeep — including reconciling them with future connector updates. That support trade-off is the key thing to weigh before customizing a packaged connector.",
     "distractor_notes": {
       "B": "Customization doesn't certify fields; if anything it moves them outside the certified set.",
@@ -559,9 +996,16 @@
       "D": "Customizations are not guaranteed to survive upgrades; related updates may be skipped."
     },
     "references": [
-      { "title": "Supportability of customized connectors", "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/service-graph-connectors.html" }
+      {
+        "title": "Supportability of customized connectors",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/service-graph-connectors.html"
+      }
     ],
-    "tags": ["ingest", "service-graph-connector", "support-boundary"]
+    "tags": [
+      "ingest",
+      "service-graph-connector",
+      "support-boundary"
+    ]
   },
   {
     "id": "cisdf-ing-022",
@@ -573,21 +1017,43 @@
     "type": "multi_select",
     "stem": "Which TWO statements correctly describe IntegrationHub ETL?",
     "options": [
-      { "id": "A", "text": "It integrates third-party data into the CMDB (or into non-CMDB tables)" },
-      { "id": "B", "text": "It uses the IRE to process and integrate data into the CMDB" },
-      { "id": "C", "text": "It performs network discovery to collect infrastructure data" },
-      { "id": "D", "text": "It is only able to import Microsoft SCCM data" }
+      {
+        "id": "A",
+        "text": "It integrates third-party data into the CMDB (or into non-CMDB tables)"
+      },
+      {
+        "id": "B",
+        "text": "It uses the IRE to process and integrate data into the CMDB"
+      },
+      {
+        "id": "C",
+        "text": "It performs network discovery to collect infrastructure data"
+      },
+      {
+        "id": "D",
+        "text": "It is only able to import Microsoft SCCM data"
+      }
     ],
-    "correct": ["A", "B"],
+    "correct": [
+      "A",
+      "B"
+    ],
     "rationale": "IntegrationHub ETL is a guided transform-and-load tool: it brings third-party data into CMDB (or non-CMDB) tables and, for CMDB targets, processes it through IRE so identification and reconciliation apply. It does not perform discovery, and it's not limited to a single source like SCCM.",
     "distractor_notes": {
       "C": "Discovery collects infrastructure data; ETL transforms and loads supplied data — it doesn't probe the network.",
       "D": "ETL works with many sources, not just SCCM."
     },
     "references": [
-      { "title": "IntegrationHub ETL overview", "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/integrationhub-etl.html" }
+      {
+        "title": "IntegrationHub ETL overview",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/integrationhub-etl.html"
+      }
     ],
-    "tags": ["ingest", "integrationhub-etl", "characteristics"]
+    "tags": [
+      "ingest",
+      "integrationhub-etl",
+      "characteristics"
+    ]
   },
   {
     "id": "cisdf-ing-023",
@@ -599,12 +1065,26 @@
     "type": "single_select",
     "stem": "Why would a CMDB Manager use CMDB 360 / Multisource CMDB?",
     "options": [
-      { "id": "A", "text": "To identify and compare CI attribute values contributed by multiple data sources" },
-      { "id": "B", "text": "To ingest data from multiple sources using import sets" },
-      { "id": "C", "text": "To perform network discovery of new devices" },
-      { "id": "D", "text": "To approve change requests for CIs" }
+      {
+        "id": "A",
+        "text": "To identify and compare CI attribute values contributed by multiple data sources"
+      },
+      {
+        "id": "B",
+        "text": "To ingest data from multiple sources using import sets"
+      },
+      {
+        "id": "C",
+        "text": "To perform network discovery of new devices"
+      },
+      {
+        "id": "D",
+        "text": "To approve change requests for CIs"
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "CMDB 360 / Multisource CMDB is an analysis and visibility tool: it shows, per attribute, what each source reported and how values were reconciled, so managers can spot conflicts and gaps across sources. It isn't itself an ingestion mechanism or a discovery tool.",
     "distractor_notes": {
       "B": "Import sets are an ingestion method; Multisource CMDB analyzes the resulting multi-source data.",
@@ -612,9 +1092,16 @@
       "D": "Change approval is unrelated to multisource visibility."
     },
     "references": [
-      { "title": "Multisource CMDB / CMDB 360", "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/multisource-cmdb.html" }
+      {
+        "title": "Multisource CMDB / CMDB 360",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/multisource-cmdb.html"
+      }
     ],
-    "tags": ["ingest", "multisource-cmdb", "cmdb-360"]
+    "tags": [
+      "ingest",
+      "multisource-cmdb",
+      "cmdb-360"
+    ]
   },
   {
     "id": "cisdf-ing-024",
@@ -626,21 +1113,43 @@
     "type": "multi_select",
     "stem": "A Configuration Manager explores CMDB 360 / Multisource saved queries. Which TWO insights can these queries provide?",
     "options": [
-      { "id": "A", "text": "Gaps in attribute data across different data sources" },
-      { "id": "B", "text": "Different attribute values reported by different data sources" },
-      { "id": "C", "text": "The physical temperature of servers" },
-      { "id": "D", "text": "The corporate travel budget" }
+      {
+        "id": "A",
+        "text": "Gaps in attribute data across different data sources"
+      },
+      {
+        "id": "B",
+        "text": "Different attribute values reported by different data sources"
+      },
+      {
+        "id": "C",
+        "text": "The physical temperature of servers"
+      },
+      {
+        "id": "D",
+        "text": "The corporate travel budget"
+      }
     ],
-    "correct": ["A", "B"],
+    "correct": [
+      "A",
+      "B"
+    ],
     "rationale": "Multisource analysis is about reconciling what each source says: it surfaces where sources disagree on an attribute's value and where a source leaves attributes empty (gaps). Those two insights drive both reconciliation tuning and source-coverage decisions. Temperatures and budgets are unrelated.",
     "distractor_notes": {
       "C": "Hardware temperature is an operational metric, not a multisource data insight.",
       "D": "Travel budgets have nothing to do with CMDB data."
     },
     "references": [
-      { "title": "CMDB 360 insights", "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/multisource-cmdb.html" }
+      {
+        "title": "CMDB 360 insights",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/multisource-cmdb.html"
+      }
     ],
-    "tags": ["ingest", "multisource-cmdb", "insights"]
+    "tags": [
+      "ingest",
+      "multisource-cmdb",
+      "insights"
+    ]
   },
   {
     "id": "cisdf-ing-025",
@@ -652,12 +1161,26 @@
     "type": "single_select",
     "stem": "In ServiceNow Horizontal Discovery, which sequence of phases is correct?",
     "options": [
-      { "id": "A", "text": "Scan (port scan) → Classify → Identify → Explore" },
-      { "id": "B", "text": "Explore → Identify → Classify → Scan" },
-      { "id": "C", "text": "Certify → Reconcile → Archive → Destroy" },
-      { "id": "D", "text": "Map → Tag → Approve → Close" }
+      {
+        "id": "A",
+        "text": "Scan (port scan) → Classify → Identify → Explore"
+      },
+      {
+        "id": "B",
+        "text": "Explore → Identify → Classify → Scan"
+      },
+      {
+        "id": "C",
+        "text": "Certify → Reconcile → Archive → Destroy"
+      },
+      {
+        "id": "D",
+        "text": "Map → Tag → Approve → Close"
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "Horizontal Discovery proceeds: a port scan (Shazzam) finds open ports, Classify determines the device type, Identify matches/creates the CI via IRE, and Explore gathers detailed attributes and relationships. The order matters because each phase sets up the next.",
     "distractor_notes": {
       "B": "That's the phases reversed; you can't explore a device before scanning and classifying it.",
@@ -665,9 +1188,16 @@
       "D": "Map/Tag/Approve/Close aren't the horizontal Discovery phases."
     },
     "references": [
-      { "title": "Discovery phases", "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/discovery.html" }
+      {
+        "title": "Discovery phases",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/discovery.html"
+      }
     ],
-    "tags": ["ingest", "discovery", "phases"]
+    "tags": [
+      "ingest",
+      "discovery",
+      "phases"
+    ]
   },
   {
     "id": "cisdf-ing-026",
@@ -679,12 +1209,26 @@
     "type": "single_select",
     "stem": "Cloud resources (AWS, Azure, Kubernetes) are labeled with tags like App:Webstore and Env:Prod. Which mapping approach uses these tags to automatically build application services?",
     "options": [
-      { "id": "A", "text": "Tag-based service mapping" },
-      { "id": "B", "text": "Top-down pattern-based Service Mapping from a URL entry point" },
-      { "id": "C", "text": "Manual CI creation" },
-      { "id": "D", "text": "Import set coalescing" }
+      {
+        "id": "A",
+        "text": "Tag-based service mapping"
+      },
+      {
+        "id": "B",
+        "text": "Top-down pattern-based Service Mapping from a URL entry point"
+      },
+      {
+        "id": "C",
+        "text": "Manual CI creation"
+      },
+      {
+        "id": "D",
+        "text": "Import set coalescing"
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "Tag-based mapping ingests cloud resource tags to assemble services automatically — fast and well-suited to dynamic cloud estates, though it depends entirely on disciplined tagging. Top-down mapping is more precise but pattern-driven from an entry point; it isn't the tag-driven method described.",
     "distractor_notes": {
       "B": "Top-down mapping traces dependencies from an entry point via patterns, not from resource tags.",
@@ -692,9 +1236,16 @@
       "D": "Import set coalescing is a load mechanism, not a service-mapping approach."
     },
     "references": [
-      { "title": "Tag-based mapping", "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping.html" }
+      {
+        "title": "Tag-based mapping",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping.html"
+      }
     ],
-    "tags": ["ingest", "service-mapping", "tag-based"]
+    "tags": [
+      "ingest",
+      "service-mapping",
+      "tag-based"
+    ]
   },
   {
     "id": "cisdf-ing-027",
@@ -706,12 +1257,26 @@
     "type": "single_select",
     "stem": "After installing the Service Graph Connector Central plugin, where does a Platform Owner get consolidated insight into the different data sources that make up the CMDB?",
     "options": [
-      { "id": "A", "text": "The CMDB Workspace" },
-      { "id": "B", "text": "The incident workspace" },
-      { "id": "C", "text": "The knowledge base" },
-      { "id": "D", "text": "The survey designer" }
+      {
+        "id": "A",
+        "text": "The CMDB Workspace"
+      },
+      {
+        "id": "B",
+        "text": "The incident workspace"
+      },
+      {
+        "id": "C",
+        "text": "The knowledge base"
+      },
+      {
+        "id": "D",
+        "text": "The survey designer"
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "Service Graph Connector Central surfaces source insight within the CMDB Workspace, where configuration managers already monitor health and governance. Centralizing source visibility there keeps data-quality and source management in one role-based place.",
     "distractor_notes": {
       "B": "The incident workspace is for ITSM incidents, not CMDB source insight.",
@@ -719,9 +1284,16 @@
       "D": "The survey designer builds surveys, not source dashboards."
     },
     "references": [
-      { "title": "Service Graph Connector Central in CMDB Workspace", "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/cmdb-workspace.html" }
+      {
+        "title": "Service Graph Connector Central in CMDB Workspace",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/cmdb-workspace.html"
+      }
     ],
-    "tags": ["ingest", "service-graph-connector", "cmdb-workspace"]
+    "tags": [
+      "ingest",
+      "service-graph-connector",
+      "cmdb-workspace"
+    ]
   },
   {
     "id": "cisdf-ing-028",
@@ -733,12 +1305,26 @@
     "type": "single_select",
     "stem": "A CMDB Administrator must ingest data from Microsoft SCCM with the fastest time to value. Which method is most appropriate?",
     "options": [
-      { "id": "A", "text": "Service Graph Connectors" },
-      { "id": "B", "text": "Agent Client Collector with custom data collection" },
-      { "id": "C", "text": "Hand-built import sets" },
-      { "id": "D", "text": "Manual CI entry" }
+      {
+        "id": "A",
+        "text": "Service Graph Connectors"
+      },
+      {
+        "id": "B",
+        "text": "Agent Client Collector with custom data collection"
+      },
+      {
+        "id": "C",
+        "text": "Hand-built import sets"
+      },
+      {
+        "id": "D",
+        "text": "Manual CI entry"
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "For an enterprise source like SCCM, the certified Service Graph Connector delivers value fastest because the integration, mappings, and IRE handling are pre-built. Agent Client Collector requires deploying and configuring agents, and hand-built imports or manual entry are slower and more error-prone.",
     "distractor_notes": {
       "B": "Agent Client Collector needs agent deployment and configuration — more setup than a packaged connector.",
@@ -746,9 +1332,16 @@
       "D": "Manual entry doesn't scale and is the slowest, least reliable option."
     },
     "references": [
-      { "title": "Choosing an ingestion method", "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/service-graph-connectors.html" }
+      {
+        "title": "Choosing an ingestion method",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/service-graph-connectors.html"
+      }
     ],
-    "tags": ["ingest", "ingestion-method", "time-to-value"]
+    "tags": [
+      "ingest",
+      "ingestion-method",
+      "time-to-value"
+    ]
   },
   {
     "id": "cisdf-ing-029",
@@ -760,12 +1353,26 @@
     "type": "single_select",
     "stem": "Which statement correctly distinguishes ServiceNow Discovery from IntegrationHub ETL?",
     "options": [
-      { "id": "A", "text": "Discovery actively probes infrastructure to collect data; ETL transforms and loads data that is supplied to it" },
-      { "id": "B", "text": "Both perform active network discovery identically" },
-      { "id": "C", "text": "ETL probes the network and Discovery only loads files" },
-      { "id": "D", "text": "Neither writes to the CMDB" }
+      {
+        "id": "A",
+        "text": "Discovery actively probes infrastructure to collect data; ETL transforms and loads data that is supplied to it"
+      },
+      {
+        "id": "B",
+        "text": "Both perform active network discovery identically"
+      },
+      {
+        "id": "C",
+        "text": "ETL probes the network and Discovery only loads files"
+      },
+      {
+        "id": "D",
+        "text": "Neither writes to the CMDB"
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "Discovery goes out and interrogates devices to gather CI data; IntegrationHub ETL takes data from a source and maps/loads it (through IRE for CMDB targets). One collects by probing, the other transforms what's handed to it — different jobs that complement each other.",
     "distractor_notes": {
       "B": "Only Discovery actively probes; ETL does not.",
@@ -773,9 +1380,16 @@
       "D": "Both can result in CMDB writes; the claim is false."
     },
     "references": [
-      { "title": "Discovery vs ETL", "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/integrationhub-etl.html" }
+      {
+        "title": "Discovery vs ETL",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/integrationhub-etl.html"
+      }
     ],
-    "tags": ["ingest", "discovery-vs-etl", "comparison"]
+    "tags": [
+      "ingest",
+      "discovery-vs-etl",
+      "comparison"
+    ]
   },
   {
     "id": "cisdf-ing-030",
@@ -787,12 +1401,26 @@
     "type": "single_select",
     "stem": "Does CMDB 360 / Multisource CMDB require ServiceNow Discovery in order to be used?",
     "options": [
-      { "id": "A", "text": "No — CI data can come from many sources (integrations, imports, Service Graph Connectors), and reconciliation rules can use any discovery source" },
-      { "id": "B", "text": "Yes — it only works when ITOM Discovery is licensed and running" },
-      { "id": "C", "text": "Yes — it requires all data to come from a single source" },
-      { "id": "D", "text": "No — but it disables all other data sources" }
+      {
+        "id": "A",
+        "text": "No — CI data can come from many sources (integrations, imports, Service Graph Connectors), and reconciliation rules can use any discovery source"
+      },
+      {
+        "id": "B",
+        "text": "Yes — it only works when ITOM Discovery is licensed and running"
+      },
+      {
+        "id": "C",
+        "text": "Yes — it requires all data to come from a single source"
+      },
+      {
+        "id": "D",
+        "text": "No — but it disables all other data sources"
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "Multisource CMDB is source-agnostic: it analyzes and reconciles data from whatever sources feed the CMDB — Discovery, connectors, imports, integrations — and its reconciliation rules can reference any discovery source. It's not gated on owning ITOM Discovery.",
     "distractor_notes": {
       "B": "Discovery is one possible source, not a prerequisite for Multisource CMDB.",
@@ -800,9 +1428,16 @@
       "D": "It doesn't disable other sources; it embraces them."
     },
     "references": [
-      { "title": "Multisource CMDB sources", "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/multisource-cmdb.html" }
+      {
+        "title": "Multisource CMDB sources",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/multisource-cmdb.html"
+      }
     ],
-    "tags": ["ingest", "multisource-cmdb", "source-agnostic"]
+    "tags": [
+      "ingest",
+      "multisource-cmdb",
+      "source-agnostic"
+    ]
   },
   {
     "id": "cisdf-ing-031",
@@ -814,21 +1449,43 @@
     "type": "multi_select",
     "stem": "A Windows administration team wants to group CIs using CMDB Groups. Which TWO methods can be used to define the group membership?",
     "options": [
-      { "id": "A", "text": "Saved queries" },
-      { "id": "B", "text": "Scripted queries" },
-      { "id": "C", "text": "Email rules" },
-      { "id": "D", "text": "Survey responses" }
+      {
+        "id": "A",
+        "text": "Saved queries"
+      },
+      {
+        "id": "B",
+        "text": "Scripted queries"
+      },
+      {
+        "id": "C",
+        "text": "Email rules"
+      },
+      {
+        "id": "D",
+        "text": "Survey responses"
+      }
     ],
-    "correct": ["A", "B"],
+    "correct": [
+      "A",
+      "B"
+    ],
     "rationale": "CMDB Group membership can be defined with saved queries (filter-based) or scripted queries (logic-based) so the group dynamically reflects the CIs that match. Email rules and survey responses aren't mechanisms for defining CI group membership.",
     "distractor_notes": {
       "C": "Email rules route messages; they don't define CI group membership.",
       "D": "Survey responses are unrelated to CMDB group definition."
     },
     "references": [
-      { "title": "CMDB Groups", "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/cmdb-groups.html" }
+      {
+        "title": "CMDB Groups",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/cmdb-groups.html"
+      }
     ],
-    "tags": ["ingest", "cmdb-groups", "query-methods"]
+    "tags": [
+      "ingest",
+      "cmdb-groups",
+      "query-methods"
+    ]
   },
   {
     "id": "cisdf-ing-032",
@@ -840,21 +1497,43 @@
     "type": "multi_select",
     "stem": "Compared with the classic Service Mapping map, which TWO are additional capabilities of the Unified Map?",
     "options": [
-      { "id": "A", "text": "The number of levels displayed on the map can be modified" },
-      { "id": "B", "text": "Map nodes can be filtered based on user preferences" },
-      { "id": "C", "text": "The map can be zoomed in and out" },
-      { "id": "D", "text": "The map can send approval emails" }
+      {
+        "id": "A",
+        "text": "The number of levels displayed on the map can be modified"
+      },
+      {
+        "id": "B",
+        "text": "Map nodes can be filtered based on user preferences"
+      },
+      {
+        "id": "C",
+        "text": "The map can be zoomed in and out"
+      },
+      {
+        "id": "D",
+        "text": "The map can send approval emails"
+      }
     ],
-    "correct": ["A", "B"],
+    "correct": [
+      "A",
+      "B"
+    ],
     "rationale": "Unified Map adds control over how much of the dependency graph you see: you can set how many levels render and filter nodes to the user's preferences, cutting noise on large maps. Zooming is a basic capability common to both maps, and sending approvals isn't a map function.",
     "distractor_notes": {
       "C": "Zoom is available in both maps, so it isn't an additional capability.",
       "D": "Maps visualize dependencies; they don't send approval emails."
     },
     "references": [
-      { "title": "Unified Map", "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping.html" }
+      {
+        "title": "Unified Map",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping.html"
+      }
     ],
-    "tags": ["ingest", "unified-map", "visualization"]
+    "tags": [
+      "ingest",
+      "unified-map",
+      "visualization"
+    ]
   },
   {
     "id": "cisdf-ing-033",
@@ -866,12 +1545,26 @@
     "type": "single_select",
     "stem": "Which engine does IntegrationHub ETL use to efficiently transform and load large volumes of import data into target tables?",
     "options": [
-      { "id": "A", "text": "The Robust Transform Engine (RTE)" },
-      { "id": "B", "text": "The email notification engine" },
-      { "id": "C", "text": "The workflow approval engine" },
-      { "id": "D", "text": "The survey engine" }
+      {
+        "id": "A",
+        "text": "The Robust Transform Engine (RTE)"
+      },
+      {
+        "id": "B",
+        "text": "The email notification engine"
+      },
+      {
+        "id": "C",
+        "text": "The workflow approval engine"
+      },
+      {
+        "id": "D",
+        "text": "The survey engine"
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "IntegrationHub ETL leverages the Robust Transform Engine to handle large-scale transform-and-load operations efficiently, mapping source records to target tables (and through IRE for CMDB targets). The notification, approval, and survey engines serve unrelated platform functions.",
     "distractor_notes": {
       "B": "The notification engine sends messages, not data transforms.",
@@ -879,9 +1572,16 @@
       "D": "The survey engine builds surveys, not data pipelines."
     },
     "references": [
-      { "title": "Robust Transform Engine", "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/integrationhub-etl.html" }
+      {
+        "title": "Robust Transform Engine",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/integrationhub-etl.html"
+      }
     ],
-    "tags": ["ingest", "integrationhub-etl", "rte"]
+    "tags": [
+      "ingest",
+      "integrationhub-etl",
+      "rte"
+    ]
   },
   {
     "id": "cisdf-ing-034",
@@ -893,12 +1593,26 @@
     "type": "single_select",
     "stem": "Multiple discovery sources will feed the same CI classes. Which practice best keeps the data consistent and duplicate-free across those sources?",
     "options": [
-      { "id": "A", "text": "Implement identification and reconciliation rules so CIs are matched and classified consistently regardless of source" },
-      { "id": "B", "text": "Let each source define its own CI class even if results are inconsistent" },
-      { "id": "C", "text": "Write a custom script per source to bypass IRE" },
-      { "id": "D", "text": "Allow each source to write directly to cmdb_ci" }
+      {
+        "id": "A",
+        "text": "Implement identification and reconciliation rules so CIs are matched and classified consistently regardless of source"
+      },
+      {
+        "id": "B",
+        "text": "Let each source define its own CI class even if results are inconsistent"
+      },
+      {
+        "id": "C",
+        "text": "Write a custom script per source to bypass IRE"
+      },
+      {
+        "id": "D",
+        "text": "Allow each source to write directly to cmdb_ci"
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "Consistency across sources comes from shared identification and reconciliation rules: every source is matched by the same identifiers and arbitrated by the same reconciliation logic, so you get one CI per real item with standardized classification. Per-source classes or IRE bypasses reintroduce duplicates and drift.",
     "distractor_notes": {
       "B": "Per-source classes guarantee inconsistency and fragmentation.",
@@ -906,9 +1620,16 @@
       "D": "Direct writes to the CI table skip identification entirely."
     },
     "references": [
-      { "title": "Consistent multi-source ingestion via IRE", "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/c_CMDBIdentifyandReconcile.html" }
+      {
+        "title": "Consistent multi-source ingestion via IRE",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/c_CMDBIdentifyandReconcile.html"
+      }
     ],
-    "tags": ["ingest", "best-practice", "ire"]
+    "tags": [
+      "ingest",
+      "best-practice",
+      "ire"
+    ]
   },
   {
     "id": "cisdf-ing-035",
@@ -920,12 +1641,26 @@
     "type": "single_select",
     "stem": "Discovery probes for an entire datacenter time out and return no data, though the MID Server is up. Which is the most likely first thing to check?",
     "options": [
-      { "id": "A", "text": "Network reachability/firewall and credentials between the MID Server and the target devices" },
-      { "id": "B", "text": "The CMDB Health dashboard color scheme" },
-      { "id": "C", "text": "The CSDM domain assignments" },
-      { "id": "D", "text": "The incident assignment rules" }
+      {
+        "id": "A",
+        "text": "Network reachability/firewall and credentials between the MID Server and the target devices"
+      },
+      {
+        "id": "B",
+        "text": "The CMDB Health dashboard color scheme"
+      },
+      {
+        "id": "C",
+        "text": "The CSDM domain assignments"
+      },
+      {
+        "id": "D",
+        "text": "The incident assignment rules"
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "If the MID Server is healthy but probes time out across a whole datacenter, the usual culprit is connectivity — blocked ports/firewall or routing — or credentials that prevent authenticated probes. Verifying the MID Server can actually reach and authenticate to the targets is the logical first step.",
     "distractor_notes": {
       "B": "Dashboard colors don't affect probe connectivity.",
@@ -933,9 +1668,16 @@
       "D": "Incident assignment rules are unrelated to Discovery connectivity."
     },
     "references": [
-      { "title": "MID Server connectivity troubleshooting", "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/mid-server.html" }
+      {
+        "title": "MID Server connectivity troubleshooting",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/mid-server.html"
+      }
     ],
-    "tags": ["ingest", "mid-server", "connectivity"]
+    "tags": [
+      "ingest",
+      "mid-server",
+      "connectivity"
+    ]
   },
   {
     "id": "cisdf-ing-036",
@@ -947,12 +1689,26 @@
     "type": "single_select",
     "stem": "Which ingestion option is the recommended, supported way to bring data from a well-known third-party source into the CMDB with built-in IRE and CSDM alignment?",
     "options": [
-      { "id": "A", "text": "A certified Service Graph Connector" },
-      { "id": "B", "text": "A direct Table API insert into cmdb_ci" },
-      { "id": "C", "text": "Manually typing the data" },
-      { "id": "D", "text": "A vendor-provided integration that writes straight to CI tables without IRE" }
+      {
+        "id": "A",
+        "text": "A certified Service Graph Connector"
+      },
+      {
+        "id": "B",
+        "text": "A direct Table API insert into cmdb_ci"
+      },
+      {
+        "id": "C",
+        "text": "Manually typing the data"
+      },
+      {
+        "id": "D",
+        "text": "A vendor-provided integration that writes straight to CI tables without IRE"
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "Certified Service Graph Connectors are the recommended path: they're pre-mapped, run through IRE, and are aligned to CSDM, so third-party data lands cleanly with minimal custom work. Direct API inserts, manual entry, or non-IRE vendor writes all skip the identification/reconciliation that keep the CMDB trustworthy.",
     "distractor_notes": {
       "B": "A direct Table API insert bypasses IRE and risks duplicates and overwrites.",
@@ -960,9 +1716,16 @@
       "D": "Writing straight to CI tables without IRE is exactly what to avoid."
     },
     "references": [
-      { "title": "Recommended ingestion via Service Graph Connectors", "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/service-graph-connectors.html" }
+      {
+        "title": "Recommended ingestion via Service Graph Connectors",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/service-graph-connectors.html"
+      }
     ],
-    "tags": ["ingest", "service-graph-connector", "recommended"]
+    "tags": [
+      "ingest",
+      "service-graph-connector",
+      "recommended"
+    ]
   },
   {
     "id": "cisdf-ing-037",
@@ -974,12 +1737,26 @@
     "type": "single_select",
     "stem": "An organization has endpoints that cannot be reached by traditional agentless polling and some that sit in security-restricted network zones. Which approach is best suited to collect CI data from them?",
     "options": [
-      { "id": "A", "text": "Agent Client Collector (ACC), using a lightweight agent on the endpoint" },
-      { "id": "B", "text": "Top-down Service Mapping from a URL" },
-      { "id": "C", "text": "Manual CI entry only" },
-      { "id": "D", "text": "Disabling the MID Server" }
+      {
+        "id": "A",
+        "text": "Agent Client Collector (ACC), using a lightweight agent on the endpoint"
+      },
+      {
+        "id": "B",
+        "text": "Top-down Service Mapping from a URL"
+      },
+      {
+        "id": "C",
+        "text": "Manual CI entry only"
+      },
+      {
+        "id": "D",
+        "text": "Disabling the MID Server"
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "Agent Client Collector puts a lightweight agent on the endpoint, which is ideal when devices can't be reached by agentless probes or live in restricted zones where opening polling access is undesirable. The agent reports data out rather than requiring the platform to reach in.",
     "distractor_notes": {
       "B": "Service Mapping traces service dependencies; it isn't an endpoint data-collection method for unreachable devices.",
@@ -987,9 +1764,16 @@
       "D": "Disabling the MID Server removes ingestion capability rather than solving reachability."
     },
     "references": [
-      { "title": "Agent Client Collector", "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/agent-client-collector.html" }
+      {
+        "title": "Agent Client Collector",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/agent-client-collector.html"
+      }
     ],
-    "tags": ["ingest", "agent-client-collector", "restricted-zones"]
+    "tags": [
+      "ingest",
+      "agent-client-collector",
+      "restricted-zones"
+    ]
   },
   {
     "id": "cisdf-ing-038",
@@ -1001,12 +1785,26 @@
     "type": "single_select",
     "stem": "A team needs to populate hardware CIs with serial-number data that Discovery cannot collect, sourced from an external system file. What is an appropriate automated ingestion approach?",
     "options": [
-      { "id": "A", "text": "A scheduled data import (import set/transform, ideally via IRE) that updates the attributes from the external source" },
-      { "id": "B", "text": "Manually typing each serial number once" },
-      { "id": "C", "text": "Running Discovery more frequently even though it cannot see the data" },
-      { "id": "D", "text": "Deleting the CIs that lack serial numbers" }
+      {
+        "id": "A",
+        "text": "A scheduled data import (import set/transform, ideally via IRE) that updates the attributes from the external source"
+      },
+      {
+        "id": "B",
+        "text": "Manually typing each serial number once"
+      },
+      {
+        "id": "C",
+        "text": "Running Discovery more frequently even though it cannot see the data"
+      },
+      {
+        "id": "D",
+        "text": "Deleting the CIs that lack serial numbers"
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "When data exists in an external source but is non-discoverable, a scheduled import is the right pattern: bring the file in on a cadence and update the CIs (through IRE so identification applies). Re-running Discovery can't surface data it fundamentally can't see, and manual entry won't scale.",
     "distractor_notes": {
       "B": "Manual entry is unsustainable for ongoing accuracy across many CIs.",
@@ -1014,9 +1812,16 @@
       "D": "Deleting CIs destroys real records instead of enriching them."
     },
     "references": [
-      { "title": "Importing non-discoverable data", "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/import-sets.html" }
+      {
+        "title": "Importing non-discoverable data",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/import-sets.html"
+      }
     ],
-    "tags": ["ingest", "non-discoverable", "scheduled-import"]
+    "tags": [
+      "ingest",
+      "non-discoverable",
+      "scheduled-import"
+    ]
   },
   {
     "id": "cisdf-ing-039",
@@ -1028,12 +1833,26 @@
     "type": "single_select",
     "stem": "In ServiceNow Discovery, what is the purpose of the initial port scan (Shazzam) phase?",
     "options": [
-      { "id": "A", "text": "To detect which ports are open on targets so the device type can be classified" },
-      { "id": "B", "text": "To archive retired CIs" },
-      { "id": "C", "text": "To calculate CMDB Health scores" },
-      { "id": "D", "text": "To approve changes for discovered CIs" }
+      {
+        "id": "A",
+        "text": "To detect which ports are open on targets so the device type can be classified"
+      },
+      {
+        "id": "B",
+        "text": "To archive retired CIs"
+      },
+      {
+        "id": "C",
+        "text": "To calculate CMDB Health scores"
+      },
+      {
+        "id": "D",
+        "text": "To approve changes for discovered CIs"
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "The Shazzam port scan probes target IPs to see which ports respond, which tells Discovery what kind of device it's likely dealing with. That open-port signature feeds the Classify phase, which then drives identification and exploration.",
     "distractor_notes": {
       "B": "Archiving is a Data Manager lifecycle action, not a Discovery phase.",
@@ -1041,9 +1860,16 @@
       "D": "Change approval is unrelated to Discovery's scan phase."
     },
     "references": [
-      { "title": "Discovery Shazzam phase", "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/discovery.html" }
+      {
+        "title": "Discovery Shazzam phase",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/discovery.html"
+      }
     ],
-    "tags": ["ingest", "discovery", "shazzam"]
+    "tags": [
+      "ingest",
+      "discovery",
+      "shazzam"
+    ]
   },
   {
     "id": "cisdf-ing-040",
@@ -1055,12 +1881,26 @@
     "type": "single_select",
     "stem": "Where are the credentials that a MID Server uses to authenticate to discovery targets centrally managed?",
     "options": [
-      { "id": "A", "text": "In the platform Credentials store (with credentials affinity/aliases that the MID Server retrieves securely)" },
-      { "id": "B", "text": "Hard-coded into each Discovery pattern" },
-      { "id": "C", "text": "In the incident table" },
-      { "id": "D", "text": "In the knowledge base" }
+      {
+        "id": "A",
+        "text": "In the platform Credentials store (with credentials affinity/aliases that the MID Server retrieves securely)"
+      },
+      {
+        "id": "B",
+        "text": "Hard-coded into each Discovery pattern"
+      },
+      {
+        "id": "C",
+        "text": "In the incident table"
+      },
+      {
+        "id": "D",
+        "text": "In the knowledge base"
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "Credentials are stored centrally in the platform Credentials store and retrieved securely by the MID Server (using affinity/aliases to pick the right one per target). Centralizing them keeps secrets out of patterns and lets you rotate and govern access in one place.",
     "distractor_notes": {
       "B": "Hard-coding credentials into patterns is insecure and unmanageable.",
@@ -1068,9 +1908,16 @@
       "D": "The knowledge base holds articles, not credentials."
     },
     "references": [
-      { "title": "Discovery credentials", "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/discovery.html" }
+      {
+        "title": "Discovery credentials",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/discovery.html"
+      }
     ],
-    "tags": ["ingest", "mid-server", "credentials-store"]
+    "tags": [
+      "ingest",
+      "mid-server",
+      "credentials-store"
+    ]
   },
   {
     "id": "cisdf-ing-041",
@@ -1082,12 +1929,26 @@
     "type": "single_select",
     "stem": "What does the Classify phase of Horizontal Discovery determine?",
     "options": [
-      { "id": "A", "text": "The type of device/CI (e.g., Windows vs Linux server) so the correct identification and exploration logic is applied" },
-      { "id": "B", "text": "The business owner of the CI" },
-      { "id": "C", "text": "The CMDB Health score" },
-      { "id": "D", "text": "The retirement date of the CI" }
+      {
+        "id": "A",
+        "text": "The type of device/CI (e.g., Windows vs Linux server) so the correct identification and exploration logic is applied"
+      },
+      {
+        "id": "B",
+        "text": "The business owner of the CI"
+      },
+      {
+        "id": "C",
+        "text": "The CMDB Health score"
+      },
+      {
+        "id": "D",
+        "text": "The retirement date of the CI"
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "Classify uses the scan results to decide what kind of device a target is, which selects the right identifier and pattern for the Identify and Explore phases. Getting classification right is what lets Discovery apply class-appropriate logic rather than a generic guess.",
     "distractor_notes": {
       "B": "Business ownership is a governance attribute, not what Classify determines.",
@@ -1095,9 +1956,16 @@
       "D": "Retirement dates are lifecycle data, not a classification output."
     },
     "references": [
-      { "title": "Discovery classify phase", "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/discovery.html" }
+      {
+        "title": "Discovery classify phase",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/discovery.html"
+      }
     ],
-    "tags": ["ingest", "discovery", "classify"]
+    "tags": [
+      "ingest",
+      "discovery",
+      "classify"
+    ]
   },
   {
     "id": "cisdf-ing-042",
@@ -1109,12 +1977,26 @@
     "type": "single_select",
     "stem": "An organization wants to ingest AWS and Azure cloud resources into the CMDB. Which is the most appropriate, supported approach?",
     "options": [
-      { "id": "A", "text": "Use the certified Cloud Service Graph Connectors / Cloud Discovery for those providers" },
-      { "id": "B", "text": "Manually create a CI for every cloud resource" },
-      { "id": "C", "text": "Write each resource directly to cmdb_ci via a one-off script" },
-      { "id": "D", "text": "Ignore cloud resources entirely" }
+      {
+        "id": "A",
+        "text": "Use the certified Cloud Service Graph Connectors / Cloud Discovery for those providers"
+      },
+      {
+        "id": "B",
+        "text": "Manually create a CI for every cloud resource"
+      },
+      {
+        "id": "C",
+        "text": "Write each resource directly to cmdb_ci via a one-off script"
+      },
+      {
+        "id": "D",
+        "text": "Ignore cloud resources entirely"
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "Cloud estates are large and dynamic, so the supported path is the certified Cloud connectors / Cloud Discovery for AWS, Azure, and GCP — pre-built, IRE-based, and kept current. Manual creation or one-off scripts can't keep pace with cloud churn and skip IRE governance.",
     "distractor_notes": {
       "B": "Manual creation cannot keep up with elastic cloud resources.",
@@ -1122,9 +2004,16 @@
       "D": "Ignoring cloud leaves a major part of the estate out of the CMDB."
     },
     "references": [
-      { "title": "Cloud Service Graph Connectors", "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/service-graph-connectors.html" }
+      {
+        "title": "Cloud Service Graph Connectors",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/service-graph-connectors.html"
+      }
     ],
-    "tags": ["ingest", "cloud-discovery", "service-graph-connector"]
+    "tags": [
+      "ingest",
+      "cloud-discovery",
+      "service-graph-connector"
+    ]
   },
   {
     "id": "cisdf-ing-043",
@@ -1136,12 +2025,26 @@
     "type": "single_select",
     "stem": "In an import-based integration, what does the Data Source record define?",
     "options": [
-      { "id": "A", "text": "How and from where to retrieve the import data (e.g., file, JDBC, REST) before it is staged and transformed" },
-      { "id": "B", "text": "The CMDB Health threshold" },
-      { "id": "C", "text": "The retirement policy for CIs" },
-      { "id": "D", "text": "The incident priority matrix" }
+      {
+        "id": "A",
+        "text": "How and from where to retrieve the import data (e.g., file, JDBC, REST) before it is staged and transformed"
+      },
+      {
+        "id": "B",
+        "text": "The CMDB Health threshold"
+      },
+      {
+        "id": "C",
+        "text": "The retirement policy for CIs"
+      },
+      {
+        "id": "D",
+        "text": "The incident priority matrix"
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "A Data Source record specifies the connection and format for retrieving import data — a file, JDBC query, REST/SOAP endpoint, and so on. It feeds the import set staging table, after which a transform map (ideally via IRE) moves the data to the target CMDB tables.",
     "distractor_notes": {
       "B": "Health thresholds are an Insight setting, not part of a data source.",
@@ -1149,9 +2052,16 @@
       "D": "Incident priority is unrelated to import data sources."
     },
     "references": [
-      { "title": "Data sources and import sets", "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/import-sets.html" }
+      {
+        "title": "Data sources and import sets",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/import-sets.html"
+      }
     ],
-    "tags": ["ingest", "data-source", "import"]
+    "tags": [
+      "ingest",
+      "data-source",
+      "import"
+    ]
   },
   {
     "id": "cisdf-ing-044",
@@ -1163,12 +2073,26 @@
     "type": "single_select",
     "stem": "An administrator wants to run Discovery against a single IP address quickly to troubleshoot why a server isn't appearing in the CMDB. Which capability is designed for this?",
     "options": [
-      { "id": "A", "text": "Quick Discovery (discover a single target on demand)" },
-      { "id": "B", "text": "CMDB Data Manager destroy policy" },
-      { "id": "C", "text": "A data certification campaign" },
-      { "id": "D", "text": "A CMDB Health dashboard export" }
+      {
+        "id": "A",
+        "text": "Quick Discovery (discover a single target on demand)"
+      },
+      {
+        "id": "B",
+        "text": "CMDB Data Manager destroy policy"
+      },
+      {
+        "id": "C",
+        "text": "A data certification campaign"
+      },
+      {
+        "id": "D",
+        "text": "A CMDB Health dashboard export"
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "Quick Discovery runs an on-demand scan against a single IP, which is exactly the tool for troubleshooting why one target isn't being created or updated — you get immediate, focused results without waiting for the next scheduled run.",
     "distractor_notes": {
       "B": "A destroy policy removes CIs; it doesn't troubleshoot discovery of one host.",
@@ -1176,9 +2100,16 @@
       "D": "Exporting a health dashboard doesn't run discovery."
     },
     "references": [
-      { "title": "Quick Discovery", "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/discovery.html" }
+      {
+        "title": "Quick Discovery",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/discovery.html"
+      }
     ],
-    "tags": ["ingest", "discovery", "quick-discovery"]
+    "tags": [
+      "ingest",
+      "discovery",
+      "quick-discovery"
+    ]
   },
   {
     "id": "cisdf-ing-045",
@@ -1190,12 +2121,26 @@
     "type": "single_select",
     "stem": "During Horizontal Discovery of an application running on a server, what does Discovery typically create in addition to the application and server CIs?",
     "options": [
-      { "id": "A", "text": "A relationship (e.g., 'Runs on::Runs') between the application CI and the host server CI" },
-      { "id": "B", "text": "An incident for each application" },
-      { "id": "C", "text": "A knowledge article for the server" },
-      { "id": "D", "text": "A change request for the application" }
+      {
+        "id": "A",
+        "text": "A relationship (e.g., 'Runs on::Runs') between the application CI and the host server CI"
+      },
+      {
+        "id": "B",
+        "text": "An incident for each application"
+      },
+      {
+        "id": "C",
+        "text": "A knowledge article for the server"
+      },
+      {
+        "id": "D",
+        "text": "A change request for the application"
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "Discovery doesn't just create CIs — it wires them together, creating relationships like 'Runs on::Runs' between an application and the server hosting it. Those relationships are what later feed dependency views and service maps, which is much of the CMDB's value.",
     "distractor_notes": {
       "B": "Discovery creates CIs and relationships, not incidents.",
@@ -1203,9 +2148,16 @@
       "D": "It doesn't open change requests as part of discovery."
     },
     "references": [
-      { "title": "Discovery relationships", "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/discovery.html" }
+      {
+        "title": "Discovery relationships",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/discovery.html"
+      }
     ],
-    "tags": ["ingest", "discovery", "relationships"]
+    "tags": [
+      "ingest",
+      "discovery",
+      "relationships"
+    ]
   },
   {
     "id": "cisdf-ing-046",
@@ -1217,12 +2169,26 @@
     "type": "single_select",
     "stem": "From a security standpoint, what is the recommended practice for the account a MID Server uses to discover targets?",
     "options": [
-      { "id": "A", "text": "Use least-privilege credentials scoped to what Discovery needs, managed centrally and rotated" },
-      { "id": "B", "text": "Use a domain administrator account shared across all teams" },
-      { "id": "C", "text": "Embed plaintext credentials in each pattern" },
-      { "id": "D", "text": "Disable credentials so probes run anonymously" }
+      {
+        "id": "A",
+        "text": "Use least-privilege credentials scoped to what Discovery needs, managed centrally and rotated"
+      },
+      {
+        "id": "B",
+        "text": "Use a domain administrator account shared across all teams"
+      },
+      {
+        "id": "C",
+        "text": "Embed plaintext credentials in each pattern"
+      },
+      {
+        "id": "D",
+        "text": "Disable credentials so probes run anonymously"
+      }
     ],
-    "correct": ["A"],
+    "correct": [
+      "A"
+    ],
     "rationale": "Discovery should follow least privilege: credentials scoped to exactly the read access probes require, stored centrally, and rotated. Over-privileged shared admin accounts and embedded plaintext secrets are security risks, and anonymous probing simply can't collect the authenticated detail Discovery needs.",
     "distractor_notes": {
       "B": "A shared domain admin account is excessive privilege and a security liability.",
@@ -1230,8 +2196,591 @@
       "D": "Most useful discovery requires authentication; anonymous probes collect little."
     },
     "references": [
-      { "title": "Discovery credential best practices", "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/discovery.html" }
+      {
+        "title": "Discovery credential best practices",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/discovery.html"
+      }
     ],
-    "tags": ["ingest", "mid-server", "least-privilege"]
+    "tags": [
+      "ingest",
+      "mid-server",
+      "least-privilege"
+    ]
+  },
+  {
+    "id": "cisdf-ing-047",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Ingest",
+    "subdomain": "Service Graph Connectors",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A team needs to ingest CMDB data from a popular third-party tool using a certified, low-maintenance integration that maps to CMDB classes through IRE. Which approach fits best?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A Service Graph Connector"
+      },
+      {
+        "id": "B",
+        "text": "A hand-built outbound REST script"
+      },
+      {
+        "id": "C",
+        "text": "A UI policy"
+      },
+      {
+        "id": "D",
+        "text": "A coalesce-only import with no IRE"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Service Graph Connectors are certified, prebuilt integrations that bring third-party data into the CMDB through IRE, minimizing custom mapping and maintenance. They're the recommended path for supported sources.",
+    "distractor_notes": {
+      "B": "A hand-built REST script is more effort and maintenance than a certified connector.",
+      "C": "UI policies change form behavior; they don't ingest data.",
+      "D": "Bypassing IRE risks duplicates and inconsistent identification."
+    },
+    "references": [
+      {
+        "title": "Service Graph Connectors",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/service-graph-connectors.html"
+      }
+    ],
+    "tags": [
+      "service-graph-connector",
+      "ingestion",
+      "ire"
+    ]
+  },
+  {
+    "id": "cisdf-ing-048",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Ingest",
+    "subdomain": "IntegrationHub ETL",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "You have arbitrary external data and need a guided, low-code way to map and transform it into the correct CMDB classes while still going through identification. Which tool is designed for this?",
+    "options": [
+      {
+        "id": "A",
+        "text": "IntegrationHub ETL"
+      },
+      {
+        "id": "B",
+        "text": "A client script"
+      },
+      {
+        "id": "C",
+        "text": "The Service Portal"
+      },
+      {
+        "id": "D",
+        "text": "A watch list"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "IntegrationHub ETL provides a guided, robust transform experience to map external data into CMDB classes, feeding the data through IRE for identification and reconciliation. It's built for flexible source-to-CMDB mapping.",
+    "distractor_notes": {
+      "B": "Client scripts run on forms, not server-side ETL.",
+      "C": "The Service Portal is an end-user interface.",
+      "D": "Watch lists handle notifications."
+    },
+    "references": [
+      {
+        "title": "IntegrationHub ETL",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/integrationhub-etl.html"
+      }
+    ],
+    "tags": [
+      "integrationhub-etl",
+      "transform",
+      "cmdb"
+    ]
+  },
+  {
+    "id": "cisdf-ing-049",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Ingest",
+    "subdomain": "Discovery",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "An organization wants to populate CIs for on-premises servers and network gear without installing agents on each device. Which approach fits?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Agentless Discovery via a MID Server"
+      },
+      {
+        "id": "B",
+        "text": "Manual CI entry for every device"
+      },
+      {
+        "id": "C",
+        "text": "A Service Portal widget"
+      },
+      {
+        "id": "D",
+        "text": "A coalesce field"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Discovery is agentless and uses a MID Server to probe infrastructure and populate CIs through IRE — ideal for on-prem servers and network devices without per-device agents.",
+    "distractor_notes": {
+      "B": "Manual entry doesn't scale and goes stale quickly.",
+      "C": "A portal widget is UI, not infrastructure discovery.",
+      "D": "Coalesce matches import records."
+    },
+    "references": [
+      {
+        "title": "Discovery",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/discovery.html"
+      }
+    ],
+    "tags": [
+      "discovery",
+      "agentless",
+      "mid-server"
+    ]
+  },
+  {
+    "id": "cisdf-ing-050",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Ingest",
+    "subdomain": "Agent Client Collector",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A team wants continuous, agent-based collection of configuration and health data directly from endpoints. Which capability is intended for this?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Agent Client Collector (ACC)"
+      },
+      {
+        "id": "B",
+        "text": "Agentless Discovery only"
+      },
+      {
+        "id": "C",
+        "text": "A transform map"
+      },
+      {
+        "id": "D",
+        "text": "The Service Catalog"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Agent Client Collector uses a lightweight agent on endpoints for continuous data collection, complementing agentless Discovery when you want ongoing, host-resident telemetry.",
+    "distractor_notes": {
+      "B": "Agentless Discovery is periodic and host-external — not agent-based continuous collection.",
+      "C": "Transform maps move imported data.",
+      "D": "The Service Catalog is for ordering services."
+    },
+    "references": [
+      {
+        "title": "Agent Client Collector",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/agent-client-collector.html"
+      }
+    ],
+    "tags": [
+      "acc",
+      "agent",
+      "collection"
+    ]
+  },
+  {
+    "id": "cisdf-ing-051",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Ingest",
+    "subdomain": "Non-discoverable data",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "Business-context attributes like application owner and business criticality can't be discovered automatically. How are these typically populated?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Through manual entry or import for non-discoverable data"
+      },
+      {
+        "id": "B",
+        "text": "Only through agentless Discovery"
+      },
+      {
+        "id": "C",
+        "text": "They cannot exist in the CMDB"
+      },
+      {
+        "id": "D",
+        "text": "Via a UI policy"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Some attributes aren't discoverable (ownership, criticality, business context) and are populated by manual entry or import — ideally still passing through IRE for consistency.",
+    "distractor_notes": {
+      "B": "Discovery can't infer business context like ownership.",
+      "C": "Such attributes absolutely belong in the CMDB; they're just sourced differently.",
+      "D": "UI policies change form behavior; they don't source data."
+    },
+    "references": [
+      {
+        "title": "Import sets and transform maps",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/import-sets.html"
+      }
+    ],
+    "tags": [
+      "non-discoverable",
+      "manual",
+      "import"
+    ]
+  },
+  {
+    "id": "cisdf-ing-052",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Ingest",
+    "subdomain": "IRE during ingestion",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "Regardless of whether data arrives via Discovery, a Service Graph Connector, or ETL, the organization wants consistent duplicate prevention. What ensures this consistency?",
+    "options": [
+      {
+        "id": "A",
+        "text": "All ingestion paths write through IRE"
+      },
+      {
+        "id": "B",
+        "text": "Each path uses its own separate database"
+      },
+      {
+        "id": "C",
+        "text": "A coalesce field on the form"
+      },
+      {
+        "id": "D",
+        "text": "The Service Portal"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Because Discovery, Service Graph Connectors, ETL, import, and API all write through IRE, identification and reconciliation are applied consistently — so duplicate prevention doesn't depend on the path.",
+    "distractor_notes": {
+      "B": "There's one CMDB; paths don't use separate databases.",
+      "C": "A form coalesce field doesn't govern multi-source ingestion.",
+      "D": "The Service Portal is unrelated to ingestion identity."
+    },
+    "references": [
+      {
+        "title": "Ingestion through IRE",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/c_CMDBIdentifyandReconcile.html"
+      }
+    ],
+    "tags": [
+      "ire",
+      "ingestion",
+      "consistency"
+    ]
+  },
+  {
+    "id": "cisdf-ing-053",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Ingest",
+    "subdomain": "MID Server",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "Discovery needs to reach devices inside the corporate network from the cloud instance without exposing inbound ports. What component makes this possible?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A MID Server using outbound connections"
+      },
+      {
+        "id": "B",
+        "text": "An inbound firewall rule to each device"
+      },
+      {
+        "id": "C",
+        "text": "A coalesce field"
+      },
+      {
+        "id": "D",
+        "text": "A catalog item"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The MID Server runs inside the network and initiates outbound connections to the instance, executing Discovery probes against internal devices without exposing inbound ports.",
+    "distractor_notes": {
+      "B": "Opening inbound ports per device is the exposure the MID Server avoids.",
+      "C": "Coalesce matches import records.",
+      "D": "Catalog items are orderable services."
+    },
+    "references": [
+      {
+        "title": "MID Server",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/mid-server.html"
+      }
+    ],
+    "tags": [
+      "mid-server",
+      "discovery",
+      "security"
+    ]
+  },
+  {
+    "id": "cisdf-ing-054",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Ingest",
+    "subdomain": "Discovery vs ETL",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A source system already holds authoritative inventory data in its own database, and you want to bring it into the CMDB rather than re-scan the environment. Which approach is more appropriate?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Ingest the existing data (Service Graph Connector or ETL) rather than running Discovery"
+      },
+      {
+        "id": "B",
+        "text": "Run Discovery to rediscover everything from scratch"
+      },
+      {
+        "id": "C",
+        "text": "Manually retype each record"
+      },
+      {
+        "id": "D",
+        "text": "Use a UI policy"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "When an authoritative source already has the data, ingesting it (via a Service Graph Connector or IntegrationHub ETL) is more efficient than re-discovering. Discovery shines for scanning the live environment, not re-importing known inventory.",
+    "distractor_notes": {
+      "B": "Re-discovering duplicates effort when an authoritative source already exists.",
+      "C": "Manual retyping doesn't scale and is error-prone.",
+      "D": "UI policies don't ingest data."
+    },
+    "references": [
+      {
+        "title": "Service Graph Connectors",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/service-graph-connectors.html"
+      }
+    ],
+    "tags": [
+      "ingestion-choice",
+      "discovery",
+      "etl"
+    ]
+  },
+  {
+    "id": "cisdf-ing-055",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Ingest",
+    "subdomain": "Ingestion methods",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Which statement best describes the role of IntegrationHub ETL versus a Service Graph Connector?",
+    "options": [
+      {
+        "id": "A",
+        "text": "ETL offers flexible custom mapping of arbitrary sources; a Service Graph Connector is a certified prebuilt integration for a specific source"
+      },
+      {
+        "id": "B",
+        "text": "They are identical with different names"
+      },
+      {
+        "id": "C",
+        "text": "ETL only works for Discovery data"
+      },
+      {
+        "id": "D",
+        "text": "Service Graph Connectors bypass IRE"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "IntegrationHub ETL is the flexible, build-your-own mapping tool for arbitrary sources, while Service Graph Connectors are certified, prebuilt integrations for specific products. Both feed the CMDB through IRE.",
+    "distractor_notes": {
+      "B": "They serve different purposes — custom mapping vs certified prebuilt.",
+      "C": "ETL handles arbitrary external data, not just Discovery output.",
+      "D": "Service Graph Connectors use IRE; they don't bypass it."
+    },
+    "references": [
+      {
+        "title": "IntegrationHub ETL",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/integrationhub-etl.html"
+      }
+    ],
+    "tags": [
+      "etl",
+      "service-graph-connector",
+      "comparison"
+    ]
+  },
+  {
+    "id": "cisdf-ing-056",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Ingest",
+    "subdomain": "Ingestion best practices",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "To keep the CMDB trustworthy as new sources are onboarded, what is a recommended ingestion practice?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Route all sources through IRE and define reconciliation precedence for overlapping attributes"
+      },
+      {
+        "id": "B",
+        "text": "Give every source equal authority over all attributes"
+      },
+      {
+        "id": "C",
+        "text": "Disable identification rules for speed"
+      },
+      {
+        "id": "D",
+        "text": "Write directly to cmdb_ci, skipping IRE"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Routing sources through IRE and setting reconciliation precedence prevents duplicates and stops weaker sources from overwriting trusted data. Equal authority or bypassing IRE undermines data quality.",
+    "distractor_notes": {
+      "B": "Equal authority causes attribute thrashing between sources.",
+      "C": "Disabling identification produces duplicates.",
+      "D": "Skipping IRE bypasses identification/reconciliation entirely."
+    },
+    "references": [
+      {
+        "title": "Ingestion through IRE",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/c_CMDBIdentifyandReconcile.html"
+      }
+    ],
+    "tags": [
+      "best-practice",
+      "ire",
+      "reconciliation"
+    ]
+  },
+  {
+    "id": "cisdf-ing-057",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Ingest",
+    "subdomain": "Ingestion methods",
+    "difficulty": "application",
+    "type": "multi_select",
+    "stem": "Which TWO are valid ways to populate the CMDB?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Agentless Discovery via a MID Server"
+      },
+      {
+        "id": "B",
+        "text": "A Service Graph Connector for a certified source"
+      },
+      {
+        "id": "C",
+        "text": "A UI policy on the incident form"
+      },
+      {
+        "id": "D",
+        "text": "A watch list"
+      }
+    ],
+    "correct": [
+      "A",
+      "B"
+    ],
+    "rationale": "Discovery and Service Graph Connectors are both legitimate ingestion methods (along with ETL, import, and API), all flowing through IRE. UI policies and watch lists are unrelated to CMDB population.",
+    "distractor_notes": {
+      "C": "UI policies change form behavior; they don't populate CIs.",
+      "D": "Watch lists handle notifications."
+    },
+    "references": [
+      {
+        "title": "Discovery",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/discovery.html"
+      }
+    ],
+    "tags": [
+      "ingestion",
+      "discovery",
+      "service-graph-connector"
+    ]
+  },
+  {
+    "id": "cisdf-ing-058",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Ingest",
+    "subdomain": "Discovery vs ETL",
+    "difficulty": "application",
+    "type": "multi_select",
+    "stem": "Which TWO statements about ingestion are correct?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Discovery is well suited to scanning the live environment for CIs"
+      },
+      {
+        "id": "B",
+        "text": "IntegrationHub ETL is well suited to mapping arbitrary external data into CMDB classes"
+      },
+      {
+        "id": "C",
+        "text": "Ingestion paths each maintain their own separate CMDB"
+      },
+      {
+        "id": "D",
+        "text": "Discovery requires an agent on every device"
+      }
+    ],
+    "correct": [
+      "A",
+      "B"
+    ],
+    "rationale": "Discovery scans the live environment; ETL flexibly maps external data into CMDB classes. There's one CMDB shared across paths, and Discovery is agentless.",
+    "distractor_notes": {
+      "C": "All paths write to the single CMDB through IRE.",
+      "D": "Discovery is agentless via the MID Server."
+    },
+    "references": [
+      {
+        "title": "IntegrationHub ETL",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/integrationhub-etl.html"
+      }
+    ],
+    "tags": [
+      "discovery",
+      "etl",
+      "ingestion"
+    ]
   }
 ]
