@@ -1,0 +1,139 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+
+const exams = ['CSA','CAD','CIS-ITSM','CIS-DF','CIS-SM'];
+---
+<BaseLayout
+  title="Leaderboard — GlideUp.net"
+  description="Top scores from exam simulations across all GlideUp exams. Opt-in, anonymous."
+  activeNav="leaderboard"
+>
+  <Breadcrumb crumbs={[
+    { label: 'Practice', href: '/' },
+    { label: 'Leaderboard' },
+  ]} />
+
+  <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:20px;">
+    <div>
+      <h1 style="font-size:22px;font-weight:700;margin-bottom:4px;">Leaderboard</h1>
+      <p style="font-size:13px;color:var(--text-muted);">Top 25 exam simulation scores. Opt-in only — submit yours after finishing a sim.</p>
+    </div>
+    <div class="exam-tabs" id="exam-tabs" role="tablist">
+      {exams.map((e, i) => (
+        <button
+          class={`tab ${i === 0 ? 'is-active' : ''}`}
+          role="tab"
+          data-exam={e}
+          aria-selected={i === 0 ? 'true' : 'false'}
+        >{e}</button>
+      ))}
+    </div>
+  </div>
+
+  <div id="board-wrap">
+    <div id="board-loading" class="card" style="text-align:center;padding:32px;color:var(--text-muted);font-size:13px;">
+      Loading scores…
+    </div>
+    <table id="board-table" class="board-table" hidden>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Username</th>
+          <th>Mode</th>
+          <th>Score</th>
+          <th>%</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody id="board-body"></tbody>
+    </table>
+    <div id="board-empty" class="card" style="text-align:center;padding:32px;color:var(--text-muted);font-size:13px;" hidden>
+      No scores yet for this exam. Finish an Exam Sim and submit yours!
+    </div>
+  </div>
+
+</BaseLayout>
+
+<script>
+  const tabs = document.querySelectorAll('#exam-tabs .tab');
+  let currentExam = 'CSA';
+
+  async function loadBoard(exam: string) {
+    const loading = document.getElementById('board-loading')!;
+    const table   = document.getElementById('board-table')!;
+    const empty   = document.getElementById('board-empty')!;
+    const tbody   = document.getElementById('board-body')!;
+
+    loading.hidden = false; table.hidden = true; empty.hidden = true;
+
+    try {
+      const res  = await fetch(`/api/scores?exam=${encodeURIComponent(exam)}`);
+      const data = await res.json();
+      const scores = data.scores || [];
+
+      loading.hidden = true;
+
+      if (scores.length === 0) { empty.hidden = false; return; }
+
+      tbody.innerHTML = scores.map((s: any, i: number) => {
+        const rank    = i === 0 ? '🥇' : i === 1 ? '🥈' : i === 2 ? '🥉' : `${i + 1}`;
+        const pctBar  = `<div class="pct-bar"><div class="pct-fill" style="width:${s.pct}%"></div></div>`;
+        const date    = new Date(s.at).toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+        return `<tr>
+          <td class="rank-cell">${rank}</td>
+          <td class="name-cell">${escHtml(s.username)}</td>
+          <td style="font-size:12px;color:var(--text-muted)">${escHtml(s.mode)}</td>
+          <td><strong>${s.score}</strong> / ${s.total}</td>
+          <td>${pctBar}<span class="pct-label">${s.pct}%</span></td>
+          <td style="font-size:12px;color:var(--text-muted)">${date}</td>
+        </tr>`;
+      }).join('');
+
+      table.hidden = false;
+    } catch {
+      loading.textContent = 'Could not load scores. Try again shortly.';
+    }
+  }
+
+  function escHtml(s: string) {
+    return s.replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]!);
+  }
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => { t.classList.remove('is-active'); t.setAttribute('aria-selected','false'); });
+      tab.classList.add('is-active'); tab.setAttribute('aria-selected','true');
+      currentExam = (tab as HTMLElement).dataset.exam!;
+      loadBoard(currentExam);
+    });
+  });
+
+  loadBoard(currentExam);
+</script>
+
+<style>
+  .exam-tabs { display: flex; gap: 6px; flex-wrap: wrap; }
+
+  .board-table {
+    width: 100%; border-collapse: collapse; font-size: 13px;
+  }
+  .board-table th {
+    text-align: left; font-size: 11px; text-transform: uppercase;
+    letter-spacing: 0.06em; color: var(--text-muted);
+    padding: 0 12px 10px 0; border-bottom: 1px solid var(--border);
+  }
+  .board-table td { padding: 10px 12px 10px 0; border-bottom: 1px solid var(--border); vertical-align: middle; }
+  .board-table tr:last-child td { border-bottom: none; }
+
+  .rank-cell { font-weight: 700; min-width: 32px; }
+  .name-cell { font-weight: 600; color: var(--text); }
+
+  .pct-bar {
+    display: inline-block; width: 60px; height: 6px;
+    background: var(--border); border-radius: 3px; overflow: hidden;
+    vertical-align: middle; margin-right: 6px;
+  }
+  .pct-fill { height: 100%; background: var(--primary); border-radius: 3px; }
+  .pct-label { font-weight: 600; color: var(--primary-dark); }
+</style>

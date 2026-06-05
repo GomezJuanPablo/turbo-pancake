@@ -70,6 +70,13 @@ for (const d of blueprint!.data.domains) weights[d.name] = d.weight;
       <div style="display:flex;gap:8px;flex-wrap:wrap;">
         <a href="./practice/" class="btn btn--primary">New session</a>
         <a href="./" class="btn btn--ghost">Dashboard</a>
+      </div>      <div id="lb-form" style="margin-top:14px;border-top:1px solid var(--border);padding-top:14px;">
+        <p style="font-size:12px;color:var(--text-muted);margin-bottom:8px;">Submit this score to the leaderboard? It's anonymous — just pick a username.</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;">
+          <input id="lb-username" type="text" maxlength="24" placeholder="Your username" class="lb-input" />
+          <button type="button" class="btn btn--ghost" id="lb-submit">Submit score</button>
+        </div>
+        <p id="lb-status" style="font-size:12px;margin-top:6px;color:var(--text-muted);"></p>
       </div>
     </div>
   </div>
@@ -281,6 +288,44 @@ for (const d of blueprint!.data.domains) weights[d.name] = d.weight;
   nextBtn?.addEventListener('click', advance);
   updateStats();
   advance();
+
+  // Leaderboard submission
+  const lbSubmitBtn = root.querySelector('#lb-submit');
+  const lbUsernameEl = root.querySelector('#lb-username') as HTMLInputElement | null;
+  const lbStatus = root.querySelector('#lb-status');
+
+  lbSubmitBtn?.addEventListener('click', async () => {
+    const username = lbUsernameEl?.value.trim();
+    if (!username) { if (lbStatus) lbStatus.textContent = 'Enter a username first.'; return; }
+    if (lbStatus) lbStatus.textContent = 'Submitting…';
+    lbSubmitBtn.disabled = true;
+    try {
+      const res = await fetch('/api/scores', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          username,
+          exam: root.dataset.exam,
+          mode: IS_SIM ? `Exam Sim ${SET_NUM}` : DOMAIN ? `Focus: ${DOMAIN}` : 'Full Practice',
+          score: sessionCorrect,
+          total: sessionAnswered,
+        }),
+      });
+      const data = await res.json();
+      if (data.ok) {
+        if (lbStatus) lbStatus.textContent = `Submitted! You ranked #${data.rank} for this exam.`;
+        const lbForm = root.querySelector('#lb-form');
+        if (lbForm) (lbForm as HTMLElement).style.opacity = '0.5';
+        lbSubmitBtn.disabled = true;
+      } else {
+        if (lbStatus) lbStatus.textContent = data.error || 'Could not submit.';
+        lbSubmitBtn.disabled = false;
+      }
+    } catch {
+      if (lbStatus) lbStatus.textContent = 'Network error — try again.';
+      lbSubmitBtn.disabled = false;
+    }
+  });
 </script>
 
 <style>
@@ -301,5 +346,13 @@ for (const d of blueprint!.data.domains) weights[d.name] = d.weight;
     pointer-events: none; z-index: 500; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.25));
   }
   .goblin-pop.is-visible { opacity: 1; transform: scale(1) translateY(0); }
+
+
+  .lb-input {
+    font-size: 13px; padding: 6px 10px; border: 1px solid var(--border);
+    border-radius: 6px; background: var(--bg); color: var(--text);
+    outline: none; width: 160px;
+  }
+  .lb-input:focus { border-color: var(--primary); }
 
 </style>
