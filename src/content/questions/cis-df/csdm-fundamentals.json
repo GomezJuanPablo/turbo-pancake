@@ -1,0 +1,1250 @@
+[
+  {
+    "id": "cisdf-csdm-001",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "CSDM Fundamentals",
+    "subdomain": "CSDM purpose",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the Common Service Data Model (CSDM)?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A standard, prescriptive framework for how to organize service and CI data in the CMDB across ServiceNow products"
+      },
+      {
+        "id": "B",
+        "text": "A separate database that replaces the CMDB"
+      },
+      {
+        "id": "C",
+        "text": "A discovery tool that scans the network"
+      },
+      {
+        "id": "D",
+        "text": "A licensing model for ServiceNow"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "CSDM is a blueprint, not a product: it prescribes where service-related data and CIs should live in the standard CMDB tables so that ITSM, ITOM, SecOps, and APM all interpret the data the same way. It's about consistent structure, not a new database or scanner.",
+    "distractor_notes": {
+      "B": "CSDM organizes the existing CMDB; it doesn't replace it with a separate database.",
+      "C": "Discovery scans the network; CSDM is a data-model framework.",
+      "D": "CSDM is a data standard, not a licensing model."
+    },
+    "references": [
+      {
+        "title": "CSDM overview",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/csdm.html"
+      }
+    ],
+    "tags": [
+      "csdm",
+      "purpose",
+      "framework"
+    ]
+  },
+  {
+    "id": "cisdf-csdm-002",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "CSDM Fundamentals",
+    "subdomain": "CSDM domains",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which set best represents the service domains of the CSDM framework?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Foundation, Design, Build, Manage Technical Services, and Sell/Consume"
+      },
+      {
+        "id": "B",
+        "text": "Incident, Problem, Change, and Request"
+      },
+      {
+        "id": "C",
+        "text": "Red, Amber, Green, and Blue"
+      },
+      {
+        "id": "D",
+        "text": "Scan, Classify, Identify, and Explore"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "CSDM organizes data into service domains \u2014 Foundation (core data), Design, Build, Manage Technical Services, and Sell/Consume \u2014 each holding the appropriate service and CI constructs. The other options are ITSM processes, status colors, and Discovery phases, not CSDM domains.",
+    "distractor_notes": {
+      "B": "Those are ITSM processes, not CSDM domains.",
+      "C": "Status colors aren't CSDM domains.",
+      "D": "Those are Discovery phases, not CSDM domains."
+    },
+    "references": [
+      {
+        "title": "CSDM domains",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/csdm.html"
+      }
+    ],
+    "tags": [
+      "csdm",
+      "domains",
+      "framework"
+    ]
+  },
+  {
+    "id": "cisdf-csdm-003",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "CSDM Fundamentals",
+    "subdomain": "Maturity stages",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "CSDM describes an adoption journey using which sequence of maturity stages?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Crawl, Walk, Run, Fly"
+      },
+      {
+        "id": "B",
+        "text": "Bronze, Silver, Gold"
+      },
+      {
+        "id": "C",
+        "text": "Alpha, Beta, GA"
+      },
+      {
+        "id": "D",
+        "text": "Plan, Do, Check, Act"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "CSDM frames adoption as Crawl \u2192 Walk \u2192 Run \u2192 Fly, building on a Foundation, so organizations mature incrementally rather than attempting everything at once. Each stage unlocks more capability as data completeness and modeling improve.",
+    "distractor_notes": {
+      "B": "Bronze/Silver/Gold isn't the CSDM maturity model.",
+      "C": "Alpha/Beta/GA are software release phases, not CSDM stages.",
+      "D": "Plan-Do-Check-Act is a generic improvement cycle, not CSDM's stages."
+    },
+    "references": [
+      {
+        "title": "CSDM crawl-walk-run-fly",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/csdm.html"
+      }
+    ],
+    "tags": [
+      "csdm",
+      "maturity",
+      "crawl-walk-run-fly"
+    ]
+  },
+  {
+    "id": "cisdf-csdm-004",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "CSDM Fundamentals",
+    "subdomain": "Foundation domain",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A CSDM Data Manager wants metrics on alignment of product models, locations, and business units. These data elements belong to which CSDM domain/stage?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Foundation"
+      },
+      {
+        "id": "B",
+        "text": "Sell/Consume"
+      },
+      {
+        "id": "C",
+        "text": "Manage Technical Services"
+      },
+      {
+        "id": "D",
+        "text": "Design"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Foundation holds the core, broadly shared data \u2014 companies, locations, users, groups, product models, and business units \u2014 that everything else builds on. Aligning these is the first step (the basis of the Crawl stage) before modeling services.",
+    "distractor_notes": {
+      "B": "Sell/Consume covers service offerings and business services consumed, not core reference data.",
+      "C": "Manage Technical Services covers application/technical services, not product models and locations.",
+      "D": "Design holds business applications and related design data, not the core foundation entities."
+    },
+    "references": [
+      {
+        "title": "CSDM Foundation",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/csdm.html"
+      }
+    ],
+    "tags": [
+      "csdm",
+      "foundation",
+      "core-data"
+    ]
+  },
+  {
+    "id": "cisdf-csdm-005",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "CSDM Fundamentals",
+    "subdomain": "Business Application",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "In CSDM, what does a Business Application represent?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A software application viewed from a business/architecture perspective, independent of where it is deployed"
+      },
+      {
+        "id": "B",
+        "text": "A single running process on one server"
+      },
+      {
+        "id": "C",
+        "text": "A network switch"
+      },
+      {
+        "id": "D",
+        "text": "An incident record"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "A Business Application is the logical, business-level concept of an application (e.g., 'Payroll') \u2014 what the organization recognizes and funds \u2014 separate from its concrete deployed instances. Those deployed instances are modeled as Application Services related to the Business Application.",
+    "distractor_notes": {
+      "B": "A single running process maps to a deployed Application Service instance, not the Business Application concept.",
+      "C": "A switch is infrastructure, not a business application.",
+      "D": "An incident is an ITSM record, not a CSDM application construct."
+    },
+    "references": [
+      {
+        "title": "Business Application",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/csdm.html"
+      }
+    ],
+    "tags": [
+      "csdm",
+      "business-application",
+      "design"
+    ]
+  },
+  {
+    "id": "cisdf-csdm-006",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "CSDM Fundamentals",
+    "subdomain": "Application Service",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What does an Application Service represent in CSDM?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A deployed, running instance of an application and its supporting CIs that together deliver a service"
+      },
+      {
+        "id": "B",
+        "text": "The legal owner of the data center"
+      },
+      {
+        "id": "C",
+        "text": "A user's mailbox"
+      },
+      {
+        "id": "D",
+        "text": "A change request template"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "An Application Service models an actual deployment \u2014 the application instance plus the servers, databases, and other CIs that support it \u2014 typically built by Service Mapping or tags. It's the concrete, mapped service that impact analysis and monitoring use.",
+    "distractor_notes": {
+      "B": "Ownership of a facility isn't what an Application Service models.",
+      "C": "A mailbox is an endpoint artifact, not an application service.",
+      "D": "A change template is an ITSM construct, not a CSDM service."
+    },
+    "references": [
+      {
+        "title": "Application Service",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/csdm.html"
+      }
+    ],
+    "tags": [
+      "csdm",
+      "application-service",
+      "deployed-instance"
+    ]
+  },
+  {
+    "id": "cisdf-csdm-007",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "CSDM Fundamentals",
+    "subdomain": "Information Object",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A customer wants to model their business applications and capture the different types of data they handle, including Personally Identifiable Information (PII). Which CSDM construct represents this data?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Information Object"
+      },
+      {
+        "id": "B",
+        "text": "Business Capability"
+      },
+      {
+        "id": "C",
+        "text": "Product Model"
+      },
+      {
+        "id": "D",
+        "text": "Service Offering"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The Information Object captures the data/information an application handles \u2014 including sensitive categories like PII \u2014 and relates it to the Business Application. That linkage supports privacy, security, and compliance use cases that need to know where regulated data lives.",
+    "distractor_notes": {
+      "B": "Business Capability expresses what the business does, not the data handled.",
+      "C": "Product Model describes a model of hardware/software, not data categories.",
+      "D": "Service Offering defines a service's commitments, not the data it processes."
+    },
+    "references": [
+      {
+        "title": "Information Object",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/csdm.html"
+      }
+    ],
+    "tags": [
+      "csdm",
+      "information-object",
+      "pii"
+    ]
+  },
+  {
+    "id": "cisdf-csdm-008",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "CSDM Fundamentals",
+    "subdomain": "Service Offerings",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "How does a Service Offering differ from the Service it is based on in CSDM?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A Service Offering is a specific variation of a service with defined commitments (e.g., levels, SLAs, audience), while the Service is the general definition"
+      },
+      {
+        "id": "B",
+        "text": "They are identical"
+      },
+      {
+        "id": "C",
+        "text": "A Service Offering is a type of incident"
+      },
+      {
+        "id": "D",
+        "text": "A Service is always retired before an Offering exists"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "A Service is the general thing provided; a Service Offering packages it with specific commitments \u2014 service levels, supported hours, audience, or cost. One service can have multiple offerings (e.g., Gold vs Silver), which is how CSDM expresses tiered or varied delivery.",
+    "distractor_notes": {
+      "B": "They're related but distinct: general service vs committed offering.",
+      "C": "A Service Offering isn't an incident type.",
+      "D": "Offerings exist for active services; no such retirement rule applies."
+    },
+    "references": [
+      {
+        "title": "Services and Service Offerings",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/csdm.html"
+      }
+    ],
+    "tags": [
+      "csdm",
+      "service-offering",
+      "sell-consume"
+    ]
+  },
+  {
+    "id": "cisdf-csdm-009",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "CSDM Fundamentals",
+    "subdomain": "Technical Service Offering",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A CMDB Administrator notices CIs do not have a Support group. Which CSDM construct can automatically populate and maintain the support group on CI records?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A Technical (Technology Management) Service Offering related to the CIs"
+      },
+      {
+        "id": "B",
+        "text": "A CMDB Health dashboard"
+      },
+      {
+        "id": "C",
+        "text": "A knowledge article"
+      },
+      {
+        "id": "D",
+        "text": "An incident SLA"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Technical Service Offerings carry support and ownership group information, and when CIs are aligned to an offering (often via dynamic groups), those group values flow onto the CIs and stay maintained. It's the model-driven way to keep support assignment consistent rather than editing each CI.",
+    "distractor_notes": {
+      "B": "A health dashboard measures quality; it doesn't populate support groups.",
+      "C": "Knowledge articles don't set CI support groups.",
+      "D": "An SLA governs response times, not CI group population."
+    },
+    "references": [
+      {
+        "title": "Technical Service Offerings",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/csdm.html"
+      }
+    ],
+    "tags": [
+      "csdm",
+      "technical-service-offering",
+      "support-group"
+    ]
+  },
+  {
+    "id": "cisdf-csdm-010",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "CSDM Fundamentals",
+    "subdomain": "Maturity stages",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A customer's CMDB is aligned to the CSDM 'Walk' stage. Which benefit does this enable?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Impact assessments for incident, problem, and change against Business Services / Application Services"
+      },
+      {
+        "id": "B",
+        "text": "Nothing beyond storing raw CIs"
+      },
+      {
+        "id": "C",
+        "text": "Automatic elimination of all incidents"
+      },
+      {
+        "id": "D",
+        "text": "Replacing the need for Discovery"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "By the Walk stage, services are mapped and related to their supporting CIs, which unlocks service-aware impact analysis \u2014 seeing how an incident, problem, or change affects business and application services. That service context is the core payoff of progressing past Foundation/Crawl.",
+    "distractor_notes": {
+      "B": "Walk is well beyond raw storage; services are modeled and usable.",
+      "C": "CSDM maturity doesn't eliminate incidents.",
+      "D": "Discovery still feeds the CMDB regardless of CSDM stage."
+    },
+    "references": [
+      {
+        "title": "CSDM Walk stage",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/csdm.html"
+      }
+    ],
+    "tags": [
+      "csdm",
+      "walk",
+      "impact-analysis"
+    ]
+  },
+  {
+    "id": "cisdf-csdm-011",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "CSDM Fundamentals",
+    "subdomain": "CSDM value",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Why is following CSDM important when populating the CMDB?",
+    "options": [
+      {
+        "id": "A",
+        "text": "It places data in consistent, expected locations so ITSM, ITOM, SecOps, and APM can all use it reliably"
+      },
+      {
+        "id": "B",
+        "text": "It makes the CMDB load faster"
+      },
+      {
+        "id": "C",
+        "text": "It removes the need for governance"
+      },
+      {
+        "id": "D",
+        "text": "It is only relevant to the finance team"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "CSDM's value is interoperability: when everyone models services and CIs the same way, the many products and processes that read the CMDB get predictable, trustworthy data. Off-model data may technically exist but breaks the downstream features that expect CSDM placement.",
+    "distractor_notes": {
+      "B": "CSDM is about correct structure and usability, not load speed.",
+      "C": "CSDM complements governance; it doesn't replace it.",
+      "D": "CSDM underpins enterprise-wide processes, not just finance."
+    },
+    "references": [
+      {
+        "title": "Value of CSDM",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/csdm.html"
+      }
+    ],
+    "tags": [
+      "csdm",
+      "value",
+      "interoperability"
+    ]
+  },
+  {
+    "id": "cisdf-csdm-012",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "CSDM Fundamentals",
+    "subdomain": "CMDB business value",
+    "difficulty": "recall",
+    "type": "multi_select",
+    "stem": "Which TWO are business values of a well-maintained CMDB aligned to CSDM?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Strengthening operational resiliency"
+      },
+      {
+        "id": "B",
+        "text": "Streamlining incident and change management with service context"
+      },
+      {
+        "id": "C",
+        "text": "Automatically generating company payroll"
+      },
+      {
+        "id": "D",
+        "text": "Replacing the corporate email system"
+      }
+    ],
+    "correct": [
+      "A",
+      "B"
+    ],
+    "rationale": "A trusted, CSDM-aligned CMDB makes the organization more resilient (you understand dependencies and impact) and makes core processes like incident and change faster and safer with real service context. Payroll and email are unrelated systems.",
+    "distractor_notes": {
+      "C": "Payroll generation isn't a CMDB function.",
+      "D": "The CMDB doesn't replace email systems."
+    },
+    "references": [
+      {
+        "title": "CMDB business value",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/csdm.html"
+      }
+    ],
+    "tags": [
+      "csdm",
+      "business-value",
+      "resiliency"
+    ]
+  },
+  {
+    "id": "cisdf-csdm-013",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "CSDM Fundamentals",
+    "subdomain": "Change Management with CSDM",
+    "difficulty": "application",
+    "type": "multi_select",
+    "stem": "Which two ways does the Change Management process benefit from a CSDM-aligned CMDB?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Understanding the impact of a change on related services"
+      },
+      {
+        "id": "B",
+        "text": "Identifying blackout/maintenance windows relevant to the affected CIs/services"
+      },
+      {
+        "id": "C",
+        "text": "Automatically writing the change's code fix"
+      },
+      {
+        "id": "D",
+        "text": "Determining the root cause of an unrelated incident"
+      }
+    ],
+    "correct": [
+      "A",
+      "B"
+    ],
+    "rationale": "With services mapped to their CIs, change planners can see what a change will affect and respect the blackout/maintenance windows tied to those CIs and services. CSDM doesn't write code, and root-cause analysis is Problem Management's job.",
+    "distractor_notes": {
+      "C": "Code remediation is development work, not a CSDM/change benefit.",
+      "D": "Root-cause analysis belongs to Problem Management, not change impact."
+    },
+    "references": [
+      {
+        "title": "CSDM and Change Management",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/csdm.html"
+      }
+    ],
+    "tags": [
+      "csdm",
+      "change-management",
+      "impact"
+    ]
+  },
+  {
+    "id": "cisdf-csdm-014",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "CSDM Fundamentals",
+    "subdomain": "Event Management with CSDM",
+    "difficulty": "application",
+    "type": "multi_select",
+    "stem": "Which two advantages does ServiceNow Event Management gain from a well-populated, CSDM-aligned CMDB?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Binding alerts to the specific CIs they originate from"
+      },
+      {
+        "id": "B",
+        "text": "Mapped services provide visibility into the business impact of an alert"
+      },
+      {
+        "id": "C",
+        "text": "Automatically resolving every alert without analysis"
+      },
+      {
+        "id": "D",
+        "text": "Eliminating the need for monitoring tools"
+      }
+    ],
+    "correct": [
+      "A",
+      "B"
+    ],
+    "rationale": "A good CMDB lets Event Management tie alerts to the exact CIs involved and, through mapped services, show which business/application services an alert threatens. That turns raw alerts into prioritized, impact-aware action \u2014 but it doesn't auto-resolve alerts or replace monitoring tools.",
+    "distractor_notes": {
+      "C": "Event Management still requires analysis/correlation; it doesn't blindly auto-resolve.",
+      "D": "Monitoring tools generate the events; the CMDB adds context, not replacement."
+    },
+    "references": [
+      {
+        "title": "CSDM and Event Management",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/csdm.html"
+      }
+    ],
+    "tags": [
+      "csdm",
+      "event-management",
+      "alerts"
+    ]
+  },
+  {
+    "id": "cisdf-csdm-015",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "CSDM Fundamentals",
+    "subdomain": "Security Operations with CSDM",
+    "difficulty": "application",
+    "type": "multi_select",
+    "stem": "Which two benefits does a CSDM-aligned CMDB provide to Security Operations (Vulnerability and Security Incident Response)?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Identifying which IT infrastructure has a given vulnerability"
+      },
+      {
+        "id": "B",
+        "text": "Helping the security team assess and remediate based on affected CIs and their service context"
+      },
+      {
+        "id": "C",
+        "text": "Automatically patching every vulnerability with no action"
+      },
+      {
+        "id": "D",
+        "text": "Replacing the security scanning tools"
+      }
+    ],
+    "correct": [
+      "A",
+      "B"
+    ],
+    "rationale": "SecOps uses the CMDB to pinpoint which assets carry a vulnerability and to understand the services and ownership around them, so remediation can be prioritized by business impact. It doesn't auto-patch everything or replace the scanners that detect issues.",
+    "distractor_notes": {
+      "C": "The CMDB informs prioritization; it doesn't auto-resolve vulnerabilities.",
+      "D": "Scanning tools find vulnerabilities; the CMDB adds asset/service context."
+    },
+    "references": [
+      {
+        "title": "CSDM and Security Operations",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/csdm.html"
+      }
+    ],
+    "tags": [
+      "csdm",
+      "secops",
+      "vulnerability"
+    ]
+  },
+  {
+    "id": "cisdf-csdm-016",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "CSDM Fundamentals",
+    "subdomain": "Application Service mapping",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An organization is changing data centers and wants to understand the consequences. How can Application Service mapping support Change Management here?",
+    "options": [
+      {
+        "id": "A",
+        "text": "By revealing the business impact of the CIs involved, showing which services are affected by the move"
+      },
+      {
+        "id": "B",
+        "text": "By listing the physical color of each server"
+      },
+      {
+        "id": "C",
+        "text": "By approving the change automatically"
+      },
+      {
+        "id": "D",
+        "text": "By writing the migration scripts"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Application Service maps connect infrastructure CIs to the services they support, so moving a data center can be assessed for which services and business functions will be disrupted. That impact visibility is exactly what change planning for a migration needs.",
+    "distractor_notes": {
+      "B": "Cosmetic details don't inform change impact.",
+      "C": "Mapping informs decisions; it doesn't auto-approve changes.",
+      "D": "Service mapping doesn't author migration scripts."
+    },
+    "references": [
+      {
+        "title": "Application Service mapping for impact",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/csdm.html"
+      }
+    ],
+    "tags": [
+      "csdm",
+      "application-service",
+      "change-impact"
+    ]
+  },
+  {
+    "id": "cisdf-csdm-017",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "CSDM Fundamentals",
+    "subdomain": "Lifecycle status mappings",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A governance team is transitioning from legacy CMDB status fields to CSDM life cycle status fields. Which table holds the mapping between legacy values and CSDM life cycle stages?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Life Cycle Mapping [life_cycle_mapping]"
+      },
+      {
+        "id": "B",
+        "text": "Incident [incident]"
+      },
+      {
+        "id": "C",
+        "text": "User [sys_user]"
+      },
+      {
+        "id": "D",
+        "text": "Knowledge [kb_knowledge]"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The Life Cycle Mapping table is where legacy status values are mapped to the standardized CSDM life cycle stage/status, enabling a controlled transition. Editing the mappings is how the team aligns existing data to the CSDM lifecycle model without losing meaning.",
+    "distractor_notes": {
+      "B": "The incident table stores incidents, not lifecycle mappings.",
+      "C": "User records don't hold CI lifecycle mappings.",
+      "D": "Knowledge articles are unrelated to lifecycle status mapping."
+    },
+    "references": [
+      {
+        "title": "CSDM life cycle mappings",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/csdm.html"
+      }
+    ],
+    "tags": [
+      "csdm",
+      "lifecycle",
+      "life-cycle-mapping"
+    ]
+  },
+  {
+    "id": "cisdf-csdm-018",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "CSDM Fundamentals",
+    "subdomain": "Lifecycle status mappings",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "After selecting 'Enable Life Cycle field mappings' to align CIs with CSDM, what is the recommended next step?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Resolve any incomplete mappings flagged in the Discrepancy Report before activating"
+      },
+      {
+        "id": "B",
+        "text": "Immediately delete all legacy status values"
+      },
+      {
+        "id": "C",
+        "text": "Disable CMDB Health"
+      },
+      {
+        "id": "D",
+        "text": "Retire every CI"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Enabling lifecycle mappings produces a discrepancy report of legacy values that don't yet map cleanly. Resolving those gaps first ensures every CI lands on a valid CSDM lifecycle stage when you activate, avoiding orphaned or mis-stated statuses.",
+    "distractor_notes": {
+      "B": "Deleting legacy values before mapping loses the information needed to translate them.",
+      "C": "Disabling health is unrelated to enabling lifecycle mappings.",
+      "D": "Retiring CIs is not a step in enabling lifecycle mappings."
+    },
+    "references": [
+      {
+        "title": "Enabling CSDM life cycle mappings",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/csdm.html"
+      }
+    ],
+    "tags": [
+      "csdm",
+      "lifecycle",
+      "discrepancy-report"
+    ]
+  },
+  {
+    "id": "cisdf-csdm-019",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "CSDM Fundamentals",
+    "subdomain": "Data Foundations Dashboard",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Where does a CMDB Administrator obtain the CMDB / CSDM Data Foundations Dashboard?",
+    "options": [
+      {
+        "id": "A",
+        "text": "It is available as a free application on the ServiceNow Store"
+      },
+      {
+        "id": "B",
+        "text": "It cannot be installed anywhere"
+      },
+      {
+        "id": "C",
+        "text": "It must be coded from scratch"
+      },
+      {
+        "id": "D",
+        "text": "It is only available by contacting sales for a quote"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The Data Foundations Dashboard is distributed as a free application on the ServiceNow Store, so administrators install it to measure and remediate CSDM/CMDB data alignment. It isn't something you build by hand or purchase separately.",
+    "distractor_notes": {
+      "B": "It is installable from the Store.",
+      "C": "It's a packaged app, not a build-it-yourself artifact.",
+      "D": "It's free on the Store, not a paid sales engagement."
+    },
+    "references": [
+      {
+        "title": "CMDB Data Foundations Dashboard",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/csdm.html"
+      }
+    ],
+    "tags": [
+      "csdm",
+      "data-foundations-dashboard",
+      "store"
+    ]
+  },
+  {
+    "id": "cisdf-csdm-020",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "CSDM Fundamentals",
+    "subdomain": "Data Foundations playbooks",
+    "difficulty": "application",
+    "type": "multi_select",
+    "stem": "A CMDB Administrator runs a Data Foundations playbook (e.g., 'Services Have Owners Identified') to remediate issues shown on the Data Foundations Dashboard. Which TWO types of remediation activities do these playbooks support?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Analyze data (understand the gap and its scope)"
+      },
+      {
+        "id": "B",
+        "text": "Fix data (remediate the identified records)"
+      },
+      {
+        "id": "C",
+        "text": "Delete the entire CMDB"
+      },
+      {
+        "id": "D",
+        "text": "Disable all data sources"
+      }
+    ],
+    "correct": [
+      "A",
+      "B"
+    ],
+    "rationale": "Data Foundations playbooks guide a structured remediation: analyze the issue (which records, how many, why) and then fix the data to close the gap. They're about understanding and correcting specific data problems, not destructive actions like wiping the CMDB or killing sources.",
+    "distractor_notes": {
+      "C": "Playbooks remediate targeted gaps; they don't delete the CMDB.",
+      "D": "Disabling data sources isn't a playbook remediation step."
+    },
+    "references": [
+      {
+        "title": "Data Foundations playbooks",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/csdm.html"
+      }
+    ],
+    "tags": [
+      "csdm",
+      "playbooks",
+      "remediation"
+    ]
+  },
+  {
+    "id": "cisdf-csdm-021",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "CSDM Fundamentals",
+    "subdomain": "Maturity stages",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Why does ServiceNow recommend an incremental CSDM adoption (Crawl before Run) rather than modeling everything at once?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Because solid Foundation data must exist before advanced service modeling delivers reliable value; maturity builds in stages"
+      },
+      {
+        "id": "B",
+        "text": "Because CSDM cannot model services at all"
+      },
+      {
+        "id": "C",
+        "text": "Because each stage must take exactly one year"
+      },
+      {
+        "id": "D",
+        "text": "Because Run is easier than Crawl"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Advanced service modeling and impact analysis are only as good as the Foundation beneath them, so CSDM staging gets the core data right first, then layers on services and offerings. Trying to model everything before the basics are clean produces unreliable maps and wasted effort.",
+    "distractor_notes": {
+      "B": "CSDM is centrally about modeling services; this is false.",
+      "C": "There's no fixed one-year-per-stage rule.",
+      "D": "Crawl (foundation) precedes Run for a reason; Run isn't simply 'easier'."
+    },
+    "references": [
+      {
+        "title": "Incremental CSDM adoption",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/csdm.html"
+      }
+    ],
+    "tags": [
+      "csdm",
+      "maturity",
+      "incremental"
+    ]
+  },
+  {
+    "id": "cisdf-csdm-022",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "CSDM Fundamentals",
+    "subdomain": "Roles and ownership",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Per CSDM, a server team requests a catalog item for infrastructure upgrade requests. Which role is most appropriate to own/initiate the technical service side of this?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Technical (Technology) Service Owner"
+      },
+      {
+        "id": "B",
+        "text": "Enterprise Architect"
+      },
+      {
+        "id": "C",
+        "text": "Customer Service Agent"
+      },
+      {
+        "id": "D",
+        "text": "Payroll Administrator"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Infrastructure/technical services and their offerings are owned by Technical Service Owners, who are accountable for those services in the CSDM model. Enterprise Architects work at the design/business-application layer, and the other roles are unrelated to technical service ownership.",
+    "distractor_notes": {
+      "B": "Enterprise Architects focus on design/business architecture, not technical service ownership of infrastructure offerings.",
+      "C": "A customer service agent handles cases, not technical service ownership.",
+      "D": "Payroll administration is unrelated to technical services."
+    },
+    "references": [
+      {
+        "title": "CSDM roles and ownership",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/csdm.html"
+      }
+    ],
+    "tags": [
+      "csdm",
+      "roles",
+      "technical-service-owner"
+    ]
+  },
+  {
+    "id": "cisdf-csdm-023",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "CSDM Fundamentals",
+    "subdomain": "Sell/Consume relationships",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A Service Portfolio Manager wants to know which Application Services their Business Service Offerings depend on. Modeling this dependency relationship is characteristic of which CSDM maturity stage?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Walk"
+      },
+      {
+        "id": "B",
+        "text": "Foundation only"
+      },
+      {
+        "id": "C",
+        "text": "Crawl only"
+      },
+      {
+        "id": "D",
+        "text": "It is never modeled in CSDM"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Relating business/service offerings to the application services they depend on is service-mapping work that comes together at the Walk stage, once Foundation data and service models are in place. Foundation/Crawl establish the basics but don't yet wire these service dependencies for portfolio insight.",
+    "distractor_notes": {
+      "B": "Foundation holds core data, not these service dependency relationships.",
+      "C": "Crawl is early-stage basics, before mapped service dependencies.",
+      "D": "CSDM explicitly models these relationships; they aren't excluded."
+    },
+    "references": [
+      {
+        "title": "CSDM service relationships",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/csdm.html"
+      }
+    ],
+    "tags": [
+      "csdm",
+      "sell-consume",
+      "walk"
+    ]
+  },
+  {
+    "id": "cisdf-csdm-024",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "CSDM Fundamentals",
+    "subdomain": "CSDM domains",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A manufacturer is aligning CIs to CSDM and needs to model production-line monitoring systems as the technical services that deliver operational capability. Which CSDM domain do these technical services belong to?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Manage Technical Services"
+      },
+      {
+        "id": "B",
+        "text": "Sell/Consume"
+      },
+      {
+        "id": "C",
+        "text": "Foundation"
+      },
+      {
+        "id": "D",
+        "text": "Design"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Technical services that deliver IT/operational capability \u2014 including the application/technical services behind production-line monitoring \u2014 live in the Manage Technical Services domain. Sell/Consume covers business-facing offerings, Foundation holds core data, and Design holds business applications.",
+    "distractor_notes": {
+      "B": "Sell/Consume is about business service offerings consumed, not the technical services delivering them.",
+      "C": "Foundation holds core reference data, not technical services.",
+      "D": "Design holds business applications and architecture, not the running technical services."
+    },
+    "references": [
+      {
+        "title": "Manage Technical Services domain",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/csdm.html"
+      }
+    ],
+    "tags": [
+      "csdm",
+      "manage-technical-services",
+      "domain"
+    ]
+  },
+  {
+    "id": "cisdf-csdm-025",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "CSDM Fundamentals",
+    "subdomain": "CSDM as prerequisite",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Why is Data Foundations / CSDM considered a prerequisite for ServiceNow implementation specialty tracks?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Because a correctly structured, CSDM-aligned CMDB underpins the service data that ITSM, ITOM, SecOps, and other applications rely on"
+      },
+      {
+        "id": "B",
+        "text": "Because it is only about visual themes"
+      },
+      {
+        "id": "C",
+        "text": "Because it disables other applications"
+      },
+      {
+        "id": "D",
+        "text": "Because it is unrelated to other ServiceNow products"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Nearly every ServiceNow application consumes CMDB/service data, so getting that foundation right \u2014 structured per CSDM \u2014 is the bedrock the specialty implementations build on. That's why Data Foundations is positioned as a prerequisite across the CIS tracks.",
+    "distractor_notes": {
+      "B": "CSDM is a data framework, not visual theming.",
+      "C": "It enables, rather than disables, other applications.",
+      "D": "It is foundational to many products, the opposite of unrelated."
+    },
+    "references": [
+      {
+        "title": "CSDM as a foundation",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/csdm.html"
+      }
+    ],
+    "tags": [
+      "csdm",
+      "prerequisite",
+      "foundation"
+    ]
+  },
+  {
+    "id": "cisdf-csdm-026",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "CSDM Fundamentals",
+    "subdomain": "Maturity and use cases",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Several teams list desired use cases. Which one generally requires a HIGHER level of CSDM maturity to deliver well?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Business Service Management understanding the operational impact across mapped services"
+      },
+      {
+        "id": "B",
+        "text": "Storing a basic list of laptops with no relationships"
+      },
+      {
+        "id": "C",
+        "text": "Recording a single location record"
+      },
+      {
+        "id": "D",
+        "text": "Adding one user to the user table"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Understanding operational impact across services depends on mapped services and rich relationships \u2014 capabilities that come at higher CSDM maturity (Walk/Run). The other use cases are basic Foundation-level data entry that requires little maturity to satisfy.",
+    "distractor_notes": {
+      "B": "A flat laptop list with no relationships is low-maturity Foundation data.",
+      "C": "A single location record is basic Foundation data.",
+      "D": "Adding a user is trivial reference-data entry, not high maturity."
+    },
+    "references": [
+      {
+        "title": "CSDM maturity and use cases",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/csdm.html"
+      }
+    ],
+    "tags": [
+      "csdm",
+      "maturity",
+      "use-cases"
+    ]
+  }
+]

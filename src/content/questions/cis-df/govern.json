@@ -1,0 +1,4034 @@
+[
+  {
+    "id": "cisdf-gov-001",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "CMDB governance roles and responsibilities",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "In a well-governed CMDB, who is accountable for defining policy, standards, and the data model \u2014 the strategic ownership of CMDB data quality across the organization?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The CMDB Data Manager, who runs scheduled retirement and archival jobs"
+      },
+      {
+        "id": "B",
+        "text": "The CMDB / Configuration Management governance board (CMDB owner / data governance team)"
+      },
+      {
+        "id": "C",
+        "text": "Discovery, which auto-populates CIs and therefore owns their accuracy"
+      },
+      {
+        "id": "D",
+        "text": "Individual assignment groups that happen to use the CIs day to day"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Governance is a people-and-process responsibility before it is a tool. ServiceNow's CMDB governance model puts a governance board / CMDB owner at the top: they set policy, define standards, approve the data model, and hold accountability for data quality. Tools like Data Manager and Discovery execute against that policy \u2014 they don't define it.",
+    "distractor_notes": {
+      "A": "The Data Manager is an execution tool (and an operational role) for lifecycle actions; it carries out policy, it doesn't author it.",
+      "C": "Discovery is an ingestion source. Automating population doesn't make it the accountable owner of quality or standards.",
+      "D": "Consumers of CIs provide input and may attest to accuracy, but org-wide standards and policy sit with governance, not scattered groups."
+    },
+    "references": [
+      {
+        "title": "CMDB governance",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/c_CMDBGovernance.html"
+      }
+    ],
+    "tags": [
+      "govern",
+      "roles",
+      "governance-board"
+    ]
+  },
+  {
+    "id": "cisdf-gov-002",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "CMDB Data Manager and CI lifecycle",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "You need to automatically retire CIs that Discovery has not seen for 90 days, then delete them 30 days after that \u2014 applied consistently and at scale. Which tool is purpose-built for this?",
+    "options": [
+      {
+        "id": "A",
+        "text": "CMDB Data Manager (lifecycle management policies)"
+      },
+      {
+        "id": "B",
+        "text": "A scheduled script that deletes rows from cmdb_ci directly"
+      },
+      {
+        "id": "C",
+        "text": "CMDB Health dashboard remediation"
+      },
+      {
+        "id": "D",
+        "text": "The Identification and Reconciliation Engine"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "CMDB Data Manager exists precisely to manage the CI lifecycle \u2014 defining policies and rules that move CIs through stages such as retire, then archive or destroy/delete, on conditions like 'last discovered' age. It applies actions consistently across large CI populations without ad-hoc scripting.",
+    "distractor_notes": {
+      "B": "Deleting rows directly skips relationship cleanup, audit, and the lifecycle states Data Manager manages \u2014 it's exactly the un-governed approach Data Manager replaces.",
+      "C": "Health remediation surfaces and fixes quality issues; it isn't the scheduled lifecycle (retire/archive/delete) engine.",
+      "D": "IRE identifies and reconciles incoming data into CIs; it doesn't run retirement/deletion lifecycle policies."
+    },
+    "references": [
+      {
+        "title": "CMDB Data Manager",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/cmdb-data-manager.html"
+      }
+    ],
+    "tags": [
+      "govern",
+      "data-manager",
+      "ci-lifecycle"
+    ]
+  },
+  {
+    "id": "cisdf-gov-003",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "CMDB Data Manager and CI lifecycle",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "In CMDB Data Manager, what is the difference between archiving a CI and destroying (deleting) it?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Archiving removes the CI immediately; destroying keeps a copy in an archive table"
+      },
+      {
+        "id": "B",
+        "text": "Archiving moves the CI out of active tables but retains a recoverable copy; destroying permanently removes the data"
+      },
+      {
+        "id": "C",
+        "text": "They are identical \u2014 both just set the CI's install_status to Retired"
+      },
+      {
+        "id": "D",
+        "text": "Archiving applies only to relationships; destroying applies only to attributes"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Lifecycle actions escalate in finality. Archive moves the CI off the active tables into archive storage so it's out of operational use but still recoverable for audit/compliance. Destroy/delete permanently removes the record. Retire is a softer state change that precedes both.",
+    "distractor_notes": {
+      "A": "Reversed. Archiving retains a recoverable copy; it does not remove immediately and irreversibly.",
+      "C": "Retiring is a state change; archive and destroy are distinct data actions, not synonyms for setting Retired.",
+      "D": "Both actions operate on the CI record as a whole, not selectively on relationships vs attributes."
+    },
+    "references": [
+      {
+        "title": "CMDB Data Manager lifecycle stages",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/cmdb-data-manager.html"
+      }
+    ],
+    "tags": [
+      "govern",
+      "data-manager",
+      "archive-destroy"
+    ]
+  },
+  {
+    "id": "cisdf-gov-004",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "Data certification",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the primary purpose of Data Certification in the context of CMDB governance?",
+    "options": [
+      {
+        "id": "A",
+        "text": "To discover new CIs on the network automatically"
+      },
+      {
+        "id": "B",
+        "text": "To schedule tasks asking responsible users to verify that specified CI data is accurate and up to date"
+      },
+      {
+        "id": "C",
+        "text": "To merge duplicate CIs detected by the identification engine"
+      },
+      {
+        "id": "D",
+        "text": "To calculate the CMDB Health completeness score"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Data Certification is a governance control that periodically generates certification tasks (filters) and routes them to accountable users to confirm \u2014 or correct \u2014 that the data still reflects reality. It's how an organization keeps human-maintained data honest between automated scans.",
+    "distractor_notes": {
+      "A": "That's Discovery. Certification verifies existing data; it doesn't probe the network.",
+      "C": "Merging duplicates is de-duplication / IRE remediation, not certification.",
+      "D": "Completeness scoring is a CMDB Health (Insight) function; certification is a manual attestation process."
+    },
+    "references": [
+      {
+        "title": "Data Certification",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/c_DataCertification.html"
+      }
+    ],
+    "tags": [
+      "govern",
+      "data-certification",
+      "attestation"
+    ]
+  },
+  {
+    "id": "cisdf-gov-005",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "Identification and Reconciliation Engine",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Within the Identification and Reconciliation Engine (IRE), what is the role of an identification rule?",
+    "options": [
+      {
+        "id": "A",
+        "text": "It decides which data source is authoritative for each attribute"
+      },
+      {
+        "id": "B",
+        "text": "It uses identifier entries (criterion attributes) to determine whether incoming data matches an existing CI or is new"
+      },
+      {
+        "id": "C",
+        "text": "It defines how long a CI is retained before deletion"
+      },
+      {
+        "id": "D",
+        "text": "It controls which users can edit a CI class"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Identification rules answer the question 'is this the same CI I already have?' Each rule contains one or more identifier entries whose criterion attributes (e.g., serial number, name) are matched against existing records to identify an exact match, create a new CI, or flag a duplicate.",
+    "distractor_notes": {
+      "A": "That's a reconciliation rule's job \u2014 deciding the authoritative source per attribute.",
+      "C": "Retention/deletion is Data Manager lifecycle, not identification.",
+      "D": "Edit access is controlled by roles/ACLs, not IRE identification rules."
+    },
+    "references": [
+      {
+        "title": "CMDB Identification and Reconciliation (IRE)",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/c_CMDBIdentifyandReconcile.html"
+      }
+    ],
+    "tags": [
+      "govern",
+      "ire",
+      "identification-rules"
+    ]
+  },
+  {
+    "id": "cisdf-gov-006",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "Identification and Reconciliation Engine",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What does a reconciliation rule in IRE control?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Which discovery source (data source) is allowed to write a given attribute, so authoritative data isn't overwritten by a lesser source"
+      },
+      {
+        "id": "B",
+        "text": "Whether two CIs should be merged into one"
+      },
+      {
+        "id": "C",
+        "text": "The order in which CI classes appear in CI Class Manager"
+      },
+      {
+        "id": "D",
+        "text": "The frequency of CMDB Health scans"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Reconciliation rules enforce data authority. When multiple sources write to the same CI, the reconciliation rule names which source 'owns' a particular attribute (or set of attributes), so a less authoritative integration can't clobber values maintained by the authoritative one.",
+    "distractor_notes": {
+      "B": "Matching/merging is identification, not reconciliation. Reconciliation arbitrates updates once a CI is identified.",
+      "C": "CI Class Manager display order has nothing to do with IRE reconciliation.",
+      "D": "Health scan scheduling is a separate dashboard configuration."
+    },
+    "references": [
+      {
+        "title": "Reconciliation rules",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/c_CMDBIdentifyandReconcile.html"
+      }
+    ],
+    "tags": [
+      "govern",
+      "ire",
+      "reconciliation-rules"
+    ]
+  },
+  {
+    "id": "cisdf-gov-007",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "Identification and Reconciliation Engine",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Two integrations both insert a server CI, but because of slightly different names IRE creates two records for the same physical host. What governance artifact is generated so this can be remediated?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A CMDB Health completeness alert"
+      },
+      {
+        "id": "B",
+        "text": "A de-duplication task (duplicate CI remediation)"
+      },
+      {
+        "id": "C",
+        "text": "A data certification filter"
+      },
+      {
+        "id": "D",
+        "text": "A reconciliation rule exception"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "When IRE detects records that resolve to the same real-world item, it raises de-duplication tasks. These drive a remediation workflow where an administrator confirms the duplicate set and merges them, collapsing the records into a single CI and preserving relationships.",
+    "distractor_notes": {
+      "A": "Completeness measures missing attributes, not duplicate identity collisions.",
+      "C": "Certification asks humans to verify data; it isn't the duplicate-merge mechanism.",
+      "D": "Reconciliation governs attribute authority; it doesn't itself create a remediation task for duplicates."
+    },
+    "references": [
+      {
+        "title": "De-duplication tasks",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/cmdb-deduplication-tasks.html"
+      }
+    ],
+    "tags": [
+      "govern",
+      "ire",
+      "deduplication"
+    ]
+  },
+  {
+    "id": "cisdf-gov-008",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "CMDB Workspace and remediation",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "The Configuration Management / CMDB Workspace gives a CMDB manager a single place to do which of the following?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Only view raw cmdb_ci table rows"
+      },
+      {
+        "id": "B",
+        "text": "Monitor CMDB health, triage remediation, and manage CI data from a role-based workspace"
+      },
+      {
+        "id": "C",
+        "text": "Write Discovery patterns"
+      },
+      {
+        "id": "D",
+        "text": "Configure email notifications for incidents"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The CMDB Workspace is the manager's cockpit: health KPIs, remediation queues, and data management surfaced together so a configuration manager can see quality problems and act on them without hopping across disparate modules.",
+    "distractor_notes": {
+      "A": "It's far more than a table view \u2014 it's an analytics-and-action workspace.",
+      "C": "Pattern authoring lives in Discovery / Pattern Designer, not the CMDB manager workspace.",
+      "D": "Incident notifications are an ITSM concern, unrelated to the CMDB workspace's purpose."
+    },
+    "references": [
+      {
+        "title": "CMDB Workspace",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/cmdb-workspace.html"
+      }
+    ],
+    "tags": [
+      "govern",
+      "cmdb-workspace",
+      "remediation"
+    ]
+  },
+  {
+    "id": "cisdf-gov-009",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "CMDB Data Manager and CI lifecycle",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A CMDB Data Manager policy is configured but you want to confirm what it will affect before it runs destructive actions. What is the recommended safe practice?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Run the policy in preview/dry-run to see the impacted CIs before committing"
+      },
+      {
+        "id": "B",
+        "text": "Delete a few CIs manually first to test"
+      },
+      {
+        "id": "C",
+        "text": "Disable IRE while the policy runs"
+      },
+      {
+        "id": "D",
+        "text": "Turn off CMDB Health scans during execution"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Lifecycle actions can be destructive, so Data Manager lets you preview the population a policy targets before it executes. Reviewing the impacted set first is the governance-minded way to avoid retiring or destroying CIs you didn't intend to.",
+    "distractor_notes": {
+      "B": "Manual deletion bypasses the very lifecycle governance you're trying to validate and risks orphaned relationships.",
+      "C": "Disabling IRE doesn't validate the policy and would harm ongoing reconciliation.",
+      "D": "Health scans are unrelated to validating which CIs a lifecycle policy targets."
+    },
+    "references": [
+      {
+        "title": "CMDB Data Manager",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/cmdb-data-manager.html"
+      }
+    ],
+    "tags": [
+      "govern",
+      "data-manager",
+      "preview"
+    ]
+  },
+  {
+    "id": "cisdf-gov-010",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "CMDB governance roles and responsibilities",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which statement best describes why CMDB governance is described as 'a program, not a project'?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Because the CMDB is configured once and never changes"
+      },
+      {
+        "id": "B",
+        "text": "Because data quality requires ongoing policy, ownership, and continuous maintenance over time"
+      },
+      {
+        "id": "C",
+        "text": "Because only the project team is ever allowed to edit CIs"
+      },
+      {
+        "id": "D",
+        "text": "Because governance applies only during the initial Discovery rollout"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "A CMDB decays without continuous care \u2014 environments change, sources drift, duplicates creep in. Governance is therefore a standing program: defined owners, recurring certification, health monitoring, and lifecycle management that persist long after the implementation 'project' ends.",
+    "distractor_notes": {
+      "A": "The opposite is true \u2014 the environment changes constantly, which is exactly why governance must be ongoing.",
+      "C": "Governance defines who maintains data, but it isn't about freezing edit rights to a project team forever.",
+      "D": "Governance must outlive the rollout; limiting it to initial Discovery is how CMDBs rot."
+    },
+    "references": [
+      {
+        "title": "CMDB governance",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/c_CMDBGovernance.html"
+      }
+    ],
+    "tags": [
+      "govern",
+      "program",
+      "data-quality"
+    ]
+  },
+  {
+    "id": "cisdf-gov-011",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "Identification and Reconciliation Engine",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is a CI Identifier (cmdb_identifier) in the IRE framework?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A unique sys_id automatically assigned to every record"
+      },
+      {
+        "id": "B",
+        "text": "A definition that groups one or more identifier entries used to identify CIs of a given class"
+      },
+      {
+        "id": "C",
+        "text": "A label printed on physical hardware assets"
+      },
+      {
+        "id": "D",
+        "text": "The reconciliation precedence number for a data source"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "A CI Identifier is the class-level definition that holds the identifier entries (the ordered sets of criterion attributes) IRE evaluates to match incoming data to existing CIs. Independent vs dependent identifiers determine whether a CI can be identified on its own or only in the context of a related CI.",
+    "distractor_notes": {
+      "A": "sys_id is the platform's internal record key; the CI Identifier is a configurable matching definition, not the sys_id.",
+      "C": "Asset tags are physical labels, unrelated to the IRE identifier construct.",
+      "D": "Source precedence is part of reconciliation, not the identifier definition itself."
+    },
+    "references": [
+      {
+        "title": "CI identification rules",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/c_CMDBIdentifyandReconcile.html"
+      }
+    ],
+    "tags": [
+      "govern",
+      "ire",
+      "ci-identifier"
+    ]
+  },
+  {
+    "id": "cisdf-gov-012",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "Identification and Reconciliation Engine",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A database instance CI cannot be uniquely identified by its own attributes alone \u2014 it only makes sense in the context of the server that hosts it. Which IRE concept models this?",
+    "options": [
+      {
+        "id": "A",
+        "text": "An independent identifier"
+      },
+      {
+        "id": "B",
+        "text": "A dependent identifier (identification using a related parent CI)"
+      },
+      {
+        "id": "C",
+        "text": "A reconciliation exclusion"
+      },
+      {
+        "id": "D",
+        "text": "A data certification task"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Dependent identifiers handle CIs that aren't unique on their own. The engine identifies them only in combination with a qualifying related CI (e.g., the hosting server), using the relationship plus the dependent CI's attributes to pin down identity.",
+    "distractor_notes": {
+      "A": "An independent identifier would assume the CI is uniquely identifiable by its own attributes \u2014 exactly what's not true here.",
+      "C": "Reconciliation governs which source writes attributes, not contextual identity.",
+      "D": "Certification is a human verification process, not an identity-resolution mechanism."
+    },
+    "references": [
+      {
+        "title": "Dependent CI identification",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/c_CMDBIdentifyandReconcile.html"
+      }
+    ],
+    "tags": [
+      "govern",
+      "ire",
+      "dependent-identifier"
+    ]
+  },
+  {
+    "id": "cisdf-gov-013",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "CMDB policies",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the purpose of a CMDB data manager / CMDB policy applied through governance tooling?",
+    "options": [
+      {
+        "id": "A",
+        "text": "To define repeatable, condition-based rules that enforce how CI data is maintained, retired, or cleaned up"
+      },
+      {
+        "id": "B",
+        "text": "To replace the need for any Discovery source"
+      },
+      {
+        "id": "C",
+        "text": "To grant every user admin rights to the CMDB"
+      },
+      {
+        "id": "D",
+        "text": "To disable relationships between CIs"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Policies turn governance intent into automated, repeatable enforcement: conditions select the CIs, actions define what happens (retire, archive, remediate), and the rule runs consistently so quality standards aren't dependent on someone remembering to act.",
+    "distractor_notes": {
+      "B": "Policies govern data already in the CMDB; they don't substitute for ingestion sources.",
+      "C": "Governance restricts and assigns responsibility \u2014 it doesn't hand admin to everyone.",
+      "D": "Disabling relationships would damage the service model; that's not what policies are for."
+    },
+    "references": [
+      {
+        "title": "CMDB Data Manager policies",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/cmdb-data-manager.html"
+      }
+    ],
+    "tags": [
+      "govern",
+      "policy",
+      "automation"
+    ]
+  },
+  {
+    "id": "cisdf-gov-014",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "Identification and Reconciliation Engine",
+    "difficulty": "application",
+    "type": "multi_select",
+    "stem": "Which TWO outcomes can IRE produce when it processes an incoming CI payload?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Update an existing CI it matched via identifier entries"
+      },
+      {
+        "id": "B",
+        "text": "Insert a new CI when no match is found"
+      },
+      {
+        "id": "C",
+        "text": "Automatically write a new Discovery pattern"
+      },
+      {
+        "id": "D",
+        "text": "Generate a CMDB Health dashboard tab"
+      }
+    ],
+    "correct": [
+      "A",
+      "B"
+    ],
+    "rationale": "IRE's core job at ingestion is identity resolution: match-and-update an existing CI, or insert a new one when nothing matches (and flag duplicates/errors when the data is ambiguous). Authoring patterns and building dashboards are unrelated functions.",
+    "distractor_notes": {
+      "C": "Pattern authoring is a Discovery design task; IRE never writes patterns.",
+      "D": "Dashboard tabs are part of CMDB Health configuration, not IRE processing output."
+    },
+    "references": [
+      {
+        "title": "How IRE processes data",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/c_CMDBIdentifyandReconcile.html"
+      }
+    ],
+    "tags": [
+      "govern",
+      "ire",
+      "insert-update"
+    ]
+  },
+  {
+    "id": "cisdf-gov-015",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "Data certification",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A certification schedule completes and a user marks several CIs as failing certification. What is the intended next step in the governance loop?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The failed CIs are automatically deleted"
+      },
+      {
+        "id": "B",
+        "text": "The discrepancies are remediated/corrected so the data once again reflects reality"
+      },
+      {
+        "id": "C",
+        "text": "IRE re-runs all identification rules platform-wide"
+      },
+      {
+        "id": "D",
+        "text": "The CMDB Health score is permanently locked"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Certification is a detect step; remediation is the act. A failed certification flags data that no longer matches reality, and the governance loop closes when someone corrects the record (or the underlying source). Failing certification doesn't delete CIs or trigger platform-wide rule reruns.",
+    "distractor_notes": {
+      "A": "Failing certification signals 'fix me', not 'destroy me' \u2014 deletion is a deliberate lifecycle action.",
+      "C": "Certification results don't cascade into a global IRE rerun.",
+      "D": "Health scores recompute on each scan; certification doesn't lock them."
+    },
+    "references": [
+      {
+        "title": "Data Certification",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/c_DataCertification.html"
+      }
+    ],
+    "tags": [
+      "govern",
+      "data-certification",
+      "remediation"
+    ]
+  },
+  {
+    "id": "cisdf-gov-016",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "CMDB governance roles and responsibilities",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which role is typically responsible for the day-to-day operational health of the CMDB \u2014 monitoring quality, triaging remediation, and running lifecycle actions?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The Configuration / CMDB Manager (administrator)"
+      },
+      {
+        "id": "B",
+        "text": "The end user who opens incidents"
+      },
+      {
+        "id": "C",
+        "text": "The network firewall"
+      },
+      {
+        "id": "D",
+        "text": "The change approver board only"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Above the strategic governance board sits an operational owner \u2014 the Configuration/CMDB Manager \u2014 who lives in the health dashboards and workspace, drives remediation, oversees certification, and executes lifecycle policy. They turn governance standards into daily upkeep.",
+    "distractor_notes": {
+      "B": "Incident users consume services; they don't own CMDB operational health.",
+      "C": "A firewall is infrastructure, not a governance role.",
+      "D": "The CAB approves changes; it isn't the steward of CMDB data quality."
+    },
+    "references": [
+      {
+        "title": "CMDB governance roles",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/c_CMDBGovernance.html"
+      }
+    ],
+    "tags": [
+      "govern",
+      "roles",
+      "cmdb-manager"
+    ]
+  },
+  {
+    "id": "cisdf-gov-017",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "Identification and Reconciliation Engine",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Why is it strongly recommended that all data entering the CMDB \u2014 Discovery, integrations, imports \u2014 go through IRE rather than writing directly to CI tables?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Because IRE is faster than a direct insert in every case"
+      },
+      {
+        "id": "B",
+        "text": "Because IRE enforces consistent identification and reconciliation, preventing duplicates and uncontrolled overwrites"
+      },
+      {
+        "id": "C",
+        "text": "Because direct inserts are technically impossible"
+      },
+      {
+        "id": "D",
+        "text": "Because IRE encrypts the CI data"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "IRE is the single front door to the CMDB. Routing every source through it means the same identification logic prevents duplicate CIs and the same reconciliation rules stop a weak source from overwriting authoritative data. Bypassing it is the fastest way to corrupt the CMDB.",
+    "distractor_notes": {
+      "A": "The benefit is data integrity and consistency, not raw speed \u2014 IRE adds processing.",
+      "C": "Direct inserts are possible; they're just strongly discouraged because they skip governance.",
+      "D": "IRE governs identity and reconciliation; it isn't an encryption layer."
+    },
+    "references": [
+      {
+        "title": "IRE as the single entry point",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/c_CMDBIdentifyandReconcile.html"
+      }
+    ],
+    "tags": [
+      "govern",
+      "ire",
+      "single-entry-point"
+    ]
+  },
+  {
+    "id": "cisdf-gov-018",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "CMDB Data Manager and CI lifecycle",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which sequence correctly reflects the escalating CI lifecycle actions managed by CMDB Data Manager?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Destroy \u2192 Archive \u2192 Retire"
+      },
+      {
+        "id": "B",
+        "text": "Retire \u2192 Archive \u2192 Destroy"
+      },
+      {
+        "id": "C",
+        "text": "Archive \u2192 Retire \u2192 Discover"
+      },
+      {
+        "id": "D",
+        "text": "Certify \u2192 Reconcile \u2192 Identify"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The lifecycle escalates in finality: first Retire (mark the CI out of active operation), then Archive (move it off active tables but keep it recoverable), then Destroy (permanent removal). Each stage is a more irreversible step than the last.",
+    "distractor_notes": {
+      "A": "Reversed \u2014 you don't destroy before retiring; that's the opposite of controlled retirement.",
+      "C": "Discover is an ingestion action, not the tail end of a retirement lifecycle.",
+      "D": "Those are IRE/certification concepts, not the retire/archive/destroy lifecycle."
+    },
+    "references": [
+      {
+        "title": "CMDB Data Manager lifecycle",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/cmdb-data-manager.html"
+      }
+    ],
+    "tags": [
+      "govern",
+      "data-manager",
+      "lifecycle-order"
+    ]
+  },
+  {
+    "id": "cisdf-gov-019",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "CMDB policies",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Your governance standard says no CI may be created without an owner and a support group populated. Which approach best enforces this at the point of data entry?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A mandatory-attribute data policy / required fields enforced for the CI class"
+      },
+      {
+        "id": "B",
+        "text": "A weekly email reminding people to fill in owners"
+      },
+      {
+        "id": "C",
+        "text": "Deleting any CI that lacks an owner once a month"
+      },
+      {
+        "id": "D",
+        "text": "Turning off Discovery so no CIs are created"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Enforcement at entry beats clean-up after the fact. Defining the attributes as mandatory (via data policy / required-field governance on the class) prevents incomplete CIs from being saved in the first place, which is exactly the governance principle of preventing bad data rather than chasing it.",
+    "distractor_notes": {
+      "B": "Reminders rely on human diligence and let bad data in \u2014 weak governance.",
+      "C": "Mass-deleting incomplete CIs destroys potentially real infrastructure records; prevention is preferred.",
+      "D": "Disabling Discovery sacrifices the CMDB's whole purpose to avoid a data-quality rule."
+    },
+    "references": [
+      {
+        "title": "CMDB data quality and policies",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/c_CMDBGovernance.html"
+      }
+    ],
+    "tags": [
+      "govern",
+      "data-policy",
+      "mandatory-attributes"
+    ]
+  },
+  {
+    "id": "cisdf-gov-020",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "Identification and Reconciliation Engine",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "In IRE, what is a 'data source' (discovery source) and why does it matter for reconciliation?",
+    "options": [
+      {
+        "id": "A",
+        "text": "It is the name identifying which integration/process supplied the data, used to enforce attribute authority"
+      },
+      {
+        "id": "B",
+        "text": "It is the physical disk where the CMDB is stored"
+      },
+      {
+        "id": "C",
+        "text": "It is the user who last viewed the CI"
+      },
+      {
+        "id": "D",
+        "text": "It is the CI's install status"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Each payload carries a data source (e.g., 'ServiceNow', a specific Service Graph Connector, an import). Reconciliation rules reference these sources to decide who's authoritative for which attributes \u2014 so identifying the source is what makes 'don't let source X overwrite source Y' possible.",
+    "distractor_notes": {
+      "B": "Data source is a logical origin label, not physical storage.",
+      "C": "Viewing a CI doesn't make someone a data source.",
+      "D": "Install status is an attribute value, not the origin of the data."
+    },
+    "references": [
+      {
+        "title": "Discovery sources and reconciliation",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/c_CMDBIdentifyandReconcile.html"
+      }
+    ],
+    "tags": [
+      "govern",
+      "ire",
+      "data-source"
+    ]
+  },
+  {
+    "id": "cisdf-gov-021",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "CMDB Workspace and remediation",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A CMDB manager sees a spike in 'orphan' CIs (CIs with no relationships). From a governance standpoint, why are orphan CIs a remediation concern?",
+    "options": [
+      {
+        "id": "A",
+        "text": "They consume too much disk space"
+      },
+      {
+        "id": "B",
+        "text": "Without relationships they can't participate in service maps or impact analysis, undermining the CMDB's value"
+      },
+      {
+        "id": "C",
+        "text": "They automatically delete related incidents"
+      },
+      {
+        "id": "D",
+        "text": "They prevent users from logging in"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The CMDB earns its keep through relationships \u2014 they power service mapping, impact analysis, and dependency views. An orphan CI is data with no context: it can't show what it supports or depends on, so relationship health is a core governance KPI and orphans are flagged for remediation.",
+    "distractor_notes": {
+      "A": "Storage is trivial; the real cost is lost analytical value, not disk.",
+      "C": "Orphan CIs don't delete incidents.",
+      "D": "CIs have nothing to do with user authentication."
+    },
+    "references": [
+      {
+        "title": "CMDB Health relationships",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/cmdb-health.html"
+      }
+    ],
+    "tags": [
+      "govern",
+      "remediation",
+      "orphan-cis"
+    ]
+  },
+  {
+    "id": "cisdf-gov-022",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "Data certification",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Data Certification is best categorized as which type of data-quality control?",
+    "options": [
+      {
+        "id": "A",
+        "text": "An automated machine-discovery control"
+      },
+      {
+        "id": "B",
+        "text": "A manual / human attestation control complementing automated scanning"
+      },
+      {
+        "id": "C",
+        "text": "A network security control"
+      },
+      {
+        "id": "D",
+        "text": "A backup and recovery control"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Automated scans catch what machines can see; certification covers what they can't \u2014 business ownership, accuracy of human-maintained fields, contextual correctness. It's a manual attestation layer that complements Discovery and Health, closing gaps automation alone leaves.",
+    "distractor_notes": {
+      "A": "Certification is explicitly the human counterpart to automated discovery, not another machine scan.",
+      "C": "It governs data accuracy, not network security.",
+      "D": "It has nothing to do with backups."
+    },
+    "references": [
+      {
+        "title": "Data Certification",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/c_DataCertification.html"
+      }
+    ],
+    "tags": [
+      "govern",
+      "data-certification",
+      "manual-control"
+    ]
+  },
+  {
+    "id": "cisdf-gov-023",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "Identification and Reconciliation Engine",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An import keeps creating duplicate CIs because its payload lacks the attribute used in the class's identifier entry. What is the correct governance fix?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Disable IRE for that import so it inserts everything"
+      },
+      {
+        "id": "B",
+        "text": "Ensure the payload provides the criterion attributes the identifier needs, or adjust the identification rule appropriately"
+      },
+      {
+        "id": "C",
+        "text": "Delete the class so the import can't run"
+      },
+      {
+        "id": "D",
+        "text": "Lower the CMDB Health threshold so duplicates don't show"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Duplicates from a payload usually mean IRE has nothing reliable to match on. The fix is to supply the criterion attributes the identifier expects (or revise the identification rule to match what the source can provide) so IRE can resolve identity instead of inserting new records.",
+    "distractor_notes": {
+      "A": "Disabling IRE removes the guardrail and guarantees more duplicates \u2014 the opposite of governance.",
+      "C": "Deleting the class destroys legitimate CIs and doesn't address the matching gap.",
+      "D": "Hiding duplicates on a dashboard doesn't fix the underlying identity problem."
+    },
+    "references": [
+      {
+        "title": "Troubleshooting identification",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/c_CMDBIdentifyandReconcile.html"
+      }
+    ],
+    "tags": [
+      "govern",
+      "ire",
+      "duplicate-fix"
+    ]
+  },
+  {
+    "id": "cisdf-gov-024",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "CMDB Data Manager and CI lifecycle",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "CMDB Data Manager improves on legacy ad-hoc cleanup scripts primarily because it provides what?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A governed, policy-driven, auditable framework for managing CI lifecycle at scale"
+      },
+      {
+        "id": "B",
+        "text": "Faster network discovery"
+      },
+      {
+        "id": "C",
+        "text": "A replacement for the change management process"
+      },
+      {
+        "id": "D",
+        "text": "Automatic creation of business services"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The value of Data Manager is governance, not magic: lifecycle actions become declarative policies with conditions, previews, scheduling, and an audit trail \u2014 repeatable and consistent \u2014 instead of one-off scripts that are hard to review, easy to get wrong, and invisible after they run.",
+    "distractor_notes": {
+      "B": "Data Manager manages existing CIs' lifecycle; it doesn't perform network discovery.",
+      "C": "It complements but does not replace change management.",
+      "D": "Building business services is a CSDM/service-modeling activity, not a Data Manager function."
+    },
+    "references": [
+      {
+        "title": "CMDB Data Manager overview",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/cmdb-data-manager.html"
+      }
+    ],
+    "tags": [
+      "govern",
+      "data-manager",
+      "value"
+    ]
+  },
+  {
+    "id": "cisdf-gov-025",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "Multisource CMDB",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What problem does Multisource CMDB solve for governance teams?",
+    "options": [
+      {
+        "id": "A",
+        "text": "It hides all but one data source from the CI form"
+      },
+      {
+        "id": "B",
+        "text": "It records, per attribute, the value reported by each contributing source alongside the reconciled value, giving visibility into source conflicts"
+      },
+      {
+        "id": "C",
+        "text": "It prevents Discovery from ever updating a CI"
+      },
+      {
+        "id": "D",
+        "text": "It deletes any CI touched by more than one source"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Multisource CMDB keeps a per-source record of what each integration reported for an attribute and what the reconciled (winning) value is. That transparency lets governance teams see exactly where sources disagree and why a particular value won, instead of silently overwriting and losing the trail.",
+    "distractor_notes": {
+      "A": "It surfaces source contributions rather than hiding them \u2014 the opposite of obscuring sources.",
+      "C": "It doesn't block Discovery; it records what Discovery and other sources each reported.",
+      "D": "Multiple sources on one CI is normal and expected; nothing is deleted for it."
+    },
+    "references": [
+      {
+        "title": "Multisource CMDB",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/multisource-cmdb.html"
+      }
+    ],
+    "tags": [
+      "govern",
+      "multisource-cmdb",
+      "reconciliation"
+    ]
+  },
+  {
+    "id": "cisdf-gov-026",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "Identification and Reconciliation Engine",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the purpose of a CMDB datasource precedence (reconciliation precedence) configuration?",
+    "options": [
+      {
+        "id": "A",
+        "text": "To rank sources so the most authoritative one wins when several report the same attribute"
+      },
+      {
+        "id": "B",
+        "text": "To order CI classes alphabetically"
+      },
+      {
+        "id": "C",
+        "text": "To decide which dashboard loads first"
+      },
+      {
+        "id": "D",
+        "text": "To set the polling interval of the MID Server"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "When several sources can write the same attribute, precedence breaks the tie: the higher-precedence (more authoritative) source's value is retained. It's the practical lever governance uses to make reconciliation deterministic rather than last-write-wins.",
+    "distractor_notes": {
+      "B": "Class ordering is unrelated to source precedence.",
+      "C": "Dashboard load order has nothing to do with reconciliation precedence.",
+      "D": "MID Server polling is a Discovery/integration setting, not reconciliation precedence."
+    },
+    "references": [
+      {
+        "title": "Reconciliation and data source precedence",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/c_CMDBIdentifyandReconcile.html"
+      }
+    ],
+    "tags": [
+      "govern",
+      "ire",
+      "precedence"
+    ]
+  },
+  {
+    "id": "cisdf-gov-027",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "CMDB groups",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "You want to scope a set of CIs (e.g., all CIs supporting a specific application) so governance actions and reporting can target exactly that population. Which feature lets you define and reuse such a scoped set?",
+    "options": [
+      {
+        "id": "A",
+        "text": "CMDB Groups"
+      },
+      {
+        "id": "B",
+        "text": "A Discovery schedule"
+      },
+      {
+        "id": "C",
+        "text": "A business rule on the incident table"
+      },
+      {
+        "id": "D",
+        "text": "A UI policy"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "CMDB Groups define a reusable, query-based set of CIs. Once defined, that group can drive remediation, certification, reporting, and Data Manager actions against precisely the population you care about, instead of rebuilding the same filter every time.",
+    "distractor_notes": {
+      "B": "A Discovery schedule controls when scanning runs, not a reusable governance population.",
+      "C": "Incident business rules act on incidents, not CMDB scoping.",
+      "D": "UI policies control form behavior, not CI population scoping."
+    },
+    "references": [
+      {
+        "title": "CMDB Groups",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/cmdb-groups.html"
+      }
+    ],
+    "tags": [
+      "govern",
+      "cmdb-groups",
+      "scoping"
+    ]
+  },
+  {
+    "id": "cisdf-gov-028",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "CMDB Workspace and remediation",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "CMDB remediation typically begins from which trigger?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A CMDB Health KPI or rule flagging CIs that violate a quality standard"
+      },
+      {
+        "id": "B",
+        "text": "A user changing their password"
+      },
+      {
+        "id": "C",
+        "text": "A successful login to the instance"
+      },
+      {
+        "id": "D",
+        "text": "Closing an unrelated incident"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Remediation is the action arm of Insight. Health metrics and rules detect CIs that fail completeness, compliance, or correctness standards, and those findings feed remediation queues where owners fix the data. Detection drives remediation; that's the governance loop.",
+    "distractor_notes": {
+      "B": "Password changes are identity events, unrelated to CMDB data quality.",
+      "C": "A login doesn't indicate a data-quality issue to remediate.",
+      "D": "Closing an unrelated incident doesn't surface a CMDB defect."
+    },
+    "references": [
+      {
+        "title": "CMDB Health and remediation",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/cmdb-health.html"
+      }
+    ],
+    "tags": [
+      "govern",
+      "remediation",
+      "health-trigger"
+    ]
+  },
+  {
+    "id": "cisdf-gov-029",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "Identification and Reconciliation Engine",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A reconciliation rule names 'SCCM Integration' as authoritative for the OS attribute on servers. Discovery later reports a different OS value. What happens?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Discovery's OS value overwrites the SCCM value because Discovery always wins"
+      },
+      {
+        "id": "B",
+        "text": "The SCCM-sourced OS value is retained; Discovery is not allowed to overwrite that attribute"
+      },
+      {
+        "id": "C",
+        "text": "The CI is deleted due to the conflict"
+      },
+      {
+        "id": "D",
+        "text": "Both values are concatenated into one string"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "That's the entire point of reconciliation: the rule designates SCCM as authoritative for OS, so Discovery \u2014 though it can update other attributes \u2014 cannot clobber the OS field. The authoritative source's value stands, keeping the attribute trustworthy.",
+    "distractor_notes": {
+      "A": "Discovery does not automatically win; reconciliation rules override that assumption per attribute.",
+      "C": "Conflicting attribute values don't delete CIs.",
+      "D": "Reconciliation keeps a single authoritative value; it doesn't concatenate."
+    },
+    "references": [
+      {
+        "title": "Reconciliation rules behavior",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/c_CMDBIdentifyandReconcile.html"
+      }
+    ],
+    "tags": [
+      "govern",
+      "ire",
+      "authoritative-source"
+    ]
+  },
+  {
+    "id": "cisdf-gov-030",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "CMDB governance roles and responsibilities",
+    "difficulty": "recall",
+    "type": "multi_select",
+    "stem": "Which TWO are core responsibilities of CMDB governance (as opposed to one-off implementation tasks)?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Defining and maintaining data quality standards and ownership"
+      },
+      {
+        "id": "B",
+        "text": "Continuously monitoring CMDB health and driving remediation"
+      },
+      {
+        "id": "C",
+        "text": "Writing the application's source code"
+      },
+      {
+        "id": "D",
+        "text": "Designing the company's office network cabling"
+      }
+    ],
+    "correct": [
+      "A",
+      "B"
+    ],
+    "rationale": "Governance is about standards and continuous upkeep: define what 'good data' means and who owns it, then keep watching health and remediating drift. Coding applications and cabling offices are unrelated engineering activities, not CMDB governance.",
+    "distractor_notes": {
+      "C": "Application development is unrelated to maintaining CMDB data quality.",
+      "D": "Physical cabling is infrastructure work, not data governance."
+    },
+    "references": [
+      {
+        "title": "CMDB governance responsibilities",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/c_CMDBGovernance.html"
+      }
+    ],
+    "tags": [
+      "govern",
+      "responsibilities",
+      "data-quality"
+    ]
+  },
+  {
+    "id": "cisdf-gov-031",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "CMDB Data Manager and CI lifecycle",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A compliance requirement says retired servers must be kept for audit for two years before permanent deletion. How should this be modeled in CMDB Data Manager?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Destroy the CIs immediately on retirement"
+      },
+      {
+        "id": "B",
+        "text": "Retire on decommission, archive for the retention window, then destroy after two years"
+      },
+      {
+        "id": "C",
+        "text": "Never retire them, just hide them from reports"
+      },
+      {
+        "id": "D",
+        "text": "Delete them but keep a screenshot"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The lifecycle maps neatly to the requirement: retire when decommissioned, archive to retain a recoverable, audit-friendly copy through the two-year window, then destroy once the retention period lapses. Data Manager schedules each transition on conditions so it happens automatically and consistently.",
+    "distractor_notes": {
+      "A": "Immediate destruction violates the two-year audit retention requirement.",
+      "C": "Hiding from reports doesn't satisfy retention or proper lifecycle governance.",
+      "D": "A screenshot is not an auditable, recoverable record of the CI."
+    },
+    "references": [
+      {
+        "title": "CMDB Data Manager retention",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/cmdb-data-manager.html"
+      }
+    ],
+    "tags": [
+      "govern",
+      "data-manager",
+      "retention"
+    ]
+  },
+  {
+    "id": "cisdf-gov-032",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "Identification and Reconciliation Engine",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is an IRE 'inclusion rule' (independent CI inclusion) used for?",
+    "options": [
+      {
+        "id": "A",
+        "text": "To control which CIs/payload items IRE will process or skip based on defined conditions"
+      },
+      {
+        "id": "B",
+        "text": "To include extra columns on a list view"
+      },
+      {
+        "id": "C",
+        "text": "To add a CI to a change request"
+      },
+      {
+        "id": "D",
+        "text": "To include a user in an assignment group"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Inclusion (and exclusion) rules let governance decide what IRE acts on \u2014 filtering or qualifying the payload items the engine should process versus ignore. They give fine-grained control so unwanted or low-quality records don't flow into the CMDB.",
+    "distractor_notes": {
+      "B": "List view columns are a UI concern, not IRE processing.",
+      "C": "Adding CIs to changes is a change-management activity.",
+      "D": "Group membership is access/assignment, unrelated to IRE."
+    },
+    "references": [
+      {
+        "title": "IRE inclusion and exclusion rules",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/c_CMDBIdentifyandReconcile.html"
+      }
+    ],
+    "tags": [
+      "govern",
+      "ire",
+      "inclusion-rules"
+    ]
+  },
+  {
+    "id": "cisdf-gov-033",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "CMDB policies",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which best describes the governance value of standardizing CI names and attributes through naming/data conventions?",
+    "options": [
+      {
+        "id": "A",
+        "text": "It makes the CMDB look colorful"
+      },
+      {
+        "id": "B",
+        "text": "Consistent naming improves identification accuracy, reduces duplicates, and makes data usable across processes"
+      },
+      {
+        "id": "C",
+        "text": "It lets you skip IRE entirely"
+      },
+      {
+        "id": "D",
+        "text": "It increases the number of CIs"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Conventions aren't cosmetic. Consistent names and attribute formats help IRE match records correctly (fewer duplicates), make data readable and joinable across ITSM/ITOM, and reduce the manual cleanup burden \u2014 all core governance wins.",
+    "distractor_notes": {
+      "A": "Appearance is irrelevant; the benefit is data integrity and usability.",
+      "C": "Standards complement IRE; they don't replace identity resolution.",
+      "D": "Good conventions tend to reduce duplicate inflation, not increase CI counts."
+    },
+    "references": [
+      {
+        "title": "CMDB data quality standards",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/c_CMDBGovernance.html"
+      }
+    ],
+    "tags": [
+      "govern",
+      "naming-standards",
+      "data-quality"
+    ]
+  },
+  {
+    "id": "cisdf-gov-034",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "Data certification",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "When configuring Data Certification, what does the 'filter' on a certification template primarily determine?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Which CIs/records are selected for the certification tasks"
+      },
+      {
+        "id": "B",
+        "text": "The color of the certification banner"
+      },
+      {
+        "id": "C",
+        "text": "How fast the MID Server runs"
+      },
+      {
+        "id": "D",
+        "text": "The CMDB Health refresh rate"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The filter defines the population \u2014 which records the certification campaign will ask owners to verify. Scope it well and the right people review the right CIs; scope it poorly and you either miss data or overwhelm reviewers.",
+    "distractor_notes": {
+      "B": "There's no governance value in banner color; the filter is about record selection.",
+      "C": "MID Server performance is unrelated to certification filters.",
+      "D": "Health refresh cadence is a separate setting."
+    },
+    "references": [
+      {
+        "title": "Configure Data Certification",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/c_DataCertification.html"
+      }
+    ],
+    "tags": [
+      "govern",
+      "data-certification",
+      "filter"
+    ]
+  },
+  {
+    "id": "cisdf-gov-035",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "CMDB Workspace and remediation",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Why does ServiceNow recommend driving remediation from a prioritized, role-based workspace rather than from raw table edits?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Because raw tables are read-only"
+      },
+      {
+        "id": "B",
+        "text": "Because a workspace surfaces the highest-impact issues, tracks ownership, and provides guided actions and audit"
+      },
+      {
+        "id": "C",
+        "text": "Because table edits are illegal"
+      },
+      {
+        "id": "D",
+        "text": "Because the workspace prevents Discovery from running"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "A workspace turns remediation into managed work: it ranks issues by impact, assigns and tracks owners, offers guided fixes, and leaves an audit trail. Ad-hoc table edits do the change but skip prioritization, accountability, and traceability \u2014 the governance parts.",
+    "distractor_notes": {
+      "A": "CMDB tables are editable; the issue is governance, not technical lock.",
+      "C": "Editing tables isn't illegal \u2014 it's just ungoverned.",
+      "D": "The workspace doesn't stop Discovery; it organizes remediation."
+    },
+    "references": [
+      {
+        "title": "CMDB Workspace remediation",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/cmdb-workspace.html"
+      }
+    ],
+    "tags": [
+      "govern",
+      "remediation",
+      "workspace-value"
+    ]
+  },
+  {
+    "id": "cisdf-gov-036",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "Identification and Reconciliation Engine",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "During ingestion IRE finds a payload whose criterion attributes match more than one existing CI. How is this best characterized?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A clean single match that updates one CI"
+      },
+      {
+        "id": "B",
+        "text": "An ambiguous/multiple-match condition that should be surfaced for review rather than blindly updated"
+      },
+      {
+        "id": "C",
+        "text": "A signal to delete all matching CIs"
+      },
+      {
+        "id": "D",
+        "text": "A normal event requiring no governance attention"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Matching multiple CIs means identity is ambiguous \u2014 often a symptom of pre-existing duplicates or weak identifiers. IRE flags these rather than guessing, so governance can resolve the ambiguity (merge duplicates, tighten identifiers) instead of silently corrupting a record.",
+    "distractor_notes": {
+      "A": "It's specifically not a clean single match \u2014 several CIs qualified.",
+      "C": "Deleting all matches would destroy legitimate data; review and merge is correct.",
+      "D": "Ambiguous matches absolutely warrant attention; ignoring them entrenches duplicates."
+    },
+    "references": [
+      {
+        "title": "IRE matching outcomes",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/c_CMDBIdentifyandReconcile.html"
+      }
+    ],
+    "tags": [
+      "govern",
+      "ire",
+      "multiple-match"
+    ]
+  },
+  {
+    "id": "cisdf-gov-037",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "CMDB Data Manager and CI lifecycle",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which install_status value typically reflects a CI that is no longer in active operational use but is being kept for the moment?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Installed / In Use"
+      },
+      {
+        "id": "B",
+        "text": "Retired"
+      },
+      {
+        "id": "C",
+        "text": "On Order"
+      },
+      {
+        "id": "D",
+        "text": "Pending Install"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Retired marks a CI that has been taken out of active service. It's the lifecycle state that precedes archival or destruction and keeps the record visible (but clearly inactive) so reporting and impact analysis don't treat it as live.",
+    "distractor_notes": {
+      "A": "Installed/In Use indicates an active CI, the opposite of retired.",
+      "C": "On Order is a procurement state before the CI exists operationally.",
+      "D": "Pending Install precedes go-live, not retirement."
+    },
+    "references": [
+      {
+        "title": "CI lifecycle and install status",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/cmdb-data-manager.html"
+      }
+    ],
+    "tags": [
+      "govern",
+      "install-status",
+      "retired"
+    ]
+  },
+  {
+    "id": "cisdf-gov-038",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "CMDB governance roles and responsibilities",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Leadership asks for one metric to summarize whether the CMDB can be trusted for decision-making. Which governance concept best answers that?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Number of CIs in the database"
+      },
+      {
+        "id": "B",
+        "text": "Overall CMDB Health score (completeness, compliance, correctness)"
+      },
+      {
+        "id": "C",
+        "text": "Number of users with admin rights"
+      },
+      {
+        "id": "D",
+        "text": "Total disk used by cmdb tables"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Trustworthiness is quality, not quantity. The CMDB Health score rolls completeness, compliance, and correctness into a defensible measure of how reliable the data is \u2014 exactly the kind of summary governance reports upward. Raw CI counts say nothing about accuracy.",
+    "distractor_notes": {
+      "A": "A big CMDB full of bad data is worse than a small accurate one; counts don't equal trust.",
+      "C": "Admin headcount is a security metric, not a data-trust metric.",
+      "D": "Storage size is irrelevant to whether the data is correct."
+    },
+    "references": [
+      {
+        "title": "CMDB Health dashboards",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/cmdb-health.html"
+      }
+    ],
+    "tags": [
+      "govern",
+      "health-score",
+      "trust"
+    ]
+  },
+  {
+    "id": "cisdf-gov-039",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "Identification and Reconciliation Engine",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "IRE is exposed to integrations primarily through which mechanism so external sources can submit CI data for identification and reconciliation?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The Identification and Reconciliation API (e.g., the CMDB Instance / createOrUpdateCI endpoints)"
+      },
+      {
+        "id": "B",
+        "text": "The email inbound action processor"
+      },
+      {
+        "id": "C",
+        "text": "The knowledge base search API"
+      },
+      {
+        "id": "D",
+        "text": "The survey engine"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "External sources submit payloads to IRE through its API (the CMDB Instance / Identification and Reconciliation web service, e.g., createOrUpdateCI). This is what lets Service Graph Connectors and custom integrations get the benefit of identification and reconciliation rather than writing straight to tables.",
+    "distractor_notes": {
+      "B": "Inbound email actions process emails, not CI identification payloads.",
+      "C": "Knowledge search is unrelated to CMDB ingestion.",
+      "D": "The survey engine has nothing to do with IRE."
+    },
+    "references": [
+      {
+        "title": "Identification and Reconciliation API",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/c_CMDBIdentifyandReconcile.html"
+      }
+    ],
+    "tags": [
+      "govern",
+      "ire",
+      "api"
+    ]
+  },
+  {
+    "id": "cisdf-gov-040",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "CMDB policies",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Governance wants to prevent low-trust integrations from creating brand-new CI classes they shouldn't own, while still letting them update existing CIs. Which IRE capability supports this?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Reconciliation precedence only"
+      },
+      {
+        "id": "B",
+        "text": "Data source rules / IRE rules that restrict whether a source may insert (create) versus only update"
+      },
+      {
+        "id": "C",
+        "text": "CMDB Health remediation tasks"
+      },
+      {
+        "id": "D",
+        "text": "Data Certification schedules"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "IRE data source rules can constrain what a given source is permitted to do \u2014 for instance allowing updates but blocking new CI creation for classes it shouldn't own. That keeps weak sources from polluting the CMDB with records they have no authority to create.",
+    "distractor_notes": {
+      "A": "Precedence arbitrates attribute values; it doesn't by itself gate insert-vs-update permission.",
+      "C": "Remediation cleans up after the fact; the goal here is prevention at ingestion.",
+      "D": "Certification verifies existing data; it doesn't control source insert rights."
+    },
+    "references": [
+      {
+        "title": "IRE data source rules",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/c_CMDBIdentifyandReconcile.html"
+      }
+    ],
+    "tags": [
+      "govern",
+      "ire",
+      "data-source-rules"
+    ]
+  },
+  {
+    "id": "cisdf-gov-041",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "CMDB Workspace and remediation",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "A 'suggested remediation' surfaced by CMDB tooling is best acted on how, from a governance perspective?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Auto-applied without review in every case"
+      },
+      {
+        "id": "B",
+        "text": "Reviewed by an owner, then applied or rejected with the decision tracked"
+      },
+      {
+        "id": "C",
+        "text": "Ignored, since suggestions are never useful"
+      },
+      {
+        "id": "D",
+        "text": "Escalated directly to the CEO"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Suggestions accelerate remediation but governance keeps a human in the loop: an owner reviews the proposed fix, applies or rejects it, and the decision is recorded. That balances speed with accountability and prevents automated suggestions from silently changing trusted data.",
+    "distractor_notes": {
+      "A": "Blind auto-apply removes accountability and risks bad bulk changes.",
+      "C": "Suggestions are valuable inputs; ignoring them wastes the tooling.",
+      "D": "Routine data fixes don't belong on the CEO's desk."
+    },
+    "references": [
+      {
+        "title": "CMDB remediation workflow",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/cmdb-workspace.html"
+      }
+    ],
+    "tags": [
+      "govern",
+      "remediation",
+      "suggested-fix"
+    ]
+  },
+  {
+    "id": "cisdf-gov-042",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "CMDB Data Manager and CI lifecycle",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "After a data center decommission, hundreds of CIs need to move through retirement consistently. Why is doing this via a Data Manager policy preferable to having each team retire their own CIs manually?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Manual retirement is impossible in ServiceNow"
+      },
+      {
+        "id": "B",
+        "text": "A policy applies the same rules, conditions, and downstream actions uniformly and leaves an audit trail, avoiding inconsistent ad-hoc handling"
+      },
+      {
+        "id": "C",
+        "text": "Policies retire CIs faster than the speed of light"
+      },
+      {
+        "id": "D",
+        "text": "Manual retirement deletes the entire CMDB"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Scale plus consistency is the argument. A policy guarantees every CI in scope is handled the same way, with the same conditions and follow-on archive/destroy timing, all logged. Hundreds of teams retiring CIs by hand produces uneven states, missed relationships, and no central record.",
+    "distractor_notes": {
+      "A": "Manual retirement is possible \u2014 it's just inconsistent at scale.",
+      "C": "Speed framing is nonsense; the benefit is consistency and auditability.",
+      "D": "Manual retirement doesn't wipe the CMDB."
+    },
+    "references": [
+      {
+        "title": "CMDB Data Manager at scale",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/cmdb-data-manager.html"
+      }
+    ],
+    "tags": [
+      "govern",
+      "data-manager",
+      "consistency"
+    ]
+  },
+  {
+    "id": "cisdf-gov-043",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "Identification and Reconciliation Engine",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the relationship between IRE and CI Class Manager identification rules?",
+    "options": [
+      {
+        "id": "A",
+        "text": "They are unrelated subsystems"
+      },
+      {
+        "id": "B",
+        "text": "CI Class Manager is where identification and reconciliation rules for classes are viewed and maintained, and IRE is the engine that executes them"
+      },
+      {
+        "id": "C",
+        "text": "CI Class Manager replaces IRE entirely"
+      },
+      {
+        "id": "D",
+        "text": "IRE rules can only be edited by exporting XML"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "CI Class Manager is the admin surface \u2014 it presents each class's identification rules, reconciliation rules, identifier entries, and dependent relationships in one place. IRE is the runtime that applies those definitions during ingestion. Design in Class Manager, execution in IRE.",
+    "distractor_notes": {
+      "A": "They're tightly coupled: one configures, the other executes.",
+      "C": "Class Manager configures rules; it doesn't replace the engine that runs them.",
+      "D": "Rules are maintained through the Class Manager UI, not only via XML export."
+    },
+    "references": [
+      {
+        "title": "CI Class Manager",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/ci-class-manager.html"
+      }
+    ],
+    "tags": [
+      "govern",
+      "ire",
+      "ci-class-manager"
+    ]
+  },
+  {
+    "id": "cisdf-gov-044",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "CMDB governance roles and responsibilities",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which statement reflects the recommended governance stance on manual CI creation by end users?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Anyone should be able to create any CI freely with no controls"
+      },
+      {
+        "id": "B",
+        "text": "Manual creation should be controlled and validated (roles, required attributes, IRE) to keep quality high"
+      },
+      {
+        "id": "C",
+        "text": "Manual CI creation should never be allowed under any circumstance"
+      },
+      {
+        "id": "D",
+        "text": "Manual CIs don't need to pass through IRE"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Manual entry has a place (for things automation can't see) but it's a common source of duplicates and gaps. Governance keeps it controlled: restrict who can create, require key attributes, and still route through IRE \u2014 so manual records meet the same standards as automated ones.",
+    "distractor_notes": {
+      "A": "Uncontrolled manual creation is a top cause of poor CMDB quality.",
+      "C": "An outright ban is impractical; some CIs must be entered manually.",
+      "D": "Manual creation should also benefit from IRE identification to avoid duplicates."
+    },
+    "references": [
+      {
+        "title": "Manual CI data governance",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/c_CMDBGovernance.html"
+      }
+    ],
+    "tags": [
+      "govern",
+      "manual-creation",
+      "controls"
+    ]
+  },
+  {
+    "id": "cisdf-gov-045",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "Multisource CMDB",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A governance analyst sees that an attribute's reconciled value differs from what one trusted source reported. Where does Multisource CMDB help them investigate?",
+    "options": [
+      {
+        "id": "A",
+        "text": "It shows the per-source reported values and which source won, so the analyst can see why the reconciled value is what it is"
+      },
+      {
+        "id": "B",
+        "text": "It rolls back the CMDB to yesterday"
+      },
+      {
+        "id": "C",
+        "text": "It emails every source owner automatically"
+      },
+      {
+        "id": "D",
+        "text": "It deletes the conflicting attribute"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Multisource keeps the contribution history visible: each source's reported value plus the reconciled outcome. The analyst can see precisely which source was authoritative and what each claimed, turning a mysterious value into an explainable reconciliation decision.",
+    "distractor_notes": {
+      "B": "It's a transparency feature, not a time-machine rollback.",
+      "C": "It doesn't auto-notify source owners.",
+      "D": "It preserves and explains values; it doesn't delete the attribute."
+    },
+    "references": [
+      {
+        "title": "Multisource CMDB investigation",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/multisource-cmdb.html"
+      }
+    ],
+    "tags": [
+      "govern",
+      "multisource-cmdb",
+      "investigation"
+    ]
+  },
+  {
+    "id": "cisdf-gov-046",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "Data certification",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "How does Data Certification differ from CMDB Health in terms of how a record is judged correct?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Certification relies on a human attesting to accuracy; Health evaluates data automatically against defined metrics/rules"
+      },
+      {
+        "id": "B",
+        "text": "They are exactly the same feature with two names"
+      },
+      {
+        "id": "C",
+        "text": "Health requires manual sign-off and certification is automated"
+      },
+      {
+        "id": "D",
+        "text": "Neither involves any rules or people"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The distinction is human vs machine judgment. Certification asks a responsible person to vouch for the data; Health computes scores automatically against completeness/compliance/correctness rules. Used together they cover both what automation can measure and what only a human can confirm.",
+    "distractor_notes": {
+      "B": "They are complementary, distinct controls, not the same feature.",
+      "C": "Reversed \u2014 Health is automated, certification is the manual attestation.",
+      "D": "Both involve rules/criteria; certification also involves people."
+    },
+    "references": [
+      {
+        "title": "Data Certification vs CMDB Health",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/c_DataCertification.html"
+      }
+    ],
+    "tags": [
+      "govern",
+      "data-certification",
+      "vs-health"
+    ]
+  },
+  {
+    "id": "cisdf-gov-047",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "Identification and Reconciliation Engine",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An organization wants every Service Graph Connector and custom integration to avoid creating duplicates and to respect attribute authority. What is the single most important architectural rule to enforce?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Let each integration write directly to cmdb_ci for speed"
+      },
+      {
+        "id": "B",
+        "text": "Require all sources to submit through IRE so identification and reconciliation always apply"
+      },
+      {
+        "id": "C",
+        "text": "Give each integration its own duplicate CMDB"
+      },
+      {
+        "id": "D",
+        "text": "Disable identification rules to avoid match errors"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "One rule prevents most CMDB chaos: everything goes through IRE. Centralizing ingestion means identification stops duplicates and reconciliation protects authoritative attributes uniformly, no matter how many connectors feed the CMDB. Bypassing IRE for any source breaks that guarantee.",
+    "distractor_notes": {
+      "A": "Direct writes skip the very protections you want and breed duplicates.",
+      "C": "Separate CMDBs fragment the single source of truth \u2014 the opposite goal.",
+      "D": "Disabling identification removes duplicate prevention entirely."
+    },
+    "references": [
+      {
+        "title": "IRE single entry point",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/c_CMDBIdentifyandReconcile.html"
+      }
+    ],
+    "tags": [
+      "govern",
+      "ire",
+      "architecture"
+    ]
+  },
+  {
+    "id": "cisdf-gov-048",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "CMDB Data Manager and CI lifecycle",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which is a key benefit of archiving (rather than immediately destroying) CIs that have been retired?",
+    "options": [
+      {
+        "id": "A",
+        "text": "It permanently and irreversibly removes the data"
+      },
+      {
+        "id": "B",
+        "text": "It removes CIs from active operational use while preserving a recoverable record for audit or historical analysis"
+      },
+      {
+        "id": "C",
+        "text": "It republishes the CIs as active"
+      },
+      {
+        "id": "D",
+        "text": "It converts the CIs into incidents"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Archiving is the middle ground: the CI leaves active tables so it stops cluttering operational views and reports, yet a recoverable copy remains for audit, compliance, or trend analysis. You get cleanliness now without losing history \u2014 and can still destroy later if policy requires.",
+    "distractor_notes": {
+      "A": "That describes destroy, not archive \u2014 archive is recoverable.",
+      "C": "Archiving deactivates; it doesn't republish CIs as active.",
+      "D": "CIs aren't transformed into incidents by archiving."
+    },
+    "references": [
+      {
+        "title": "Archiving CIs",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/cmdb-data-manager.html"
+      }
+    ],
+    "tags": [
+      "govern",
+      "data-manager",
+      "archive-benefit"
+    ]
+  },
+  {
+    "id": "cisdf-gov-049",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "CMDB governance roles and responsibilities",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which best describes the 'single source of truth' principle that CMDB governance protects?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Every team keeps its own independent copy of infrastructure data"
+      },
+      {
+        "id": "B",
+        "text": "One reconciled, trusted CMDB that all processes reference, rather than competing data silos"
+      },
+      {
+        "id": "C",
+        "text": "Only Discovery may ever read the CMDB"
+      },
+      {
+        "id": "D",
+        "text": "The CMDB is locked and never updated"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Governance defends a single, reconciled CMDB that ITSM, ITOM, security, and reporting all rely on. The value collapses the moment teams maintain rival spreadsheets and shadow databases \u2014 decisions then rest on conflicting data. One trusted, continuously reconciled source is the goal.",
+    "distractor_notes": {
+      "A": "Independent copies are exactly the silos governance exists to eliminate.",
+      "C": "Many processes read the CMDB; Discovery is just one writer.",
+      "D": "A trusted CMDB is continuously updated, not frozen."
+    },
+    "references": [
+      {
+        "title": "CMDB as single source of truth",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/c_CMDBGovernance.html"
+      }
+    ],
+    "tags": [
+      "govern",
+      "single-source-of-truth",
+      "principle"
+    ]
+  },
+  {
+    "id": "cisdf-gov-050",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "Identification and Reconciliation Engine",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A class has two identifier entries: one on serial_number (priority 1) and one on name (priority 2). An incoming payload has a matching serial_number but a different name. What does IRE do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Treats it as a match on the higher-priority serial_number entry and updates that CI (including the name)"
+      },
+      {
+        "id": "B",
+        "text": "Creates a new CI because the name differs"
+      },
+      {
+        "id": "C",
+        "text": "Rejects the payload outright"
+      },
+      {
+        "id": "D",
+        "text": "Ignores serial_number and matches on name only"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "IRE evaluates identifier entries in priority order. A hit on the higher-priority serial_number entry resolves identity, so it updates that existing CI \u2014 and a changed name is just an attribute update, not a reason to spawn a duplicate. Ordering identifiers by reliability is exactly how you avoid duplicates.",
+    "distractor_notes": {
+      "B": "A differing lower-priority attribute doesn't override a strong higher-priority match.",
+      "C": "A valid match isn't rejected; it's updated.",
+      "D": "The priority order means serial_number is tried first, not ignored."
+    },
+    "references": [
+      {
+        "title": "Identifier entry priority",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/c_CMDBIdentifyandReconcile.html"
+      }
+    ],
+    "tags": [
+      "govern",
+      "ire",
+      "identifier-priority"
+    ]
+  },
+  {
+    "id": "cisdf-gov-051",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "CMDB Workspace and remediation",
+    "difficulty": "recall",
+    "type": "multi_select",
+    "stem": "Which TWO are typical categories of issues a CMDB manager remediates from health findings?",
+    "options": [
+      {
+        "id": "A",
+        "text": "CIs missing required attributes (completeness gaps)"
+      },
+      {
+        "id": "B",
+        "text": "Duplicate CIs that should be merged"
+      },
+      {
+        "id": "C",
+        "text": "Slow internet at a branch office"
+      },
+      {
+        "id": "D",
+        "text": "An employee's expense report"
+      }
+    ],
+    "correct": [
+      "A",
+      "B"
+    ],
+    "rationale": "Remediation targets data defects: completeness gaps (missing required attributes) and duplicate records are two of the most common. Branch internet speed and expense reports are operational/finance matters with nothing to do with CMDB data quality.",
+    "distractor_notes": {
+      "C": "Network performance is an infrastructure issue, not a CMDB data defect.",
+      "D": "Expense reports are a finance process, unrelated to CI quality."
+    },
+    "references": [
+      {
+        "title": "CMDB Health issue types",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/cmdb-health.html"
+      }
+    ],
+    "tags": [
+      "govern",
+      "remediation",
+      "issue-types"
+    ]
+  },
+  {
+    "id": "cisdf-gov-052",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "CMDB policies",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Governance decides that only the HR integration may set the 'managed by' field on employee-owned laptops. What is the cleanest way to enforce this across all sources?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A reconciliation rule designating the HR source as authoritative for that attribute"
+      },
+      {
+        "id": "B",
+        "text": "An email policy reminding people not to edit the field"
+      },
+      {
+        "id": "C",
+        "text": "Deleting the field from the table"
+      },
+      {
+        "id": "D",
+        "text": "A UI macro on the laptop form"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Attribute-level authority is exactly what reconciliation rules express. Naming the HR integration authoritative for 'managed by' means every other source is blocked from overwriting it at the engine level \u2014 enforcement that holds regardless of which integration tries to write.",
+    "distractor_notes": {
+      "B": "Reminders don't enforce anything technically and won't stop integrations.",
+      "C": "Deleting the field destroys needed data instead of governing who writes it.",
+      "D": "A form macro only affects manual UI use, not API/integration writes."
+    },
+    "references": [
+      {
+        "title": "Attribute authority via reconciliation",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/c_CMDBIdentifyandReconcile.html"
+      }
+    ],
+    "tags": [
+      "govern",
+      "reconciliation",
+      "attribute-authority"
+    ]
+  },
+  {
+    "id": "cisdf-gov-053",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "Data certification",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "On what basis are Data Certification tasks typically generated on a recurring cadence?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Randomly, with no schedule"
+      },
+      {
+        "id": "B",
+        "text": "On a defined schedule/frequency so data is re-verified periodically before it goes stale"
+      },
+      {
+        "id": "C",
+        "text": "Only when an incident is opened"
+      },
+      {
+        "id": "D",
+        "text": "Only during system upgrades"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Certification is scheduled so verification keeps pace with drift \u2014 monthly, quarterly, or whatever cadence fits the data's volatility. Periodic re-attestation is what stops human-maintained fields from quietly becoming wrong between automated scans.",
+    "distractor_notes": {
+      "A": "Randomness defeats the purpose; certification is deliberately scheduled.",
+      "C": "Certification isn't incident-triggered; it's a proactive cadence.",
+      "D": "Tying it only to upgrades would leave long verification gaps."
+    },
+    "references": [
+      {
+        "title": "Certification schedules",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/c_DataCertification.html"
+      }
+    ],
+    "tags": [
+      "govern",
+      "data-certification",
+      "schedule"
+    ]
+  },
+  {
+    "id": "cisdf-gov-054",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "CMDB Data Manager and CI lifecycle",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A Data Manager policy is set to destroy CIs 30 days after archival, but auditors now require 1 year retention. What is the correct governance response?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Update the policy's retention condition to 1 year so the change applies consistently going forward"
+      },
+      {
+        "id": "B",
+        "text": "Manually un-delete CIs each month"
+      },
+      {
+        "id": "C",
+        "text": "Disable Data Manager entirely"
+      },
+      {
+        "id": "D",
+        "text": "Switch all CIs back to active"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Because the lifecycle lives in policy, compliance changes are a policy edit: extend the destroy condition to one year and every in-scope CI now follows the new rule automatically. That's the payoff of declarative lifecycle management over scattered manual deletions.",
+    "distractor_notes": {
+      "B": "Manual un-deletion is error-prone and doesn't fix the policy that caused early destruction.",
+      "C": "Disabling Data Manager abandons governance instead of adjusting it.",
+      "D": "Reactivating retired CIs misrepresents their real state."
+    },
+    "references": [
+      {
+        "title": "Editing Data Manager policies",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/cmdb-data-manager.html"
+      }
+    ],
+    "tags": [
+      "govern",
+      "data-manager",
+      "policy-change"
+    ]
+  },
+  {
+    "id": "cisdf-gov-055",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "Identification and Reconciliation Engine",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the consequence of having no (or weak) identification rules on a CI class?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Faster, cleaner data with fewer records"
+      },
+      {
+        "id": "B",
+        "text": "IRE cannot reliably match incoming data, leading to duplicate CIs"
+      },
+      {
+        "id": "C",
+        "text": "The class becomes read-only"
+      },
+      {
+        "id": "D",
+        "text": "CMDB Health automatically reaches 100%"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Identification rules are how IRE recognizes 'this is the same CI.' Without a strong rule, the engine has nothing dependable to match on and keeps inserting new records for things that already exist \u2014 the classic root cause of duplicate sprawl.",
+    "distractor_notes": {
+      "A": "Weak identification produces more (duplicate) records, not fewer/cleaner ones.",
+      "C": "Missing rules don't lock the class; they degrade matching.",
+      "D": "Duplicates would lower health, not push it to a perfect score."
+    },
+    "references": [
+      {
+        "title": "Importance of identification rules",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/c_CMDBIdentifyandReconcile.html"
+      }
+    ],
+    "tags": [
+      "govern",
+      "ire",
+      "weak-rules"
+    ]
+  },
+  {
+    "id": "cisdf-gov-056",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "CMDB governance roles and responsibilities",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which document or agreement typically captures the agreed scope, ownership, and quality targets for the CMDB?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A CMDB governance policy / data management charter"
+      },
+      {
+        "id": "B",
+        "text": "The firewall ruleset"
+      },
+      {
+        "id": "C",
+        "text": "A user's mailbox rules"
+      },
+      {
+        "id": "D",
+        "text": "The incident SLA definition"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "A governance policy or charter is where scope, ownership, roles, and measurable quality targets are written down and agreed. It's the reference point that makes accountability real \u2014 without it, 'who owns this data and how good must it be' stays a matter of opinion.",
+    "distractor_notes": {
+      "B": "Firewall rules govern network traffic, not CMDB data ownership.",
+      "C": "Mailbox rules are personal email settings.",
+      "D": "Incident SLAs govern incident response times, not CMDB quality targets."
+    },
+    "references": [
+      {
+        "title": "CMDB governance policy",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/c_CMDBGovernance.html"
+      }
+    ],
+    "tags": [
+      "govern",
+      "charter",
+      "policy-document"
+    ]
+  },
+  {
+    "id": "cisdf-gov-057",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "CMDB Workspace and remediation",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A health rule flags 5,000 CIs missing an owner. Remediating all at once is impractical. What governance approach keeps progress measurable?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Ignore the finding because it's too large"
+      },
+      {
+        "id": "B",
+        "text": "Prioritize by impact (e.g., CIs supporting critical services first), assign owners, and track remediation over time"
+      },
+      {
+        "id": "C",
+        "text": "Delete all 5,000 CIs"
+      },
+      {
+        "id": "D",
+        "text": "Set the health threshold to zero so nothing is flagged"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Big findings get triaged, not abandoned. Rank by business impact so the CIs underpinning critical services are fixed first, assign clear owners, and watch the metric improve. That converts an overwhelming number into a managed, trackable program of work.",
+    "distractor_notes": {
+      "A": "Ignoring it lets the quality gap persist and grow.",
+      "C": "Mass deletion destroys real infrastructure records to dodge a data-entry gap.",
+      "D": "Lowering thresholds hides the problem instead of fixing it."
+    },
+    "references": [
+      {
+        "title": "Prioritizing remediation",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/cmdb-health.html"
+      }
+    ],
+    "tags": [
+      "govern",
+      "remediation",
+      "prioritization"
+    ]
+  },
+  {
+    "id": "cisdf-gov-058",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "Identification and Reconciliation Engine",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What does it mean that IRE is 'class-aware' when identifying CIs?",
+    "options": [
+      {
+        "id": "A",
+        "text": "It uses the CI class (and its inheritance) to apply the correct identifier and reconciliation rules"
+      },
+      {
+        "id": "B",
+        "text": "It only works on the base cmdb_ci table and ignores classes"
+      },
+      {
+        "id": "C",
+        "text": "It identifies users, not CIs"
+      },
+      {
+        "id": "D",
+        "text": "It treats every CI as the same class"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Rules are defined per class and inherited through the CMDB's class hierarchy, so IRE applies the right identifier and reconciliation logic for, say, a Linux server versus a database instance. Class-awareness is what lets identification be precise instead of one-size-fits-all.",
+    "distractor_notes": {
+      "B": "IRE works across the extended class model, not just the base table.",
+      "C": "IRE identifies configuration items, not user records.",
+      "D": "Treating all CIs identically would defeat class-specific identification."
+    },
+    "references": [
+      {
+        "title": "Class-based identification",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/c_CMDBIdentifyandReconcile.html"
+      }
+    ],
+    "tags": [
+      "govern",
+      "ire",
+      "class-aware"
+    ]
+  },
+  {
+    "id": "cisdf-gov-059",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "Data certification",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Business-owned attributes like 'business owner' and 'department' on critical application CIs are often wrong, yet Discovery can't see them. Which governance control is best suited to keep them accurate?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Data Certification campaigns routed to the responsible business owners"
+      },
+      {
+        "id": "B",
+        "text": "A faster Discovery schedule"
+      },
+      {
+        "id": "C",
+        "text": "A reconciliation rule naming Discovery authoritative"
+      },
+      {
+        "id": "D",
+        "text": "Deleting the attributes"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "When the truth lives in people's heads rather than on the network, certification is the right tool: it routes a verification task to the business owner who actually knows, on a recurring cadence. Automated scanning can't validate ownership or organizational context.",
+    "distractor_notes": {
+      "B": "Discovery can't see business ownership at all, so scanning faster won't help.",
+      "C": "Making Discovery authoritative for data it can't observe is meaningless.",
+      "D": "Deleting needed business attributes throws away information instead of maintaining it."
+    },
+    "references": [
+      {
+        "title": "Certifying business-maintained data",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/c_DataCertification.html"
+      }
+    ],
+    "tags": [
+      "govern",
+      "data-certification",
+      "business-attributes"
+    ]
+  },
+  {
+    "id": "cisdf-gov-060",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "CMDB Data Manager and CI lifecycle",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Before CMDB Data Manager, why was uncontrolled deletion of CIs considered risky?",
+    "options": [
+      {
+        "id": "A",
+        "text": "It could remove relationships, break service maps, and erase audit history with no consistent process or trail"
+      },
+      {
+        "id": "B",
+        "text": "It made the CMDB load faster"
+      },
+      {
+        "id": "C",
+        "text": "It automatically improved data quality"
+      },
+      {
+        "id": "D",
+        "text": "It had no effect on anything"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Ad-hoc deletion is dangerous because CIs are connected: dropping one can sever relationships that service maps and impact analysis depend on, and doing it without process leaves no audit trail and inconsistent results. Data Manager replaces that risk with governed, logged lifecycle actions.",
+    "distractor_notes": {
+      "B": "Marginal performance is irrelevant next to broken service maps and lost history.",
+      "C": "Reckless deletion degrades quality and trust; it doesn't improve it.",
+      "D": "Deletion has real, often damaging downstream effects."
+    },
+    "references": [
+      {
+        "title": "Why governed lifecycle matters",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/cmdb-data-manager.html"
+      }
+    ],
+    "tags": [
+      "govern",
+      "data-manager",
+      "deletion-risk"
+    ]
+  },
+  {
+    "id": "cisdf-gov-061",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "Identification and Reconciliation Engine",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A team proposes letting a spreadsheet import overwrite serial numbers maintained by Discovery 'because the spreadsheet is newer.' From a governance view, what's the right principle to apply?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Newest write always wins, regardless of source"
+      },
+      {
+        "id": "B",
+        "text": "Authority should be based on which source is most reliable for that attribute, enforced by reconciliation \u2014 not merely recency"
+      },
+      {
+        "id": "C",
+        "text": "Spreadsheets are always authoritative"
+      },
+      {
+        "id": "D",
+        "text": "Serial numbers should never be stored"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Recency is a poor proxy for accuracy. Governance assigns authority by trustworthiness for each attribute and lets reconciliation enforce it. If Discovery is the reliable source for serial numbers, a 'newer' but less trustworthy spreadsheet shouldn't be allowed to overwrite it.",
+    "distractor_notes": {
+      "A": "Last-write-wins is precisely the un-governed behavior reconciliation exists to prevent.",
+      "C": "Spreadsheets are typically less reliable than automated discovery for hardware facts.",
+      "D": "Serial numbers are valuable identifiers; the issue is who's authoritative, not whether to store them."
+    },
+    "references": [
+      {
+        "title": "Source authority principles",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/c_CMDBIdentifyandReconcile.html"
+      }
+    ],
+    "tags": [
+      "govern",
+      "ire",
+      "authority-vs-recency"
+    ]
+  },
+  {
+    "id": "cisdf-gov-062",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "CMDB governance roles and responsibilities",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Why is executive sponsorship considered important for a CMDB governance program?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Executives personally enter CI data"
+      },
+      {
+        "id": "B",
+        "text": "Sponsorship secures funding, cross-team cooperation, and authority to enforce standards that span organizational silos"
+      },
+      {
+        "id": "C",
+        "text": "It lets the program skip data quality entirely"
+      },
+      {
+        "id": "D",
+        "text": "It removes the need for any roles"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "CMDB governance crosses team boundaries, so it needs authority that crosses them too. Executive sponsorship provides the mandate, budget, and cooperation to enforce shared standards \u2014 without it, governance stalls whenever a team declines to participate.",
+    "distractor_notes": {
+      "A": "Executives sponsor and empower; they don't do the data entry.",
+      "C": "Sponsorship strengthens quality efforts; it doesn't waive them.",
+      "D": "Sponsorship complements defined roles rather than eliminating them."
+    },
+    "references": [
+      {
+        "title": "CMDB governance program",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/c_CMDBGovernance.html"
+      }
+    ],
+    "tags": [
+      "govern",
+      "sponsorship",
+      "program"
+    ]
+  },
+  {
+    "id": "cisdf-gov-063",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "CMDB Workspace and remediation",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the governance advantage of tying remediation findings to owners/assignment groups rather than leaving them unassigned?",
+    "options": [
+      {
+        "id": "A",
+        "text": "It guarantees the findings disappear on their own"
+      },
+      {
+        "id": "B",
+        "text": "Accountability \u2014 someone is responsible for fixing each issue, and progress can be tracked to closure"
+      },
+      {
+        "id": "C",
+        "text": "It hides the issues from reporting"
+      },
+      {
+        "id": "D",
+        "text": "It converts CIs into knowledge articles"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Unowned work doesn't get done. Assigning each finding to an owner or group creates accountability and a closure path you can measure. It's the difference between a list of problems and a managed remediation program.",
+    "distractor_notes": {
+      "A": "Issues don't self-resolve; ownership is what drives fixes.",
+      "C": "Assignment makes work visible and trackable, not hidden.",
+      "D": "Remediation fixes CI data; it doesn't turn CIs into KB articles."
+    },
+    "references": [
+      {
+        "title": "Assigning remediation",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/cmdb-workspace.html"
+      }
+    ],
+    "tags": [
+      "govern",
+      "remediation",
+      "accountability"
+    ]
+  },
+  {
+    "id": "cisdf-gov-064",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "CMDB Data Manager and CI lifecycle",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Which condition is the MOST appropriate trigger for a Data Manager retirement policy on infrastructure CIs?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The CI has not been updated/seen by any authoritative source for a defined stale period"
+      },
+      {
+        "id": "B",
+        "text": "The CI's name starts with the letter A"
+      },
+      {
+        "id": "C",
+        "text": "A random selection each day"
+      },
+      {
+        "id": "D",
+        "text": "Whenever any incident is closed"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Staleness is the meaningful signal: if no authoritative source has confirmed a CI for a defined period, it's likely gone from the environment and is a sound retirement candidate. Arbitrary triggers like first-letter or randomness have no relationship to whether the CI still exists.",
+    "distractor_notes": {
+      "B": "A name's first letter says nothing about whether the asset still exists.",
+      "C": "Random retirement would remove live CIs and miss dead ones.",
+      "D": "Incident closure is unrelated to a CI's continued existence."
+    },
+    "references": [
+      {
+        "title": "Lifecycle conditions",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/cmdb-data-manager.html"
+      }
+    ],
+    "tags": [
+      "govern",
+      "data-manager",
+      "stale-condition"
+    ]
+  },
+  {
+    "id": "cisdf-gov-065",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "Identification and Reconciliation Engine",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is 'CI reconciliation' best summarized as?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Deciding, when multiple sources report data for the same CI, which source's values are kept"
+      },
+      {
+        "id": "B",
+        "text": "Scanning the network for new devices"
+      },
+      {
+        "id": "C",
+        "text": "Designing the CMDB class hierarchy"
+      },
+      {
+        "id": "D",
+        "text": "Sending a survey to CI owners"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Once identification says 'this is the same CI,' reconciliation arbitrates the data: among competing sources, which values win for which attributes. It's the governance mechanism that keeps a CI's record coherent when many systems contribute to it.",
+    "distractor_notes": {
+      "B": "Network scanning is Discovery; reconciliation acts on the data afterward.",
+      "C": "Class design is a Configuration-domain modeling task.",
+      "D": "Surveys relate to certification, not reconciliation."
+    },
+    "references": [
+      {
+        "title": "Reconciliation overview",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/c_CMDBIdentifyandReconcile.html"
+      }
+    ],
+    "tags": [
+      "govern",
+      "ire",
+      "reconciliation-definition"
+    ]
+  },
+  {
+    "id": "cisdf-gov-066",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "CMDB policies",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Governance wants to ensure retired CIs are excluded from CMDB Health completeness scoring so they don't distort metrics. What is the right way to handle this?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Scope health metrics/dashboards to active CIs (e.g., exclude Retired) via filters/conditions"
+      },
+      {
+        "id": "B",
+        "text": "Delete every retired CI immediately"
+      },
+      {
+        "id": "C",
+        "text": "Turn off CMDB Health"
+      },
+      {
+        "id": "D",
+        "text": "Mark retired CIs as In Use"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Metrics should measure the population you actually operate. Scoping health rules and dashboards to active CIs (excluding Retired) keeps the score honest without destroying records that are intentionally being retained for audit. It's a filtering decision, not a deletion one.",
+    "distractor_notes": {
+      "B": "Immediate deletion may violate retention and isn't necessary to fix scoring.",
+      "C": "Disabling Health removes the metric entirely instead of scoping it.",
+      "D": "Mislabeling retired CIs as In Use corrupts the data to fix a reporting view."
+    },
+    "references": [
+      {
+        "title": "Scoping CMDB Health",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/cmdb-health.html"
+      }
+    ],
+    "tags": [
+      "govern",
+      "health-scope",
+      "retired-exclusion"
+    ]
+  },
+  {
+    "id": "cisdf-gov-067",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "CMDB governance roles and responsibilities",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "A 'data owner' in CMDB governance is best defined as which of the following?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The person/role accountable for the accuracy and maintenance of a defined set of CI data"
+      },
+      {
+        "id": "B",
+        "text": "The vendor who sold the hardware"
+      },
+      {
+        "id": "C",
+        "text": "Any user who has ever viewed the CI"
+      },
+      {
+        "id": "D",
+        "text": "The MID Server service account"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "A data owner is accountable for a slice of CI data being correct and kept up to date \u2014 they're who certification routes to and who answers for quality in their domain. Ownership is about accountability, not who sold the gear or who happened to open the record.",
+    "distractor_notes": {
+      "B": "The hardware vendor has no accountability for your CMDB data accuracy.",
+      "C": "Viewing a record doesn't confer ownership responsibility.",
+      "D": "A service account executes integrations; it isn't an accountable data owner."
+    },
+    "references": [
+      {
+        "title": "Data ownership",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/c_CMDBGovernance.html"
+      }
+    ],
+    "tags": [
+      "govern",
+      "data-owner",
+      "accountability"
+    ]
+  },
+  {
+    "id": "cisdf-gov-068",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "Identification and Reconciliation Engine",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "After enabling a new integration, duplicate network gear CIs appear. Investigation shows the integration sends MAC addresses while the identifier expects serial numbers. The best governance fix is to?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Align identification \u2014 either have the integration supply serial numbers or add a reliable MAC-based identifier entry \u2014 so IRE can match correctly"
+      },
+      {
+        "id": "B",
+        "text": "Delete the network class"
+      },
+      {
+        "id": "C",
+        "text": "Stop all Discovery"
+      },
+      {
+        "id": "D",
+        "text": "Accept the duplicates as normal"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Matching only works when the identifier and the payload speak the same language. Either get the integration to send the expected serial numbers, or extend the identifier with a trustworthy MAC-based entry. Then IRE resolves identity instead of minting duplicates.",
+    "distractor_notes": {
+      "B": "Deleting the class destroys legitimate CIs and ignores the matching gap.",
+      "C": "Stopping Discovery sacrifices core data to mask an identifier mismatch.",
+      "D": "Tolerating duplicates erodes the CMDB's trustworthiness."
+    },
+    "references": [
+      {
+        "title": "Aligning identifiers to payloads",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/c_CMDBIdentifyandReconcile.html"
+      }
+    ],
+    "tags": [
+      "govern",
+      "ire",
+      "identifier-alignment"
+    ]
+  },
+  {
+    "id": "cisdf-gov-069",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "CMDB Workspace and remediation",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which best captures the relationship between CMDB Health (Insight) and remediation (Govern)?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Health detects and measures data-quality problems; remediation acts to fix them"
+      },
+      {
+        "id": "B",
+        "text": "They are the same process under different names"
+      },
+      {
+        "id": "C",
+        "text": "Remediation detects problems and Health fixes them"
+      },
+      {
+        "id": "D",
+        "text": "Neither relates to data quality"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Insight (Health) is the sensor; Govern (remediation) is the actuator. Health surfaces and quantifies completeness, compliance, and correctness issues; remediation assigns and resolves them. Detection without action is just reporting; the loop only closes when remediation follows.",
+    "distractor_notes": {
+      "B": "They're distinct, complementary stages \u2014 measurement vs action.",
+      "C": "Reversed \u2014 Health detects, remediation fixes.",
+      "D": "Both are squarely about CMDB data quality."
+    },
+    "references": [
+      {
+        "title": "Health and remediation loop",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/cmdb-health.html"
+      }
+    ],
+    "tags": [
+      "govern",
+      "remediation",
+      "health-relationship"
+    ]
+  },
+  {
+    "id": "cisdf-gov-070",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "Data certification",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which outcome is a sign that a Data Certification program is working well over time?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Certification tasks are never completed"
+      },
+      {
+        "id": "B",
+        "text": "Recurring attestation keeps key attributes accurate and surfaces drift early, improving trust in the data"
+      },
+      {
+        "id": "C",
+        "text": "All CIs are deleted after each campaign"
+      },
+      {
+        "id": "D",
+        "text": "Discovery is no longer needed"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "A healthy certification program shows up as sustained accuracy: owners regularly confirm or correct data, drift gets caught before it spreads, and confidence in the CMDB rises. Completed tasks and steady or improving quality are the signals, not deletions or abandoning automated discovery.",
+    "distractor_notes": {
+      "A": "Uncompleted tasks signal a failing program, not a working one.",
+      "C": "Certification verifies data; it doesn't wipe CIs.",
+      "D": "Certification complements Discovery; it never replaces it."
+    },
+    "references": [
+      {
+        "title": "Effective data certification",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/c_DataCertification.html"
+      }
+    ],
+    "tags": [
+      "govern",
+      "data-certification",
+      "success-signal"
+    ]
+  },
+  {
+    "id": "cisdf-gov-071",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "CMDB Data Manager and CI lifecycle",
+    "difficulty": "application",
+    "type": "multi_select",
+    "stem": "Which TWO actions can a CMDB Data Manager policy be configured to perform on CIs that meet its conditions?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Retire the CIs"
+      },
+      {
+        "id": "B",
+        "text": "Archive or destroy the CIs"
+      },
+      {
+        "id": "C",
+        "text": "Reprogram the network switches"
+      },
+      {
+        "id": "D",
+        "text": "Generate marketing emails"
+      }
+    ],
+    "correct": [
+      "A",
+      "B"
+    ],
+    "rationale": "Data Manager operates on the CI lifecycle: it can retire CIs and then archive or destroy them based on conditions. It does not configure physical network hardware or send marketing communications \u2014 those are outside the CMDB data lifecycle entirely.",
+    "distractor_notes": {
+      "C": "Configuring switches is network engineering, not CMDB lifecycle management.",
+      "D": "Marketing email is unrelated to CI lifecycle actions."
+    },
+    "references": [
+      {
+        "title": "Data Manager actions",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/cmdb-data-manager.html"
+      }
+    ],
+    "tags": [
+      "govern",
+      "data-manager",
+      "actions"
+    ]
+  },
+  {
+    "id": "cisdf-gov-072",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "Identification and Reconciliation Engine",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Why does ServiceNow recommend reviewing and tuning out-of-box identification rules rather than assuming they fit every environment?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Because OOB rules are always wrong"
+      },
+      {
+        "id": "B",
+        "text": "Because each environment's data sources and attribute availability differ, so rules may need adjustment to match reliably and avoid duplicates"
+      },
+      {
+        "id": "C",
+        "text": "Because rules cannot be changed once shipped"
+      },
+      {
+        "id": "D",
+        "text": "Because tuning rules disables IRE"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Out-of-box rules are a strong starting point, but the attributes your sources actually populate vary by environment. Reviewing and tuning the identifiers to your real data is how you keep matching accurate and prevent duplicates \u2014 a standard part of CMDB onboarding governance.",
+    "distractor_notes": {
+      "A": "OOB rules are sensible defaults, not always wrong \u2014 they just may need tuning.",
+      "C": "Identification rules are configurable, not frozen.",
+      "D": "Tuning rules refines IRE behavior; it doesn't disable the engine."
+    },
+    "references": [
+      {
+        "title": "Tuning identification rules",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/c_CMDBIdentifyandReconcile.html"
+      }
+    ],
+    "tags": [
+      "govern",
+      "ire",
+      "rule-tuning"
+    ]
+  },
+  {
+    "id": "cisdf-gov-073",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "CMDB governance roles and responsibilities",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which governance practice most directly prevents 'CMDB sprawl' \u2014 uncontrolled growth of low-value or duplicate CIs?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Defining what should be in the CMDB (scope), enforcing IRE, and running lifecycle management"
+      },
+      {
+        "id": "B",
+        "text": "Allowing every tool to push everything it can see"
+      },
+      {
+        "id": "C",
+        "text": "Turning off all data sources"
+      },
+      {
+        "id": "D",
+        "text": "Never retiring anything"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Sprawl is controlled at three points: decide what belongs in the CMDB (scope), force all ingestion through IRE so duplicates are caught, and run lifecycle management so dead CIs leave. Letting every tool dump everything and never retiring is exactly how sprawl happens.",
+    "distractor_notes": {
+      "B": "Ingesting everything indiscriminately is a primary cause of sprawl.",
+      "C": "Killing all sources leaves the CMDB empty and useless \u2014 an overcorrection.",
+      "D": "Never retiring lets dead CIs accumulate forever."
+    },
+    "references": [
+      {
+        "title": "Defining CMDB scope",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/c_CMDBGovernance.html"
+      }
+    ],
+    "tags": [
+      "govern",
+      "scope",
+      "sprawl"
+    ]
+  },
+  {
+    "id": "cisdf-gov-074",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "Identification and Reconciliation Engine",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An integration legitimately needs to correct a value that a reconciliation rule currently reserves for another source. What is the proper governance step?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Review and update the reconciliation rule (and source authority) through the governance process, then let IRE enforce the new decision"
+      },
+      {
+        "id": "B",
+        "text": "Bypass IRE and write the value directly to the table"
+      },
+      {
+        "id": "C",
+        "text": "Duplicate the CI so each source has its own copy"
+      },
+      {
+        "id": "D",
+        "text": "Delete the reconciliation rules entirely"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Authority is a governance decision, so changing it is a governed change to the reconciliation rule \u2014 not a workaround. Update which source is authoritative for that attribute, and IRE will enforce the new, agreed authority consistently. Bypassing IRE or duplicating CIs just creates new problems.",
+    "distractor_notes": {
+      "B": "Direct writes defeat reconciliation and reintroduce uncontrolled overwrites.",
+      "C": "Duplicating CIs fragments the record and breaks the single source of truth.",
+      "D": "Deleting all reconciliation rules removes attribute protection everywhere."
+    },
+    "references": [
+      {
+        "title": "Managing reconciliation authority",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/c_CMDBIdentifyandReconcile.html"
+      }
+    ],
+    "tags": [
+      "govern",
+      "ire",
+      "change-authority"
+    ]
+  },
+  {
+    "id": "cisdf-gov-075",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "CMDB Data Manager and CI lifecycle",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is a 'definition' (policy definition) in CMDB Data Manager composed of, at a high level?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A target CI scope/condition plus the lifecycle action(s) and timing to apply"
+      },
+      {
+        "id": "B",
+        "text": "A list of users who can log in"
+      },
+      {
+        "id": "C",
+        "text": "A set of email templates"
+      },
+      {
+        "id": "D",
+        "text": "A network subnet range only"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "A Data Manager definition pairs a scope (which CIs, by condition) with actions (retire/archive/destroy) and timing. That structure is what makes lifecycle management declarative: say what to act on, what to do, and when, and the tool executes it consistently.",
+    "distractor_notes": {
+      "B": "Login access is a security/role concern, not a lifecycle definition.",
+      "C": "Email templates aren't the substance of a lifecycle policy.",
+      "D": "A subnet alone doesn't define CI scope plus lifecycle action and timing."
+    },
+    "references": [
+      {
+        "title": "Data Manager policy definitions",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/cmdb-data-manager.html"
+      }
+    ],
+    "tags": [
+      "govern",
+      "data-manager",
+      "definition"
+    ]
+  },
+  {
+    "id": "cisdf-gov-076",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "Data certification",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A certification task asks an owner to verify 200 CIs, but they only have authority over 40 of them. What does this most likely indicate about the certification design?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The certification filter/scope or assignment is misaligned and should be refined to match actual ownership"
+      },
+      {
+        "id": "B",
+        "text": "Certification should be abandoned"
+      },
+      {
+        "id": "C",
+        "text": "The owner should certify all 200 regardless"
+      },
+      {
+        "id": "D",
+        "text": "The CMDB should be deleted"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Certification only works when the right person reviews the right records. If an owner is handed CIs they don't control, the scope or assignment logic is off and should be refined so each reviewer gets the population they can actually vouch for. Forcing them to rubber-stamp the rest defeats the control.",
+    "distractor_notes": {
+      "B": "One misconfiguration is a tuning problem, not a reason to abandon certification.",
+      "C": "Certifying CIs you don't understand produces false assurance.",
+      "D": "Deleting the CMDB is wildly disproportionate to a scoping error."
+    },
+    "references": [
+      {
+        "title": "Certification scope and assignment",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/c_DataCertification.html"
+      }
+    ],
+    "tags": [
+      "govern",
+      "data-certification",
+      "scope-alignment"
+    ]
+  },
+  {
+    "id": "cisdf-gov-077",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "CMDB Workspace and remediation",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Why is an audit trail / history on CI changes important to CMDB governance?",
+    "options": [
+      {
+        "id": "A",
+        "text": "It lets you trace who or what changed a value and when, supporting accountability and troubleshooting"
+      },
+      {
+        "id": "B",
+        "text": "It makes the CMDB load faster"
+      },
+      {
+        "id": "C",
+        "text": "It hides changes from auditors"
+      },
+      {
+        "id": "D",
+        "text": "It prevents any future changes"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Trustworthy data needs traceability. An audit trail records who/what changed an attribute and when, which supports accountability, root-cause analysis when data looks wrong, and compliance evidence. Governance leans on this history to manage and defend data quality.",
+    "distractor_notes": {
+      "B": "Auditing is about traceability, not performance.",
+      "C": "An audit trail exposes changes to auditors \u2014 the opposite of hiding them.",
+      "D": "History records changes; it doesn't freeze the record."
+    },
+    "references": [
+      {
+        "title": "CMDB auditing and history",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/c_CMDBGovernance.html"
+      }
+    ],
+    "tags": [
+      "govern",
+      "audit-trail",
+      "accountability"
+    ]
+  },
+  {
+    "id": "cisdf-gov-078",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "Identification and Reconciliation Engine",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A governance review finds many de-duplication tasks piling up unworked. What is the risk of leaving them unresolved?",
+    "options": [
+      {
+        "id": "A",
+        "text": "No risk; duplicates are harmless"
+      },
+      {
+        "id": "B",
+        "text": "Duplicate CIs distort reporting, impact analysis, and service maps, eroding trust in the CMDB"
+      },
+      {
+        "id": "C",
+        "text": "The instance will run out of memory immediately"
+      },
+      {
+        "id": "D",
+        "text": "All users will be locked out"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Unmerged duplicates quietly corrupt everything that reads the CMDB: counts are inflated, impact analysis misses or double-counts dependencies, and service maps fracture. Working the de-duplication queue is how governance keeps the data \u2014 and the decisions made on it \u2014 trustworthy.",
+    "distractor_notes": {
+      "A": "Duplicates are far from harmless; they undermine the CMDB's core value.",
+      "C": "Duplicates degrade data quality, not instance memory in that dramatic way.",
+      "D": "Duplicate CIs don't affect user authentication."
+    },
+    "references": [
+      {
+        "title": "Impact of duplicate CIs",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/cmdb-deduplication-tasks.html"
+      }
+    ],
+    "tags": [
+      "govern",
+      "ire",
+      "duplicate-risk"
+    ]
+  },
+  {
+    "id": "cisdf-gov-079",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "CMDB governance roles and responsibilities",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which is the best example of a measurable CMDB governance KPI?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Percentage of CIs with a complete set of required attributes"
+      },
+      {
+        "id": "B",
+        "text": "The font used on the CI form"
+      },
+      {
+        "id": "C",
+        "text": "Number of coffee breaks the team takes"
+      },
+      {
+        "id": "D",
+        "text": "The color of the dashboard background"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "A useful governance KPI is quantifiable and tied to data quality \u2014 completeness (percent of CIs with required attributes filled) is a textbook example, alongside compliance and correctness rates. Cosmetic or irrelevant items can't tell you whether the CMDB is trustworthy.",
+    "distractor_notes": {
+      "B": "Form fonts have no bearing on data quality.",
+      "C": "Coffee breaks are unrelated to CMDB governance.",
+      "D": "Dashboard colors don't measure data trustworthiness."
+    },
+    "references": [
+      {
+        "title": "CMDB Health KPIs",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/cmdb-health.html"
+      }
+    ],
+    "tags": [
+      "govern",
+      "kpi",
+      "completeness"
+    ]
+  },
+  {
+    "id": "cisdf-gov-080",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "CMDB Data Manager and CI lifecycle",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which statement about relationships during CI retirement is correct from a governance standpoint?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Relationships should be handled deliberately, because retiring a CI affects the service maps and dependencies it participates in"
+      },
+      {
+        "id": "B",
+        "text": "Relationships are irrelevant when retiring CIs"
+      },
+      {
+        "id": "C",
+        "text": "Retiring a CI automatically improves all its relationships"
+      },
+      {
+        "id": "D",
+        "text": "Relationships must always be deleted before any CI can be viewed"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Because CIs are nodes in a dependency graph, retiring one ripples into the service maps and impact paths it touches. Governed lifecycle management considers those relationships deliberately \u2014 exactly why controlled tooling beats blunt deletion that can silently break a service view.",
+    "distractor_notes": {
+      "B": "Relationships are highly relevant \u2014 they're what makes the CMDB valuable.",
+      "C": "Retirement doesn't magically improve relationships.",
+      "D": "Viewing a CI doesn't require deleting its relationships."
+    },
+    "references": [
+      {
+        "title": "Lifecycle and relationships",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/cmdb-data-manager.html"
+      }
+    ],
+    "tags": [
+      "govern",
+      "data-manager",
+      "relationships"
+    ]
+  },
+  {
+    "id": "cisdf-gov-081",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "Identification and Reconciliation Engine",
+    "difficulty": "recall",
+    "type": "multi_select",
+    "stem": "Which TWO are true about IRE identifier entries?",
+    "options": [
+      {
+        "id": "A",
+        "text": "An identifier entry contains one or more criterion attributes used to match CIs"
+      },
+      {
+        "id": "B",
+        "text": "Identifier entries can be ordered by priority so stronger matches are tried first"
+      },
+      {
+        "id": "C",
+        "text": "Identifier entries set the CMDB Health refresh schedule"
+      },
+      {
+        "id": "D",
+        "text": "Identifier entries define user login passwords"
+      }
+    ],
+    "correct": [
+      "A",
+      "B"
+    ],
+    "rationale": "Identifier entries hold the criterion attributes IRE compares (e.g., serial number) and are evaluated in priority order so the most reliable match is attempted first. They have nothing to do with health scheduling or authentication.",
+    "distractor_notes": {
+      "C": "Health refresh cadence is a separate dashboard setting.",
+      "D": "Passwords are an identity/security concern, unrelated to CI identifier entries."
+    },
+    "references": [
+      {
+        "title": "Identifier entries",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/c_CMDBIdentifyandReconcile.html"
+      }
+    ],
+    "tags": [
+      "govern",
+      "ire",
+      "identifier-entries"
+    ]
+  },
+  {
+    "id": "cisdf-gov-082",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "CMDB policies",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "To keep the de-duplication backlog from recurring, governance should focus most on which long-term action?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Strengthening identification rules and source data quality so duplicates aren't created in the first place"
+      },
+      {
+        "id": "B",
+        "text": "Merging duplicates faster and faster forever"
+      },
+      {
+        "id": "C",
+        "text": "Increasing the dashboard refresh rate"
+      },
+      {
+        "id": "D",
+        "text": "Hiding the de-duplication module"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Merging duplicates treats the symptom; preventing them treats the cause. The durable fix is upstream \u2014 tighter identification rules and cleaner source payloads so IRE matches correctly and stops minting duplicates. Then the backlog shrinks naturally instead of being perpetually drained.",
+    "distractor_notes": {
+      "B": "Endless faster merging never addresses why duplicates keep appearing.",
+      "C": "Refresh rate doesn't change how many duplicates are created.",
+      "D": "Hiding the module conceals the problem rather than preventing it."
+    },
+    "references": [
+      {
+        "title": "Preventing duplicates",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/c_CMDBIdentifyandReconcile.html"
+      }
+    ],
+    "tags": [
+      "govern",
+      "deduplication",
+      "prevention"
+    ]
+  },
+  {
+    "id": "cisdf-gov-083",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "CMDB governance roles and responsibilities",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "How should CMDB governance treat the relationship between data quality and the CMDB's business value?",
+    "options": [
+      {
+        "id": "A",
+        "text": "They are independent; value doesn't depend on quality"
+      },
+      {
+        "id": "B",
+        "text": "Business value depends directly on data quality \u2014 poor data makes downstream processes (impact analysis, change, security) unreliable"
+      },
+      {
+        "id": "C",
+        "text": "Only the size of the CMDB matters"
+      },
+      {
+        "id": "D",
+        "text": "Quality only matters for the IT team's internal use"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Every consumer of the CMDB \u2014 change impact, incident routing, security posture, service mapping \u2014 is only as reliable as the data underneath. That's why governance frames data quality as the foundation of business value: improve the data and every dependent process gets more trustworthy.",
+    "distractor_notes": {
+      "A": "Value is tightly coupled to quality; bad data poisons every downstream use.",
+      "C": "Size without quality is a liability, not value.",
+      "D": "The CMDB's data underpins enterprise-wide processes, not just IT's own use."
+    },
+    "references": [
+      {
+        "title": "CMDB business value",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/c_CMDBGovernance.html"
+      }
+    ],
+    "tags": [
+      "govern",
+      "business-value",
+      "data-quality"
+    ]
+  },
+  {
+    "id": "cisdf-gov-084",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Govern",
+    "subdomain": "CMDB Data Manager and CI lifecycle",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A governance team wants assurance that lifecycle policies are actually running and acting on the intended CIs over time. What should they rely on?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Data Manager execution history/logs and policy run results, reviewed periodically"
+      },
+      {
+        "id": "B",
+        "text": "Assuming it works because it was set up once"
+      },
+      {
+        "id": "C",
+        "text": "Asking end users to guess"
+      },
+      {
+        "id": "D",
+        "text": "The color of the policy icon"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Governance verifies rather than assumes. Data Manager records run history and results, so the team can periodically confirm policies executed, see how many CIs were acted on, and catch policies that silently stopped matching. 'Set it and forget it' is how governance quietly fails.",
+    "distractor_notes": {
+      "B": "Assuming continued success is exactly the blind spot reviews are meant to close.",
+      "C": "User guesses aren't evidence of policy execution.",
+      "D": "An icon color tells you nothing about whether policies ran."
+    },
+    "references": [
+      {
+        "title": "Data Manager run history",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/cmdb-data-manager.html"
+      }
+    ],
+    "tags": [
+      "govern",
+      "data-manager",
+      "verification"
+    ]
+  }
+]

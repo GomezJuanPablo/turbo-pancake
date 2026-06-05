@@ -1,0 +1,971 @@
+[
+  {
+    "id": "cisdf-cfg-001",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Configuration",
+    "subdomain": "CI Class Manager",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "A CMDB Administrator is creating technical documentation listing the attributes, IRE rules, and suggested relationships for several CI classes. Which central location provides all of this in one place?",
+    "options": [
+      { "id": "A", "text": "CI Class Manager" },
+      { "id": "B", "text": "CI Identifiers module" },
+      { "id": "C", "text": "CMDB Workspace" },
+      { "id": "D", "text": "CMDB Data Manager" }
+    ],
+    "correct": ["A"],
+    "rationale": "CI Class Manager is the single administrative surface for a class: it shows the class's attributes, its identification and reconciliation (IRE) rules, identifier entries, dependent relationships, and suggested relationships together. That makes it the natural source for class documentation.",
+    "distractor_notes": {
+      "B": "The CI Identifiers module is a piece of the picture (identifiers) but not the consolidated class view.",
+      "C": "CMDB Workspace focuses on health, remediation, and data management, not class definitions.",
+      "D": "CMDB Data Manager handles CI lifecycle policies, not class structure documentation."
+    },
+    "references": [
+      { "title": "CI Class Manager", "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/ci-class-manager.html" }
+    ],
+    "tags": ["configuration", "ci-class-manager", "documentation"]
+  },
+  {
+    "id": "cisdf-cfg-002",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Configuration",
+    "subdomain": "Creating CI classes",
+    "difficulty": "application",
+    "type": "multi_select",
+    "stem": "A CMDB Administrator needs to create a new CI class for an Internet of Things (IoT) Sensor. Which TWO are recommended practices for this activity?",
+    "options": [
+      { "id": "A", "text": "Add the new class under an appropriate parent class so it inherits the correct structure" },
+      { "id": "B", "text": "Install or update the 'CMDB CI Class Models' store application and verify the class does not already exist" },
+      { "id": "C", "text": "Repurpose and rename an unrelated existing class" },
+      { "id": "D", "text": "Delete an unused class and replace it with the new one" }
+    ],
+    "correct": ["A", "B"],
+    "rationale": "Best practice is to reuse before you build: check the CMDB CI Class Models content (kept current via the store) so you don't reinvent an existing class, and when you do add one, place it under the right parent so it inherits the proper table structure and behavior. Repurposing or deleting classes corrupts the model.",
+    "distractor_notes": {
+      "C": "Renaming an unrelated class creates confusing, mismatched structure and breaks inheritance intent.",
+      "D": "Deleting a class to reuse its slot risks data loss and a misaligned hierarchy."
+    },
+    "references": [
+      { "title": "Creating CI classes", "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/ci-class-manager.html" }
+    ],
+    "tags": ["configuration", "new-class", "best-practice"]
+  },
+  {
+    "id": "cisdf-cfg-003",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Configuration",
+    "subdomain": "Class hierarchy and inheritance",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A CMDB Administrator must define a new CI class for a new type of equipment so it integrates properly with the existing CMDB structure. Which action is correct?",
+    "options": [
+      { "id": "A", "text": "Create the new class in CI Class Manager and configure table inheritance so it inherits from an appropriate parent class" },
+      { "id": "B", "text": "Create the class with no inheritance so it stays fully independent" },
+      { "id": "C", "text": "Edit an unrelated existing class and add the new fields to it" },
+      { "id": "D", "text": "Define the class in Service Catalog instead" }
+    ],
+    "correct": ["A"],
+    "rationale": "The CMDB is an extended-table hierarchy rooted at cmdb_ci. A new class should be created in CI Class Manager and set to inherit from the correct parent, so it picks up the base structure, identification behavior, and relationships rather than living as a disconnected island.",
+    "distractor_notes": {
+      "B": "No inheritance breaks the class out of the CMDB model and loses base structure/behavior.",
+      "C": "Bolting fields onto an unrelated class pollutes that class and misrepresents the data.",
+      "D": "Service Catalog defines catalog items, not CMDB CI classes."
+    },
+    "references": [
+      { "title": "Table inheritance in the CMDB", "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/ci-class-manager.html" }
+    ],
+    "tags": ["configuration", "inheritance", "new-class"]
+  },
+  {
+    "id": "cisdf-cfg-004",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Configuration",
+    "subdomain": "Class attributes",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "In CI Class Manager, which Attributes tab shows only the attributes that were added specifically at the Windows Server class (not inherited from parents)?",
+    "options": [
+      { "id": "A", "text": "Added" },
+      { "id": "B", "text": "All" },
+      { "id": "C", "text": "Derived" },
+      { "id": "D", "text": "Child" }
+    ],
+    "correct": ["A"],
+    "rationale": "The Added tab isolates the attributes introduced at that specific class, separating them from the many attributes inherited from parent tables. It's the quick way to see what makes a class distinct versus what it gets from cmdb_ci and intermediate classes.",
+    "distractor_notes": {
+      "B": "The All tab shows every attribute including inherited ones, not just the class-specific additions.",
+      "C": "'Derived' is not the tab that lists class-specific added attributes.",
+      "D": "'Child' is not an Attributes tab for showing added attributes."
+    },
+    "references": [
+      { "title": "Class attributes in CI Class Manager", "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/ci-class-manager.html" }
+    ],
+    "tags": ["configuration", "attributes", "added-tab"]
+  },
+  {
+    "id": "cisdf-cfg-005",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Configuration",
+    "subdomain": "Extending classes",
+    "difficulty": "application",
+    "type": "multi_select",
+    "stem": "A Process Owner is preparing best-practice options to ingest custom CIs while minimizing future maintenance cost. Which TWO approaches align with best practice?",
+    "options": [
+      { "id": "A", "text": "Install or upgrade the 'CMDB CI Class Models' store app to find a suitable existing class that already accommodates the CI" },
+      { "id": "B", "text": "Extend an existing CI class table to add the custom class attributes" },
+      { "id": "C", "text": "Repurpose a base CI class and rename its attributes as needed" },
+      { "id": "D", "text": "Extend an existing Asset class table to hold the custom CI attributes" }
+    ],
+    "correct": ["A", "B"],
+    "rationale": "Favor existing, supported structures: first see whether the CMDB CI Class Models content already provides a fitting class, and if a new one is truly needed, extend an appropriate existing CI class so it inherits cleanly. Repurposing/renaming base classes or extending Asset tables for CIs creates fragile, non-standard models.",
+    "distractor_notes": {
+      "C": "Renaming base-class attributes breaks platform expectations and upgrades.",
+      "D": "Asset classes model assets, not CIs; extending them for CI data mixes the two domains."
+    },
+    "references": [
+      { "title": "Extending CI classes", "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/ci-class-manager.html" }
+    ],
+    "tags": ["configuration", "extend-class", "best-practice"]
+  },
+  {
+    "id": "cisdf-cfg-006",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Configuration",
+    "subdomain": "Principal classes",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A CMDB Administrator wants only CIs of Principal Classes to appear in CI reference fields (for example on Incident, Problem, and Change records). Where is a class designated as a Principal Class?",
+    "options": [
+      { "id": "A", "text": "In CI Class Manager, on the class's Basic Info tab (Principal Class check box)" },
+      { "id": "B", "text": "In CMDB Data Manager" },
+      { "id": "C", "text": "In System Properties only" },
+      { "id": "D", "text": "On each individual CI record" }
+    ],
+    "correct": ["A"],
+    "rationale": "Principal Class is a class-level flag set in CI Class Manager on the Basic Info tab. Marking a class principal limits CI reference fields to those meaningful classes, so users picking a CI on an incident or change see only relevant, managed classes rather than every leaf class.",
+    "distractor_notes": {
+      "B": "Data Manager governs CI lifecycle, not the Principal Class designation.",
+      "C": "Principal Class is configured on the class in CI Class Manager, not via a system property.",
+      "D": "It's a class-level setting, not something toggled per CI."
+    },
+    "references": [
+      { "title": "Principal classes", "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/ci-class-manager.html" }
+    ],
+    "tags": ["configuration", "principal-class", "reference-fields"]
+  },
+  {
+    "id": "cisdf-cfg-007",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Configuration",
+    "subdomain": "Principal classes",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which checkbox in CI Class Manager ensures that only relevant CIs from managed classes are shown in CI reference fields on Incident, Problem, and Change records?",
+    "options": [
+      { "id": "A", "text": "Principal Class" },
+      { "id": "B", "text": "Independent" },
+      { "id": "C", "text": "Extensible" },
+      { "id": "D", "text": "Main Record" }
+    ],
+    "correct": ["A"],
+    "rationale": "The Principal Class checkbox is what filters CI reference pickers down to the classes that matter operationally. 'Independent', 'Extensible', and 'Main Record' control other behaviors (identification independence, whether the class can be extended, etc.) and don't govern reference-field visibility.",
+    "distractor_notes": {
+      "B": "'Independent' relates to identification (can the CI be identified on its own), not reference-field display.",
+      "C": "'Extensible' controls whether a class can have child classes.",
+      "D": "'Main Record' is not the setting that scopes reference-field class visibility."
+    },
+    "references": [
+      { "title": "Principal Class checkbox", "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/ci-class-manager.html" }
+    ],
+    "tags": ["configuration", "principal-class", "checkbox"]
+  },
+  {
+    "id": "cisdf-cfg-008",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Configuration",
+    "subdomain": "Relationships",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which relationship correctly expresses that an application is hosted on a server in the CMDB?",
+    "options": [
+      { "id": "A", "text": "Application 'Runs on::Runs' Server" },
+      { "id": "B", "text": "Application 'Used by::Uses' Server" },
+      { "id": "C", "text": "Application 'Depends on::Used by' Server" },
+      { "id": "D", "text": "Application 'Runs::Runs on' Server (reversed)" }
+    ],
+    "correct": ["A"],
+    "rationale": "The directional relationship reads from the application's side as 'Runs on' the server, and from the server's side as 'Runs' the application — i.e., Application Runs on::Runs Server. Getting the direction right matters because impact and dependency analysis follow these relationship semantics.",
+    "distractor_notes": {
+      "B": "'Used by::Uses' describes consumption, not hosting.",
+      "C": "That mixes relationship types and directions that don't model hosting.",
+      "D": "This reverses the parent/child direction of the hosting relationship."
+    },
+    "references": [
+      { "title": "CI relationships", "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/ci-class-manager.html" }
+    ],
+    "tags": ["configuration", "relationships", "runs-on"]
+  },
+  {
+    "id": "cisdf-cfg-009",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Configuration",
+    "subdomain": "Relationships",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A Data Center Manager models the relationship between Application Servers and the Applications they host, where each server hosts one or more applications. From the server's perspective, what cardinality best describes 'a server hosts its applications'?",
+    "options": [
+      { "id": "A", "text": "One-to-many (one server to many applications)" },
+      { "id": "B", "text": "One-to-one" },
+      { "id": "C", "text": "Many-to-one (many servers to one application)" },
+      { "id": "D", "text": "No relationship is needed" }
+    ],
+    "correct": ["A"],
+    "rationale": "If a single Application Server hosts one or more Applications, the hosting relationship from the server outward is one-to-many: one parent server related to many child application CIs. Modeling cardinality correctly keeps dependency maps and impact analysis accurate.",
+    "distractor_notes": {
+      "B": "One-to-one would wrongly limit each server to a single hosted application.",
+      "C": "Many-to-one inverts the described direction (it would mean many servers to one app).",
+      "D": "The relationship is exactly what carries the hosting dependency; it's needed."
+    },
+    "references": [
+      { "title": "Relationship cardinality", "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/ci-class-manager.html" }
+    ],
+    "tags": ["configuration", "relationships", "cardinality"]
+  },
+  {
+    "id": "cisdf-cfg-010",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Configuration",
+    "subdomain": "Reclassification",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A Windows server CI is reclassified from the Server table [cmdb_ci_server] to the more specific Windows Server table [cmdb_ci_win_server] when processed by IRE. Which process is this?",
+    "options": [
+      { "id": "A", "text": "Class Upgrade" },
+      { "id": "B", "text": "Class Downgrade" },
+      { "id": "C", "text": "Class Switch" },
+      { "id": "D", "text": "Class Deletion" }
+    ],
+    "correct": ["A"],
+    "rationale": "Moving a CI to a more specific (deeper, child) class is a Class Upgrade — the CI gains the additional structure of the more specific class. Moving up to a more generic parent would be a Class Downgrade. IRE performs these reclassifications as better-classified data arrives.",
+    "distractor_notes": {
+      "B": "Downgrade is reclassifying to a more general parent class — the opposite direction.",
+      "C": "'Class Switch' isn't the IRE term for this hierarchy move.",
+      "D": "Reclassification changes the class; it doesn't delete the CI."
+    },
+    "references": [
+      { "title": "CI reclassification (upgrade/downgrade)", "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/c_CMDBIdentifyandReconcile.html" }
+    ],
+    "tags": ["configuration", "reclassification", "class-upgrade"]
+  },
+  {
+    "id": "cisdf-cfg-011",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Configuration",
+    "subdomain": "CI Class Manager",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "A CI Class Owner responsible for the Windows Server class wants quick, repeated access to manage just that class in CI Class Manager. Which feature helps streamline this?",
+    "options": [
+      { "id": "A", "text": "Pinned Classes" },
+      { "id": "B", "text": "CMDB Health export" },
+      { "id": "C", "text": "Service Catalog favorites" },
+      { "id": "D", "text": "Incident templates" }
+    ],
+    "correct": ["A"],
+    "rationale": "Pinned Classes let an owner keep frequently managed classes readily accessible in CI Class Manager, so they don't have to search the full hierarchy each time. It's a small productivity feature aimed at class owners who live in a few specific classes.",
+    "distractor_notes": {
+      "B": "A health export is an Insight artifact, not a class-navigation aid.",
+      "C": "Service Catalog favorites apply to catalog items, not CI classes.",
+      "D": "Incident templates are an ITSM convenience, unrelated to class management."
+    },
+    "references": [
+      { "title": "CI Class Manager navigation", "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/ci-class-manager.html" }
+    ],
+    "tags": ["configuration", "ci-class-manager", "pinned-classes"]
+  },
+  {
+    "id": "cisdf-cfg-012",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Configuration",
+    "subdomain": "Identification rules",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A new application identification rule must account for the same application being installed more than once on the same server. Which criterion attribute best distinguishes the separate installs?",
+    "options": [
+      { "id": "A", "text": "Configuration file path" },
+      { "id": "B", "text": "Version" },
+      { "id": "C", "text": "Class" },
+      { "id": "D", "text": "Vendor" }
+    ],
+    "correct": ["A"],
+    "rationale": "Two installs of the same application on one host share name, version, and class, but each lives at a distinct configuration file path. Using the path as a criterion attribute lets IRE tell the instances apart and avoid collapsing them into a single CI.",
+    "distractor_notes": {
+      "B": "Both installs may run the same version, so version can't distinguish them.",
+      "C": "They're the same class, so class doesn't separate the instances.",
+      "D": "Same application means same vendor; it won't differentiate two installs."
+    },
+    "references": [
+      { "title": "Identification criterion attributes", "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/c_CMDBIdentifyandReconcile.html" }
+    ],
+    "tags": ["configuration", "identification-rule", "criterion-attribute"]
+  },
+  {
+    "id": "cisdf-cfg-013",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Configuration",
+    "subdomain": "CMDB data model",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which table is the base (root) table that all CI classes in the CMDB extend from?",
+    "options": [
+      { "id": "A", "text": "cmdb_ci" },
+      { "id": "B", "text": "task" },
+      { "id": "C", "text": "alm_asset" },
+      { "id": "D", "text": "sys_user" }
+    ],
+    "correct": ["A"],
+    "rationale": "The CMDB is an extended-table hierarchy rooted at cmdb_ci. Every CI class — server, application, database, network gear — ultimately extends cmdb_ci, inheriting its common attributes. Understanding this root is key to how inheritance and identification flow down the class tree.",
+    "distractor_notes": {
+      "B": "'task' is the base for task-type records (incident, change), not CIs.",
+      "C": "alm_asset is the base for assets, a separate (related) hierarchy from CIs.",
+      "D": "sys_user holds user records, not configuration items."
+    },
+    "references": [
+      { "title": "CMDB tables and inheritance", "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/ci-class-manager.html" }
+    ],
+    "tags": ["configuration", "data-model", "cmdb_ci"]
+  },
+  {
+    "id": "cisdf-cfg-014",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Configuration",
+    "subdomain": "Asset and CI",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Computer CIs carry an 'Assigned to' value, and the Asset team wants the related Asset record's 'Assigned to' field kept in sync automatically. What is the recommended, supported approach?",
+    "options": [
+      { "id": "A", "text": "Use the Asset-CI Field Mapping module to create a rule replicating the value between the asset and its CI" },
+      { "id": "B", "text": "Hide the field on the asset and dot-walk to the CI on every form" },
+      { "id": "C", "text": "Write a custom business rule on the computer table to script-populate the asset field" },
+      { "id": "D", "text": "Manually copy the value whenever it changes" }
+    ],
+    "correct": ["A"],
+    "rationale": "Assets and CIs are distinct but linked records, and the Asset-CI Field Mapping module exists specifically to keep designated fields synchronized between them. A mapping rule is the out-of-box, supported way to replicate 'Assigned to' automatically without custom scripting.",
+    "distractor_notes": {
+      "B": "Dot-walking displays the CI value but doesn't store/sync it on the asset, and hiding fields adds fragility.",
+      "C": "A custom business rule is unsupported maintenance overhead when a configured module already does this.",
+      "D": "Manual copying doesn't scale and drifts out of sync."
+    },
+    "references": [
+      { "title": "Asset-CI field mapping", "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/ci-class-manager.html" }
+    ],
+    "tags": ["configuration", "asset-ci", "field-mapping"]
+  },
+  {
+    "id": "cisdf-cfg-015",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Configuration",
+    "subdomain": "Identifiers",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "In CI Class Manager, what does marking a class identifier as 'independent' mean?",
+    "options": [
+      { "id": "A", "text": "The CI can be uniquely identified on its own attributes, without needing a related parent CI" },
+      { "id": "B", "text": "The CI can never be related to other CIs" },
+      { "id": "C", "text": "The CI is excluded from CMDB Health" },
+      { "id": "D", "text": "The CI cannot be discovered" }
+    ],
+    "correct": ["A"],
+    "rationale": "An independent identifier means the class's CIs stand on their own for identification — their criterion attributes are enough to establish identity. Dependent identifiers, by contrast, require a qualifying related CI (like a host) to pin down identity.",
+    "distractor_notes": {
+      "B": "Independence is about identification, not whether the CI can have relationships.",
+      "C": "It has nothing to do with health inclusion.",
+      "D": "It doesn't affect whether the CI can be discovered."
+    },
+    "references": [
+      { "title": "Independent vs dependent identifiers", "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/c_CMDBIdentifyandReconcile.html" }
+    ],
+    "tags": ["configuration", "identifiers", "independent"]
+  },
+  {
+    "id": "cisdf-cfg-016",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Configuration",
+    "subdomain": "Suggested relationships",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the purpose of 'Suggested Relationships' configured for a CI class in CI Class Manager?",
+    "options": [
+      { "id": "A", "text": "To recommend the expected relationship types for that class, guiding consistent and complete modeling" },
+      { "id": "B", "text": "To automatically delete relationships" },
+      { "id": "C", "text": "To set the CMDB Health refresh schedule" },
+      { "id": "D", "text": "To assign incidents to groups" }
+    ],
+    "correct": ["A"],
+    "rationale": "Suggested Relationships define the relationships a class is expected to have, helping admins and discovery model dependencies consistently. They also support relationship completeness checks — flagging CIs that lack an expected relationship.",
+    "distractor_notes": {
+      "B": "They guide creation of relationships, not deletion.",
+      "C": "Health scheduling is unrelated to suggested relationships.",
+      "D": "Incident assignment is an ITSM concern, not a class relationship setting."
+    },
+    "references": [
+      { "title": "Suggested relationships", "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/ci-class-manager.html" }
+    ],
+    "tags": ["configuration", "suggested-relationships", "modeling"]
+  },
+  {
+    "id": "cisdf-cfg-017",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Configuration",
+    "subdomain": "CI Class Manager",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "A CI Class Owner needs to change the icon for the UNIX Server class. Which CI Class Manager tab is used?",
+    "options": [
+      { "id": "A", "text": "Basic Info" },
+      { "id": "B", "text": "Attributes" },
+      { "id": "C", "text": "Suggested Relationships" },
+      { "id": "D", "text": "CI List" }
+    ],
+    "correct": ["A"],
+    "rationale": "Class-level presentation and behavior settings — including the icon and the Principal Class flag — live on the Basic Info tab of CI Class Manager. Attributes and relationships have their own tabs; the icon is a basic class property.",
+    "distractor_notes": {
+      "B": "The Attributes tab manages fields, not the class icon.",
+      "C": "Suggested Relationships configures relationships, not the icon.",
+      "D": "CI List shows instances of the class, not class settings."
+    },
+    "references": [
+      { "title": "CI Class Manager Basic Info", "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/ci-class-manager.html" }
+    ],
+    "tags": ["configuration", "ci-class-manager", "icon"]
+  },
+  {
+    "id": "cisdf-cfg-018",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Configuration",
+    "subdomain": "Roles",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which role is required to create and manage CI classes (add a new class, edit class structure) in CI Class Manager?",
+    "options": [
+      { "id": "A", "text": "sn_cmdb_admin" },
+      { "id": "B", "text": "itil" },
+      { "id": "C", "text": "knowledge_admin" },
+      { "id": "D", "text": "catalog_admin" }
+    ],
+    "correct": ["A"],
+    "rationale": "Creating and administering CI classes requires the CMDB administration role, sn_cmdb_admin, which grants access to CI Class Manager's class-creation and structure-editing functions. General ITIL or catalog/knowledge roles don't include CMDB class administration.",
+    "distractor_notes": {
+      "B": "itil provides service-desk access but not CMDB class administration.",
+      "C": "knowledge_admin manages knowledge bases, not CI classes.",
+      "D": "catalog_admin manages the service catalog, not the CMDB class model."
+    },
+    "references": [
+      { "title": "CMDB roles", "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/ci-class-manager.html" }
+    ],
+    "tags": ["configuration", "roles", "sn_cmdb_admin"]
+  },
+  {
+    "id": "cisdf-cfg-019",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Configuration",
+    "subdomain": "Multisource configuration",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "A Configuration Management team wants to start using CMDB 360 / Multisource CMDB. Which system property must be enabled?",
+    "options": [
+      { "id": "A", "text": "glide.identification_engine.multisource_enabled" },
+      { "id": "B", "text": "glide.ui.theme.cmdb360" },
+      { "id": "C", "text": "glide.discovery.enabled" },
+      { "id": "D", "text": "glide.cmdb.health.enabled" }
+    ],
+    "correct": ["A"],
+    "rationale": "Multisource CMDB is turned on with the identification-engine property glide.identification_engine.multisource_enabled, which tells IRE to retain per-source attribute values for comparison and reconciliation. The other named properties don't control multisource.",
+    "distractor_notes": {
+      "B": "There's no such theme property governing multisource functionality.",
+      "C": "Enabling Discovery doesn't enable multisource tracking.",
+      "D": "A health property doesn't control multisource CMDB."
+    },
+    "references": [
+      { "title": "Enable Multisource CMDB", "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/multisource-cmdb.html" }
+    ],
+    "tags": ["configuration", "multisource", "system-property"]
+  },
+  {
+    "id": "cisdf-cfg-020",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Configuration",
+    "subdomain": "Identification configuration",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Under a CI class in CI Class Manager, the 'Identification Inclusion Rules' (scoping) are used by IRE to do what?",
+    "options": [
+      { "id": "A", "text": "Narrow the scope of CIs included in the identification process based on defined conditions" },
+      { "id": "B", "text": "Increase the CMDB Health score automatically" },
+      { "id": "C", "text": "Delete duplicate CIs without review" },
+      { "id": "D", "text": "Define the icon for the class" }
+    ],
+    "correct": ["A"],
+    "rationale": "Inclusion (scoping) rules let IRE limit which CIs/payload items the identification process applies to, based on conditions. They give fine-grained control so identification focuses on the intended population rather than every record.",
+    "distractor_notes": {
+      "B": "They scope identification; they don't manipulate health scores.",
+      "C": "They don't auto-delete duplicates; de-duplication is a separate remediation.",
+      "D": "Class icons are set on Basic Info, unrelated to inclusion rules."
+    },
+    "references": [
+      { "title": "IRE inclusion rules", "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/c_CMDBIdentifyandReconcile.html" }
+    ],
+    "tags": ["configuration", "identification", "inclusion-rules"]
+  },
+  {
+    "id": "cisdf-cfg-021",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Configuration",
+    "subdomain": "Standardization",
+    "difficulty": "application",
+    "type": "multi_select",
+    "stem": "A global enterprise ingests from ServiceNow Discovery, SCCM, AWS, and manual uploads, but each source classifies the same CIs differently. Which TWO actions best standardize classification and avoid duplicates?",
+    "options": [
+      { "id": "A", "text": "Implement identification and reconciliation rules so CIs are matched and classified consistently" },
+      { "id": "B", "text": "Use CI Class Manager to establish standardized CI classes and attributes across all sources" },
+      { "id": "C", "text": "Let each discovery source define its own CI class" },
+      { "id": "D", "text": "Script ad-hoc adjustments per source before storing data" }
+    ],
+    "correct": ["A", "B"],
+    "rationale": "Standardization comes from a shared model plus shared identity logic: define standard classes/attributes in CI Class Manager and enforce identification/reconciliation so every source maps to the same CIs and classes. Per-source classes or per-source scripts reintroduce exactly the inconsistency you're trying to remove.",
+    "distractor_notes": {
+      "C": "Source-specific classes guarantee inconsistent classification and duplicates.",
+      "D": "Per-source ad-hoc scripts are unmaintainable and bypass standardized governance."
+    },
+    "references": [
+      { "title": "Standardizing CI classification", "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/c_CMDBIdentifyandReconcile.html" }
+    ],
+    "tags": ["configuration", "standardization", "multi-source"]
+  },
+  {
+    "id": "cisdf-cfg-022",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Configuration",
+    "subdomain": "Class flags",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What does the 'Extensible' setting on a CI class control?",
+    "options": [
+      { "id": "A", "text": "Whether the class can have child classes that extend it" },
+      { "id": "B", "text": "Whether the class appears in CMDB Health" },
+      { "id": "C", "text": "Whether the class can be discovered" },
+      { "id": "D", "text": "Whether the class can be retired" }
+    ],
+    "correct": ["A"],
+    "rationale": "Marking a class extensible allows other classes to be created beneath it, extending its table. It defines the class's place in the inheritance tree — whether it can serve as a parent — rather than affecting discovery, health, or retirement.",
+    "distractor_notes": {
+      "B": "Health inclusion is governed separately, not by extensibility.",
+      "C": "Discoverability depends on patterns/identifiers, not the extensible flag.",
+      "D": "Retirement is a lifecycle action unrelated to extensibility."
+    },
+    "references": [
+      { "title": "Extensible classes", "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/ci-class-manager.html" }
+    ],
+    "tags": ["configuration", "extensible", "class-flag"]
+  },
+  {
+    "id": "cisdf-cfg-023",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Configuration",
+    "subdomain": "Attributes",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "A Windows Server class shows many attributes it did not define itself. Where do these come from?",
+    "options": [
+      { "id": "A", "text": "They are inherited from parent classes up the table hierarchy (e.g., Server, cmdb_ci)" },
+      { "id": "B", "text": "They are copied from the incident table" },
+      { "id": "C", "text": "They are randomly generated each day" },
+      { "id": "D", "text": "They come from the knowledge base" }
+    ],
+    "correct": ["A"],
+    "rationale": "Because the CMDB uses table inheritance, a class automatically has all attributes defined by its ancestors — Windows Server inherits from Server, which inherits from cmdb_ci. The Added tab separates what the class defines itself from this inherited set.",
+    "distractor_notes": {
+      "B": "Attributes aren't copied from unrelated tables like incident.",
+      "C": "Attributes are defined by the schema, not generated randomly.",
+      "D": "The knowledge base doesn't supply CI class attributes."
+    },
+    "references": [
+      { "title": "Inherited attributes", "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/ci-class-manager.html" }
+    ],
+    "tags": ["configuration", "attributes", "inheritance"]
+  },
+  {
+    "id": "cisdf-cfg-024",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Configuration",
+    "subdomain": "Reclassification",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A CI is reclassified from the specific Windows Server table up to the more general Server table. What is this process called?",
+    "options": [
+      { "id": "A", "text": "Class Downgrade" },
+      { "id": "B", "text": "Class Upgrade" },
+      { "id": "C", "text": "Class Merge" },
+      { "id": "D", "text": "Class Archive" }
+    ],
+    "correct": ["A"],
+    "rationale": "Moving a CI to a more general parent class is a Class Downgrade (it loses the specificity of the child class). Moving to a more specific child class is a Class Upgrade. IRE applies these based on how well incoming data classifies the CI.",
+    "distractor_notes": {
+      "B": "Upgrade is the opposite — moving to a more specific class.",
+      "C": "Merging combines duplicate CIs; it isn't a hierarchy reclassification.",
+      "D": "Archiving is a lifecycle action, not a reclassification."
+    },
+    "references": [
+      { "title": "Class downgrade", "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/c_CMDBIdentifyandReconcile.html" }
+    ],
+    "tags": ["configuration", "reclassification", "class-downgrade"]
+  },
+  {
+    "id": "cisdf-cfg-025",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Configuration",
+    "subdomain": "Dependent relationships",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A database instance must be identified in the context of the server that hosts it. Which CI Class Manager configuration supports identifying it via that host relationship?",
+    "options": [
+      { "id": "A", "text": "A dependent identifier that uses the hosting relationship to a parent CI" },
+      { "id": "B", "text": "An independent identifier using only the instance's own name" },
+      { "id": "C", "text": "A Principal Class flag" },
+      { "id": "D", "text": "A CMDB Health rule" }
+    ],
+    "correct": ["A"],
+    "rationale": "When a CI isn't unique on its own, a dependent identifier resolves identity using a qualifying related (parent) CI — here, the hosting server — plus the dependent CI's attributes. That relationship context is what distinguishes otherwise-similar database instances.",
+    "distractor_notes": {
+      "B": "An independent identifier assumes the CI is uniquely identifiable alone, which it isn't here.",
+      "C": "Principal Class controls reference-field visibility, not contextual identification.",
+      "D": "A health rule measures quality; it doesn't establish identity."
+    },
+    "references": [
+      { "title": "Dependent identification", "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/c_CMDBIdentifyandReconcile.html" }
+    ],
+    "tags": ["configuration", "dependent-identifier", "hosting"]
+  },
+  {
+    "id": "cisdf-cfg-026",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Configuration",
+    "subdomain": "Relationships",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Where are the available CI relationship types (their parent/child descriptors like 'Runs on::Runs') defined?",
+    "options": [
+      { "id": "A", "text": "In the CI Relationship Type table (cmdb_rel_type)" },
+      { "id": "B", "text": "In the incident table" },
+      { "id": "C", "text": "In the user profile" },
+      { "id": "D", "text": "In the email templates" }
+    ],
+    "correct": ["A"],
+    "rationale": "Relationship types — with their directional parent and child descriptors — are defined in the cmdb_rel_type table. CI relationships then reference these types, which is what gives dependency and impact analysis its consistent, directional semantics.",
+    "distractor_notes": {
+      "B": "The incident table stores incidents, not relationship type definitions.",
+      "C": "User profiles hold user data, not CI relationship types.",
+      "D": "Email templates are unrelated to relationship definitions."
+    },
+    "references": [
+      { "title": "CI relationship types", "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/ci-class-manager.html" }
+    ],
+    "tags": ["configuration", "relationship-type", "cmdb_rel_type"]
+  },
+  {
+    "id": "cisdf-cfg-027",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Configuration",
+    "subdomain": "Class ownership",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A CMDB Data Manager policy should assign tasks using the group ownership specified on the class in CI Class Manager. Which field carries that ownership for alignment?",
+    "options": [
+      { "id": "A", "text": "Managed by group" },
+      { "id": "B", "text": "Approval group" },
+      { "id": "C", "text": "Change group" },
+      { "id": "D", "text": "Watch list" }
+    ],
+    "correct": ["A"],
+    "rationale": "The 'Managed by group' captured at the class level is the operational owner, so aligning Data Manager policy task assignment to it routes lifecycle work to the team responsible for those CIs. Approval/change groups serve other processes and don't represent class ownership.",
+    "distractor_notes": {
+      "B": "Approval group handles approvals, not operational ownership of the class.",
+      "C": "Change group relates to change activities, not class ownership.",
+      "D": "A watch list is a notification list, not an ownership field."
+    },
+    "references": [
+      { "title": "Class ownership and Data Manager", "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/cmdb-data-manager.html" }
+    ],
+    "tags": ["configuration", "class-ownership", "managed-by-group"]
+  },
+  {
+    "id": "cisdf-cfg-028",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Configuration",
+    "subdomain": "CI lifecycle",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which CI attribute is commonly used to represent a configuration item's operational lifecycle state (e.g., In Use, In Maintenance, Retired)?",
+    "options": [
+      { "id": "A", "text": "install_status" },
+      { "id": "B", "text": "sys_id" },
+      { "id": "C", "text": "short_description" },
+      { "id": "D", "text": "sys_created_on" }
+    ],
+    "correct": ["A"],
+    "rationale": "install_status (Status) carries the CI's operational lifecycle state — Installed/In Use, In Maintenance, Retired, and so on. Lifecycle governance and reporting key off this field, and it's distinct from immutable system fields like sys_id or creation timestamps.",
+    "distractor_notes": {
+      "B": "sys_id is the immutable record key, not a lifecycle state.",
+      "C": "short_description is free text, not a lifecycle status.",
+      "D": "sys_created_on is a creation timestamp, not the operational state."
+    },
+    "references": [
+      { "title": "CI lifecycle and install_status", "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/cmdb-data-manager.html" }
+    ],
+    "tags": ["configuration", "ci-lifecycle", "install-status"]
+  },
+  {
+    "id": "cisdf-cfg-029",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Configuration",
+    "subdomain": "CI Class Manager",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which tab in CI Class Manager would you use to review and configure a class's identification rules and identifier entries?",
+    "options": [
+      { "id": "A", "text": "Identification and Reconciliation (Identification Rule) tab" },
+      { "id": "B", "text": "CI List tab" },
+      { "id": "C", "text": "Dashboard tab" },
+      { "id": "D", "text": "Notifications tab" }
+    ],
+    "correct": ["A"],
+    "rationale": "CI Class Manager exposes a class's identification and reconciliation configuration — identifier entries, criterion attributes, reconciliation rules — on its Identification/Reconciliation area. That's where you tune how IRE matches and arbitrates data for the class.",
+    "distractor_notes": {
+      "B": "CI List shows instances, not the identification configuration.",
+      "C": "There's no class 'Dashboard' tab for editing identifier entries.",
+      "D": "Notifications are unrelated to class identification rules."
+    },
+    "references": [
+      { "title": "Identification rules in CI Class Manager", "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/ci-class-manager.html" }
+    ],
+    "tags": ["configuration", "ci-class-manager", "identification-tab"]
+  },
+  {
+    "id": "cisdf-cfg-030",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Configuration",
+    "subdomain": "Class flags",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A class is flagged as a Principal Class. What is the practical effect on CI reference fields elsewhere in the platform?",
+    "options": [
+      { "id": "A", "text": "CIs of that class become available choices in CI reference pickers (e.g., on incidents/changes), filtering out non-principal classes" },
+      { "id": "B", "text": "The class is hidden from all users" },
+      { "id": "C", "text": "The class can no longer be discovered" },
+      { "id": "D", "text": "The class is automatically retired" }
+    ],
+    "correct": ["A"],
+    "rationale": "Principal Class designation curates the CI reference experience: it makes a class's CIs selectable in reference fields while non-principal (often low-level) classes are filtered out. Users then pick from meaningful, managed classes instead of the entire leaf-level hierarchy.",
+    "distractor_notes": {
+      "B": "Principal Class surfaces a class in pickers; it doesn't hide it.",
+      "C": "It doesn't affect discoverability.",
+      "D": "It has no relationship to retirement."
+    },
+    "references": [
+      { "title": "Principal class effect", "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/ci-class-manager.html" }
+    ],
+    "tags": ["configuration", "principal-class", "reference-fields"]
+  },
+  {
+    "id": "cisdf-cfg-031",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Configuration",
+    "subdomain": "CMDB data model",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "How is a CI 'relationship' fundamentally different from a CI 'attribute'?",
+    "options": [
+      { "id": "A", "text": "An attribute describes a property of one CI; a relationship connects two CIs to express dependency or association" },
+      { "id": "B", "text": "They are the same thing" },
+      { "id": "C", "text": "Attributes connect CIs; relationships store single values" },
+      { "id": "D", "text": "Relationships can only exist on retired CIs" }
+    ],
+    "correct": ["A"],
+    "rationale": "Attributes are fields holding a single CI's properties (name, OS, serial); relationships are links between two CIs that capture how they depend on or relate to each other. Relationships are what make the CMDB a graph that supports service maps and impact analysis.",
+    "distractor_notes": {
+      "B": "They're distinct constructs — properties vs links.",
+      "C": "Reversed — attributes store values, relationships connect CIs.",
+      "D": "Relationships exist on active CIs; they aren't limited to retired ones."
+    },
+    "references": [
+      { "title": "Attributes and relationships", "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/ci-class-manager.html" }
+    ],
+    "tags": ["configuration", "data-model", "attribute-vs-relationship"]
+  },
+  {
+    "id": "cisdf-cfg-032",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Configuration",
+    "subdomain": "Creating CI classes",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Before creating a brand-new custom CI class, what is the recommended first check?",
+    "options": [
+      { "id": "A", "text": "Verify a suitable class doesn't already exist (e.g., via the CMDB CI Class Models content) to avoid redundant custom classes" },
+      { "id": "B", "text": "Immediately create the class with no parent" },
+      { "id": "C", "text": "Delete a similar existing class first" },
+      { "id": "D", "text": "Disable IRE for the new class" }
+    ],
+    "correct": ["A"],
+    "rationale": "Reuse beats rebuild: the CMDB CI Class Models content (kept current through the store) often already includes the class you need. Checking first avoids redundant, hard-to-maintain custom classes and keeps the model aligned with ServiceNow's standard hierarchy.",
+    "distractor_notes": {
+      "B": "Creating with no parent breaks inheritance and standard structure.",
+      "C": "Deleting a similar class risks data loss and doesn't help reuse.",
+      "D": "Disabling IRE removes duplicate protection for the new class."
+    },
+    "references": [
+      { "title": "Reuse existing classes", "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/ci-class-manager.html" }
+    ],
+    "tags": ["configuration", "new-class", "reuse-check"]
+  },
+  {
+    "id": "cisdf-cfg-033",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Configuration",
+    "subdomain": "Attributes",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A governance standard requires that the 'Serial number' attribute be unique and used for identification on hardware classes. Where is this attribute's behavior best configured?",
+    "options": [
+      { "id": "A", "text": "As a criterion attribute within the class's identifier entry in CI Class Manager" },
+      { "id": "B", "text": "On the incident form layout" },
+      { "id": "C", "text": "In the email notification engine" },
+      { "id": "D", "text": "In the user's preferences" }
+    ],
+    "correct": ["A"],
+    "rationale": "To make serial number drive identity, add it as a criterion attribute in the hardware class's identifier entry. IRE then uses it to match incoming data to existing CIs, which is how a unique attribute becomes the basis for reliable, duplicate-free identification.",
+    "distractor_notes": {
+      "B": "Form layout controls display, not identification behavior.",
+      "C": "Notifications don't define identification criteria.",
+      "D": "User preferences are personal settings, unrelated to class identification."
+    },
+    "references": [
+      { "title": "Criterion attributes for identification", "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/c_CMDBIdentifyandReconcile.html" }
+    ],
+    "tags": ["configuration", "attributes", "criterion-attribute"]
+  },
+  {
+    "id": "cisdf-cfg-034",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Configuration",
+    "subdomain": "CI Class Manager",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which statement best describes the role of CI Class Manager in the CMDB?",
+    "options": [
+      { "id": "A", "text": "It is the central tool to view and manage CI classes, their attributes, identification/reconciliation rules, and relationships" },
+      { "id": "B", "text": "It is where incidents are triaged" },
+      { "id": "C", "text": "It is the network scanning engine" },
+      { "id": "D", "text": "It is the email server configuration" }
+    ],
+    "correct": ["A"],
+    "rationale": "CI Class Manager is the single pane for the CMDB's class model: it surfaces each class's structure (attributes), identity logic (IRE rules and identifiers), and relationships, and is where classes are created and maintained. It's the Configuration domain's primary administrative tool.",
+    "distractor_notes": {
+      "B": "Incident triage is an ITSM activity, not a class-management function.",
+      "C": "Network scanning is Discovery, not CI Class Manager.",
+      "D": "Email server settings are unrelated to the CMDB class model."
+    },
+    "references": [
+      { "title": "CI Class Manager overview", "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/ci-class-manager.html" }
+    ],
+    "tags": ["configuration", "ci-class-manager", "overview"]
+  },
+  {
+    "id": "cisdf-cfg-035",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Configuration",
+    "subdomain": "Relationships",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Which relationship type is most appropriate to express that a cluster 'contains' its member nodes (a whole-to-part containment)?",
+    "options": [
+      { "id": "A", "text": "Contains::Contained by" },
+      { "id": "B", "text": "Runs on::Runs" },
+      { "id": "C", "text": "Used by::Uses" },
+      { "id": "D", "text": "Managed by::Manages" }
+    ],
+    "correct": ["A"],
+    "rationale": "Containment (whole-to-part) is modeled with the Contains::Contained by relationship — the cluster Contains the nodes, the nodes are Contained by the cluster. 'Runs on' expresses hosting, and 'Used by' expresses consumption, which are different semantics.",
+    "distractor_notes": {
+      "B": "'Runs on::Runs' models hosting of software on infrastructure, not containment.",
+      "C": "'Used by::Uses' models consumption/usage, not whole-to-part containment.",
+      "D": "'Managed by::Manages' expresses management responsibility, not containment."
+    },
+    "references": [
+      { "title": "Relationship types", "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/ci-class-manager.html" }
+    ],
+    "tags": ["configuration", "relationships", "containment"]
+  },
+  {
+    "id": "cisdf-cfg-036",
+    "exam": "CIS-DF",
+    "release": "Australia",
+    "domain": "Configuration",
+    "subdomain": "Best practices",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Why is it discouraged to add many custom attributes directly to base CMDB classes like cmdb_ci?",
+    "options": [
+      { "id": "A", "text": "Changes to base classes ripple to all child classes and can complicate upgrades and performance; extend the appropriate specific class instead" },
+      { "id": "B", "text": "Base classes cannot store any attributes" },
+      { "id": "C", "text": "It instantly deletes all CIs" },
+      { "id": "D", "text": "It disables CMDB Health permanently" }
+    ],
+    "correct": ["A"],
+    "rationale": "Because every CI class inherits from the base, attributes added high up the tree propagate everywhere — bloating unrelated classes and complicating upgrades and performance. Best practice is to extend the specific class that actually needs the attribute, keeping changes targeted.",
+    "distractor_notes": {
+      "B": "Base classes do hold attributes; the concern is over-broad propagation.",
+      "C": "Adding an attribute doesn't delete CIs.",
+      "D": "It doesn't disable CMDB Health."
+    },
+    "references": [
+      { "title": "Extending classes appropriately", "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/ci-class-manager.html" }
+    ],
+    "tags": ["configuration", "best-practice", "base-class"]
+  }
+]
