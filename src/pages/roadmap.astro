@@ -29,10 +29,10 @@ const phases = [
     color: 'later',
     items: [
       { exam: 'CIS-HAM', title: 'CIS - Hardware Asset Management',   detail: 'Hardware asset lifecycle - procurement, discovery, normalization, and retirement.' },
-      { exam: 'CIS-Discovery', title: 'Certified Implementation Specialist - Discovery', detail: 'Service discovery, pattern design, and CI population from live network data.' },
-      { exam: 'CIS-EM', title: 'Certified Implementation Specialist - Event Management', detail: 'Alert correlation, event rules, and operational intelligence.' },
-      { exam: 'CIS-HR', title: 'Certified Implementation Specialist - Human Resources', detail: 'HR Service Delivery, case management, and employee lifecycle workflows.' },
-      { exam: 'CIS-PA', title: 'Certified Implementation Specialist - Platform Analytics', detail: 'Performance Analytics, KPIs, dashboards, and data collection jobs.' },
+      { exam: 'CIS-Discovery', title: 'CIS - Discovery', detail: 'Service discovery, pattern design, and CI population from live network data.' },
+      { exam: 'CIS-EM', title: 'CIS - Event Management', detail: 'Alert correlation, event rules, and operational intelligence.' },
+      { exam: 'CIS-HR', title: 'CIS - Human Resources', detail: 'HR Service Delivery, case management, and employee lifecycle workflows.' },
+      { exam: 'CIS-PA', title: 'CIS - Platform Analytics', detail: 'Performance Analytics, KPIs, dashboards, and data collection jobs.' },
     ],
   },
 ];
@@ -58,36 +58,6 @@ const principles = [
     Honest dates over pretend-precise ones. Each phase is one exam, ~240 questions,
     blueprint-weighted. If a date slips, this page updates first.
   </p>
-
-  <div class="roadmap">
-    {phases.map((p) => (
-      <section class={`roadmap__phase phase--${p.color}`}>
-        <header class="roadmap__phase-head">
-          <span class="roadmap__phase-label">{p.label}</span>
-        </header>
-        {p.color === 'live' ? (
-          <div class="live-list">
-            {p.items.map((item) => (
-              <div class="live-row">
-                <span class="live-row__code">{item.exam}</span>
-                <span class="live-row__title">{item.title}</span>
-                <span class="live-badge">Live</span>
-              </div>
-            ))}
-          </div>
-        ) : (
-          p.items.map((item) => (
-            <article class="card roadmap__item">
-              <div class="roadmap__item-code">{item.exam}</div>
-              <div class="roadmap__item-title">{item.title}</div>
-              <div class="roadmap__item-detail">{item.detail}</div>
-            </article>
-          ))
-        )}
-      </section>
-    ))}
-  </div>
-
 
   <h2 style="font-size:16px;font-weight:600;margin:32px 0 8px;">What we're building</h2>
   <p style="font-size:13px;color:var(--text-muted);margin-bottom:16px;max-width:640px;">
@@ -146,6 +116,36 @@ const principles = [
         <span class="build-row__count">240 / 720</span>
       </div>
   </div>
+
+  <div class="roadmap">
+    {phases.map((p) => (
+      <section class={`roadmap__phase phase--${p.color}`}>
+        <header class="roadmap__phase-head">
+          <span class="roadmap__phase-label">{p.label}</span>
+        </header>
+        {p.color === 'live' ? (
+          <div class="live-list">
+            {p.items.map((item) => (
+              <div class="live-row">
+                <span class="live-row__code">{item.exam}</span>
+                <span class="live-row__title">{item.title}</span>
+                <span class="live-badge">Live</span>
+              </div>
+            ))}
+          </div>
+        ) : (
+          p.items.map((item) => (
+            <article class="card roadmap__item">
+              <div class="roadmap__item-code">{item.exam}</div>
+              <div class="roadmap__item-title">{item.title}</div>
+              <div class="roadmap__item-detail">{item.detail}</div>
+            </article>
+          ))
+        )}
+      </section>
+    ))}
+  </div>
+
 
   <h2 style="font-size:16px;font-weight:600;margin:32px 0 12px;">Principles we don't trade off</h2>
   <div class="card-grid">
