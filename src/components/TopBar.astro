@@ -12,36 +12,31 @@ const navItems = [
   { id: 'cis-df',   label: 'CIS-DF',   href: '/cis-df/' },
   { id: 'cis-sm',   label: 'CIS-SM',   href: '/cis-sm/' },
 ];
+
+const activeLabel = navItems.find(i => i.id === activeNav)?.label ?? 'All';
 ---
 <header class="topbar">
   <a href="/" class="topbar__brand" aria-label="GlideUp home">
-    <img
-      src="/brand/logo-mark.png"
-      alt=""
-      width="24"
-      height="24"
-      decoding="async"
-      class="topbar__brand-mark"
-    />
+    <img src="/brand/logo-mark.png" alt="" width="24" height="24" decoding="async" class="topbar__brand-mark" />
     <span>GlideUp</span>
   </a>
 
-  <!-- Desktop nav -->
-  <nav class="topbar__nav topbar__nav--desktop" aria-label="Top navigation">
+  <!-- Desktop nav (hidden on mobile via CSS) -->
+  <nav class="topbar__nav" aria-label="Top navigation">
     {navItems.map((item) => (
       <a href={item.href} class={`topbar__nav-item ${activeNav === item.id ? 'is-active' : ''}`}>{item.label}</a>
     ))}
   </nav>
 
-  <!-- Mobile: active label + hamburger -->
-  <div class="topbar__mobile">
-    <span class="topbar__active-label">
-      {navItems.find(i => i.id === activeNav)?.label ?? 'All'}
-    </span>
-    <button class="topbar__hamburger" id="nav-toggle" aria-label="Open navigation" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
+  <!-- Mobile: current section + hamburger -->
+  <button class="topbar__hamburger" id="nav-toggle" aria-label="Open navigation" aria-expanded="false">
+    <span class="topbar__active-label">{activeLabel}</span>
+    <svg width="16" height="12" viewBox="0 0 16 12" fill="none" aria-hidden="true">
+      <rect width="16" height="2" rx="1" fill="currentColor"/>
+      <rect y="5" width="16" height="2" rx="1" fill="currentColor"/>
+      <rect y="10" width="16" height="2" rx="1" fill="currentColor"/>
+    </svg>
+  </button>
 
   <div class="topbar__status" aria-label="User status">
     <span class="status-pill" title="Streak (days)">🔥 <span data-streak>0</span></span>
@@ -49,10 +44,10 @@ const navItems = [
   </div>
 </header>
 
-<!-- Mobile dropdown -->
-<nav class="topbar__mobile-menu" id="nav-menu" aria-label="Mobile navigation" hidden>
+<!-- Mobile dropdown (closed by default) -->
+<nav class="topbar__dropdown" id="nav-menu" aria-label="Mobile navigation">
   {navItems.map((item) => (
-    <a href={item.href} class={`topbar__mobile-item ${activeNav === item.id ? 'is-active' : ''}`}>{item.label}</a>
+    <a href={item.href} class={`topbar__dropdown-item ${activeNav === item.id ? 'is-active' : ''}`}>{item.label}</a>
   ))}
 </nav>
 
@@ -69,49 +64,73 @@ const navItems = [
   } catch { /* swallow */ }
 
   const toggle = document.getElementById('nav-toggle');
-  const menu = document.getElementById('nav-menu');
-  toggle?.addEventListener('click', () => {
-    const open = menu?.hasAttribute('hidden') === false;
-    if (open) { menu?.setAttribute('hidden', ''); toggle.setAttribute('aria-expanded', 'false'); }
-    else       { menu?.removeAttribute('hidden'); toggle.setAttribute('aria-expanded', 'true'); }
+  const menu   = document.getElementById('nav-menu');
+
+  toggle?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isOpen = menu?.classList.contains('is-open');
+    menu?.classList.toggle('is-open', !isOpen);
+    toggle.setAttribute('aria-expanded', String(!isOpen));
   });
-  // Close on outside click
+
   document.addEventListener('click', (e) => {
-    if (!toggle?.contains(e.target as Node) && !menu?.contains(e.target as Node)) {
-      menu?.setAttribute('hidden', '');
+    if (!menu?.contains(e.target as Node) && !toggle?.contains(e.target as Node)) {
+      menu?.classList.remove('is-open');
       toggle?.setAttribute('aria-expanded', 'false');
     }
   });
 </script>
 
 <style>
-  /* ── Mobile dropdown ── */
-  .topbar__mobile { display: none; align-items: center; gap: 8px; }
-  .topbar__active-label { font-size: 13px; font-weight: 600; color: var(--primary); }
+  /* Hamburger button — mobile only */
   .topbar__hamburger {
-    display: flex; flex-direction: column; justify-content: space-between;
-    width: 22px; height: 16px; background: none; border: none; cursor: pointer; padding: 0;
+    display: none;
+    align-items: center;
+    gap: 8px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px 6px;
+    color: rgba(255,255,255,0.85);
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 6px;
+    transition: background 0.15s;
   }
-  .topbar__hamburger span {
-    display: block; height: 2px; background: var(--text); border-radius: 2px;
-    transition: opacity 0.15s;
+  .topbar__hamburger:hover { background: rgba(255,255,255,0.08); }
+  .topbar__active-label { color: var(--primary); }
+
+  /* Dropdown — hidden by default, shown when .is-open */
+  .topbar__dropdown {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 48px;
+    left: 0;
+    right: 0;
+    z-index: 300;
+    background: var(--chrome);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
   }
-  .topbar__mobile-menu {
-    position: fixed; top: 48px; left: 0; right: 0; z-index: 200;
-    background: var(--chrome); border-bottom: 1px solid rgba(255,255,255,0.08);
-    display: flex; flex-direction: column; padding: 8px 0;
-  }
-  .topbar__mobile-item {
-    padding: 10px 20px; font-size: 14px; font-weight: 500;
-    color: rgba(255,255,255,0.75); text-decoration: none;
+  .topbar__dropdown.is-open { display: flex; }
+
+  .topbar__dropdown-item {
+    padding: 12px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.75);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
     transition: background 0.1s, color 0.1s;
   }
-  .topbar__mobile-item:hover { background: rgba(255,255,255,0.06); color: #fff; }
-  .topbar__mobile-item.is-active { color: var(--primary); }
+  .topbar__dropdown-item:last-child { border-bottom: none; }
+  .topbar__dropdown-item:hover { background: rgba(255,255,255,0.06); color: #fff; }
+  .topbar__dropdown-item.is-active { color: var(--primary); }
 
-  /* ── Responsive ── */
+  /* Swap desktop nav for hamburger on mobile */
   @media (max-width: 680px) {
-    .topbar__nav--desktop { display: none; }
-    .topbar__mobile { display: flex; }
+    .topbar__nav { display: none; }
+    .topbar__hamburger { display: flex; }
   }
 </style>
