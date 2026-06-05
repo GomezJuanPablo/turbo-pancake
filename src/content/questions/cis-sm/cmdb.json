@@ -1,0 +1,1730 @@
+[
+  {
+    "id": "cisms-dis-020",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Configuration Management Database",
+    "subdomain": "Class hierarchy queries",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A report runs against the Server [cmdb_ci_server] table. Which CIs are returned?",
+    "options": [
+      {
+        "id": "A",
+        "text": "CIs in cmdb_ci_server and all of its parent classes"
+      },
+      {
+        "id": "B",
+        "text": "Only Windows servers"
+      },
+      {
+        "id": "C",
+        "text": "Only CIs defined directly in cmdb_ci_server"
+      },
+      {
+        "id": "D",
+        "text": "CIs in cmdb_ci_server and all of its child classes (e.g., Windows, Linux, Unix servers)"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "Querying a parent table returns that class plus everything that extends it, because child classes inherit from the parent. So cmdb_ci_server returns all server subtypes — a comprehensive 'all servers' view.",
+    "distractor_notes": {
+      "A": "Querying a table never pulls in its parent (more abstract) classes.",
+      "B": "It returns every server subtype, not just Windows.",
+      "C": "Direct-class-only isn't the default; descendants are included."
+    },
+    "references": [
+      {
+        "title": "CMDB table inheritance",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/cmdb-tables.html"
+      }
+    ],
+    "tags": [
+      "discovery-mid",
+      "class-hierarchy",
+      "query"
+    ]
+  },
+  {
+    "id": "cisms-dis-021",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Configuration Management Database",
+    "subdomain": "Reclassification",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Moving a CI from Server [cmdb_ci_server] to the more specific Windows Server [cmdb_ci_win_server] table is which kind of reclassification?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Class Downgrade"
+      },
+      {
+        "id": "B",
+        "text": "Class Upgrade (base class to a more specific subclass)"
+      },
+      {
+        "id": "C",
+        "text": "Class Change"
+      },
+      {
+        "id": "D",
+        "text": "Class Switch"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Going from a base class to a more specific child class is a Class Upgrade — the CI becomes more precisely typed. The opposite (specific to general) is a Class Downgrade; switching between unrelated classes is a Class Switch.",
+    "distractor_notes": {
+      "A": "Downgrade is moving to a more general/parent class, the reverse.",
+      "C": "'Class Change' isn't the specific term for base-to-subclass refinement.",
+      "D": "A switch moves between sibling/unrelated classes, not parent-to-child."
+    },
+    "references": [
+      {
+        "title": "CI reclassification",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/ci-reclassification.html"
+      }
+    ],
+    "tags": [
+      "discovery-mid",
+      "reclassification",
+      "class-upgrade"
+    ]
+  },
+  {
+    "id": "cisms-dis-037",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Configuration Management Database",
+    "subdomain": "Identification phase",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "During identification, all incoming data should be processed through which engine to avoid duplicates and uncontrolled overwrites?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The Shazzam probe"
+      },
+      {
+        "id": "B",
+        "text": "The MID Server scheduler"
+      },
+      {
+        "id": "C",
+        "text": "The Identification and Reconciliation Engine (IRE)"
+      },
+      {
+        "id": "D",
+        "text": "The CMDB Health scanner"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "IRE is the single front door to the CMDB. Routing discovery and integrations through it applies consistent identification (preventing duplicate CIs) and reconciliation (preventing weak sources from overwriting authoritative data).",
+    "distractor_notes": {
+      "A": "Shazzam scans ports; it doesn't resolve identity.",
+      "B": "The MID Server executes work; identity resolution happens in IRE.",
+      "D": "Health scanning measures quality after the fact; it isn't the ingestion gate."
+    },
+    "references": [
+      {
+        "title": "IRE",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/ci-identification-rules.html"
+      }
+    ],
+    "tags": [
+      "discovery-mid",
+      "ire",
+      "identification"
+    ]
+  },
+  {
+    "id": "cisms-dis-040",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Configuration Management Database",
+    "subdomain": "Reclassification",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Moving a CI from a specific subclass back up to a more general parent class is called what?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Class Merge"
+      },
+      {
+        "id": "B",
+        "text": "Class Switch"
+      },
+      {
+        "id": "C",
+        "text": "Class Downgrade"
+      },
+      {
+        "id": "D",
+        "text": "Class Upgrade"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Going from a more specific class to a more general (parent) class is a Class Downgrade — the CI becomes less precisely typed. The reverse (parent to child) is a Class Upgrade.",
+    "distractor_notes": {
+      "A": "Merge combines duplicate CIs; it isn't a reclassification direction.",
+      "B": "Switch moves between unrelated/sibling classes.",
+      "D": "Upgrade is the opposite — toward a more specific class."
+    },
+    "references": [
+      {
+        "title": "CI reclassification",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/ci-reclassification.html"
+      }
+    ],
+    "tags": [
+      "discovery-mid",
+      "reclassification",
+      "class-downgrade"
+    ]
+  },
+  {
+    "id": "cisms-dis-048",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Configuration Management Database",
+    "subdomain": "Identification phase",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What does the Identification phase do with the data gathered so far?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Opens ports on the target"
+      },
+      {
+        "id": "B",
+        "text": "Calculates CMDB Health"
+      },
+      {
+        "id": "C",
+        "text": "Sends notification emails"
+      },
+      {
+        "id": "D",
+        "text": "Recognizes and tags the device, then matches it to an existing CI or creates a new one"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "Identification takes the classified device's data, applies the identifier rules, and resolves identity — update the matched CI or insert a new one. It's the create/update decision point that keeps the CMDB free of duplicates.",
+    "distractor_notes": {
+      "A": "Opening/scanning ports is the port scan phase.",
+      "B": "Health calculation is a separate, later function.",
+      "C": "Emails are unrelated to the identification phase."
+    },
+    "references": [
+      {
+        "title": "Identification phase",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/discovery/identification.html"
+      }
+    ],
+    "tags": [
+      "discovery-mid",
+      "identification",
+      "tagging"
+    ]
+  },
+  {
+    "id": "cisms-cmdb-001",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Configuration Management Database",
+    "subdomain": "Datasource precedence",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What do Datasource Precedence Rules do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Assign a priority among data sources when multiple are authorized to update the same table or attributes"
+      },
+      {
+        "id": "B",
+        "text": "Specify the criterion attributes that uniquely identify a CI"
+      },
+      {
+        "id": "C",
+        "text": "Reclassify CIs into parent or child tables"
+      },
+      {
+        "id": "D",
+        "text": "Control which users can edit a CI form"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "When several authorized sources can write the same attribute, precedence breaks the tie — the higher-precedence source's value wins, making updates deterministic instead of last-write-wins. It governs whose data prevails, not how CIs are matched.",
+    "distractor_notes": {
+      "B": "That describes identifier entries (identification), not precedence.",
+      "C": "Reclassification moves CIs between classes; it's unrelated to source priority.",
+      "D": "Edit access is controlled by roles/ACLs, not precedence rules."
+    },
+    "references": [
+      {
+        "title": "Data source precedence",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/datasource-precedence.html"
+      }
+    ],
+    "tags": [
+      "cmdb-data",
+      "precedence",
+      "ire"
+    ]
+  },
+  {
+    "id": "cisms-cmdb-002",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Configuration Management Database",
+    "subdomain": "Reconciliation rules",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What do Reconciliation Rules (reconciliation definitions) specify?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The criterion attributes that uniquely identify a CI"
+      },
+      {
+        "id": "B",
+        "text": "Which data sources are authorized to update a CMDB table or set of attributes"
+      },
+      {
+        "id": "C",
+        "text": "How CIs are reclassified into other tables"
+      },
+      {
+        "id": "D",
+        "text": "How duplicate CIs are tracked until resolved"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Reconciliation rules enforce data authority: they name which source(s) may write a given table or attribute, so a less trustworthy integration can't overwrite values owned by the authoritative one. Identity matching is a separate job done by identifiers.",
+    "distractor_notes": {
+      "A": "Identifying a CI is the role of identifier entries, not reconciliation.",
+      "C": "Reclassification is a different CMDB function entirely.",
+      "D": "Tracking duplicates is the de-duplication mechanism, not reconciliation."
+    },
+    "references": [
+      {
+        "title": "Reconciliation rules",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/reconciliation-rules.html"
+      }
+    ],
+    "tags": [
+      "cmdb-data",
+      "reconciliation",
+      "authority"
+    ]
+  },
+  {
+    "id": "cisms-cmdb-003",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Configuration Management Database",
+    "subdomain": "Identification rules",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the role of an identification rule in IRE?",
+    "options": [
+      {
+        "id": "A",
+        "text": "It decides which data source is authoritative for each attribute"
+      },
+      {
+        "id": "B",
+        "text": "It uses identifier entries (criterion attributes) to decide if incoming data matches an existing CI or is new"
+      },
+      {
+        "id": "C",
+        "text": "It defines how long a CI is retained before deletion"
+      },
+      {
+        "id": "D",
+        "text": "It controls which users can edit a CI class"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Identification rules answer 'is this the same CI I already have?' Each rule holds identifier entries whose criterion attributes (serial, name, etc.) are compared to existing records to match, insert, or flag a duplicate.",
+    "distractor_notes": {
+      "A": "Choosing the authoritative source is a reconciliation rule's job.",
+      "C": "Retention/deletion is a lifecycle (Data Manager) concern.",
+      "D": "Edit access is governed by roles/ACLs, not identification rules."
+    },
+    "references": [
+      {
+        "title": "CI identification rules",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/ci-identification-rules.html"
+      }
+    ],
+    "tags": [
+      "cmdb-data",
+      "identification",
+      "ire"
+    ]
+  },
+  {
+    "id": "cisms-cmdb-004",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Configuration Management Database",
+    "subdomain": "Datasource precedence",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Reconciliation precedence is configured (lower order = higher precedence) as ServiceNow=100, Altiris=200, SCCM=300. Which update is allowed?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A CI first discovered by ServiceNow is then discovered by Altiris — the update is allowed"
+      },
+      {
+        "id": "B",
+        "text": "A CI first discovered by Altiris is then discovered by ServiceNow — the update is allowed"
+      },
+      {
+        "id": "C",
+        "text": "A CI first discovered by ServiceNow is then discovered by SCCM — the update is allowed"
+      },
+      {
+        "id": "D",
+        "text": "A CI first discovered by Altiris is then discovered by SCCM — the update is allowed"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "With lower order = higher precedence, ServiceNow (100) outranks Altiris (200) and SCCM (300). A higher-precedence source may overwrite a lower one, so when ServiceNow (100) follows Altiris (200), the update is allowed. The reverse — lower-precedence overwriting higher — is blocked.",
+    "distractor_notes": {
+      "A": "Altiris (200) is lower precedence than ServiceNow (100), so it can't overwrite it.",
+      "C": "SCCM (300) is lower precedence than ServiceNow (100); the update is blocked.",
+      "D": "SCCM (300) is lower precedence than Altiris (200); it can't overwrite Altiris."
+    },
+    "references": [
+      {
+        "title": "Reconciliation and source precedence",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/datasource-precedence.html"
+      }
+    ],
+    "tags": [
+      "cmdb-data",
+      "precedence",
+      "example"
+    ]
+  },
+  {
+    "id": "cisms-cmdb-005",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Configuration Management Database",
+    "subdomain": "Reconciliation rules",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A reconciliation rule names 'SCCM Integration' as authoritative for the OS attribute on servers. Discovery later reports a different OS. What happens?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The two values are concatenated"
+      },
+      {
+        "id": "B",
+        "text": "The CI is deleted due to the conflict"
+      },
+      {
+        "id": "C",
+        "text": "The SCCM-sourced OS value is retained; Discovery is not allowed to overwrite that attribute"
+      },
+      {
+        "id": "D",
+        "text": "Discovery's value overwrites SCCM because Discovery always wins"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "That's the whole point of reconciliation: the rule makes SCCM authoritative for OS, so Discovery — even though it can update other attributes — can't clobber the OS field. The authoritative value stands, keeping the attribute trustworthy.",
+    "distractor_notes": {
+      "A": "Reconciliation keeps one authoritative value; it never concatenates.",
+      "B": "Conflicting values don't delete CIs.",
+      "D": "Discovery does not automatically win; reconciliation overrides that per attribute."
+    },
+    "references": [
+      {
+        "title": "Reconciliation rule behavior",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/reconciliation-rules.html"
+      }
+    ],
+    "tags": [
+      "cmdb-data",
+      "reconciliation",
+      "authoritative-source"
+    ]
+  },
+  {
+    "id": "cisms-cmdb-006",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Configuration Management Database",
+    "subdomain": "IRE outcomes",
+    "difficulty": "application",
+    "type": "multi_select",
+    "stem": "Which TWO outcomes can IRE produce when processing an incoming CI payload?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Automatically author a new discovery pattern"
+      },
+      {
+        "id": "B",
+        "text": "Insert a new CI when no match is found"
+      },
+      {
+        "id": "C",
+        "text": "Generate a CMDB Health dashboard tab"
+      },
+      {
+        "id": "D",
+        "text": "Update an existing CI it matched via identifier entries"
+      }
+    ],
+    "correct": [
+      "B",
+      "D"
+    ],
+    "rationale": "IRE's core job at ingestion is identity resolution: match-and-update an existing CI, or insert a new one when nothing matches (and flag duplicates/errors when ambiguous). Authoring patterns and building dashboards are unrelated functions.",
+    "distractor_notes": {
+      "A": "Pattern authoring is a design task; IRE never writes patterns.",
+      "C": "Dashboard tabs are CMDB Health configuration, not IRE output."
+    },
+    "references": [
+      {
+        "title": "How IRE processes data",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/ci-identification-rules.html"
+      }
+    ],
+    "tags": [
+      "cmdb-data",
+      "ire",
+      "insert-update"
+    ]
+  },
+  {
+    "id": "cisms-cmdb-007",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Configuration Management Database",
+    "subdomain": "De-duplication",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Two integrations insert what is really the same server under slightly different names, so IRE creates two CIs. What governance artifact is generated to remediate this?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A CMDB Health completeness alert"
+      },
+      {
+        "id": "B",
+        "text": "A data certification filter"
+      },
+      {
+        "id": "C",
+        "text": "A de-duplication task (duplicate CI remediation)"
+      },
+      {
+        "id": "D",
+        "text": "A reconciliation rule exception"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "When records resolve to the same real-world item, IRE raises de-duplication tasks. An admin confirms the duplicate set and merges them, collapsing the records into one CI while preserving relationships.",
+    "distractor_notes": {
+      "A": "Completeness measures missing attributes, not duplicate identity collisions.",
+      "B": "Certification asks humans to verify data; it isn't the merge mechanism.",
+      "D": "Reconciliation governs attribute authority; it doesn't create duplicate-merge tasks."
+    },
+    "references": [
+      {
+        "title": "De-duplication tasks",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/deduplication-tasks.html"
+      }
+    ],
+    "tags": [
+      "cmdb-data",
+      "deduplication",
+      "remediation"
+    ]
+  },
+  {
+    "id": "cisms-cmdb-008",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Configuration Management Database",
+    "subdomain": "Dependent identifiers",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A database instance can't be uniquely identified by its own attributes — only in the context of the server hosting it. Which IRE concept models this?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A reconciliation exclusion"
+      },
+      {
+        "id": "B",
+        "text": "An independent identifier"
+      },
+      {
+        "id": "C",
+        "text": "A dependent identifier (identification using a related parent CI)"
+      },
+      {
+        "id": "D",
+        "text": "A data certification task"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Dependent identifiers handle CIs that aren't unique alone. IRE identifies them only in combination with a qualifying related CI (the hosting server), using the relationship plus the dependent CI's attributes to pin down identity.",
+    "distractor_notes": {
+      "A": "Reconciliation governs attribute authority, not contextual identity.",
+      "B": "An independent identifier assumes the CI is uniquely identifiable on its own — exactly what's not true here.",
+      "D": "Certification is a human verification process, not identity resolution."
+    },
+    "references": [
+      {
+        "title": "Dependent CI identification",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/ci-identification-rules.html"
+      }
+    ],
+    "tags": [
+      "cmdb-data",
+      "dependent-identifier",
+      "ire"
+    ]
+  },
+  {
+    "id": "cisms-cmdb-009",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Configuration Management Database",
+    "subdomain": "CI identifier",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is a CI Identifier (cmdb_identifier) in the IRE framework?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The reconciliation precedence number for a source"
+      },
+      {
+        "id": "B",
+        "text": "A physical asset tag on hardware"
+      },
+      {
+        "id": "C",
+        "text": "The sys_id automatically assigned to every record"
+      },
+      {
+        "id": "D",
+        "text": "A class-level definition that groups one or more identifier entries used to identify CIs of that class"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "A CI Identifier is the class-level container for the identifier entries (ordered sets of criterion attributes) IRE evaluates to match incoming data. Independent vs dependent identifiers determine whether the CI can be identified alone or only via a related CI.",
+    "distractor_notes": {
+      "A": "Source precedence is part of reconciliation, not the identifier definition.",
+      "B": "Asset tags are physical labels, unrelated to the IRE construct.",
+      "C": "sys_id is the platform's internal key, not a configurable matching definition."
+    },
+    "references": [
+      {
+        "title": "CI identifiers",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/ci-identification-rules.html"
+      }
+    ],
+    "tags": [
+      "cmdb-data",
+      "ci-identifier",
+      "ire"
+    ]
+  },
+  {
+    "id": "cisms-cmdb-010",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Configuration Management Database",
+    "subdomain": "CMDB Health",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which three overall scores does the CMDB Health Dashboard calculate?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Compliance, Correctness, Completeness"
+      },
+      {
+        "id": "B",
+        "text": "Compliance, Correctness, Reconciled"
+      },
+      {
+        "id": "C",
+        "text": "Correctness, Completeness, Duplicates"
+      },
+      {
+        "id": "D",
+        "text": "Compliance, Completeness, Audit"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "CMDB Health rolls up three dimensions: Compliance (do CIs meet required attributes/standards), Correctness (are values/relationships accurate, e.g., no stale or orphan data), and Completeness (are expected records and fields present). Together they give a single read on data quality.",
+    "distractor_notes": {
+      "B": "'Reconciled' isn't a standard health-score dimension.",
+      "C": "Duplicates are a symptom measured under correctness, not one of the three top scores; this set also omits Compliance.",
+      "D": "'Audit' isn't one of the three calculated health scores."
+    },
+    "references": [
+      {
+        "title": "CMDB Health dashboard",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/cmdb-health.html"
+      }
+    ],
+    "tags": [
+      "cmdb-data",
+      "cmdb-health",
+      "scores"
+    ]
+  },
+  {
+    "id": "cisms-cmdb-011",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Configuration Management Database",
+    "subdomain": "CMDB Health",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Which CMDB Health dimension measures whether expected CIs and required attributes are present?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Compliance"
+      },
+      {
+        "id": "B",
+        "text": "Correctness"
+      },
+      {
+        "id": "C",
+        "text": "Reconciliation"
+      },
+      {
+        "id": "D",
+        "text": "Completeness"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "Completeness asks 'is anything missing?' — are the records that should exist there, and are the required fields populated. Correctness is about accuracy of what's present; Compliance is about meeting defined standards/policies.",
+    "distractor_notes": {
+      "A": "Compliance checks adherence to standards, not whether data is present.",
+      "B": "Correctness measures accuracy (e.g., stale/orphan data), not presence.",
+      "C": "Reconciliation isn't one of the three health dimensions."
+    },
+    "references": [
+      {
+        "title": "CMDB Health dimensions",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/cmdb-health.html"
+      }
+    ],
+    "tags": [
+      "cmdb-data",
+      "cmdb-health",
+      "completeness"
+    ]
+  },
+  {
+    "id": "cisms-cmdb-012",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Configuration Management Database",
+    "subdomain": "CI Class Manager",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which set of items can be created from the CI Class Manager?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Service Groups, Identification Rules, and Dependency Rules"
+      },
+      {
+        "id": "B",
+        "text": "Service Candidates, Service Groups, and Data Refresh Rules"
+      },
+      {
+        "id": "C",
+        "text": "Tables & Columns, Identification Rules, Identifier Entries, Dependencies, and Reconciliation Rules"
+      },
+      {
+        "id": "D",
+        "text": "Process Classifiers, Reconciliation Rules, and Data Refresh Rules"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "CI Class Manager is the data-model cockpit: from a class you create/manage its tables and columns, its identification rules and identifier entries, its dependencies, and its reconciliation rules. Service candidates/groups are Service Mapping constructs, not CI Class Manager items.",
+    "distractor_notes": {
+      "A": "Service groups aren't CI Class Manager items, and this omits the core tables/identifiers.",
+      "B": "Service candidates and groups belong to Service Mapping, not CI Class Manager.",
+      "D": "Process classifiers are a discovery construct, not created here."
+    },
+    "references": [
+      {
+        "title": "CI Class Manager",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/ci-class-manager.html"
+      }
+    ],
+    "tags": [
+      "cmdb-data",
+      "ci-class-manager",
+      "items"
+    ]
+  },
+  {
+    "id": "cisms-cmdb-013",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Configuration Management Database",
+    "subdomain": "Reconciliation rules",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "In the CMDB Identification and Reconciliation application, which feature lets an admin specify authorized data sources that can update a table or set of attributes?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Reclassification Tasks"
+      },
+      {
+        "id": "B",
+        "text": "Datasource Precedence Rules"
+      },
+      {
+        "id": "C",
+        "text": "Identification Rules"
+      },
+      {
+        "id": "D",
+        "text": "Reconciliation Rules"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "Reconciliation rules name which sources may write a table or specific attributes, preventing unauthorized or low-trust sources from overwriting trusted data. Precedence then breaks ties among multiple authorized sources.",
+    "distractor_notes": {
+      "A": "Reclassification moves CIs between classes; unrelated to source authority.",
+      "B": "Precedence ranks authorized sources but doesn't itself authorize them.",
+      "C": "Identification rules match CIs; they don't authorize writers."
+    },
+    "references": [
+      {
+        "title": "Reconciliation rules",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/reconciliation-rules.html"
+      }
+    ],
+    "tags": [
+      "cmdb-data",
+      "reconciliation",
+      "authorized-sources"
+    ]
+  },
+  {
+    "id": "cisms-cmdb-014",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Configuration Management Database",
+    "subdomain": "Datasource precedence",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Which best distinguishes Datasource Precedence Rules from record-creation control?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Precedence decides whose value wins on update; it does not control which source may create records"
+      },
+      {
+        "id": "B",
+        "text": "Precedence deletes lower-priority CIs"
+      },
+      {
+        "id": "C",
+        "text": "Precedence controls which source can create new records only"
+      },
+      {
+        "id": "D",
+        "text": "Precedence reclassifies CIs automatically"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Precedence is about update conflicts — when multiple authorized sources report the same attribute, the higher-precedence source's value is retained. It doesn't grant or restrict the right to create records (that's identification/authorization), and it never deletes or reclassifies CIs.",
+    "distractor_notes": {
+      "B": "Precedence doesn't delete CIs.",
+      "C": "Creation rights aren't governed by precedence; precedence arbitrates updates.",
+      "D": "Reclassification is a separate function."
+    },
+    "references": [
+      {
+        "title": "Data source precedence",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/datasource-precedence.html"
+      }
+    ],
+    "tags": [
+      "cmdb-data",
+      "precedence",
+      "update-vs-create"
+    ]
+  },
+  {
+    "id": "cisms-cmdb-015",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Configuration Management Database",
+    "subdomain": "Multisource CMDB",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What problem does Multisource CMDB solve for governance teams?",
+    "options": [
+      {
+        "id": "A",
+        "text": "It records, per attribute, what each contributing source reported alongside the reconciled value, exposing source conflicts"
+      },
+      {
+        "id": "B",
+        "text": "It prevents Discovery from ever updating a CI"
+      },
+      {
+        "id": "C",
+        "text": "It hides all but one data source from the CI form"
+      },
+      {
+        "id": "D",
+        "text": "It deletes any CI touched by more than one source"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Multisource CMDB keeps a per-source record of what each integration reported and what the reconciled (winning) value is. That transparency lets governance see exactly where sources disagree and why a value won, instead of silently overwriting and losing the trail.",
+    "distractor_notes": {
+      "B": "It doesn't block Discovery; it records what each source reported.",
+      "C": "It surfaces source contributions rather than hiding them.",
+      "D": "Multiple sources on one CI is normal; nothing is deleted for it."
+    },
+    "references": [
+      {
+        "title": "Multisource CMDB",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/multisource-cmdb.html"
+      }
+    ],
+    "tags": [
+      "cmdb-data",
+      "multisource",
+      "reconciliation"
+    ]
+  },
+  {
+    "id": "cisms-cmdb-016",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Configuration Management Database",
+    "subdomain": "Data source",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "In IRE, what is a 'data source' (discovery source) and why does it matter?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A label identifying which integration/process supplied the data, used to enforce attribute authority"
+      },
+      {
+        "id": "B",
+        "text": "The CI's install status"
+      },
+      {
+        "id": "C",
+        "text": "The user who last viewed the CI"
+      },
+      {
+        "id": "D",
+        "text": "The physical disk where the CMDB is stored"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Each payload carries a data source (e.g., 'Service Mapping', a Service Graph Connector, an import). Reconciliation rules reference these sources to decide who's authoritative for which attributes, which is what makes 'don't let source X overwrite source Y' possible.",
+    "distractor_notes": {
+      "B": "Install status is an attribute value, not the data's origin.",
+      "C": "Viewing a CI doesn't make someone a data source.",
+      "D": "A data source is a logical origin label, not physical storage."
+    },
+    "references": [
+      {
+        "title": "Discovery sources and reconciliation",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/datasource-precedence.html"
+      }
+    ],
+    "tags": [
+      "cmdb-data",
+      "data-source",
+      "reconciliation"
+    ]
+  },
+  {
+    "id": "cisms-cmdb-017",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Configuration Management Database",
+    "subdomain": "IRE single entry point",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Why should all data entering the CMDB — Discovery, Service Mapping, integrations, imports — go through IRE?",
+    "options": [
+      {
+        "id": "A",
+        "text": "IRE is always faster than a direct insert"
+      },
+      {
+        "id": "B",
+        "text": "IRE encrypts the CI data"
+      },
+      {
+        "id": "C",
+        "text": "IRE enforces consistent identification and reconciliation, preventing duplicates and uncontrolled overwrites"
+      },
+      {
+        "id": "D",
+        "text": "Direct inserts are technically impossible"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "IRE is the single front door. Routing every source through it means the same identification logic prevents duplicate CIs and the same reconciliation rules stop a weak source from overwriting authoritative data. Bypassing it is the fastest way to corrupt the CMDB.",
+    "distractor_notes": {
+      "A": "The benefit is integrity and consistency, not raw speed.",
+      "B": "IRE governs identity and reconciliation; it isn't an encryption layer.",
+      "D": "Direct inserts are possible but strongly discouraged because they skip governance."
+    },
+    "references": [
+      {
+        "title": "IRE as the single entry point",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/ci-identification-rules.html"
+      }
+    ],
+    "tags": [
+      "cmdb-data",
+      "ire",
+      "single-entry-point"
+    ]
+  },
+  {
+    "id": "cisms-cmdb-018",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Configuration Management Database",
+    "subdomain": "Class hierarchy",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "What is the relationship between Application Server [cmdb_ci_app_server] and Application [cmdb_ci_appl]?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Application Server is the parent of Application"
+      },
+      {
+        "id": "B",
+        "text": "Application Server is a child (subclass) of Application"
+      },
+      {
+        "id": "C",
+        "text": "They are unrelated tables"
+      },
+      {
+        "id": "D",
+        "text": "Application extends Application Server"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "cmdb_ci_app_server extends cmdb_ci_appl, so an application server is a more specific kind of application CI. Querying the parent Application table therefore returns application servers too, along with other application subtypes.",
+    "distractor_notes": {
+      "A": "Inheritance runs the other way — Application is the parent.",
+      "C": "They're related by inheritance, not unrelated.",
+      "D": "Application doesn't extend Application Server; it's the base."
+    },
+    "references": [
+      {
+        "title": "Application CI classes",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/cmdb-tables.html"
+      }
+    ],
+    "tags": [
+      "cmdb-data",
+      "class-hierarchy",
+      "application-server"
+    ]
+  },
+  {
+    "id": "cisms-cmdb-019",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Configuration Management Database",
+    "subdomain": "Relationship types",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "A defined link between two CIs such as 'Runs on::Runs', 'Depends on::Used by', or 'Contains::Contained by' is governed by what?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A Relationship Type (with paired parent/child descriptors)"
+      },
+      {
+        "id": "B",
+        "text": "A reconciliation rule"
+      },
+      {
+        "id": "C",
+        "text": "A CI attribute field"
+      },
+      {
+        "id": "D",
+        "text": "A data certification filter"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Relationship Types define the nature of a CI-to-CI link and come as paired descriptors (one direction for each end), e.g., Depends on / Used by. Service Mapping builds the service map by connecting CIs with these types, which power dependency and impact analysis.",
+    "distractor_notes": {
+      "B": "Reconciliation rules govern attribute authority, not relationship semantics.",
+      "C": "An attribute is a value on a single CI, not a link between two.",
+      "D": "Certification filters select records to verify, unrelated to relationship definition."
+    },
+    "references": [
+      {
+        "title": "CI relationship types",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/ci-relationships.html"
+      }
+    ],
+    "tags": [
+      "cmdb-data",
+      "relationship-type",
+      "cmdb"
+    ]
+  },
+  {
+    "id": "cisms-cmdb-020",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Configuration Management Database",
+    "subdomain": "De-duplication",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "After a de-duplication task is confirmed, what is the intended outcome?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A new identifier is created for each duplicate"
+      },
+      {
+        "id": "B",
+        "text": "All matching CIs are permanently deleted"
+      },
+      {
+        "id": "C",
+        "text": "The duplicate records are merged into a single CI, preserving relationships"
+      },
+      {
+        "id": "D",
+        "text": "The CIs are reclassified to a parent table"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "De-duplication remediation collapses the confirmed duplicate set into one surviving CI and carries over its relationships, so the CMDB ends with a single accurate record instead of competing copies.",
+    "distractor_notes": {
+      "A": "Creating more identifiers would worsen the duplication, not fix it.",
+      "B": "The goal is to merge, not destroy legitimate data.",
+      "D": "Reclassification is a different operation; dedup merges duplicates."
+    },
+    "references": [
+      {
+        "title": "Resolve duplicate CIs",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/deduplication-tasks.html"
+      }
+    ],
+    "tags": [
+      "cmdb-data",
+      "deduplication",
+      "merge"
+    ]
+  },
+  {
+    "id": "cisms-cmdb-021",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Configuration Management Database",
+    "subdomain": "Identification troubleshooting",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An import keeps creating duplicate CIs because its payload lacks the attribute used in the class's identifier entry. What is the correct fix?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Disable IRE for that import so it inserts everything"
+      },
+      {
+        "id": "B",
+        "text": "Lower the CMDB Health threshold so duplicates don't show"
+      },
+      {
+        "id": "C",
+        "text": "Delete the class so the import can't run"
+      },
+      {
+        "id": "D",
+        "text": "Ensure the payload supplies the criterion attributes the identifier needs (or adjust the identification rule appropriately)"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "Duplicates from an import usually mean IRE has nothing reliable to match on. Supply the criterion attributes the identifier expects (or revise the rule to match what the source provides) so IRE can resolve identity instead of inserting new records.",
+    "distractor_notes": {
+      "A": "Disabling IRE removes the guardrail and guarantees more duplicates.",
+      "B": "Hiding duplicates on a dashboard doesn't address the identity gap.",
+      "C": "Deleting the class destroys legitimate CIs and doesn't fix matching."
+    },
+    "references": [
+      {
+        "title": "Troubleshoot identification",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/ci-identification-rules.html"
+      }
+    ],
+    "tags": [
+      "cmdb-data",
+      "identification",
+      "duplicate-fix"
+    ]
+  },
+  {
+    "id": "cisms-cmdb-022",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Configuration Management Database",
+    "subdomain": "CMDB Health remediation",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "CMDB remediation typically begins from which trigger?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A successful login to the instance"
+      },
+      {
+        "id": "B",
+        "text": "A user changing their password"
+      },
+      {
+        "id": "C",
+        "text": "Closing an unrelated incident"
+      },
+      {
+        "id": "D",
+        "text": "A CMDB Health KPI or rule flagging CIs that violate a quality standard"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "Remediation is the action arm of Insight: Health metrics/rules detect CIs failing completeness, correctness, or compliance, and those findings feed remediation queues where owners fix the data. Detection drives remediation.",
+    "distractor_notes": {
+      "A": "A login doesn't indicate a data-quality issue.",
+      "B": "Password changes are identity events, unrelated to CMDB quality.",
+      "C": "Closing an unrelated incident doesn't surface a CMDB defect."
+    },
+    "references": [
+      {
+        "title": "CMDB Health and remediation",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/cmdb-health.html"
+      }
+    ],
+    "tags": [
+      "cmdb-data",
+      "remediation",
+      "health-trigger"
+    ]
+  },
+  {
+    "id": "cisms-cmdb-023",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Configuration Management Database",
+    "subdomain": "Orphan CIs",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Why are 'orphan' CIs (CIs with no relationships) a remediation concern for Service Mapping?",
+    "options": [
+      {
+        "id": "A",
+        "text": "They automatically delete related incidents"
+      },
+      {
+        "id": "B",
+        "text": "Without relationships they can't participate in service maps or impact analysis, undermining the CMDB's value"
+      },
+      {
+        "id": "C",
+        "text": "They consume too much disk space"
+      },
+      {
+        "id": "D",
+        "text": "They prevent users from logging in"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The CMDB earns its value through relationships — they power service maps, impact analysis, and dependency views. An orphan CI is data with no context: it can't show what it supports or depends on, so relationship health is a core KPI and orphans get flagged.",
+    "distractor_notes": {
+      "A": "Orphan CIs don't delete incidents.",
+      "C": "Storage is trivial; the real cost is lost analytical value.",
+      "D": "CIs have nothing to do with user authentication."
+    },
+    "references": [
+      {
+        "title": "Relationship health",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/cmdb-health.html"
+      }
+    ],
+    "tags": [
+      "cmdb-data",
+      "orphan-cis",
+      "relationships"
+    ]
+  },
+  {
+    "id": "cisms-cmdb-024",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Configuration Management Database",
+    "subdomain": "CMDB groups",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "You want a reusable, query-based set of CIs (e.g., all CIs supporting one application) to target governance actions and reporting. Which feature fits?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A Discovery schedule"
+      },
+      {
+        "id": "B",
+        "text": "A UI policy"
+      },
+      {
+        "id": "C",
+        "text": "CMDB Groups"
+      },
+      {
+        "id": "D",
+        "text": "A business rule on the incident table"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "CMDB Groups define a reusable, query-based population of CIs. Once defined, the group can drive remediation, certification, reporting, and lifecycle actions against exactly the CIs you care about, instead of rebuilding the same filter each time.",
+    "distractor_notes": {
+      "A": "A schedule controls when scanning runs, not a reusable population.",
+      "B": "UI policies control form behavior, not CI population scoping.",
+      "D": "Incident business rules act on incidents, not CMDB scoping."
+    },
+    "references": [
+      {
+        "title": "CMDB Groups",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/cmdb-groups.html"
+      }
+    ],
+    "tags": [
+      "cmdb-data",
+      "cmdb-groups",
+      "scoping"
+    ]
+  },
+  {
+    "id": "cisms-cmdb-025",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Configuration Management Database",
+    "subdomain": "Independent identifiers",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is an independent identifier?",
+    "options": [
+      {
+        "id": "A",
+        "text": "An identifier that ignores criterion attributes"
+      },
+      {
+        "id": "B",
+        "text": "An identifier that requires a parent CI for context"
+      },
+      {
+        "id": "C",
+        "text": "An identifier that disables reconciliation"
+      },
+      {
+        "id": "D",
+        "text": "An identifier that resolves a CI using only its own attributes, without needing a related parent CI"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "An independent identifier matches a CI by its own attributes (e.g., a server by serial number) with no need for a related CI. The contrast is a dependent identifier, which only resolves a CI in the context of a qualifying parent (e.g., a database on its host).",
+    "distractor_notes": {
+      "A": "Independent identifiers still use criterion attributes.",
+      "B": "Needing a parent describes a dependent identifier.",
+      "C": "Independence concerns identity context, not toggling reconciliation."
+    },
+    "references": [
+      {
+        "title": "Independent and dependent identifiers",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/ci-identification-rules.html"
+      }
+    ],
+    "tags": [
+      "cmdb-data",
+      "independent-identifier",
+      "ire"
+    ]
+  },
+  {
+    "id": "cisms-cmdb-026",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Configuration Management Database",
+    "subdomain": "Inclusion/exclusion rules",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What are IRE inclusion/exclusion rules used for?",
+    "options": [
+      {
+        "id": "A",
+        "text": "To add extra columns to a list view"
+      },
+      {
+        "id": "B",
+        "text": "To include a user in an assignment group"
+      },
+      {
+        "id": "C",
+        "text": "To add a CI to a change request"
+      },
+      {
+        "id": "D",
+        "text": "To control which payload items IRE will process or skip based on defined conditions"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "Inclusion/exclusion rules let governance decide what IRE acts on — filtering or qualifying which payload items the engine processes versus ignores. They give fine-grained control so unwanted or low-quality records don't flow into the CMDB.",
+    "distractor_notes": {
+      "A": "List columns are a UI concern, not IRE processing.",
+      "B": "Group membership is access/assignment, unrelated to IRE.",
+      "C": "Adding CIs to changes is a change-management activity."
+    },
+    "references": [
+      {
+        "title": "IRE inclusion and exclusion rules",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/ci-identification-rules.html"
+      }
+    ],
+    "tags": [
+      "cmdb-data",
+      "ire",
+      "inclusion-rules"
+    ]
+  },
+  {
+    "id": "cisms-cmdb-027",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Configuration Management Database",
+    "subdomain": "CMDB base class",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which table is the base class that all Configuration Item classes extend from?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Task [task]"
+      },
+      {
+        "id": "B",
+        "text": "Application [cmdb_ci_appl]"
+      },
+      {
+        "id": "C",
+        "text": "Configuration Item [cmdb_ci]"
+      },
+      {
+        "id": "D",
+        "text": "Server [cmdb_ci_server]"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "cmdb_ci is the root of the CI hierarchy; every CI class (servers, applications, network gear) ultimately extends it and inherits its generic attributes (name, short_description, status). That's why a new custom CI class should extend cmdb_ci.",
+    "distractor_notes": {
+      "A": "task is the base for work items, not CIs.",
+      "B": "cmdb_ci_appl is the base for applications specifically, not all CIs.",
+      "D": "cmdb_ci_server is a mid-level class, itself a descendant of cmdb_ci."
+    },
+    "references": [
+      {
+        "title": "CMDB base tables",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/cmdb-tables.html"
+      }
+    ],
+    "tags": [
+      "cmdb-data",
+      "cmdb_ci",
+      "base-class"
+    ]
+  },
+  {
+    "id": "cisms-cmdb-028",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Configuration Management Database",
+    "subdomain": "CI Class Manager",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An admin needs to create a new CI class with its table, columns, and identification rules in one place. Which tool is designed for this?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Service Mapping Home"
+      },
+      {
+        "id": "B",
+        "text": "Pattern Designer"
+      },
+      {
+        "id": "C",
+        "text": "CI Class Manager"
+      },
+      {
+        "id": "D",
+        "text": "Event Management dashboard"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "CI Class Manager is the single, guided place to model a CI class: define its tables and columns, identification rules and identifier entries, dependencies, and reconciliation rules. It centralizes the CMDB data model so changes stay consistent.",
+    "distractor_notes": {
+      "A": "Service Mapping Home manages service maps, not class definitions.",
+      "B": "Pattern Designer builds discovery logic, not the CMDB class model.",
+      "D": "The Event Management dashboard handles alerts, not CMDB modeling."
+    },
+    "references": [
+      {
+        "title": "CI Class Manager",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/ci-class-manager.html"
+      }
+    ],
+    "tags": [
+      "cmdb-data",
+      "ci-class-manager",
+      "modeling"
+    ]
+  },
+  {
+    "id": "cisms-cmdb-029",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Configuration Management Database",
+    "subdomain": "Reconciliation precedence",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the purpose of configuring reconciliation (datasource) precedence?",
+    "options": [
+      {
+        "id": "A",
+        "text": "To decide which dashboard loads first"
+      },
+      {
+        "id": "B",
+        "text": "To order CI classes alphabetically"
+      },
+      {
+        "id": "C",
+        "text": "To set the MID Server polling interval"
+      },
+      {
+        "id": "D",
+        "text": "To rank sources so the most authoritative one wins when several report the same attribute"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "When several sources can write the same attribute, precedence breaks the tie deterministically — the higher-precedence source's value is retained. It's the practical lever that makes reconciliation predictable rather than last-write-wins.",
+    "distractor_notes": {
+      "A": "Dashboard load order has nothing to do with reconciliation.",
+      "B": "Class ordering is unrelated to source precedence.",
+      "C": "MID Server polling is a discovery/integration setting, not precedence."
+    },
+    "references": [
+      {
+        "title": "Reconciliation precedence",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/datasource-precedence.html"
+      }
+    ],
+    "tags": [
+      "cmdb-data",
+      "precedence",
+      "authority"
+    ]
+  },
+  {
+    "id": "cisms-cmdb-030",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Configuration Management Database",
+    "subdomain": "CSDM foundation",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Why is a well-governed CMDB (and CSDM alignment) a prerequisite for successful Service Mapping?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Service Mapping ignores the CMDB and stores data separately"
+      },
+      {
+        "id": "B",
+        "text": "CSDM only applies to incidents, not service maps"
+      },
+      {
+        "id": "C",
+        "text": "Service Mapping replaces the CMDB entirely"
+      },
+      {
+        "id": "D",
+        "text": "Service maps build on accurate, deduplicated CIs and relationships; poor data quality produces unreliable maps"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "Service Mapping writes into and reads from the CMDB, so its maps are only as trustworthy as the underlying CIs, identifiers, and reconciliation. Duplicates, orphans, or misclassified CIs produce broken or misleading service maps — which is why CIS-DF (data foundations) is a prerequisite.",
+    "distractor_notes": {
+      "A": "Service Mapping stores its results in the CMDB.",
+      "B": "CSDM is the model for services and their dependencies — central to service maps.",
+      "C": "It populates the CMDB; it doesn't replace it."
+    },
+    "references": [
+      {
+        "title": "CSDM and Service Mapping",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/csdm-overview.html"
+      }
+    ],
+    "tags": [
+      "cmdb-data",
+      "csdm",
+      "data-quality"
+    ]
+  },
+  {
+    "id": "cisms-cmdb-031",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Configuration Management Database",
+    "subdomain": "CMDB Health correctness",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Stale CIs that haven't been updated by any source in months would most directly lower which CMDB Health dimension?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Compliance"
+      },
+      {
+        "id": "B",
+        "text": "Capacity"
+      },
+      {
+        "id": "C",
+        "text": "Completeness"
+      },
+      {
+        "id": "D",
+        "text": "Correctness"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "Correctness measures whether the data still reflects reality. Stale records that no source confirms are likely inaccurate, so they pull down correctness. Completeness is about missing data, and compliance is about meeting standards.",
+    "distractor_notes": {
+      "A": "Compliance is about adherence to required standards/policies.",
+      "B": "'Capacity' isn't a CMDB Health dimension.",
+      "C": "Completeness flags missing CIs/attributes, not staleness of present ones."
+    },
+    "references": [
+      {
+        "title": "CMDB Health correctness",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/cmdb-health.html"
+      }
+    ],
+    "tags": [
+      "cmdb-data",
+      "cmdb-health",
+      "correctness"
+    ]
+  }
+]

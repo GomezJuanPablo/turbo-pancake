@@ -1,0 +1,14 @@
+{
+  "exam": "CIS-SM",
+  "name": "Certified Implementation Specialist — Service Mapping",
+  "release": "Australia",
+  "totalQuestions": 240,
+  "domains": [
+    { "id": "cmdb",                     "name": "Configuration Management Database", "weight": 15, "target": 36 },
+    { "id": "discovery-configuration",  "name": "Discovery Configuration",           "weight": 18, "target": 44 },
+    { "id": "engagement-readiness",     "name": "Service Mapping Engagement Readiness", "weight": 10, "target": 23 },
+    { "id": "machine-learning",         "name": "Machine Learning",                  "weight": 9,  "target": 22 },
+    { "id": "pattern-design",           "name": "Service Mapping Pattern Design",    "weight": 30, "target": 72 },
+    { "id": "service-configuration",    "name": "Service Mapping Configuration",     "weight": 18, "target": 43 }
+  ]
+}

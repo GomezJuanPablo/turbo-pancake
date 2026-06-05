@@ -1,0 +1,2071 @@
+[
+  {
+    "id": "cisms-cfg-001",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Configuration",
+    "subdomain": "Minimum components",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which three components are the minimum needed to discover a service of baseline-supported operating systems, infrastructure, and applications?",
+    "options": [
+      {
+        "id": "A",
+        "text": "MID Server, IP Range, and Subnet Mask"
+      },
+      {
+        "id": "B",
+        "text": "MID Server, IP Range, and Entry Point"
+      },
+      {
+        "id": "C",
+        "text": "MID Server, Entry Point, and Credentials"
+      },
+      {
+        "id": "D",
+        "text": "MID Server, Entry Point, and Subnet Mask"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Top-down discovery needs a worker, a starting point, and a way in: the MID Server runs the probes, the Entry Point tells it where the service begins, and Credentials let it authenticate to each host it reaches. Without any one of the three, discovery can't complete.",
+    "distractor_notes": {
+      "A": "IP range and subnet mask scope a network sweep but supply no entry point and, crucially, no credentials.",
+      "B": "An IP range is optional for top-down mapping; the missing essential here is credentials.",
+      "D": "A subnet mask only scopes traffic; without credentials the MID Server can't gather service details."
+    },
+    "references": [
+      {
+        "title": "Service Mapping discovery requirements",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/service-mapping-requirements.html"
+      }
+    ],
+    "tags": [
+      "service-configuration",
+      "requirements",
+      "entry-point"
+    ]
+  },
+  {
+    "id": "cisms-cfg-002",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Configuration",
+    "subdomain": "Discovery requirements",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What information is required to discover a service in Service Mapping?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Credentials, MID Server, and Entry Point"
+      },
+      {
+        "id": "B",
+        "text": "MID Server, IP Range, and Load Balancer"
+      },
+      {
+        "id": "C",
+        "text": "MID Server, Network Diagram, and Entry Point"
+      },
+      {
+        "id": "D",
+        "text": "Credentials, Application name, and MID Server"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Same essential trio: credentials to authenticate, a MID Server to execute, and an entry point to know where to start. Everything else (diagrams, app names) is helpful context but not what the engine strictly needs to begin.",
+    "distractor_notes": {
+      "B": "An IP range/load balancer can serve as an entry point but this option omits credentials.",
+      "C": "A network diagram is a human artifact, not an input the engine consumes.",
+      "D": "An application name isn't required to start; the engine needs an entry point to begin."
+    },
+    "references": [
+      {
+        "title": "Service Mapping discovery requirements",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/service-mapping-requirements.html"
+      }
+    ],
+    "tags": [
+      "service-configuration",
+      "requirements",
+      "credentials"
+    ]
+  },
+  {
+    "id": "cisms-cfg-003",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Configuration",
+    "subdomain": "Initiating discovery",
+    "difficulty": "application",
+    "type": "multi_select",
+    "stem": "Which are valid methods to initiate discovery of a service?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Map multiple services by importing entry points from a CSV file"
+      },
+      {
+        "id": "B",
+        "text": "Map services suggested by discovering MID Servers"
+      },
+      {
+        "id": "C",
+        "text": "Map multiple services suggested by discovering enterprise load balancers"
+      },
+      {
+        "id": "D",
+        "text": "Map a single service by configuring one entry point"
+      },
+      {
+        "id": "E",
+        "text": "Map services from assets stored in the CMDB"
+      }
+    ],
+    "correct": [
+      "A",
+      "C",
+      "D"
+    ],
+    "rationale": "You start mapping by giving Service Mapping entry points: one at a time (single entry point), in bulk (CSV import), or by letting it suggest candidates from discovered load balancers (their VIPs are natural service front doors). All three are documented ways to kick off discovery.",
+    "distractor_notes": {
+      "B": "MID Servers are infrastructure that runs discovery; discovering them doesn't suggest services to map.",
+      "E": "Assets aren't the basis for suggesting service maps; entry points are."
+    },
+    "references": [
+      {
+        "title": "Ways to map services",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/map-services.html"
+      }
+    ],
+    "tags": [
+      "service-configuration",
+      "entry-point",
+      "initiate-discovery"
+    ]
+  },
+  {
+    "id": "cisms-cfg-005",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Configuration",
+    "subdomain": "Entry point addressing",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Which address is required for Service Mapping to discover a load balancer that doesn't yet exist in the CMDB?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The management IP address"
+      },
+      {
+        "id": "B",
+        "text": "The MIB address"
+      },
+      {
+        "id": "C",
+        "text": "The MAC address"
+      },
+      {
+        "id": "D",
+        "text": "A public IP address"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "To discover a network device like a load balancer, Service Mapping must reach its management interface \u2014 the management IP. That's the address the MID Server uses to log in, run commands, and read the device's configuration and pools.",
+    "distractor_notes": {
+      "B": "There is no 'MIB address'; a MIB is an SNMP data structure, not an address.",
+      "C": "A MAC address is layer-2 and isn't routable for management access.",
+      "D": "A public IP isn't required and often isn't how internal devices are managed."
+    },
+    "references": [
+      {
+        "title": "Discover network devices",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/discover-load-balancers.html"
+      }
+    ],
+    "tags": [
+      "service-configuration",
+      "load-balancer",
+      "management-ip"
+    ]
+  },
+  {
+    "id": "cisms-cfg-006",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Configuration",
+    "subdomain": "Credentials",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which format is valid when entering SSH private key credentials in ServiceNow?",
+    "options": [
+      {
+        "id": "A",
+        "text": "PMI"
+      },
+      {
+        "id": "B",
+        "text": "PDP"
+      },
+      {
+        "id": "C",
+        "text": "PGP"
+      },
+      {
+        "id": "D",
+        "text": "PEM"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "ServiceNow stores SSH private keys in PEM format (the standard ----BEGIN PRIVATE KEY---- block). You paste the PEM key into the credential record and the MID Server uses it to authenticate to Unix/Linux targets over SSH.",
+    "distractor_notes": {
+      "A": "PMI is a project-management institute/term, not a key format.",
+      "B": "PDP is not a key format (it's a policy decision point in access control).",
+      "C": "PGP is for message encryption/signing, not SSH private key storage here."
+    },
+    "references": [
+      {
+        "title": "SSH credentials",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/mid-server/ssh-credentials.html"
+      }
+    ],
+    "tags": [
+      "service-configuration",
+      "credentials",
+      "ssh-pem"
+    ]
+  },
+  {
+    "id": "cisms-cfg-007",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Configuration",
+    "subdomain": "Credentials",
+    "difficulty": "application",
+    "type": "multi_select",
+    "stem": "When configuring SNMP credentials for discovery, which two statements are true?",
+    "options": [
+      {
+        "id": "A",
+        "text": "SNMP v1, v2c, and v3 are supported"
+      },
+      {
+        "id": "B",
+        "text": "A read/write SNMP account is required"
+      },
+      {
+        "id": "C",
+        "text": "Only SNMP v1/v2 is supported"
+      },
+      {
+        "id": "D",
+        "text": "A read-only SNMP account is sufficient for discovery"
+      }
+    ],
+    "correct": [
+      "A",
+      "D"
+    ],
+    "rationale": "Discovery only reads device data over SNMP, so a read-only community/account is enough, and the platform supports v1, v2c, and v3 so you can match the device's security posture. Read/write would grant more than discovery needs.",
+    "distractor_notes": {
+      "B": "Read/write is unnecessary; discovery never changes device configuration.",
+      "C": "v3 is supported too, adding authentication and encryption."
+    },
+    "references": [
+      {
+        "title": "SNMP credentials",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/mid-server/snmp-credentials.html"
+      }
+    ],
+    "tags": [
+      "service-configuration",
+      "credentials",
+      "snmp"
+    ]
+  },
+  {
+    "id": "cisms-cfg-008",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Configuration",
+    "subdomain": "Credentials",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An application (Ignite) requires credentials different from the host OS. How should you enter them?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Use the Change user operation to hardcode them in the pattern"
+      },
+      {
+        "id": "B",
+        "text": "Add a credential of type 'Other' with no CI type"
+      },
+      {
+        "id": "C",
+        "text": "Store the credentials as attributes on the Ignite CI"
+      },
+      {
+        "id": "D",
+        "text": "Add a credential of type 'Applicative' and associate the appropriate CI type for Ignite"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "Application-level logins use the Applicative credential type, tied to the relevant CI type so the engine knows when to use them. That keeps app credentials separate from the host OS credentials and applies them only where appropriate.",
+    "distractor_notes": {
+      "A": "Change user handles privilege elevation mid-pattern, not initial application credential storage.",
+      "B": "'Other' is a generic catch-all and, without a CI-type association, won't be applied to Ignite as intended.",
+      "C": "Credentials are never stored as CI attributes \u2014 that's both insecure and unsupported."
+    },
+    "references": [
+      {
+        "title": "Applicative credentials",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/applicative-credentials.html"
+      }
+    ],
+    "tags": [
+      "service-configuration",
+      "credentials",
+      "applicative"
+    ]
+  },
+  {
+    "id": "cisms-cfg-009",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Configuration",
+    "subdomain": "Credentials",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "To discover UNIX targets with least privilege, which SSH credential approach is recommended?",
+    "options": [
+      {
+        "id": "A",
+        "text": "WMI privileges"
+      },
+      {
+        "id": "B",
+        "text": "A non-root account granted selective sudo (or sudo-equivalent) for required commands"
+      },
+      {
+        "id": "C",
+        "text": "Domain access with local administrator rights"
+      },
+      {
+        "id": "D",
+        "text": "Full root privileges"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Best practice is a non-root user that can run only the specific commands discovery needs via sudo. It satisfies discovery while honoring least-privilege security policies that typically forbid handing out root.",
+    "distractor_notes": {
+      "A": "WMI is the Windows management interface, not an SSH/UNIX credential.",
+      "C": "Domain/local-admin are Windows concepts, irrelevant to SSH on UNIX.",
+      "D": "Root is more access than discovery needs and is usually disallowed by security."
+    },
+    "references": [
+      {
+        "title": "Using SSH credentials with sudo",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/mid-server/ssh-sudo-credentials.html"
+      }
+    ],
+    "tags": [
+      "service-configuration",
+      "credentials",
+      "sudo"
+    ]
+  },
+  {
+    "id": "cisms-cfg-010",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Configuration",
+    "subdomain": "Credential affinity",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is created after a credential is successfully used for the first time to access a device?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A credential affinity linking that device to the working credential"
+      },
+      {
+        "id": "B",
+        "text": "A credential store"
+      },
+      {
+        "id": "C",
+        "text": "A credential lock"
+      },
+      {
+        "id": "D",
+        "text": "A credential vault"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Credential affinity remembers which credential worked for a given target, so future runs go straight to it instead of cycling through every credential again. That speeds up discovery and reduces failed-login noise.",
+    "distractor_notes": {
+      "B": "The credential store is a pre-existing structure, not generated on first success.",
+      "C": "There's no 'credential lock' artifact created at first use.",
+      "D": "The vault is where credentials are stored; it isn't created per first-successful-use."
+    },
+    "references": [
+      {
+        "title": "Credential affinity",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/discovery/credential-affinity.html"
+      }
+    ],
+    "tags": [
+      "service-configuration",
+      "credential-affinity",
+      "discovery"
+    ]
+  },
+  {
+    "id": "cisms-cfg-016",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Configuration",
+    "subdomain": "Business services and entry points",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Checks are scanned at branches, sent via web service through an F5, processed by Apache then an ImageSmart app server, and stored in Oracle. Tellers also log in to ImageSmart through a Citrix portal to review checks. How many business services and entry points is this?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Two services and two entry points"
+      },
+      {
+        "id": "B",
+        "text": "Two services and one entry point"
+      },
+      {
+        "id": "C",
+        "text": "One service and two entry points"
+      },
+      {
+        "id": "D",
+        "text": "One service and one entry point"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "The whole flow delivers one business outcome \u2014 process a deposited check \u2014 so it's one service. But it can be entered two ways: the external scan/web-service capture, and the teller's Citrix login to review. Each distinct way in is its own entry point, giving one service with two entry points.",
+    "distractor_notes": {
+      "A": "It's a single service; the two access paths are entry points, not separate services.",
+      "B": "The internal stages all serve one logical service; they aren't two services.",
+      "D": "There are two distinct ways to enter the service (capture vs. teller review), not one."
+    },
+    "references": [
+      {
+        "title": "Business services and entry points",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/business-services-entry-points.html"
+      }
+    ],
+    "tags": [
+      "service-configuration",
+      "business-service",
+      "entry-point"
+    ]
+  },
+  {
+    "id": "cisms-cfg-018",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Configuration",
+    "subdomain": "Multi-tier architecture",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Which list best represents a typical multi-tier service architecture?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Load Balancer > Web Server Cluster > Application Server Cluster > Database"
+      },
+      {
+        "id": "B",
+        "text": "Load Balancer > Web Server Cluster > Database > Application Server Cluster"
+      },
+      {
+        "id": "C",
+        "text": "Load Balancer > WebSphere MQ > Database > Web Server Cluster"
+      },
+      {
+        "id": "D",
+        "text": "Load Balancer > Web Server Cluster > Middleware > Database > Application Server Cluster"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Traffic flows presentation \u2192 logic \u2192 data: the load balancer fronts the web tier, the web tier hands off to the application tier, and the application tier reads/writes the database last. The database sits at the back, isolated behind the app logic.",
+    "distractor_notes": {
+      "B": "This puts the database before the application tier, reversing the normal processing order.",
+      "C": "Inserting WebSphere MQ here and ending at the web tier scrambles the standard layering.",
+      "D": "Placing middleware before the app tier and DB before the app cluster misorders the tiers."
+    },
+    "references": [
+      {
+        "title": "Modeling multi-tier services",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/service-mapping-overview.html"
+      }
+    ],
+    "tags": [
+      "service-configuration",
+      "multi-tier",
+      "architecture"
+    ]
+  },
+  {
+    "id": "cisms-cfg-019",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Configuration",
+    "subdomain": "Application services",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Which module do you use to convert legacy business services into application services in bulk rather than one at a time?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Applications"
+      },
+      {
+        "id": "B",
+        "text": "Business Applications"
+      },
+      {
+        "id": "C",
+        "text": "Services"
+      },
+      {
+        "id": "D",
+        "text": "Application Services"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "The Application Services module includes the bulk-convert action that turns many legacy business services into application services at once. The other navigation areas list or define things but don't expose the bulk conversion workflow.",
+    "distractor_notes": {
+      "A": "Applications navigates definitions; it lacks the bulk-convert action.",
+      "B": "Business Applications is a catalog view without conversion tooling.",
+      "C": "A generic Services list doesn't offer bulk conversion."
+    },
+    "references": [
+      {
+        "title": "Convert services to application services",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/convert-application-services.html"
+      }
+    ],
+    "tags": [
+      "service-configuration",
+      "application-services",
+      "bulk-convert"
+    ]
+  },
+  {
+    "id": "cisms-cfg-020",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Configuration",
+    "subdomain": "Discovery source",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What value is set in the Discovery source field when an application is discovered by Service Mapping?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Service Mapping"
+      },
+      {
+        "id": "B",
+        "text": "ServiceNow"
+      },
+      {
+        "id": "C",
+        "text": "Discovery"
+      },
+      {
+        "id": "D",
+        "text": "Application Service"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Service Mapping stamps its discovered CIs with the Discovery source 'Service Mapping', distinguishing them from records created by horizontal Discovery or other integrations. That source value matters for reconciliation rules and data lineage.",
+    "distractor_notes": {
+      "B": "'ServiceNow' is generic/manual, not the Service Mapping source.",
+      "C": "'Discovery' is the horizontal discovery source, a different engine.",
+      "D": "'Application Service' is a CI category, not a discovery source value."
+    },
+    "references": [
+      {
+        "title": "Discovery source values",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/discovery-source.html"
+      }
+    ],
+    "tags": [
+      "service-configuration",
+      "discovery-source",
+      "reconciliation"
+    ]
+  },
+  {
+    "id": "cisms-cfg-021",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Configuration",
+    "subdomain": "Custom CI tables",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A customer wants to track a new hardware CI in a dedicated new table where no baseline class fits. What should be done?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Create a new table that extends Task [task]"
+      },
+      {
+        "id": "B",
+        "text": "Create a new table that extends Configuration Item [cmdb_ci]"
+      },
+      {
+        "id": "C",
+        "text": "Create a new table that extends Application [cmdb_ci_appl]"
+      },
+      {
+        "id": "D",
+        "text": "Never build a new table"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "New CI classes should extend cmdb_ci so they inherit the generic CI attributes, relationships, and out-of-the-box CMDB/Service Mapping behavior. Extending the base CI table is the supported way to model a CI type the baseline hierarchy doesn't cover.",
+    "distractor_notes": {
+      "A": "Task models work items, not CIs; it lacks CI attributes and relationships.",
+      "C": "cmdb_ci_appl is for application CIs; using it for hardware forces the wrong model.",
+      "D": "Custom CI classes are permitted and supported when no baseline class fits."
+    },
+    "references": [
+      {
+        "title": "Extend the CI class",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/extend-ci-class.html"
+      }
+    ],
+    "tags": [
+      "service-configuration",
+      "cmdb_ci",
+      "custom-table"
+    ]
+  },
+  {
+    "id": "cisms-cfg-022",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Configuration",
+    "subdomain": "Application class hierarchy",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Within the CMDB, application CI classes are children of which parent class?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Database Instance [cmdb_ci_db_instance]"
+      },
+      {
+        "id": "B",
+        "text": "Software [cmdb_ci_software]"
+      },
+      {
+        "id": "C",
+        "text": "Application [cmdb_ci_appl]"
+      },
+      {
+        "id": "D",
+        "text": "Installed Software [cmdb_ci_installed_software]"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "cmdb_ci_appl is the base class for application CIs; specialized application types (web servers, app servers, databases as services) extend from it. That's why querying cmdb_ci_appl returns the whole family of discovered applications.",
+    "distractor_notes": {
+      "A": "Database Instance is itself a specialized application type, not the parent of all apps.",
+      "B": "cmdb_ci_software is a broader software class, not the direct parent of application CIs.",
+      "D": "Installed Software tracks installed packages, not running application CIs."
+    },
+    "references": [
+      {
+        "title": "Application CI classes",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/cmdb-tables.html"
+      }
+    ],
+    "tags": [
+      "service-configuration",
+      "cmdb_ci_appl",
+      "hierarchy"
+    ]
+  },
+  {
+    "id": "cisms-cfg-025",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Configuration",
+    "subdomain": "Entry point types",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which of the following can serve as an entry point for a Service Mapping discovery?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A CMDB Health KPI"
+      },
+      {
+        "id": "B",
+        "text": "A URL, host name, or IP address (and port) where the service is accessed"
+      },
+      {
+        "id": "C",
+        "text": "A MID Server name"
+      },
+      {
+        "id": "D",
+        "text": "An incident number"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Entry points describe where a service is reached \u2014 typically a URL, a hostname, or an IP/port. Service Mapping starts there and discovers downstream. The entry point type then dictates which patterns are eligible to run.",
+    "distractor_notes": {
+      "A": "A health KPI is a data-quality metric, not a place a service is accessed.",
+      "C": "A MID Server executes discovery; it isn't the service's access surface.",
+      "D": "An incident number is a record reference, not an entry point."
+    },
+    "references": [
+      {
+        "title": "Configure entry points",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/service-mapping-entry-points.html"
+      }
+    ],
+    "tags": [
+      "service-configuration",
+      "entry-point",
+      "types"
+    ]
+  },
+  {
+    "id": "cisms-cfg-026",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Configuration",
+    "subdomain": "Schedules",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the primary purpose of a schedule on an application service in Service Mapping?",
+    "options": [
+      {
+        "id": "A",
+        "text": "To set the CMDB Health pass threshold"
+      },
+      {
+        "id": "B",
+        "text": "To choose the entry point type"
+      },
+      {
+        "id": "C",
+        "text": "To define which credentials are valid"
+      },
+      {
+        "id": "D",
+        "text": "To periodically rediscover the service so the map stays current as the environment changes"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "Schedules keep maps honest over time by re-running discovery on a cadence. Environments drift \u2014 new nodes, version changes, retired hosts \u2014 and a scheduled rediscovery captures those changes so the service map reflects reality rather than a one-time snapshot.",
+    "distractor_notes": {
+      "A": "Health thresholds are configured in CMDB Health, unrelated to a service schedule.",
+      "B": "Entry point type is set on the entry point, not by the schedule.",
+      "C": "Credential validity is managed in the credential store, not by a schedule."
+    },
+    "references": [
+      {
+        "title": "Schedule service discovery",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/schedule-service-discovery.html"
+      }
+    ],
+    "tags": [
+      "service-configuration",
+      "schedule",
+      "rediscovery"
+    ]
+  },
+  {
+    "id": "cisms-cfg-027",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Configuration",
+    "subdomain": "Service groups",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is a Service Group used for in Service Mapping?",
+    "options": [
+      {
+        "id": "A",
+        "text": "To organize related application services together for management and reporting"
+      },
+      {
+        "id": "B",
+        "text": "To store SSH private keys"
+      },
+      {
+        "id": "C",
+        "text": "To define IRE reconciliation precedence"
+      },
+      {
+        "id": "D",
+        "text": "To schedule MID Server upgrades"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Service Groups bundle related application services so teams can manage, secure, and report on them as a set \u2014 for example all services owned by one business unit. It's an organizational grouping layered over individual service maps.",
+    "distractor_notes": {
+      "B": "Keys live in credential records, not service groups.",
+      "C": "Reconciliation precedence is a CMDB/IRE setting, unrelated to service groups.",
+      "D": "MID Server upgrades are managed separately, not via service groups."
+    },
+    "references": [
+      {
+        "title": "Service groups",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/service-groups.html"
+      }
+    ],
+    "tags": [
+      "service-configuration",
+      "service-group",
+      "organization"
+    ]
+  },
+  {
+    "id": "cisms-cfg-028",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Configuration",
+    "subdomain": "Change user operation",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "During pattern execution you must elevate to a different account to run a privileged command. Which operation handles this?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Set Variable"
+      },
+      {
+        "id": "B",
+        "text": "Change user (switch to elevated credentials mid-pattern)"
+      },
+      {
+        "id": "C",
+        "text": "Create Connection"
+      },
+      {
+        "id": "D",
+        "text": "Parse File"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The Change user operation switches the execution context to a different credential during a pattern, so a step that needs elevated rights can run while the rest of the pattern uses the standard account. It's about privilege elevation within a run, not storing the initial credential.",
+    "distractor_notes": {
+      "A": "Set Variable assigns a value; it doesn't change the execution account.",
+      "C": "Create Connection builds a relationship, unrelated to credential context.",
+      "D": "Parse File extracts text; it doesn't elevate privileges."
+    },
+    "references": [
+      {
+        "title": "Change user operation",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/pattern-designer-operations.html"
+      }
+    ],
+    "tags": [
+      "service-configuration",
+      "change-user",
+      "credentials"
+    ]
+  },
+  {
+    "id": "cisms-cfg-030",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Configuration",
+    "subdomain": "Rediscovery behavior",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A target host already exists in the CMDB when Service Mapping runs. What happens to that host?",
+    "options": [
+      {
+        "id": "A",
+        "text": "It is skipped and never touched"
+      },
+      {
+        "id": "B",
+        "text": "It is duplicated to preserve history"
+      },
+      {
+        "id": "C",
+        "text": "It is rediscovered and only its changed attributes are updated; the same sys_id is kept"
+      },
+      {
+        "id": "D",
+        "text": "It is deleted and recreated as a new record"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Service Mapping triggers host discovery as part of mapping, but IRE matches the existing CI and updates only what changed, preserving the same sys_id and its relationships. No churn, no duplicates \u2014 just an in-place refresh.",
+    "distractor_notes": {
+      "A": "The host is rediscovered, not skipped \u2014 that's how attributes stay current.",
+      "B": "Duplicating is exactly what IRE prevents through identification.",
+      "D": "Delete-and-recreate would break relationships and history; IRE updates in place."
+    },
+    "references": [
+      {
+        "title": "Host discovery during service mapping",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/host-discovery.html"
+      }
+    ],
+    "tags": [
+      "service-configuration",
+      "rediscovery",
+      "ire"
+    ]
+  },
+  {
+    "id": "cisms-cfg-031",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Configuration",
+    "subdomain": "Troubleshooting discovery",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An entry point's first target is an application load balancer, but the load balancer isn't discovered. What is the key cause?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The entry point uses a user-facing IP instead of a management IP"
+      },
+      {
+        "id": "B",
+        "text": "No valid credential is configured for the load balancer"
+      },
+      {
+        "id": "C",
+        "text": "No Connection Section exists to downstream CIs"
+      },
+      {
+        "id": "D",
+        "text": "No Identification Section is configured"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "If the device itself doesn't get discovered at all, the engine couldn't authenticate to it \u2014 a missing or invalid credential. Connection logic and downstream identification only matter after the LB is reachable, so credentials are the first thing to check.",
+    "distractor_notes": {
+      "A": "The IP type affects what's reachable, but the documented key cause of non-discovery here is the credential.",
+      "C": "A missing connection section would hide downstream links, but the LB itself would still be discovered.",
+      "D": "Without identification the LB could still be reached and partially seen; total non-discovery points to access."
+    },
+    "references": [
+      {
+        "title": "Troubleshoot credential errors",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/troubleshoot-credentials.html"
+      }
+    ],
+    "tags": [
+      "service-configuration",
+      "credentials",
+      "troubleshooting"
+    ]
+  },
+  {
+    "id": "cisms-cfg-032",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Configuration",
+    "subdomain": "Credential management",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Where are discovery credentials stored and managed in ServiceNow?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Hardcoded inside each discovery pattern"
+      },
+      {
+        "id": "B",
+        "text": "In the ECC Queue output records"
+      },
+      {
+        "id": "C",
+        "text": "As plain-text attributes on the target CI"
+      },
+      {
+        "id": "D",
+        "text": "In the encrypted Credentials table (Credential Management), referenced by the MID Server at run time"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "Credentials live in the encrypted Credentials table managed by Credential Management; at run time the MID Server retrieves them to authenticate to targets. Centralizing and encrypting them is what keeps secrets out of patterns and CI records.",
+    "distractor_notes": {
+      "A": "Hardcoding secrets in patterns is insecure and unsupported.",
+      "B": "The ECC Queue carries probe payloads, not stored credentials.",
+      "C": "Credentials are never stored as CI attributes."
+    },
+    "references": [
+      {
+        "title": "Credential management",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/mid-server/credentials.html"
+      }
+    ],
+    "tags": [
+      "service-configuration",
+      "credentials",
+      "storage"
+    ]
+  },
+  {
+    "id": "cisms-cfg-033",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Configuration",
+    "subdomain": "Application service table",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Discovered application services in Service Mapping are stored in which table?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Server [cmdb_ci_server]"
+      },
+      {
+        "id": "B",
+        "text": "Configuration Item [cmdb_ci]"
+      },
+      {
+        "id": "C",
+        "text": "Task [task]"
+      },
+      {
+        "id": "D",
+        "text": "Application Service [cmdb_ci_service_discovered]"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "Service Mapping records each discovered service as an Application Service in cmdb_ci_service_discovered. That CI anchors the map's entry points and the relationships to all the underlying CIs that compose the service.",
+    "distractor_notes": {
+      "A": "cmdb_ci_server holds servers, not the service-level CI.",
+      "B": "cmdb_ci is the abstract base; discovered services land in the specific discovered-service table.",
+      "C": "task models work items, not services."
+    },
+    "references": [
+      {
+        "title": "Application service CI",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/application-service-ci.html"
+      }
+    ],
+    "tags": [
+      "service-configuration",
+      "application-service",
+      "table"
+    ]
+  },
+  {
+    "id": "cisms-cfg-034",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Configuration",
+    "subdomain": "Service relationships",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "A defined link between two CIs such as 'Runs on', 'Depends on', or 'Contains' is called what?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A CI Attribute"
+      },
+      {
+        "id": "B",
+        "text": "An Application-to-Application Relationship only"
+      },
+      {
+        "id": "C",
+        "text": "A Relationship Type"
+      },
+      {
+        "id": "D",
+        "text": "A CI Dependency value"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Runs on, Depends on, and Contains are all predefined Relationship Types in the CMDB. Service Mapping builds the service map by connecting CIs with these relationship types, which is what powers dependency and impact analysis.",
+    "distractor_notes": {
+      "A": "An attribute is a field value on a CI, not a link between two CIs.",
+      "B": "These relationship types apply broadly, not only application-to-application.",
+      "D": "'CI Dependency value' isn't the term for these defined relationships."
+    },
+    "references": [
+      {
+        "title": "CI relationship types",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/ci-relationships.html"
+      }
+    ],
+    "tags": [
+      "service-configuration",
+      "relationship-type",
+      "cmdb"
+    ]
+  },
+  {
+    "id": "cisms-cfg-035",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Configuration",
+    "subdomain": "Bulk entry points",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "You need to start discovery for dozens of services at once. Which approach fits best?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Create each entry point manually one at a time"
+      },
+      {
+        "id": "B",
+        "text": "Lower the CMDB Health threshold"
+      },
+      {
+        "id": "C",
+        "text": "Import the entry points from a CSV file"
+      },
+      {
+        "id": "D",
+        "text": "Run a network-wide horizontal Discovery instead"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "CSV import is the supported bulk path: you list many entry points (IPs/URLs/hosts) in a file and Service Mapping creates and discovers them together. It's far faster than manual entry and is purpose-built for onboarding many services.",
+    "distractor_notes": {
+      "A": "Manual creation doesn't scale to dozens of services.",
+      "B": "Health thresholds have nothing to do with onboarding entry points.",
+      "D": "Horizontal Discovery inventories infrastructure; it doesn't map these services top-down from entry points."
+    },
+    "references": [
+      {
+        "title": "Import entry points",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/import-entry-points.html"
+      }
+    ],
+    "tags": [
+      "service-configuration",
+      "entry-point",
+      "csv-import"
+    ]
+  },
+  {
+    "id": "cisms-cfg-036",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Configuration",
+    "subdomain": "Technical services",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which statement best describes a technical service modeled in Service Mapping?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A user's personal workstation"
+      },
+      {
+        "id": "B",
+        "text": "A single database table"
+      },
+      {
+        "id": "C",
+        "text": "A marketing landing page"
+      },
+      {
+        "id": "D",
+        "text": "An IT-facing service (e.g., DNS, authentication) that supports other services rather than being consumed directly by the business"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "Technical services are the shared, IT-facing capabilities (DNS, LDAP/auth, email relay) that other services depend on. Modeling them lets you reuse a shared dependency across many business services and analyze the blast radius if it fails.",
+    "distractor_notes": {
+      "A": "A workstation is an endpoint CI, not a shared technical service.",
+      "B": "A single table isn't a service; a database instance might be a CI it depends on.",
+      "C": "A landing page is content, not a modeled technical service."
+    },
+    "references": [
+      {
+        "title": "Technical services",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/technical-services.html"
+      }
+    ],
+    "tags": [
+      "service-configuration",
+      "technical-service",
+      "shared"
+    ]
+  },
+  {
+    "id": "cisms-cfg-040",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Configuration",
+    "subdomain": "CI type prerequisite",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Before a pattern can classify a newly mapped application into the CMDB, what must exist as its destination?",
+    "options": [
+      {
+        "id": "A",
+        "text": "An incident record"
+      },
+      {
+        "id": "B",
+        "text": "A CMDB Health remediation rule"
+      },
+      {
+        "id": "C",
+        "text": "A CI type/table for the application"
+      },
+      {
+        "id": "D",
+        "text": "A completed service map"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Discovered data needs somewhere to land. The application's CI type/table defines that destination, so it must exist before the pattern can create or update the CI. Without a target class, the engine has nothing to populate.",
+    "distractor_notes": {
+      "A": "Incidents are operational records, unrelated to where a CI is stored.",
+      "B": "Health rules surface quality issues; they aren't a CI destination.",
+      "D": "A finished map is an output of discovery, not a precondition for classifying a CI."
+    },
+    "references": [
+      {
+        "title": "CI classes and service mapping",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/ci-classes.html"
+      }
+    ],
+    "tags": [
+      "service-configuration",
+      "ci-type",
+      "prerequisite"
+    ]
+  },
+  {
+    "id": "cisms-cfg-041",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Configuration",
+    "subdomain": "Application vs business service",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "How does an application service differ from a legacy business service in Service Mapping?",
+    "options": [
+      {
+        "id": "A",
+        "text": "An application service cannot be discovered"
+      },
+      {
+        "id": "B",
+        "text": "They are identical and interchangeable"
+      },
+      {
+        "id": "C",
+        "text": "A business service can never relate to CIs"
+      },
+      {
+        "id": "D",
+        "text": "An application service is discovered/maintained with its dependency map and entry points; a business service is a higher-level business construct"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "Application services are the modern, discoverable unit \u2014 they carry entry points and a maintained dependency map. Business services represent broader business offerings; ServiceNow encourages converting legacy business services into application services so they gain a real, maintained topology.",
+    "distractor_notes": {
+      "A": "Application services are precisely what Service Mapping discovers.",
+      "B": "They're related but distinct concepts, which is why a conversion path exists.",
+      "C": "Business services can relate to CIs; they're just modeled at a higher level."
+    },
+    "references": [
+      {
+        "title": "Application vs business services",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/application-service-ci.html"
+      }
+    ],
+    "tags": [
+      "service-configuration",
+      "application-service",
+      "business-service"
+    ]
+  },
+  {
+    "id": "cisms-cfg-042",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Configuration",
+    "subdomain": "Entry point IP type",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A device responds at a user-facing VIP but management actions fail. For Service Mapping to manage and fully discover it, which address should the entry point/credential target?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The DNS server's IP"
+      },
+      {
+        "id": "B",
+        "text": "The device's management IP/interface"
+      },
+      {
+        "id": "C",
+        "text": "The MID Server's IP"
+      },
+      {
+        "id": "D",
+        "text": "The broadcast address of the subnet"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "User-facing VIPs serve traffic but often don't expose management. To run commands and read configuration, Service Mapping needs the device's management interface \u2014 that's where administrative access lives. Pointing discovery at the management IP unblocks full discovery.",
+    "distractor_notes": {
+      "A": "The DNS server resolves names; it isn't the target device's management interface.",
+      "C": "The MID Server is the worker, not the device you're trying to manage.",
+      "D": "A broadcast address isn't a manageable device endpoint."
+    },
+    "references": [
+      {
+        "title": "Network device discovery",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/discover-load-balancers.html"
+      }
+    ],
+    "tags": [
+      "service-configuration",
+      "management-ip",
+      "entry-point"
+    ]
+  },
+  {
+    "id": "cisms-cfg-043",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Configuration",
+    "subdomain": "Service map composition",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "What primarily distinguishes a Service Mapping service map from a simple inventory list of CIs?",
+    "options": [
+      {
+        "id": "A",
+        "text": "It only lists hardware assets"
+      },
+      {
+        "id": "B",
+        "text": "It captures the relationships/dependencies among CIs, not just the CIs themselves"
+      },
+      {
+        "id": "C",
+        "text": "It stores CIs in a separate database from the CMDB"
+      },
+      {
+        "id": "D",
+        "text": "It excludes all cloud resources"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The value of a service map is the edges, not just the nodes. Service Mapping discovers how CIs depend on one another, turning a flat inventory into a dependency graph that supports impact analysis and root-cause work.",
+    "distractor_notes": {
+      "A": "It maps applications and services, not just hardware.",
+      "C": "Service maps live in the CMDB, not a separate database.",
+      "D": "Cloud resources are included, not excluded."
+    },
+    "references": [
+      {
+        "title": "Service maps and dependencies",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/view-service-maps.html"
+      }
+    ],
+    "tags": [
+      "service-configuration",
+      "service-map",
+      "dependencies"
+    ]
+  },
+  {
+    "id": "cisms-cfg-045",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Configuration",
+    "subdomain": "Reusing scoped CI sets",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "You want a reusable, query-defined set of CIs (e.g., all CIs supporting one application) to target reporting and actions. Which construct fits?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A CMDB Group / Dynamic CI Group"
+      },
+      {
+        "id": "B",
+        "text": "A discovery schedule"
+      },
+      {
+        "id": "C",
+        "text": "A UI policy"
+      },
+      {
+        "id": "D",
+        "text": "An incident business rule"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "A query-based CMDB/Dynamic CI Group defines a reusable population of CIs you can point reporting, certification, and lifecycle actions at \u2014 without rebuilding the same filter each time. It recomputes as the underlying data changes.",
+    "distractor_notes": {
+      "B": "A schedule controls when discovery runs, not a reusable CI population.",
+      "C": "UI policies affect form behavior, not CI scoping.",
+      "D": "Incident business rules act on incidents, not CMDB CI sets."
+    },
+    "references": [
+      {
+        "title": "CMDB groups",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/cmdb-groups.html"
+      }
+    ],
+    "tags": [
+      "service-configuration",
+      "cmdb-groups",
+      "scoping"
+    ]
+  },
+  {
+    "id": "cisms-cfg-047",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Configuration",
+    "subdomain": "Credentials scope",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "How can you restrict a credential so it is only tried against certain devices or CI types?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Add it to the ECC Queue manually"
+      },
+      {
+        "id": "B",
+        "text": "Associate the credential with a specific CI type and/or MID Server / IP scope"
+      },
+      {
+        "id": "C",
+        "text": "Disable IRE for those devices"
+      },
+      {
+        "id": "D",
+        "text": "Store it as plain text on each device"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Credentials can be scoped \u2014 by CI type, by MID Server, or by IP/network range \u2014 so the engine only attempts them where they're relevant. Scoping reduces failed logins, account lockouts, and the time spent cycling through the wrong credentials.",
+    "distractor_notes": {
+      "A": "The ECC Queue carries payloads; you don't place credentials there.",
+      "C": "Disabling IRE corrupts identification and has nothing to do with credential scope.",
+      "D": "Plain-text on devices is insecure and not how ServiceNow stores credentials."
+    },
+    "references": [
+      {
+        "title": "Credential scope and affinity",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/mid-server/credentials.html"
+      }
+    ],
+    "tags": [
+      "service-configuration",
+      "credentials",
+      "scope"
+    ]
+  },
+  {
+    "id": "cisms-cfg-048",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Configuration",
+    "subdomain": "Entry point single service",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the most direct way to map a single new service?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Configure one entry point for that service and run discovery"
+      },
+      {
+        "id": "B",
+        "text": "Create a CMDB Health rule"
+      },
+      {
+        "id": "C",
+        "text": "Run a full horizontal Discovery of the data center"
+      },
+      {
+        "id": "D",
+        "text": "Import a CSV of hundreds of entry points"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "For one service, you define its single entry point (URL/host/IP) and start discovery. Service Mapping follows the dependencies from that point and builds the map \u2014 no bulk import or full-environment sweep needed.",
+    "distractor_notes": {
+      "B": "Health rules measure data quality; they don't initiate a service map.",
+      "C": "Horizontal Discovery inventories infrastructure; it doesn't map one service top-down.",
+      "D": "CSV import is for bulk onboarding, overkill for a single service."
+    },
+    "references": [
+      {
+        "title": "Map a single service",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/map-services.html"
+      }
+    ],
+    "tags": [
+      "service-configuration",
+      "entry-point",
+      "single-service"
+    ]
+  },
+  {
+    "id": "cisms-cfg-049",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Configuration",
+    "subdomain": "Heartbeat",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "By default, how often does the Heartbeat probe send a synthetic transaction to check a mapped service's entry point?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Every 10 minutes"
+      },
+      {
+        "id": "B",
+        "text": "Every 30 minutes"
+      },
+      {
+        "id": "C",
+        "text": "Every 1 minute"
+      },
+      {
+        "id": "D",
+        "text": "Every 5 minutes"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "The Heartbeat runs a lightweight synthetic transaction against the entry point on a default 5-minute cadence \u2014 frequent enough to catch outages quickly without flooding the target. It's how Service Mapping keeps a near-real-time read on entry-point availability.",
+    "distractor_notes": {
+      "A": "10 minutes is slower than the documented default.",
+      "B": "30 minutes is the MID Server upgrade-check default, not the heartbeat interval.",
+      "C": "1 minute would be unnecessarily aggressive and isn't the default."
+    },
+    "references": [
+      {
+        "title": "Service Mapping heartbeat",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/heartbeat.html"
+      }
+    ],
+    "tags": [
+      "service-configuration",
+      "heartbeat",
+      "interval"
+    ]
+  },
+  {
+    "id": "cisms-cfg-050",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Configuration",
+    "subdomain": "Heartbeat",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the purpose of the Service Mapping Heartbeat?",
+    "options": [
+      {
+        "id": "A",
+        "text": "To verify that a mapped service's entry point is reachable/available over time"
+      },
+      {
+        "id": "B",
+        "text": "To publish discovery patterns"
+      },
+      {
+        "id": "C",
+        "text": "To upgrade the MID Server"
+      },
+      {
+        "id": "D",
+        "text": "To reconcile CMDB attributes"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Heartbeat is an availability check: by periodically probing the entry point, it tells you whether the service's front door is still responding. That signal feeds operational awareness without a full rediscovery each time.",
+    "distractor_notes": {
+      "B": "Publishing patterns is unrelated to the heartbeat.",
+      "C": "MID Server upgrades are a separate process on their own schedule.",
+      "D": "Reconciliation is an IRE function, not the heartbeat's job."
+    },
+    "references": [
+      {
+        "title": "Service Mapping heartbeat",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/heartbeat.html"
+      }
+    ],
+    "tags": [
+      "service-configuration",
+      "heartbeat",
+      "availability"
+    ]
+  },
+  {
+    "id": "cisms-cfg-051",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Configuration",
+    "subdomain": "Map exclusions",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A noisy, irrelevant CI keeps appearing on a service map. How do you keep it off the map while leaving discovery otherwise intact?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Add it as an exclusion on the map"
+      },
+      {
+        "id": "B",
+        "text": "Delete the CI from the CMDB"
+      },
+      {
+        "id": "C",
+        "text": "Disable IRE"
+      },
+      {
+        "id": "D",
+        "text": "Remove the MID Server"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Exclusions let you tell a specific map to ignore a CI or connection without deleting real data or breaking discovery elsewhere. The CI still exists in the CMDB; it just stops cluttering this service's view.",
+    "distractor_notes": {
+      "B": "Deleting the CI removes legitimate data and may break other maps that need it.",
+      "C": "Disabling IRE corrupts identification platform-wide.",
+      "D": "Removing the MID Server breaks all discovery, not just this CI."
+    },
+    "references": [
+      {
+        "title": "Exclude CIs from a map",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/map-exclusions.html"
+      }
+    ],
+    "tags": [
+      "service-configuration",
+      "exclusion",
+      "map-cleanup"
+    ]
+  },
+  {
+    "id": "cisms-cfg-052",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Configuration",
+    "subdomain": "Service Mapping Plus",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which scheduled job is installed with the Service Mapping Plus (sn_sm_scoped_app) application?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Update query-based services"
+      },
+      {
+        "id": "B",
+        "text": "Generate entry point candidates from NetFlow and netstat data"
+      },
+      {
+        "id": "C",
+        "text": "Update business service status"
+      },
+      {
+        "id": "D",
+        "text": "Update statistics for the application service readiness dashboard"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "Service Mapping Plus ships a scheduled job that refreshes the statistics behind the Application Service Readiness dashboard, keeping its readiness and confidence figures current. That dashboard is a core Plus feature, so its data-refresh job comes with it.",
+    "distractor_notes": {
+      "A": "Query-based service updates aren't this scoped app's dedicated scheduled job.",
+      "B": "NetFlow/netstat candidate generation belongs to traffic-based connections/ADM, not this job.",
+      "C": "Business service status updates aren't delivered as a Plus scheduled job."
+    },
+    "references": [
+      {
+        "title": "Service Mapping Plus",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/service-mapping-plus.html"
+      }
+    ],
+    "tags": [
+      "service-configuration",
+      "service-mapping-plus",
+      "scheduled-job"
+    ]
+  },
+  {
+    "id": "cisms-cfg-053",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Configuration",
+    "subdomain": "Windows credentials",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "To discover most Windows hosts via WMI, what credential is typically sufficient?",
+    "options": [
+      {
+        "id": "A",
+        "text": "An SSH key in PEM format"
+      },
+      {
+        "id": "B",
+        "text": "An SNMP read-only community string"
+      },
+      {
+        "id": "C",
+        "text": "An anonymous/guest account"
+      },
+      {
+        "id": "D",
+        "text": "A domain user with local administrator rights on the target"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "Windows discovery uses WMI, which needs a domain account that holds local admin on the target so it can read system, service, and software information. SSH keys and SNMP communities apply to Unix/network devices, not WMI on Windows.",
+    "distractor_notes": {
+      "A": "SSH/PEM is for Unix/Linux over SSH, not Windows WMI.",
+      "B": "SNMP is for network devices, not full Windows host discovery.",
+      "C": "Anonymous/guest access can't read the WMI data discovery needs."
+    },
+    "references": [
+      {
+        "title": "Windows credentials for discovery",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/mid-server/windows-credentials.html"
+      }
+    ],
+    "tags": [
+      "service-configuration",
+      "credentials",
+      "wmi"
+    ]
+  },
+  {
+    "id": "cisms-cfg-054",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Configuration",
+    "subdomain": "Convert business service",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "What does an organization gain by converting a legacy business service into an application service?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Removal of all credentials"
+      },
+      {
+        "id": "B",
+        "text": "Fewer CIs in the CMDB"
+      },
+      {
+        "id": "C",
+        "text": "Automatic deletion of related incidents"
+      },
+      {
+        "id": "D",
+        "text": "A discoverable, maintained dependency map with entry points instead of a static high-level record"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "Conversion upgrades a flat business-service record into an application service that Service Mapping can discover and keep current \u2014 with entry points and a real dependency topology. That topology is what enables impact analysis and change planning.",
+    "distractor_notes": {
+      "A": "Credentials are still needed to discover the now-mapped service.",
+      "B": "Conversion adds discovered detail; it doesn't reduce CI counts as a goal.",
+      "C": "It doesn't delete incidents."
+    },
+    "references": [
+      {
+        "title": "Convert to application services",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/convert-application-services.html"
+      }
+    ],
+    "tags": [
+      "service-configuration",
+      "convert",
+      "application-service"
+    ]
+  },
+  {
+    "id": "cisms-cfg-055",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Configuration",
+    "subdomain": "Service groups",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A team wants role-based access and rollup reporting across a set of related application services. Which construct supports this?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Service Groups"
+      },
+      {
+        "id": "B",
+        "text": "Identifier entries"
+      },
+      {
+        "id": "C",
+        "text": "Process classifiers"
+      },
+      {
+        "id": "D",
+        "text": "Tag categories"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Service Groups bundle related application services so you can manage access and report on them as a unit. They're the organizational layer that turns many individual maps into a manageable portfolio.",
+    "distractor_notes": {
+      "B": "Identifier entries handle CI matching, not service grouping.",
+      "C": "Process classifiers route processes to patterns; they don't group services.",
+      "D": "Tag categories define tag values for tag-based mapping, not service portfolios."
+    },
+    "references": [
+      {
+        "title": "Service groups",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/service-groups.html"
+      }
+    ],
+    "tags": [
+      "service-configuration",
+      "service-group",
+      "reporting"
+    ]
+  },
+  {
+    "id": "cisms-cfg-057",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Configuration",
+    "subdomain": "Inclusions",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A connection Service Mapping won't auto-discover should still appear on the map. What lets you add it deliberately?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Lower the heartbeat interval"
+      },
+      {
+        "id": "B",
+        "text": "Disable the schedule"
+      },
+      {
+        "id": "C",
+        "text": "Add it as an inclusion (manual connection) on the map"
+      },
+      {
+        "id": "D",
+        "text": "Delete the upstream CI"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Inclusions let you manually add a CI or connection the automated discovery can't find \u2014 say a dependency reached over an unsupported protocol. It complements automatic discovery so the map reflects reality even where patterns can't reach.",
+    "distractor_notes": {
+      "A": "The heartbeat checks availability; it doesn't add connections.",
+      "B": "Disabling the schedule stops rediscovery; it doesn't add a connection.",
+      "D": "Deleting a CI removes data rather than adding the missing link."
+    },
+    "references": [
+      {
+        "title": "Manual connections and inclusions",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/manual-connections.html"
+      }
+    ],
+    "tags": [
+      "service-configuration",
+      "inclusion",
+      "manual-connection"
+    ]
+  },
+  {
+    "id": "cisms-cfg-058",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Configuration",
+    "subdomain": "Traffic-based connections",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Which capability generates entry point or connection candidates from observed NetFlow and netstat traffic data?",
+    "options": [
+      {
+        "id": "A",
+        "text": "CMDB Health remediation"
+      },
+      {
+        "id": "B",
+        "text": "Data certification"
+      },
+      {
+        "id": "C",
+        "text": "Credential affinity"
+      },
+      {
+        "id": "D",
+        "text": "Traffic-based connections / candidate generation"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "Traffic-based connection discovery analyzes flow data (NetFlow/netstat) to infer who talks to whom, surfacing candidate connections and entry points that pure pattern discovery might miss. It's how Service Mapping fills gaps from observed network behavior.",
+    "distractor_notes": {
+      "A": "Health remediation fixes data quality; it doesn't read traffic flows.",
+      "B": "Data certification is a human attestation control, unrelated to flow analysis.",
+      "C": "Credential affinity remembers working credentials, not traffic."
+    },
+    "references": [
+      {
+        "title": "Traffic-based connections",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/traffic-based-connections.html"
+      }
+    ],
+    "tags": [
+      "service-configuration",
+      "traffic-based",
+      "netflow"
+    ]
+  },
+  {
+    "id": "cisms-cfg-060",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Configuration",
+    "subdomain": "Credential planning",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "To minimize failed logins and account lockouts during a large Service Mapping rollout, what credential practice helps most?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Store credentials on each target host"
+      },
+      {
+        "id": "B",
+        "text": "Scope credentials to the right CI types/IP ranges and rely on credential affinity"
+      },
+      {
+        "id": "C",
+        "text": "Use one universal admin credential everywhere with no scope"
+      },
+      {
+        "id": "D",
+        "text": "Disable credential affinity to retry every credential each run"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Scoping credentials to where they apply, plus affinity that remembers what worked, means the MID Server tries the right credential first instead of cycling through many. That dramatically cuts failed authentications and the lockouts they can trigger.",
+    "distractor_notes": {
+      "A": "Storing secrets on hosts is insecure and unsupported.",
+      "C": "An unscoped universal credential maximizes wrong-credential attempts and lockout risk.",
+      "D": "Disabling affinity forces retrying every credential \u2014 the opposite of what reduces lockouts."
+    },
+    "references": [
+      {
+        "title": "Credential affinity and scope",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/discovery/credential-affinity.html"
+      }
+    ],
+    "tags": [
+      "service-configuration",
+      "credentials",
+      "rollout"
+    ]
+  }
+]

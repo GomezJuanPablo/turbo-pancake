@@ -1,0 +1,1121 @@
+[
+  {
+    "id": "cisms-cfg-017",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Engagement Readiness",
+    "subdomain": "Service characteristics",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which is a defining characteristic of a service in Service Mapping?",
+    "options": [
+      {
+        "id": "A",
+        "text": "It performs a single or a few limited, specialized operations"
+      },
+      {
+        "id": "B",
+        "text": "It is always comprised of more than 50 CIs"
+      },
+      {
+        "id": "C",
+        "text": "It never contains cloud-based elements"
+      },
+      {
+        "id": "D",
+        "text": "It may not be written to the CMDB"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "A service is scoped to a focused business capability \u2014 it does one thing (or a few) well, like 'payment processing'. That tight scope is what makes dependency mapping and impact analysis meaningful, rather than modeling a sprawling everything-bucket.",
+    "distractor_notes": {
+      "B": "Service size varies widely; there's no 50-CI rule.",
+      "C": "Services frequently include cloud elements; Service Mapping supports hybrid/cloud.",
+      "D": "Services are modeled in the CMDB as application service CIs."
+    },
+    "references": [
+      {
+        "title": "Service Mapping design principles",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/service-mapping-overview.html"
+      }
+    ],
+    "tags": [
+      "service-configuration",
+      "service-definition",
+      "scope"
+    ]
+  },
+  {
+    "id": "cisms-cfg-056",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Engagement Readiness",
+    "subdomain": "Service map operations value",
+    "difficulty": "application",
+    "type": "multi_select",
+    "stem": "Which TWO are benefits a service map provides during incident resolution?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Narrows down the components that could be affected when a service is impacted"
+      },
+      {
+        "id": "B",
+        "text": "Reduces the number of unplanned changes directly"
+      },
+      {
+        "id": "C",
+        "text": "Pinpoints application source-code errors automatically"
+      },
+      {
+        "id": "D",
+        "text": "Quickly surfaces recent changes performed on the service's components"
+      }
+    ],
+    "correct": [
+      "A",
+      "D"
+    ],
+    "rationale": "During an incident, the map shrinks the search space (only the service's CIs matter) and, tied to Change data, shows what changed recently on those CIs \u2014 the two fastest routes to root cause. It doesn't read source code or directly govern change volume.",
+    "distractor_notes": {
+      "B": "Better visibility can help change planning, but the map itself doesn't directly reduce unplanned changes during an incident.",
+      "C": "Service Mapping shows dependencies, not code-level defects."
+    },
+    "references": [
+      {
+        "title": "Service maps in incident resolution",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/service-maps-incident.html"
+      }
+    ],
+    "tags": [
+      "service-configuration",
+      "incident-resolution",
+      "impact"
+    ]
+  },
+  {
+    "id": "cisms-cfg-059",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Engagement Readiness",
+    "subdomain": "Service map for operators",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "How does a service map most directly help an operator during an outage?",
+    "options": [
+      {
+        "id": "A",
+        "text": "It shows the business service's components and dependencies so impact and likely culprits are obvious"
+      },
+      {
+        "id": "B",
+        "text": "It rewrites the application code"
+      },
+      {
+        "id": "C",
+        "text": "It blocks all changes during the incident"
+      },
+      {
+        "id": "D",
+        "text": "It restarts failed services automatically"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The map gives instant context: which CIs make up the service and how they depend on each other, so the operator can see what's affected and where to look first. It's a diagnostic and impact-analysis aid, not an automation that fixes things itself.",
+    "distractor_notes": {
+      "B": "They don't touch source code.",
+      "C": "They inform change decisions but don't block changes.",
+      "D": "Maps visualize dependencies; they don't perform restarts."
+    },
+    "references": [
+      {
+        "title": "Using service maps",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/view-service-maps.html"
+      }
+    ],
+    "tags": [
+      "service-configuration",
+      "operators",
+      "impact-analysis"
+    ]
+  },
+  {
+    "id": "cisms-dis-027",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Engagement Readiness",
+    "subdomain": "Event Management",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "In Event Management, which type of rule can automatically create a task (e.g., an incident) in response to an alert?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Reconciliation rule"
+      },
+      {
+        "id": "B",
+        "text": "Alert Management rule"
+      },
+      {
+        "id": "C",
+        "text": "Task rule"
+      },
+      {
+        "id": "D",
+        "text": "Event rule"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Alert Management rules act on alerts \u2014 they can auto-create incidents/changes, assign or suppress alerts, and trigger remediation. Event rules instead govern how raw events become alerts; the task-creation logic lives at the alert layer.",
+    "distractor_notes": {
+      "A": "Reconciliation rules are a CMDB/IRE concept, unrelated to alert tasks.",
+      "C": "There isn't a generic 'Task rule' that does this in Event Management.",
+      "D": "Event rules normalize/bind events into alerts; they don't create tasks."
+    },
+    "references": [
+      {
+        "title": "Alert management rules",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/event-management/alert-management-rules.html"
+      }
+    ],
+    "tags": [
+      "discovery-mid",
+      "event-management",
+      "alert-rules"
+    ]
+  },
+  {
+    "id": "cisms-dis-028",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Engagement Readiness",
+    "subdomain": "Event Management",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "If an event has no Message Key, which alert fields are concatenated to generate one?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Task, Description, Created"
+      },
+      {
+        "id": "B",
+        "text": "Source, Node, Type, Resource"
+      },
+      {
+        "id": "C",
+        "text": "Node, Type, Resource, Number"
+      },
+      {
+        "id": "D",
+        "text": "Source, Number, Task"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The Message Key groups related events into one alert. When it's absent, Event Management builds one from Source + Node + Type + Resource \u2014 the tool that reported it, the affected CI, the event category, and the specific component \u2014 so duplicate events collapse correctly.",
+    "distractor_notes": {
+      "A": "These aren't the identity fields used to derive a message key.",
+      "C": "Number isn't part of the generated key; the set is Source/Node/Type/Resource.",
+      "D": "Number/Task are record references, not the dedup identity inputs."
+    },
+    "references": [
+      {
+        "title": "Message key and alert binding",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/event-management/message-key.html"
+      }
+    ],
+    "tags": [
+      "discovery-mid",
+      "event-management",
+      "message-key"
+    ]
+  },
+  {
+    "id": "cisms-dis-029",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Engagement Readiness",
+    "subdomain": "Event Management",
+    "difficulty": "application",
+    "type": "multi_select",
+    "stem": "Which are valid reasons a customer would adopt ServiceNow Event Management?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Deploy software patches to problem infrastructure"
+      },
+      {
+        "id": "B",
+        "text": "Provide best-in-class monitoring agents across all infrastructure"
+      },
+      {
+        "id": "C",
+        "text": "Automatically generate incidents for certain classes of alerts"
+      },
+      {
+        "id": "D",
+        "text": "Determine impacted services from a given event/alert"
+      },
+      {
+        "id": "E",
+        "text": "Consolidate events from disparate monitoring tools into one system"
+      }
+    ],
+    "correct": [
+      "C",
+      "D",
+      "E"
+    ],
+    "rationale": "Event Management is a 'manager of managers': it ingests events from many monitoring tools (consolidation), correlates them to service impact (using Service Mapping), and can auto-create incidents for qualifying alerts. It isn't itself a monitoring agent or a patch-deployment tool.",
+    "distractor_notes": {
+      "A": "Patch deployment is a different capability (e.g., orchestration/SAM), not Event Management.",
+      "B": "Event Management consumes monitoring data; it isn't the monitoring agent."
+    },
+    "references": [
+      {
+        "title": "Event Management overview",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/event-management/event-management-overview.html"
+      }
+    ],
+    "tags": [
+      "discovery-mid",
+      "event-management",
+      "value"
+    ]
+  },
+  {
+    "id": "cisms-dis-036",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Engagement Readiness",
+    "subdomain": "Event Management",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "How does Event Management reduce alert noise across multiple monitoring tools?",
+    "options": [
+      {
+        "id": "A",
+        "text": "By disabling the monitoring tools"
+      },
+      {
+        "id": "B",
+        "text": "By correlating and de-duplicating related events into fewer, service-impacting alerts"
+      },
+      {
+        "id": "C",
+        "text": "By deleting all events older than a day"
+      },
+      {
+        "id": "D",
+        "text": "By converting events into CMDB CIs"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Event Management ingests events from many tools and correlates/de-duplicates them \u2014 using message keys and rules \u2014 so operators see a smaller set of meaningful, impact-aware alerts instead of a flood of raw events.",
+    "distractor_notes": {
+      "A": "It consumes monitoring output; it doesn't disable the tools.",
+      "C": "It doesn't blindly delete by age; it correlates by relationship/identity.",
+      "D": "Events aren't turned into CIs; they bind to alerts tied to CIs."
+    },
+    "references": [
+      {
+        "title": "Alert correlation",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/event-management/alert-correlation.html"
+      }
+    ],
+    "tags": [
+      "discovery-mid",
+      "event-management",
+      "noise-reduction"
+    ]
+  },
+  {
+    "id": "cisms-fun-001",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Engagement Readiness",
+    "subdomain": "Benefits",
+    "difficulty": "recall",
+    "type": "multi_select",
+    "stem": "Which are potential benefits of implementing Service Mapping?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Improved Software Asset Management license reconciliation"
+      },
+      {
+        "id": "B",
+        "text": "Fewer change-related incidents through better service visibility during change planning"
+      },
+      {
+        "id": "C",
+        "text": "Reduced effort to create service maps"
+      },
+      {
+        "id": "D",
+        "text": "Faster issue resolution and less downtime via better root-cause analysis"
+      },
+      {
+        "id": "E",
+        "text": "Reduced ongoing map maintenance thanks to automated updates"
+      }
+    ],
+    "correct": [
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "rationale": "Service Mapping automates discovery and refresh (less maintenance and less effort to build maps), exposes dependencies for faster root cause (less downtime), and gives change teams visibility to avoid breaking dependencies (fewer change incidents). SAM license reconciliation is a separate product capability.",
+    "distractor_notes": {
+      "A": "Software Asset Management handles license reconciliation; it isn't a Service Mapping benefit."
+    },
+    "references": [
+      {
+        "title": "Service Mapping benefits",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/service-mapping-overview.html"
+      }
+    ],
+    "tags": [
+      "fundamentals-planning",
+      "benefits",
+      "value"
+    ]
+  },
+  {
+    "id": "cisms-fun-002",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Engagement Readiness",
+    "subdomain": "KPIs",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Which KPI improves most directly from having service maps that show dependencies?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Event Management: signal-to-noise ratio"
+      },
+      {
+        "id": "B",
+        "text": "Change Management: number of major changes"
+      },
+      {
+        "id": "C",
+        "text": "Incident Management: Mean Time to Resolve (MTTR)"
+      },
+      {
+        "id": "D",
+        "text": "Problem Management: incidents per known problem"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Service maps shrink the search space during an outage \u2014 operators see exactly which CIs make up the impacted service and what changed \u2014 which is precisely what drives down Mean Time to Resolve. The other KPIs are influenced by other capabilities.",
+    "distractor_notes": {
+      "A": "Signal-to-noise is improved by Event Management correlation, not the map itself.",
+      "B": "The count of major changes isn't directly reduced by a service map.",
+      "D": "Incidents-per-known-problem is a Problem Management ratio, not a direct service-map outcome."
+    },
+    "references": [
+      {
+        "title": "Service Mapping value",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/service-mapping-overview.html"
+      }
+    ],
+    "tags": [
+      "fundamentals-planning",
+      "kpi",
+      "mttr"
+    ]
+  },
+  {
+    "id": "cisms-fun-003",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Engagement Readiness",
+    "subdomain": "Engagement risks",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "What is the most common risk that negatively impacts a Service Mapping engagement?",
+    "options": [
+      {
+        "id": "A",
+        "text": "MID Server resource requirements exceed the customer's capacity"
+      },
+      {
+        "id": "B",
+        "text": "The customer doesn't use Active Directory"
+      },
+      {
+        "id": "C",
+        "text": "The external firewall only allows outbound 80 and 443"
+      },
+      {
+        "id": "D",
+        "text": "The security team isn't engaged early enough about credential requirements"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "Service Mapping depends on credentials to reach every host, and provisioning those (often elevated) credentials needs the security team's buy-in. Engaging them late is the most frequent cause of delays and rework \u2014 the other items are manageable or not blockers.",
+    "distractor_notes": {
+      "A": "Capacity is sized during design and is rarely the dominant risk.",
+      "B": "AD isn't required; local/LDAP/token credentials also work.",
+      "C": "Outbound 443 is exactly what's needed; this isn't a blocker."
+    },
+    "references": [
+      {
+        "title": "Service Mapping implementation planning",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/service-mapping-planning.html"
+      }
+    ],
+    "tags": [
+      "fundamentals-planning",
+      "risk",
+      "credentials"
+    ]
+  },
+  {
+    "id": "cisms-fun-004",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Engagement Readiness",
+    "subdomain": "Incident resolution value",
+    "difficulty": "application",
+    "type": "multi_select",
+    "stem": "Which are benefits a service map provides during incident resolution?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Narrows down the components that could be affected"
+      },
+      {
+        "id": "B",
+        "text": "Automatically pinpoints application source-code errors"
+      },
+      {
+        "id": "C",
+        "text": "Quickly identifies recent incidents on the impacted service's components"
+      },
+      {
+        "id": "D",
+        "text": "Quickly identifies recent changes made to the service's components"
+      },
+      {
+        "id": "E",
+        "text": "Directly reduces the number of unplanned changes"
+      }
+    ],
+    "correct": [
+      "A",
+      "C",
+      "D"
+    ],
+    "rationale": "Tied to incident and change data, the map surfaces recent incidents and changes on the exact CIs of the impacted service and narrows the investigation to just those components \u2014 the three fastest routes to root cause. It can't read source code or directly govern change volume.",
+    "distractor_notes": {
+      "B": "Service Mapping shows dependencies, not code-level defects.",
+      "E": "Better visibility helps change planning but the map doesn't directly cut unplanned changes."
+    },
+    "references": [
+      {
+        "title": "Service maps in incident resolution",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/service-maps-incident.html"
+      }
+    ],
+    "tags": [
+      "fundamentals-planning",
+      "incident-resolution",
+      "value"
+    ]
+  },
+  {
+    "id": "cisms-fun-008",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Engagement Readiness",
+    "subdomain": "Change management value",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "How does Service Mapping most directly help reduce change-related incidents?",
+    "options": [
+      {
+        "id": "A",
+        "text": "By blocking all changes during business hours"
+      },
+      {
+        "id": "B",
+        "text": "By automatically approving low-risk changes"
+      },
+      {
+        "id": "C",
+        "text": "By giving change planners visibility into a service's dependencies before they make changes"
+      },
+      {
+        "id": "D",
+        "text": "By rewriting the change request form"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "When planners can see exactly what depends on a CI, they assess change impact accurately and avoid breaking downstream services. That dependency visibility is the mechanism behind fewer change-induced outages.",
+    "distractor_notes": {
+      "A": "Service Mapping informs change decisions; it doesn't impose blackout windows.",
+      "B": "Auto-approval is a change-process configuration, not a Service Mapping function.",
+      "D": "It doesn't alter the change form."
+    },
+    "references": [
+      {
+        "title": "Service Mapping and change management",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/service-mapping-overview.html"
+      }
+    ],
+    "tags": [
+      "fundamentals-planning",
+      "change-management",
+      "value"
+    ]
+  },
+  {
+    "id": "cisms-fun-009",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Engagement Readiness",
+    "subdomain": "Planning",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "When planning a Service Mapping engagement, why is involving the security team early so important?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Security teams operate the MID Server"
+      },
+      {
+        "id": "B",
+        "text": "Security teams set the CMDB Health thresholds"
+      },
+      {
+        "id": "C",
+        "text": "Credential and access requirements (often elevated) must be approved and provisioned to discover hosts"
+      },
+      {
+        "id": "D",
+        "text": "Security teams write the discovery patterns"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Discovery can't reach hosts without credentials, and those often need elevated privileges that the security team must vet and approve. Bringing them in early prevents the credential bottleneck that derails timelines.",
+    "distractor_notes": {
+      "A": "The MID Server is operated by the ITOM/platform team.",
+      "B": "Health thresholds are a CMDB governance setting, not security's.",
+      "D": "Patterns are authored by the implementation team, not security."
+    },
+    "references": [
+      {
+        "title": "Engaging security early",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/service-mapping-planning.html"
+      }
+    ],
+    "tags": [
+      "fundamentals-planning",
+      "security",
+      "credentials"
+    ]
+  },
+  {
+    "id": "cisms-fun-010",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Engagement Readiness",
+    "subdomain": "Automated maintenance",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Which benefit comes specifically from Service Mapping's automated, scheduled rediscovery?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Elimination of the need for credentials"
+      },
+      {
+        "id": "B",
+        "text": "Removal of the CMDB"
+      },
+      {
+        "id": "C",
+        "text": "Automatic creation of incidents for every CI"
+      },
+      {
+        "id": "D",
+        "text": "Lower ongoing maintenance effort because maps update themselves as the environment changes"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "Because patterns rediscover on a schedule, additions, removals, and version changes flow into the map automatically \u2014 so teams spend far less time hand-maintaining topology compared with manually built maps.",
+    "distractor_notes": {
+      "A": "Credentials are still required to rediscover hosts.",
+      "B": "Maps live in the CMDB; nothing is removed.",
+      "C": "Rediscovery doesn't auto-create incidents."
+    },
+    "references": [
+      {
+        "title": "Automated map maintenance",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/schedule-service-discovery.html"
+      }
+    ],
+    "tags": [
+      "fundamentals-planning",
+      "maintenance",
+      "automation"
+    ]
+  },
+  {
+    "id": "cisms-fun-011",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Engagement Readiness",
+    "subdomain": "Cloud support",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which statement about Service Mapping and cloud environments is correct?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Service Mapping never includes cloud resources in a service"
+      },
+      {
+        "id": "B",
+        "text": "Cloud services cannot be modeled as application services"
+      },
+      {
+        "id": "C",
+        "text": "Service Mapping supports hybrid and cloud (e.g., AWS, Azure, GCP) services and their dependencies"
+      },
+      {
+        "id": "D",
+        "text": "Service Mapping only works for on-premises infrastructure"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Service Mapping is designed for modern, hybrid estates \u2014 it discovers and maps cloud services alongside on-prem components, building the dependencies that span both. Cloud elements are a normal part of a mapped service.",
+    "distractor_notes": {
+      "A": "Cloud resources are frequently part of mapped services.",
+      "B": "Cloud services can absolutely be modeled within application services.",
+      "D": "It explicitly supports cloud and hybrid, not just on-prem."
+    },
+    "references": [
+      {
+        "title": "Cloud and hybrid mapping",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/service-mapping-overview.html"
+      }
+    ],
+    "tags": [
+      "fundamentals-planning",
+      "cloud",
+      "hybrid"
+    ]
+  },
+  {
+    "id": "cisms-fun-013",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Engagement Readiness",
+    "subdomain": "Risk ranking",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Why does a credential/security communication gap outweigh MID Server sizing as an engagement risk?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Credentials are never required"
+      },
+      {
+        "id": "B",
+        "text": "Sizing problems delete CIs"
+      },
+      {
+        "id": "C",
+        "text": "Without authentication to targets, discovery can't collect data at all \u2014 sizing only affects speed once data flows"
+      },
+      {
+        "id": "D",
+        "text": "MID Server sizing controls reconciliation"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Credentials are existential to discovery \u2014 no access, no data. MID Server capacity merely affects throughput once authentication works, and it's typically solved during design. That's why missing security engagement is the more impactful risk.",
+    "distractor_notes": {
+      "A": "Credentials are fundamentally required.",
+      "B": "Undersized MID Servers slow discovery; they don't delete CIs.",
+      "D": "Sizing doesn't govern reconciliation."
+    },
+    "references": [
+      {
+        "title": "Service Mapping engagement risks",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/service-mapping-planning.html"
+      }
+    ],
+    "tags": [
+      "fundamentals-planning",
+      "risk",
+      "ranking"
+    ]
+  },
+  {
+    "id": "cisms-fun-017",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Engagement Readiness",
+    "subdomain": "Service Mapping purpose",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the core purpose of Service Mapping?",
+    "options": [
+      {
+        "id": "A",
+        "text": "To manage software licenses"
+      },
+      {
+        "id": "B",
+        "text": "To build top-down, dependency-aware maps of business/application services and their underlying CIs"
+      },
+      {
+        "id": "C",
+        "text": "To replace Event Management"
+      },
+      {
+        "id": "D",
+        "text": "To inventory all hardware on the network"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Service Mapping starts from a service and discovers the full chain of components it depends on, producing a dependency map that powers impact analysis, faster incident resolution, and safer change. It complements \u2014 not replaces \u2014 horizontal Discovery and Event Management.",
+    "distractor_notes": {
+      "A": "License management is Software Asset Management.",
+      "C": "Event Management correlates events; Service Mapping maps dependencies.",
+      "D": "Broad hardware inventory is horizontal Discovery's role."
+    },
+    "references": [
+      {
+        "title": "Service Mapping overview",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/service-mapping-overview.html"
+      }
+    ],
+    "tags": [
+      "fundamentals-planning",
+      "purpose",
+      "top-down"
+    ]
+  },
+  {
+    "id": "cisms-fun-018",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Engagement Readiness",
+    "subdomain": "Event Management integration",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "How does Service Mapping make Event Management more valuable?",
+    "options": [
+      {
+        "id": "A",
+        "text": "It deletes duplicate alerts"
+      },
+      {
+        "id": "B",
+        "text": "It provides the service context so alerts can be tied to impacted business services"
+      },
+      {
+        "id": "C",
+        "text": "It replaces the monitoring tools"
+      },
+      {
+        "id": "D",
+        "text": "It encrypts the alert payloads"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Service maps give Event Management the dependency context to translate a raw alert into 'which business service is affected'. That impact awareness is what lets teams prioritize the alerts that matter most.",
+    "distractor_notes": {
+      "A": "De-duplication is done by Event Management's correlation, not the map.",
+      "C": "Monitoring tools still generate the events; Service Mapping adds context.",
+      "D": "Encryption isn't a Service Mapping function."
+    },
+    "references": [
+      {
+        "title": "Service Mapping and Event Management",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/event-management/service-impact.html"
+      }
+    ],
+    "tags": [
+      "fundamentals-planning",
+      "event-management",
+      "impact"
+    ]
+  },
+  {
+    "id": "cisms-fun-019",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Engagement Readiness",
+    "subdomain": "Prerequisites",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which certification's subject matter is the recommended foundation before implementing Service Mapping?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Strategic Portfolio Management"
+      },
+      {
+        "id": "B",
+        "text": "CIS-Discovery / Data Foundations (CMDB, IRE, MID Server)"
+      },
+      {
+        "id": "C",
+        "text": "HR Service Delivery"
+      },
+      {
+        "id": "D",
+        "text": "Customer Service Management"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Service Mapping builds on CMDB data foundations and Discovery mechanics \u2014 IRE, identifiers, reconciliation, MID Server, patterns. Mastering that material (CIS-DF / Discovery) first is why those are treated as the prerequisite knowledge for CIS-SM.",
+    "distractor_notes": {
+      "A": "SPM concerns portfolio planning, not service discovery.",
+      "C": "HRSD is unrelated to CMDB/Discovery foundations.",
+      "D": "CSM is a different application area, not a Service Mapping foundation."
+    },
+    "references": [
+      {
+        "title": "Service Mapping prerequisites",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/service-mapping-prerequisites.html"
+      }
+    ],
+    "tags": [
+      "fundamentals-planning",
+      "prerequisites",
+      "cis-df"
+    ]
+  },
+  {
+    "id": "cisms-fun-020",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Engagement Readiness",
+    "subdomain": "Planning sequence",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Which is the most sensible early step when scoping a Service Mapping rollout?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Delete the existing CMDB and start fresh"
+      },
+      {
+        "id": "B",
+        "text": "Identify the priority business services and gather their entry points and credential requirements"
+      },
+      {
+        "id": "C",
+        "text": "Disable horizontal Discovery"
+      },
+      {
+        "id": "D",
+        "text": "Map every CI in the data center first"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Service Mapping is top-down and value-driven: start by picking the business services that matter, then collect what's needed to map them (entry points, credentials, owners). Boiling the ocean or wiping the CMDB wastes effort and risks data.",
+    "distractor_notes": {
+      "A": "Deleting the CMDB destroys the foundation Service Mapping relies on.",
+      "C": "Horizontal Discovery complements Service Mapping; don't disable it.",
+      "D": "Mapping every CI ignores the prioritized, service-first approach."
+    },
+    "references": [
+      {
+        "title": "Plan a Service Mapping rollout",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/service-mapping-planning.html"
+      }
+    ],
+    "tags": [
+      "fundamentals-planning",
+      "planning",
+      "prioritization"
+    ]
+  },
+  {
+    "id": "cisms-fun-021",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Engagement Readiness",
+    "subdomain": "Benefits",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Which outcome best illustrates 'reduced effort to create service maps'?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Incidents are auto-closed after 24 hours"
+      },
+      {
+        "id": "B",
+        "text": "The CMDB is exported nightly to a file"
+      },
+      {
+        "id": "C",
+        "text": "Automated discovery builds the dependency map from an entry point instead of an engineer drawing it by hand"
+      },
+      {
+        "id": "D",
+        "text": "Engineers manually document every dependency in a spreadsheet"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "The effort savings come from automation: you provide an entry point and Service Mapping discovers and assembles the topology, replacing slow, error-prone manual diagramming. That's the labor-reduction benefit in action.",
+    "distractor_notes": {
+      "A": "Auto-closing incidents is unrelated to map creation effort.",
+      "B": "Exporting the CMDB isn't building a service map.",
+      "D": "Manual documentation is exactly the effort Service Mapping removes."
+    },
+    "references": [
+      {
+        "title": "Service Mapping benefits",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/service-mapping-overview.html"
+      }
+    ],
+    "tags": [
+      "fundamentals-planning",
+      "benefits",
+      "automation"
+    ]
+  },
+  {
+    "id": "cisms-fun-023",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Engagement Readiness",
+    "subdomain": "Measurable outcomes",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Which measurable outcome is a reasonable success metric for a Service Mapping program?",
+    "options": [
+      {
+        "id": "A",
+        "text": "More manual diagramming hours"
+      },
+      {
+        "id": "B",
+        "text": "Higher count of orphan CIs"
+      },
+      {
+        "id": "C",
+        "text": "Reduced Mean Time to Resolve for incidents on mapped services"
+      },
+      {
+        "id": "D",
+        "text": "Increased number of duplicate CIs"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "A good KPI ties to business value: faster incident resolution on mapped services demonstrates the dependency visibility paying off. The other options describe degradations, not successes.",
+    "distractor_notes": {
+      "A": "Service Mapping should reduce manual diagramming, not increase it.",
+      "B": "More orphans signals worse relationship health, the opposite of success.",
+      "D": "More duplicates is a data-quality regression, not success."
+    },
+    "references": [
+      {
+        "title": "Service Mapping value and KPIs",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/service-mapping-overview.html"
+      }
+    ],
+    "tags": [
+      "fundamentals-planning",
+      "kpi",
+      "success-metric"
+    ]
+  },
+  {
+    "id": "cisms-fun-024",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Engagement Readiness",
+    "subdomain": "Engagement risks",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A firewall allows only outbound 80 and 443. Why is this generally NOT a blocker for Service Mapping's MID Server?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The MID Server needs inbound 443 opened"
+      },
+      {
+        "id": "B",
+        "text": "The MID Server reaches the instance outbound over 443, which is already permitted"
+      },
+      {
+        "id": "C",
+        "text": "The MID Server can't use HTTPS"
+      },
+      {
+        "id": "D",
+        "text": "The MID Server uses only port 25"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Instance communication is outbound HTTPS on 443, which this firewall already allows \u2014 so the MID Server connects fine. (Internal target ports like SSH/WMI/SNMP are a separate, internal-network consideration, not this internet egress rule.)",
+    "distractor_notes": {
+      "A": "The MID Server is outbound-only; no inbound 443 is required.",
+      "C": "The MID Server specifically uses HTTPS to the instance.",
+      "D": "Port 25 is SMTP and irrelevant to MID Server communication."
+    },
+    "references": [
+      {
+        "title": "MID Server outbound ports",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/mid-server/mid-server-ports.html"
+      }
+    ],
+    "tags": [
+      "fundamentals-planning",
+      "risk",
+      "firewall"
+    ]
+  }
+]

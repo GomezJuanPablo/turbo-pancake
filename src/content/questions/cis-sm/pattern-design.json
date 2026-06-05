@@ -1,0 +1,3463 @@
+[
+  {
+    "id": "cisms-pat-001",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Pattern Design",
+    "subdomain": "Pattern sections",
+    "difficulty": "recall",
+    "type": "multi_select",
+    "stem": "A discovery pattern used by Service Mapping is built from sections. Which TWO section types form the core of every pattern?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Entry Point Section"
+      },
+      {
+        "id": "B",
+        "text": "Connection Section"
+      },
+      {
+        "id": "C",
+        "text": "Reconciliation Section"
+      },
+      {
+        "id": "D",
+        "text": "Identification Section"
+      }
+    ],
+    "correct": [
+      "B",
+      "D"
+    ],
+    "rationale": "A pattern's job is two-fold: first prove what the CI is (Identification Section), then find what it talks to (Connection Section). Identification runs first-match-wins to classify and create/update the CI; Connection sections then run to build outbound relationships. Extension sections are optional add-ons layered on top of these two.",
+    "distractor_notes": {
+      "A": "An entry point is the starting input that triggers a pattern; it is configured separately on the application service, not a section inside the pattern.",
+      "C": "Reconciliation is an IRE/CMDB concept governing which source may write an attribute \u2014 it is not a pattern section."
+    },
+    "references": [
+      {
+        "title": "Discovery patterns and sections",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/discovery-patterns.html"
+      }
+    ],
+    "tags": [
+      "pattern-design",
+      "identification-section",
+      "connection-section"
+    ]
+  },
+  {
+    "id": "cisms-pat-002",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Pattern Design",
+    "subdomain": "Identification Section execution",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "When Service Mapping runs a pattern, what is the execution strategy for the Identification Sections?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Only the highest-priority section runs; the rest are ignored"
+      },
+      {
+        "id": "B",
+        "text": "Sections run one by one in listed order until the first one succeeds, which ends the Identification phase"
+      },
+      {
+        "id": "C",
+        "text": "All Identification Sections run and the data from every successful section is merged"
+      },
+      {
+        "id": "D",
+        "text": "Sections run in random order and the last successful section wins"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Identification is first-match-wins. The engine evaluates the sections top to bottom and stops the moment one successfully identifies the CI \u2014 there is exactly one right answer for 'what is this CI', so continuing would be wasteful. This is the opposite of Connection sections, which all run to find every dependency.",
+    "distractor_notes": {
+      "A": "Sections are tried in order regardless of a single 'priority'; the first that matches concludes the phase.",
+      "C": "Merging every section's data describes Connection behavior, not Identification \u2014 identity must resolve to a single CI.",
+      "D": "Order is deterministic (the listed order), not random, and it's first-success, not last."
+    },
+    "references": [
+      {
+        "title": "Pattern identification sections",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/pattern-identification-sections.html"
+      }
+    ],
+    "tags": [
+      "pattern-design",
+      "identification-section",
+      "first-match"
+    ]
+  },
+  {
+    "id": "cisms-pat-003",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Pattern Design",
+    "subdomain": "Connection Section execution",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "How does Service Mapping execute the Connection Sections of a pattern once a CI has been identified?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Each Connection Section runs and every successful section contributes a connection to the map"
+      },
+      {
+        "id": "B",
+        "text": "Connection Sections run only if no Identification Section matched"
+      },
+      {
+        "id": "C",
+        "text": "Only the last Connection Section is used"
+      },
+      {
+        "id": "D",
+        "text": "Sections run until the first one succeeds, then stop"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The Connection phase is exhaustive, not first-match. A CI can talk to many downstream CIs, so every Connection Section runs and each success adds a connection. That is how a complete, dependency-rich service map gets built \u2014 stopping at the first success would hide real dependencies.",
+    "distractor_notes": {
+      "B": "Connection runs after a successful identification, not instead of it.",
+      "C": "Every successful section contributes, not just the last.",
+      "D": "First-match-then-stop is Identification behavior; Connection must run them all."
+    },
+    "references": [
+      {
+        "title": "Pattern connection sections",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/pattern-connection-sections.html"
+      }
+    ],
+    "tags": [
+      "pattern-design",
+      "connection-section",
+      "run-to-completion"
+    ]
+  },
+  {
+    "id": "cisms-pat-004",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Pattern Design",
+    "subdomain": "Entry point discovery flow",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "After an entry point is configured and discovery starts, which sequence best describes what each supporting pattern does?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Run every Identification Section, then run Connection Sections until the first one succeeds"
+      },
+      {
+        "id": "B",
+        "text": "Run all Identification and all Connection Sections regardless of success"
+      },
+      {
+        "id": "C",
+        "text": "Run Identification Sections until one succeeds, then run every Connection Section for that pattern"
+      },
+      {
+        "id": "D",
+        "text": "Run Connection Sections first, then Identification Sections"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "The two phases combine their own rules: Identification is first-match-wins (stop at the first success), and Connection is run-to-completion (run them all). So for every pattern that supports the entry point type, the engine identifies the CI with one successful section, then fires all Connection sections to map dependencies.",
+    "distractor_notes": {
+      "A": "This reverses both rules \u2014 Identification stops at first success and Connection runs them all.",
+      "B": "Identification does not run all sections; it stops at the first success.",
+      "D": "Identification must happen before Connection \u2014 you can't map a CI's links before knowing what it is."
+    },
+    "references": [
+      {
+        "title": "How Service Mapping discovers a service",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/service-mapping-discovery-process.html"
+      }
+    ],
+    "tags": [
+      "pattern-design",
+      "entry-point",
+      "discovery-flow"
+    ]
+  },
+  {
+    "id": "cisms-pat-005",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Pattern Design",
+    "subdomain": "Create Connection step",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "In Pattern Designer, what does the Create Connection step define?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The relationship between a host and its installed software"
+      },
+      {
+        "id": "B",
+        "text": "Relationships between members of a cluster"
+      },
+      {
+        "id": "C",
+        "text": "Outbound connections from the current CI to other CIs"
+      },
+      {
+        "id": "D",
+        "text": "The host the application is installed on"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Create Connection is the operation that builds outbound relationships \u2014 it tells Service Mapping which downstream CIs the current CI depends on (for example an app server to its database). Those connections are what extend the map past the entry point into the full dependency tree.",
+    "distractor_notes": {
+      "A": "Host-to-installed-software is a containment relationship handled elsewhere, not by Create Connection.",
+      "B": "Cluster membership is modeled differently; Create Connection targets outbound dependencies to other CIs.",
+      "D": "Host (Hosted on) relationships are produced by identification/horizontal discovery, not the Create Connection step."
+    },
+    "references": [
+      {
+        "title": "Pattern Designer operations",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/pattern-designer-operations.html"
+      }
+    ],
+    "tags": [
+      "pattern-design",
+      "create-connection",
+      "operations"
+    ]
+  },
+  {
+    "id": "cisms-pat-006",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Pattern Design",
+    "subdomain": "Match operation",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Which Pattern Designer operation terminates the current Identification or Connection Section when its condition is not met?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Merge Table"
+      },
+      {
+        "id": "B",
+        "text": "Match"
+      },
+      {
+        "id": "C",
+        "text": "Set Parameter Value"
+      },
+      {
+        "id": "D",
+        "text": "Parse File"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Match evaluates a condition against the working data. If the condition fails, the section terminates immediately \u2014 that's how a pattern asserts 'this only proceeds if the data looks like X'. It's the primary gatekeeper that keeps a section from producing a wrong identification or connection.",
+    "distractor_notes": {
+      "A": "Merge Table combines table data; it has no built-in conditional termination.",
+      "C": "Set Parameter Value assigns a value; it doesn't evaluate a pass/fail condition that ends a section.",
+      "D": "Parse File extracts data from text; it doesn't terminate the section on a condition."
+    },
+    "references": [
+      {
+        "title": "Pattern operations \u2014 Match",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/pattern-designer-operations.html"
+      }
+    ],
+    "tags": [
+      "pattern-design",
+      "match",
+      "operations"
+    ]
+  },
+  {
+    "id": "cisms-pat-007",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Pattern Design",
+    "subdomain": "Extension Section",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "You want a pattern to collect extra attributes and adjust identification logic without editing the baseline pattern (so upgrades aren't affected). What should you add?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Steps in the pattern's Update Set"
+      },
+      {
+        "id": "B",
+        "text": "Raw NDL code in the baseline pattern"
+      },
+      {
+        "id": "C",
+        "text": "Steps in an Extension Section"
+      },
+      {
+        "id": "D",
+        "text": "Steps directly in the baseline Identification Section"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Extension Sections exist precisely to customize a baseline pattern safely. They layer additional logic and attribute collection on top of the out-of-the-box Identification logic, so the shipped pattern stays untouched and remains upgrade-safe while your customization persists.",
+    "distractor_notes": {
+      "A": "An update set is a transport container; it isn't where you add discovery logic.",
+      "B": "Hand-editing NDL in the baseline is unsupported and not upgrade-safe.",
+      "D": "Editing the baseline Identification Section is exactly what breaks on upgrade \u2014 the opposite of the goal."
+    },
+    "references": [
+      {
+        "title": "Extending patterns with extension sections",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/pattern-extension-sections.html"
+      }
+    ],
+    "tags": [
+      "pattern-design",
+      "extension-section",
+      "upgrade-safe"
+    ]
+  },
+  {
+    "id": "cisms-pat-008",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Pattern Design",
+    "subdomain": "Pattern variables",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Where can a variable defined in an Identification Section be reused?",
+    "options": [
+      {
+        "id": "A",
+        "text": "In Connection Sections of any other pattern"
+      },
+      {
+        "id": "B",
+        "text": "In the Connection Sections of the same pattern"
+      },
+      {
+        "id": "C",
+        "text": "In Identification Sections of any other pattern"
+      },
+      {
+        "id": "D",
+        "text": "In the parent CI type's identifier rules"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Pattern variables are pattern-local. A value captured in the Identification Section (say a config file path) is available later in that same pattern's Connection Sections, which is how identification data feeds the connection logic. It is never shared across different patterns or globally.",
+    "distractor_notes": {
+      "A": "Same boundary rule \u2014 no sharing into a different pattern's Connection Sections.",
+      "C": "Variables don't cross pattern boundaries; another pattern can't see them.",
+      "D": "Identifier rules are CMDB/IRE constructs, not consumers of pattern-local variables."
+    },
+    "references": [
+      {
+        "title": "Working with pattern variables",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/pattern-variables.html"
+      }
+    ],
+    "tags": [
+      "pattern-design",
+      "variables",
+      "scope"
+    ]
+  },
+  {
+    "id": "cisms-pat-009",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Pattern Design",
+    "subdomain": "Generic application",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "During Service Mapping, an application is classified as a Generic Application. What is the direct cause?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The credential for the host was invalid"
+      },
+      {
+        "id": "B",
+        "text": "No reconciliation rule exists for the CI"
+      },
+      {
+        "id": "C",
+        "text": "No pattern's Identification Section matched the application"
+      },
+      {
+        "id": "D",
+        "text": "No Connection Section matched the application"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "A Generic Application means the engine found a running application but no Identification Section in any available pattern recognized it. Without a positive identification it can't be classified into a specific class, so it falls back to Generic. Connection logic only runs after a successful identification, so a connection miss isn't the cause.",
+    "distractor_notes": {
+      "A": "A bad credential typically surfaces as a credential error icon, not a Generic Application.",
+      "B": "Missing reconciliation rules affect attribute authority, not whether an app is recognized.",
+      "D": "Connection Sections run only after identification succeeds; their failure doesn't produce a Generic classification."
+    },
+    "references": [
+      {
+        "title": "Generic applications in service maps",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/generic-applications.html"
+      }
+    ],
+    "tags": [
+      "pattern-design",
+      "generic-application",
+      "identification"
+    ]
+  },
+  {
+    "id": "cisms-pat-010",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Pattern Design",
+    "subdomain": "Create pattern from generic application",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Using the map option 'Create pattern from generic application', which set of objects is created automatically?",
+    "options": [
+      {
+        "id": "A",
+        "text": "CI Type/Class, Process Classifier, and Reconciliation Rule"
+      },
+      {
+        "id": "B",
+        "text": "Discovery Pattern, CI Type/Class, and Process Classifier"
+      },
+      {
+        "id": "C",
+        "text": "Process Classifier, Connection Section, and Identification Rule"
+      },
+      {
+        "id": "D",
+        "text": "Identification Rule, CI Class, and Identification Section only"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The shortcut bootstraps everything needed to recognize the formerly-generic app: a new Discovery Pattern (the logic), a new CI Type/Class (where it lands in the CMDB), and a Process Classifier (the process signature that triggers the pattern). From there you flesh out the identification/connection steps.",
+    "distractor_notes": {
+      "A": "A reconciliation rule isn't generated by this action \u2014 it's a separate CMDB governance artifact.",
+      "C": "Connection sections aren't auto-built here; you add them after the scaffold is created.",
+      "D": "It also creates the pattern and process classifier, not just identification pieces."
+    },
+    "references": [
+      {
+        "title": "Create a pattern from a generic application",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/create-pattern-from-generic-application.html"
+      }
+    ],
+    "tags": [
+      "pattern-design",
+      "create-pattern",
+      "process-classifier"
+    ]
+  },
+  {
+    "id": "cisms-pat-011",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Pattern Design",
+    "subdomain": "Prerequisites",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "In Service Mapping, which item must already exist before you can create a discovery pattern?",
+    "options": [
+      {
+        "id": "A",
+        "text": "An Application Service"
+      },
+      {
+        "id": "B",
+        "text": "A Process Classifier"
+      },
+      {
+        "id": "C",
+        "text": "A CI Type/Table for the pattern to populate"
+      },
+      {
+        "id": "D",
+        "text": "An Identification Rule"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "A pattern needs a destination \u2014 the CI class/table it will populate. You select that CI Type when creating the pattern, so the table must exist first. Process classifiers and identification rules are typically built alongside or after the pattern, not as a hard prerequisite to creating it.",
+    "distractor_notes": {
+      "A": "An application service is the output of mapping, not a prerequisite for a pattern.",
+      "B": "Process classifiers commonly accompany a pattern but aren't required to exist before creating it.",
+      "D": "Identification rules can be authored as part of the work; they aren't a precondition for the pattern's creation."
+    },
+    "references": [
+      {
+        "title": "Create a discovery pattern",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/create-discovery-pattern.html"
+      }
+    ],
+    "tags": [
+      "pattern-design",
+      "ci-type",
+      "prerequisite"
+    ]
+  },
+  {
+    "id": "cisms-pat-012",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Pattern Design",
+    "subdomain": "Publishing patterns",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "You edited a Connection Section but discovery still uses the old logic. Which omitted action is the cause?",
+    "options": [
+      {
+        "id": "A",
+        "text": "You did not save the connection section"
+      },
+      {
+        "id": "B",
+        "text": "You did not export the pattern"
+      },
+      {
+        "id": "C",
+        "text": "You did not publish the pattern"
+      },
+      {
+        "id": "D",
+        "text": "You did not save the pattern"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "A pattern only becomes active to the discovery engine when it is published. Saving persists your edits in the editor, but the runtime keeps using the last published version until you publish again. Forgetting to publish is the classic reason changes 'don't take'.",
+    "distractor_notes": {
+      "A": "Saving a section is part of editing; without a publish the engine still won't adopt it.",
+      "B": "Exporting just packages the pattern for transport; it has no effect on the active version.",
+      "D": "Saving stores the draft but doesn't promote it to the running engine."
+    },
+    "references": [
+      {
+        "title": "Publish a discovery pattern",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/publish-discovery-pattern.html"
+      }
+    ],
+    "tags": [
+      "pattern-design",
+      "publish",
+      "lifecycle"
+    ]
+  },
+  {
+    "id": "cisms-pat-013",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Pattern Design",
+    "subdomain": "Parsing strategies",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "In Pattern Designer, the Regular Expression parsing strategy is available from which operation?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Match"
+      },
+      {
+        "id": "B",
+        "text": "Set Variable"
+      },
+      {
+        "id": "C",
+        "text": "Parse File"
+      },
+      {
+        "id": "D",
+        "text": "Create Connection"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Parse File is the operation that extracts data from command output, config files, or log content, and it offers several parsing strategies \u2014 including Regular Expression and Delimited Text. You point Parse File at the source text and choose how to carve out the value you need.",
+    "distractor_notes": {
+      "A": "Match evaluates a condition; it isn't where you select a parsing strategy.",
+      "B": "Set Variable assigns a value; it doesn't parse source text with strategies.",
+      "D": "Create Connection builds relationships, not text parsing."
+    },
+    "references": [
+      {
+        "title": "Parse File operation and parsing strategies",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/parse-file-operation.html"
+      }
+    ],
+    "tags": [
+      "pattern-design",
+      "parse-file",
+      "parsing-strategy"
+    ]
+  },
+  {
+    "id": "cisms-pat-014",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Pattern Design",
+    "subdomain": "Delimited text parsing",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Using a Delimited Text parsing strategy, which delimiter and position parses 'CO' from the string 'Location,Denver,CO'?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Delimiter of comma, position 3"
+      },
+      {
+        "id": "B",
+        "text": "Delimiter of 'Denver', position 2"
+      },
+      {
+        "id": "C",
+        "text": "Delimiter of 'Location', position 2"
+      },
+      {
+        "id": "D",
+        "text": "Delimiter of comma, position 2"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Splitting on commas yields three fields: Location (1), Denver (2), CO (3). To grab 'CO' you select position 3. The delimited strategy is just split-then-index, so getting both the separator and the 1-based position right is the whole game.",
+    "distractor_notes": {
+      "B": "Splitting on the literal 'Denver' produces odd fragments and won't cleanly isolate 'CO'.",
+      "C": "Splitting on 'Location' leaves ',Denver,CO' \u2014 position 2 doesn't give 'CO'.",
+      "D": "Position 2 returns 'Denver', not 'CO'."
+    },
+    "references": [
+      {
+        "title": "Delimited text parsing strategy",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/parse-file-operation.html"
+      }
+    ],
+    "tags": [
+      "pattern-design",
+      "delimited-text",
+      "parsing"
+    ]
+  },
+  {
+    "id": "cisms-pat-015",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Pattern Design",
+    "subdomain": "Regular expressions",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Which regular expression captures the version 5.2.0 from the string 'Version 5.2.0'?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Version\\s+(\\d+\\.\\d+\\.\\d+)"
+      },
+      {
+        "id": "B",
+        "text": "Version (\\d+)"
+      },
+      {
+        "id": "C",
+        "text": "Version (\\d+)(\\d+)(\\d+)"
+      },
+      {
+        "id": "D",
+        "text": "Version (\\.*)"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Version\\s+ matches the literal word and the whitespace; the capture group (\\d+\\.\\d+\\.\\d+) grabs three dot-separated digit groups \u2014 exactly the X.Y.Z shape of 5.2.0. The escaped dots match literal periods rather than any character.",
+    "distractor_notes": {
+      "B": "(\\d+) stops at the first non-digit, capturing only '5'.",
+      "C": "Without dots between the groups this won't line up with '5.2.0'.",
+      "D": "(\\.*) matches zero-or-more literal dots and captures nothing useful for a version string."
+    },
+    "references": [
+      {
+        "title": "Regular expressions in patterns",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/regex-in-patterns.html"
+      }
+    ],
+    "tags": [
+      "pattern-design",
+      "regex",
+      "version"
+    ]
+  },
+  {
+    "id": "cisms-pat-016",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Pattern Design",
+    "subdomain": "Regular expressions",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Which regular expression captures 198.51.100.207 from the string 'jdbc:198.51.100.207'?",
+    "options": [
+      {
+        "id": "A",
+        "text": "jdbc:([\\d]+)"
+      },
+      {
+        "id": "B",
+        "text": "jdbc:([\\d[1-3]+\\.+])"
+      },
+      {
+        "id": "C",
+        "text": "jdbc:([\\d\\.]+)"
+      },
+      {
+        "id": "D",
+        "text": "jdbc:([\\d\\.+])"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "After the literal 'jdbc:', the class [\\d\\.] matches any digit or literal dot, and + repeats it across the whole dotted address \u2014 capturing 198.51.100.207 in one group. That's the minimal correct way to grab an IPv4 after a fixed prefix.",
+    "distractor_notes": {
+      "A": "[\\d]+ stops at the first dot, capturing only '198'.",
+      "B": "Invalid/garbled class syntax; it won't represent digit-and-dot groups.",
+      "D": "Putting + inside the class makes it a literal plus character, not a repeat quantifier."
+    },
+    "references": [
+      {
+        "title": "Regular expressions in patterns",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/regex-in-patterns.html"
+      }
+    ],
+    "tags": [
+      "pattern-design",
+      "regex",
+      "ipv4"
+    ]
+  },
+  {
+    "id": "cisms-pat-017",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Pattern Design",
+    "subdomain": "Regular expressions",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What does the regular expression ([\\w\\d\\-\\.]+) describe?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Match one or more of the characters in the set (word char, digit, hyphen, or dot)"
+      },
+      {
+        "id": "B",
+        "text": "Match between one and three characters from the set"
+      },
+      {
+        "id": "C",
+        "text": "Match between one and ten characters from the set"
+      },
+      {
+        "id": "D",
+        "text": "Match exactly one character from the set"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The brackets define a character class \u2014 any single character that is a word char (\\w), digit (\\d), literal hyphen, or literal dot. The trailing + means 'one or more', so the group greedily matches a run of those characters (effectively unlimited length).",
+    "distractor_notes": {
+      "B": "A {1,3} quantifier would cap it at three; + has no upper bound.",
+      "C": "A {1,10} quantifier would cap at ten; + is unbounded.",
+      "D": "That would be the class with no quantifier; + makes it one-or-more."
+    },
+    "references": [
+      {
+        "title": "Regular expression quantifiers",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/regex-in-patterns.html"
+      }
+    ],
+    "tags": [
+      "pattern-design",
+      "regex",
+      "quantifier"
+    ]
+  },
+  {
+    "id": "cisms-pat-018",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Pattern Design",
+    "subdomain": "Debug mode",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "You're building a Connection Section to discover the link from Host A to Host B. Which host do you run in Debug Mode to capture the connection data?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Both Host A and Host B"
+      },
+      {
+        "id": "B",
+        "text": "Host A (the source that initiates the connection)"
+      },
+      {
+        "id": "C",
+        "text": "Neither host"
+      },
+      {
+        "id": "D",
+        "text": "Host B (the target)"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Connections are discovered from the originating side. Host A makes the outbound calls (its config, listening sockets, and outbound sessions reveal that it talks to Host B), so you debug on Host A to capture that evidence. Host B is the receiver and doesn't initiate the relationship you're mapping.",
+    "distractor_notes": {
+      "A": "Debugging both adds noise and complicates correlation without adding the needed signal.",
+      "C": "You must debug the originating host to see the outbound connection at all.",
+      "D": "Host B receives the connection; it doesn't hold the outbound evidence you need."
+    },
+    "references": [
+      {
+        "title": "Debug mode in Pattern Designer",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/pattern-debug-mode.html"
+      }
+    ],
+    "tags": [
+      "pattern-design",
+      "debug-mode",
+      "connection-section"
+    ]
+  },
+  {
+    "id": "cisms-pat-019",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Pattern Design",
+    "subdomain": "Preconditions",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "In a pattern, which configuration lets a step be skipped so the section continues to the next step?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Enable Debug Mode"
+      },
+      {
+        "id": "B",
+        "text": "Create a temporary variable named 'skip'"
+      },
+      {
+        "id": "C",
+        "text": "Set a precondition on the step that evaluates to false (for example '1 Equals 2')"
+      },
+      {
+        "id": "D",
+        "text": "Select 'Terminate if not found' on the step"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "A precondition is evaluated before the step runs. If it's false, the step is skipped and execution moves on to the next step \u2014 that's the supported way to conditionally bypass a step. It's commonly used to branch logic without removing steps.",
+    "distractor_notes": {
+      "A": "Debug Mode only adds logging verbosity; it doesn't change execution flow.",
+      "B": "There's no magic 'skip' variable that bypasses a step on its own.",
+      "D": "'Terminate if not found' ends the whole section, not skips a single step."
+    },
+    "references": [
+      {
+        "title": "Step preconditions in patterns",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/pattern-step-preconditions.html"
+      }
+    ],
+    "tags": [
+      "pattern-design",
+      "precondition",
+      "skip-step"
+    ]
+  },
+  {
+    "id": "cisms-pat-020",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Pattern Design",
+    "subdomain": "Connection Section troubleshooting",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Apache and Tomcat are both discovered, but the customer says Apache should connect to Tomcat and the map shows no link. What is the most likely cause?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Tomcat's process is offline"
+      },
+      {
+        "id": "B",
+        "text": "No CI Type exists for Tomcat"
+      },
+      {
+        "id": "C",
+        "text": "No Connection Section is defined for Apache to Tomcat"
+      },
+      {
+        "id": "D",
+        "text": "No Identification Rule exists for Tomcat"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Both CIs exist, so identification and credentials are fine. A missing relationship means the pattern that discovered Apache has no Connection Section that looks for the Tomcat dependency \u2014 connections must be explicitly defined to appear on the map.",
+    "distractor_notes": {
+      "A": "An offline process would prevent Tomcat from being discovered; it was discovered.",
+      "B": "No CI Type would mean Tomcat couldn't be classified or shown, yet it appears.",
+      "D": "If Tomcat had no identification rule it wouldn't be discovered at all \u2014 but it is."
+    },
+    "references": [
+      {
+        "title": "Troubleshoot missing connections",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/troubleshoot-connections.html"
+      }
+    ],
+    "tags": [
+      "pattern-design",
+      "connection-section",
+      "troubleshooting"
+    ]
+  },
+  {
+    "id": "cisms-pat-021",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Pattern Design",
+    "subdomain": "Discovery log",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which log shows which Patterns, Identification Sections, Connection Sections, and Steps were tried during a Service Mapping run?",
+    "options": [
+      {
+        "id": "A",
+        "text": "ECC Queue"
+      },
+      {
+        "id": "B",
+        "text": "Email Log"
+      },
+      {
+        "id": "C",
+        "text": "System Log"
+      },
+      {
+        "id": "D",
+        "text": "Discovery Log"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "The Discovery Log is the step-by-step trace of a mapping run \u2014 it shows each pattern evaluated and which identification/connection sections and steps ran, succeeded, or failed. It's the first place you go to understand why a CI was (or wasn't) discovered.",
+    "distractor_notes": {
+      "A": "The ECC Queue holds the probe/sensor payloads exchanged with the MID Server, not the section-by-section trace.",
+      "B": "The Email Log tracks notifications and is unrelated.",
+      "C": "The System Log is general platform logging, not the pattern execution trace."
+    },
+    "references": [
+      {
+        "title": "Use the discovery log",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/service-mapping-discovery-log.html"
+      }
+    ],
+    "tags": [
+      "pattern-design",
+      "discovery-log",
+      "troubleshooting"
+    ]
+  },
+  {
+    "id": "cisms-pat-022",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Pattern Design",
+    "subdomain": "Discovery log icons",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "In the Discovery Log, a green 'S' under a Connection node represents which one of the following?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A step in an Identification Section"
+      },
+      {
+        "id": "B",
+        "text": "A step in a Connection Section of a pattern"
+      },
+      {
+        "id": "C",
+        "text": "A library used in an Identification Section"
+      },
+      {
+        "id": "D",
+        "text": "A library used in a Connection Section"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "In the log tree, 'P' marks a pattern, 'I' an identification section, 'C' a connection section, and 'S' a step. A green 'S' nested under a connection ('C') node is therefore a successfully executed step within that Connection Section.",
+    "distractor_notes": {
+      "A": "An 'S' under an 'I' node would be an identification step; the question places it under a connection node.",
+      "C": "Libraries aren't represented by the step 'S' marker.",
+      "D": "Same \u2014 'S' denotes a step, not a library."
+    },
+    "references": [
+      {
+        "title": "Reading the discovery log",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/service-mapping-discovery-log.html"
+      }
+    ],
+    "tags": [
+      "pattern-design",
+      "discovery-log",
+      "icons"
+    ]
+  },
+  {
+    "id": "cisms-pat-023",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Pattern Design",
+    "subdomain": "Export patterns",
+    "difficulty": "application",
+    "type": "multi_select",
+    "stem": "From the Discovery Pattern list, the action 'Export patterns with CMDB items' creates an update set containing the modified pattern plus which related items?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Identification Rules used by the pattern"
+      },
+      {
+        "id": "B",
+        "text": "The MID Server configuration file"
+      },
+      {
+        "id": "C",
+        "text": "Every CI ever discovered by the pattern"
+      },
+      {
+        "id": "D",
+        "text": "Reconciliation Rules for the affected class"
+      }
+    ],
+    "correct": [
+      "A",
+      "D"
+    ],
+    "rationale": "Exporting 'with CMDB items' bundles the data-model context the pattern needs to work on the target instance: the Identification Rules that decide how its CIs are matched, and the Reconciliation Rules that govern which sources can update those attributes. Without them the imported pattern would misbehave.",
+    "distractor_notes": {
+      "B": "MID Server config.xml is host-side configuration, never part of a pattern export.",
+      "C": "It doesn't haul along the whole discovered CI population \u2014 that's runtime data, not pattern definition."
+    },
+    "references": [
+      {
+        "title": "Export patterns with CMDB items",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/export-patterns.html"
+      }
+    ],
+    "tags": [
+      "pattern-design",
+      "export",
+      "update-set"
+    ]
+  },
+  {
+    "id": "cisms-pat-024",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Pattern Design",
+    "subdomain": "Pattern updates between releases",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Between ServiceNow family releases, where do new and updated Discovery and Service Mapping patterns become available?",
+    "options": [
+      {
+        "id": "A",
+        "text": "ServiceNow Community"
+      },
+      {
+        "id": "B",
+        "text": "ServiceNow Store (Discovery and Service Mapping Patterns app)"
+      },
+      {
+        "id": "C",
+        "text": "ServiceNow Docs site"
+      },
+      {
+        "id": "D",
+        "text": "Now Support (HI)"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Patterns ship as a separately versioned ServiceNow Store app ('Discovery and Service Mapping Patterns'). That's how you get newly validated patterns without waiting for a platform upgrade \u2014 you simply update the Store app.",
+    "distractor_notes": {
+      "A": "Community is for discussion; vetted patterns come through the Store.",
+      "C": "The docs site explains patterns but isn't the delivery channel for the pattern content itself.",
+      "D": "Now Support handles cases and instance management, not pattern distribution."
+    },
+    "references": [
+      {
+        "title": "Discovery and Service Mapping Patterns on the Store",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/pattern-updates-from-store.html"
+      }
+    ],
+    "tags": [
+      "pattern-design",
+      "servicenow-store",
+      "patterns"
+    ]
+  },
+  {
+    "id": "cisms-pat-025",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Pattern Design",
+    "subdomain": "Identifier entry configuration",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Which Identifier Entry option must be true so a CI is matched using the Application Rule (parent) identifier when no more-specific identifier matches?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Allow null attribute"
+      },
+      {
+        "id": "B",
+        "text": "Allow fallback to parent's rules"
+      },
+      {
+        "id": "C",
+        "text": "Criterion attributes"
+      },
+      {
+        "id": "D",
+        "text": "Independent"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "'Allow fallback to parent's rules' lets the engine back off to a less specific parent identifier when the specific one fails to match. That's exactly the described behavior \u2014 try the precise rule first, then fall back to the broader Application Rule so the CI still resolves.",
+    "distractor_notes": {
+      "A": "'Allow null attribute' lets a criterion attribute be empty and still match; it doesn't drive parent fallback.",
+      "C": "Criterion attributes define what is compared, not whether a parent rule is tried next.",
+      "D": "'Independent' marks the identifier as not relying on a parent context \u2014 it actually works against fallback."
+    },
+    "references": [
+      {
+        "title": "Identifier entry configuration",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/identifier-entry-config.html"
+      }
+    ],
+    "tags": [
+      "pattern-design",
+      "identifier-entry",
+      "fallback"
+    ]
+  },
+  {
+    "id": "cisms-pat-026",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Pattern Design",
+    "subdomain": "Identifier criterion attributes",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "For a new application Identifier that must stay stable across upgrades and tolerate multiple installs on one host, which criterion attribute set is most scalable?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Class and Discovery Source"
+      },
+      {
+        "id": "B",
+        "text": "Class and Last Discovered"
+      },
+      {
+        "id": "C",
+        "text": "Class and Version"
+      },
+      {
+        "id": "D",
+        "text": "Class and Installation Directory"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "The installation directory is durable: an in-place upgrade overwrites files in the same folder (so the identity survives the version change), and separate installs live in distinct folders (so two instances on one host stay distinct). That combination of stability and uniqueness is what you want in an identifier.",
+    "distractor_notes": {
+      "A": "Discovery Source changes with how the data arrived; it doesn't uniquely identify the app.",
+      "B": "Last Discovered is a timestamp that changes every run \u2014 useless for stable identity.",
+      "C": "Version changes on every upgrade, which would force the rule to treat the upgraded app as a new CI."
+    },
+    "references": [
+      {
+        "title": "Designing CI identifiers",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/ci-identification-rules.html"
+      }
+    ],
+    "tags": [
+      "pattern-design",
+      "identifier",
+      "criterion-attributes"
+    ]
+  },
+  {
+    "id": "cisms-pat-027",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Pattern Design",
+    "subdomain": "Identifier criterion attributes",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An Apache identifier uses Class, Configuration file, and Version as criterion attributes. Yesterday Apache was discovered; today the owner upgrades it to a new version and reruns discovery. What happens in the CMDB?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The existing CI is updated in place with no new record"
+      },
+      {
+        "id": "B",
+        "text": "The CI is reclassified as a generic Web Server"
+      },
+      {
+        "id": "C",
+        "text": "A duplicate-merge task resolves them into one immediately"
+      },
+      {
+        "id": "D",
+        "text": "A new Apache CI is created because Version is part of the identity and it changed"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "When a changing attribute like Version is used as a criterion, the engine no longer matches the old record \u2014 the new version produces a different identity, so a second CI is created. This is the cautionary tale for why volatile attributes make poor identifiers.",
+    "distractor_notes": {
+      "A": "In-place update would happen only if the identity attributes were stable; Version isn't.",
+      "B": "Changing a version doesn't downgrade the class to generic.",
+      "C": "IRE may later flag duplicates, but the immediate result of the changed criterion is a new CI."
+    },
+    "references": [
+      {
+        "title": "CI identification rules",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/ci-identification-rules.html"
+      }
+    ],
+    "tags": [
+      "pattern-design",
+      "identifier",
+      "version-pitfall"
+    ]
+  },
+  {
+    "id": "cisms-pat-028",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Pattern Design",
+    "subdomain": "Identifier criterion attributes",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An Apache identifier lists Class, Configuration file, and Version as criterion attributes, but the pattern collects the configuration file and NOT the version. What happens on a Service Mapping discovery?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A duplicate error occurs"
+      },
+      {
+        "id": "B",
+        "text": "The CI is reclassified as a generic Web Server"
+      },
+      {
+        "id": "C",
+        "text": "The CI is discovered and updated normally"
+      },
+      {
+        "id": "D",
+        "text": "An identification error occurs because a required criterion attribute (Version) is missing"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "If a criterion attribute is mandatory for identification and the pattern never collects it, the engine can't satisfy the identifier and raises an identification error. The fix is to either collect the missing attribute in the pattern or remove it from the identifier (or allow null).",
+    "distractor_notes": {
+      "A": "A duplicate error is about two records matching, not a missing criterion value.",
+      "B": "A missing attribute doesn't trigger reclassification to generic.",
+      "C": "Without the required identity data, normal create/update can't proceed."
+    },
+    "references": [
+      {
+        "title": "Identification errors",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/ci-identification-rules.html"
+      }
+    ],
+    "tags": [
+      "pattern-design",
+      "identifier",
+      "identification-error"
+    ]
+  },
+  {
+    "id": "cisms-pat-029",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Pattern Design",
+    "subdomain": "Pattern Designer operations",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which Pattern Designer operation retrieves the list of processes running on a host?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Parse URL"
+      },
+      {
+        "id": "B",
+        "text": "Create Connection"
+      },
+      {
+        "id": "C",
+        "text": "Match"
+      },
+      {
+        "id": "D",
+        "text": "Get Process"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "Get Process pulls the running process table from the target host, giving the pattern command lines, listening ports, and process names to work with. Those are the raw materials the identification and connection logic parse to recognize an application and find its dependencies.",
+    "distractor_notes": {
+      "A": "Parse URL splits a URL into components; unrelated to process listing.",
+      "B": "Create Connection builds a relationship; it doesn't collect process data.",
+      "C": "Match tests a condition; it consumes data, it doesn't gather processes."
+    },
+    "references": [
+      {
+        "title": "Pattern Designer operations",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/pattern-designer-operations.html"
+      }
+    ],
+    "tags": [
+      "pattern-design",
+      "get-process",
+      "operations"
+    ]
+  },
+  {
+    "id": "cisms-pat-030",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Pattern Design",
+    "subdomain": "Entry point definition",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which statement best defines an Entry Point in Service Mapping?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A method by which a user interacts with a service, or by which one CI interacts with another"
+      },
+      {
+        "id": "B",
+        "text": "A template of attributes that define a communication type"
+      },
+      {
+        "id": "C",
+        "text": "A Host::Hosted on relationship between CIs"
+      },
+      {
+        "id": "D",
+        "text": "A scheduled job that triggers discovery"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "An entry point is the interaction surface where a service is accessed \u2014 a URL, an IP and port, a load balancer VIP \u2014 i.e., where a user or another CI reaches the service. Service Mapping starts discovery from that point and works downstream into dependencies.",
+    "distractor_notes": {
+      "B": "That describes an entry point type/template, not the entry point itself.",
+      "C": "A Hosted-on relationship is a CMDB relationship, not the service's access surface.",
+      "D": "Schedules trigger discovery runs; they aren't the access surface that defines an entry point."
+    },
+    "references": [
+      {
+        "title": "Entry points in Service Mapping",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/service-mapping-entry-points.html"
+      }
+    ],
+    "tags": [
+      "pattern-design",
+      "entry-point",
+      "definition"
+    ]
+  },
+  {
+    "id": "cisms-pat-031",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Pattern Design",
+    "subdomain": "Command Line Console",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "What does the URL https://<instance>/SaCmdManager.do?ip=198.51.100.66 do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Runs commands against the ServiceNow instance at that IP"
+      },
+      {
+        "id": "B",
+        "text": "Directs Service Mapping to use 198.51.100.66 as the MID Server"
+      },
+      {
+        "id": "C",
+        "text": "Opens the Command Line Console to send commands to the host 198.51.100.66 (via the MID Server)"
+      },
+      {
+        "id": "D",
+        "text": "It is not a valid Service Mapping URL"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "SaCmdManager.do launches the Service Mapping Command Line Console, and the ip= parameter targets the host you want to run commands against. It's a troubleshooting tool to verify connectivity and see exactly what a command returns from a target during pattern development.",
+    "distractor_notes": {
+      "A": "Commands go to the target host through the MID Server, not against the instance.",
+      "B": "The ip parameter names the target host, not the MID Server.",
+      "D": "It is a valid, documented Service Mapping console URL."
+    },
+    "references": [
+      {
+        "title": "Command Line Console",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/command-line-console.html"
+      }
+    ],
+    "tags": [
+      "pattern-design",
+      "command-line-console",
+      "troubleshooting"
+    ]
+  },
+  {
+    "id": "cisms-pat-032",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Pattern Design",
+    "subdomain": "Unix commands",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Which Linux command lets a non-root user return the process ID listening on port 8080?",
+    "options": [
+      {
+        "id": "A",
+        "text": "netstat -anp | grep :8080"
+      },
+      {
+        "id": "B",
+        "text": "sudo netstat -anp | grep :8080"
+      },
+      {
+        "id": "C",
+        "text": "netstat -an -pid * | grep :8080"
+      },
+      {
+        "id": "D",
+        "text": "sudo netstat -an -p TCP | grep :8080"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "-a lists all sockets, -n shows numeric addresses/ports, and -p reveals the owning PID/program \u2014 but -p requires elevated rights, so a non-root user must prefix sudo. Piping to grep :8080 filters to the port of interest.",
+    "distractor_notes": {
+      "A": "Without sudo, a non-root user typically can't see the PID/program name (-p) for others' sockets.",
+      "C": "'-pid *' is not valid netstat syntax.",
+      "D": "'-p TCP' is the wrong syntax for netstat's -p flag on Linux (that's a BSD/Windows-style protocol filter)."
+    },
+    "references": [
+      {
+        "title": "Discovering listening processes",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/unix-discovery-commands.html"
+      }
+    ],
+    "tags": [
+      "pattern-design",
+      "unix",
+      "netstat"
+    ]
+  },
+  {
+    "id": "cisms-pat-033",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Pattern Design",
+    "subdomain": "Windows commands",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An administrator runs 'netstat -an | findstr 8080' in the Command Line Console and sees 'TCP 0.0.0.0:8080 0.0.0.0:0 LISTENING'. What are they checking?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Whether a process with PID 8080 exists"
+      },
+      {
+        "id": "B",
+        "text": "Whether any process on the host is using (listening on) port 8080"
+      },
+      {
+        "id": "C",
+        "text": "Whether the MID Server is communicating"
+      },
+      {
+        "id": "D",
+        "text": "How many processes are listening overall"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "netstat -an lists sockets numerically and findstr 8080 filters to that port. The LISTENING line confirms a process is bound to 8080 \u2014 that's how you verify an app's entry-point port is actually open before debugging why the pattern can't reach it.",
+    "distractor_notes": {
+      "A": "8080 here is a port, not a process ID.",
+      "C": "MID Server health is checked elsewhere, not by a port-8080 netstat on the target.",
+      "D": "The filter targets one port; it isn't a count of all listeners."
+    },
+    "references": [
+      {
+        "title": "Windows discovery commands",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/windows-discovery-commands.html"
+      }
+    ],
+    "tags": [
+      "pattern-design",
+      "windows",
+      "netstat"
+    ]
+  },
+  {
+    "id": "cisms-pat-034",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Pattern Design",
+    "subdomain": "Run command process",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "How does Service Mapping run a command on a target device?",
+    "options": [
+      {
+        "id": "A",
+        "text": "It creates a task with the command; the MID Server collects it, executes it on the target, and returns the result to the instance as an XML payload"
+      },
+      {
+        "id": "B",
+        "text": "The target pulls the command from the instance and replies directly"
+      },
+      {
+        "id": "C",
+        "text": "The MID Server decides which command to run and executes it"
+      },
+      {
+        "id": "D",
+        "text": "The instance connects directly to the target and runs the command"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The instance authors the command into an ECC Queue task; the MID Server picks it up, runs it against the target using the right credential/protocol, and writes the result back as an XML input payload. The MID Server is the relay, not the brain \u2014 the instance decides what to run.",
+    "distractor_notes": {
+      "B": "Targets don't pull commands; the MID Server initiates against them.",
+      "C": "The MID Server executes commands but doesn't decide them; the instance/pattern does.",
+      "D": "The instance never connects directly to internal targets \u2014 that's the MID Server's job."
+    },
+    "references": [
+      {
+        "title": "MID Server command execution",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/mid-server-command-execution.html"
+      }
+    ],
+    "tags": [
+      "pattern-design",
+      "mid-server",
+      "ecc-queue"
+    ]
+  },
+  {
+    "id": "cisms-pat-035",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Pattern Design",
+    "subdomain": "ECC Queue",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which ECC Queue record holds the XML payload returned from the MID Server to be processed by the instance?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Input, Pending"
+      },
+      {
+        "id": "B",
+        "text": "Output, Ready"
+      },
+      {
+        "id": "C",
+        "text": "Output, Pending"
+      },
+      {
+        "id": "D",
+        "text": "Input, Ready"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "Direction is from the instance's perspective: Output goes out to the MID Server, Input comes back in. A result returning to the instance is an Input record, and Ready means it's queued for the instance to process. So results land as Input/Ready.",
+    "distractor_notes": {
+      "A": "Pending means not yet ready for processing; the returned-and-ready record is Ready.",
+      "B": "Output is instance-to-MID; a returned result is Input, not Output.",
+      "C": "Both wrong attributes \u2014 it's neither Output nor Pending for a result to be processed."
+    },
+    "references": [
+      {
+        "title": "ECC Queue overview",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/mid-server/ecc-queue.html"
+      }
+    ],
+    "tags": [
+      "pattern-design",
+      "ecc-queue",
+      "input-output"
+    ]
+  },
+  {
+    "id": "cisms-pat-036",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Pattern Design",
+    "subdomain": "Pattern Designer operations",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which Pattern Designer operation is used to create a reference to another pattern's logic rather than building a network connection?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Create Connection"
+      },
+      {
+        "id": "B",
+        "text": "Get Process"
+      },
+      {
+        "id": "C",
+        "text": "Parse File"
+      },
+      {
+        "id": "D",
+        "text": "Create Reference"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "Create Reference links a pattern to another pattern or predefined reference so shared logic can be reused, without forging an actual outbound CI-to-CI network connection. It's about composition of pattern logic, not about mapping a runtime dependency.",
+    "distractor_notes": {
+      "A": "Create Connection builds the real outbound CI relationship on the map.",
+      "B": "Get Process collects process data; unrelated to referencing logic.",
+      "C": "Parse File extracts data from text; it doesn't reference other patterns."
+    },
+    "references": [
+      {
+        "title": "Pattern Designer operations",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/pattern-designer-operations.html"
+      }
+    ],
+    "tags": [
+      "pattern-design",
+      "create-reference",
+      "operations"
+    ]
+  },
+  {
+    "id": "cisms-pat-037",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Pattern Design",
+    "subdomain": "Delimited text parsing",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Using a Delimited Text strategy, which delimiter and position parses 2014 from '2014/02/07-17:49:36'?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Delimiter '/', position 0"
+      },
+      {
+        "id": "B",
+        "text": "Delimiter '/', position 1"
+      },
+      {
+        "id": "C",
+        "text": "Delimiter space, position 1"
+      },
+      {
+        "id": "D",
+        "text": "Delimiter '2014', position 1"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Splitting on '/' gives ['2014', '02', '07-17:49:36']. The first element is '2014'. The pattern designer's delimited strategy uses 1-based positions, so position 1 returns the first token \u2014 2014.",
+    "distractor_notes": {
+      "A": "Position 0 isn't how the Pattern Designer delimited strategy is indexed (it's 1-based).",
+      "C": "There's no space before 2014 to split on at that boundary.",
+      "D": "Using '2014' as the delimiter removes the very value you want to capture."
+    },
+    "references": [
+      {
+        "title": "Delimited text parsing strategy",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/parse-file-operation.html"
+      }
+    ],
+    "tags": [
+      "pattern-design",
+      "delimited-text",
+      "parsing"
+    ]
+  },
+  {
+    "id": "cisms-pat-038",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Pattern Design",
+    "subdomain": "Regular expressions",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "What does the regex '- (\\d\\d:\\d\\d:\\d\\d)' capture from '2014/02/07-17:49:36'?",
+    "options": [
+      {
+        "id": "A",
+        "text": "174936"
+      },
+      {
+        "id": "B",
+        "text": "49:36:00"
+      },
+      {
+        "id": "C",
+        "text": "17:49:36"
+      },
+      {
+        "id": "D",
+        "text": "17:49"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "The literal hyphen sits right before the time, and \\d\\d:\\d\\d:\\d\\d matches HH:MM:SS. The only substring after the '-' that fits three two-digit groups separated by colons is 17:49:36, which the capture group returns.",
+    "distractor_notes": {
+      "A": "No colons \u2014 doesn't match the colon-separated pattern.",
+      "B": "Starts at the wrong field and invents a :00 that isn't in the source.",
+      "D": "That stops at MM, but the pattern requires a third :SS group."
+    },
+    "references": [
+      {
+        "title": "Regular expressions in patterns",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/regex-in-patterns.html"
+      }
+    ],
+    "tags": [
+      "pattern-design",
+      "regex",
+      "time"
+    ]
+  },
+  {
+    "id": "cisms-pat-039",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Pattern Design",
+    "subdomain": "Regular expressions",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Which regex captures host, port, and path from 'jdbc:mysql://localhost:3306/myDatabase?profileSQL=true'?",
+    "options": [
+      {
+        "id": "A",
+        "text": "jdbc:mysql:\\/\\/([\\w\\.]):(\\d+)\\/(\\w+)"
+      },
+      {
+        "id": "B",
+        "text": ".*:\\/\\/([\\w\\.-_]+):(\\w+)\\/(\\w+)"
+      },
+      {
+        "id": "C",
+        "text": ".*:\\/\\/(\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}+):(\\d+)"
+      },
+      {
+        "id": "D",
+        "text": ".*\\/\\/([\\w\\.]+):(\\d+)\\/(\\w+)"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "After the '//', ([\\w\\.]+) captures the host (localhost), (\\d+) captures the port (3306), and \\/(\\w+) captures the path segment (myDatabase). Three groups, three values \u2014 host, port, path.",
+    "distractor_notes": {
+      "A": "([\\w\\.]) without + matches a single character, so it can't capture 'localhost'.",
+      "B": "The character class '[\\w\\.-_]' is malformed (the '-' inside creates a range), and (\\w+) for the port is loose.",
+      "C": "It hardcodes an IPv4 host and so won't match 'localhost', plus it drops the path group."
+    },
+    "references": [
+      {
+        "title": "Regular expressions in patterns",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/regex-in-patterns.html"
+      }
+    ],
+    "tags": [
+      "pattern-design",
+      "regex",
+      "jdbc"
+    ]
+  },
+  {
+    "id": "cisms-pat-040",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Pattern Design",
+    "subdomain": "Service Mapping skills",
+    "difficulty": "recall",
+    "type": "multi_select",
+    "stem": "Which skills are most relevant for a Service Mapping implementer building patterns?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Building enterprise marketing websites"
+      },
+      {
+        "id": "B",
+        "text": "Windows and Unix administration and command-line scripting"
+      },
+      {
+        "id": "C",
+        "text": "Protocols such as HTTP, TCP, SNMP, SOAP, and REST"
+      },
+      {
+        "id": "D",
+        "text": "XML, regex, delimited text, and JSON parsing"
+      },
+      {
+        "id": "E",
+        "text": "Graphic design for service map theming"
+      }
+    ],
+    "correct": [
+      "B",
+      "C",
+      "D"
+    ],
+    "rationale": "Pattern work is parsing + protocols + OS fluency: you carve values out of command output (XML/regex/delimited/JSON), you reason about how services talk (HTTP/TCP/SNMP/SOAP/REST), and you run and interpret Windows/Unix commands to gather evidence. Those three skill areas cover the daily reality of pattern authoring.",
+    "distractor_notes": {
+      "A": "Web development isn't part of building discovery patterns.",
+      "E": "Map visuals are rendered by the platform; design skills aren't a pattern prerequisite."
+    },
+    "references": [
+      {
+        "title": "Service Mapping implementer skills",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/service-mapping-prerequisites.html"
+      }
+    ],
+    "tags": [
+      "pattern-design",
+      "skills",
+      "prerequisites"
+    ]
+  },
+  {
+    "id": "cisms-pat-041",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Pattern Design",
+    "subdomain": "Pattern sections",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the purpose of an Identification Section within a discovery pattern?",
+    "options": [
+      {
+        "id": "A",
+        "text": "To schedule when the pattern runs"
+      },
+      {
+        "id": "B",
+        "text": "To assign credentials to the host"
+      },
+      {
+        "id": "C",
+        "text": "To build outbound connections to downstream CIs"
+      },
+      {
+        "id": "D",
+        "text": "To recognize and classify the CI and create or update it in the CMDB"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "Identification's job is 'what is this?' \u2014 it gathers attributes, matches them against the CI's identifier, and creates or updates the CI accordingly. Only after the CI is positively identified do connection sections run to map what it depends on.",
+    "distractor_notes": {
+      "A": "Scheduling lives on the discovery schedule, not inside a pattern section.",
+      "B": "Credentials are managed in the credential store, not assigned by an identification section.",
+      "C": "Building connections is the Connection Section's role."
+    },
+    "references": [
+      {
+        "title": "Pattern identification sections",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/pattern-identification-sections.html"
+      }
+    ],
+    "tags": [
+      "pattern-design",
+      "identification-section",
+      "purpose"
+    ]
+  },
+  {
+    "id": "cisms-pat-042",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Pattern Design",
+    "subdomain": "Multiple-match handling",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "During identification, a payload's criterion attributes match more than one existing CI. How should this be characterized?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A normal event requiring no attention"
+      },
+      {
+        "id": "B",
+        "text": "A clean single match that updates one CI"
+      },
+      {
+        "id": "C",
+        "text": "An ambiguous multiple-match that should be surfaced for review rather than blindly updated"
+      },
+      {
+        "id": "D",
+        "text": "A signal to delete all matching CIs"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "When incoming data resolves to several CIs, identity is ambiguous. IRE won't guess \u2014 it flags the condition (often as a duplicate/remediation item) so a human can confirm which record is correct, protecting the CMDB from silent, wrong updates.",
+    "distractor_notes": {
+      "A": "Ambiguous identity is exactly the kind of data-quality event that needs attention.",
+      "B": "By definition more than one matched, so it isn't a clean single match.",
+      "D": "Deleting all matches would destroy potentially valid CIs \u2014 never the response to ambiguity."
+    },
+    "references": [
+      {
+        "title": "Identification and reconciliation engine",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/ci-identification-rules.html"
+      }
+    ],
+    "tags": [
+      "pattern-design",
+      "identification",
+      "multiple-match"
+    ]
+  },
+  {
+    "id": "cisms-pat-043",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Pattern Design",
+    "subdomain": "Service map boundaries",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "On a service map, a discovered CI (e.g., HAProxy) shows lower icons that represent connections leaving the current map context. What are these called?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Boundaries"
+      },
+      {
+        "id": "B",
+        "text": "Generic applications"
+      },
+      {
+        "id": "C",
+        "text": "Discovery errors"
+      },
+      {
+        "id": "D",
+        "text": "Application clusters"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Boundary icons mark where a connection exits the current service's scope \u2014 an integration point or external dependency. They keep the map readable by showing 'this goes somewhere outside here' without dragging unrelated infrastructure into view.",
+    "distractor_notes": {
+      "B": "Generic applications are unidentified apps, a different icon/state.",
+      "C": "Errors have their own status icons (e.g., credential-error markers), not boundaries.",
+      "D": "Cluster members are drawn with their own grouping visuals, not boundary markers."
+    },
+    "references": [
+      {
+        "title": "Service map boundaries",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/service-map-boundaries.html"
+      }
+    ],
+    "tags": [
+      "pattern-design",
+      "boundaries",
+      "service-map"
+    ]
+  },
+  {
+    "id": "cisms-pat-044",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Pattern Design",
+    "subdomain": "Service map indicators",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "On a service map, a black arrow pointing into the top of a CI typically indicates which one of the following?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A firewall protecting the service"
+      },
+      {
+        "id": "B",
+        "text": "The CMDB reconciliation source"
+      },
+      {
+        "id": "C",
+        "text": "The entry point to the service"
+      },
+      {
+        "id": "D",
+        "text": "A router interface"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "The inbound arrow at the top of the topmost CI marks the service's entry point \u2014 where discovery began and where traffic enters. It anchors the top-down map: everything below flows from that starting interaction.",
+    "distractor_notes": {
+      "A": "Firewalls, if modeled, appear as their own CIs, not as the entry-point arrow.",
+      "B": "Reconciliation source is metadata on the CI record, not a map arrow.",
+      "D": "Router interfaces aren't represented by the entry-point indicator."
+    },
+    "references": [
+      {
+        "title": "Reading a service map",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/view-service-maps.html"
+      }
+    ],
+    "tags": [
+      "pattern-design",
+      "entry-point",
+      "service-map"
+    ]
+  },
+  {
+    "id": "cisms-pat-045",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Pattern Design",
+    "subdomain": "Service map indicators",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "On a service map a child application shown directly beneath and connected to its parent (e.g., ticket-monster under JBoss WildFly) is best described as what?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A boundary"
+      },
+      {
+        "id": "B",
+        "text": "A cluster member"
+      },
+      {
+        "id": "C",
+        "text": "A subordinate (hosted) service component of the parent"
+      },
+      {
+        "id": "D",
+        "text": "An exclusion"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "An application running on/within another (ticket-monster deployed on the WildFly app server) is drawn as a subordinate component hanging off its host/parent. It depends on and is contained by the parent in the dependency hierarchy.",
+    "distractor_notes": {
+      "A": "A boundary marks a connection leaving the map, not a hosted child app.",
+      "B": "Cluster members are sibling nodes in a cluster grouping, not a hosted child.",
+      "D": "An exclusion is a CI deliberately removed from the map, shown differently."
+    },
+    "references": [
+      {
+        "title": "Service map components",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/view-service-maps.html"
+      }
+    ],
+    "tags": [
+      "pattern-design",
+      "subordinate",
+      "service-map"
+    ]
+  },
+  {
+    "id": "cisms-pat-046",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Pattern Design",
+    "subdomain": "Pattern Designer operations",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A pattern needs to keep only the table rows where status = 'running' before further processing. Which operation fits best?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Parse URL"
+      },
+      {
+        "id": "B",
+        "text": "Merge Table"
+      },
+      {
+        "id": "C",
+        "text": "Create Connection"
+      },
+      {
+        "id": "D",
+        "text": "Filter Table"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "Filter Table narrows a working table to the rows that meet a condition, so downstream steps operate only on the relevant subset (here, running processes). It's the standard way to prune noise out of collected tabular data.",
+    "distractor_notes": {
+      "A": "Parse URL splits a URL string; unrelated to table filtering.",
+      "B": "Merge Table joins two tables; it doesn't filter rows by condition.",
+      "C": "Create Connection builds relationships, not row filtering."
+    },
+    "references": [
+      {
+        "title": "Pattern Designer operations",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/pattern-designer-operations.html"
+      }
+    ],
+    "tags": [
+      "pattern-design",
+      "filter-table",
+      "operations"
+    ]
+  },
+  {
+    "id": "cisms-pat-047",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Pattern Design",
+    "subdomain": "Service map status icons",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which icon on a service map indicates a credential error encountered during discovery?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A blue information dot"
+      },
+      {
+        "id": "B",
+        "text": "A warning triangle on the affected CI"
+      },
+      {
+        "id": "C",
+        "text": "A grey boundary marker"
+      },
+      {
+        "id": "D",
+        "text": "A green checkmark"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Discovery problems such as a failed/invalid credential surface as a warning triangle on the CI, signaling that Service Mapping couldn't authenticate to fully discover it. You click through to the log to see the specific authentication failure.",
+    "distractor_notes": {
+      "A": "A blue info dot is informational, not a credential failure.",
+      "C": "A boundary marker shows a connection leaving the map, unrelated to credentials.",
+      "D": "A green checkmark indicates success, not an error."
+    },
+    "references": [
+      {
+        "title": "Service map error indicators",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/troubleshoot-service-maps.html"
+      }
+    ],
+    "tags": [
+      "pattern-design",
+      "credential-error",
+      "icons"
+    ]
+  },
+  {
+    "id": "cisms-pat-048",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Pattern Design",
+    "subdomain": "Pattern Designer operations",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A pattern step must store the value extracted from a parsed config file so later steps can use it. Which operation assigns that value to a variable?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Set Variable"
+      },
+      {
+        "id": "B",
+        "text": "Get Process"
+      },
+      {
+        "id": "C",
+        "text": "Create Connection"
+      },
+      {
+        "id": "D",
+        "text": "Match"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Set Variable assigns a value (often the output of a Parse File step) to a named pattern variable so subsequent steps can reference it. It's the glue that carries extracted data forward through identification and connection logic.",
+    "distractor_notes": {
+      "B": "Get Process gathers process data; it isn't an assignment operation.",
+      "C": "Create Connection builds a relationship, not a variable assignment.",
+      "D": "Match tests a condition; it doesn't store a value into a variable."
+    },
+    "references": [
+      {
+        "title": "Pattern Designer operations",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/pattern-designer-operations.html"
+      }
+    ],
+    "tags": [
+      "pattern-design",
+      "set-variable",
+      "operations"
+    ]
+  },
+  {
+    "id": "cisms-pat-049",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Pattern Design",
+    "subdomain": "Pattern Designer operations",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which Pattern Designer operation breaks a URL into its component parts (scheme, host, port, path)?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Create Connection"
+      },
+      {
+        "id": "B",
+        "text": "Match"
+      },
+      {
+        "id": "C",
+        "text": "Parse File"
+      },
+      {
+        "id": "D",
+        "text": "Parse URL"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "Parse URL takes a URL string and splits it into scheme, host, port, and path so later steps can use those pieces \u2014 for example to derive the host and port of a downstream connection. It's purpose-built for URLs, unlike the general-purpose Parse File.",
+    "distractor_notes": {
+      "A": "Create Connection builds a relationship using values you've already extracted.",
+      "B": "Match evaluates a condition; it doesn't decompose a URL.",
+      "C": "Parse File extracts data from arbitrary text/files; Parse URL is the URL-specific helper."
+    },
+    "references": [
+      {
+        "title": "Pattern Designer operations",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/pattern-designer-operations.html"
+      }
+    ],
+    "tags": [
+      "pattern-design",
+      "parse-url",
+      "operations"
+    ]
+  },
+  {
+    "id": "cisms-pat-050",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Pattern Design",
+    "subdomain": "Parsing strategies",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which Parse File parsing strategy extracts a value by counting an offset from the end of the content?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Match"
+      },
+      {
+        "id": "B",
+        "text": "Regular Expression"
+      },
+      {
+        "id": "C",
+        "text": "Delimited Text"
+      },
+      {
+        "id": "D",
+        "text": "Position From End"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "Position From End locates data by offset measured backward from the end of the text \u2014 handy for fixed-width or trailing fields that are easier to find from the tail than the head. It's one of several Parse File strategies alongside Delimited Text and Regular Expression.",
+    "distractor_notes": {
+      "A": "Match is a conditional operation, not a parsing strategy.",
+      "B": "Regular Expression matches patterns anywhere; it isn't offset-from-end.",
+      "C": "Delimited Text splits on a separator and indexes a token, not an end offset."
+    },
+    "references": [
+      {
+        "title": "Parse File parsing strategies",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/parse-file-operation.html"
+      }
+    ],
+    "tags": [
+      "pattern-design",
+      "position-from-end",
+      "parsing"
+    ]
+  },
+  {
+    "id": "cisms-pat-051",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Pattern Design",
+    "subdomain": "Connection Section",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A Connection Section parses a JDBC string out of an application's config to link it to its database. Which operation extracts the connection string from the file content?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Create Connection"
+      },
+      {
+        "id": "B",
+        "text": "Get Process"
+      },
+      {
+        "id": "C",
+        "text": "Parse File"
+      },
+      {
+        "id": "D",
+        "text": "Match"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "First you Parse File to pull the JDBC string (host/port) out of the config, then you feed those values into Create Connection to actually draw the dependency. Parse File is the extraction step that makes the connection possible.",
+    "distractor_notes": {
+      "A": "Create Connection uses the extracted host/port to build the link, but it doesn't itself read the file.",
+      "B": "Get Process lists processes; it doesn't read a config file's contents.",
+      "D": "Match gates on a condition; it doesn't extract the connection string."
+    },
+    "references": [
+      {
+        "title": "Building connection sections",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/pattern-connection-sections.html"
+      }
+    ],
+    "tags": [
+      "pattern-design",
+      "parse-file",
+      "jdbc"
+    ]
+  },
+  {
+    "id": "cisms-pat-052",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Pattern Design",
+    "subdomain": "Match operation",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "In which pattern sections can the Match operation be used to gate execution?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Only Identification sections"
+      },
+      {
+        "id": "B",
+        "text": "Both Identification and Connection sections"
+      },
+      {
+        "id": "C",
+        "text": "Only Connection sections"
+      },
+      {
+        "id": "D",
+        "text": "Only Extension sections"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Match is a general control operation available in both identification and connection logic. In either section, a failed Match condition terminates that section \u2014 letting you assert prerequisites before the section produces a CI or a connection.",
+    "distractor_notes": {
+      "A": "Match is equally valid in Connection sections to guard connection creation.",
+      "C": "It's also used in Identification to confirm the CI looks right.",
+      "D": "Extension sections can use it too, but it is not limited to them."
+    },
+    "references": [
+      {
+        "title": "Match operation",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/pattern-designer-operations.html"
+      }
+    ],
+    "tags": [
+      "pattern-design",
+      "match",
+      "sections"
+    ]
+  },
+  {
+    "id": "cisms-pat-053",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Pattern Design",
+    "subdomain": "NDL and patterns",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Why is editing the baseline NDL of a shipped pattern discouraged?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Direct baseline edits are overwritten on upgrade and aren't upgrade-safe"
+      },
+      {
+        "id": "B",
+        "text": "NDL cannot be edited at all"
+      },
+      {
+        "id": "C",
+        "text": "It permanently deletes the pattern"
+      },
+      {
+        "id": "D",
+        "text": "It disables the MID Server"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Baseline patterns are managed content; hand-editing their NDL means an upgrade or Store update can overwrite your changes. The upgrade-safe path is an Extension Section, which layers your logic on top of the untouched baseline.",
+    "distractor_notes": {
+      "B": "Patterns are editable in the designer \u2014 but baseline edits aren't upgrade-safe.",
+      "C": "Editing doesn't delete the pattern.",
+      "D": "Pattern edits have nothing to do with disabling the MID Server."
+    },
+    "references": [
+      {
+        "title": "Extend patterns safely",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/pattern-extension-sections.html"
+      }
+    ],
+    "tags": [
+      "pattern-design",
+      "ndl",
+      "upgrade-safe"
+    ]
+  },
+  {
+    "id": "cisms-pat-054",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Pattern Design",
+    "subdomain": "Debug mode",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What does enabling Debug Mode on a pattern do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Publishes the pattern"
+      },
+      {
+        "id": "B",
+        "text": "Changes the execution order of steps"
+      },
+      {
+        "id": "C",
+        "text": "Skips failed steps automatically"
+      },
+      {
+        "id": "D",
+        "text": "Adds detailed, step-by-step verbosity to the discovery log for inspection"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "Debug Mode is purely diagnostic: it enriches the log so you can see each step's inputs, outputs, and result. It does not change execution logic \u2014 it just makes what already happens visible so you can find where a pattern goes wrong.",
+    "distractor_notes": {
+      "A": "Publishing is a separate action from enabling debug logging.",
+      "B": "Debug Mode doesn't reorder steps.",
+      "C": "It doesn't auto-skip failures; that's what preconditions are for."
+    },
+    "references": [
+      {
+        "title": "Debug mode in Pattern Designer",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/pattern-debug-mode.html"
+      }
+    ],
+    "tags": [
+      "pattern-design",
+      "debug-mode",
+      "logging"
+    ]
+  },
+  {
+    "id": "cisms-pat-055",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Pattern Design",
+    "subdomain": "Process classifiers",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "What triggers a specific discovery pattern to run against a discovered running process?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A Process Classifier matches the process's command line or name"
+      },
+      {
+        "id": "B",
+        "text": "The MID Server randomly assigns a pattern"
+      },
+      {
+        "id": "C",
+        "text": "The CMDB Health dashboard schedules it"
+      },
+      {
+        "id": "D",
+        "text": "A reconciliation rule selects the pattern"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Process Classifiers map a process signature (command line/process name) to the pattern that should handle it. When discovery sees a matching process, the classifier hands it to the right pattern \u2014 that's the bridge between 'found a process' and 'run this identification logic'.",
+    "distractor_notes": {
+      "B": "Pattern selection is deterministic via classifiers, not random.",
+      "C": "CMDB Health surfaces quality issues; it doesn't dispatch patterns.",
+      "D": "Reconciliation rules govern attribute authority, not pattern selection."
+    },
+    "references": [
+      {
+        "title": "Process classifiers",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/discovery/process-classifiers.html"
+      }
+    ],
+    "tags": [
+      "pattern-design",
+      "process-classifier",
+      "trigger"
+    ]
+  },
+  {
+    "id": "cisms-pat-056",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Pattern Design",
+    "subdomain": "Entry point types",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "When discovery starts from an entry point, which patterns are evaluated?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Every pattern in the instance, in alphabetical order"
+      },
+      {
+        "id": "B",
+        "text": "Patterns chosen at random by the MID Server"
+      },
+      {
+        "id": "C",
+        "text": "Only the most recently published pattern"
+      },
+      {
+        "id": "D",
+        "text": "Only patterns that support the entry point's type"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "Entry points have a type (e.g., HTTP endpoint, generic host), and only patterns declared to support that type are tried. This keeps discovery efficient and correct \u2014 a web-endpoint entry point won't run database-only patterns.",
+    "distractor_notes": {
+      "A": "Running every pattern would be wasteful and error-prone; type-matching narrows it.",
+      "B": "Selection is rule-based, not random.",
+      "C": "Recency doesn't determine eligibility \u2014 supported entry point type does."
+    },
+    "references": [
+      {
+        "title": "Entry point types and patterns",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/service-mapping-entry-points.html"
+      }
+    ],
+    "tags": [
+      "pattern-design",
+      "entry-point-type",
+      "pattern-selection"
+    ]
+  },
+  {
+    "id": "cisms-pat-057",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Pattern Design",
+    "subdomain": "Connection Section",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What kind of relationship does a successful Connection Section typically create between two CIs?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A dependency relationship such as Depends on::Used by"
+      },
+      {
+        "id": "B",
+        "text": "A Member of::Contains cluster relationship only"
+      },
+      {
+        "id": "C",
+        "text": "No relationship \u2014 it only updates attributes"
+      },
+      {
+        "id": "D",
+        "text": "A Hosted on::Runs on relationship only"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Connection sections build the dependency edges of the service map \u2014 typically Depends on/Used by between a consumer CI and the downstream CI it relies on. Those edges are what make impact analysis and the service topology meaningful.",
+    "distractor_notes": {
+      "B": "Cluster membership is modeled separately; it isn't the general connection output.",
+      "C": "The whole point of a connection section is to create a relationship, not just attributes.",
+      "D": "Hosted on is a containment relationship usually established during identification/horizontal discovery, not the connection's primary output."
+    },
+    "references": [
+      {
+        "title": "Connection sections and relationships",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/pattern-connection-sections.html"
+      }
+    ],
+    "tags": [
+      "pattern-design",
+      "connection-section",
+      "relationship"
+    ]
+  },
+  {
+    "id": "cisms-pat-058",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Pattern Design",
+    "subdomain": "Discovery log icons",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "In the Discovery Log tree, what does the 'P' marker denote?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A pattern being evaluated"
+      },
+      {
+        "id": "B",
+        "text": "A published version number"
+      },
+      {
+        "id": "C",
+        "text": "A probe sent to the MID Server"
+      },
+      {
+        "id": "D",
+        "text": "A step inside a section"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The log uses single-letter markers: P = pattern, I = identification section, C = connection section, S = step. Seeing the 'P' lets you trace which pattern the engine entered before drilling into its sections and steps.",
+    "distractor_notes": {
+      "B": "'P' is a node type, not a version number.",
+      "C": "Probes/payloads live in the ECC Queue, not as a 'P' node here.",
+      "D": "A step is marked 'S', not 'P'."
+    },
+    "references": [
+      {
+        "title": "Reading the discovery log",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/service-mapping-discovery-log.html"
+      }
+    ],
+    "tags": [
+      "pattern-design",
+      "discovery-log",
+      "markers"
+    ]
+  },
+  {
+    "id": "cisms-pat-059",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Pattern Design",
+    "subdomain": "Discovery log icons",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "In the Discovery Log, a step 'S' rendered in orange (rather than green) most directly indicates what?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The step is a library, not a step"
+      },
+      {
+        "id": "B",
+        "text": "The step belongs to an Identification Section"
+      },
+      {
+        "id": "C",
+        "text": "The step did not complete successfully"
+      },
+      {
+        "id": "D",
+        "text": "The step published the pattern"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Color conveys outcome in the log: green steps succeeded, while a non-green (orange/red) step flags that it didn't complete as expected. That's your cue to expand it and see why the data or condition failed.",
+    "distractor_notes": {
+      "A": "'S' marks a step regardless of color; color is about result, not type.",
+      "B": "Section membership is shown by the parent node (I or C), not the step's color.",
+      "D": "Steps don't publish patterns; color reflects success/failure."
+    },
+    "references": [
+      {
+        "title": "Reading the discovery log",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/service-mapping-discovery-log.html"
+      }
+    ],
+    "tags": [
+      "pattern-design",
+      "discovery-log",
+      "status-color"
+    ]
+  },
+  {
+    "id": "cisms-pat-060",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Pattern Design",
+    "subdomain": "Regular expressions",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Which regex captures just the port 3306 from 'jdbc:mysql://localhost:3306/myDatabase'?",
+    "options": [
+      {
+        "id": "A",
+        "text": "(\\d+)"
+      },
+      {
+        "id": "B",
+        "text": "localhost(\\d+)"
+      },
+      {
+        "id": "C",
+        "text": ":(\\w+)"
+      },
+      {
+        "id": "D",
+        "text": ":(\\d+)\\/"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "The port sits between the colon after the host and the slash before the path. :(\\d+)\\/ anchors on that colon and slash and captures the digits in between \u2014 3306 \u2014 without grabbing other numbers in the string.",
+    "distractor_notes": {
+      "A": "Bare (\\d+) would also match other digit runs (e.g., parts of the path or a numeric host).",
+      "B": "There's no digit immediately after 'localhost'; a colon separates them.",
+      "C": "(\\w+) is too broad and isn't anchored by the trailing slash to isolate the port."
+    },
+    "references": [
+      {
+        "title": "Regular expressions in patterns",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/regex-in-patterns.html"
+      }
+    ],
+    "tags": [
+      "pattern-design",
+      "regex",
+      "port"
+    ]
+  },
+  {
+    "id": "cisms-pat-061",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Pattern Design",
+    "subdomain": "Connection Section",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A connection from a load balancer's lower icons points to dashed/dotted target nodes that aren't fully discovered. These most often represent what?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Credential vault entries"
+      },
+      {
+        "id": "B",
+        "text": "Boundary connections leaving the current service context"
+      },
+      {
+        "id": "C",
+        "text": "Cluster heartbeat links"
+      },
+      {
+        "id": "D",
+        "text": "Reconciliation conflicts"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Dashed/boundary nodes mark where the map's discovered scope ends \u2014 the connection is known to leave toward something outside the current service. They keep the picture clean by acknowledging external dependencies without expanding into unrelated infrastructure.",
+    "distractor_notes": {
+      "A": "Credential vault is a storage concept, not a map node.",
+      "C": "Cluster links are drawn within a cluster grouping, not as boundary exits.",
+      "D": "Reconciliation conflicts are CMDB data issues, not map edge markers."
+    },
+    "references": [
+      {
+        "title": "Service map boundaries",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/service-map-boundaries.html"
+      }
+    ],
+    "tags": [
+      "pattern-design",
+      "boundaries",
+      "connection-section"
+    ]
+  },
+  {
+    "id": "cisms-pat-062",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Pattern Design",
+    "subdomain": "Pattern testing",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "What is the best first step to test a single pattern's logic against one host during development?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Lower the CMDB Health threshold"
+      },
+      {
+        "id": "B",
+        "text": "Delete the host CI and rediscover the whole subnet"
+      },
+      {
+        "id": "C",
+        "text": "Run the pattern in debug against that host and inspect the discovery log step-by-step"
+      },
+      {
+        "id": "D",
+        "text": "Disable IRE during the test"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Targeted iteration beats blanket rediscovery. Running the pattern in debug against one host and reading the log shows exactly which steps ran, what they returned, and where it failed \u2014 fast feedback without touching the rest of the environment.",
+    "distractor_notes": {
+      "A": "Health thresholds don't help you test pattern logic.",
+      "B": "Rediscovering a subnet is slow and changes far more than the one pattern you're testing.",
+      "D": "Disabling IRE removes the guardrails and corrupts your test results."
+    },
+    "references": [
+      {
+        "title": "Test and debug patterns",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/pattern-debug-mode.html"
+      }
+    ],
+    "tags": [
+      "pattern-design",
+      "testing",
+      "debug"
+    ]
+  },
+  {
+    "id": "cisms-pat-063",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Pattern Design",
+    "subdomain": "Pattern Designer operations",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which operation reads a Windows registry value during pattern execution?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Get Registry Key"
+      },
+      {
+        "id": "B",
+        "text": "Parse URL"
+      },
+      {
+        "id": "C",
+        "text": "Create Connection"
+      },
+      {
+        "id": "D",
+        "text": "Get Process"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Get Registry Key fetches a value from the Windows registry \u2014 useful for reading install paths, versions, or service configuration that an app records there. The returned value feeds identification or connection logic just like process or file data.",
+    "distractor_notes": {
+      "B": "Parse URL works on URL strings, not the registry.",
+      "C": "Create Connection builds relationships; it doesn't read the registry.",
+      "D": "Get Process lists processes, not registry values."
+    },
+    "references": [
+      {
+        "title": "Pattern Designer operations",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/pattern-designer-operations.html"
+      }
+    ],
+    "tags": [
+      "pattern-design",
+      "get-registry-key",
+      "windows"
+    ]
+  },
+  {
+    "id": "cisms-pat-064",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Pattern Design",
+    "subdomain": "Identification Section ordering",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Because Identification Sections are first-match-wins, what is the practical effect of section order?",
+    "options": [
+      {
+        "id": "A",
+        "text": "More specific sections should be listed before broader ones so the precise match wins first"
+      },
+      {
+        "id": "B",
+        "text": "Sections run alphabetically by name"
+      },
+      {
+        "id": "C",
+        "text": "Order has no effect; all sections always run"
+      },
+      {
+        "id": "D",
+        "text": "The last section always wins regardless of order"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Since the first successful section ends identification, you put the most specific logic first. If a broad section matched first, it could classify the CI too generically before the precise section ever ran. Order is a deliberate design lever.",
+    "distractor_notes": {
+      "B": "Execution follows the listed order, not alphabetical names.",
+      "C": "Identification stops at the first success, so order absolutely matters.",
+      "D": "First success wins, not the last."
+    },
+    "references": [
+      {
+        "title": "Pattern identification sections",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/pattern-identification-sections.html"
+      }
+    ],
+    "tags": [
+      "pattern-design",
+      "identification-section",
+      "ordering"
+    ]
+  },
+  {
+    "id": "cisms-pat-065",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Pattern Design",
+    "subdomain": "Connection Section",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An app server should connect to two databases, but only one appears on the map even though both Connection Sections exist. What is the most likely cause?",
+    "options": [
+      {
+        "id": "A",
+        "text": "One Connection Section's steps failed (e.g., the second DB's connection string wasn't found)"
+      },
+      {
+        "id": "B",
+        "text": "Identification failed for the app server"
+      },
+      {
+        "id": "C",
+        "text": "The MID Server can only create one connection per run"
+      },
+      {
+        "id": "D",
+        "text": "Connection Sections stop after the first success, so the second never runs"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Connection Sections all run, so a missing second link means that section's steps didn't produce a connection \u2014 most often the second database's connection string wasn't parsed (different config location/format). The log will show that section's step failing.",
+    "distractor_notes": {
+      "B": "If identification failed, the app server itself wouldn't be on the map.",
+      "C": "The MID Server can return many connections in one run; there's no one-per-run limit.",
+      "D": "Connection Sections do NOT stop at first success \u2014 that's identification behavior."
+    },
+    "references": [
+      {
+        "title": "Troubleshoot connection sections",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/troubleshoot-connections.html"
+      }
+    ],
+    "tags": [
+      "pattern-design",
+      "connection-section",
+      "troubleshooting"
+    ]
+  },
+  {
+    "id": "cisms-pat-066",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Pattern Design",
+    "subdomain": "Pattern Designer operations",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which operation combines rows from two pattern tables into a single working table?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Filter Table"
+      },
+      {
+        "id": "B",
+        "text": "Set Variable"
+      },
+      {
+        "id": "C",
+        "text": "Match"
+      },
+      {
+        "id": "D",
+        "text": "Merge Table"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "Merge Table joins/combines two tables of collected data into one, so subsequent steps can work across both sets at once. Filter Table, by contrast, narrows a single table; the two are complementary table operations.",
+    "distractor_notes": {
+      "A": "Filter Table reduces rows by condition; it doesn't combine two tables.",
+      "B": "Set Variable assigns a single value, not a table merge.",
+      "C": "Match is a conditional gate, not a table join."
+    },
+    "references": [
+      {
+        "title": "Pattern Designer operations",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/pattern-designer-operations.html"
+      }
+    ],
+    "tags": [
+      "pattern-design",
+      "merge-table",
+      "operations"
+    ]
+  },
+  {
+    "id": "cisms-pat-067",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Pattern Design",
+    "subdomain": "Identification Section",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A pattern's Identification Section sets a variable for the install path; a later Connection Section needs it. Will it be available?",
+    "options": [
+      {
+        "id": "A",
+        "text": "No \u2014 variables never cross sections"
+      },
+      {
+        "id": "B",
+        "text": "Only if Debug Mode is enabled"
+      },
+      {
+        "id": "C",
+        "text": "Yes \u2014 variables from the Identification Section are available to Connection Sections of the same pattern"
+      },
+      {
+        "id": "D",
+        "text": "Only if the variable is published to a global scope"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Within one pattern, identification-stage variables flow forward into that pattern's connection logic. This is by design: identification often captures the paths and endpoints the connection steps then use to find dependencies.",
+    "distractor_notes": {
+      "A": "Variables do carry between sections of the same pattern \u2014 just not across different patterns.",
+      "B": "Debug Mode only adds logging; it doesn't change variable scope.",
+      "D": "There's no global publish for pattern variables; scope is the pattern itself."
+    },
+    "references": [
+      {
+        "title": "Pattern variables",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/pattern-variables.html"
+      }
+    ],
+    "tags": [
+      "pattern-design",
+      "variables",
+      "cross-section"
+    ]
+  },
+  {
+    "id": "cisms-pat-068",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Pattern Design",
+    "subdomain": "Parse File",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Besides files on disk, what other input can the Parse File operation process?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The output of a command run on the target"
+      },
+      {
+        "id": "B",
+        "text": "Only the ECC Queue payload headers"
+      },
+      {
+        "id": "C",
+        "text": "Only registry keys"
+      },
+      {
+        "id": "D",
+        "text": "Only static files pre-uploaded to the instance"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Parse File works on any text content the pattern has captured \u2014 including command output and config/log text, not just files literally on disk. That flexibility is why it's the workhorse for turning raw command results into usable attributes.",
+    "distractor_notes": {
+      "B": "It parses content, not just ECC headers.",
+      "C": "Registry values are read by Get Registry Key; Parse File handles text content broadly.",
+      "D": "It isn't limited to pre-uploaded files; live command output is the common case."
+    },
+    "references": [
+      {
+        "title": "Parse File operation",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/parse-file-operation.html"
+      }
+    ],
+    "tags": [
+      "pattern-design",
+      "parse-file",
+      "command-output"
+    ]
+  },
+  {
+    "id": "cisms-pat-069",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Pattern Design",
+    "subdomain": "Identification rule vs pattern",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "How do a discovery pattern and a CI identification rule (identifier) relate during Service Mapping?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Patterns replace the need for identifiers entirely"
+      },
+      {
+        "id": "B",
+        "text": "The identifier collects data and the pattern stores it"
+      },
+      {
+        "id": "C",
+        "text": "They are the same object with two names"
+      },
+      {
+        "id": "D",
+        "text": "The pattern gathers attributes; the identifier decides whether those attributes match an existing CI or create a new one"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "Division of labor: the pattern's job is to collect the right attributes; the IRE identifier's job is to use those attributes (its criterion attributes) to resolve identity \u2014 update the existing CI or insert a new one. Both are needed and they work together.",
+    "distractor_notes": {
+      "A": "Patterns don't replace IRE; all data still goes through identification.",
+      "B": "It's reversed \u2014 the pattern collects, the identifier matches.",
+      "C": "They're distinct constructs \u2014 collection vs. identity resolution."
+    },
+    "references": [
+      {
+        "title": "Patterns and CI identification",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/ci-identification-rules.html"
+      }
+    ],
+    "tags": [
+      "pattern-design",
+      "identifier",
+      "ire"
+    ]
+  },
+  {
+    "id": "cisms-pat-070",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Pattern Design",
+    "subdomain": "Identifier entry options",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What does the 'Allow null attribute' option on an Identifier Entry do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Allows fallback to the parent identifier"
+      },
+      {
+        "id": "B",
+        "text": "Lets the identifier still match when a criterion attribute value is empty/null"
+      },
+      {
+        "id": "C",
+        "text": "Deletes CIs that have null attributes"
+      },
+      {
+        "id": "D",
+        "text": "Forces every criterion attribute to be non-null"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "'Allow null attribute' relaxes matching so a missing criterion value doesn't automatically fail identification. It's used when a source can't always supply every attribute but you still want a reliable match on the ones it does provide.",
+    "distractor_notes": {
+      "A": "Parent fallback is the separate 'Allow fallback to parent's rules' option.",
+      "C": "It changes matching behavior, not lifecycle/deletion.",
+      "D": "It does the opposite \u2014 it permits nulls rather than forbidding them."
+    },
+    "references": [
+      {
+        "title": "Identifier entry options",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/identifier-entry-config.html"
+      }
+    ],
+    "tags": [
+      "pattern-design",
+      "identifier-entry",
+      "allow-null"
+    ]
+  },
+  {
+    "id": "cisms-pat-071",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Pattern Design",
+    "subdomain": "Identifier entry options",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What does marking an Identifier Entry as 'Independent' mean?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The CI can only be identified together with a parent CI"
+      },
+      {
+        "id": "B",
+        "text": "The CI can be identified by its own attributes, without needing a related (parent) CI for context"
+      },
+      {
+        "id": "C",
+        "text": "The identifier ignores all criterion attributes"
+      },
+      {
+        "id": "D",
+        "text": "The identifier disables reconciliation"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "An independent identifier resolves a CI on its own attributes (e.g., a server by serial number). The opposite \u2014 a dependent identifier \u2014 needs a qualifying related CI (e.g., a database identified only in the context of its host).",
+    "distractor_notes": {
+      "A": "That describes a dependent identifier, the opposite of independent.",
+      "C": "Independent identifiers still use criterion attributes \u2014 they just don't need a parent context.",
+      "D": "Independence is about identity context, not toggling reconciliation."
+    },
+    "references": [
+      {
+        "title": "Independent and dependent identifiers",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/ci-identification-rules.html"
+      }
+    ],
+    "tags": [
+      "pattern-design",
+      "identifier-entry",
+      "independent"
+    ]
+  },
+  {
+    "id": "cisms-pat-072",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Pattern Design",
+    "subdomain": "Pattern lifecycle",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "After successfully publishing an updated pattern, when does the discovery engine begin using the new logic?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Only after the MID Server is restarted"
+      },
+      {
+        "id": "B",
+        "text": "Only after a full instance upgrade"
+      },
+      {
+        "id": "C",
+        "text": "On the next discovery run that invokes the pattern"
+      },
+      {
+        "id": "D",
+        "text": "Immediately for all in-flight discoveries already running"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Publishing makes the new version active so the next run that triggers the pattern uses it. Discoveries already in progress finish on the version they started with; you don't need a MID Server restart or an upgrade for the change to take effect going forward.",
+    "distractor_notes": {
+      "A": "A MID Server restart isn't required to pick up a published pattern.",
+      "B": "Pattern publishing is independent of platform upgrades.",
+      "D": "In-flight runs continue on the version they began with; the change applies to subsequent runs."
+    },
+    "references": [
+      {
+        "title": "Publish a discovery pattern",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/publish-discovery-pattern.html"
+      }
+    ],
+    "tags": [
+      "pattern-design",
+      "publish",
+      "activation"
+    ]
+  }
+]

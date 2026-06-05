@@ -3,6 +3,15 @@ interface Props {
   activeNav?: string;
 }
 const { activeNav = '' } = Astro.props;
+
+const navItems = [
+  { id: 'all',      label: 'All',      href: '/' },
+  { id: 'csa',      label: 'CSA',      href: '/csa/' },
+  { id: 'cad',      label: 'CAD',      href: '/cad/' },
+  { id: 'cis-itsm', label: 'CIS-ITSM', href: '/cis-itsm/' },
+  { id: 'cis-df',   label: 'CIS-DF',   href: '/cis-df/' },
+  { id: 'cis-sm',   label: 'CIS-SM',   href: '/cis-sm/' },
+];
 ---
 <header class="topbar">
   <a href="/" class="topbar__brand" aria-label="GlideUp home">
@@ -16,22 +25,38 @@ const { activeNav = '' } = Astro.props;
     />
     <span>GlideUp</span>
   </a>
-  <nav class="topbar__nav" aria-label="Top navigation">
-    <a href="/" class={`topbar__nav-item ${activeNav === 'all' ? 'is-active' : ''}`}>All</a>
-    <a href="/csa/" class={`topbar__nav-item ${activeNav === 'csa' ? 'is-active' : ''}`}>CSA</a>
-    <a href="/cad/" class={`topbar__nav-item ${activeNav === 'cad' ? 'is-active' : ''}`}>CAD</a>
-    <a href="/cis-itsm/" class={`topbar__nav-item ${activeNav === 'cis-itsm' ? 'is-active' : ''}`}>CIS-ITSM</a>
-    <a href="/cis-df/" class={`topbar__nav-item ${activeNav === 'cis-df' ? 'is-active' : ''}`}>CIS-DF</a>
+
+  <!-- Desktop nav -->
+  <nav class="topbar__nav topbar__nav--desktop" aria-label="Top navigation">
+    {navItems.map((item) => (
+      <a href={item.href} class={`topbar__nav-item ${activeNav === item.id ? 'is-active' : ''}`}>{item.label}</a>
+    ))}
   </nav>
+
+  <!-- Mobile: active label + hamburger -->
+  <div class="topbar__mobile">
+    <span class="topbar__active-label">
+      {navItems.find(i => i.id === activeNav)?.label ?? 'All'}
+    </span>
+    <button class="topbar__hamburger" id="nav-toggle" aria-label="Open navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
   <div class="topbar__status" aria-label="User status">
     <span class="status-pill" title="Streak (days)">🔥 <span data-streak>0</span></span>
     <span class="status-pill" title="Experience points">⚡ <span data-xp>0</span></span>
   </div>
 </header>
 
+<!-- Mobile dropdown -->
+<nav class="topbar__mobile-menu" id="nav-menu" aria-label="Mobile navigation" hidden>
+  {navItems.map((item) => (
+    <a href={item.href} class={`topbar__mobile-item ${activeNav === item.id ? 'is-active' : ''}`}>{item.label}</a>
+  ))}
+</nav>
+
 <script>
-  // Surface XP + streak from localStorage into the top bar's status pills.
-  // Defensive: progress may be empty on first load.
   try {
     const raw = localStorage.getItem('glideup:progress:v1');
     if (raw) {
@@ -41,7 +66,52 @@ const { activeNav = '' } = Astro.props;
       if (xpEl) xpEl.textContent = String(state.xp ?? 0);
       if (streakEl) streakEl.textContent = String(state?.streak?.count ?? 0);
     }
-  } catch {
-    /* swallow */
-  }
+  } catch { /* swallow */ }
+
+  const toggle = document.getElementById('nav-toggle');
+  const menu = document.getElementById('nav-menu');
+  toggle?.addEventListener('click', () => {
+    const open = menu?.hasAttribute('hidden') === false;
+    if (open) { menu?.setAttribute('hidden', ''); toggle.setAttribute('aria-expanded', 'false'); }
+    else       { menu?.removeAttribute('hidden'); toggle.setAttribute('aria-expanded', 'true'); }
+  });
+  // Close on outside click
+  document.addEventListener('click', (e) => {
+    if (!toggle?.contains(e.target as Node) && !menu?.contains(e.target as Node)) {
+      menu?.setAttribute('hidden', '');
+      toggle?.setAttribute('aria-expanded', 'false');
+    }
+  });
 </script>
+
+<style>
+  /* ── Mobile dropdown ── */
+  .topbar__mobile { display: none; align-items: center; gap: 8px; }
+  .topbar__active-label { font-size: 13px; font-weight: 600; color: var(--primary); }
+  .topbar__hamburger {
+    display: flex; flex-direction: column; justify-content: space-between;
+    width: 22px; height: 16px; background: none; border: none; cursor: pointer; padding: 0;
+  }
+  .topbar__hamburger span {
+    display: block; height: 2px; background: var(--text); border-radius: 2px;
+    transition: opacity 0.15s;
+  }
+  .topbar__mobile-menu {
+    position: fixed; top: 48px; left: 0; right: 0; z-index: 200;
+    background: var(--chrome); border-bottom: 1px solid rgba(255,255,255,0.08);
+    display: flex; flex-direction: column; padding: 8px 0;
+  }
+  .topbar__mobile-item {
+    padding: 10px 20px; font-size: 14px; font-weight: 500;
+    color: rgba(255,255,255,0.75); text-decoration: none;
+    transition: background 0.1s, color 0.1s;
+  }
+  .topbar__mobile-item:hover { background: rgba(255,255,255,0.06); color: #fff; }
+  .topbar__mobile-item.is-active { color: var(--primary); }
+
+  /* ── Responsive ── */
+  @media (max-width: 680px) {
+    .topbar__nav--desktop { display: none; }
+    .topbar__mobile { display: flex; }
+  }
+</style>

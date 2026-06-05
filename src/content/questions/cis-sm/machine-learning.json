@@ -1,0 +1,1058 @@
+[
+  {
+    "id": "cisms-cfg-004",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Machine Learning",
+    "subdomain": "Service candidates",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "After discovering load balancers, suggested service candidates appear on the Service Mapping Home page under which tile?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Fix"
+      },
+      {
+        "id": "B",
+        "text": "Completed"
+      },
+      {
+        "id": "C",
+        "text": "Approve"
+      },
+      {
+        "id": "D",
+        "text": "Map"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "Candidates Service Mapping wants you to turn into real maps queue under the Map tile. From there you review each suggestion (often derived from a load balancer's pool) and kick off mapping for the ones you want.",
+    "distractor_notes": {
+      "A": "The Fix tile surfaces maps with problems to remediate, not new candidates.",
+      "B": "Completed shows finished maps, not pending candidates.",
+      "C": "There isn't an 'Approve' tile in this flow for candidates."
+    },
+    "references": [
+      {
+        "title": "Service Mapping home page tiles",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/service-mapping-home.html"
+      }
+    ],
+    "tags": [
+      "service-configuration",
+      "service-candidates",
+      "map-tile"
+    ]
+  },
+  {
+    "id": "cisms-cfg-011",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Machine Learning",
+    "subdomain": "Tag-based services",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "To begin configuring tag-based services, tag values must be defined where?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Tag libraries"
+      },
+      {
+        "id": "B",
+        "text": "Tag catalogs"
+      },
+      {
+        "id": "C",
+        "text": "Tag-based service families"
+      },
+      {
+        "id": "D",
+        "text": "Tag categories"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "Tag-based mapping starts by defining the tag values inside tag categories. Those categorized values are what Service Mapping matches against to group resources into services \u2014 so the categories are the foundation you build first.",
+    "distractor_notes": {
+      "A": "'Tag libraries' isn't the defining location for tag values in this flow.",
+      "B": "'Tag catalogs' isn't the construct used to hold tag values here.",
+      "C": "Service families are a downstream grouping, not where raw tag values are defined."
+    },
+    "references": [
+      {
+        "title": "Configure tag-based services",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/tag-based-services.html"
+      }
+    ],
+    "tags": [
+      "service-configuration",
+      "tag-based",
+      "tag-categories"
+    ]
+  },
+  {
+    "id": "cisms-cfg-012",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Machine Learning",
+    "subdomain": "Tag-based services",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Tag-based mapping is best suited to which kind of environment?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Cloud or dynamic environments where resources are frequently created, renamed, or scaled"
+      },
+      {
+        "id": "B",
+        "text": "A single, small, rarely changing application"
+      },
+      {
+        "id": "C",
+        "text": "Environments with no metadata or tags at all"
+      },
+      {
+        "id": "D",
+        "text": "A static set of mainframe CIs"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Tags shine when membership is fluid: in cloud/dynamic estates resources come and go and get renamed, so associating them by tag (rather than fixed topology) keeps the map current automatically as the fleet changes.",
+    "distractor_notes": {
+      "B": "A tiny stable service is better served by Manual Services \u2014 tags add needless dynamism.",
+      "C": "Tag-based mapping needs tags; with none it has nothing to match on.",
+      "D": "Static, unchanging CIs don't benefit from tag-driven flexibility."
+    },
+    "references": [
+      {
+        "title": "When to use tag-based mapping",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/tag-based-services.html"
+      }
+    ],
+    "tags": [
+      "service-configuration",
+      "tag-based",
+      "use-case"
+    ]
+  },
+  {
+    "id": "cisms-cfg-013",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Machine Learning",
+    "subdomain": "Dynamic CI Group",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Which Service Mapping technique groups CIs at runtime via filter conditions or CMDB queries, with quick list/query visualization?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Manual Services"
+      },
+      {
+        "id": "B",
+        "text": "Dynamic CI Group"
+      },
+      {
+        "id": "C",
+        "text": "Top-Down Mapping"
+      },
+      {
+        "id": "D",
+        "text": "Tag-Based Mapping"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "A Dynamic CI Group defines membership by a query/filter, so the group recomputes as data changes and you can view it instantly through list filters or saved CMDB queries. It's the lightweight, query-driven grouping option.",
+    "distractor_notes": {
+      "A": "Manual Services are hand-defined, not query-driven groupings.",
+      "C": "Top-down mapping builds a discovered service-to-CI hierarchy via patterns, not a CMDB query group.",
+      "D": "Tag-based mapping relies on tag maintenance, not arbitrary CMDB query filters."
+    },
+    "references": [
+      {
+        "title": "Dynamic CI groups",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/dynamic-ci-groups.html"
+      }
+    ],
+    "tags": [
+      "service-configuration",
+      "dynamic-ci-group",
+      "query"
+    ]
+  },
+  {
+    "id": "cisms-cfg-014",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Machine Learning",
+    "subdomain": "Manual services",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Which technique is most appropriate for a small application service that rarely changes and needs high availability?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Manual Services"
+      },
+      {
+        "id": "B",
+        "text": "Dynamic CI Group"
+      },
+      {
+        "id": "C",
+        "text": "Tag-Based Mapping"
+      },
+      {
+        "id": "D",
+        "text": "Top-Down Mapping"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "A small, stable service benefits from a fixed, explicit definition. Manual Services let you hand-define the components once; because they don't depend on continual rediscovery or tag upkeep, the mapping stays reliable and immune to discovery hiccups.",
+    "distractor_notes": {
+      "B": "Dynamic CI groups suit evolving populations, not an immutable small service.",
+      "C": "Tag-based adds dynamism that a stable service doesn't need and must be maintained.",
+      "D": "Top-down's topological discovery is overkill for a single small, unchanging service."
+    },
+    "references": [
+      {
+        "title": "Manual services",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/manual-services.html"
+      }
+    ],
+    "tags": [
+      "service-configuration",
+      "manual-services",
+      "use-case"
+    ]
+  },
+  {
+    "id": "cisms-cfg-015",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Machine Learning",
+    "subdomain": "Top-down mapping",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which Service Mapping technique uses patterns to identify configuration details and establish process-to-process connections?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Tag-Based Mapping"
+      },
+      {
+        "id": "B",
+        "text": "Dynamic CI Group"
+      },
+      {
+        "id": "C",
+        "text": "Top-Down Mapping"
+      },
+      {
+        "id": "D",
+        "text": "Manual Services"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Top-down mapping is the pattern-driven approach: starting from an entry point, patterns identify each CI and discover the process-to-process connections that build the dependency tree. It's the core engine behind a true, automatically maintained service map.",
+    "distractor_notes": {
+      "A": "Tag-based classifies via tags; it doesn't parse patterns to find process links.",
+      "B": "Dynamic CI groups use membership queries, not pattern process discovery.",
+      "D": "Manual services are hand-built with no pattern-based discovery."
+    },
+    "references": [
+      {
+        "title": "Top-down service mapping",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/top-down-mapping.html"
+      }
+    ],
+    "tags": [
+      "service-configuration",
+      "top-down",
+      "patterns"
+    ]
+  },
+  {
+    "id": "cisms-cfg-023",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Machine Learning",
+    "subdomain": "Agent Workspace visibility",
+    "difficulty": "application",
+    "type": "multi_select",
+    "stem": "Service Mapping gives operators visibility in Agent Workspace without leaving the workspace. Which two CI-associated items does this include?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Incidents related to the CI"
+      },
+      {
+        "id": "B",
+        "text": "Software releases"
+      },
+      {
+        "id": "C",
+        "text": "Alerts tied to the CI"
+      },
+      {
+        "id": "D",
+        "text": "Problem knowledge articles"
+      }
+    ],
+    "correct": [
+      "A",
+      "C"
+    ],
+    "rationale": "Inside Agent Workspace, the service context surfaces operational signals on each CI \u2014 open incidents and active alerts (from Event Management/monitoring). That lets an operator triage impact without hopping to other modules.",
+    "distractor_notes": {
+      "B": "Software releases aren't the operational signals surfaced in this view.",
+      "D": "Problem KB articles aren't what the CI service context exposes here."
+    },
+    "references": [
+      {
+        "title": "Service Mapping in Agent Workspace",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/service-mapping-agent-workspace.html"
+      }
+    ],
+    "tags": [
+      "service-configuration",
+      "agent-workspace",
+      "incidents-alerts"
+    ]
+  },
+  {
+    "id": "cisms-cfg-024",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Machine Learning",
+    "subdomain": "Dependency View",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "From the Dependency View map, which button shows the related services for a configuration item?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Details"
+      },
+      {
+        "id": "B",
+        "text": "Group"
+      },
+      {
+        "id": "C",
+        "text": "Force"
+      },
+      {
+        "id": "D",
+        "text": "Vertical"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The Group control reorganizes the Dependency View to surface the services a CI participates in, aggregating related items so you can see which services depend on it. The other buttons change layout or show attributes without revealing related services.",
+    "distractor_notes": {
+      "A": "Details opens the attribute pane for the selected CI.",
+      "C": "Force applies a layout algorithm; it doesn't group related services.",
+      "D": "Vertical just reorients the layout; it doesn't expose related services."
+    },
+    "references": [
+      {
+        "title": "Using the Dependency View map",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/dependency-views.html"
+      }
+    ],
+    "tags": [
+      "service-configuration",
+      "dependency-view",
+      "group"
+    ]
+  },
+  {
+    "id": "cisms-cfg-029",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Machine Learning",
+    "subdomain": "Breadth of discovery",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which best represents the breadth of CIs that running Service Mapping discovers?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Applications, Licenses, and IP Addresses"
+      },
+      {
+        "id": "B",
+        "text": "Cloud Services, Applications, and CI Relationships"
+      },
+      {
+        "id": "C",
+        "text": "Hardware, Licenses, and CI Relationships"
+      },
+      {
+        "id": "D",
+        "text": "Hardware, Installed Software, and Network Gear only"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Service Mapping is top-down and dependency-focused: it discovers the applications and cloud services that compose a business service and \u2014 critically \u2014 the relationships between them. Those relationships are its key differentiator versus pure inventory discovery.",
+    "distractor_notes": {
+      "A": "Licenses and bare IPs aren't the focus of service-level mapping.",
+      "C": "Licenses aren't a Service Mapping output; applications and cloud services are.",
+      "D": "That's an inventory/horizontal-discovery framing; Service Mapping centers on services and relationships."
+    },
+    "references": [
+      {
+        "title": "What Service Mapping discovers",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/service-mapping-overview.html"
+      }
+    ],
+    "tags": [
+      "service-configuration",
+      "breadth",
+      "relationships"
+    ]
+  },
+  {
+    "id": "cisms-cfg-037",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Machine Learning",
+    "subdomain": "Service map tiles",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "On the Service Mapping Home page, which tile lists maps that have discovery problems needing remediation?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Map"
+      },
+      {
+        "id": "B",
+        "text": "Fix"
+      },
+      {
+        "id": "C",
+        "text": "Schedule"
+      },
+      {
+        "id": "D",
+        "text": "Completed"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The Fix tile collects maps with issues \u2014 credential errors, broken connections, generic apps \u2014 so an operator can work the remediation queue. Map holds candidates to discover; Completed holds healthy finished maps.",
+    "distractor_notes": {
+      "A": "Map is for new/candidate services to discover, not problems.",
+      "C": "Schedule isn't a status tile for remediation.",
+      "D": "Completed shows successfully mapped services."
+    },
+    "references": [
+      {
+        "title": "Service Mapping home page tiles",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/service-mapping-home.html"
+      }
+    ],
+    "tags": [
+      "service-configuration",
+      "fix-tile",
+      "remediation"
+    ]
+  },
+  {
+    "id": "cisms-cfg-038",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Machine Learning",
+    "subdomain": "Dynamic CI Group",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "A key advantage of using a Dynamic CI Group over a fully mapped service is what?",
+    "options": [
+      {
+        "id": "A",
+        "text": "It doesn't require a Service Mapping license and visualizes via list filters/CMDB queries"
+      },
+      {
+        "id": "B",
+        "text": "It guarantees a complete top-down dependency tree"
+      },
+      {
+        "id": "C",
+        "text": "It builds process-to-process connections automatically"
+      },
+      {
+        "id": "D",
+        "text": "It eliminates the need for the CMDB"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Dynamic CI Groups are a CMDB query construct \u2014 no Service Mapping license needed \u2014 and you visualize them instantly through list filters or saved queries. The trade-off is they don't perform pattern-based dependency discovery.",
+    "distractor_notes": {
+      "B": "Dynamic groups don't produce a discovered dependency tree.",
+      "C": "Process-to-process discovery is top-down mapping's job, not a dynamic group's.",
+      "D": "They live in the CMDB; they don't replace it."
+    },
+    "references": [
+      {
+        "title": "Dynamic CI groups",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/dynamic-ci-groups.html"
+      }
+    ],
+    "tags": [
+      "service-configuration",
+      "dynamic-ci-group",
+      "licensing"
+    ]
+  },
+  {
+    "id": "cisms-cfg-039",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Machine Learning",
+    "subdomain": "Manual services",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Which is a defining trait of a Manual Service compared with top-down mapping?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Its components are defined explicitly by an administrator rather than discovered by patterns"
+      },
+      {
+        "id": "B",
+        "text": "It is rediscovered automatically on every schedule"
+      },
+      {
+        "id": "C",
+        "text": "It requires tag categories to function"
+      },
+      {
+        "id": "D",
+        "text": "It builds connections using process classifiers"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Manual Services are hand-authored: the admin specifies the CIs and relationships directly. There's no pattern discovery involved, which is why they're best for small, stable services where a fixed definition is more reliable than continual rediscovery.",
+    "distractor_notes": {
+      "B": "Manual services aren't pattern-rediscovered; they're maintained by hand.",
+      "C": "Tag categories belong to tag-based mapping, not manual services.",
+      "D": "Process classifiers drive pattern-based discovery, not manual definitions."
+    },
+    "references": [
+      {
+        "title": "Manual services",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/manual-services.html"
+      }
+    ],
+    "tags": [
+      "service-configuration",
+      "manual-services",
+      "definition"
+    ]
+  },
+  {
+    "id": "cisms-cfg-044",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Machine Learning",
+    "subdomain": "Service candidates review",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "After Service Mapping suggests service candidates from discovered load balancers, what is the intended next administrator action?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Disable the load balancer"
+      },
+      {
+        "id": "B",
+        "text": "Review each candidate, adjust as needed, and initiate mapping for the ones to keep"
+      },
+      {
+        "id": "C",
+        "text": "Immediately delete all candidates"
+      },
+      {
+        "id": "D",
+        "text": "Convert them to incidents"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Candidates are suggestions, not finished maps. The admin reviews them on the Map tile, tweaks names/scope, and starts mapping for the real services \u2014 turning the load balancer's pools into proper, maintained service maps.",
+    "distractor_notes": {
+      "A": "Disabling the LB would harm production, not map services.",
+      "C": "Deleting them throws away useful suggestions.",
+      "D": "Candidates aren't incidents; they're proposed services."
+    },
+    "references": [
+      {
+        "title": "Work with service candidates",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/service-candidates.html"
+      }
+    ],
+    "tags": [
+      "service-configuration",
+      "service-candidates",
+      "workflow"
+    ]
+  },
+  {
+    "id": "cisms-cfg-046",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Machine Learning",
+    "subdomain": "Service map maintenance",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Why does an automatically discovered (top-down) service map require less ongoing maintenance than a manually built one?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Because it doesn't store relationships"
+      },
+      {
+        "id": "B",
+        "text": "Because it ignores new CIs entirely"
+      },
+      {
+        "id": "C",
+        "text": "Scheduled rediscovery updates the map automatically as the environment changes"
+      },
+      {
+        "id": "D",
+        "text": "Because it never changes once created"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Pattern-discovered maps refresh themselves on a schedule, so adds, removals, and version changes flow into the map without hand-editing. A manual map has to be updated by a person every time the environment shifts.",
+    "distractor_notes": {
+      "A": "It does store relationships; that's the whole point of the map.",
+      "B": "Rediscovery picks up new CIs rather than ignoring them.",
+      "D": "Environments change constantly \u2014 that's exactly why automatic rediscovery helps."
+    },
+    "references": [
+      {
+        "title": "Automated map maintenance",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/schedule-service-discovery.html"
+      }
+    ],
+    "tags": [
+      "service-configuration",
+      "maintenance",
+      "rediscovery"
+    ]
+  },
+  {
+    "id": "cisms-fun-005",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Machine Learning",
+    "subdomain": "Predictive Intelligence",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "What role does Predictive Intelligence play in ML-powered Service Mapping?",
+    "options": [
+      {
+        "id": "A",
+        "text": "It monitors the performance of scheduled jobs"
+      },
+      {
+        "id": "B",
+        "text": "It generates connection suggestions and confidence scores from processed discovery data"
+      },
+      {
+        "id": "C",
+        "text": "It displays the readiness status of prerequisites"
+      },
+      {
+        "id": "D",
+        "text": "It activates and manages discovery probes"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Predictive Intelligence analyzes discovery data to propose likely connections and assign a confidence score to each, so administrators can quickly accept or dismiss suggested dependencies. It augments mapping with ML, rather than running probes or dashboards.",
+    "distractor_notes": {
+      "A": "Job performance monitoring is a Performance Analytics concern.",
+      "C": "Readiness status is shown on dashboards; PI informs suggestions, not status display.",
+      "D": "Probe management belongs to the Discovery engine."
+    },
+    "references": [
+      {
+        "title": "Predictive Intelligence in Service Mapping",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/predictive-intelligence.html"
+      }
+    ],
+    "tags": [
+      "fundamentals-planning",
+      "predictive-intelligence",
+      "ml"
+    ]
+  },
+  {
+    "id": "cisms-fun-006",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Machine Learning",
+    "subdomain": "Readiness dashboard",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "On the Application Service Readiness dashboard, what does the confidence level represent?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The readiness state of all prerequisites"
+      },
+      {
+        "id": "B",
+        "text": "The probability that a discovered connection belongs to the application service"
+      },
+      {
+        "id": "C",
+        "text": "The probability that a given server hosts the application"
+      },
+      {
+        "id": "D",
+        "text": "The frequency of scheduled jobs for a connection"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Confidence quantifies how sure the engine is that an observed connection truly belongs to the service \u2014 derived from signal count, protocol validation, and topology consistency. Higher confidence means the mapping is more likely correct and can be trusted with less manual review.",
+    "distractor_notes": {
+      "A": "Prerequisite readiness is shown separately as a state, not as confidence.",
+      "C": "Confidence is about connection membership in the service, not host-hosting probability.",
+      "D": "Job frequency is unrelated to mapping confidence."
+    },
+    "references": [
+      {
+        "title": "Application Service Readiness dashboard",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/application-service-readiness.html"
+      }
+    ],
+    "tags": [
+      "fundamentals-planning",
+      "confidence",
+      "readiness-dashboard"
+    ]
+  },
+  {
+    "id": "cisms-fun-007",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Machine Learning",
+    "subdomain": "Reports",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What does the Top 10 Service Issues report show in ML-powered Service Mapping?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The application services most affected by ML-related mapping issues"
+      },
+      {
+        "id": "B",
+        "text": "The training percentage of application fingerprints"
+      },
+      {
+        "id": "C",
+        "text": "A summary of all active scheduled jobs"
+      },
+      {
+        "id": "D",
+        "text": "The readiness status of all application services"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The report ranks the services experiencing the biggest impact from ML-detected mapping issues, so operators can prioritize the most critical remediation first. Fingerprint training and job summaries live in other views.",
+    "distractor_notes": {
+      "B": "Fingerprint training status is shown in fingerprint-specific views.",
+      "C": "Scheduled-job summaries are on the jobs dashboard.",
+      "D": "Holistic readiness status is a different dashboard view."
+    },
+    "references": [
+      {
+        "title": "Top 10 Service Issues report",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/ml-service-mapping-reports.html"
+      }
+    ],
+    "tags": [
+      "fundamentals-planning",
+      "reports",
+      "ml"
+    ]
+  },
+  {
+    "id": "cisms-fun-012",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Machine Learning",
+    "subdomain": "Predictive Intelligence",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "How does a confidence score from Predictive Intelligence help an administrator?",
+    "options": [
+      {
+        "id": "A",
+        "text": "It indicates how much to trust a suggested connection, guiding which to accept automatically vs. review"
+      },
+      {
+        "id": "B",
+        "text": "It assigns credentials to hosts"
+      },
+      {
+        "id": "C",
+        "text": "It sets reconciliation precedence"
+      },
+      {
+        "id": "D",
+        "text": "It schedules the next discovery run"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "A confidence score lets you triage suggestions: high-confidence connections can be auto-accepted, while lower-confidence ones get human review. It turns ML output into actionable, risk-graded decisions rather than blind automation.",
+    "distractor_notes": {
+      "B": "Credential assignment is separate from confidence scoring.",
+      "C": "Reconciliation precedence is a CMDB setting, unrelated to PI confidence.",
+      "D": "Scheduling is handled by discovery schedules, not confidence scores."
+    },
+    "references": [
+      {
+        "title": "Confidence scoring",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/predictive-intelligence.html"
+      }
+    ],
+    "tags": [
+      "fundamentals-planning",
+      "confidence",
+      "predictive-intelligence"
+    ]
+  },
+  {
+    "id": "cisms-fun-014",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Machine Learning",
+    "subdomain": "Traffic-based ML",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "How does ML-powered Service Mapping use observed network traffic?",
+    "options": [
+      {
+        "id": "A",
+        "text": "It blocks traffic that doesn't match a pattern"
+      },
+      {
+        "id": "B",
+        "text": "It reroutes production traffic through the MID Server"
+      },
+      {
+        "id": "C",
+        "text": "It analyzes traffic (e.g., NetFlow/netstat) to infer likely connections and suggest dependencies"
+      },
+      {
+        "id": "D",
+        "text": "It replaces credentials with traffic capture"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Traffic-based connection discovery studies flow data to see who actually talks to whom, surfacing candidate connections that pure pattern discovery might miss. The ML layer then scores and suggests those dependencies for confirmation.",
+    "distractor_notes": {
+      "A": "Service Mapping observes traffic; it doesn't block it.",
+      "B": "It doesn't reroute production traffic.",
+      "D": "Traffic analysis complements, but doesn't replace, credentialed discovery."
+    },
+    "references": [
+      {
+        "title": "Traffic-based connections",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/traffic-based-connections.html"
+      }
+    ],
+    "tags": [
+      "fundamentals-planning",
+      "traffic-based",
+      "ml"
+    ]
+  },
+  {
+    "id": "cisms-fun-015",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Machine Learning",
+    "subdomain": "Application fingerprints",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "In ML-powered Service Mapping, what is an application fingerprint used for?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Encrypting the MID Server traffic"
+      },
+      {
+        "id": "B",
+        "text": "Replacing the CMDB identifier rules"
+      },
+      {
+        "id": "C",
+        "text": "Characterizing an application so its connections and relationships can be evaluated/learned"
+      },
+      {
+        "id": "D",
+        "text": "Scheduling discovery runs"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Fingerprints capture an application's identifying characteristics so the ML engine can recognize it and evaluate its likely relationships with other CIs. They feed the learning/scoring that produces connection suggestions.",
+    "distractor_notes": {
+      "A": "Encryption is handled by TLS, not fingerprints.",
+      "B": "Fingerprints support ML evaluation; they don't replace IRE identifiers.",
+      "D": "Scheduling is a discovery-schedule function."
+    },
+    "references": [
+      {
+        "title": "ML-powered Service Mapping",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/ml-service-mapping.html"
+      }
+    ],
+    "tags": [
+      "fundamentals-planning",
+      "fingerprints",
+      "ml"
+    ]
+  },
+  {
+    "id": "cisms-fun-016",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Machine Learning",
+    "subdomain": "Readiness dashboard",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Besides confidence, what else does the Application Service Readiness dashboard surface?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The MID Server upgrade schedule"
+      },
+      {
+        "id": "B",
+        "text": "The reconciliation precedence table"
+      },
+      {
+        "id": "C",
+        "text": "The list of open incidents company-wide"
+      },
+      {
+        "id": "D",
+        "text": "The readiness state of prerequisites needed for accurate mapping"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "The dashboard shows whether the prerequisites for reliable mapping are in place (readiness state) alongside confidence figures, helping teams see what still needs attention before trusting a map. Incident lists and MID schedules live elsewhere.",
+    "distractor_notes": {
+      "A": "MID Server upgrade scheduling is a MID Server concern.",
+      "B": "Reconciliation precedence is a CMDB I&R configuration.",
+      "C": "Company-wide incident lists aren't this dashboard's purpose."
+    },
+    "references": [
+      {
+        "title": "Application Service Readiness dashboard",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/application-service-readiness.html"
+      }
+    ],
+    "tags": [
+      "fundamentals-planning",
+      "readiness-dashboard",
+      "prerequisites"
+    ]
+  },
+  {
+    "id": "cisms-fun-022",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Machine Learning",
+    "subdomain": "Predictive Intelligence scope",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Which task is NOT a function of Predictive Intelligence in Service Mapping?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Helping prioritize which mappings to trust automatically"
+      },
+      {
+        "id": "B",
+        "text": "Suggesting likely connections between CIs"
+      },
+      {
+        "id": "C",
+        "text": "Executing discovery probes against target hosts"
+      },
+      {
+        "id": "D",
+        "text": "Assigning a confidence score to suggested connections"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Running probes against hosts is the Discovery engine/MID Server's job. Predictive Intelligence works on already-collected data \u2014 proposing connections, scoring confidence, and helping triage what to trust. It analyzes; it doesn't probe.",
+    "distractor_notes": {
+      "A": "Prioritizing trust based on confidence is a PI benefit.",
+      "B": "Suggesting connections is a core PI function.",
+      "D": "Confidence scoring is exactly what PI provides."
+    },
+    "references": [
+      {
+        "title": "Predictive Intelligence scope",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/predictive-intelligence.html"
+      }
+    ],
+    "tags": [
+      "fundamentals-planning",
+      "predictive-intelligence",
+      "scope"
+    ]
+  }
+]

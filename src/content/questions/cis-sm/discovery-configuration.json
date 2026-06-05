@@ -1,0 +1,2114 @@
+[
+  {
+    "id": "cisms-dis-001",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Discovery Configuration",
+    "subdomain": "MID Server basics",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What does MID stand for in MID Server?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Monitoring, Instrumentation, and Discovery"
+      },
+      {
+        "id": "B",
+        "text": "Management, Instrumentation, and Discovery"
+      },
+      {
+        "id": "C",
+        "text": "Monitoring, Integration, and Discovery"
+      },
+      {
+        "id": "D",
+        "text": "Management, Integration, and Discovery"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "MID = Management, Instrumentation, and Discovery. It's the on-premises agent that bridges the ServiceNow cloud instance and the customer's internal network, executing discovery, integrations, and orchestration on the instance's behalf.",
+    "distractor_notes": {
+      "A": "The first word is Management, not Monitoring.",
+      "C": "It's Instrumentation, not Integration, and Management, not Monitoring.",
+      "D": "The middle word is Instrumentation, not Integration."
+    },
+    "references": [
+      {
+        "title": "MID Server overview",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/mid-server/mid-server-overview.html"
+      }
+    ],
+    "tags": [
+      "discovery-mid",
+      "mid-server",
+      "acronym"
+    ]
+  },
+  {
+    "id": "cisms-dis-002",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Discovery Configuration",
+    "subdomain": "MID Server basics",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is a MID Server, architecturally?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A Java application that runs on the customer network and connects out to the ServiceNow instance"
+      },
+      {
+        "id": "B",
+        "text": "A hardware appliance shipped by ServiceNow"
+      },
+      {
+        "id": "C",
+        "text": "An operating system"
+      },
+      {
+        "id": "D",
+        "text": "A single JAR file with no runtime"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The MID Server is a Java application installed on a host inside the customer's network. It runs the MID software (delivered as JARs) and opens outbound connections to the instance — it isn't an OS, a bare file, or a physical appliance.",
+    "distractor_notes": {
+      "B": "It's software you install, not a hardware appliance.",
+      "C": "It runs on an OS; it isn't one.",
+      "D": "A JAR is just packaging; the MID Server is the running Java process."
+    },
+    "references": [
+      {
+        "title": "MID Server overview",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/mid-server/mid-server-overview.html"
+      }
+    ],
+    "tags": [
+      "discovery-mid",
+      "mid-server",
+      "java-application"
+    ]
+  },
+  {
+    "id": "cisms-dis-003",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Discovery Configuration",
+    "subdomain": "MID Server connectivity",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "How many ServiceNow instances can a single MID Server connect to?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Unlimited"
+      },
+      {
+        "id": "B",
+        "text": "Ten"
+      },
+      {
+        "id": "C",
+        "text": "One"
+      },
+      {
+        "id": "D",
+        "text": "Up to 255"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "A MID Server record holds one instance URL and one credential set, so it connects to exactly one instance. To serve a second instance you install another MID Server with its own configuration.",
+    "distractor_notes": {
+      "A": "It can't target multiple instances from one record.",
+      "B": "Ten is arbitrary and not how the MID Server works.",
+      "D": "There's no 255 limit; the design ties one MID Server to one instance."
+    },
+    "references": [
+      {
+        "title": "MID Server overview",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/mid-server/mid-server-overview.html"
+      }
+    ],
+    "tags": [
+      "discovery-mid",
+      "mid-server",
+      "one-instance"
+    ]
+  },
+  {
+    "id": "cisms-dis-004",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Discovery Configuration",
+    "subdomain": "MID Server connectivity",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "How does a MID Server communicate with the ServiceNow instance?",
+    "options": [
+      {
+        "id": "A",
+        "text": "It responds to inbound connections over HTTPS"
+      },
+      {
+        "id": "B",
+        "text": "It initiates outbound connections over HTTP"
+      },
+      {
+        "id": "C",
+        "text": "It responds to inbound connections over HTTP"
+      },
+      {
+        "id": "D",
+        "text": "It initiates outbound connections over HTTPS"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "The MID Server always initiates the connection outbound over HTTPS — it polls the instance for work and posts results. Because it's outbound-only and encrypted, no inbound firewall holes to the MID Server are required, which is a key security advantage.",
+    "distractor_notes": {
+      "A": "It initiates, it doesn't wait for inbound connections.",
+      "B": "Production instances use HTTPS, not HTTP.",
+      "C": "Communication is HTTPS, not plain HTTP, and outbound-initiated."
+    },
+    "references": [
+      {
+        "title": "MID Server communication",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/mid-server/mid-server-communication.html"
+      }
+    ],
+    "tags": [
+      "discovery-mid",
+      "mid-server",
+      "https"
+    ]
+  },
+  {
+    "id": "cisms-dis-005",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Discovery Configuration",
+    "subdomain": "Firewall ports",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which outbound port must be open from the customer network so the MID Server can reach a ServiceNow cloud instance?",
+    "options": [
+      {
+        "id": "A",
+        "text": "636"
+      },
+      {
+        "id": "B",
+        "text": "80"
+      },
+      {
+        "id": "C",
+        "text": "8080"
+      },
+      {
+        "id": "D",
+        "text": "443"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "Cloud instances are reached over TLS on TCP 443, and the MID Server connects outbound. Opening only outbound 443 to *.service-now.com is enough — and avoids exposing unnecessary services.",
+    "distractor_notes": {
+      "A": "636 is LDAPS, used for directory services, not instance communication.",
+      "B": "Plain HTTP (80) is disabled for production instances in favor of TLS.",
+      "C": "8080 is sometimes used by on-prem appliances, not the public cloud instance."
+    },
+    "references": [
+      {
+        "title": "MID Server outbound ports",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/mid-server/mid-server-ports.html"
+      }
+    ],
+    "tags": [
+      "discovery-mid",
+      "firewall",
+      "port-443"
+    ]
+  },
+  {
+    "id": "cisms-dis-006",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Discovery Configuration",
+    "subdomain": "MID Server config",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "When is the MID Server config.xml read and applied?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Each time the file is saved"
+      },
+      {
+        "id": "B",
+        "text": "When the application stops"
+      },
+      {
+        "id": "C",
+        "text": "Only during an instance upgrade"
+      },
+      {
+        "id": "D",
+        "text": "When the MID Server application starts"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "config.xml is loaded at MID Server startup, so any edits to it take effect only after you restart the MID Server service. Saving the file alone doesn't apply the change to the running process.",
+    "distractor_notes": {
+      "A": "Saving persists the file but doesn't reload it into the running MID Server.",
+      "B": "Stopping the service doesn't apply config; the next start does.",
+      "C": "Config is read on startup regardless of upgrades."
+    },
+    "references": [
+      {
+        "title": "MID Server config.xml",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/mid-server/mid-server-config-xml.html"
+      }
+    ],
+    "tags": [
+      "discovery-mid",
+      "config-xml",
+      "restart"
+    ]
+  },
+  {
+    "id": "cisms-dis-007",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Discovery Configuration",
+    "subdomain": "MID Server upgrade",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "By default, how often does a MID Server check for upgrades?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Every 15 minutes"
+      },
+      {
+        "id": "B",
+        "text": "Every 5 minutes"
+      },
+      {
+        "id": "C",
+        "text": "Every 60 minutes"
+      },
+      {
+        "id": "D",
+        "text": "Every 30 minutes"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "The MID Server polls for an available upgrade every 30 minutes by default — a balance between picking up patches promptly and not hammering the upgrade service. Don't confuse this with the 5-minute Service Mapping heartbeat.",
+    "distractor_notes": {
+      "A": "15 minutes isn't the documented default.",
+      "B": "5 minutes is the Service Mapping heartbeat interval, not the upgrade check.",
+      "C": "60 minutes is slower than the default."
+    },
+    "references": [
+      {
+        "title": "MID Server auto-upgrade",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/mid-server/mid-server-upgrade.html"
+      }
+    ],
+    "tags": [
+      "discovery-mid",
+      "mid-server",
+      "upgrade-interval"
+    ]
+  },
+  {
+    "id": "cisms-dis-008",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Discovery Configuration",
+    "subdomain": "Discovery phases",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the correct order of the four ServiceNow Discovery phases?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Port Scan (Shazzam) → Classification → Identification → Exploration"
+      },
+      {
+        "id": "B",
+        "text": "Classification → Port Scan → Exploration → Identification"
+      },
+      {
+        "id": "C",
+        "text": "Identification → Port Scan → Classification → Exploration"
+      },
+      {
+        "id": "D",
+        "text": "Exploration → Identification → Classification → Port Scan"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Horizontal Discovery runs Port Scan (Shazzam finds open ports), then Classification (decides what kind of device it is and which probes/patterns to use), then Identification (creates/updates the CI), then Exploration (gathers detailed attributes and relationships).",
+    "distractor_notes": {
+      "B": "You must scan ports before you can classify what's responding.",
+      "C": "Identification can't precede the port scan and classification that feed it.",
+      "D": "This is the reverse of the actual order."
+    },
+    "references": [
+      {
+        "title": "Discovery phases",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/discovery/discovery-phases.html"
+      }
+    ],
+    "tags": [
+      "discovery-mid",
+      "phases",
+      "order"
+    ]
+  },
+  {
+    "id": "cisms-dis-009",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Discovery Configuration",
+    "subdomain": "Discovery phases",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which Discovery phase uses the Shazzam probe?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Classification"
+      },
+      {
+        "id": "B",
+        "text": "Port Scan"
+      },
+      {
+        "id": "C",
+        "text": "Exploration"
+      },
+      {
+        "id": "D",
+        "text": "Identification"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Shazzam is the port-scanning probe that opens the Port Scan phase — it pings the target range and reports which ports respond. Those open-port results drive classification, telling Discovery what kind of device it's likely dealing with.",
+    "distractor_notes": {
+      "A": "Classification consumes Shazzam's results; it isn't the Shazzam phase.",
+      "C": "Exploration gathers deep attributes later in the process.",
+      "D": "Identification creates/updates the CI after classification."
+    },
+    "references": [
+      {
+        "title": "Shazzam and port scanning",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/discovery/shazzam-probe.html"
+      }
+    ],
+    "tags": [
+      "discovery-mid",
+      "shazzam",
+      "port-scan"
+    ]
+  },
+  {
+    "id": "cisms-dis-010",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Discovery Configuration",
+    "subdomain": "Classification",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "On what basis does ServiceNow Discovery primarily classify computers?",
+    "options": [
+      {
+        "id": "A",
+        "text": "WMI availability"
+      },
+      {
+        "id": "B",
+        "text": "Operating system"
+      },
+      {
+        "id": "C",
+        "text": "CPU type"
+      },
+      {
+        "id": "D",
+        "text": "NetBIOS name"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Discovery classifies a computer by its operating system — Windows, Linux, Unix — which determines the class (e.g., Windows Server) and which probes/patterns run next. Other facts like CPU or name are collected later but don't drive the initial classification.",
+    "distractor_notes": {
+      "A": "WMI is a collection protocol, not the classification criterion.",
+      "C": "CPU type is inventory detail, not the classification key.",
+      "D": "NetBIOS name aids targeting/de-duplication, not classification."
+    },
+    "references": [
+      {
+        "title": "Classification",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/discovery/classification.html"
+      }
+    ],
+    "tags": [
+      "discovery-mid",
+      "classification",
+      "operating-system"
+    ]
+  },
+  {
+    "id": "cisms-dis-011",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Discovery Configuration",
+    "subdomain": "Discovery phases",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "In which phase(s) is a server's RAM value typically discovered?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Classification only"
+      },
+      {
+        "id": "B",
+        "text": "Identification and Exploration"
+      },
+      {
+        "id": "C",
+        "text": "Port Scan"
+      },
+      {
+        "id": "D",
+        "text": "Port Scan and Classification"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Detailed hardware attributes like RAM are gathered in the later phases — identification confirms the CI and exploration collects rich attributes. The early phases (port scan, classification) only determine reachability and device type.",
+    "distractor_notes": {
+      "A": "Classification decides device type, not detailed attributes like RAM.",
+      "C": "Port scan only finds open ports; it reads no hardware detail.",
+      "D": "Neither of these early phases collects RAM."
+    },
+    "references": [
+      {
+        "title": "Exploration phase",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/discovery/exploration.html"
+      }
+    ],
+    "tags": [
+      "discovery-mid",
+      "exploration",
+      "attributes"
+    ]
+  },
+  {
+    "id": "cisms-dis-012",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Discovery Configuration",
+    "subdomain": "Discovery phases",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Which Discovery phase is responsible for mapping application-to-host relationships?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Identification"
+      },
+      {
+        "id": "B",
+        "text": "Exploration"
+      },
+      {
+        "id": "C",
+        "text": "Classification"
+      },
+      {
+        "id": "D",
+        "text": "Port Scan"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Exploration runs the pattern logic that correlates discovered applications with their hosting infrastructure, producing the application-to-host relationships. The earlier phases only find ports, decide device type, and create the base CI.",
+    "distractor_notes": {
+      "A": "Identification creates/updates the CI but defers deep relationship discovery to exploration.",
+      "C": "Classification selects probes/patterns; it doesn't build relationships.",
+      "D": "Port scan only enumerates open ports."
+    },
+    "references": [
+      {
+        "title": "Exploration and relationships",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/discovery/exploration.html"
+      }
+    ],
+    "tags": [
+      "discovery-mid",
+      "exploration",
+      "relationships"
+    ]
+  },
+  {
+    "id": "cisms-dis-013",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Discovery Configuration",
+    "subdomain": "Probes",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which component typically queries target hosts to gather discovery data?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Classifiers"
+      },
+      {
+        "id": "B",
+        "text": "Sensors"
+      },
+      {
+        "id": "C",
+        "text": "Business rules"
+      },
+      {
+        "id": "D",
+        "text": "Probes"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "Probes are the active collectors — they reach out to targets over SSH, WMI, SNMP, etc., and bring data back. Sensors then parse those results, and classifiers decide what kind of device it is; the probe is the part that actually queries the host.",
+    "distractor_notes": {
+      "A": "Classifiers categorize based on results; they don't reach out to targets.",
+      "B": "Sensors process the data probes return; they don't query the host.",
+      "C": "Business rules run on instance records, not against discovery targets."
+    },
+    "references": [
+      {
+        "title": "Probes and sensors",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/discovery/probes-sensors.html"
+      }
+    ],
+    "tags": [
+      "discovery-mid",
+      "probes",
+      "data-collection"
+    ]
+  },
+  {
+    "id": "cisms-dis-014",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Discovery Configuration",
+    "subdomain": "Discovery type",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "ServiceNow Discovery performs which type of discovery?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Top-down discovery only"
+      },
+      {
+        "id": "B",
+        "text": "Up-down discovery"
+      },
+      {
+        "id": "C",
+        "text": "Vertical discovery only"
+      },
+      {
+        "id": "D",
+        "text": "Horizontal discovery across infrastructure layers"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "Discovery is horizontal: it sweeps infrastructure (servers, network, storage, apps) and populates CIs and their relationships broadly. Service Mapping, by contrast, is top-down — it starts from a service and drills into its dependencies.",
+    "distractor_notes": {
+      "A": "Top-down is Service Mapping's approach, not horizontal Discovery.",
+      "B": "'Up-down' isn't a recognized discovery type.",
+      "C": "'Vertical discovery' isn't ServiceNow's term for the Discovery engine."
+    },
+    "references": [
+      {
+        "title": "Discovery overview",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/discovery/discovery-overview.html"
+      }
+    ],
+    "tags": [
+      "discovery-mid",
+      "horizontal-discovery",
+      "type"
+    ]
+  },
+  {
+    "id": "cisms-dis-015",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Discovery Configuration",
+    "subdomain": "IP ranges",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Approximately how many host IPs are in the network 180.181.0.0/16 that a Discovery schedule would scan?",
+    "options": [
+      {
+        "id": "A",
+        "text": "~65,000 (2^16 = 65,536)"
+      },
+      {
+        "id": "B",
+        "text": "~1 million"
+      },
+      {
+        "id": "C",
+        "text": "~16 million"
+      },
+      {
+        "id": "D",
+        "text": "~256"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "A /16 leaves 32-16 = 16 host bits, so 2^16 = 65,536 addresses. That's the size of the range Discovery would port-scan unless exclusions are defined — useful for estimating scan scope and MID Server load.",
+    "distractor_notes": {
+      "B": "~1 million would be roughly a /12.",
+      "C": "~16 million (2^24) is a /8, far larger than a /16.",
+      "D": "256 is a /24 (8 host bits), not a /16."
+    },
+    "references": [
+      {
+        "title": "Discovery IP ranges",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/discovery/discovery-schedules.html"
+      }
+    ],
+    "tags": [
+      "discovery-mid",
+      "cidr",
+      "ip-range"
+    ]
+  },
+  {
+    "id": "cisms-dis-016",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Discovery Configuration",
+    "subdomain": "IP addressing",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which of the following is a public IP address?",
+    "options": [
+      {
+        "id": "A",
+        "text": "203.0.113.10"
+      },
+      {
+        "id": "B",
+        "text": "172.20.5.9"
+      },
+      {
+        "id": "C",
+        "text": "10.0.6.8"
+      },
+      {
+        "id": "D",
+        "text": "192.168.100.100"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "203.0.113.0/24 is outside the RFC1918 private ranges, so it's a public address. The others are private: 10.0.0.0/8, 172.16.0.0–172.31.255.255, and 192.168.0.0/16 are all reserved for internal networks.",
+    "distractor_notes": {
+      "B": "172.20.5.9 is in the private 172.16.0.0/12 range.",
+      "C": "10.0.6.8 is in the private 10.0.0.0/8 range.",
+      "D": "192.168.100.100 is in the private 192.168.0.0/16 range."
+    },
+    "references": [
+      {
+        "title": "Public vs private addressing",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/discovery/ip-addressing.html"
+      }
+    ],
+    "tags": [
+      "discovery-mid",
+      "ip-address",
+      "public-private"
+    ]
+  },
+  {
+    "id": "cisms-dis-017",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Discovery Configuration",
+    "subdomain": "Windows discovery",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A domain user with local admin can discover most Windows hosts, but which target needs higher-level (domain) credentials for full discovery?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A Windows print server"
+      },
+      {
+        "id": "B",
+        "text": "A Windows workstation"
+      },
+      {
+        "id": "C",
+        "text": "Windows Domain Controller"
+      },
+      {
+        "id": "D",
+        "text": "A standalone Windows file server"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Domain Controllers run core directory services (AD, and often DNS/DHCP) that local admin can't fully read. Properly classifying and exploring a DC needs elevated, domain-level credentials, unlike ordinary member servers.",
+    "distractor_notes": {
+      "A": "A print server doesn't require domain-level rights for discovery.",
+      "B": "A workstation is discoverable with the standard local-admin account.",
+      "D": "A standalone file server is fine with local admin."
+    },
+    "references": [
+      {
+        "title": "Windows discovery credentials",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/mid-server/windows-credentials.html"
+      }
+    ],
+    "tags": [
+      "discovery-mid",
+      "domain-controller",
+      "credentials"
+    ]
+  },
+  {
+    "id": "cisms-dis-018",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Discovery Configuration",
+    "subdomain": "Troubleshooting",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A Service Mapping discovery returns 'Failed to access target system. Access is denied.' on a Windows host. What is the most likely root cause?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A CLI permissions error on Unix"
+      },
+      {
+        "id": "B",
+        "text": "An SSO/SAML misconfiguration"
+      },
+      {
+        "id": "C",
+        "text": "A Windows authentication error — invalid credentials or insufficient local-admin rights"
+      },
+      {
+        "id": "D",
+        "text": "A reconciliation rule conflict"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "'Access is denied' on Windows almost always means the credential the MID Server used isn't valid for that host or lacks the local-admin rights WMI needs. The fix is correcting the credential or its privileges, not chasing SSO or reconciliation.",
+    "distractor_notes": {
+      "A": "CLI/Unix permissions are a different platform and error path.",
+      "B": "SSO governs interactive logins, not the MID Server's WMI authentication.",
+      "D": "Reconciliation conflicts are CMDB data issues, not access-denied at the host."
+    },
+    "references": [
+      {
+        "title": "Troubleshoot Windows access errors",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/troubleshoot-credentials.html"
+      }
+    ],
+    "tags": [
+      "discovery-mid",
+      "windows-auth",
+      "troubleshooting"
+    ]
+  },
+  {
+    "id": "cisms-dis-019",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Discovery Configuration",
+    "subdomain": "MID Server clusters",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "With three MID Servers in a load-balanced cluster but Shazzam cluster support disabled, how is work distributed?",
+    "options": [
+      {
+        "id": "A",
+        "text": "One MID Server runs the port scan; all three share classification and exploration"
+      },
+      {
+        "id": "B",
+        "text": "Only one MID Server is used for every phase"
+      },
+      {
+        "id": "C",
+        "text": "All three run the port scan; one does classification"
+      },
+      {
+        "id": "D",
+        "text": "All three run every phase simultaneously"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Without Shazzam cluster support, the port scan isn't distributed — a single MID Server handles it. Once responsive IPs are known, the later classification and exploration work is load-balanced across all three MID Servers.",
+    "distractor_notes": {
+      "B": "The later phases do use all three; it isn't one MID for everything.",
+      "C": "The port scan is the part that's NOT distributed here; only one MID does it.",
+      "D": "The port scan stays on a single MID without Shazzam clustering."
+    },
+    "references": [
+      {
+        "title": "MID Server clusters and Shazzam",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/mid-server/mid-server-clusters.html"
+      }
+    ],
+    "tags": [
+      "discovery-mid",
+      "cluster",
+      "shazzam"
+    ]
+  },
+  {
+    "id": "cisms-dis-022",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Discovery Configuration",
+    "subdomain": "Discovery phases",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Which Discovery phase decides whether a device should be created or updated in the CMDB?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Port Scan"
+      },
+      {
+        "id": "B",
+        "text": "Exploration"
+      },
+      {
+        "id": "C",
+        "text": "Classification"
+      },
+      {
+        "id": "D",
+        "text": "Identification"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "Identification matches the gathered data against the CI's identifier rules and decides: update an existing CI or insert a new one. Port scan and classification prepare the way, and exploration enriches the record after identity is settled.",
+    "distractor_notes": {
+      "A": "Port scan finds open ports; it makes no create/update decision.",
+      "B": "Exploration adds attributes after the CI already exists.",
+      "C": "Classification picks probes/patterns based on device type, not CI identity."
+    },
+    "references": [
+      {
+        "title": "Identification phase",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/discovery/identification.html"
+      }
+    ],
+    "tags": [
+      "discovery-mid",
+      "identification",
+      "create-update"
+    ]
+  },
+  {
+    "id": "cisms-dis-023",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Discovery Configuration",
+    "subdomain": "Sensors",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "In probe-and-sensor discovery, what is the sensor's role?",
+    "options": [
+      {
+        "id": "A",
+        "text": "To open ports on the target"
+      },
+      {
+        "id": "B",
+        "text": "To store credentials"
+      },
+      {
+        "id": "C",
+        "text": "To parse the data a probe returns and update the CMDB accordingly"
+      },
+      {
+        "id": "D",
+        "text": "To query the target host directly"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Probes collect; sensors interpret. The sensor takes the probe's returned payload, parses it, and writes the resulting CI data and relationships to the CMDB. It's the processing half of the probe-and-sensor pair.",
+    "distractor_notes": {
+      "A": "Sensors don't scan ports; Shazzam does that.",
+      "B": "Credentials live in Credential Management, not in sensors.",
+      "D": "Querying the host is the probe's job, not the sensor's."
+    },
+    "references": [
+      {
+        "title": "Probes and sensors",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/discovery/probes-sensors.html"
+      }
+    ],
+    "tags": [
+      "discovery-mid",
+      "sensors",
+      "parse"
+    ]
+  },
+  {
+    "id": "cisms-dis-024",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Discovery Configuration",
+    "subdomain": "Classifiers",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What does a Discovery classifier do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Stores the XML payload returned from the MID Server"
+      },
+      {
+        "id": "B",
+        "text": "Reconciles attribute authority between sources"
+      },
+      {
+        "id": "C",
+        "text": "Evaluates initial scan results to determine the device type and which probes/patterns to run next"
+      },
+      {
+        "id": "D",
+        "text": "Queries the host over SSH"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Classifiers look at the early evidence (open ports, banners, basic responses) and decide what the target is — Windows, Linux, a network device — then route to the right probes or patterns. They categorize; they don't collect or reconcile.",
+    "distractor_notes": {
+      "A": "Payloads sit in the ECC Queue, not in classifiers.",
+      "B": "Reconciliation is an IRE function, unrelated to classification.",
+      "D": "Reaching out over SSH is a probe action, not a classifier's."
+    },
+    "references": [
+      {
+        "title": "Classifiers",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/discovery/classification.html"
+      }
+    ],
+    "tags": [
+      "discovery-mid",
+      "classifiers",
+      "device-type"
+    ]
+  },
+  {
+    "id": "cisms-dis-025",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Discovery Configuration",
+    "subdomain": "ECC Queue",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "In the ECC Queue, what does an 'Output' record represent?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A CMDB reconciliation decision"
+      },
+      {
+        "id": "B",
+        "text": "Work sent from the instance out to the MID Server"
+      },
+      {
+        "id": "C",
+        "text": "A credential stored for discovery"
+      },
+      {
+        "id": "D",
+        "text": "A result returning from the MID Server to the instance"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Direction is from the instance's point of view: Output flows out to the MID Server (the probe/command to run), and Input comes back in (the result). So an Output record is the instruction the MID Server picks up and executes.",
+    "distractor_notes": {
+      "A": "Reconciliation happens in IRE, not as an ECC record type.",
+      "C": "Credentials aren't stored in the ECC Queue.",
+      "D": "A returning result is an Input record, not Output."
+    },
+    "references": [
+      {
+        "title": "ECC Queue",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/mid-server/ecc-queue.html"
+      }
+    ],
+    "tags": [
+      "discovery-mid",
+      "ecc-queue",
+      "output"
+    ]
+  },
+  {
+    "id": "cisms-dis-026",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Discovery Configuration",
+    "subdomain": "MID Server role",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the MID Server's role relative to the instance and the internal network?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A conduit that runs probes/commands on the internal network on the instance's behalf and returns results"
+      },
+      {
+        "id": "B",
+        "text": "A replacement for the CMDB"
+      },
+      {
+        "id": "C",
+        "text": "A firewall appliance"
+      },
+      {
+        "id": "D",
+        "text": "A monitoring tool that generates alerts"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The MID Server sits between the cloud instance and the on-prem network, executing the work the instance can't reach directly — discovery probes, pattern commands, integrations — and posting results back. It's the bridge, not a data store or a monitoring product.",
+    "distractor_notes": {
+      "B": "The CMDB stores CIs; the MID Server gathers data to populate it.",
+      "C": "It's a software conduit, not a firewall.",
+      "D": "Alerts come from Event Management/monitoring, not the MID Server itself."
+    },
+    "references": [
+      {
+        "title": "MID Server overview",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/mid-server/mid-server-overview.html"
+      }
+    ],
+    "tags": [
+      "discovery-mid",
+      "mid-server",
+      "conduit"
+    ]
+  },
+  {
+    "id": "cisms-dis-030",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Discovery Configuration",
+    "subdomain": "Troubleshooting",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Service Mapping reports: 'Failed to identify CI on host myHostName. The application port 1433 is closed.' What is the most likely cause?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The entry point is misconfigured"
+      },
+      {
+        "id": "B",
+        "text": "The identification rule is misconfigured"
+      },
+      {
+        "id": "C",
+        "text": "The Discovery pattern isn't configured to collect the port"
+      },
+      {
+        "id": "D",
+        "text": "The application process isn't running/listening on that port"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "A closed port means nothing is listening there — the database/application process is down or not bound to 1433 — so the engine can't reach it to identify the CI. You verify and start the process (or correct the expected port) before retrying.",
+    "distractor_notes": {
+      "A": "Entry points define where mapping starts; they don't make a listening port open or closed.",
+      "B": "A rule misconfig would surface differently; here the port itself is closed.",
+      "C": "The error fires because the port can't be reached at all, before pattern collection matters."
+    },
+    "references": [
+      {
+        "title": "Troubleshoot identification errors",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/troubleshoot-identification.html"
+      }
+    ],
+    "tags": [
+      "discovery-mid",
+      "troubleshooting",
+      "closed-port"
+    ]
+  },
+  {
+    "id": "cisms-dis-031",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Discovery Configuration",
+    "subdomain": "Protocols",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which set of protocols does Service Mapping commonly use to discover target CIs?",
+    "options": [
+      {
+        "id": "A",
+        "text": "SMTP and FTP only"
+      },
+      {
+        "id": "B",
+        "text": "LDAP, SNMP, and HTTP"
+      },
+      {
+        "id": "C",
+        "text": "SSH, SMTP, and HTTP"
+      },
+      {
+        "id": "D",
+        "text": "WMI, SSH, and SNMP"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "WMI reaches Windows hosts, SSH reaches Unix/Linux and many network devices, and SNMP polls network gear. Together they cover the bulk of CI types Service Mapping discovers. SMTP/LDAP/HTTP serve other functions and aren't the core discovery protocol set.",
+    "distractor_notes": {
+      "A": "SMTP/FTP aren't the discovery protocols.",
+      "B": "LDAP locates directory objects but doesn't gather host configuration detail.",
+      "C": "SMTP is for email; it isn't a discovery protocol."
+    },
+    "references": [
+      {
+        "title": "Discovery protocols",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/mid-server/discovery-protocols.html"
+      }
+    ],
+    "tags": [
+      "discovery-mid",
+      "protocols",
+      "wmi-ssh-snmp"
+    ]
+  },
+  {
+    "id": "cisms-dis-032",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Discovery Configuration",
+    "subdomain": "MID Server security",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Why does the MID Server's outbound-only design improve security posture?",
+    "options": [
+      {
+        "id": "A",
+        "text": "No inbound firewall rules to the MID Server are required, reducing exposure"
+      },
+      {
+        "id": "B",
+        "text": "It encrypts the CMDB at rest"
+      },
+      {
+        "id": "C",
+        "text": "It eliminates the need for credentials"
+      },
+      {
+        "id": "D",
+        "text": "It blocks all outbound traffic"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Because the MID Server initiates everything outbound to the instance, you never have to open inbound ports to it from the internet. That shrinks the attack surface — there's no listening service for an outside attacker to target.",
+    "distractor_notes": {
+      "B": "CMDB encryption is a separate platform concern, not a MID Server function.",
+      "C": "Credentials are still required to authenticate to targets.",
+      "D": "It permits the outbound traffic it needs (443); it doesn't block all outbound."
+    },
+    "references": [
+      {
+        "title": "MID Server communication security",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/mid-server/mid-server-communication.html"
+      }
+    ],
+    "tags": [
+      "discovery-mid",
+      "security",
+      "outbound-only"
+    ]
+  },
+  {
+    "id": "cisms-dis-033",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Discovery Configuration",
+    "subdomain": "Discovery schedules",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What does a Discovery Schedule define?",
+    "options": [
+      {
+        "id": "A",
+        "text": "What to discover (IP ranges/targets), when, and with which MID Server"
+      },
+      {
+        "id": "B",
+        "text": "Which credentials are valid platform-wide"
+      },
+      {
+        "id": "C",
+        "text": "The CMDB Health pass threshold"
+      },
+      {
+        "id": "D",
+        "text": "The reconciliation precedence order"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "A Discovery Schedule ties together the scope (IP ranges or targets), the timing (when it runs), and the MID Server(s) that execute it. It's the orchestration record that drives horizontal discovery runs.",
+    "distractor_notes": {
+      "B": "Credentials are managed separately in Credential Management.",
+      "C": "Health thresholds belong to CMDB Health, not discovery schedules.",
+      "D": "Reconciliation precedence is an IRE setting, unrelated to schedules."
+    },
+    "references": [
+      {
+        "title": "Discovery schedules",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/discovery/discovery-schedules.html"
+      }
+    ],
+    "tags": [
+      "discovery-mid",
+      "schedule",
+      "scope"
+    ]
+  },
+  {
+    "id": "cisms-dis-034",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Discovery Configuration",
+    "subdomain": "Pattern-based discovery",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "How does pattern-based discovery differ from classic probe-and-sensor discovery?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Patterns use a declarative, step-based language (run in Pattern Designer) instead of scripted probe/sensor pairs"
+      },
+      {
+        "id": "B",
+        "text": "Patterns store data outside the CMDB"
+      },
+      {
+        "id": "C",
+        "text": "Patterns run on the instance without a MID Server"
+      },
+      {
+        "id": "D",
+        "text": "Patterns require no credentials"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Patterns express discovery as ordered, declarative steps you build in Pattern Designer, which is easier to maintain and extend than hand-coded probe/sensor scripts. Both still run via the MID Server, use credentials, and write to the CMDB.",
+    "distractor_notes": {
+      "B": "Both approaches populate the CMDB.",
+      "C": "Patterns still execute through the MID Server against targets.",
+      "D": "Credentials are required either way to reach hosts."
+    },
+    "references": [
+      {
+        "title": "Pattern-based discovery",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/discovery/pattern-based-discovery.html"
+      }
+    ],
+    "tags": [
+      "discovery-mid",
+      "patterns",
+      "probe-sensor"
+    ]
+  },
+  {
+    "id": "cisms-dis-035",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Discovery Configuration",
+    "subdomain": "MID Server capabilities",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "How can you control which MID Server is used for a given discovery target?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Edit the target host's hosts file"
+      },
+      {
+        "id": "B",
+        "text": "Change the CMDB Health threshold"
+      },
+      {
+        "id": "C",
+        "text": "Delete competing MID Servers"
+      },
+      {
+        "id": "D",
+        "text": "Assign capabilities, applications, and IP ranges to the MID Server so it's selected for matching work"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "MID Server selection is driven by its configured capabilities, applications, and IP-range scope. Discovery picks the MID Server whose configuration matches the work, so you steer traffic by configuring those attributes rather than by hacks.",
+    "distractor_notes": {
+      "A": "A host's hosts file doesn't determine MID Server selection.",
+      "B": "Health thresholds are unrelated to MID Server routing.",
+      "C": "Deleting MID Servers reduces capacity; capabilities/IP scoping is the right control."
+    },
+    "references": [
+      {
+        "title": "MID Server capabilities and selection",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/mid-server/mid-server-capabilities.html"
+      }
+    ],
+    "tags": [
+      "discovery-mid",
+      "capabilities",
+      "selection"
+    ]
+  },
+  {
+    "id": "cisms-dis-038",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Discovery Configuration",
+    "subdomain": "Troubleshooting tools",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "You need to see the raw probe payloads exchanged with the MID Server for a discovery. Where do you look?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The ECC Queue (input/output records)"
+      },
+      {
+        "id": "B",
+        "text": "The service catalog"
+      },
+      {
+        "id": "C",
+        "text": "The CMDB Health dashboard"
+      },
+      {
+        "id": "D",
+        "text": "The email log"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The ECC Queue holds the actual payloads sent to and returned from the MID Server. When you need the literal probe input/output (XML), the ECC Queue is the place — whereas the Discovery Log shows the higher-level step-by-step narrative.",
+    "distractor_notes": {
+      "B": "The service catalog is for request items, unrelated to discovery payloads.",
+      "C": "Health shows data-quality scores, not probe payloads.",
+      "D": "The email log tracks notifications."
+    },
+    "references": [
+      {
+        "title": "Troubleshoot with the ECC Queue",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/mid-server/ecc-queue.html"
+      }
+    ],
+    "tags": [
+      "discovery-mid",
+      "ecc-queue",
+      "troubleshooting"
+    ]
+  },
+  {
+    "id": "cisms-dis-039",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Discovery Configuration",
+    "subdomain": "IP ranges",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Approximately how many addresses are in a /24 network that Discovery would scan?",
+    "options": [
+      {
+        "id": "A",
+        "text": "1,024"
+      },
+      {
+        "id": "B",
+        "text": "16"
+      },
+      {
+        "id": "C",
+        "text": "256 (2^8)"
+      },
+      {
+        "id": "D",
+        "text": "65,536"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "A /24 leaves 8 host bits, so 2^8 = 256 addresses. It's the common 'class C' subnet size and a handy unit when scoping Discovery schedules and estimating scan time.",
+    "distractor_notes": {
+      "A": "1,024 would be a /22.",
+      "B": "16 would be a /28.",
+      "D": "65,536 is a /16, not a /24."
+    },
+    "references": [
+      {
+        "title": "Discovery IP ranges",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/discovery/discovery-schedules.html"
+      }
+    ],
+    "tags": [
+      "discovery-mid",
+      "cidr",
+      "subnet"
+    ]
+  },
+  {
+    "id": "cisms-dis-041",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Discovery Configuration",
+    "subdomain": "MID Server capacity",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Discovery is slow and the MID Server host is resource-constrained. What is the most appropriate scaling response?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Add MID Servers (and/or memory) and load-balance the work across a cluster"
+      },
+      {
+        "id": "B",
+        "text": "Delete discovered CIs to reduce load"
+      },
+      {
+        "id": "C",
+        "text": "Disable IRE to speed things up"
+      },
+      {
+        "id": "D",
+        "text": "Open inbound port 443 to the MID Server"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "MID Server throughput scales horizontally: add MID Servers (or memory) and put them in a load-balanced cluster so phases like classification and exploration spread across them. That relieves a single constrained host without compromising data integrity.",
+    "distractor_notes": {
+      "B": "Deleting CIs destroys data and doesn't address MID Server capacity.",
+      "C": "Disabling IRE would corrupt the CMDB, not safely speed discovery.",
+      "D": "Inbound 443 isn't needed (MID Server is outbound-only) and doesn't add capacity."
+    },
+    "references": [
+      {
+        "title": "MID Server clusters and sizing",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/mid-server/mid-server-clusters.html"
+      }
+    ],
+    "tags": [
+      "discovery-mid",
+      "capacity",
+      "cluster"
+    ]
+  },
+  {
+    "id": "cisms-dis-042",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Discovery Configuration",
+    "subdomain": "Service Mapping host discovery",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "When Service Mapping reaches a host during top-down discovery, how is the host's detailed inventory gathered?",
+    "options": [
+      {
+        "id": "A",
+        "text": "It asks the user to enter the details manually"
+      },
+      {
+        "id": "B",
+        "text": "It copies details from a similar host"
+      },
+      {
+        "id": "C",
+        "text": "It reads the host details from the service map cache only"
+      },
+      {
+        "id": "D",
+        "text": "It triggers horizontal host discovery (probes/patterns) for that host through the MID Server"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "Top-down mapping leans on horizontal discovery for host depth: when it hits a host, it runs the standard host discovery (via the MID Server) to populate OS, hardware, and software, then IRE matches/updates the CI. Service Mapping focuses on the service topology; host detail comes from discovery.",
+    "distractor_notes": {
+      "A": "Host details are discovered, not hand-entered.",
+      "B": "Details are gathered from the host itself, not copied from another.",
+      "C": "There's no cache substitute for actually discovering the host."
+    },
+    "references": [
+      {
+        "title": "Host discovery in Service Mapping",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/host-discovery.html"
+      }
+    ],
+    "tags": [
+      "discovery-mid",
+      "host-discovery",
+      "top-down"
+    ]
+  },
+  {
+    "id": "cisms-dis-043",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Discovery Configuration",
+    "subdomain": "Classification",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "What feeds the Classification phase its inputs?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The email notification log"
+      },
+      {
+        "id": "B",
+        "text": "The open ports and responses found during the Port Scan (Shazzam) phase"
+      },
+      {
+        "id": "C",
+        "text": "The CMDB Health score"
+      },
+      {
+        "id": "D",
+        "text": "Reconciliation precedence values"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Classification reasons over what the port scan found — which ports answered and how — to decide the device type and which probes/patterns to launch. Without the Shazzam results, it has nothing to classify on.",
+    "distractor_notes": {
+      "A": "Notification logs are unrelated to discovery classification.",
+      "C": "Health scores are computed later and don't drive classification.",
+      "D": "Reconciliation precedence governs attribute authority, not classification input."
+    },
+    "references": [
+      {
+        "title": "Classification inputs",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/discovery/classification.html"
+      }
+    ],
+    "tags": [
+      "discovery-mid",
+      "classification",
+      "shazzam-input"
+    ]
+  },
+  {
+    "id": "cisms-dis-044",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Discovery Configuration",
+    "subdomain": "MID Server status",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "How does the instance know a MID Server is alive and reachable?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The MID Server regularly posts a heartbeat/status to the instance"
+      },
+      {
+        "id": "B",
+        "text": "The instance SSHes into the MID Server host"
+      },
+      {
+        "id": "C",
+        "text": "The MID Server emails a status report"
+      },
+      {
+        "id": "D",
+        "text": "The CMDB recalculates health"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The MID Server sends a periodic heartbeat/status check-in to the instance. If those stop arriving, the instance marks the MID Server Down — which is the first thing to verify when discoveries silently stop running.",
+    "distractor_notes": {
+      "B": "The instance never connects inbound to the MID Server; the MID Server checks in outbound.",
+      "C": "Status is reported via the heartbeat mechanism, not email.",
+      "D": "CMDB Health measures data quality, not MID Server liveness."
+    },
+    "references": [
+      {
+        "title": "MID Server status and heartbeat",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/mid-server/mid-server-status.html"
+      }
+    ],
+    "tags": [
+      "discovery-mid",
+      "heartbeat",
+      "status"
+    ]
+  },
+  {
+    "id": "cisms-dis-045",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Discovery Configuration",
+    "subdomain": "Troubleshooting tools",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Which tool gives the step-by-step narrative of which patterns, sections, and steps ran during a Service Mapping discovery?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The Discovery Log"
+      },
+      {
+        "id": "B",
+        "text": "The ECC Queue"
+      },
+      {
+        "id": "C",
+        "text": "The slow query log"
+      },
+      {
+        "id": "D",
+        "text": "The transaction log"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The Discovery Log is the human-readable trace of a mapping run, expanding pattern → section → step with success/failure at each node. The ECC Queue, by contrast, holds the raw payloads; you use the log to follow the logic and the queue to inspect the data.",
+    "distractor_notes": {
+      "B": "The ECC Queue shows payloads, not the section/step narrative.",
+      "C": "The slow query log is about database queries, unrelated to discovery.",
+      "D": "The transaction log tracks instance request performance, not discovery steps."
+    },
+    "references": [
+      {
+        "title": "Service Mapping discovery log",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/service-mapping-discovery-log.html"
+      }
+    ],
+    "tags": [
+      "discovery-mid",
+      "discovery-log",
+      "troubleshooting"
+    ]
+  },
+  {
+    "id": "cisms-dis-046",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Discovery Configuration",
+    "subdomain": "Exploration",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the goal of the Exploration phase?",
+    "options": [
+      {
+        "id": "A",
+        "text": "To gather detailed attributes and relationships for an already-identified CI"
+      },
+      {
+        "id": "B",
+        "text": "To create the CI record for the first time"
+      },
+      {
+        "id": "C",
+        "text": "To decide the device type"
+      },
+      {
+        "id": "D",
+        "text": "To find which ports are open"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "By exploration, the CI already exists; this phase enriches it — deep attributes, installed software, and the relationships (like application-to-host) that give the CMDB its dependency value. The earlier phases scanned, classified, and identified.",
+    "distractor_notes": {
+      "B": "Creating the CI is identification; exploration enriches it afterward.",
+      "C": "Deciding device type is classification.",
+      "D": "Finding open ports is the port scan's job."
+    },
+    "references": [
+      {
+        "title": "Exploration phase",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/discovery/exploration.html"
+      }
+    ],
+    "tags": [
+      "discovery-mid",
+      "exploration",
+      "attributes"
+    ]
+  },
+  {
+    "id": "cisms-dis-047",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Discovery Configuration",
+    "subdomain": "MID Server selection",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A target subnet is only reachable from one network zone. How do you ensure the correct MID Server handles it?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Scope that MID Server to the subnet's IP range so it's selected for those targets"
+      },
+      {
+        "id": "B",
+        "text": "Give every MID Server every credential"
+      },
+      {
+        "id": "C",
+        "text": "Disable the other MID Servers permanently"
+      },
+      {
+        "id": "D",
+        "text": "Increase the heartbeat frequency"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Assign the in-zone MID Server an IP-range that covers the subnet so discovery routes that work to it — the only MID Server that can actually reach those hosts. IP-range scoping is the supported way to match work to network reachability.",
+    "distractor_notes": {
+      "B": "Credentials don't fix network reachability; the wrong-zone MID Server still can't connect.",
+      "C": "Disabling others reduces capacity globally; scoping is the targeted fix.",
+      "D": "Heartbeat frequency doesn't influence target routing."
+    },
+    "references": [
+      {
+        "title": "MID Server IP ranges",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/mid-server/mid-server-capabilities.html"
+      }
+    ],
+    "tags": [
+      "discovery-mid",
+      "ip-range",
+      "selection"
+    ]
+  },
+  {
+    "id": "cisms-dis-049",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Discovery Configuration",
+    "subdomain": "MID Server applications",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which statement about MID Server applications is correct?",
+    "options": [
+      {
+        "id": "A",
+        "text": "One MID Server can support multiple ITOM applications (Discovery, Service Mapping, Orchestration, Event Management)"
+      },
+      {
+        "id": "B",
+        "text": "Each application requires its own dedicated MID Server with no overlap"
+      },
+      {
+        "id": "C",
+        "text": "MID Servers cannot run Service Mapping"
+      },
+      {
+        "id": "D",
+        "text": "A MID Server can only ever run Discovery"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "A single MID Server can be enabled for several applications at once — Discovery, Service Mapping, Orchestration, Event Management — controlled by its capabilities/applications configuration. You scale out for capacity, not because each app needs its own MID Server.",
+    "distractor_notes": {
+      "B": "Dedicated MID Servers per app aren't required, though you may separate by load/zone.",
+      "C": "Service Mapping specifically relies on the MID Server.",
+      "D": "It supports more than Discovery; Service Mapping and others run on it too."
+    },
+    "references": [
+      {
+        "title": "MID Server applications",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/mid-server/mid-server-capabilities.html"
+      }
+    ],
+    "tags": [
+      "discovery-mid",
+      "applications",
+      "capabilities"
+    ]
+  },
+  {
+    "id": "cisms-dis-050",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Discovery Configuration",
+    "subdomain": "Discovery vs Service Mapping",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "What is the key difference between horizontal Discovery and Service Mapping?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Service Mapping does not use the CMDB"
+      },
+      {
+        "id": "B",
+        "text": "They are identical processes"
+      },
+      {
+        "id": "C",
+        "text": "Discovery inventories infrastructure broadly (horizontal); Service Mapping maps a service's dependencies top-down"
+      },
+      {
+        "id": "D",
+        "text": "Discovery is top-down; Service Mapping is horizontal"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Discovery sweeps the estate to populate CIs and basic relationships (horizontal). Service Mapping starts from a business service's entry point and follows the dependency chain (top-down) to build a precise service map. They complement each other and both write to the CMDB.",
+    "distractor_notes": {
+      "A": "Service Mapping populates and reads the CMDB just like Discovery.",
+      "B": "They have different scopes and directions.",
+      "D": "It's the reverse — Discovery is horizontal, Service Mapping is top-down."
+    },
+    "references": [
+      {
+        "title": "Discovery vs Service Mapping",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/service-mapping-overview.html"
+      }
+    ],
+    "tags": [
+      "discovery-mid",
+      "horizontal",
+      "top-down"
+    ]
+  },
+  {
+    "id": "cisms-dis-051",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Discovery Configuration",
+    "subdomain": "Troubleshooting",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "All discoveries on one zone suddenly stop and tasks aren't being picked up. What should you check first?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The CMDB Health completeness score"
+      },
+      {
+        "id": "B",
+        "text": "The service catalog item count"
+      },
+      {
+        "id": "C",
+        "text": "Whether the responsible MID Server is Up (heartbeat) and validated"
+      },
+      {
+        "id": "D",
+        "text": "Reconciliation precedence ordering"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "If a MID Server is Down or unvalidated, its ECC Queue output tasks sit unprocessed and discoveries appear to stall. Confirming the MID Server's heartbeat/status (and that it's validated and reachable) is the first triage step.",
+    "distractor_notes": {
+      "A": "A low health score doesn't stop discoveries from running.",
+      "B": "Catalog items are unrelated to discovery execution.",
+      "D": "Reconciliation ordering affects attribute writes, not whether tasks are picked up."
+    },
+    "references": [
+      {
+        "title": "Troubleshoot MID Server connectivity",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/mid-server/mid-server-status.html"
+      }
+    ],
+    "tags": [
+      "discovery-mid",
+      "troubleshooting",
+      "mid-down"
+    ]
+  },
+  {
+    "id": "cisms-dis-052",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Discovery Configuration",
+    "subdomain": "MID Server validation",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Before a newly installed MID Server can be used, what must happen?",
+    "options": [
+      {
+        "id": "A",
+        "text": "It must be added to the service catalog"
+      },
+      {
+        "id": "B",
+        "text": "Inbound port 443 must be opened to it"
+      },
+      {
+        "id": "C",
+        "text": "Every credential must be deleted"
+      },
+      {
+        "id": "D",
+        "text": "It must be validated (its certificate/connection approved) on the instance"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "A new MID Server connects and then must be validated on the instance before it will process work — this confirms its identity/certificate and authorizes it. Until validated, it can't run discoveries.",
+    "distractor_notes": {
+      "A": "The service catalog is unrelated to MID Server activation.",
+      "B": "The MID Server is outbound-only; no inbound 443 is required.",
+      "C": "Credentials are needed to discover targets, not deleted."
+    },
+    "references": [
+      {
+        "title": "Validate a MID Server",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/mid-server/validate-mid-server.html"
+      }
+    ],
+    "tags": [
+      "discovery-mid",
+      "validation",
+      "setup"
+    ]
+  },
+  {
+    "id": "cisms-dis-053",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Discovery Configuration",
+    "subdomain": "ECC Queue states",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "An ECC Queue record in the 'Ready' state means what?",
+    "options": [
+      {
+        "id": "A",
+        "text": "It has already been processed and closed"
+      },
+      {
+        "id": "B",
+        "text": "It is queued and ready to be picked up/processed by its consumer"
+      },
+      {
+        "id": "C",
+        "text": "It encountered an error and was discarded"
+      },
+      {
+        "id": "D",
+        "text": "It is waiting indefinitely and will never run"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "'Ready' means the record is set to be consumed — an Output/Ready task is ready for the MID Server to take, and an Input/Ready result is ready for the instance to process. It's the actionable state in the queue's lifecycle.",
+    "distractor_notes": {
+      "A": "Processed records move to Processed, not Ready.",
+      "C": "Errors move to an error state, not Ready.",
+      "D": "Ready is actively pollable, not a permanent wait."
+    },
+    "references": [
+      {
+        "title": "ECC Queue states",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/mid-server/ecc-queue.html"
+      }
+    ],
+    "tags": [
+      "discovery-mid",
+      "ecc-queue",
+      "ready"
+    ]
+  }
+]
