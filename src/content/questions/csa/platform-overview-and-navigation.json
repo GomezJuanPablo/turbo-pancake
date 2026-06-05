@@ -2091,5 +2091,1422 @@
       "forms",
       "response-time-indicator"
     ]
+  },
+  {
+    "id": "csa-pon-045",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Filters and Breadcrumbs",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "In the classic environment, what is a filter in the context of a ServiceNow list?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A column header that sorts records alphabetically"
+      },
+      {
+        "id": "B",
+        "text": "A set of conditions applied to a table to display a subset of records"
+      },
+      {
+        "id": "C",
+        "text": "A saved report that aggregates data from multiple tables"
+      },
+      {
+        "id": "D",
+        "text": "A UI policy that hides fields based on record state"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "A filter is a set of conditions applied to a table to help you find and work with a subset of the data in that table. Breadcrumbs at the top of the list indicate the current filter conditions.",
+    "distractor_notes": {
+      "A": "Sorting is a separate list function; column headers control sort order, not filtering.",
+      "C": "Reports aggregate data; filters restrict what records appear in a list.",
+      "D": "UI policies control field visibility on forms, not list filtering."
+    },
+    "references": [
+      {
+        "title": "Filters and breadcrumbs",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/c_UsingFiltersAndBreadcrumbs.html"
+      }
+    ],
+    "tags": [
+      "filters",
+      "breadcrumbs",
+      "lists"
+    ]
+  },
+  {
+    "id": "csa-pon-046",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Filters and Breadcrumbs",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "In a list breadcrumb showing 'Active > Category = Software > Priority = 2', what happens when a user clicks the 'Category = Software' breadcrumb?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Only the Category = Software condition is removed"
+      },
+      {
+        "id": "B",
+        "text": "All conditions to the right of Category = Software are removed, returning active software incidents"
+      },
+      {
+        "id": "C",
+        "text": "All conditions including Category = Software are removed"
+      },
+      {
+        "id": "D",
+        "text": "A new filter dialog opens to edit the Category condition"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Clicking a breadcrumb removes all the conditions to its right. So clicking 'Category = Software' removes 'Priority = 2' and returns all active incidents in the software category.",
+    "distractor_notes": {
+      "A": "Clicking a breadcrumb removes conditions to its right, not the breadcrumb itself. To remove only one condition, click the separator (>) before it.",
+      "C": "Clicking 'All' would remove all conditions. Clicking a mid-breadcrumb only removes conditions to its right.",
+      "D": "Clicking a breadcrumb navigates/filters \u2014 it does not open an edit dialog."
+    },
+    "references": [
+      {
+        "title": "Filters and breadcrumbs",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/c_UsingFiltersAndBreadcrumbs.html"
+      }
+    ],
+    "tags": [
+      "filters",
+      "breadcrumbs"
+    ]
+  },
+  {
+    "id": "csa-pon-047",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Filters and Breadcrumbs",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A developer wants to add a URL-based query that returns all active, priority-1 incidents. They right-click a breadcrumb and choose 'Copy query'. What does the copied value allow them to do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Paste it into the global search bar to filter results"
+      },
+      {
+        "id": "B",
+        "text": "Append it to an instance URL as a sysparm_query parameter"
+      },
+      {
+        "id": "C",
+        "text": "Import it as a scheduled report definition"
+      },
+      {
+        "id": "D",
+        "text": "Use it as a UI action condition on a form"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The 'Copy query' option copies the encoded query string, which can be appended to a URL as sysparm_query. For example: incident_list.do?sysparm_query=active=true^priority=1",
+    "distractor_notes": {
+      "A": "The global search bar accepts plain text queries, not encoded query strings.",
+      "C": "Encoded query strings are not imported as report definitions.",
+      "D": "While encoded queries can be used in reference qualifiers, the primary use described here is URL-based navigation."
+    },
+    "references": [
+      {
+        "title": "Filters and breadcrumbs",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/c_UsingFiltersAndBreadcrumbs.html"
+      }
+    ],
+    "tags": [
+      "filters",
+      "breadcrumbs",
+      "encoded-query"
+    ]
+  },
+  {
+    "id": "csa-pon-048",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Filters and Breadcrumbs",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A user clicks 'New' while viewing a filtered list of resolved, high-priority incidents. What state does the new record open in?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A blank form with no pre-populated values"
+      },
+      {
+        "id": "B",
+        "text": "A form preset with State = Resolved and Priority = High from the active filter"
+      },
+      {
+        "id": "C",
+        "text": "A form that prompts the user to confirm the filter values before opening"
+      },
+      {
+        "id": "D",
+        "text": "A read-only preview of the filter conditions"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Clicking New in a filtered list automatically applies the same filter conditions to the new record. The new form opens with the filter field values pre-populated, such as State = Resolved and Priority = High.",
+    "distractor_notes": {
+      "A": "The form is not blank when opened from a filtered list \u2014 filter values are applied.",
+      "C": "There is no confirmation prompt; the values are applied directly.",
+      "D": "The New button opens an editable form, not a read-only preview."
+    },
+    "references": [
+      {
+        "title": "Filters and breadcrumbs",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/c_UsingFiltersAndBreadcrumbs.html"
+      }
+    ],
+    "tags": [
+      "filters",
+      "breadcrumbs",
+      "new-record"
+    ]
+  },
+  {
+    "id": "csa-pon-049",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Filters and Breadcrumbs",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "By default, which users cannot see breadcrumbs or filters on a list in the classic environment?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Users with the itil role"
+      },
+      {
+        "id": "B",
+        "text": "Users with the admin role"
+      },
+      {
+        "id": "C",
+        "text": "Users with no roles"
+      },
+      {
+        "id": "D",
+        "text": "Users who are members of a group"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "By default, a user with no roles cannot see the breadcrumbs or filter in the classic environment. Administrators can configure the ESS portal to allow unauthenticated users to see them.",
+    "distractor_notes": {
+      "A": "Users with the itil role can see breadcrumbs and filters.",
+      "B": "Admin users have full visibility of breadcrumbs and filters.",
+      "D": "Group membership does not restrict breadcrumb visibility."
+    },
+    "references": [
+      {
+        "title": "Filters and breadcrumbs",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/c_UsingFiltersAndBreadcrumbs.html"
+      }
+    ],
+    "tags": [
+      "filters",
+      "breadcrumbs",
+      "roles"
+    ]
+  },
+  {
+    "id": "csa-pon-050",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Form Personalization",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which roles allow a user to personalize a form in Core UI?",
+    "options": [
+      {
+        "id": "A",
+        "text": "admin only"
+      },
+      {
+        "id": "B",
+        "text": "itil, personalize_form, or admin"
+      },
+      {
+        "id": "C",
+        "text": "No role is required"
+      },
+      {
+        "id": "D",
+        "text": "personalize_list or admin"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Personalizing a form in Core UI requires the itil, personalize_form, or admin role.",
+    "distractor_notes": {
+      "A": "Admin is one of the required roles, but itil and personalize_form also grant this capability.",
+      "C": "Unlike adding favorites, form personalization does require a specific role.",
+      "D": "personalize_list controls list column personalization, not form field personalization."
+    },
+    "references": [
+      {
+        "title": "Personalize a form",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/t_PersonalizeAForm.html"
+      }
+    ],
+    "tags": [
+      "form-personalization",
+      "roles"
+    ]
+  },
+  {
+    "id": "csa-pon-051",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Form Personalization",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A user with the itil role personalizes an Incident form and hides the Category field. Which statement is accurate?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The Category field is hidden for all itil users on the instance"
+      },
+      {
+        "id": "B",
+        "text": "Only the personalizing user sees the Category field hidden on their view"
+      },
+      {
+        "id": "C",
+        "text": "The Category field is removed from the form definition permanently"
+      },
+      {
+        "id": "D",
+        "text": "The system prompts an admin to approve the change before it takes effect"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Personal form customizations do not affect what other users see on their forms. The change is visible only to the user who personalized it.",
+    "distractor_notes": {
+      "A": "Form personalization is per-user, not per-role. Other itil users are unaffected.",
+      "C": "Personalizing does not alter the form definition; configuring the form would affect all users.",
+      "D": "No approval workflow is triggered for personal form changes."
+    },
+    "references": [
+      {
+        "title": "Personalize a form",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/t_PersonalizeAForm.html"
+      }
+    ],
+    "tags": [
+      "form-personalization"
+    ]
+  },
+  {
+    "id": "csa-pon-052",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Form Personalization",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which of the following actions is NOT possible through form personalization in Core UI?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Hiding a non-mandatory field from your view"
+      },
+      {
+        "id": "B",
+        "text": "Showing a field that was previously hidden by you"
+      },
+      {
+        "id": "C",
+        "text": "Adding fields that are not configured to appear on the form"
+      },
+      {
+        "id": "D",
+        "text": "Hiding a field that the form is configured to display"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Form personalization does not allow users to add fields not already configured on the form. Only fields configured to display are available in the Personalize Form menu. Changing the form layout requires form configuration, not personalization.",
+    "distractor_notes": {
+      "A": "Hiding non-mandatory fields is allowed through personalization.",
+      "B": "Restoring hidden fields is allowed; clicking Reset restores the default view.",
+      "D": "Users can hide fields that the form is configured to display, as long as the fields are not mandatory or hidden by UI policies."
+    },
+    "references": [
+      {
+        "title": "Personalize a form",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/t_PersonalizeAForm.html"
+      }
+    ],
+    "tags": [
+      "form-personalization",
+      "limitations"
+    ]
+  },
+  {
+    "id": "csa-pon-053",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Watch Lists",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What role is required to add users to a watch list on a ServiceNow record?",
+    "options": [
+      {
+        "id": "A",
+        "text": "admin"
+      },
+      {
+        "id": "B",
+        "text": "itil"
+      },
+      {
+        "id": "C",
+        "text": "No role is required"
+      },
+      {
+        "id": "D",
+        "text": "watch_list_manager"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "No role is required to add users to a watch list. Any authenticated user can manage watch list subscriptions on records that have a watch list configured.",
+    "distractor_notes": {
+      "A": "Admin role is not required for watch list management.",
+      "B": "The itil role is for ITSM processes, not watch list access.",
+      "D": "watch_list_manager is not a ServiceNow system role."
+    },
+    "references": [
+      {
+        "title": "Add users to a watch list",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/t_UseAWatchList.html"
+      }
+    ],
+    "tags": [
+      "watch-list",
+      "roles"
+    ]
+  },
+  {
+    "id": "csa-pon-054",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Watch Lists",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which watch list action allows adding someone to a watch list who does not have a user record or email address in the sys_user table?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The 'Add me' icon"
+      },
+      {
+        "id": "B",
+        "text": "The 'Add/remove multiple' icon"
+      },
+      {
+        "id": "C",
+        "text": "The 'Add email address' icon"
+      },
+      {
+        "id": "D",
+        "text": "The 'Lookup using list' icon"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "The 'Add email address' icon lets you enter an email address for users who are not in the User [sys_user] table or who do not have an email address defined in their user record.",
+    "distractor_notes": {
+      "A": "The 'Add me' icon adds the currently logged-in user \u2014 not arbitrary email addresses.",
+      "B": "The 'Add/remove multiple' icon opens the Edit Members window for users already in sys_user, and is only available after the record has been saved.",
+      "D": "The 'Lookup using list' opens the Users list to select a single user from sys_user \u2014 it requires the user to already exist in the table."
+    },
+    "references": [
+      {
+        "title": "Add users to a watch list",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/t_UseAWatchList.html"
+      }
+    ],
+    "tags": [
+      "watch-list",
+      "email"
+    ]
+  },
+  {
+    "id": "csa-pon-055",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Watch Lists",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A user tries to use the 'Add/remove multiple' icon on a new, unsaved Incident record. What happens?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The Edit Members window opens normally"
+      },
+      {
+        "id": "B",
+        "text": "The option is not available until the record has been initially saved"
+      },
+      {
+        "id": "C",
+        "text": "The system auto-saves the record before opening the window"
+      },
+      {
+        "id": "D",
+        "text": "The action is restricted to admin users on new records"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The 'Add/remove multiple' icon, which opens the Edit Members window, is not available until a record has been initially saved.",
+    "distractor_notes": {
+      "A": "The Edit Members window is unavailable on unsaved records.",
+      "C": "The system does not auto-save the record; the user must save it first.",
+      "D": "This limitation applies to all users, not specifically non-admins."
+    },
+    "references": [
+      {
+        "title": "Add users to a watch list",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/t_UseAWatchList.html"
+      }
+    ],
+    "tags": [
+      "watch-list",
+      "new-record"
+    ]
+  },
+  {
+    "id": "csa-pon-056",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "URL Navigation",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which URL format opens a ServiceNow page with the standard banner frame and application navigator?",
+    "options": [
+      {
+        "id": "A",
+        "text": "https://instance.service-now.com/table_name.do?"
+      },
+      {
+        "id": "B",
+        "text": "https://instance.service-now.com/nav_to.do?uri="
+      },
+      {
+        "id": "C",
+        "text": "https://instance.service-now.com/table_name_list.do"
+      },
+      {
+        "id": "D",
+        "text": "https://instance.service-now.com/sys_id=-1"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The nav_to.do?uri= format displays a page in the standard interface with the banner frame on top and the application navigator on the left.",
+    "distractor_notes": {
+      "A": "The .do? suffix opens a form or page directly but does not guarantee the standard framed interface.",
+      "C": "table_name_list.do opens a list view directly without the nav_to wrapper.",
+      "D": "sys_id=-1 is a parameter used to create a new record, not a standalone URL format."
+    },
+    "references": [
+      {
+        "title": "Navigate to a record or module using a URL",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/navigate-using-url.html"
+      }
+    ],
+    "tags": [
+      "url-navigation",
+      "nav_to"
+    ]
+  },
+  {
+    "id": "csa-pon-057",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "URL Navigation",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "In a ServiceNow URL, what does setting sys_id=-1 indicate?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The record does not exist and should be deleted"
+      },
+      {
+        "id": "B",
+        "text": "A new record should be created"
+      },
+      {
+        "id": "C",
+        "text": "The system should return the last modified record"
+      },
+      {
+        "id": "D",
+        "text": "The query should return all records regardless of sys_id"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "In ServiceNow URL parameters, setting sys_id=-1 tells the system to create a new record. Combined with sysparm_query, it applies filter values to the new record form.",
+    "distractor_notes": {
+      "A": "sys_id=-1 is a create signal, not a delete signal.",
+      "C": "There is no built-in URL parameter to retrieve the last modified record by using sys_id=-1.",
+      "D": "sys_id=-1 specifically means new record creation, not an all-records query."
+    },
+    "references": [
+      {
+        "title": "Navigate to a record or module using a URL",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/navigate-using-url.html"
+      }
+    ],
+    "tags": [
+      "url-navigation",
+      "sys_id"
+    ]
+  },
+  {
+    "id": "csa-pon-058",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "URL Navigation",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A developer needs a URL that returns incident records where priority is 2 AND active is true. Which sysparm_query value is correct?",
+    "options": [
+      {
+        "id": "A",
+        "text": "sysparm_query=priority=2,active=true"
+      },
+      {
+        "id": "B",
+        "text": "sysparm_query=priority=2&active=true"
+      },
+      {
+        "id": "C",
+        "text": "sysparm_query=priority=2^active=true"
+      },
+      {
+        "id": "D",
+        "text": "sysparm_query=priority=2+active=true"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "In ServiceNow encoded query strings, the caret (^) separates AND conditions. The correct format is sysparm_query=priority=2^active=true.",
+    "distractor_notes": {
+      "A": "Commas are not valid encoded query separators in ServiceNow.",
+      "B": "The ampersand (&) separates URL parameters, not query conditions within sysparm_query.",
+      "D": "The plus sign (+) is not the ServiceNow encoded query AND operator."
+    },
+    "references": [
+      {
+        "title": "Navigate to a record or module using a URL",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/navigate-using-url.html"
+      }
+    ],
+    "tags": [
+      "url-navigation",
+      "encoded-query",
+      "sysparm_query"
+    ]
+  },
+  {
+    "id": "csa-pon-059",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "URL Navigation",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A user wants to open the Incident list view directly via URL. Which format is correct?",
+    "options": [
+      {
+        "id": "A",
+        "text": "incident.do"
+      },
+      {
+        "id": "B",
+        "text": "incident_list.do"
+      },
+      {
+        "id": "C",
+        "text": "incident.list"
+      },
+      {
+        "id": "D",
+        "text": "list.do?table=incident"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "To view a list via URL, use the format table_name_list.do. For the Incident table, that is incident_list.do.",
+    "distractor_notes": {
+      "A": "incident.do opens a form view, not a list view.",
+      "C": "incident.list is the format used in the Unified Navigation filter field, not a direct URL.",
+      "D": "list.do?table=incident is not a valid ServiceNow URL schema."
+    },
+    "references": [
+      {
+        "title": "Navigate to a record or module using a URL",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/navigate-using-url.html"
+      }
+    ],
+    "tags": [
+      "url-navigation",
+      "list-view"
+    ]
+  },
+  {
+    "id": "csa-pon-060",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "User Preferences",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which Next Experience preference category is only visible to users with the admin role?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Notifications"
+      },
+      {
+        "id": "B",
+        "text": "Accessibility"
+      },
+      {
+        "id": "C",
+        "text": "Debugging"
+      },
+      {
+        "id": "D",
+        "text": "Language and Region"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "The Debugging preferences appear only for users with the admin role, as they are used to detect and remove errors in Next Experience components and scripts.",
+    "distractor_notes": {
+      "A": "Notification preferences are available to all users.",
+      "B": "Accessibility preferences are available to all users.",
+      "D": "Language and Region preferences are available to all users."
+    },
+    "references": [
+      {
+        "title": "Next Experience preferences",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/set-up-preferences-next-experience.html"
+      }
+    ],
+    "tags": [
+      "user-preferences",
+      "debugging",
+      "admin"
+    ]
+  },
+  {
+    "id": "csa-pon-061",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "User Preferences",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which Next Experience preference category controls how and where a user receives system and in-product notifications, including banners and email?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Display"
+      },
+      {
+        "id": "B",
+        "text": "Accessibility"
+      },
+      {
+        "id": "C",
+        "text": "Notifications"
+      },
+      {
+        "id": "D",
+        "text": "User Experience"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "The Notifications preference category controls how and where users receive system and in-product notifications, including banners, badges, and delivery channels such as email.",
+    "distractor_notes": {
+      "A": "Display preferences control how the interface looks \u2014 layout, visual density, presentation.",
+      "B": "Accessibility preferences adjust the interface for accessibility needs such as keyboard navigation and contrast.",
+      "D": "User Experience preferences manage high-level Next Experience behaviors like enabling/disabling the experience and selecting a start page."
+    },
+    "references": [
+      {
+        "title": "Next Experience preferences",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/set-up-preferences-next-experience.html"
+      }
+    ],
+    "tags": [
+      "user-preferences",
+      "notifications"
+    ]
+  },
+  {
+    "id": "csa-pon-062",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "User Preferences",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which Next Experience preference category lets a user set their time zone and date/time formats?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Display"
+      },
+      {
+        "id": "B",
+        "text": "User Experience"
+      },
+      {
+        "id": "C",
+        "text": "Language and Region"
+      },
+      {
+        "id": "D",
+        "text": "Workspace"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "The Language and Region preference category lets users define their language, time zone, and date and time formats.",
+    "distractor_notes": {
+      "A": "Display preferences control visual layout and density, not localization settings.",
+      "B": "User Experience preferences manage high-level behaviors, not time zone.",
+      "D": "Workspace preferences customize behavior within a specific workspace, not localization."
+    },
+    "references": [
+      {
+        "title": "Next Experience preferences",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/set-up-preferences-next-experience.html"
+      }
+    ],
+    "tags": [
+      "user-preferences",
+      "language-region"
+    ]
+  },
+  {
+    "id": "csa-pon-063",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "User Preferences",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A user searches for 'theme' in the Next Experience Preferences modal search field. What behavior does the search use?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Exact match only \u2014 the word must appear verbatim"
+      },
+      {
+        "id": "B",
+        "text": "Fuzzy search \u2014 returns results even with shortened or partial text"
+      },
+      {
+        "id": "C",
+        "text": "Regex pattern matching across all preference labels"
+      },
+      {
+        "id": "D",
+        "text": "Search is disabled in the Preferences modal"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The Preferences modal search uses a fuzzy search filter, which finds applicable results even with shortened text. The Preferences panel dynamically updates as you type.",
+    "distractor_notes": {
+      "A": "The search is fuzzy, not exact-match only.",
+      "C": "Regex matching is not how the Preferences search works.",
+      "D": "The Preferences modal includes a search field that is fully functional."
+    },
+    "references": [
+      {
+        "title": "Next Experience preferences",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/set-up-preferences-next-experience.html"
+      }
+    ],
+    "tags": [
+      "user-preferences",
+      "search",
+      "fuzzy"
+    ]
+  },
+  {
+    "id": "csa-pon-064",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "User Preferences",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Under which condition does the Workspace preference category appear in Next Experience?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Only when the user has the admin role"
+      },
+      {
+        "id": "B",
+        "text": "Only when the user has access to Workspace and Workspace is in focus"
+      },
+      {
+        "id": "C",
+        "text": "Always, regardless of workspace access"
+      },
+      {
+        "id": "D",
+        "text": "Only on mobile devices"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The Workspace preference category appears only if the user has access to Workspace and the workspace is currently in focus.",
+    "distractor_notes": {
+      "A": "Admin role is not the condition; workspace access and focus are.",
+      "C": "Workspace preferences are context-dependent, not always visible.",
+      "D": "Workspace preferences are not limited to mobile devices."
+    },
+    "references": [
+      {
+        "title": "Next Experience preferences",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/set-up-preferences-next-experience.html"
+      }
+    ],
+    "tags": [
+      "user-preferences",
+      "workspace"
+    ]
+  },
+  {
+    "id": "csa-pon-065",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Keyboard Shortcuts",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which keyboard shortcut favorites or unfavorites the current page in Next Experience on Windows?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Control+Alt+f"
+      },
+      {
+        "id": "B",
+        "text": "Control+Shift+f"
+      },
+      {
+        "id": "C",
+        "text": "Shift+Alt+f"
+      },
+      {
+        "id": "D",
+        "text": "Control+f"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Control+Shift+f (Command+Shift+f on macOS) favorites or unfavorites the current page in Next Experience.",
+    "distractor_notes": {
+      "A": "Control+Alt+f is not the documented shortcut for favoriting a page.",
+      "C": "Shift+Alt+f is not the documented shortcut for this action.",
+      "D": "Control+f is a browser shortcut for find/search in the page, not a ServiceNow favorite shortcut."
+    },
+    "references": [
+      {
+        "title": "Next Experience keyboard shortcuts",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/next-experience-keyboard-shortcuts.html"
+      }
+    ],
+    "tags": [
+      "keyboard-shortcuts",
+      "favorites"
+    ]
+  },
+  {
+    "id": "csa-pon-066",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Keyboard Shortcuts",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which keyboard shortcut on Windows takes a user to the Next Experience instance landing page?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Control+Alt+h"
+      },
+      {
+        "id": "B",
+        "text": "Control+Alt+z"
+      },
+      {
+        "id": "C",
+        "text": "Control+Home"
+      },
+      {
+        "id": "D",
+        "text": "Control+Alt+l"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Control+Alt+z (Command+Option+z on macOS) opens the instance landing page in Next Experience.",
+    "distractor_notes": {
+      "A": "Control+Alt+h is not the shortcut for the landing page.",
+      "C": "Control+Home is a browser-level shortcut to scroll to the top of the page, not a ServiceNow navigation shortcut.",
+      "D": "Control+Alt+l is not documented as a Next Experience keyboard shortcut."
+    },
+    "references": [
+      {
+        "title": "Next Experience keyboard shortcuts",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/next-experience-keyboard-shortcuts.html"
+      }
+    ],
+    "tags": [
+      "keyboard-shortcuts",
+      "landing-page"
+    ]
+  },
+  {
+    "id": "csa-pon-067",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Keyboard Shortcuts",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the Windows keyboard shortcut to impersonate a user in Next Experience?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Control+Alt+i"
+      },
+      {
+        "id": "B",
+        "text": "Control+Shift+i"
+      },
+      {
+        "id": "C",
+        "text": "Control+Alt+u"
+      },
+      {
+        "id": "D",
+        "text": "Shift+Alt+i"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Control+Shift+i (Command+Shift+i on macOS) is the keyboard shortcut to impersonate a user in Next Experience.",
+    "distractor_notes": {
+      "A": "Control+Alt+i is not the documented impersonate shortcut.",
+      "C": "Control+Alt+u is not a documented Next Experience shortcut.",
+      "D": "Shift+Alt+i is not documented as the impersonate shortcut."
+    },
+    "references": [
+      {
+        "title": "Next Experience keyboard shortcuts",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/next-experience-keyboard-shortcuts.html"
+      }
+    ],
+    "tags": [
+      "keyboard-shortcuts",
+      "impersonate"
+    ]
+  },
+  {
+    "id": "csa-pon-068",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Keyboard Shortcuts",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "In which operating system are Next Experience keyboard shortcuts currently NOT supported?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Windows"
+      },
+      {
+        "id": "B",
+        "text": "macOS"
+      },
+      {
+        "id": "C",
+        "text": "Linux"
+      },
+      {
+        "id": "D",
+        "text": "iOS"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "The Linux operating system is not currently supported for Next Experience keyboard shortcuts. They are documented for Windows and macOS.",
+    "distractor_notes": {
+      "A": "Windows is fully supported with documented keyboard shortcuts.",
+      "B": "macOS is fully supported with documented keyboard shortcuts using Command/Option keys.",
+      "D": "iOS (mobile) is a different platform; the keyboard shortcut documentation specifically calls out Linux as unsupported."
+    },
+    "references": [
+      {
+        "title": "Next Experience keyboard shortcuts",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/next-experience-keyboard-shortcuts.html"
+      }
+    ],
+    "tags": [
+      "keyboard-shortcuts",
+      "os-support"
+    ]
+  },
+  {
+    "id": "csa-pon-069",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Following Records",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "From which interface can a user follow a record to receive notifications in Next Experience?",
+    "options": [
+      {
+        "id": "A",
+        "text": "From any workspace interface"
+      },
+      {
+        "id": "B",
+        "text": "From the classic form UI only, even when Next Experience is active"
+      },
+      {
+        "id": "C",
+        "text": "From the global search results page"
+      },
+      {
+        "id": "D",
+        "text": "From the Unified Navigation notifications panel"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Following records is supported from the classic form UI only, even when your instance uses Next Experience. Following records from within a workspace is not supported.",
+    "distractor_notes": {
+      "A": "Following records from within a workspace is explicitly not supported.",
+      "C": "The global search results page is for finding records, not for following them.",
+      "D": "The Notifications panel shows received notifications; it is not where you follow records."
+    },
+    "references": [
+      {
+        "title": "Working in the Next Experience UI",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/next-experience-ui.html"
+      }
+    ],
+    "tags": [
+      "following-records",
+      "classic-environment"
+    ]
+  },
+  {
+    "id": "csa-pon-070",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "URL Navigation",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A developer wants a URL that opens the Incident form in the 'ess' (Employee Self-Service) view. Which parameter achieves this?",
+    "options": [
+      {
+        "id": "A",
+        "text": "sysparm_query=view=ess"
+      },
+      {
+        "id": "B",
+        "text": "sysparm_view=ess"
+      },
+      {
+        "id": "C",
+        "text": "view=ess"
+      },
+      {
+        "id": "D",
+        "text": "sysparm_form_view=ess"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The sysparm_view parameter specifies which form view to display. For example, appending sysparm_view=ess to the incident URL opens the record in the ESS view.",
+    "distractor_notes": {
+      "A": "sysparm_query is for record filters, not view selection.",
+      "C": "view=ess is not a valid standalone URL parameter in ServiceNow.",
+      "D": "sysparm_form_view is not a documented URL parameter; the correct parameter is sysparm_view."
+    },
+    "references": [
+      {
+        "title": "Navigate to a record or module using a URL",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/navigate-using-url.html"
+      }
+    ],
+    "tags": [
+      "url-navigation",
+      "sysparm_view"
+    ]
+  },
+  {
+    "id": "csa-pon-071",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Lists",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An admin wants to quickly filter an Incident list to show only records where Category equals 'Software' without opening the filter builder. What is the most direct method?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Edit the URL to add sysparm_query=category=software"
+      },
+      {
+        "id": "B",
+        "text": "Right-click the Category field value 'Software' on a record in the list and select Show Matching"
+      },
+      {
+        "id": "C",
+        "text": "Click the Category column header and select Filter"
+      },
+      {
+        "id": "D",
+        "text": "Use the global search bar to search for category:software"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Quick filters allow you to filter a list by right-clicking a value in a field and selecting Show Matching. This instantly filters the list to records with that same value.",
+    "distractor_notes": {
+      "A": "Editing the URL works but is not the most direct method from within the list interface.",
+      "C": "Clicking the column header sorts the list; it does not open a filter for that value.",
+      "D": "Global search is for full-text searching across tables, not for applying list filters by field value."
+    },
+    "references": [
+      {
+        "title": "Filters and breadcrumbs",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/c_UsingFiltersAndBreadcrumbs.html"
+      }
+    ],
+    "tags": [
+      "lists",
+      "quick-filter",
+      "right-click"
+    ]
+  },
+  {
+    "id": "csa-pon-072",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Next Experience UI",
+    "difficulty": "recall",
+    "type": "multi_select",
+    "stem": "Which two components are part of the Next Experience Unified Navigation?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Global Search"
+      },
+      {
+        "id": "B",
+        "text": "Application Navigator filter field"
+      },
+      {
+        "id": "C",
+        "text": "Notifications panel"
+      },
+      {
+        "id": "D",
+        "text": "Performance Analytics dashboard"
+      }
+    ],
+    "correct": [
+      "A",
+      "C"
+    ],
+    "rationale": "The Unified Navigation includes Global Search (to search across the instance) and Notifications (to view and personalize notifications). Both run across the top of every page.",
+    "distractor_notes": {
+      "B": "The Application Navigator filter field is part of the classic Core UI, not the Unified Navigation.",
+      "D": "Performance Analytics dashboards are reporting content within the platform, not a Unified Navigation component."
+    },
+    "references": [
+      {
+        "title": "Working in the Next Experience UI",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/next-experience-ui.html"
+      }
+    ],
+    "tags": [
+      "unified-navigation",
+      "next-experience"
+    ]
+  },
+  {
+    "id": "csa-pon-073",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "User Preferences",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which Next Experience preference category would a user configure to change the visual density and layout of the interface?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Accessibility"
+      },
+      {
+        "id": "B",
+        "text": "Display"
+      },
+      {
+        "id": "C",
+        "text": "User Experience"
+      },
+      {
+        "id": "D",
+        "text": "Workspace"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Display preferences control how the Next Experience interface looks and behaves on screen, including layout, visual density, and presentation options. These settings affect only the current user's view.",
+    "distractor_notes": {
+      "A": "Accessibility preferences adjust the interface for different abilities (keyboard navigation, contrast, motion), not visual density.",
+      "C": "User Experience preferences manage high-level behaviors like enabling/disabling Next Experience, not visual layout.",
+      "D": "Workspace preferences are scoped to behavior within a specific workspace."
+    },
+    "references": [
+      {
+        "title": "Next Experience preferences",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/set-up-preferences-next-experience.html"
+      }
+    ],
+    "tags": [
+      "user-preferences",
+      "display"
+    ]
+  },
+  {
+    "id": "csa-pon-074",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "URL Navigation",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A developer needs to limit a URL-based list query to return a maximum of 5 records. Which sysparm parameter should they use?",
+    "options": [
+      {
+        "id": "A",
+        "text": "sysparm_limit=5"
+      },
+      {
+        "id": "B",
+        "text": "sysparm_max_rows=5"
+      },
+      {
+        "id": "C",
+        "text": "sysparm_force_row_count=5"
+      },
+      {
+        "id": "D",
+        "text": "sysparm_count=5"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "The sysparm_force_row_count parameter limits the maximum number of results in a URL query. For example, appending sysparm_force_row_count=5 returns at most 5 records.",
+    "distractor_notes": {
+      "A": "sysparm_limit is used in the REST API context, not the standard platform URL parameters.",
+      "B": "sysparm_max_rows is not a documented URL parameter for limiting rows.",
+      "D": "sysparm_count is not a documented row-limiting URL parameter."
+    },
+    "references": [
+      {
+        "title": "Navigate to a record or module using a URL",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/navigate-using-url.html"
+      }
+    ],
+    "tags": [
+      "url-navigation",
+      "sysparm_force_row_count"
+    ]
   }
 ]
