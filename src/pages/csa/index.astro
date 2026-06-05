@@ -109,16 +109,50 @@ const bankIndex = csaQuestions.map((q) => ({
       </div>
 
       <h2 style="font-size:15px;font-weight:600;margin:0 0 12px;">Domain focus</h2>
+      <p style="font-size:12px;color:var(--text-muted);margin-bottom:14px;">
+        Click a domain to drill it specifically. Each session serves up to 60 questions from that domain.
+        A second 60Q session unlocks automatically once the domain bank reaches 120 questions.
+        Domains with fewer questions show what's available — more are being added.
+      </p>
       <div class="card-grid" data-domain-grid-modes>
-        {authoredByDomain.map((d) => (
-          <DomainCard
-            title={d.name}
-            weight={`${d.weight}%`}
-            answered={0}
-            total={d.target}
-            href={`./practice/?domain=${encodeURIComponent(d.name)}`}
-          />
-        ))}
+        {authoredByDomain.map((d) => {
+          const simCount = d.authored >= 120 ? 2 : d.authored >= 60 ? 1 : 0;
+          const available = d.authored > 0 ? d.authored : d.target;
+          return (
+            <div class="domain-focus-card card">
+              <div class="domain-focus-card__head">
+                <div>
+                  <div class="domain-focus-card__title">{d.name}</div>
+                  <div class="domain-focus-card__weight">{d.weight}% of exam</div>
+                </div>
+                <span class="domain-focus-card__count">{d.authored} Q</span>
+              </div>
+              <div class="domain-focus-card__actions">
+                {d.authored > 0 ? (
+                  <>
+                    <a href={`./practice/?domain=${encodeURIComponent(d.name)}`} class="btn btn--primary btn--sm">
+                      Practice all {d.authored}Q →
+                    </a>
+                    {simCount >= 1 && (
+                      <a href={`./practice/?domain=${encodeURIComponent(d.name)}&set=1`} class="btn btn--ghost btn--sm">Sim 1 (60Q)</a>
+                    )}
+                    {simCount >= 2 && (
+                      <a href={`./practice/?domain=${encodeURIComponent(d.name)}&set=2`} class="btn btn--ghost btn--sm">Sim 2 (60Q)</a>
+                    )}
+                  </>
+                ) : (
+                  <span style="font-size:11px;color:var(--text-muted);">Questions coming soon</span>
+                )}
+              </div>
+              {d.authored < 60 && d.authored > 0 && (
+                <div class="domain-focus-card__note">Building to 60Q — {60 - d.authored} more to go</div>
+              )}
+              {d.authored >= 60 && d.authored < 120 && (
+                <div class="domain-focus-card__note">Building to 120Q — {120 - d.authored} more to go</div>
+              )}
+            </div>
+          );
+        })}
       </div>
     </section>
 
@@ -456,5 +490,15 @@ const bankIndex = csaQuestions.map((q) => ({
   .sim-card__label { font-size: 14px; font-weight: 600; margin-bottom: 4px; color: var(--text); }
   .sim-card__meta { font-size: 12px; color: var(--text-muted); }
   @media (max-width: 680px) { .modes-glossary__item { grid-template-columns: 1fr; gap: 2px; } }
+
+
+  .domain-focus-card { display: flex; flex-direction: column; gap: 10px; }
+  .domain-focus-card__head { display: flex; justify-content: space-between; align-items: flex-start; }
+  .domain-focus-card__title { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 2px; }
+  .domain-focus-card__weight { font-size: 11px; color: var(--text-muted); }
+  .domain-focus-card__count { font-size: 12px; font-weight: 700; color: var(--primary); white-space: nowrap; }
+  .domain-focus-card__actions { display: flex; gap: 8px; flex-wrap: wrap; }
+  .domain-focus-card__note { font-size: 11px; color: var(--text-muted); padding-top: 2px; }
+  .btn--sm { padding: 6px 12px; font-size: 12px; }
 
 </style>
