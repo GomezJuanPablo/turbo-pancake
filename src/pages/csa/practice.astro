@@ -103,11 +103,41 @@ for (const d of blueprint!.data.domains) weights[d.name] = d.weight;
   const IS_SIM   = SET_NUM !== null && SET_NUM >= 1 && SET_NUM <= 4;
   const SESSION_LIMIT = (IS_SIM || DOMAIN) ? 60 : Infinity;
 
+  // Bounded modes (exam sim, domain focus) run a fixed, sequential set with no repeats.
+  // Open-ended Full Practice keeps the adaptive, history-driven selector.
+  const IS_SESSION = SESSION_LIMIT < Infinity;
+
+  function shuffle(arr) {
+    const a = [...arr];
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  }
+
   const activeBank = IS_SIM
     ? buildExamSet(bank, weights, SET_NUM)
     : DOMAIN
       ? bank.filter(q => q.domain === DOMAIN)
       : bank;
+
+  // For bounded sessions, present each question exactly once (deduped by id).
+  // buildExamSet already returns a shuffled, unique 60; domain focus we shuffle here.
+  const sessionQueue = IS_SESSION
+    ? (() => {
+        const seen = new Set();
+        const unique = [];
+        for (const q of (IS_SIM ? activeBank : shuffle(activeBank))) {
+          if (seen.has(q.id)) continue;
+          seen.add(q.id);
+          unique.push(q);
+        }
+        return unique.slice(0, SESSION_LIMIT);
+      })()
+    : null;
+  const SESSION_TOTAL = IS_SESSION ? sessionQueue.length : SESSION_LIMIT;
+  let sessionIndex = 0;
 
   // --- DOM refs ---
   const root        = document.getElementById('practice-root');
@@ -157,6 +187,17 @@ for (const d of blueprint!.data.domains) weights[d.name] = d.weight;
   let sessionCorrect  = 0;
 
   function updateStats() {
+    // Bounded sessions: header reflects THIS session and is driven by in-memory
+    // counters, so it updates reliably even when localStorage is unavailable.
+    if (IS_SESSION) {
+      answeredEl.textContent = String(sessionAnswered);
+      accuracyEl.textContent = sessionAnswered > 0
+        ? Math.round((sessionCorrect / sessionAnswered) * 100) + '%'
+        : '—';
+      if (progressEl) progressEl.textContent = `${sessionAnswered} / ${SESSION_TOTAL}`;
+      return;
+    }
+    // Full Practice: lifetime stats from saved progress.
     const state = load();
     const byQ   = state.byQuestion || {};
     const ids   = Object.keys(byQ);
@@ -164,9 +205,6 @@ for (const d of blueprint!.data.domains) weights[d.name] = d.weight;
     const correct = ids.filter((id) => byQ[id].correct).length;
     answeredEl.textContent = String(total);
     accuracyEl.textContent = total > 0 ? Math.round((correct / total) * 100) + '%' : '—';
-    if (progressEl && SESSION_LIMIT < Infinity) {
-      progressEl.textContent = `${sessionAnswered} / ${SESSION_LIMIT}`;
-    }
   }
 
   function showComplete() {
@@ -246,9 +284,13 @@ for (const d of blueprint!.data.domains) weights[d.name] = d.weight;
   }
 
   function advance() {
-    if (SESSION_LIMIT < Infinity && sessionAnswered >= SESSION_LIMIT) {
-      showComplete(); return;
+    // Bounded sessions walk a fixed, unique queue in order — no repeats.
+    if (IS_SESSION) {
+      if (sessionIndex >= sessionQueue.length) { showComplete(); return; }
+      renderQuestion(sessionQueue[sessionIndex++]);
+      return;
     }
+    // Full Practice: adaptive, history-weighted selection.
     const next = pickNext(activeBank, weights, root.dataset.exam);
     if (!next) { card.hidden = true; emptyEl.hidden = false; return; }
     renderQuestion(next);
