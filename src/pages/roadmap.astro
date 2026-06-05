@@ -61,13 +61,25 @@ const principles = [
         <header class="roadmap__phase-head">
           <span class="roadmap__phase-label">{p.label}</span>
         </header>
-        {p.items.map((item) => (
-          <article class="card roadmap__item">
-            <div class="roadmap__item-code">{item.exam}</div>
-            <div class="roadmap__item-title">{item.title}</div>
-            <div class="roadmap__item-detail">{item.detail}</div>
-          </article>
-        ))}
+        {p.color === 'live' ? (
+          <div class="live-list">
+            {p.items.map((item) => (
+              <div class="live-row">
+                <span class="live-row__code">{item.exam}</span>
+                <span class="live-row__title">{item.title}</span>
+                <span class="live-badge">Live</span>
+              </div>
+            ))}
+          </div>
+        ) : (
+          p.items.map((item) => (
+            <article class="card roadmap__item">
+              <div class="roadmap__item-code">{item.exam}</div>
+              <div class="roadmap__item-title">{item.title}</div>
+              <div class="roadmap__item-detail">{item.detail}</div>
+            </article>
+          ))
+        )}
       </section>
     ))}
   </div>
@@ -170,5 +182,16 @@ const principles = [
   .build-row__fill { height: 100%; background: var(--primary); border-radius: 4px; transition: width 0.4s; }
   .build-row__count { font-size: 12px; color: var(--text-muted); text-align: right; white-space: nowrap; }
   @media (max-width: 680px) { .build-row { grid-template-columns: 1fr 60px; } .build-row__label { grid-column: 1/-1; } }
+
+
+  .live-list { display: flex; flex-direction: column; gap: 6px; }
+  .live-row {
+    display: flex; align-items: center; gap: 10px;
+    padding: 8px 12px; background: var(--surface);
+    border: 1px solid var(--border); border-radius: 8px;
+  }
+  .live-row__code { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; color: var(--primary-dark); min-width: 70px; }
+  .live-row__title { font-size: 13px; color: var(--text); flex: 1; }
+  .live-badge { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--primary-dark); background: var(--primary-bg); border: 1px solid rgba(14,139,158,0.25); padding: 2px 8px; border-radius: 999px; }
 
 </style>
