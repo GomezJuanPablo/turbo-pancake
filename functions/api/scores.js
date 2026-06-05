@@ -33,7 +33,7 @@ export async function onRequest({ request, env }) {
     const exam = (url.searchParams.get('exam') || '').toUpperCase();
     if (!EXAMS.includes(exam)) return json({ error: 'Unknown exam' }, 400);
 
-    const raw = await env.LEADERBOARD.get(`top:${exam}`);
+    const raw = await env.leaderboard.get(`top:${exam}`);
     const board = raw ? JSON.parse(raw) : [];
     return json({ exam, scores: board });
   }
@@ -66,14 +66,14 @@ export async function onRequest({ request, env }) {
 
     // Update the top-N list for this exam
     const key = `top:${entry.exam}`;
-    const raw = await env.LEADERBOARD.get(key);
+    const raw = await env.leaderboard.get(key);
     const board = raw ? JSON.parse(raw) : [];
 
     board.push(entry);
     board.sort((a, b) => b.pct - a.pct || b.score - a.score);
     const trimmed = board.slice(0, TOP_N);
 
-    await env.LEADERBOARD.put(key, JSON.stringify(trimmed));
+    await env.leaderboard.put(key, JSON.stringify(trimmed));
     return json({ ok: true, rank: trimmed.findIndex(e => e.at === entry.at) + 1 });
   }
 
