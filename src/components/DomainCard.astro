@@ -1,30 +1,26 @@
 ---
 interface Props {
   title: string;
-  weight: string;      // "6%"
+  weight: string;
   answered: number;
   total: number;
-  accuracy?: number;   // 0-100
-  tier?: 'locked' | 'bronze' | 'silver' | 'gold';
+  accuracy?: number;
+  tier?: 'new' | 'bronze' | 'silver' | 'gold';
+  href?: string;
 }
-const {
-  title,
-  weight,
-  answered,
-  total,
-  accuracy = 0,
-  tier = 'locked',
-} = Astro.props;
+const { title, weight, answered, total, accuracy = 0, tier = 'new', href } = Astro.props;
 
 const pct = total > 0 ? Math.round((answered / total) * 100) : 0;
 const tierLabel = {
-  locked: 'Locked',
+  new:    'Start',
   bronze: '🥉 Bronze',
   silver: '🥈 Silver',
   gold:   '🏆 Gold',
-}[tier];
+}[tier] ?? 'Start';
+
+const Tag = href ? 'a' : 'article';
 ---
-<article class="card domain-card">
+<Tag class={`card domain-card ${href ? 'domain-card--link' : ''}`} href={href}>
   <div class="domain-card__head">
     <div>
       <div class="domain-card__title">{title}</div>
@@ -39,5 +35,20 @@ const tierLabel = {
   <div class="domain-card__meta">
     <span>{answered} / {total} answered</span>
     {answered > 0 && <span>{accuracy}% accuracy</span>}
+    {answered === 0 && href && <span style="color:var(--primary);font-size:11px;font-weight:600;">Practice this domain →</span>}
   </div>
-</article>
+</Tag>
+
+<style>
+  .domain-card--link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    transition: border-color var(--t-fast, 0.15s), transform var(--t-fast, 0.15s);
+  }
+  .domain-card--link:hover {
+    border-color: var(--primary);
+    transform: translateY(-1px);
+  }
+</style>

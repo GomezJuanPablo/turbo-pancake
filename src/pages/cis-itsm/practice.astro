@@ -28,6 +28,8 @@ for (const d of blueprint!.data.domains) weights[d.name] = d.weight;
     <div class="practice-meta">
       <span class="practice-meta__item" data-position>Question <span data-answered>0</span> answered</span>
       <span class="practice-meta__item">Accuracy <strong data-accuracy>—</strong></span>
+      <span class="practice-meta__item" data-mode-label></span>
+      <span class="practice-meta__item" data-session-progress></span>
     </div>
 
     <article
@@ -61,6 +63,15 @@ for (const d of blueprint!.data.domains) weights[d.name] = d.weight;
         <a href="/about/">about</a> page.
       </p>
     </div>
+
+    <div class="card" data-session-complete hidden>
+      <h2 style="font-size:16px;font-weight:600;margin-bottom:8px;">Session complete</h2>
+      <p style="font-size:13px;color:var(--text-muted);margin-bottom:16px;" data-complete-summary></p>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;">
+        <a href="./practice/" class="btn btn--primary">New session</a>
+        <a href="./" class="btn btn--ghost">Dashboard</a>
+      </div>
+    </div>
   </div>
 </BaseLayout>
 
@@ -72,62 +83,106 @@ for (const d of blueprint!.data.domains) weights[d.name] = d.weight;
 
 <script>
   import { load, recordAnswer } from '../../lib/progress.js';
-  import { pickNext } from '../../lib/selection.js';
+  import { pickNext, buildExamSet } from '../../lib/selection.js';
   import { isCorrect } from '../../lib/scoring.js';
 
   const bankEl = document.getElementById('glideup-bank');
   const { questions: bank, weights } = JSON.parse(bankEl.textContent || '{"questions":[],"weights":{}}');
 
-  const root = document.getElementById('practice-root');
-  const card = root.querySelector('[data-question-card]');
-  const emptyEl = root.querySelector('[data-empty]');
-  const stemEl = root.querySelector('[data-stem]');
-  const domainEl = root.querySelector('[data-domain]');
-  const diffEl = root.querySelector('[data-difficulty]');
-  const optionsEl = root.querySelector('[data-options]');
-  const feedbackEl = root.querySelector('[data-feedback]');
-  const openerEl = root.querySelector('[data-feedback-opener]');
+  // --- Mode detection ---
+  const params   = new URLSearchParams(window.location.search);
+  const DOMAIN   = params.get('domain');          // domain focus
+  const SET_NUM  = params.get('set') ? parseInt(params.get('set')) : null; // exam sim 1-4
+  const IS_SIM   = SET_NUM !== null && SET_NUM >= 1 && SET_NUM <= 4;
+  const SESSION_LIMIT = (IS_SIM || DOMAIN) ? 60 : Infinity;
+
+  const activeBank = IS_SIM
+    ? buildExamSet(bank, weights, SET_NUM)
+    : DOMAIN
+      ? bank.filter(q => q.domain === DOMAIN)
+      : bank;
+
+  // --- DOM refs ---
+  const root        = document.getElementById('practice-root');
+  const card        = root.querySelector('[data-question-card]');
+  const emptyEl     = root.querySelector('[data-empty]');
+  const completeEl  = root.querySelector('[data-session-complete]');
+  const stemEl      = root.querySelector('[data-stem]');
+  const domainEl    = root.querySelector('[data-domain]');
+  const diffEl      = root.querySelector('[data-difficulty]');
+  const optionsEl   = root.querySelector('[data-options]');
+  const feedbackEl  = root.querySelector('[data-feedback]');
+  const openerEl    = root.querySelector('[data-feedback-opener]');
   const rationaleEl = root.querySelector('[data-rationale]');
   const distractorsEl = root.querySelector('[data-distractors]');
-  const refsEl = root.querySelector('[data-refs]');
-  const submitBtn = root.querySelector('[data-submit]');
-  const nextBtn = root.querySelector('[data-next]');
-  const answeredEl = root.querySelector('[data-answered]');
-  const accuracyEl = root.querySelector('[data-accuracy]');
+  const refsEl      = root.querySelector('[data-refs]');
+  const submitBtn   = root.querySelector('[data-submit]');
+  const nextBtn     = root.querySelector('[data-next]');
+  const answeredEl  = root.querySelector('[data-answered]');
+  const accuracyEl  = root.querySelector('[data-accuracy]');
+  const modeLabelEl = root.querySelector('[data-mode-label]');
+  const progressEl  = root.querySelector('[data-session-progress]');
 
-  const OPENERS_CORRECT = ['✅ Boom. Nailed it.', '✅ Locked in.', '✅ Clean answer.'];
-  const OPENERS_INCORRECT = ['⚠️ Not quite — but now you know.', '⚠️ Close, but read the rationale.'];
-  const pick = (xs) => xs[Math.floor(Math.random() * xs.length)];
-
-  function updateStats() {
-    const state = load();
-    const byQ = state.byQuestion || {};
-    const ids = Object.keys(byQ);
-    const total = ids.length;
-    const correct = ids.filter((id) => byQ[id].correct).length;
-    answeredEl.textContent = String(total);
-    accuracyEl.textContent = total > 0 ? Math.round((correct / total) * 100) + '%' : '—';
+  // Set mode label
+  if (modeLabelEl) {
+    if (IS_SIM)   modeLabelEl.textContent = `Exam Sim ${SET_NUM} of 4`;
+    else if (DOMAIN) modeLabelEl.textContent = `Domain: ${DOMAIN}`;
+    else          modeLabelEl.textContent = 'Full Practice';
   }
+
+  const OPENERS_CORRECT   = ['✅ Boom. Nailed it.', '✅ Locked in.', '✅ Clean answer.'];
+  const OPENERS_INCORRECT = ['⚠️ Not quite - but now you know.', '⚠️ Close, but read the rationale.'];
+  const pick = (xs) => xs[Math.floor(Math.random() * xs.length)];
 
   let selected = null;
   let revealed = false;
-  let current = null;
+  let current  = null;
+  let sessionAnswered = 0;
+  let sessionCorrect  = 0;
+
+  function updateStats() {
+    const state = load();
+    const byQ   = state.byQuestion || {};
+    const ids   = Object.keys(byQ);
+    const total   = ids.length;
+    const correct = ids.filter((id) => byQ[id].correct).length;
+    answeredEl.textContent = String(total);
+    accuracyEl.textContent = total > 0 ? Math.round((correct / total) * 100) + '%' : '—';
+    if (progressEl && SESSION_LIMIT < Infinity) {
+      progressEl.textContent = `${sessionAnswered} / ${SESSION_LIMIT}`;
+    }
+  }
+
+  function showComplete() {
+    card.hidden = true;
+    emptyEl.hidden = true;
+    if (completeEl) {
+      completeEl.hidden = false;
+      const pct = sessionAnswered > 0 ? Math.round((sessionCorrect / sessionAnswered) * 100) : 0;
+      const summaryEl = completeEl.querySelector('[data-complete-summary]');
+      if (summaryEl) {
+        const label = IS_SIM ? `Exam Sim ${SET_NUM}` : DOMAIN ? `${DOMAIN} focus` : 'Session';
+        summaryEl.textContent = `${label}: ${sessionCorrect} / ${sessionAnswered} correct (${pct}%)`;
+      }
+    }
+  }
 
   function renderQuestion(q) {
-    current = q;
+    current  = q;
     selected = null;
     revealed = false;
 
-    card.hidden = false;
+    card.hidden  = false;
     emptyEl.hidden = true;
+    if (completeEl) completeEl.hidden = true;
     feedbackEl.hidden = true;
     feedbackEl.classList.remove('is-correct', 'is-incorrect');
     submitBtn.hidden = true;
-    nextBtn.hidden = true;
+    nextBtn.hidden   = true;
 
-    stemEl.textContent = q.stem;
+    stemEl.textContent   = q.stem;
     domainEl.textContent = q.domain;
-    diffEl.textContent = q.difficulty;
+    diffEl.textContent   = q.difficulty;
 
     optionsEl.innerHTML = '';
     for (const opt of q.options) {
@@ -167,9 +222,7 @@ for (const d of blueprint!.data.domains) weights[d.name] = d.weight;
     refsEl.innerHTML = '<strong>References:</strong> ';
     for (const r of (q.references || [])) {
       const a = document.createElement('a');
-      a.href = r.url;
-      a.target = '_blank';
-      a.rel = 'noopener noreferrer';
+      a.href = r.url; a.target = '_blank'; a.rel = 'noopener noreferrer';
       a.textContent = r.title + ' ↗';
       refsEl.appendChild(a);
       refsEl.appendChild(document.createTextNode(' '));
@@ -177,12 +230,11 @@ for (const d of blueprint!.data.domains) weights[d.name] = d.weight;
   }
 
   function advance() {
-    const next = pickNext(bank, weights, 'CIS-ITSM');
-    if (!next) {
-      card.hidden = true;
-      emptyEl.hidden = false;
-      return;
+    if (SESSION_LIMIT < Infinity && sessionAnswered >= SESSION_LIMIT) {
+      showComplete(); return;
     }
+    const next = pickNext(activeBank, weights, root.dataset.exam);
+    if (!next) { card.hidden = true; emptyEl.hidden = false; return; }
     renderQuestion(next);
   }
 
@@ -194,7 +246,7 @@ for (const d of blueprint!.data.domains) weights[d.name] = d.weight;
     for (const b of optionsEl.querySelectorAll('.option')) {
       const letter = b.dataset.option;
       if (current.correct.includes(letter)) b.classList.add('is-correct');
-      else if (letter === selected) b.classList.add('is-incorrect');
+      else if (letter === selected)          b.classList.add('is-incorrect');
       b.disabled = true;
     }
 
@@ -202,20 +254,15 @@ for (const d of blueprint!.data.domains) weights[d.name] = d.weight;
     feedbackEl.classList.add(correct ? 'is-correct' : 'is-incorrect');
     openerEl.textContent = correct ? pick(OPENERS_CORRECT) : pick(OPENERS_INCORRECT);
 
-    recordAnswer({
-      questionId: current.id,
-      exam: current.exam,
-      domain: current.domain,
-      correct,
-    });
+    recordAnswer({ questionId: current.id, exam: current.exam, domain: current.domain, correct });
+    sessionAnswered++;
+    if (correct) sessionCorrect++;
     updateStats();
-
     submitBtn.hidden = true;
-    nextBtn.hidden = false;
+    nextBtn.hidden   = false;
   });
 
   nextBtn?.addEventListener('click', advance);
-
   updateStats();
   advance();
 </script>

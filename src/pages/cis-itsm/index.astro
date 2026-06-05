@@ -58,9 +58,69 @@ const bankIndex = examQuestions.map((q) => ({
 
   <div class="tabs" role="tablist" aria-label="Dashboard sections">
     <button type="button" class="tab is-active" role="tab" aria-selected="true"  data-tab-btn="overview">Overview</button>
+    <button type="button" class="tab"           role="tab" aria-selected="false" data-tab-btn="modes">Modes</button>
     <button type="button" class="tab"           role="tab" aria-selected="false" data-tab-btn="history">History</button>
     <button type="button" class="tab"           role="tab" aria-selected="false" data-tab-btn="blueprint">Blueprint</button>
   </div>
+
+    <!-- ============= MODES ============= -->
+    <section data-tab-panel="modes">
+      <div class="modes-info card" style="margin-bottom:16px;">
+        <h2 style="font-size:15px;font-weight:600;margin-bottom:8px;">How to practice</h2>
+        <div class="modes-glossary">
+          <div class="modes-glossary__item">
+            <strong>Full Practice</strong>
+            <span>All 240 questions. Adaptive — unseen and previously wrong questions come up first. No limit.</span>
+          </div>
+          <div class="modes-glossary__item">
+            <strong>Exam Sim 1-4</strong>
+            <span>Timed feel, 60 questions each, blueprint-weighted. Four non-overlapping sets so you can run all four without repeats. Closest to the real exam.</span>
+          </div>
+          <div class="modes-glossary__item">
+            <strong>Domain Focus</strong>
+            <span>Up to 60 questions from a single domain. Good if you know you're weak in one area and want to drill it specifically.</span>
+          </div>
+        </div>
+      </div>
+
+      <h2 style="font-size:15px;font-weight:600;margin:0 0 12px;">Full practice</h2>
+      <a href="./practice/" class="btn btn--primary" style="margin-bottom:24px;display:inline-flex;">
+        Start — 240 questions →
+      </a>
+
+      <h2 style="font-size:15px;font-weight:600;margin:0 0 12px;">Exam simulations</h2>
+      <div class="sim-grid" style="margin-bottom:24px;">
+        <a href="./practice/?mode=exam&set=1" class="card sim-card">
+          <div class="sim-card__label">Exam Sim 1</div>
+          <div class="sim-card__meta">60 questions · blueprint-weighted</div>
+        </a>
+        <a href="./practice/?mode=exam&set=2" class="card sim-card">
+          <div class="sim-card__label">Exam Sim 2</div>
+          <div class="sim-card__meta">60 questions · blueprint-weighted</div>
+        </a>
+        <a href="./practice/?mode=exam&set=3" class="card sim-card">
+          <div class="sim-card__label">Exam Sim 3</div>
+          <div class="sim-card__meta">60 questions · blueprint-weighted</div>
+        </a>
+        <a href="./practice/?mode=exam&set=4" class="card sim-card">
+          <div class="sim-card__label">Exam Sim 4</div>
+          <div class="sim-card__meta">60 questions · blueprint-weighted</div>
+        </a>
+      </div>
+
+      <h2 style="font-size:15px;font-weight:600;margin:0 0 12px;">Domain focus</h2>
+      <div class="card-grid" data-domain-grid-modes>
+        {authoredByDomain.map((d) => (
+          <DomainCard
+            title={d.name}
+            weight={`${d.weight}%`}
+            answered={0}
+            total={d.target}
+            href={`./practice/?domain=${encodeURIComponent(d.name)}`}
+          />
+        ))}
+      </div>
+    </section>
 
   <!-- ============= OVERVIEW ============= -->
   <section data-tab-panel="overview">
@@ -385,4 +445,16 @@ const bankIndex = examQuestions.map((q) => ({
   }
   .bp-table tbody tr:last-child td { border-bottom: 1px solid var(--border); }
   .bp-table tfoot td { background: var(--bg); font-size: 13px; }
+
+  .modes-glossary { display: flex; flex-direction: column; gap: 10px; }
+  .modes-glossary__item { display: grid; grid-template-columns: 130px 1fr; gap: 8px; font-size: 13px; }
+  .modes-glossary__item strong { color: var(--text); }
+  .modes-glossary__item span { color: var(--text-muted); line-height: 1.5; }
+  .sim-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; }
+  .sim-card { display: block; text-decoration: none; color: inherit; cursor: pointer; transition: border-color 0.15s, transform 0.15s; }
+  .sim-card:hover { border-color: var(--primary); transform: translateY(-1px); }
+  .sim-card__label { font-size: 14px; font-weight: 600; margin-bottom: 4px; color: var(--text); }
+  .sim-card__meta { font-size: 12px; color: var(--text-muted); }
+  @media (max-width: 680px) { .modes-glossary__item { grid-template-columns: 1fr; gap: 2px; } }
+
 </style>
