@@ -2233,5 +2233,1157 @@
       "flow",
       "fulfillment"
     ]
+  },
+  {
+    "id": "csa-acl-048",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Configuring Apps for Collaboration",
+    "subdomain": "Task Table",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Incident, Problem, and Change all share fields like Number, State, and Assigned to. Which design makes this possible?",
+    "options": [
+      {
+        "id": "A",
+        "text": "They all extend the base Task table and inherit its fields"
+      },
+      {
+        "id": "B",
+        "text": "Each table independently re-creates identical fields"
+      },
+      {
+        "id": "C",
+        "text": "A transform map copies fields between them nightly"
+      },
+      {
+        "id": "D",
+        "text": "They share one physical row per record"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Incident, Problem, Change, and Catalog Task all extend the Task table, inheriting its common fields (number, state, assigned_to, priority) and adding their own. That shared parent is why task-type records feel consistent across ITSM.",
+    "distractor_notes": {
+      "B": "Re-creating fields per table would defeat inheritance and cause drift.",
+      "C": "No nightly copy is involved — it's table extension/inheritance.",
+      "D": "Each record is its own row; extension shares schema, not rows."
+    },
+    "references": [
+      {
+        "title": "Task table",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/task-table.html"
+      }
+    ],
+    "tags": [
+      "task-table",
+      "extension",
+      "inheritance"
+    ]
+  },
+  {
+    "id": "csa-acl-049",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Configuring Apps for Collaboration",
+    "subdomain": "Work Notes vs Comments",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An agent needs to record internal troubleshooting that the customer should NOT see on the portal. Which field should they use?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Work notes"
+      },
+      {
+        "id": "B",
+        "text": "Additional comments"
+      },
+      {
+        "id": "C",
+        "text": "Short description"
+      },
+      {
+        "id": "D",
+        "text": "Description"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Work notes are the internal, agent-facing journal; Additional comments (customer-visible) are what the requester sees. Internal-only detail belongs in work notes.",
+    "distractor_notes": {
+      "B": "Additional comments are customer-visible — exactly what to avoid here.",
+      "C": "Short description is the public summary of the issue.",
+      "D": "Description is also generally visible and not the internal journal."
+    },
+    "references": [
+      {
+        "title": "Task table",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/task-table.html"
+      }
+    ],
+    "tags": [
+      "work-notes",
+      "comments",
+      "visibility"
+    ]
+  },
+  {
+    "id": "csa-acl-050",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Configuring Apps for Collaboration",
+    "subdomain": "Change Types",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A low-risk, repeatable change (like a routine password policy update) is pre-approved and follows a template. Which change type is this?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Standard change"
+      },
+      {
+        "id": "B",
+        "text": "Normal change"
+      },
+      {
+        "id": "C",
+        "text": "Emergency change"
+      },
+      {
+        "id": "D",
+        "text": "Problem"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Standard changes are pre-approved, low-risk, and template-driven — no CAB needed each time. Normal changes go through full assessment and approval; emergency changes are expedited for urgent fixes.",
+    "distractor_notes": {
+      "B": "Normal changes require full risk assessment and approval, not pre-approval.",
+      "C": "Emergency changes are for urgent, unplanned fixes.",
+      "D": "A problem investigates root cause; it isn't a change type."
+    },
+    "references": [
+      {
+        "title": "Change types",
+        "url": "https://www.servicenow.com/docs/r/zurich/it-service-management/r_ChangeTypes.html"
+      }
+    ],
+    "tags": [
+      "change-management",
+      "standard-change",
+      "types"
+    ]
+  },
+  {
+    "id": "csa-acl-051",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Configuring Apps for Collaboration",
+    "subdomain": "Change Types",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A server outage requires an immediate fix outside the normal approval timeline. Which change type applies?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Emergency change"
+      },
+      {
+        "id": "B",
+        "text": "Standard change"
+      },
+      {
+        "id": "C",
+        "text": "Normal change"
+      },
+      {
+        "id": "D",
+        "text": "Knowledge article"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Emergency changes handle urgent situations (like outages) with an expedited approval path so the fix isn't blocked by the normal cycle, while still being recorded for review.",
+    "distractor_notes": {
+      "B": "Standard changes are pre-approved low-risk routines, not urgent fixes.",
+      "C": "Normal changes follow the full timeline — too slow for an outage.",
+      "D": "A knowledge article documents information; it isn't a change."
+    },
+    "references": [
+      {
+        "title": "Change management",
+        "url": "https://www.servicenow.com/docs/r/zurich/it-service-management/change-management/c_ITILChangeManagement.html"
+      }
+    ],
+    "tags": [
+      "change-management",
+      "emergency",
+      "types"
+    ]
+  },
+  {
+    "id": "csa-acl-052",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Configuring Apps for Collaboration",
+    "subdomain": "Incident vs Problem",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Several incidents share the same recurring cause. Which record type is used to investigate and eliminate that underlying root cause?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Problem"
+      },
+      {
+        "id": "B",
+        "text": "Another incident"
+      },
+      {
+        "id": "C",
+        "text": "Change task"
+      },
+      {
+        "id": "D",
+        "text": "Knowledge base"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Incidents restore service quickly; a Problem record investigates the root cause so the issue stops recurring. Linking the incidents to a problem is the standard pattern.",
+    "distractor_notes": {
+      "B": "Opening more incidents treats symptoms, not the root cause.",
+      "C": "A change implements a fix but isn't the root-cause investigation record.",
+      "D": "A knowledge base stores articles; it doesn't perform investigation."
+    },
+    "references": [
+      {
+        "title": "Problem Management",
+        "url": "https://www.servicenow.com/docs/r/zurich/it-service-management/problem-management/c_ProblemManagement.html"
+      }
+    ],
+    "tags": [
+      "incident",
+      "problem",
+      "root-cause"
+    ]
+  },
+  {
+    "id": "csa-acl-053",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Configuring Apps for Collaboration",
+    "subdomain": "User Criteria",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "You need to restrict a knowledge base so only HR employees can read its articles. Which mechanism controls this access?",
+    "options": [
+      {
+        "id": "A",
+        "text": "User criteria (can read / cannot read)"
+      },
+      {
+        "id": "B",
+        "text": "A coalesce field"
+      },
+      {
+        "id": "C",
+        "text": "A UI policy"
+      },
+      {
+        "id": "D",
+        "text": "A scheduled job"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "User criteria define who can read or contribute to a knowledge base (or catalog), based on attributes like role, group, department, or company. They're the access mechanism for knowledge and catalog content.",
+    "distractor_notes": {
+      "B": "Coalesce is an import-matching concept.",
+      "C": "UI policies change form fields, not knowledge access.",
+      "D": "Scheduled jobs run on timers, unrelated to read access."
+    },
+    "references": [
+      {
+        "title": "User criteria overview",
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/user-criteria-overview.html"
+      }
+    ],
+    "tags": [
+      "knowledge",
+      "user-criteria",
+      "access"
+    ]
+  },
+  {
+    "id": "csa-acl-054",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Configuring Apps for Collaboration",
+    "subdomain": "Knowledge Workflow",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A draft knowledge article should be reviewed and approved before it becomes visible to readers. What governs this progression?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The knowledge workflow (draft to review to published)"
+      },
+      {
+        "id": "B",
+        "text": "A coalesce field"
+      },
+      {
+        "id": "C",
+        "text": "The list editor"
+      },
+      {
+        "id": "D",
+        "text": "A watch list"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Knowledge articles move through a workflow — draft, review/approval, then published — so content is vetted before readers see it. Retirement/expiration can follow later in the lifecycle.",
+    "distractor_notes": {
+      "B": "Coalesce is unrelated to knowledge publishing.",
+      "C": "The list editor edits field values, not publishing state transitions.",
+      "D": "Watch lists notify people; they don't govern publication."
+    },
+    "references": [
+      {
+        "title": "Create a knowledge article",
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/t_CreateKnowledgeArticle.html"
+      }
+    ],
+    "tags": [
+      "knowledge",
+      "workflow",
+      "publishing"
+    ]
+  },
+  {
+    "id": "csa-acl-055",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Configuring Apps for Collaboration",
+    "subdomain": "Knowledge Bases",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "An organization wants separate article collections for IT and HR, each with its own owners and access rules. How should this be structured?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Create separate knowledge bases, each with its own user criteria"
+      },
+      {
+        "id": "B",
+        "text": "Put everything in one base and rely on tags"
+      },
+      {
+        "id": "C",
+        "text": "Create one base and one giant article"
+      },
+      {
+        "id": "D",
+        "text": "Use update sets to separate them"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Multiple knowledge bases let each group own its content and apply its own user criteria for read/contribute access — clean separation for IT vs HR. Tags alone wouldn't enforce access boundaries.",
+    "distractor_notes": {
+      "B": "Tags organize but don't enforce per-group access like user criteria on separate bases.",
+      "C": "One article can't represent two managed collections.",
+      "D": "Update sets move configuration; they don't structure knowledge access."
+    },
+    "references": [
+      {
+        "title": "Knowledge Bases",
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/c_KnowledgeBases.html"
+      }
+    ],
+    "tags": [
+      "knowledge-bases",
+      "user-criteria",
+      "structure"
+    ]
+  },
+  {
+    "id": "csa-acl-056",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Configuring Apps for Collaboration",
+    "subdomain": "Parent / Child Tasks",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "On a Change record, you see related Change Tasks that must be completed as part of the change. What is the relationship between them?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The change is the parent; the change tasks are its children"
+      },
+      {
+        "id": "B",
+        "text": "They are unrelated records that happen to share a number"
+      },
+      {
+        "id": "C",
+        "text": "Each change task is a separate incident"
+      },
+      {
+        "id": "D",
+        "text": "The tasks are knowledge articles"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Change tasks are child records of the parent change, breaking the work into trackable steps. Parent/child task relationships are a common ITSM pattern for coordinating multi-step work.",
+    "distractor_notes": {
+      "B": "They're explicitly related as parent/child, not coincidental.",
+      "C": "Change tasks extend Task but aren't incidents.",
+      "D": "They're tasks to perform, not knowledge articles."
+    },
+    "references": [
+      {
+        "title": "Task table",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/task-table.html"
+      }
+    ],
+    "tags": [
+      "change-tasks",
+      "parent-child",
+      "task"
+    ]
+  },
+  {
+    "id": "csa-acl-057",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Configuring Apps for Collaboration",
+    "subdomain": "Incident State Model",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An agent has restored service for a caller and confirmed the fix works. Which incident state best reflects that the work is finished pending closure?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Resolved"
+      },
+      {
+        "id": "B",
+        "text": "New"
+      },
+      {
+        "id": "C",
+        "text": "On hold"
+      },
+      {
+        "id": "D",
+        "text": "In progress"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Resolved indicates service is restored and the fix confirmed, typically before final Closed. New, In Progress, and On Hold all represent earlier points in the incident lifecycle.",
+    "distractor_notes": {
+      "B": "New is the just-logged state, before work begins.",
+      "C": "On Hold pauses work awaiting info or a third party.",
+      "D": "In Progress means work is actively underway, not finished."
+    },
+    "references": [
+      {
+        "title": "Incident state model",
+        "url": "https://www.servicenow.com/docs/r/zurich/it-service-management/r_IncidentStateModel.html"
+      }
+    ],
+    "tags": [
+      "incident",
+      "state-model",
+      "resolved"
+    ]
+  },
+  {
+    "id": "csa-acl-058",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Configuring Apps for Collaboration",
+    "subdomain": "Change Types",
+    "difficulty": "application",
+    "type": "multi_select",
+    "stem": "Which TWO statements about change types are correct?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Standard changes are pre-approved and template-based"
+      },
+      {
+        "id": "B",
+        "text": "Normal changes go through assessment and approval"
+      },
+      {
+        "id": "C",
+        "text": "Emergency changes require no record at all"
+      },
+      {
+        "id": "D",
+        "text": "Standard changes always require CAB approval each time"
+      }
+    ],
+    "correct": [
+      "A",
+      "B"
+    ],
+    "rationale": "Standard changes are pre-approved templates for low-risk routine work; normal changes follow full assessment and approval. Emergency changes are still recorded, and standard changes specifically avoid per-instance CAB approval.",
+    "distractor_notes": {
+      "C": "Emergency changes are expedited but still recorded and reviewed.",
+      "D": "Standard changes are pre-approved precisely to avoid CAB each time."
+    },
+    "references": [
+      {
+        "title": "Change types",
+        "url": "https://www.servicenow.com/docs/r/zurich/it-service-management/r_ChangeTypes.html"
+      }
+    ],
+    "tags": [
+      "change-management",
+      "types",
+      "approval"
+    ]
+  },
+  {
+    "id": "csa-acl-059",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Configuring Apps for Collaboration",
+    "subdomain": "Knowledge Management",
+    "difficulty": "application",
+    "type": "multi_select",
+    "stem": "Which TWO are true about Knowledge Management?",
+    "options": [
+      {
+        "id": "A",
+        "text": "User criteria control who can read or contribute to a knowledge base"
+      },
+      {
+        "id": "B",
+        "text": "Articles follow a workflow before being published"
+      },
+      {
+        "id": "C",
+        "text": "All knowledge bases are visible to every user by default and cannot be restricted"
+      },
+      {
+        "id": "D",
+        "text": "Knowledge articles must be stored in update sets"
+      }
+    ],
+    "correct": [
+      "A",
+      "B"
+    ],
+    "rationale": "Knowledge access is governed by user criteria, and articles move through a publish workflow before going live. Access can be restricted, and articles are data, not configuration moved in update sets.",
+    "distractor_notes": {
+      "C": "User criteria can restrict read/contribute access per base.",
+      "D": "Articles are content/data, not update-set configuration."
+    },
+    "references": [
+      {
+        "title": "Knowledge Management",
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/c_KnowledgeManagement.html"
+      }
+    ],
+    "tags": [
+      "knowledge",
+      "user-criteria",
+      "workflow"
+    ]
+  },
+  {
+    "id": "csa-acl-060",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Configuring Apps for Collaboration",
+    "subdomain": "Request / RITM",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A user orders two items from the service catalog in one submission. What record structure is generated?",
+    "options": [
+      {
+        "id": "A",
+        "text": "One Request (REQ) with a Requested Item (RITM) per item, each spawning catalog tasks"
+      },
+      {
+        "id": "B",
+        "text": "One incident per item"
+      },
+      {
+        "id": "C",
+        "text": "A single flat record with both items in one field"
+      },
+      {
+        "id": "D",
+        "text": "One change request"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Catalog orders use a hierarchy: a Request (REQ) holds one Requested Item (RITM) per ordered item, and each RITM generates the catalog tasks needed to fulfill it. That structure tracks fulfillment item by item.",
+    "distractor_notes": {
+      "B": "Catalog orders create requests/RITMs, not incidents.",
+      "C": "Each item gets its own RITM, not a single merged field.",
+      "D": "A change request is for changes, not catalog fulfillment."
+    },
+    "references": [
+      {
+        "title": "Request fulfillment",
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/c_RequestFulfillment.html"
+      }
+    ],
+    "tags": [
+      "catalog",
+      "request",
+      "ritm"
+    ]
+  },
+  {
+    "id": "csa-acl-061",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Configuring Apps for Collaboration",
+    "subdomain": "Record Producer",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "You want a friendly catalog-style form that, when submitted, creates an Incident record on a non-catalog table. Which catalog object does this?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A record producer"
+      },
+      {
+        "id": "B",
+        "text": "A standard catalog item"
+      },
+      {
+        "id": "C",
+        "text": "An order guide"
+      },
+      {
+        "id": "D",
+        "text": "A variable set"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "A record producer is a catalog interface that creates a record on a target table (like Incident) from a simplified, guided form. Regular catalog items generate requests/RITMs rather than writing directly to another table.",
+    "distractor_notes": {
+      "B": "A standard catalog item produces a request/RITM, not a direct record on another table.",
+      "C": "Order guides bundle multiple items; they don't create a single target record.",
+      "D": "A variable set is a reusable group of variables, not a producer."
+    },
+    "references": [
+      {
+        "title": "Catalog items",
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/c_CatalogItems.html"
+      }
+    ],
+    "tags": [
+      "catalog",
+      "record-producer",
+      "incident"
+    ]
+  },
+  {
+    "id": "csa-acl-062",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Configuring Apps for Collaboration",
+    "subdomain": "Variable Sets",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Five catalog items all need the same block of 'employee details' questions. What's the most maintainable way to share them?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Build a variable set and attach it to each item"
+      },
+      {
+        "id": "B",
+        "text": "Re-create the variables on each item"
+      },
+      {
+        "id": "C",
+        "text": "Use a coalesce field"
+      },
+      {
+        "id": "D",
+        "text": "Add the questions to a knowledge article"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "A variable set is a reusable group of variables you attach to multiple catalog items — define once, reuse everywhere, and update in one place. Re-creating variables per item causes duplication and drift.",
+    "distractor_notes": {
+      "B": "Duplicating variables is exactly what variable sets avoid.",
+      "C": "Coalesce is an import concept, unrelated to catalog variables.",
+      "D": "Knowledge articles document info; they don't collect catalog input."
+    },
+    "references": [
+      {
+        "title": "Catalog variables",
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/c_CatalogVariables.html"
+      }
+    ],
+    "tags": [
+      "catalog",
+      "variable-set",
+      "reuse"
+    ]
+  },
+  {
+    "id": "csa-acl-063",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Configuring Apps for Collaboration",
+    "subdomain": "Order Guides",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "New-hire onboarding should let a manager order a laptop, phone, and access in one guided flow. Which catalog feature fits best?",
+    "options": [
+      {
+        "id": "A",
+        "text": "An order guide"
+      },
+      {
+        "id": "B",
+        "text": "A single catalog item"
+      },
+      {
+        "id": "C",
+        "text": "A record producer"
+      },
+      {
+        "id": "D",
+        "text": "A knowledge base"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Order guides walk a requester through ordering multiple related items together (and can pass shared answers between them), which is ideal for onboarding bundles. A single item couldn't represent the full bundle.",
+    "distractor_notes": {
+      "B": "One catalog item covers one thing, not a multi-item bundle.",
+      "C": "A record producer creates one record on a table, not a multi-item order.",
+      "D": "A knowledge base stores articles, not orderable bundles."
+    },
+    "references": [
+      {
+        "title": "Service Catalog Management",
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/c_ServiceCatalogManagement.html"
+      }
+    ],
+    "tags": [
+      "catalog",
+      "order-guide",
+      "onboarding"
+    ]
+  },
+  {
+    "id": "csa-acl-064",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Configuring Apps for Collaboration",
+    "subdomain": "Catalog UI Policies",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "On a catalog item, a 'Manager name' variable should appear only when the user selects 'Requesting for someone else.' Which tool changes variable behavior dynamically?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A catalog UI policy"
+      },
+      {
+        "id": "B",
+        "text": "An ACL"
+      },
+      {
+        "id": "C",
+        "text": "A transform map"
+      },
+      {
+        "id": "D",
+        "text": "A scheduled job"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Catalog UI policies make catalog variables dynamically mandatory, visible, or read-only based on other selections — exactly the show-on-condition behavior here. ACLs handle security, not form dynamics.",
+    "distractor_notes": {
+      "B": "ACLs control access, not show/hide logic on a variable.",
+      "C": "Transform maps move imported data, not catalog form behavior.",
+      "D": "Scheduled jobs run on timers, unrelated to variable visibility."
+    },
+    "references": [
+      {
+        "title": "Catalog variables",
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/c_CatalogVariables.html"
+      }
+    ],
+    "tags": [
+      "catalog",
+      "ui-policy",
+      "variables"
+    ]
+  },
+  {
+    "id": "csa-acl-065",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Configuring Apps for Collaboration",
+    "subdomain": "Catalog Item Access",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A catalog item for VPN access should only be orderable by full-time employees. Which mechanism restricts who can see and order it?",
+    "options": [
+      {
+        "id": "A",
+        "text": "User criteria on the catalog item"
+      },
+      {
+        "id": "B",
+        "text": "A coalesce field"
+      },
+      {
+        "id": "C",
+        "text": "A watch list"
+      },
+      {
+        "id": "D",
+        "text": "The list editor"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Just like knowledge, catalog visibility is governed by user criteria — define who can (or cannot) see and order an item based on role, group, department, and so on.",
+    "distractor_notes": {
+      "B": "Coalesce is for import matching, not catalog access.",
+      "C": "Watch lists notify people; they don't restrict ordering.",
+      "D": "The list editor edits field values, not access."
+    },
+    "references": [
+      {
+        "title": "User criteria overview",
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/user-criteria-overview.html"
+      }
+    ],
+    "tags": [
+      "catalog",
+      "user-criteria",
+      "access"
+    ]
+  },
+  {
+    "id": "csa-acl-066",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Configuring Apps for Collaboration",
+    "subdomain": "Catalog Tasks",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "After an RITM is approved, fulfillment requires several steps handled by different teams. What records coordinate that work?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Catalog tasks (sc_task) generated from the RITM"
+      },
+      {
+        "id": "B",
+        "text": "Additional incidents"
+      },
+      {
+        "id": "C",
+        "text": "Knowledge articles"
+      },
+      {
+        "id": "D",
+        "text": "Update sets"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Catalog tasks (sc_task) are the fulfillment steps spawned from a Requested Item, assignable to the teams that complete each part of the order. They sit below the RITM in the request hierarchy.",
+    "distractor_notes": {
+      "B": "Incidents track service disruptions, not catalog fulfillment steps.",
+      "C": "Knowledge articles document information; they don't fulfill orders.",
+      "D": "Update sets carry configuration between instances."
+    },
+    "references": [
+      {
+        "title": "Request fulfillment",
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/c_RequestFulfillment.html"
+      }
+    ],
+    "tags": [
+      "catalog",
+      "sc_task",
+      "fulfillment"
+    ]
+  },
+  {
+    "id": "csa-acl-067",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Configuring Apps for Collaboration",
+    "subdomain": "Catalog Categories",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "To help users find items, a catalog should organize items into browsable groupings like 'Hardware' and 'Software.' What provides this organization?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Catalog categories"
+      },
+      {
+        "id": "B",
+        "text": "Coalesce fields"
+      },
+      {
+        "id": "C",
+        "text": "Watch lists"
+      },
+      {
+        "id": "D",
+        "text": "Dictionary overrides"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Categories group catalog items into browsable sections so users can find what they need. They're the structural navigation layer within a catalog.",
+    "distractor_notes": {
+      "B": "Coalesce is an import-matching concept.",
+      "C": "Watch lists handle notifications.",
+      "D": "Dictionary overrides change field behavior on extended tables."
+    },
+    "references": [
+      {
+        "title": "Service Catalog Management",
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/c_ServiceCatalogManagement.html"
+      }
+    ],
+    "tags": [
+      "catalog",
+      "categories",
+      "navigation"
+    ]
+  },
+  {
+    "id": "csa-acl-068",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Configuring Apps for Collaboration",
+    "subdomain": "Catalog Variables",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A catalog item needs a dropdown whose choices come from records on the User table. Which variable type is appropriate?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A Reference variable pointing at the User table"
+      },
+      {
+        "id": "B",
+        "text": "A single-line text variable"
+      },
+      {
+        "id": "C",
+        "text": "A checkbox variable"
+      },
+      {
+        "id": "D",
+        "text": "A label"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "A Reference variable lets users pick an existing record (such as a user) from a target table, keeping the selection valid and linked. Free text or a checkbox can't enforce a real record selection.",
+    "distractor_notes": {
+      "B": "Free text doesn't constrain input to actual user records.",
+      "C": "A checkbox is a yes/no toggle, not a record picker.",
+      "D": "A label displays text and collects no input."
+    },
+    "references": [
+      {
+        "title": "Catalog variables",
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/c_CatalogVariables.html"
+      }
+    ],
+    "tags": [
+      "catalog",
+      "variables",
+      "reference"
+    ]
+  },
+  {
+    "id": "csa-acl-069",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Configuring Apps for Collaboration",
+    "subdomain": "Request Fulfillment",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A requester wants to know why their order isn't complete yet. Where do you look to see the per-item fulfillment progress?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The Requested Item (RITM) and its catalog tasks"
+      },
+      {
+        "id": "B",
+        "text": "The parent Request's number only"
+      },
+      {
+        "id": "C",
+        "text": "A knowledge article"
+      },
+      {
+        "id": "D",
+        "text": "The update set log"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The RITM shows the status of that specific item, and its catalog tasks reveal which fulfillment steps are done or pending. The parent REQ summarizes, but the detail lives at the RITM/task level.",
+    "distractor_notes": {
+      "B": "The REQ number alone summarizes; it doesn't show per-step progress.",
+      "C": "Knowledge articles don't track an individual order.",
+      "D": "Update set logs track configuration moves, not order fulfillment."
+    },
+    "references": [
+      {
+        "title": "Request fulfillment",
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/c_RequestFulfillment.html"
+      }
+    ],
+    "tags": [
+      "catalog",
+      "ritm",
+      "status"
+    ]
+  },
+  {
+    "id": "csa-acl-070",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Configuring Apps for Collaboration",
+    "subdomain": "Service Catalog",
+    "difficulty": "application",
+    "type": "multi_select",
+    "stem": "Which TWO statements about the Service Catalog request model are correct?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A Request (REQ) can contain multiple Requested Items (RITMs)"
+      },
+      {
+        "id": "B",
+        "text": "Catalog tasks (sc_task) carry out the fulfillment steps for an RITM"
+      },
+      {
+        "id": "C",
+        "text": "A record producer always generates a Request and RITM"
+      },
+      {
+        "id": "D",
+        "text": "Catalog items can never be restricted by audience"
+      }
+    ],
+    "correct": [
+      "A",
+      "B"
+    ],
+    "rationale": "The model nests REQ > RITM > catalog task, with tasks doing the fulfillment work. Record producers instead create a record on a target table, and catalog items can be restricted via user criteria.",
+    "distractor_notes": {
+      "C": "A record producer creates a target-table record, not a REQ/RITM.",
+      "D": "User criteria can restrict who sees and orders a catalog item."
+    },
+    "references": [
+      {
+        "title": "Request fulfillment",
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/c_RequestFulfillment.html"
+      }
+    ],
+    "tags": [
+      "catalog",
+      "request-model",
+      "ritm"
+    ]
+  },
+  {
+    "id": "csa-acl-071",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Configuring Apps for Collaboration",
+    "subdomain": "Catalog Building Blocks",
+    "difficulty": "application",
+    "type": "multi_select",
+    "stem": "Which TWO are valid ways to reuse or control catalog content?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Attach a variable set to multiple catalog items"
+      },
+      {
+        "id": "B",
+        "text": "Use a catalog UI policy to make a variable conditionally mandatory"
+      },
+      {
+        "id": "C",
+        "text": "Use a coalesce field to hide a variable"
+      },
+      {
+        "id": "D",
+        "text": "Use a scheduled job to validate a variable on submit"
+      }
+    ],
+    "correct": [
+      "A",
+      "B"
+    ],
+    "rationale": "Variable sets share variables across items, and catalog UI policies control variable behavior (mandatory/visible/read-only) dynamically. Coalesce and scheduled jobs are unrelated to catalog form logic.",
+    "distractor_notes": {
+      "C": "Coalesce matches records on import; it doesn't hide variables.",
+      "D": "Scheduled jobs run on timers; on-submit variable validation uses catalog client scripts/UI policies."
+    },
+    "references": [
+      {
+        "title": "Catalog variables",
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/c_CatalogVariables.html"
+      }
+    ],
+    "tags": [
+      "catalog",
+      "variable-set",
+      "ui-policy"
+    ]
   }
 ]
