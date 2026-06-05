@@ -3508,5 +3508,2170 @@
       "url-navigation",
       "sysparm_force_row_count"
     ]
+  },
+  {
+    "id": "csa-pon-075",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Activity Streams",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "In which view does the activity stream icon appear to show live activity for records on a task table?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Form view"
+      },
+      {
+        "id": "B",
+        "text": "List title bar"
+      },
+      {
+        "id": "C",
+        "text": "Related lists section"
+      },
+      {
+        "id": "D",
+        "text": "Breadcrumb bar"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The activity stream icon appears in the list title bar for all task tables, opening a flyout window with live audit and journal entries.",
+    "distractor_notes": {
+      "A": "The activity formatter on forms is a different interface from the list activity stream.",
+      "C": "Related lists show related records, not a live activity stream.",
+      "D": "The breadcrumb bar shows filter conditions, not the activity stream."
+    },
+    "references": [
+      {
+        "title": "Lists in the classic environment",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/c_UseLists.html"
+      }
+    ],
+    "tags": [
+      "activity-stream",
+      "lists"
+    ]
+  },
+  {
+    "id": "csa-pon-076",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Activity Streams",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which statement is true about the activity stream window accessed from a list view?",
+    "options": [
+      {
+        "id": "A",
+        "text": "It uses the same interface and property settings as the activity formatter on forms"
+      },
+      {
+        "id": "B",
+        "text": "It is a separate interface and modifications to the activity formatter do not affect it"
+      },
+      {
+        "id": "C",
+        "text": "It is only available to users with the admin role"
+      },
+      {
+        "id": "D",
+        "text": "It requires a plugin to activate"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The activity stream window in list view is not the same as the activity formatter on forms. Modifications and property settings for the activity formatter are not applied to the activity stream window.",
+    "distractor_notes": {
+      "A": "They are separate interfaces; the activity formatter settings do not carry over.",
+      "C": "No special role is required to view the list activity stream.",
+      "D": "Activity streams are a base platform feature, no plugin required."
+    },
+    "references": [
+      {
+        "title": "Lists in the classic environment",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/c_UseLists.html"
+      }
+    ],
+    "tags": [
+      "activity-stream"
+    ]
+  },
+  {
+    "id": "csa-pon-077",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Grouped Lists",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What does a grouped list display next to each group name?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The average priority of records in the group"
+      },
+      {
+        "id": "B",
+        "text": "The record count for that group"
+      },
+      {
+        "id": "C",
+        "text": "The date the first record was created"
+      },
+      {
+        "id": "D",
+        "text": "The assigned user for the group"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "When a list is grouped, the record count for each group appears next to the group name. The total number of items across all groups also appears near the paging controls.",
+    "distractor_notes": {
+      "A": "Grouped lists show record counts, not calculated averages.",
+      "C": "Creation dates are field values on records, not a grouped list summary.",
+      "D": "Assigned users are field values; the grouping itself can be BY assignee but doesn't display a single assigned user next to the group."
+    },
+    "references": [
+      {
+        "title": "Lists in the classic environment",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/c_UseLists.html"
+      }
+    ],
+    "tags": [
+      "grouped-lists"
+    ]
+  },
+  {
+    "id": "csa-pon-078",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Grouped Lists",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "How can a user group a list by a specific column in the classic environment?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Click the column header and select Sort Ascending"
+      },
+      {
+        "id": "B",
+        "text": "Right-click the column name and select Group By"
+      },
+      {
+        "id": "C",
+        "text": "Apply a filter condition using that field"
+      },
+      {
+        "id": "D",
+        "text": "Click the breadcrumb and select Group"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "A user can group a list by right-clicking the column name and selecting Group By. To remove the grouping, select Ungroup from the same menu. Alternatively, the Group By option is available from the list title bar context menu.",
+    "distractor_notes": {
+      "A": "Clicking a column header sorts records, it does not group them.",
+      "C": "Applying a filter narrows records shown; it does not group them.",
+      "D": "Breadcrumbs are for filter navigation, not grouping."
+    },
+    "references": [
+      {
+        "title": "Lists in the classic environment",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/c_UseLists.html"
+      }
+    ],
+    "tags": [
+      "grouped-lists"
+    ]
+  },
+  {
+    "id": "csa-pon-079",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Grouped Lists",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the role requirement for grouping a list in the classic environment?",
+    "options": [
+      {
+        "id": "A",
+        "text": "admin"
+      },
+      {
+        "id": "B",
+        "text": "itil"
+      },
+      {
+        "id": "C",
+        "text": "personalize_list"
+      },
+      {
+        "id": "D",
+        "text": "No role is required"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "No role is required to group a list in the classic environment. Any authenticated user can group list records.",
+    "distractor_notes": {
+      "A": "Admin is not required for grouping lists.",
+      "B": "itil grants ITSM access but is not the requirement for grouping.",
+      "C": "personalize_list controls column personalization, not list grouping."
+    },
+    "references": [
+      {
+        "title": "Lists in the classic environment",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/c_UseLists.html"
+      }
+    ],
+    "tags": [
+      "grouped-lists",
+      "roles"
+    ]
+  },
+  {
+    "id": "csa-pon-080",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Attachments",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the default maximum file attachment size for a new out-of-box ServiceNow instance?",
+    "options": [
+      {
+        "id": "A",
+        "text": "100MB"
+      },
+      {
+        "id": "B",
+        "text": "512MB"
+      },
+      {
+        "id": "C",
+        "text": "1024MB"
+      },
+      {
+        "id": "D",
+        "text": "2048MB"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "The default maximum size limit for an attachment file on a new out-of-box instance is 1024MB (1GB).",
+    "distractor_notes": {
+      "A": "100MB is not the default; the out-of-box default is 1024MB.",
+      "B": "512MB is not the default attachment size limit.",
+      "D": "2048MB exceeds the default; the default is 1024MB."
+    },
+    "references": [
+      {
+        "title": "Forms in the classic environment",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/c_UsingForms.html"
+      }
+    ],
+    "tags": [
+      "attachments",
+      "system-properties"
+    ]
+  },
+  {
+    "id": "csa-pon-081",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Attachments",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which role is required to add an attachment to a record?",
+    "options": [
+      {
+        "id": "A",
+        "text": "itil"
+      },
+      {
+        "id": "B",
+        "text": "No role is required"
+      },
+      {
+        "id": "C",
+        "text": "admin"
+      },
+      {
+        "id": "D",
+        "text": "attachment_admin"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Adding an attachment to a record requires the admin role. Administrators can also configure which users can view attachments by applying ACL rules.",
+    "distractor_notes": {
+      "A": "itil is not listed as the required role for adding attachments.",
+      "B": "Unlike favorites and watch lists, adding attachments does require a role.",
+      "D": "attachment_admin is not a standard ServiceNow system role."
+    },
+    "references": [
+      {
+        "title": "Forms in the classic environment",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/c_UsingForms.html"
+      }
+    ],
+    "tags": [
+      "attachments",
+      "roles"
+    ]
+  },
+  {
+    "id": "csa-pon-082",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Attachments",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A user receives a 'prohibited file extension' error when trying to attach a file. What is the recommended first step to resolve this?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Increase the attachment size limit in System Properties > Security"
+      },
+      {
+        "id": "B",
+        "text": "Save the file in a different format, such as compressing it to .zip"
+      },
+      {
+        "id": "C",
+        "text": "Grant the user the attachment_admin role"
+      },
+      {
+        "id": "D",
+        "text": "Disable MIME type checking for all file types"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "For a disallowed file extension error, the recommended approach is to save the file in a different allowed format. The .zip extension is often allowed, so compressing the file is a practical workaround.",
+    "distractor_notes": {
+      "A": "The size limit property resolves file size errors, not file extension errors.",
+      "C": "attachment_admin is not a standard role; the issue is the file type, not user permissions.",
+      "D": "Disabling MIME type checking is a security risk and not the recommended resolution for an extension error."
+    },
+    "references": [
+      {
+        "title": "Forms in the classic environment",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/c_UsingForms.html"
+      }
+    ],
+    "tags": [
+      "attachments",
+      "troubleshooting"
+    ]
+  },
+  {
+    "id": "csa-pon-083",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Personal Lists",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which roles allow a user to personalize a list in the classic environment?",
+    "options": [
+      {
+        "id": "A",
+        "text": "itil or admin"
+      },
+      {
+        "id": "B",
+        "text": "personalize_list or admin"
+      },
+      {
+        "id": "C",
+        "text": "No role is required"
+      },
+      {
+        "id": "D",
+        "text": "personalize_form or admin"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Personalizing a list requires the personalize_list or admin role.",
+    "distractor_notes": {
+      "A": "itil does not grant list personalization; personalize_list or admin is required.",
+      "C": "Unlike some other preferences, list personalization requires a specific role.",
+      "D": "personalize_form controls form personalization, not list personalization."
+    },
+    "references": [
+      {
+        "title": "Lists in the classic environment",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/c_UseLists.html"
+      }
+    ],
+    "tags": [
+      "personal-lists",
+      "roles"
+    ]
+  },
+  {
+    "id": "csa-pon-084",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Personal Lists",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which display option in the personal list settings applies to ALL lists, not just the one being personalized?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Column selection and ordering"
+      },
+      {
+        "id": "B",
+        "text": "Wrap column text and Compact rows options"
+      },
+      {
+        "id": "C",
+        "text": "Active row highlighting"
+      },
+      {
+        "id": "D",
+        "text": "Modern cell coloring"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The display options such as Wrap column text and Compact rows apply to all lists when set through the personal list personalization, not just the specific list being configured.",
+    "distractor_notes": {
+      "A": "Column selection and ordering are specific to the view being personalized.",
+      "C": "Active row highlighting is a display option that applies globally across lists when set.",
+      "D": "Modern cell coloring is also a global display option."
+    },
+    "references": [
+      {
+        "title": "Lists in the classic environment",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/c_UseLists.html"
+      }
+    ],
+    "tags": [
+      "personal-lists",
+      "display-options"
+    ]
+  },
+  {
+    "id": "csa-pon-085",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Forms",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A user wants to enable tabbed forms on a record. Where do they toggle this option?",
+    "options": [
+      {
+        "id": "A",
+        "text": "In the user preferences panel under Display"
+      },
+      {
+        "id": "B",
+        "text": "By clicking the gear icon in the banner frame and toggling the Tabbed forms option"
+      },
+      {
+        "id": "C",
+        "text": "In System Properties > UI Properties"
+      },
+      {
+        "id": "D",
+        "text": "By right-clicking the form header and selecting Tabbed View"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "To enable or disable form tabs, click the gear icon in the banner frame and toggle the Tabbed forms option.",
+    "distractor_notes": {
+      "A": "Display preferences in the user menu control general UI look; tabbed forms is toggled via the gear icon on the form.",
+      "C": "System Properties controls instance-wide settings; tabbed forms is a per-user toggle on the form.",
+      "D": "Right-clicking the form header opens the form context menu, not a tabbed view toggle."
+    },
+    "references": [
+      {
+        "title": "Forms in the classic environment",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/c_UsingForms.html"
+      }
+    ],
+    "tags": [
+      "forms",
+      "tabbed-forms"
+    ]
+  },
+  {
+    "id": "csa-pon-086",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Filters and Breadcrumbs",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A developer right-clicks a breadcrumb and sees 'Copy URL'. What does pasting this URL into a browser accomplish?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Opens the filter builder for that condition"
+      },
+      {
+        "id": "B",
+        "text": "Opens the results list for that breadcrumb condition in a browser tab"
+      },
+      {
+        "id": "C",
+        "text": "Exports the filtered records to a CSV file"
+      },
+      {
+        "id": "D",
+        "text": "Applies the filter to all lists globally"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The 'Copy URL' option on a breadcrumb copies the URL for the results list of that breadcrumb condition. Pasting it into a browser opens that filtered list directly.",
+    "distractor_notes": {
+      "A": "Copy URL opens the filtered list, not the filter builder.",
+      "C": "No CSV export is triggered by pasting a breadcrumb URL.",
+      "D": "The URL opens a specific filtered view; it does not apply a global filter."
+    },
+    "references": [
+      {
+        "title": "Filters and breadcrumbs",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/c_UsingFiltersAndBreadcrumbs.html"
+      }
+    ],
+    "tags": [
+      "breadcrumbs",
+      "url-navigation"
+    ]
+  },
+  {
+    "id": "csa-pon-087",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Filters and Breadcrumbs",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "In breadcrumb navigation, what is the effect of clicking the condition separator (>) before a condition?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Removes all conditions to the right of that separator"
+      },
+      {
+        "id": "B",
+        "text": "Removes only the condition immediately following that separator"
+      },
+      {
+        "id": "C",
+        "text": "Removes all breadcrumb conditions"
+      },
+      {
+        "id": "D",
+        "text": "Opens an edit dialog for that condition"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Clicking the condition separator (>) before a specific condition removes only that condition, leaving all other conditions intact. This is different from clicking the condition itself, which removes everything to its right.",
+    "distractor_notes": {
+      "A": "Clicking the condition itself removes all to its right; clicking the separator before it removes only that one condition.",
+      "C": "Clicking 'All' removes all conditions, not the separator.",
+      "D": "No edit dialog opens when clicking the separator."
+    },
+    "references": [
+      {
+        "title": "Filters and breadcrumbs",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/c_UsingFiltersAndBreadcrumbs.html"
+      }
+    ],
+    "tags": [
+      "breadcrumbs",
+      "filters"
+    ]
+  },
+  {
+    "id": "csa-pon-088",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "URL Navigation",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which URL parameter specifies the field by which to sort a list result?",
+    "options": [
+      {
+        "id": "A",
+        "text": "sysparm_sort"
+      },
+      {
+        "id": "B",
+        "text": "sysparm_order"
+      },
+      {
+        "id": "C",
+        "text": "sysparm_sort_by"
+      },
+      {
+        "id": "D",
+        "text": "sysparm_field_sort"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The sysparm_order parameter specifies the field by which to sort results. Pair it with sysparm_order_direction=asc or desc to control sort direction.",
+    "distractor_notes": {
+      "A": "sysparm_sort is not a documented ServiceNow URL parameter.",
+      "C": "sysparm_sort_by is not a documented parameter.",
+      "D": "sysparm_field_sort is not a documented ServiceNow URL parameter."
+    },
+    "references": [
+      {
+        "title": "Navigate to a record or module using a URL",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/navigate-using-url.html"
+      }
+    ],
+    "tags": [
+      "url-navigation",
+      "sysparm_order"
+    ]
+  },
+  {
+    "id": "csa-pon-089",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "User Preferences",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which Next Experience preference category controls keyboard navigation, contrast settings, and motion behavior?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Display"
+      },
+      {
+        "id": "B",
+        "text": "User Experience"
+      },
+      {
+        "id": "C",
+        "text": "Accessibility"
+      },
+      {
+        "id": "D",
+        "text": "Language and Region"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Accessibility preferences adjust the interface to support accessibility needs including keyboard navigation, contrast, and motion behavior, making the UI easier to use for different abilities.",
+    "distractor_notes": {
+      "A": "Display preferences control visual layout and density, not accessibility-specific settings.",
+      "B": "User Experience preferences manage high-level platform behaviors, not accessibility features.",
+      "D": "Language and Region preferences control localization, not accessibility."
+    },
+    "references": [
+      {
+        "title": "Next Experience preferences",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/set-up-preferences-next-experience.html"
+      }
+    ],
+    "tags": [
+      "user-preferences",
+      "accessibility"
+    ]
+  },
+  {
+    "id": "csa-pon-090",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Lists",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "In a classic environment list, what does the Response Time Indicator display?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The number of records returned by the current filter"
+      },
+      {
+        "id": "B",
+        "text": "The server processing time required to display the list"
+      },
+      {
+        "id": "C",
+        "text": "The time since the list was last refreshed"
+      },
+      {
+        "id": "D",
+        "text": "The user's session duration"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The Response Time Indicator icon appears at the bottom right of some lists to indicate the processing time required to display the list.",
+    "distractor_notes": {
+      "A": "Record counts appear near the paging controls, not the response time indicator.",
+      "C": "The response time indicator shows processing time, not time since last refresh.",
+      "D": "Session duration is not shown in the list interface."
+    },
+    "references": [
+      {
+        "title": "Lists in the classic environment",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/c_UseLists.html"
+      }
+    ],
+    "tags": [
+      "lists",
+      "response-time-indicator"
+    ]
+  },
+  {
+    "id": "csa-pon-091",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Forms",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What happens when a user clicks the activity stream item in the list view flyout?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The record is deleted from the list"
+      },
+      {
+        "id": "B",
+        "text": "The record activity stream opens, allowing comments, work notes, and image previews"
+      },
+      {
+        "id": "C",
+        "text": "The record is opened in a new browser tab"
+      },
+      {
+        "id": "D",
+        "text": "The item is marked as read and removed from the stream"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Clicking an item in the list activity stream flyout opens the record activity stream, where you can post comments or work notes, preview images, and open the task record directly.",
+    "distractor_notes": {
+      "A": "Clicking an activity stream item does not delete the record.",
+      "C": "The record activity stream opens within the flyout/panel, not a new browser tab.",
+      "D": "Activity stream items are not 'marked as read' or removed by clicking."
+    },
+    "references": [
+      {
+        "title": "Lists in the classic environment",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/c_UseLists.html"
+      }
+    ],
+    "tags": [
+      "activity-stream",
+      "forms"
+    ]
+  },
+  {
+    "id": "csa-pon-092",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Next Experience UI",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A user wants to pin a menu to the page in Next Experience so it stays visible while they work. What do they use?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The star icon in the contextual app pill"
+      },
+      {
+        "id": "B",
+        "text": "The pin icon on the menu"
+      },
+      {
+        "id": "C",
+        "text": "The lock icon in the navigation panel"
+      },
+      {
+        "id": "D",
+        "text": "Right-click the menu and select Pin"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "In Next Experience, users can select the pin icon to pin a menu to the page so it remains visible while working.",
+    "distractor_notes": {
+      "A": "The star icon is for adding favorites, not pinning menus.",
+      "C": "The lock icon is used in the watch list context, not for pinning navigation menus.",
+      "D": "There is no right-click 'Pin' option on navigation menus in Next Experience."
+    },
+    "references": [
+      {
+        "title": "Using the Next Experience Unified Navigation",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/using-the-next-experience-global-header.html"
+      }
+    ],
+    "tags": [
+      "unified-navigation",
+      "pin"
+    ]
+  },
+  {
+    "id": "csa-pon-093",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Form Personalization",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A user personalizes an Incident form to hide the Category field. Later they want to restore the default form layout. What should they do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Ask an admin to reconfigure the form layout for the whole instance"
+      },
+      {
+        "id": "B",
+        "text": "Open the Personalize Form menu and click Reset"
+      },
+      {
+        "id": "C",
+        "text": "Log out and log back in to restore defaults"
+      },
+      {
+        "id": "D",
+        "text": "Clear browser cache to remove the personalization"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "To restore the default form view, open the Personalize Form menu and click Reset. This reverses personal customizations without affecting other users.",
+    "distractor_notes": {
+      "A": "Admin reconfiguration would affect all users; Reset in the personal menu restores only your view.",
+      "C": "Logging out does not clear form personalizations; they are saved server-side as user preferences.",
+      "D": "Clearing the browser cache does not remove server-side user preference records."
+    },
+    "references": [
+      {
+        "title": "Personalize a form",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/t_PersonalizeAForm.html"
+      }
+    ],
+    "tags": [
+      "form-personalization",
+      "reset"
+    ]
+  },
+  {
+    "id": "csa-pon-094",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Following Records",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "After following a record in the classic environment, how does a user receive notifications about updates?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Via email only"
+      },
+      {
+        "id": "B",
+        "text": "Via banner messages and persistent alerts in the Notifications menu"
+      },
+      {
+        "id": "C",
+        "text": "Via a daily digest email summary"
+      },
+      {
+        "id": "D",
+        "text": "Via a mobile push notification only"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "When comments or work notes are added to a followed record, the user receives notifications as banners and in the Notifications menu, according to their notification preferences.",
+    "distractor_notes": {
+      "A": "Notifications appear as in-product banners and in the Notifications menu, not email only.",
+      "C": "Daily digest is a separate notification feature; following a record triggers real-time in-product notifications.",
+      "D": "Mobile push is not the primary notification mechanism described for followed records."
+    },
+    "references": [
+      {
+        "title": "Working in the Next Experience UI",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/next-experience-ui.html"
+      }
+    ],
+    "tags": [
+      "following-records",
+      "notifications"
+    ]
+  },
+  {
+    "id": "csa-pon-095",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Lists",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A user right-clicks a date field value in a list. Which quick filter options are available for date fields that are NOT available for text fields?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Show Matching and Filter Out"
+      },
+      {
+        "id": "B",
+        "text": "Show Before and Show After"
+      },
+      {
+        "id": "C",
+        "text": "Group By and Ungroup"
+      },
+      {
+        "id": "D",
+        "text": "Export and Copy URL"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "For date fields, the quick filter context menu includes Show Before, Show After, and Filter Out \u2014 options not available for standard text fields which only have Show Matching and Filter Out.",
+    "distractor_notes": {
+      "A": "Show Matching and Filter Out are the options available for non-date fields, not date-specific extras.",
+      "C": "Group By and Ungroup are column header options, not quick filter options.",
+      "D": "Export and Copy URL are not part of the quick filter right-click menu."
+    },
+    "references": [
+      {
+        "title": "Filters and breadcrumbs",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/c_UsingFiltersAndBreadcrumbs.html"
+      }
+    ],
+    "tags": [
+      "filters",
+      "quick-filter",
+      "date-fields"
+    ]
+  },
+  {
+    "id": "csa-pon-096",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Favorites",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Where do favorites appear after they are added in Next Experience?",
+    "options": [
+      {
+        "id": "A",
+        "text": "In the All menu as pinned items"
+      },
+      {
+        "id": "B",
+        "text": "In the Favorites menu in the Unified Navigation"
+      },
+      {
+        "id": "C",
+        "text": "In the user's dashboard as a widget"
+      },
+      {
+        "id": "D",
+        "text": "In the Recently Viewed section of search"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "After adding favorites, they appear in the Favorites menu in the Next Experience Unified Navigation. Users can customize how favorites appear by editing names, icons, colors, and folder structure.",
+    "distractor_notes": {
+      "A": "Favorites do not appear as pinned items in the All menu; they have their own Favorites menu.",
+      "C": "Favorites are navigation shortcuts, not dashboard widgets.",
+      "D": "Recently Viewed is populated by search history, not by adding favorites."
+    },
+    "references": [
+      {
+        "title": "Managing your favorites in Next Experience",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/managing-your-favorites.html"
+      }
+    ],
+    "tags": [
+      "favorites",
+      "unified-navigation"
+    ]
+  },
+  {
+    "id": "csa-pon-097",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "URL Navigation",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A developer needs to sort an incident list by number in descending order via URL. Which parameter combination achieves this?",
+    "options": [
+      {
+        "id": "A",
+        "text": "sysparm_order=number&sysparm_direction=desc"
+      },
+      {
+        "id": "B",
+        "text": "sysparm_sort=number_desc"
+      },
+      {
+        "id": "C",
+        "text": "sysparm_order=number&sysparm_order_direction=desc"
+      },
+      {
+        "id": "D",
+        "text": "sysparm_orderby=number&sysparm_asc=false"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "The correct combination is sysparm_order=number (specifies the sort field) and sysparm_order_direction=desc (specifies descending order).",
+    "distractor_notes": {
+      "A": "sysparm_direction is not the documented parameter; the correct parameter is sysparm_order_direction.",
+      "B": "sysparm_sort is not a documented ServiceNow URL parameter.",
+      "D": "sysparm_orderby and sysparm_asc are not documented ServiceNow URL parameters."
+    },
+    "references": [
+      {
+        "title": "Navigate to a record or module using a URL",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/navigate-using-url.html"
+      }
+    ],
+    "tags": [
+      "url-navigation",
+      "sorting"
+    ]
+  },
+  {
+    "id": "csa-pon-098",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Lists",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What risk exists when a reference field is placed as the first column in a personal list?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The column becomes read-only for all users"
+      },
+      {
+        "id": "B",
+        "text": "The link opens the referenced record rather than the record in the current table, which may confuse users"
+      },
+      {
+        "id": "C",
+        "text": "The list fails to load if the referenced table has more than 1000 records"
+      },
+      {
+        "id": "D",
+        "text": "The sort order is disabled for that column"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Values in the first column appear as links. If the first column is a reference field, the link opens the record from the referenced table instead of the current table's record, which can be confusing. It is recommended to avoid using a reference field as the first column.",
+    "distractor_notes": {
+      "A": "The column does not become read-only; the issue is link navigation behavior.",
+      "C": "There is no 1000-record loading limit tied to reference fields in the first column.",
+      "D": "Sort order is not disabled for reference fields used as the first column."
+    },
+    "references": [
+      {
+        "title": "Lists in the classic environment",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/c_UseLists.html"
+      }
+    ],
+    "tags": [
+      "personal-lists",
+      "reference-fields"
+    ]
+  },
+  {
+    "id": "csa-pon-099",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Global Search",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "After a global search, there are more matching records from the Knowledge table than can be previewed. How does the user view all matching Knowledge records?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Run a new search scoped specifically to the Knowledge table"
+      },
+      {
+        "id": "B",
+        "text": "Select View all next to the Knowledge table title in the results page"
+      },
+      {
+        "id": "C",
+        "text": "Navigate to the Knowledge module and apply the same filter manually"
+      },
+      {
+        "id": "D",
+        "text": "Export the search results and filter locally"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "When more records exist than can be previewed for a source table, the results page displays a View all link next to the table title. Selecting it shows all matching records from that table.",
+    "distractor_notes": {
+      "A": "A new search is unnecessary; the View all link in the current results handles this.",
+      "C": "Navigating to the module and applying a filter manually is inefficient compared to using View all.",
+      "D": "Exporting and filtering locally is not the documented approach."
+    },
+    "references": [
+      {
+        "title": "Using search in Next Experience",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/using-search-next-experience.html"
+      }
+    ],
+    "tags": [
+      "global-search",
+      "view-all"
+    ]
+  },
+  {
+    "id": "csa-pon-100",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Next Experience UI",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A new admin has been tasked with reducing clicks for agents navigating between Incident and Change modules throughout the day. Which Next Experience feature best addresses this?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Configure a shared saved filter for all agents"
+      },
+      {
+        "id": "B",
+        "text": "Add the Incident and Change modules to Favorites and organize them in a group"
+      },
+      {
+        "id": "C",
+        "text": "Pin the Incident table as the default landing page for all users"
+      },
+      {
+        "id": "D",
+        "text": "Create a personal list combining records from both tables"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Adding frequently used modules to Favorites and organizing them in groups in the Favorites menu is the purpose of the feature \u2014 it provides quick access to most-used pages, reducing navigation time.",
+    "distractor_notes": {
+      "A": "Saved filters narrow list results; they do not reduce navigation clicks between modules.",
+      "C": "Setting the Incident table as the landing page helps for Incidents but doesn't address quick access to Change.",
+      "D": "Personal lists customize columns on a single table's list view; they cannot merge records from multiple tables for navigation purposes."
+    },
+    "references": [
+      {
+        "title": "Managing your favorites in Next Experience",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/managing-your-favorites.html"
+      }
+    ],
+    "tags": [
+      "favorites",
+      "navigation",
+      "scenario"
+    ]
+  },
+  {
+    "id": "csa-pon-101",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Forms",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the function of the Related Lists section on a form?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Displays additional actions based on record type configured by administrators"
+      },
+      {
+        "id": "B",
+        "text": "Displays records from other tables that have relationships to the current record"
+      },
+      {
+        "id": "C",
+        "text": "Stores specific data fields about the current record"
+      },
+      {
+        "id": "D",
+        "text": "Provides navigation tools and actions in the form header"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Related lists on a form display records in other tables that have relationships to the current record. For example, an Incident form might show a related list of Problems linked to that incident.",
+    "distractor_notes": {
+      "A": "Additional actions based on record type are provided by Related Links, not Related Lists.",
+      "C": "Data fields about the current record are the form Fields element.",
+      "D": "Navigation tools are provided by the Form Header, not related lists."
+    },
+    "references": [
+      {
+        "title": "Forms in the classic environment",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/c_UsingForms.html"
+      }
+    ],
+    "tags": [
+      "forms",
+      "related-lists"
+    ]
+  },
+  {
+    "id": "csa-pon-102",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "User Preferences",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which Next Experience preference category lets a user select from available themes to personalize the instance appearance?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Display"
+      },
+      {
+        "id": "B",
+        "text": "Theme"
+      },
+      {
+        "id": "C",
+        "text": "Accessibility"
+      },
+      {
+        "id": "D",
+        "text": "User Experience"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The Theme preference category lets users personalize their Next Experience instance by selecting from available themes and their variants. The themes shown are determined by user access and admin customizations.",
+    "distractor_notes": {
+      "A": "Display preferences control layout and density, not theme selection.",
+      "C": "Accessibility preferences adjust the interface for different needs, not aesthetics.",
+      "D": "User Experience preferences manage high-level behaviors, not theme selection."
+    },
+    "references": [
+      {
+        "title": "Next Experience preferences",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/set-up-preferences-next-experience.html"
+      }
+    ],
+    "tags": [
+      "user-preferences",
+      "themes"
+    ]
+  },
+  {
+    "id": "csa-pon-103",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "URL Navigation",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "In a ServiceNow URL, what does the parameter sysparm_query=priority=2^active=true^EQ^GROUPBYcategory do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Filters records with priority 2 that are active, and groups the results by category"
+      },
+      {
+        "id": "B",
+        "text": "Exports records grouped by category to a spreadsheet"
+      },
+      {
+        "id": "C",
+        "text": "Counts the records matching priority 2 and active, broken down by category"
+      },
+      {
+        "id": "D",
+        "text": "Creates a new record with priority 2, active, grouped by category"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The EQ^GROUPBY operator in an encoded query groups results by the specified field. This query filters for active priority-2 records and groups the list results by category.",
+    "distractor_notes": {
+      "B": "GROUPBY in a URL query groups the list view display, not an export.",
+      "C": "Counting records by category would require a report, not a URL query parameter.",
+      "D": "GROUPBYcategory is a list display option, not a new record creation parameter."
+    },
+    "references": [
+      {
+        "title": "Navigate to a record or module using a URL",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/navigate-using-url.html"
+      }
+    ],
+    "tags": [
+      "url-navigation",
+      "groupby",
+      "encoded-query"
+    ]
+  },
+  {
+    "id": "csa-pon-104",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Lists",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What happens to a personal list if an admin removes an inactive field from the default view for that table?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The personal list keeps the inactive field until the user manually removes it"
+      },
+      {
+        "id": "B",
+        "text": "The personal list resets to follow the default view, removing the inactive field"
+      },
+      {
+        "id": "C",
+        "text": "The admin receives an error because personal lists cannot be altered"
+      },
+      {
+        "id": "D",
+        "text": "The personal list is permanently deleted"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "If an inactive field is removed from an admin-configured default view, personal lists reset to follow the default view, thus removing the inactive field from the personal list as well.",
+    "distractor_notes": {
+      "A": "Personal lists do not retain fields removed from the admin default view; they reset.",
+      "C": "Admins can manage personal lists; removing fields from the default view is a valid admin action.",
+      "D": "The personal list is reset, not deleted entirely."
+    },
+    "references": [
+      {
+        "title": "Lists in the classic environment",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/c_UseLists.html"
+      }
+    ],
+    "tags": [
+      "personal-lists",
+      "default-view"
+    ]
+  },
+  {
+    "id": "csa-pon-105",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Form Personalization",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which fields cannot be hidden through form personalization in Core UI?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Fields with long text"
+      },
+      {
+        "id": "B",
+        "text": "Mandatory fields and fields already hidden by UI policies or client scripts"
+      },
+      {
+        "id": "C",
+        "text": "Reference fields pointing to the sys_user table"
+      },
+      {
+        "id": "D",
+        "text": "Fields in collapsed form sections"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Mandatory fields and fields already hidden by UI policies or client scripts cannot be hidden through form personalization. They appear as gray, selected check boxes in the Personalize Form menu.",
+    "distractor_notes": {
+      "A": "Long text fields can be hidden through personalization if they are not mandatory.",
+      "C": "Reference fields to sys_user are not specifically excluded from personalization.",
+      "D": "Fields in collapsed sections can still be shown or hidden through personalization."
+    },
+    "references": [
+      {
+        "title": "Personalize a form",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/t_PersonalizeAForm.html"
+      }
+    ],
+    "tags": [
+      "form-personalization",
+      "mandatory-fields"
+    ]
+  },
+  {
+    "id": "csa-pon-106",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Keyboard Shortcuts",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which keyboard shortcut on Windows opens the instance toolbar to change domains in Next Experience?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Control+Alt+d"
+      },
+      {
+        "id": "B",
+        "text": "Control+Alt+t"
+      },
+      {
+        "id": "C",
+        "text": "Control+Shift+d"
+      },
+      {
+        "id": "D",
+        "text": "Shift+Alt+t"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Control+Alt+t (Command+Option+t on macOS) opens the instance toolbar to change domains in Next Experience.",
+    "distractor_notes": {
+      "A": "Control+Alt+d is not the documented shortcut for the domain toolbar.",
+      "C": "Control+Shift+d is not a documented Next Experience keyboard shortcut.",
+      "D": "Shift+Alt+t is not the documented shortcut for this action."
+    },
+    "references": [
+      {
+        "title": "Next Experience keyboard shortcuts",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/next-experience-keyboard-shortcuts.html"
+      }
+    ],
+    "tags": [
+      "keyboard-shortcuts",
+      "domain-separation"
+    ]
+  },
+  {
+    "id": "csa-pon-107",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Keyboard Shortcuts",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which keyboard shortcut refreshes a list in Next Experience on Windows?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Control+r"
+      },
+      {
+        "id": "B",
+        "text": "Shift+Alt+r"
+      },
+      {
+        "id": "C",
+        "text": "Control+Alt+r"
+      },
+      {
+        "id": "D",
+        "text": "F5"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Shift+Alt+r (Shift+Option+r on macOS) refreshes the list in Next Experience.",
+    "distractor_notes": {
+      "A": "Control+r is a browser shortcut to refresh the entire page, not the ServiceNow-specific list refresh shortcut.",
+      "C": "Control+Alt+r is not the documented list refresh shortcut.",
+      "D": "F5 is a browser page reload shortcut, not the Next Experience list refresh shortcut."
+    },
+    "references": [
+      {
+        "title": "Next Experience keyboard shortcuts",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/next-experience-keyboard-shortcuts.html"
+      }
+    ],
+    "tags": [
+      "keyboard-shortcuts",
+      "list-refresh"
+    ]
+  },
+  {
+    "id": "csa-pon-108",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Keyboard Shortcuts",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which keyboard shortcut on Windows composes an email in Next Experience?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Control+Alt+m"
+      },
+      {
+        "id": "B",
+        "text": "Control+Alt+e"
+      },
+      {
+        "id": "C",
+        "text": "Control+Shift+e"
+      },
+      {
+        "id": "D",
+        "text": "Shift+Alt+e"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Control+Alt+e (Command+Option+e on macOS) composes an email in Next Experience.",
+    "distractor_notes": {
+      "A": "Control+Alt+m is not the documented email compose shortcut.",
+      "C": "Control+Shift+e is not the documented email compose shortcut.",
+      "D": "Shift+Alt+e is not the documented email compose shortcut."
+    },
+    "references": [
+      {
+        "title": "Next Experience keyboard shortcuts",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/next-experience-keyboard-shortcuts.html"
+      }
+    ],
+    "tags": [
+      "keyboard-shortcuts",
+      "email"
+    ]
+  },
+  {
+    "id": "csa-pon-109",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Start Page Options",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which start page option is described as appropriate when most of an organization's data is in the classic environment rather than configurable workspaces?",
+    "options": [
+      {
+        "id": "A",
+        "text": "User-selected landing page"
+      },
+      {
+        "id": "B",
+        "text": "Configurable workspace home"
+      },
+      {
+        "id": "C",
+        "text": "Responsive dashboard"
+      },
+      {
+        "id": "D",
+        "text": "Next Experience default landing page"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Responsive dashboards are the recommended start page option when most data is in the classic environment rather than configurable workspaces, since they provide access to classic environment content.",
+    "distractor_notes": {
+      "A": "User-selected landing page is set per-user and is not specifically tied to classic environment data.",
+      "B": "Configurable workspace home is suited when data and workflows live in workspaces.",
+      "D": "The Next Experience default landing page is role-personalized but not specifically optimized for classic environment-heavy instances."
+    },
+    "references": [
+      {
+        "title": "Configuring Next Experience start page options",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/next-experience-start-option.html"
+      }
+    ],
+    "tags": [
+      "start-page",
+      "responsive-dashboard"
+    ]
+  },
+  {
+    "id": "csa-pon-110",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Forms",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "An agent reports that saving changes to an embedded related list on an incident form did not persist. What is the most likely cause?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The agent lacks the itil role required to edit embedded lists"
+      },
+      {
+        "id": "B",
+        "text": "The agent saved the embedded list but did not save the parent incident form"
+      },
+      {
+        "id": "C",
+        "text": "Embedded lists require admin approval before changes are committed"
+      },
+      {
+        "id": "D",
+        "text": "The browser does not support embedded list editing"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Changes to an embedded list are saved when the parent form is saved, not independently. If the agent edited the embedded list but did not save the parent form, the changes were lost.",
+    "distractor_notes": {
+      "A": "The itil role allows editing records; embedded list editing does not require a special approval role.",
+      "C": "No approval workflow exists for embedded list edits.",
+      "D": "Browser support is not the documented reason for unsaved embedded list changes."
+    },
+    "references": [
+      {
+        "title": "Forms in the classic environment",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/c_UsingForms.html"
+      }
+    ],
+    "tags": [
+      "forms",
+      "embedded-lists",
+      "scenario"
+    ]
+  },
+  {
+    "id": "csa-pon-111",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Lists",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A user wants to search a list to quickly find a specific record without building a filter. What feature on the list title bar supports this?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The column header sort arrows"
+      },
+      {
+        "id": "B",
+        "text": "The list search option in the title bar"
+      },
+      {
+        "id": "C",
+        "text": "The global search bar in the Unified Navigation"
+      },
+      {
+        "id": "D",
+        "text": "The breadcrumb bar at the top of the list"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The list title bar includes options for searching the list directly, allowing users to find records quickly without building a full filter condition.",
+    "distractor_notes": {
+      "A": "Column header sort arrows order records, they do not search them.",
+      "C": "Global search searches across multiple tables; list search is scoped to the current list.",
+      "D": "The breadcrumb bar shows active filter conditions, it is not a search input."
+    },
+    "references": [
+      {
+        "title": "Lists in the classic environment",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/c_UseLists.html"
+      }
+    ],
+    "tags": [
+      "lists",
+      "search"
+    ]
+  },
+  {
+    "id": "csa-pon-112",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Next Experience UI",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which area of the Next Experience Unified Navigation provides access to on-demand help when needed?",
+    "options": [
+      {
+        "id": "A",
+        "text": "User menu"
+      },
+      {
+        "id": "B",
+        "text": "All menu"
+      },
+      {
+        "id": "C",
+        "text": "Help"
+      },
+      {
+        "id": "D",
+        "text": "Notifications"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "The Help component in the Unified Navigation provides access to on-demand help when users need it, including information about the instance, plugins, and permissions.",
+    "distractor_notes": {
+      "A": "The User menu is for preferences and profile settings, not on-demand help.",
+      "B": "The All menu lists available modules and applications.",
+      "D": "Notifications shows system and in-product alerts, not help content."
+    },
+    "references": [
+      {
+        "title": "Working in the Next Experience UI",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/next-experience-ui.html"
+      }
+    ],
+    "tags": [
+      "unified-navigation",
+      "help"
+    ]
+  },
+  {
+    "id": "csa-pon-113",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Favorites",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which method allows a user to add a knowledge base article to their Favorites in Next Experience?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Right-click the article title and select Add to Favorites"
+      },
+      {
+        "id": "B",
+        "text": "Navigate to All > Self-Service > Knowledge, open an article, and select the star icon in the header"
+      },
+      {
+        "id": "C",
+        "text": "Add the knowledge base module to favorites from the All menu"
+      },
+      {
+        "id": "D",
+        "text": "Bookmark the article URL in the browser"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "To favorite a knowledge article, navigate to All > Self-Service > Knowledge, open the article, and select the star icon in the header. Only the currently viewed version is added if the article has multiple versions.",
+    "distractor_notes": {
+      "A": "Right-clicking the article title does not offer an 'Add to Favorites' option.",
+      "C": "Favoriting the Knowledge module adds access to the Knowledge homepage, not a specific article.",
+      "D": "Browser bookmarks are not ServiceNow Favorites and do not appear in the Favorites menu."
+    },
+    "references": [
+      {
+        "title": "Managing your favorites in Next Experience",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/managing-your-favorites.html"
+      }
+    ],
+    "tags": [
+      "favorites",
+      "knowledge"
+    ]
+  },
+  {
+    "id": "csa-pon-114",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Filters and Breadcrumbs",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which breadcrumb option is NOT available for the 'All' breadcrumb when right-clicking?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Open new window"
+      },
+      {
+        "id": "B",
+        "text": "Copy URL"
+      },
+      {
+        "id": "C",
+        "text": "Copy query"
+      },
+      {
+        "id": "D",
+        "text": "Refresh results"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "The 'Copy query' option is not available for the 'All' breadcrumb \u2014 it only applies to specific filter conditions. 'All' represents no filter, so there is no encoded query to copy.",
+    "distractor_notes": {
+      "A": "Open new window is available for the All breadcrumb.",
+      "B": "Copy URL is available for the All breadcrumb.",
+      "D": "Refresh results is a list-level action, not a breadcrumb right-click option."
+    },
+    "references": [
+      {
+        "title": "Filters and breadcrumbs",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/c_UsingFiltersAndBreadcrumbs.html"
+      }
+    ],
+    "tags": [
+      "breadcrumbs",
+      "copy-query"
+    ]
+  },
+  {
+    "id": "csa-pon-115",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "URL Navigation",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "What behavior difference exists between sysparm_query on a list URL versus on a form URL with sys_id=-1?",
+    "options": [
+      {
+        "id": "A",
+        "text": "On a list, sysparm_query filters records shown; on a form with sys_id=-1, it pre-populates field values on the new record"
+      },
+      {
+        "id": "B",
+        "text": "On a list, sysparm_query sorts records; on a form, it filters fields shown"
+      },
+      {
+        "id": "C",
+        "text": "sysparm_query behaves identically in both contexts"
+      },
+      {
+        "id": "D",
+        "text": "On a form, sysparm_query is ignored; it only works on lists"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The sysparm_query parameter behaves differently by context: on a list it returns records matching the query conditions; on a form with sys_id=-1 it applies the values to the new record as pre-populated defaults.",
+    "distractor_notes": {
+      "B": "sysparm_query does not control sort order; sysparm_order does that.",
+      "C": "The behavior is explicitly different between list and form contexts.",
+      "D": "sysparm_query is valid on forms (with sys_id=-1) to pre-populate new record fields."
+    },
+    "references": [
+      {
+        "title": "Navigate to a record or module using a URL",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/navigate-using-url.html"
+      }
+    ],
+    "tags": [
+      "url-navigation",
+      "sysparm_query"
+    ]
+  },
+  {
+    "id": "csa-pon-116",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Lists",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the total item count display behavior when a list is grouped?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The total is hidden to reduce clutter"
+      },
+      {
+        "id": "B",
+        "text": "The total number of items across all groups appears near the paging controls"
+      },
+      {
+        "id": "C",
+        "text": "Each group shows a percentage of total rather than absolute count"
+      },
+      {
+        "id": "D",
+        "text": "The total only appears when all groups are expanded"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "When a list is grouped, the total number of items across all groups appears near the paging controls. This total displays only when the list is grouped on a field.",
+    "distractor_notes": {
+      "A": "The total is not hidden; it appears near paging controls when a list is grouped.",
+      "C": "Record counts are displayed as absolute numbers, not percentages.",
+      "D": "The total appears regardless of whether groups are expanded or collapsed."
+    },
+    "references": [
+      {
+        "title": "Lists in the classic environment",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/c_UseLists.html"
+      }
+    ],
+    "tags": [
+      "grouped-lists",
+      "record-count"
+    ]
+  },
+  {
+    "id": "csa-pon-117",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Attachments",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An admin wants to apply security controls so only certain users can view attachments on a record. What mechanism should they use?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Set the attachment visibility field on each record"
+      },
+      {
+        "id": "B",
+        "text": "Apply ACL rules to limit which users can view attachments"
+      },
+      {
+        "id": "C",
+        "text": "Use a UI policy to hide the attachment icon from non-authorized users"
+      },
+      {
+        "id": "D",
+        "text": "Move attachments to a restricted knowledge base"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Administrators can limit the users who can view attachments by applying ACL (Access Control List) rules. This is the standard security mechanism for controlling attachment visibility.",
+    "distractor_notes": {
+      "A": "There is no built-in attachment visibility field on records; ACLs are the correct mechanism.",
+      "C": "Hiding the UI icon does not prevent direct access; ACLs control actual data access.",
+      "D": "Moving content to a knowledge base does not control attachment access on records."
+    },
+    "references": [
+      {
+        "title": "Forms in the classic environment",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/c_UsingForms.html"
+      }
+    ],
+    "tags": [
+      "attachments",
+      "acl",
+      "security"
+    ]
+  },
+  {
+    "id": "csa-pon-118",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Forms",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Where does a user open the Personalize Form menu to hide fields?",
+    "options": [
+      {
+        "id": "A",
+        "text": "From the form context menu by right-clicking the form title"
+      },
+      {
+        "id": "B",
+        "text": "By clicking the personalize form icon in the form header"
+      },
+      {
+        "id": "C",
+        "text": "From the user preferences panel under Display"
+      },
+      {
+        "id": "D",
+        "text": "By navigating to System Settings and selecting Form Layout"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "To personalize a form, open any record and click the personalize form icon in the form header. This opens the Personalize Form menu and reveals hide field icons on the form.",
+    "distractor_notes": {
+      "A": "Right-clicking the form title opens the form context menu for different actions.",
+      "C": "User preferences in the panel control interface settings, not individual form field visibility.",
+      "D": "System Settings > Form Layout is for admin-level configuration that affects all users, not personal personalization."
+    },
+    "references": [
+      {
+        "title": "Personalize a form",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/t_PersonalizeAForm.html"
+      }
+    ],
+    "tags": [
+      "form-personalization",
+      "form-header"
+    ]
+  },
+  {
+    "id": "csa-pon-119",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Global Search",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "An agent performs a global search for 'INC0010045'. The search field shows an Exact Match preview. The agent is currently focused on the CSM workspace. Where will the record open if they select the Exact Match?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Always in the global search results page"
+      },
+      {
+        "id": "B",
+        "text": "In the CSM workspace, since that is the selected context"
+      },
+      {
+        "id": "C",
+        "text": "In a new browser tab regardless of context"
+      },
+      {
+        "id": "D",
+        "text": "In the classic form view only"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Exact matches open in the selected workspace application when a workspace context is selected in the search context menu. If CSM workspace is active, the exact match record opens there.",
+    "distractor_notes": {
+      "A": "Exact Match bypasses the search results page.",
+      "C": "No new tab is opened; the record opens in the current context.",
+      "D": "The record opens in the active workspace context, not necessarily the classic form view."
+    },
+    "references": [
+      {
+        "title": "Using search in Next Experience",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/using-search-next-experience.html"
+      }
+    ],
+    "tags": [
+      "global-search",
+      "exact-match",
+      "workspace"
+    ]
+  },
+  {
+    "id": "csa-pon-120",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Lists",
+    "difficulty": "application",
+    "type": "multi_select",
+    "stem": "Which two display options affect ALL lists when set through list personalization, not just the specific list being personalized?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Column selection and ordering"
+      },
+      {
+        "id": "B",
+        "text": "Wrap column text"
+      },
+      {
+        "id": "C",
+        "text": "Compact rows"
+      },
+      {
+        "id": "D",
+        "text": "Active row highlighting"
+      }
+    ],
+    "correct": [
+      "B",
+      "C"
+    ],
+    "rationale": "Wrap column text and Compact rows are display options that apply to all lists when set, not just the view being personalized. Column selection/ordering and Active row highlighting apply to the specific list context.",
+    "distractor_notes": {
+      "A": "Column selection and ordering are specific to the view being personalized.",
+      "D": "Active row highlighting is actually also a global option, but Wrap column text and Compact rows are the most clearly documented global ones from the procedure steps."
+    },
+    "references": [
+      {
+        "title": "Lists in the classic environment",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/c_UseLists.html"
+      }
+    ],
+    "tags": [
+      "personal-lists",
+      "display-options"
+    ]
   }
 ]

@@ -33,7 +33,7 @@
     "distractor_notes": {
       "B": "sys_user_group holds the groups themselves (one row per group), not individual users.",
       "C": "sys_user_role is the catalog of roles available in the instance, not where users live.",
-      "D": "sys_user_has_role is the join table that links users to roles — useful, but it doesn't store the user records."
+      "D": "sys_user_has_role is the join table that links users to roles \u2014 useful, but it doesn't store the user records."
     },
     "references": [
       {
@@ -77,7 +77,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "A group is a collection of users (records on sys_user_group). Groups can carry roles that flow to their members, be used as approvers, and be assignment targets on tasks — that's why they're the workhorse for assignment routing.",
+    "rationale": "A group is a collection of users (records on sys_user_group). Groups can carry roles that flow to their members, be used as approvers, and be assignment targets on tasks \u2014 that's why they're the workhorse for assignment routing.",
     "distractor_notes": {
       "B": "ACLs are access control rules. They can require roles, but groups themselves aren't ACLs.",
       "C": "Department is a separate field on the user record. A group isn't just a department filter.",
@@ -127,7 +127,7 @@
     ],
     "rationale": "Roles can be granted directly on the user, granted to a group the user belongs to (the user inherits the group's roles), or contained by another role (parent roles include their child roles). All three paths produce effective permissions.",
     "distractor_notes": {
-      "B": "You don't run SQL to assign roles — you use the platform UI. sys_user_has_role is the join table behind the scenes.",
+      "B": "You don't run SQL to assign roles \u2014 you use the platform UI. sys_user_has_role is the join table behind the scenes.",
       "C": "Org unit / department doesn't grant roles by itself.",
       "D": "Plugins can ship new roles, but activating a plugin doesn't assign those roles to users automatically."
     },
@@ -175,7 +175,7 @@
     ],
     "rationale": "Assigning the role to the group is the maintainable pattern: every current and future member inherits the role just by being in the group. Removing someone from the group automatically removes the inherited access.",
     "distractor_notes": {
-      "B": "Per-user assignment works once, but it drifts the moment the team changes — exactly what the group-based model is designed to avoid.",
+      "B": "Per-user assignment works once, but it drifts the moment the team changes \u2014 exactly what the group-based model is designed to avoid.",
       "C": "Bypassing ACLs for one group is a security anti-pattern and isn't how role evaluation is supposed to work.",
       "D": "Granting admin to everyone solves the access problem by destroying the security model. Don't."
     },
@@ -221,7 +221,7 @@
     "correct": [
       "B"
     ],
-    "rationale": "The admin role is the platform's super-role — it inherits and contains a large set of administrative roles and is required to perform broad configuration and security work.",
+    "rationale": "The admin role is the platform's super-role \u2014 it inherits and contains a large set of administrative roles and is required to perform broad configuration and security work.",
     "distractor_notes": {
       "A": "itil is the standard role for ITSM agents (incidents, problems, changes). It is not a platform admin.",
       "C": "approver_user lets a user act on approval requests assigned to them. It grants no admin power.",
@@ -366,7 +366,7 @@
     ],
     "rationale": "Demo data is intended to help admins and developers evaluate a plugin in a sub-production environment. It's standard practice not to load demo data on a production instance.",
     "distractor_notes": {
-      "B": "Demo data is regular platform data — it isn't encrypted, and it can be removed.",
+      "B": "Demo data is regular platform data \u2014 it isn't encrypted, and it can be removed.",
       "C": "Plugin activation and the demo data it ships are tracked separately from a developer's current update set.",
       "D": "Demo data is inserted; it doesn't overwrite existing records of the same table based on field collisions."
     },
@@ -459,7 +459,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "An update set is a portable container for configuration changes (the things admins and developers customize — UI, scripts, policies, etc.) that can be exported from one instance and applied to another.",
+    "rationale": "An update set is a portable container for configuration changes (the things admins and developers customize \u2014 UI, scripts, policies, etc.) that can be exported from one instance and applied to another.",
     "distractor_notes": {
       "B": "Update sets don't capture data records. They capture configuration changes tracked by the platform.",
       "C": "Update sets are for configuration, not for attachments or binaries.",
@@ -510,7 +510,7 @@
     "distractor_notes": {
       "B": "Disabling logging would just blind the admin. Update sets track configuration changes regardless.",
       "C": "Demo data is for evaluation; it isn't a promotion mechanism.",
-      "D": "Read-Only mode prevents changes — exactly the opposite of what's needed."
+      "D": "Read-Only mode prevents changes \u2014 exactly the opposite of what's needed."
     },
     "references": [
       {
@@ -554,7 +554,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "System properties live on the sys_properties table. Entering sys_properties.list in the filter opens the full list — the standard way for an admin to view, search, and edit platform configuration values.",
+    "rationale": "System properties live on the sys_properties table. Entering sys_properties.list in the filter opens the full list \u2014 the standard way for an admin to view, search, and edit platform configuration values.",
     "distractor_notes": {
       "B": "sys_user.list opens the users table, not the system properties.",
       "C": "sys_dictionary.list shows the data dictionary (field metadata), not configuration properties.",
@@ -649,7 +649,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "The right tool is an email notification on the Incident table — set the condition to priority = 1, the trigger to record update, and the To/recipients to the assigned_to field. That's exactly the use case notifications are designed for.",
+    "rationale": "The right tool is an email notification on the Incident table \u2014 set the condition to priority = 1, the trigger to record update, and the To/recipients to the assigned_to field. That's exactly the use case notifications are designed for.",
     "distractor_notes": {
       "B": "UI policies change form visibility/behavior. They don't send email.",
       "C": "ACLs control access, not communications.",
@@ -697,7 +697,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "Email properties are the instance-level switches that control how the platform sends and receives email — enable/disable sending, test mode, mail server configuration, and how inbound replies are interpreted.",
+    "rationale": "Email properties are the instance-level switches that control how the platform sends and receives email \u2014 enable/disable sending, test mode, mail server configuration, and how inbound replies are interpreted.",
     "distractor_notes": {
       "B": "Personal signatures are user-level settings, not instance email properties.",
       "C": "Attachment caching isn't what email properties are for.",
@@ -774,19 +774,19 @@
     "options": [
       {
         "id": "A",
-        "text": "Retrieve → Preview → Commit"
+        "text": "Retrieve \u2192 Preview \u2192 Commit"
       },
       {
         "id": "B",
-        "text": "Commit → Retrieve → Preview"
+        "text": "Commit \u2192 Retrieve \u2192 Preview"
       },
       {
         "id": "C",
-        "text": "Preview → Commit → Retrieve"
+        "text": "Preview \u2192 Commit \u2192 Retrieve"
       },
       {
         "id": "D",
-        "text": "Export → Import → Validate"
+        "text": "Export \u2192 Import \u2192 Validate"
       }
     ],
     "correct": [
@@ -794,7 +794,7 @@
     ],
     "rationale": "On the target instance you Retrieve the remote update set (pull it across), Preview it (resolve any collisions or warnings), and then Commit it (apply the changes to the instance). Doing those steps out of order is the classic foot-gun.",
     "distractor_notes": {
-      "B": "Committing before retrieving is impossible — there's nothing to commit yet.",
+      "B": "Committing before retrieving is impossible \u2014 there's nothing to commit yet.",
       "C": "Preview comes after Retrieve, not first.",
       "D": "Export/Import/Validate isn't the supported update-set vocabulary."
     },
@@ -830,7 +830,7 @@
       },
       {
         "id": "B",
-        "text": "Force-commit without resolving — collisions are informational only."
+        "text": "Force-commit without resolving \u2014 collisions are informational only."
       },
       {
         "id": "C",
@@ -844,7 +844,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "Collisions surface during preview so the admin can decide what to do per change — accept the incoming change, skip it, or merge — before committing. That deliberation is the whole point of the preview step.",
+    "rationale": "Collisions surface during preview so the admin can decide what to do per change \u2014 accept the incoming change, skip it, or merge \u2014 before committing. That deliberation is the whole point of the preview step.",
     "distractor_notes": {
       "B": "Commits don't ignore unresolved problems quietly. The preview step exists so problems are addressed first.",
       "C": "Deleting target records by hand is dangerous and not the supported workflow for collision resolution.",
@@ -892,11 +892,11 @@
     "correct": [
       "C"
     ],
-    "rationale": "Update sets capture configuration changes — scripts, policies, forms, fields, and so on. Operational data records (an incident the team logged today) are not configuration and aren't carried in update sets.",
+    "rationale": "Update sets capture configuration changes \u2014 scripts, policies, forms, fields, and so on. Operational data records (an incident the team logged today) are not configuration and aren't carried in update sets.",
     "distractor_notes": {
-      "A": "Business rules are configuration — they are captured.",
-      "B": "UI policies are configuration — they are captured.",
-      "D": "Client scripts are configuration — they are captured."
+      "A": "Business rules are configuration \u2014 they are captured.",
+      "B": "UI policies are configuration \u2014 they are captured.",
+      "D": "Client scripts are configuration \u2014 they are captured."
     },
     "references": [
       {
@@ -939,11 +939,11 @@
     "correct": [
       "A"
     ],
-    "rationale": "The instance logo for the Next Experience header is changed through the platform's branding configuration — the supported, upgrade-safe path. It updates centrally and applies for all users.",
+    "rationale": "The instance logo for the Next Experience header is changed through the platform's branding configuration \u2014 the supported, upgrade-safe path. It updates centrally and applies for all users.",
     "distractor_notes": {
       "B": "Instances aren't browsed as files; you can't rename favicon assets on a host file system.",
       "C": "Script includes are reusable server scripts. They aren't where you set the logo.",
-      "D": "A user's profile picture is just their avatar — not the company branding."
+      "D": "A user's profile picture is just their avatar \u2014 not the company branding."
     },
     "references": [
       {
@@ -973,7 +973,7 @@
       },
       {
         "id": "B",
-        "text": "It is automatically global — all scopes have full access by default."
+        "text": "It is automatically global \u2014 all scopes have full access by default."
       },
       {
         "id": "C",
@@ -1082,7 +1082,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "The Default update set is a catch-all for changes made when no purposeful set is active. It captures the change but is not the right vehicle for moving deliberate work between instances — always select a named set before making changes you intend to promote.",
+    "rationale": "The Default update set is a catch-all for changes made when no purposeful set is active. It captures the change but is not the right vehicle for moving deliberate work between instances \u2014 always select a named set before making changes you intend to promote.",
     "distractor_notes": {
       "B": "Production update sets aren't auto-edited by other instances. There's no remote write.",
       "C": "Changes persist; they aren't held in memory only.",
@@ -1130,7 +1130,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "Committed update sets can be backed out, which reverses the changes they applied. It's the right first move when a commit causes a regression — restore the prior state, then root-cause the problem on a sub-prod instance.",
+    "rationale": "Committed update sets can be backed out, which reverses the changes they applied. It's the right first move when a commit causes a regression \u2014 restore the prior state, then root-cause the problem on a sub-prod instance.",
     "distractor_notes": {
       "B": "Disabling the instance is wildly disproportionate and isn't a normal recovery step.",
       "C": "Manual deletes create more drift and don't address the root cause.",
@@ -1146,6 +1146,2607 @@
       "update-sets",
       "back-out",
       "incident-response"
+    ]
+  },
+  {
+    "id": "csa-ic-025",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "Users and Groups",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which field on the sys_user record, when set to true, marks a user as a VIP and can affect notification behavior?",
+    "options": [
+      {
+        "id": "A",
+        "text": "active"
+      },
+      {
+        "id": "B",
+        "text": "vip"
+      },
+      {
+        "id": "C",
+        "text": "priority_user"
+      },
+      {
+        "id": "D",
+        "text": "elevated"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The vip boolean field on the sys_user record marks a user as a VIP. This field can be used in notification conditions and business rules to apply special handling.",
+    "distractor_notes": {
+      "A": "The active field controls whether the user account is enabled or disabled, not VIP status.",
+      "C": "priority_user is not a standard sys_user field.",
+      "D": "elevated is not a standard sys_user field."
+    },
+    "references": [
+      {
+        "title": "Administer the ServiceNow AI Platform",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "users",
+      "vip"
+    ]
+  },
+  {
+    "id": "csa-ic-026",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "Users and Groups",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the effect of setting a user's 'active' field to false on their sys_user record?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The user's records are deleted from the instance"
+      },
+      {
+        "id": "B",
+        "text": "The user can no longer log into the instance"
+      },
+      {
+        "id": "C",
+        "text": "The user's role assignments are permanently removed"
+      },
+      {
+        "id": "D",
+        "text": "The user is moved to an archived user table"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Setting active to false on a sys_user record disables the account, preventing the user from logging in. Their data and records remain intact.",
+    "distractor_notes": {
+      "A": "Records are not deleted when a user is deactivated.",
+      "C": "Role assignments are retained when a user is deactivated; they take effect again if the user is reactivated.",
+      "D": "There is no archived user table in the standard platform."
+    },
+    "references": [
+      {
+        "title": "Administer the ServiceNow AI Platform",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "users",
+      "active-field"
+    ]
+  },
+  {
+    "id": "csa-ic-027",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "Users and Groups",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the table name for user records in ServiceNow?",
+    "options": [
+      {
+        "id": "A",
+        "text": "sys_user_group"
+      },
+      {
+        "id": "B",
+        "text": "sys_user"
+      },
+      {
+        "id": "C",
+        "text": "sys_person"
+      },
+      {
+        "id": "D",
+        "text": "user_profile"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "User records in ServiceNow are stored in the sys_user table. Each row represents one authenticated user account.",
+    "distractor_notes": {
+      "A": "sys_user_group stores group records, not individual user records.",
+      "C": "sys_person is not a standard ServiceNow table.",
+      "D": "user_profile is not the standard table for user accounts."
+    },
+    "references": [
+      {
+        "title": "Administer the ServiceNow AI Platform",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "users",
+      "sys_user"
+    ]
+  },
+  {
+    "id": "csa-ic-028",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "Users and Groups",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which table stores group records in ServiceNow?",
+    "options": [
+      {
+        "id": "A",
+        "text": "sys_user"
+      },
+      {
+        "id": "B",
+        "text": "sys_group"
+      },
+      {
+        "id": "C",
+        "text": "sys_user_group"
+      },
+      {
+        "id": "D",
+        "text": "sys_team"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Group records in ServiceNow are stored in the sys_user_group table. Groups are used for assignments, notifications, and role grants.",
+    "distractor_notes": {
+      "A": "sys_user stores individual user records.",
+      "B": "sys_group is not a standard ServiceNow table name.",
+      "D": "sys_team is not the standard table for groups."
+    },
+    "references": [
+      {
+        "title": "Administer the ServiceNow AI Platform",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "groups",
+      "sys_user_group"
+    ]
+  },
+  {
+    "id": "csa-ic-029",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "Users and Groups",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An admin needs to ensure all members of the 'Network' group inherit the network_admin role. What is the most efficient approach?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Assign the network_admin role directly to each user in the group"
+      },
+      {
+        "id": "B",
+        "text": "Assign the network_admin role to the Network group so all members inherit it"
+      },
+      {
+        "id": "C",
+        "text": "Create a scheduled job that assigns the role nightly"
+      },
+      {
+        "id": "D",
+        "text": "Use an ACL to restrict access based on group membership"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Assigning a role to a group grants that role to all current and future members of the group. This is the most efficient way to manage role inheritance for a set of users.",
+    "distractor_notes": {
+      "A": "Assigning roles individually to each user is inefficient and requires manual updates as membership changes.",
+      "C": "A scheduled job is unnecessary when role inheritance via group assignment handles this automatically.",
+      "D": "ACLs control access to records, not role assignments."
+    },
+    "references": [
+      {
+        "title": "User roles",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/user-administration/application-specific-roles.html"
+      }
+    ],
+    "tags": [
+      "groups",
+      "roles",
+      "inheritance"
+    ]
+  },
+  {
+    "id": "csa-ic-030",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "Users and Groups",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which field on a sys_user_group record designates the person responsible for managing the group?",
+    "options": [
+      {
+        "id": "A",
+        "text": "owner"
+      },
+      {
+        "id": "B",
+        "text": "manager"
+      },
+      {
+        "id": "C",
+        "text": "group_lead"
+      },
+      {
+        "id": "D",
+        "text": "supervisor"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The manager field on a sys_user_group record identifies the person responsible for managing the group.",
+    "distractor_notes": {
+      "A": "owner is not the standard field for group management in sys_user_group.",
+      "C": "group_lead is not a standard sys_user_group field.",
+      "D": "supervisor is not a standard sys_user_group field."
+    },
+    "references": [
+      {
+        "title": "Administer the ServiceNow AI Platform",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "groups",
+      "manager"
+    ]
+  },
+  {
+    "id": "csa-ic-031",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "Roles",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which role in ServiceNow contains all other roles and grants complete administrative access?",
+    "options": [
+      {
+        "id": "A",
+        "text": "itil"
+      },
+      {
+        "id": "B",
+        "text": "admin"
+      },
+      {
+        "id": "C",
+        "text": "security_admin"
+      },
+      {
+        "id": "D",
+        "text": "superuser"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The admin role in ServiceNow grants full administrative access to the core platform configuration. It contains all other roles implicitly.",
+    "distractor_notes": {
+      "A": "itil grants access to ITSM process modules but is a limited operational role, not a superadmin role.",
+      "C": "security_admin is a specialized role for security administration, not a full admin role.",
+      "D": "superuser is not a standard ServiceNow role."
+    },
+    "references": [
+      {
+        "title": "User roles",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/user-administration/application-specific-roles.html"
+      }
+    ],
+    "tags": [
+      "roles",
+      "admin"
+    ]
+  },
+  {
+    "id": "csa-ic-032",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "Roles",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A scoped application defines a role called x_acme_app.approver. A user must have this role to approve records in the app. How is this role typically granted?",
+    "options": [
+      {
+        "id": "A",
+        "text": "It is automatically granted to all admin users"
+      },
+      {
+        "id": "B",
+        "text": "It must be assigned directly to users or groups through the Roles related list"
+      },
+      {
+        "id": "C",
+        "text": "It is inherited from the itil role automatically"
+      },
+      {
+        "id": "D",
+        "text": "It is activated when the plugin for the scoped app is installed"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Application-specific roles defined in a scoped app (like x_acme_app.approver) must be explicitly assigned to users or groups through the Roles related list on the user or group record.",
+    "distractor_notes": {
+      "A": "Admin does not automatically inherit application-specific scoped roles unless explicitly configured.",
+      "C": "itil is an ITSM role unrelated to custom scoped application roles.",
+      "D": "Plugin installation activates features but does not auto-grant scoped roles to users."
+    },
+    "references": [
+      {
+        "title": "User roles",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/user-administration/application-specific-roles.html"
+      }
+    ],
+    "tags": [
+      "roles",
+      "scoped-app"
+    ]
+  },
+  {
+    "id": "csa-ic-033",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "Roles",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the effect of a role containing another role in ServiceNow?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The child role is deprecated when the parent role is assigned"
+      },
+      {
+        "id": "B",
+        "text": "Users with the parent role automatically have the permissions of all contained roles"
+      },
+      {
+        "id": "C",
+        "text": "The contained role must also be assigned separately to take effect"
+      },
+      {
+        "id": "D",
+        "text": "Contained roles only apply in global scope"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "When a role contains another role, users assigned the parent role automatically receive all permissions granted by the contained (child) roles. This is how role inheritance works in ServiceNow.",
+    "distractor_notes": {
+      "A": "Contained roles are not deprecated; they are inherited.",
+      "C": "Contained roles do not need to be separately assigned; the parent role grants them automatically.",
+      "D": "Role containment works across scopes, not just global scope."
+    },
+    "references": [
+      {
+        "title": "User roles",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/user-administration/application-specific-roles.html"
+      }
+    ],
+    "tags": [
+      "roles",
+      "role-hierarchy"
+    ]
+  },
+  {
+    "id": "csa-ic-034",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "Plugins",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Before activating a plugin, what should an administrator verify first?",
+    "options": [
+      {
+        "id": "A",
+        "text": "That the plugin is listed in the ServiceNow Store"
+      },
+      {
+        "id": "B",
+        "text": "That the plugin has not already been activated on the instance"
+      },
+      {
+        "id": "C",
+        "text": "That all existing update sets have been committed"
+      },
+      {
+        "id": "D",
+        "text": "That the instance is running the latest release"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Before requesting or activating a plugin, admins should check whether the plugin has already been activated on the instance to avoid duplicate activation attempts.",
+    "distractor_notes": {
+      "A": "Not all plugins are in the Store; some are available through the Application Manager regardless.",
+      "C": "Committing update sets is a pre-deployment best practice but is not the first verification step for plugin activation.",
+      "D": "Plugin activation is not restricted to the latest release."
+    },
+    "references": [
+      {
+        "title": "Activate a plugin",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/t_ActivateAPlugin.html"
+      }
+    ],
+    "tags": [
+      "plugins",
+      "activation"
+    ]
+  },
+  {
+    "id": "csa-ic-035",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "Plugins",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Where does an administrator navigate to activate a plugin in ServiceNow?",
+    "options": [
+      {
+        "id": "A",
+        "text": "System Properties > Plugins"
+      },
+      {
+        "id": "B",
+        "text": "All > System Applications > All Available Applications > All"
+      },
+      {
+        "id": "C",
+        "text": "All > System Definition > Plugins"
+      },
+      {
+        "id": "D",
+        "text": "Admin Center > Plugins"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "To activate a plugin, navigate to All > System Applications > All Available Applications > All, then find the plugin using filter criteria or search and select Install.",
+    "distractor_notes": {
+      "A": "System Properties is for configuration settings, not plugin activation.",
+      "C": "All > System Definition > Plugins is an older navigation path; the current path is through System Applications.",
+      "D": "Admin Center is a configuration hub, not where plugins are activated."
+    },
+    "references": [
+      {
+        "title": "Activate a plugin",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/t_ActivateAPlugin.html"
+      }
+    ],
+    "tags": [
+      "plugins",
+      "navigation"
+    ]
+  },
+  {
+    "id": "csa-ic-036",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "Plugins",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "When domain separation and delegated admin are enabled, what domain must the activating admin be in to avoid a plugin activation error?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The top-level domain of the organization"
+      },
+      {
+        "id": "B",
+        "text": "The global domain"
+      },
+      {
+        "id": "C",
+        "text": "The admin's home domain"
+      },
+      {
+        "id": "D",
+        "text": "Any domain with the plugin_admin role"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "When domain separation and delegated admin are enabled, the administrative user activating a plugin must be in the global domain. Otherwise, an error appears indicating another operation is running.",
+    "distractor_notes": {
+      "A": "The top-level organizational domain is not the same as the global domain in domain separation.",
+      "C": "The admin's home domain is insufficient; global domain is required.",
+      "D": "plugin_admin is not a documented role for this requirement; being in the global domain is the requirement."
+    },
+    "references": [
+      {
+        "title": "Activate a plugin",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/t_ActivateAPlugin.html"
+      }
+    ],
+    "tags": [
+      "plugins",
+      "domain-separation"
+    ]
+  },
+  {
+    "id": "csa-ic-037",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "System Properties",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Where can lesser-used system properties that are not on a standard form be found and edited?",
+    "options": [
+      {
+        "id": "A",
+        "text": "In the System Dictionary"
+      },
+      {
+        "id": "B",
+        "text": "In the System Property [sys_properties] table"
+      },
+      {
+        "id": "C",
+        "text": "In the System Definition > Scripts module"
+      },
+      {
+        "id": "D",
+        "text": "In the Update Set picker"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Some lesser-used system properties exist only in the System Property [sys_properties] table and are not available on the standard system properties forms. Admins can access and add them directly from this table.",
+    "distractor_notes": {
+      "A": "The System Dictionary defines table and field schema, not system properties.",
+      "C": "Scripts module is for server-side scripts, not property configuration.",
+      "D": "The Update Set picker tracks configuration changes, not property values."
+    },
+    "references": [
+      {
+        "title": "Available system properties",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/r_AvailableSystemProperties.html"
+      }
+    ],
+    "tags": [
+      "system-properties",
+      "sys_properties"
+    ]
+  },
+  {
+    "id": "csa-ic-038",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "System Properties",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What does the system property 'com.glide.attachment.max_size' control?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The maximum number of attachments per record"
+      },
+      {
+        "id": "B",
+        "text": "The maximum file attachment size in megabytes"
+      },
+      {
+        "id": "C",
+        "text": "The allowed file extension types for attachments"
+      },
+      {
+        "id": "D",
+        "text": "The maximum total storage for all attachments"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The com.glide.attachment.max_size property sets the maximum file attachment size in megabytes. The default value is 1024 (1GB).",
+    "distractor_notes": {
+      "A": "There is no standard property limiting the number of attachments per record.",
+      "C": "Allowed file extensions are controlled through a separate security property, not com.glide.attachment.max_size.",
+      "D": "This property controls per-file size, not total instance storage."
+    },
+    "references": [
+      {
+        "title": "Available system properties",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/r_AvailableSystemProperties.html"
+      }
+    ],
+    "tags": [
+      "system-properties",
+      "attachments"
+    ]
+  },
+  {
+    "id": "csa-ic-039",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "System Properties",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An admin wants to add a custom module to the Application Navigator for easy access to a frequently used system property list. What is the recommended approach?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Edit the global CSS to add a shortcut link"
+      },
+      {
+        "id": "B",
+        "text": "Add a module in the Application Navigator pointing to the sys_properties table"
+      },
+      {
+        "id": "C",
+        "text": "Create a homepage widget linking to the property list"
+      },
+      {
+        "id": "D",
+        "text": "Use the Admin Center to pin the property"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Administrators can add a module in the application navigator to access the list of system properties. This module provides easy access to add or edit properties in the System Properties table.",
+    "distractor_notes": {
+      "A": "CSS modifications are for styling, not application navigator modules.",
+      "C": "A homepage widget is a reporting/visualization tool, not the recommended approach for property access.",
+      "D": "Admin Center is for application management, not creating custom navigator modules."
+    },
+    "references": [
+      {
+        "title": "Available system properties",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/r_AvailableSystemProperties.html"
+      }
+    ],
+    "tags": [
+      "system-properties",
+      "application-navigator"
+    ]
+  },
+  {
+    "id": "csa-ic-040",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "Notifications",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which of the following is NOT a component that an administrator specifies when creating an email notification?",
+    "options": [
+      {
+        "id": "A",
+        "text": "When to send the notification"
+      },
+      {
+        "id": "B",
+        "text": "Who receives the notification"
+      },
+      {
+        "id": "C",
+        "text": "The physical email server to use"
+      },
+      {
+        "id": "D",
+        "text": "What content is in the notification"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "When creating an email notification, administrators specify when to send it, who receives it, what content it contains, and whether it can be delivered as a digest. The physical email server is an instance-level configuration, not part of the individual notification record.",
+    "distractor_notes": {
+      "A": "When to send is one of the four key notification components.",
+      "B": "Who receives is one of the four key notification components.",
+      "D": "Content is one of the four key notification components."
+    },
+    "references": [
+      {
+        "title": "Email and SMS notifications",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/c_EmailNotifications.html"
+      }
+    ],
+    "tags": [
+      "notifications",
+      "email"
+    ]
+  },
+  {
+    "id": "csa-ic-041",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "Notifications",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is an email watermark in ServiceNow notifications?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A logo image embedded in the email header"
+      },
+      {
+        "id": "B",
+        "text": "A unique label generated at the bottom of each notification email to match incoming email to existing records"
+      },
+      {
+        "id": "C",
+        "text": "A legal disclaimer automatically appended to all outgoing emails"
+      },
+      {
+        "id": "D",
+        "text": "A read-receipt request attached to each notification"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "By default, a unique watermark label is generated at the bottom of each notification email. It allows the system to match incoming email replies to the correct existing records.",
+    "distractor_notes": {
+      "A": "A watermark is a unique tracking label, not a logo image.",
+      "C": "Legal disclaimers are a separate configuration from watermarks.",
+      "D": "Watermarks enable record matching, not read receipts."
+    },
+    "references": [
+      {
+        "title": "Email and SMS notifications",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/c_EmailNotifications.html"
+      }
+    ],
+    "tags": [
+      "notifications",
+      "watermark"
+    ]
+  },
+  {
+    "id": "csa-ic-042",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "Notifications",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Can a ServiceNow instance send or receive encrypted email messages?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Yes, using the Encrypted Email plugin"
+      },
+      {
+        "id": "B",
+        "text": "Yes, if TLS is configured on the mail server"
+      },
+      {
+        "id": "C",
+        "text": "No \u2014 the system strips the body of encrypted emails because it cannot process encrypted content"
+      },
+      {
+        "id": "D",
+        "text": "Yes, but only for outgoing emails"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "ServiceNow instances cannot send or receive encrypted email messages. The system strips out the body of the encrypted email because it cannot process the encrypted content in plain text or HTML.",
+    "distractor_notes": {
+      "A": "There is no Encrypted Email plugin that enables this capability.",
+      "B": "TLS encrypts the transport channel but the email body encryption ServiceNow cannot process is end-to-end content encryption.",
+      "D": "The limitation applies to both sending and receiving encrypted emails."
+    },
+    "references": [
+      {
+        "title": "Email and SMS notifications",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/c_EmailNotifications.html"
+      }
+    ],
+    "tags": [
+      "notifications",
+      "email",
+      "encryption"
+    ]
+  },
+  {
+    "id": "csa-ic-043",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "Notifications",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is an email digest in ServiceNow?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A log of all sent email notifications for a day"
+      },
+      {
+        "id": "B",
+        "text": "A single email that summarizes activity for a notification and its target records during a specified time interval"
+      },
+      {
+        "id": "C",
+        "text": "An archive of all emails older than 30 days"
+      },
+      {
+        "id": "D",
+        "text": "A compressed attachment containing multiple email threads"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "An email digest is a single email summarizing activity for a selected notification and its target records during a specified time interval, reducing notification volume when frequent updates occur.",
+    "distractor_notes": {
+      "A": "An email digest is not a log; it is a consolidated outgoing summary email.",
+      "C": "Email archives are managed through the email retention feature, not digests.",
+      "D": "A digest is a consolidated notification email, not a compressed attachment."
+    },
+    "references": [
+      {
+        "title": "Email and SMS notifications",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/c_EmailNotifications.html"
+      }
+    ],
+    "tags": [
+      "notifications",
+      "email-digest"
+    ]
+  },
+  {
+    "id": "csa-ic-044",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "Update Sets",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is captured in a standard update set?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Data records such as incidents and changes"
+      },
+      {
+        "id": "B",
+        "text": "Configuration changes such as form layouts, business rules, and scripts"
+      },
+      {
+        "id": "C",
+        "text": "User account changes and role assignments"
+      },
+      {
+        "id": "D",
+        "text": "All database transactions since the last commit"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Update sets capture configuration changes \u2014 such as form layouts, business rules, client scripts, and UI policies \u2014 allowing them to be moved between instances. Data records are not captured.",
+    "distractor_notes": {
+      "A": "Data records (incidents, changes) are not captured in standard update sets.",
+      "C": "User account changes and role assignments are data-level changes not typically captured in update sets.",
+      "D": "Update sets capture specific configuration changes, not all database transactions."
+    },
+    "references": [
+      {
+        "title": "Update sets",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/ia-update-set.html"
+      }
+    ],
+    "tags": [
+      "update-sets",
+      "configuration"
+    ]
+  },
+  {
+    "id": "csa-ic-045",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "Update Sets",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What state should an update set be in before it can be exported from a source instance?",
+    "options": [
+      {
+        "id": "A",
+        "text": "In Progress"
+      },
+      {
+        "id": "B",
+        "text": "Complete"
+      },
+      {
+        "id": "C",
+        "text": "Loaded"
+      },
+      {
+        "id": "D",
+        "text": "Previewed"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "An update set must be set to Complete state before it can be exported. This signals that the changes are finalized and ready for migration.",
+    "distractor_notes": {
+      "A": "An In Progress update set is still being built; it cannot be exported yet.",
+      "C": "Loaded is a state on the target instance after import, not a source export state.",
+      "D": "Previewed is a state on the target instance during the review process before committing."
+    },
+    "references": [
+      {
+        "title": "Update sets",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/ia-update-set.html"
+      }
+    ],
+    "tags": [
+      "update-sets",
+      "states"
+    ]
+  },
+  {
+    "id": "csa-ic-046",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "Update Sets",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "On a target instance, what happens during the Preview step of applying an update set?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The changes are committed to the instance immediately"
+      },
+      {
+        "id": "B",
+        "text": "The system checks for collisions and potential issues before committing"
+      },
+      {
+        "id": "C",
+        "text": "The update set is exported back to the source instance for review"
+      },
+      {
+        "id": "D",
+        "text": "The system creates a backup of all current configuration"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "During preview, the target instance checks for collisions with existing configuration and flags potential issues. The admin reviews these before deciding to commit or skip individual changes.",
+    "distractor_notes": {
+      "A": "Preview does not commit changes; it is a pre-commit review step.",
+      "C": "Preview is performed on the target, not exported back to source.",
+      "D": "ServiceNow does not create a full configuration backup automatically during preview."
+    },
+    "references": [
+      {
+        "title": "Update sets",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/ia-update-set.html"
+      }
+    ],
+    "tags": [
+      "update-sets",
+      "preview",
+      "collision"
+    ]
+  },
+  {
+    "id": "csa-ic-047",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "Update Sets",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A developer accidentally leaves the Default update set selected and makes a configuration change. Where will that change be recorded?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The change is discarded since the Default set cannot record changes"
+      },
+      {
+        "id": "B",
+        "text": "The change is recorded in the Default update set for the current application scope"
+      },
+      {
+        "id": "C",
+        "text": "The system prompts the developer to select a proper update set before saving"
+      },
+      {
+        "id": "D",
+        "text": "The change is recorded in the last used named update set"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "When the Default update set is selected, any configuration changes are recorded into it. The Default set captures changes that were made without explicitly selecting a named update set.",
+    "distractor_notes": {
+      "A": "The Default update set does record changes; it is a valid (if undesirable) destination.",
+      "C": "The system does not prompt the developer; it silently records to the Default set.",
+      "D": "The change goes to whatever update set is currently selected, which in this case is Default."
+    },
+    "references": [
+      {
+        "title": "Update sets",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/ia-update-set.html"
+      }
+    ],
+    "tags": [
+      "update-sets",
+      "default"
+    ]
+  },
+  {
+    "id": "csa-ic-048",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "Update Sets",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which type of change is typically NOT captured in a standard update set?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Business rules"
+      },
+      {
+        "id": "B",
+        "text": "Client scripts"
+      },
+      {
+        "id": "C",
+        "text": "Data records such as users and incidents"
+      },
+      {
+        "id": "D",
+        "text": "Form layouts"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Standard update sets capture configuration metadata (business rules, scripts, form layouts, etc.) but do not capture data records such as user accounts or incident records.",
+    "distractor_notes": {
+      "A": "Business rules are configuration and are captured in update sets.",
+      "B": "Client scripts are configuration and are captured in update sets.",
+      "D": "Form layouts are configuration and are captured in update sets."
+    },
+    "references": [
+      {
+        "title": "Update sets",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/ia-update-set.html"
+      }
+    ],
+    "tags": [
+      "update-sets",
+      "data-vs-config"
+    ]
+  },
+  {
+    "id": "csa-ic-049",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "Update Sets",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A committed update set broke a related list on production. What should the admin do first?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Delete the update set records from the production database"
+      },
+      {
+        "id": "B",
+        "text": "Use the Back Out option on the update set to revert the changes"
+      },
+      {
+        "id": "C",
+        "text": "Re-import and re-commit the same update set"
+      },
+      {
+        "id": "D",
+        "text": "Manually restore the previous form layout from memory"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Update sets support a Back Out option that reverts committed changes. This is the proper mechanism to undo a problematic committed update set.",
+    "distractor_notes": {
+      "A": "Deleting database records directly is destructive and not the proper approach.",
+      "C": "Re-committing the same update set would not fix the issue; it would apply the same broken changes again.",
+      "D": "Manual restoration is error-prone and unnecessary when the Back Out feature exists."
+    },
+    "references": [
+      {
+        "title": "Update sets",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/ia-update-set.html"
+      }
+    ],
+    "tags": [
+      "update-sets",
+      "back-out"
+    ]
+  },
+  {
+    "id": "csa-ic-050",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "Application Scope",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the primary purpose of application scope in ServiceNow?",
+    "options": [
+      {
+        "id": "A",
+        "text": "To limit the number of records a user can create per day"
+      },
+      {
+        "id": "B",
+        "text": "To isolate application artifacts and prevent naming conflicts between applications"
+      },
+      {
+        "id": "C",
+        "text": "To define which users have access to a given module"
+      },
+      {
+        "id": "D",
+        "text": "To specify the ServiceNow release a custom application targets"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Application scope in ServiceNow isolates artifacts (tables, scripts, forms) within a namespace, preventing naming conflicts between different applications and protecting application integrity.",
+    "distractor_notes": {
+      "A": "Record creation limits are not the purpose of application scope.",
+      "C": "Access to modules is controlled by roles and ACLs, not application scope directly.",
+      "D": "Application scope defines a namespace, not the target release."
+    },
+    "references": [
+      {
+        "title": "Administer the ServiceNow AI Platform",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "application-scope",
+      "scoped-app"
+    ]
+  },
+  {
+    "id": "csa-ic-051",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "Application Scope",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What prefix do custom scoped application artifacts use in their names?",
+    "options": [
+      {
+        "id": "A",
+        "text": "sys_"
+      },
+      {
+        "id": "B",
+        "text": "custom_"
+      },
+      {
+        "id": "C",
+        "text": "x_<vendor>_<app>_"
+      },
+      {
+        "id": "D",
+        "text": "app_"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Custom scoped application artifacts use the prefix x_<vendor>_<app>_ (e.g., x_acme_procurement_) to namespace them and prevent conflicts with other applications or the base platform.",
+    "distractor_notes": {
+      "A": "sys_ is the prefix for core ServiceNow platform tables and artifacts.",
+      "B": "custom_ is not a standard ServiceNow prefix.",
+      "D": "app_ is not a standard ServiceNow scoped application prefix."
+    },
+    "references": [
+      {
+        "title": "Administer the ServiceNow AI Platform",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "application-scope",
+      "naming-convention"
+    ]
+  },
+  {
+    "id": "csa-ic-052",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "Notifications",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An admin wants to reduce notification volume for users who receive frequent updates to the same record type. Which feature should they enable on the notification?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Email watermark"
+      },
+      {
+        "id": "B",
+        "text": "Mandatory notification flag"
+      },
+      {
+        "id": "C",
+        "text": "Email digest"
+      },
+      {
+        "id": "D",
+        "text": "Subscription-based notification"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "An email digest consolidates multiple notification emails into a single summary email for a specified time interval, reducing notification volume when frequent updates occur.",
+    "distractor_notes": {
+      "A": "Watermarks are for matching incoming replies to records, not reducing volume.",
+      "B": "Mandatory notifications cannot be unsubscribed from; they increase rather than reduce volume concerns.",
+      "D": "Subscription-based notifications let users choose which notifications to receive but do not consolidate them."
+    },
+    "references": [
+      {
+        "title": "Email and SMS notifications",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/c_EmailNotifications.html"
+      }
+    ],
+    "tags": [
+      "notifications",
+      "email-digest"
+    ]
+  },
+  {
+    "id": "csa-ic-053",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "Notifications",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the default format for new email notifications created in ServiceNow?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Plain text"
+      },
+      {
+        "id": "B",
+        "text": "Rich HTML"
+      },
+      {
+        "id": "C",
+        "text": "Markdown"
+      },
+      {
+        "id": "D",
+        "text": "XML"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Rich HTML is the default format for all new email notifications. It provides advantages including WYSIWYG editing, reusable mail scripts, and automatic conversion of relative URLs to absolute links.",
+    "distractor_notes": {
+      "A": "Plain text is not the default; rich HTML is.",
+      "C": "Markdown is not a supported format for ServiceNow email notifications.",
+      "D": "XML is not the email format for notifications."
+    },
+    "references": [
+      {
+        "title": "Email and SMS notifications",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/c_EmailNotifications.html"
+      }
+    ],
+    "tags": [
+      "notifications",
+      "email-format"
+    ]
+  },
+  {
+    "id": "csa-ic-054",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "System Properties",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Where in System Properties is the property to control allowed attachment file extensions located?",
+    "options": [
+      {
+        "id": "A",
+        "text": "System Properties > General"
+      },
+      {
+        "id": "B",
+        "text": "System Properties > Security"
+      },
+      {
+        "id": "C",
+        "text": "System Properties > Email"
+      },
+      {
+        "id": "D",
+        "text": "System Properties > Attachments"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Attachment-related security properties, including the maximum file size and MIME type checking, are found under System Properties > Security.",
+    "distractor_notes": {
+      "A": "System Properties > General controls general instance settings, not attachment security.",
+      "C": "System Properties > Email controls email server configuration, not attachments.",
+      "D": "There is no standard System Properties > Attachments category; security-related attachment settings are under Security."
+    },
+    "references": [
+      {
+        "title": "Available system properties",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/r_AvailableSystemProperties.html"
+      }
+    ],
+    "tags": [
+      "system-properties",
+      "security",
+      "attachments"
+    ]
+  },
+  {
+    "id": "csa-ic-055",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "Notifications",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which feature allows users to control which non-mandatory notifications they receive?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Email digests"
+      },
+      {
+        "id": "B",
+        "text": "Subscription-based notifications"
+      },
+      {
+        "id": "C",
+        "text": "Watermarks"
+      },
+      {
+        "id": "D",
+        "text": "Email templates"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Subscription-based notifications allow users to subscribe to or unsubscribe from notifications that are not mandatory, giving users control over which alerts they receive.",
+    "distractor_notes": {
+      "A": "Email digests consolidate frequency, not which notifications are received.",
+      "C": "Watermarks match incoming emails to records; they do not control subscription preferences.",
+      "D": "Email templates define content structure; they do not control subscription."
+    },
+    "references": [
+      {
+        "title": "Email and SMS notifications",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/c_EmailNotifications.html"
+      }
+    ],
+    "tags": [
+      "notifications",
+      "subscription"
+    ]
+  },
+  {
+    "id": "csa-ic-056",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "Update Sets",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A developer exports an update set from development and imports it to a UAT instance. After preview, there are no collisions. What is the next step?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Export the update set from UAT to production directly"
+      },
+      {
+        "id": "B",
+        "text": "Commit the update set on UAT to apply the changes"
+      },
+      {
+        "id": "C",
+        "text": "Set the update set state back to In Progress on UAT"
+      },
+      {
+        "id": "D",
+        "text": "Run validate-questions on UAT to confirm correctness"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "After preview with no collisions, the next step is to commit the update set on the target instance, which applies all captured configuration changes.",
+    "distractor_notes": {
+      "A": "The update set must be committed to UAT first; you would then go through the same import/preview/commit process for production.",
+      "C": "Setting the state back to In Progress is for source instances where more changes need to be added, not for target instances after a clean preview.",
+      "D": "validate-questions is a GlideUp project tool, not a ServiceNow platform step."
+    },
+    "references": [
+      {
+        "title": "Update sets",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/ia-update-set.html"
+      }
+    ],
+    "tags": [
+      "update-sets",
+      "workflow",
+      "scenario"
+    ]
+  },
+  {
+    "id": "csa-ic-057",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "Impersonation",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the primary purpose of user impersonation in ServiceNow?",
+    "options": [
+      {
+        "id": "A",
+        "text": "To permanently assume another user's identity for administrative tasks"
+      },
+      {
+        "id": "B",
+        "text": "To temporarily simulate another user's session to test their experience"
+      },
+      {
+        "id": "C",
+        "text": "To elevate the impersonated user's roles for a single transaction"
+      },
+      {
+        "id": "D",
+        "text": "To create a copy of the user's account for troubleshooting"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "User impersonation allows an admin to temporarily simulate another user's session \u2014 seeing exactly what that user sees \u2014 which is useful for testing configurations, troubleshooting access issues, and verifying role-based behavior.",
+    "distractor_notes": {
+      "A": "Impersonation is temporary and session-scoped, not permanent.",
+      "C": "Impersonation does not elevate the target user's roles; it simulates their existing access.",
+      "D": "No copy of the user account is created during impersonation."
+    },
+    "references": [
+      {
+        "title": "User administration",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/user-administration/application-specific-roles.html"
+      }
+    ],
+    "tags": [
+      "impersonation",
+      "user-administration"
+    ]
+  },
+  {
+    "id": "csa-ic-058",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "Impersonation",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which role is required to impersonate another user in ServiceNow?",
+    "options": [
+      {
+        "id": "A",
+        "text": "itil"
+      },
+      {
+        "id": "B",
+        "text": "admin"
+      },
+      {
+        "id": "C",
+        "text": "security_admin"
+      },
+      {
+        "id": "D",
+        "text": "impersonator"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The admin role is required to impersonate another user. The keyboard shortcut Control+Shift+i (Windows) / Command+Shift+i (macOS) opens the impersonation dialog.",
+    "distractor_notes": {
+      "A": "itil is an ITSM operational role and does not grant impersonation capability.",
+      "C": "security_admin is for security features, not user impersonation.",
+      "D": "impersonator is not a standard ServiceNow role."
+    },
+    "references": [
+      {
+        "title": "User administration",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/user-administration/application-specific-roles.html"
+      }
+    ],
+    "tags": [
+      "impersonation",
+      "roles"
+    ]
+  },
+  {
+    "id": "csa-ic-059",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "Notifications",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An admin wants a specific notification to always be delivered to recipients, even if they have unsubscribed from that notification type. Which feature should they use?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Email digest"
+      },
+      {
+        "id": "B",
+        "text": "Mandatory notification"
+      },
+      {
+        "id": "C",
+        "text": "Email template"
+      },
+      {
+        "id": "D",
+        "text": "Watermark"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Mandatory notifications cannot be unsubscribed from by users. Admins can make specific notifications mandatory to ensure critical communications are always delivered.",
+    "distractor_notes": {
+      "A": "Email digests consolidate frequency but do not override user subscription settings.",
+      "C": "Email templates define notification content structure; they do not control mandatory delivery.",
+      "D": "Watermarks are for record matching on inbound emails, not controlling delivery."
+    },
+    "references": [
+      {
+        "title": "Email and SMS notifications",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/c_EmailNotifications.html"
+      }
+    ],
+    "tags": [
+      "notifications",
+      "mandatory"
+    ]
+  },
+  {
+    "id": "csa-ic-060",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "System Properties",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "A system property does not exist in a base instance. What must an admin do to use it?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Upgrade to the next ServiceNow release"
+      },
+      {
+        "id": "B",
+        "text": "Request ServiceNow support to enable it"
+      },
+      {
+        "id": "C",
+        "text": "Add the property to the System Property [sys_properties] table manually"
+      },
+      {
+        "id": "D",
+        "text": "Install a plugin to activate the property"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Some system properties do not exist in a base instance but can be added by creating a new record in the System Property [sys_properties] table and setting the desired value.",
+    "distractor_notes": {
+      "A": "Upgrading releases does not add custom system properties.",
+      "B": "Standard system properties can be added without contacting support.",
+      "D": "Installing a plugin is unrelated to adding a custom system property."
+    },
+    "references": [
+      {
+        "title": "Available system properties",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/r_AvailableSystemProperties.html"
+      }
+    ],
+    "tags": [
+      "system-properties",
+      "adding-properties"
+    ]
+  },
+  {
+    "id": "csa-ic-061",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "Users and Groups",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which table stores the many-to-many relationship between users and groups in ServiceNow?",
+    "options": [
+      {
+        "id": "A",
+        "text": "sys_user_group"
+      },
+      {
+        "id": "B",
+        "text": "sys_user_grmember"
+      },
+      {
+        "id": "C",
+        "text": "sys_user_has_group"
+      },
+      {
+        "id": "D",
+        "text": "sys_group_member"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The sys_user_grmember table stores the many-to-many relationships between users and groups, recording which users are members of which groups.",
+    "distractor_notes": {
+      "A": "sys_user_group stores the group definitions themselves, not the membership relationships.",
+      "C": "sys_user_has_group is not a standard ServiceNow table.",
+      "D": "sys_group_member is not a standard ServiceNow table."
+    },
+    "references": [
+      {
+        "title": "Administer the ServiceNow AI Platform",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "users",
+      "groups",
+      "sys_user_grmember"
+    ]
+  },
+  {
+    "id": "csa-ic-062",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "Update Sets",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What state does an update set enter on the target instance when it has been imported but not yet previewed?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Complete"
+      },
+      {
+        "id": "B",
+        "text": "In Progress"
+      },
+      {
+        "id": "C",
+        "text": "Loaded"
+      },
+      {
+        "id": "D",
+        "text": "Committed"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "After an update set is imported to the target instance, it enters the Loaded state. The admin then runs Preview before committing.",
+    "distractor_notes": {
+      "A": "Complete is the state set on the source instance before export.",
+      "B": "In Progress means the update set is being actively modified on the source instance.",
+      "D": "Committed is the state after the update set has been successfully applied to the target."
+    },
+    "references": [
+      {
+        "title": "Update sets",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/ia-update-set.html"
+      }
+    ],
+    "tags": [
+      "update-sets",
+      "states",
+      "loaded"
+    ]
+  },
+  {
+    "id": "csa-ic-063",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "Notifications",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An admin converts an existing notification to rich HTML format. Which is an advantage the docs describe for rich HTML notifications?",
+    "options": [
+      {
+        "id": "A",
+        "text": "They are delivered faster than plain text emails"
+      },
+      {
+        "id": "B",
+        "text": "Relative URLs in the notification body are automatically converted to absolute links"
+      },
+      {
+        "id": "C",
+        "text": "They bypass spam filters on recipient mail servers"
+      },
+      {
+        "id": "D",
+        "text": "They support end-to-end encryption"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Rich HTML notifications automatically convert relative URLs (such as incident links) to absolute links, preventing broken links in the email content.",
+    "distractor_notes": {
+      "A": "Rich HTML does not affect email delivery speed.",
+      "C": "Rich HTML does not bypass spam filters; deliverability depends on server configuration.",
+      "D": "ServiceNow cannot send or receive encrypted emails."
+    },
+    "references": [
+      {
+        "title": "Email and SMS notifications",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/c_EmailNotifications.html"
+      }
+    ],
+    "tags": [
+      "notifications",
+      "rich-html"
+    ]
+  },
+  {
+    "id": "csa-ic-064",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "Application Scope",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A developer in a custom scoped app tries to modify a base platform business rule. What protection does application scope provide in this scenario?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The developer is automatically granted admin role to make the change"
+      },
+      {
+        "id": "B",
+        "text": "The scoped app cannot modify base platform artifacts that are outside its scope without explicit cross-scope access grants"
+      },
+      {
+        "id": "C",
+        "text": "The change is allowed but is logged for security review"
+      },
+      {
+        "id": "D",
+        "text": "The change is applied only in the developer's test instance, not globally"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Application scope protects platform integrity by restricting scoped applications from modifying artifacts outside their scope. Cross-scope access must be explicitly granted.",
+    "distractor_notes": {
+      "A": "Scope does not auto-grant admin access.",
+      "C": "The change is blocked, not just logged.",
+      "D": "Scope restrictions apply regardless of the instance type."
+    },
+    "references": [
+      {
+        "title": "Administer the ServiceNow AI Platform",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "application-scope",
+      "cross-scope"
+    ]
+  },
+  {
+    "id": "csa-ic-065",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "Notifications",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "When a notification email is sent as an SMS, what part of the email does the system use as the SMS message by default?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The email body"
+      },
+      {
+        "id": "B",
+        "text": "The email subject line"
+      },
+      {
+        "id": "C",
+        "text": "The first paragraph of the email body"
+      },
+      {
+        "id": "D",
+        "text": "A separately stored SMS template"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "When a notification is delivered via SMS, the system uses the subject line of the email notification and converts it to the SMS message by default. Admins can define an alternate SMS message if needed.",
+    "distractor_notes": {
+      "A": "The email body is not used by default for SMS; the subject line is.",
+      "C": "Only the first paragraph is not the default; it is the subject line.",
+      "D": "A separate SMS template can be defined but is not the default behavior."
+    },
+    "references": [
+      {
+        "title": "Email and SMS notifications",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/c_EmailNotifications.html"
+      }
+    ],
+    "tags": [
+      "notifications",
+      "sms"
+    ]
+  },
+  {
+    "id": "csa-ic-066",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "Plugins",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "When activating a plugin and the admin cannot find it in the plugin list, what should they do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Check if the plugin is already active using the Application Manager"
+      },
+      {
+        "id": "B",
+        "text": "Request the plugin from ServiceNow personnel"
+      },
+      {
+        "id": "C",
+        "text": "Install it from the ServiceNow developer portal"
+      },
+      {
+        "id": "D",
+        "text": "Increase the filter limit in the All Available Applications module"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "If a plugin cannot be found in the available plugins list, the admin may need to request it from ServiceNow personnel, as some plugins require special licensing or activation.",
+    "distractor_notes": {
+      "A": "Checking if it is already active is the first pre-activation step, but if it is not found at all in the list, requesting from ServiceNow is appropriate.",
+      "C": "There is no general developer portal for downloading plugins to install manually.",
+      "D": "Increasing a filter limit is not the solution for a missing plugin."
+    },
+    "references": [
+      {
+        "title": "Activate a plugin",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/t_ActivateAPlugin.html"
+      }
+    ],
+    "tags": [
+      "plugins",
+      "missing-plugin"
+    ]
+  },
+  {
+    "id": "csa-ic-067",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "Users and Groups",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A service desk manager leaves the company. Their sys_user record is deactivated. What happens to incidents currently assigned to that user's group?",
+    "options": [
+      {
+        "id": "A",
+        "text": "All incidents are immediately reassigned to the group manager"
+      },
+      {
+        "id": "B",
+        "text": "The incidents remain assigned to the group; the group's other members can still work them"
+      },
+      {
+        "id": "C",
+        "text": "All incidents are set to Unassigned automatically"
+      },
+      {
+        "id": "D",
+        "text": "The group is also deactivated since the manager is gone"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Deactivating a user's sys_user record only disables their login. Group membership and record assignments are not automatically changed. Incidents assigned to the group remain assigned to the group for other members to work.",
+    "distractor_notes": {
+      "A": "No automatic reassignment to the group manager occurs when a user is deactivated.",
+      "C": "Incidents are not automatically unassigned when a group member or manager is deactivated.",
+      "D": "The group record is independent of any individual user's active status."
+    },
+    "references": [
+      {
+        "title": "Administer the ServiceNow AI Platform",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "users",
+      "groups",
+      "deactivation",
+      "scenario"
+    ]
+  },
+  {
+    "id": "csa-ic-068",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "System Properties",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An admin sets com.glide.attachment.max_size to an empty value. What is the result?",
+    "options": [
+      {
+        "id": "A",
+        "text": "All file uploads are blocked until a value is entered"
+      },
+      {
+        "id": "B",
+        "text": "Attachments are allowed up to a maximum of 1KB"
+      },
+      {
+        "id": "C",
+        "text": "The default of 1024MB applies automatically"
+      },
+      {
+        "id": "D",
+        "text": "Attachments of unlimited size are allowed"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "An empty value in the com.glide.attachment.max_size field allows attachments up to a maximum of 1KB. This is a known edge case \u2014 the default 1024MB applies when the property holds the value '1024', not when it is blank.",
+    "distractor_notes": {
+      "A": "File uploads are not blocked by an empty property; they are limited to 1KB.",
+      "C": "The 1024MB default applies when the property value is set to 1024, not when it is empty.",
+      "D": "An empty value does not unlock unlimited upload size; it restricts to 1KB."
+    },
+    "references": [
+      {
+        "title": "Available system properties",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/r_AvailableSystemProperties.html"
+      }
+    ],
+    "tags": [
+      "system-properties",
+      "attachments",
+      "edge-case"
+    ]
+  },
+  {
+    "id": "csa-ic-069",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "Update Sets",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the recommended order for applying multiple related update sets on a target instance?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Alphabetical order by update set name"
+      },
+      {
+        "id": "B",
+        "text": "Apply them in the order they were created on the source instance"
+      },
+      {
+        "id": "C",
+        "text": "Commit the largest update set first"
+      },
+      {
+        "id": "D",
+        "text": "Apply them in any order since ServiceNow resolves dependencies automatically"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Related update sets should be applied in the same order they were created on the source instance to respect dependencies between configuration changes.",
+    "distractor_notes": {
+      "A": "Alphabetical order does not respect creation sequence or dependencies.",
+      "C": "Size of the update set is not the correct ordering criterion.",
+      "D": "ServiceNow does not automatically resolve dependency order between related update sets."
+    },
+    "references": [
+      {
+        "title": "Update sets",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/ia-update-set.html"
+      }
+    ],
+    "tags": [
+      "update-sets",
+      "ordering"
+    ]
+  },
+  {
+    "id": "csa-ic-070",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "Roles",
+    "difficulty": "application",
+    "type": "multi_select",
+    "stem": "Which two methods can an administrator use to grant a role to a user in ServiceNow?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Assign the role directly on the user's sys_user record via the Roles related list"
+      },
+      {
+        "id": "B",
+        "text": "Assign the user to a group that has the role"
+      },
+      {
+        "id": "C",
+        "text": "Set the user's department to a department that has the role"
+      },
+      {
+        "id": "D",
+        "text": "Enable the role via a system property"
+      }
+    ],
+    "correct": [
+      "A",
+      "B"
+    ],
+    "rationale": "Roles can be granted to users either directly via the Roles related list on the user record, or indirectly by assigning the user to a group that has been granted the role.",
+    "distractor_notes": {
+      "C": "Departments do not directly grant roles to users.",
+      "D": "System properties do not grant roles to users; roles are assigned through user or group records."
+    },
+    "references": [
+      {
+        "title": "User roles",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/user-administration/application-specific-roles.html"
+      }
+    ],
+    "tags": [
+      "roles",
+      "role-assignment",
+      "multi-select"
+    ]
+  },
+  {
+    "id": "csa-ic-071",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "Notifications",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An admin needs the incident assignee to receive an email when an incident is set to Priority 1. Where is this condition defined in the notification record?",
+    "options": [
+      {
+        "id": "A",
+        "text": "In the Email Template field"
+      },
+      {
+        "id": "B",
+        "text": "In the When to send section of the notification"
+      },
+      {
+        "id": "C",
+        "text": "In the System Property for email triggers"
+      },
+      {
+        "id": "D",
+        "text": "In the Business Rule condition field"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The 'When to send' section of a notification record defines the conditions that trigger the notification, such as when Priority = 1. The 'Who receives' section specifies the assignee as a recipient.",
+    "distractor_notes": {
+      "A": "The Email Template defines the content structure, not the trigger conditions.",
+      "C": "System properties configure the email server behavior, not individual notification triggers.",
+      "D": "Business rules are separate automation records; notification conditions are defined on the notification itself."
+    },
+    "references": [
+      {
+        "title": "Email and SMS notifications",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/c_EmailNotifications.html"
+      }
+    ],
+    "tags": [
+      "notifications",
+      "when-to-send",
+      "conditions"
+    ]
+  },
+  {
+    "id": "csa-ic-072",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "Update Sets",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is an update set collision?",
+    "options": [
+      {
+        "id": "A",
+        "text": "When two update sets are exported at the same time from different instances"
+      },
+      {
+        "id": "B",
+        "text": "When a change in the update set conflicts with an existing customization on the target instance"
+      },
+      {
+        "id": "C",
+        "text": "When an update set exceeds the maximum allowed file size for import"
+      },
+      {
+        "id": "D",
+        "text": "When a plugin is activated while an update set is in progress"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "A collision occurs during preview when the update set tries to apply a change that conflicts with a customization already present on the target instance. The admin must resolve these before committing.",
+    "distractor_notes": {
+      "A": "Simultaneous exports from different instances do not constitute a collision.",
+      "C": "There is no standard maximum file size for update set import that creates a 'collision'.",
+      "D": "Plugin activation during an update set does not create an update set collision."
+    },
+    "references": [
+      {
+        "title": "Update sets",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/ia-update-set.html"
+      }
+    ],
+    "tags": [
+      "update-sets",
+      "collision"
+    ]
+  },
+  {
+    "id": "csa-ic-073",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "Application Scope",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the global application scope used for in ServiceNow?",
+    "options": [
+      {
+        "id": "A",
+        "text": "It is a restricted scope used only by ServiceNow for platform tables"
+      },
+      {
+        "id": "B",
+        "text": "It is the default scope for configurations that apply across all applications and are not isolated to a specific app"
+      },
+      {
+        "id": "C",
+        "text": "It is the scope for the ServiceNow Store applications"
+      },
+      {
+        "id": "D",
+        "text": "It is a read-only scope for viewing platform configurations"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The global scope is the default application scope where configurations that apply across the platform (not isolated to a specific application) are stored. Many core platform configurations exist in global scope.",
+    "distractor_notes": {
+      "A": "Global scope is accessible to admins, not restricted to ServiceNow only.",
+      "C": "Store applications use their own scoped namespaces, not global scope.",
+      "D": "Global scope is not read-only; it is the primary scope for cross-application configurations."
+    },
+    "references": [
+      {
+        "title": "Administer the ServiceNow AI Platform",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/intro-now-platform-landing.html"
+      }
+    ],
+    "tags": [
+      "application-scope",
+      "global"
+    ]
+  },
+  {
+    "id": "csa-ic-074",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "Users and Groups",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which type of role assignment takes effect for a user as soon as they are added to a group that has the role?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Explicit role assignment only"
+      },
+      {
+        "id": "B",
+        "text": "Inherited role from group membership"
+      },
+      {
+        "id": "C",
+        "text": "Delegated role assignment"
+      },
+      {
+        "id": "D",
+        "text": "Temporary role escalation"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "When a role is assigned to a group, all users who are members of that group immediately inherit the role. This is role inheritance via group membership.",
+    "distractor_notes": {
+      "A": "Explicit role assignment is when the role is directly added to the user record, not via a group.",
+      "C": "Delegated roles are a different mechanism for temporary role grants, not the immediate group inheritance described.",
+      "D": "Temporary role escalation is not a standard group membership mechanism."
+    },
+    "references": [
+      {
+        "title": "User roles",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/user-administration/application-specific-roles.html"
+      }
+    ],
+    "tags": [
+      "roles",
+      "groups",
+      "inheritance"
+    ]
+  },
+  {
+    "id": "csa-ic-075",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "Plugins",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What typically happens when a plugin is installed on a ServiceNow instance?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The plugin downloads a zip file that the admin must manually extract"
+      },
+      {
+        "id": "B",
+        "text": "An application with components such as tables, roles, and scheduled jobs is installed"
+      },
+      {
+        "id": "C",
+        "text": "The platform is temporarily taken offline during installation"
+      },
+      {
+        "id": "D",
+        "text": "The plugin is applied only to the sandbox environment until promoted"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Activating a plugin installs an application on the instance. Each application consists of components such as tables, user roles, scheduled jobs, and more.",
+    "distractor_notes": {
+      "A": "Plugin activation is server-side; there is no zip download or manual extraction for the admin.",
+      "C": "Instances do not go offline during plugin activation in standard scenarios.",
+      "D": "Plugins are activated directly on the instance; there is no sandbox promotion step."
+    },
+    "references": [
+      {
+        "title": "Activate a plugin",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/t_ActivateAPlugin.html"
+      }
+    ],
+    "tags": [
+      "plugins",
+      "components"
+    ]
+  },
+  {
+    "id": "csa-ic-076",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "System Properties",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which system property location controls MIME type validation for file attachments?",
+    "options": [
+      {
+        "id": "A",
+        "text": "System Properties > General"
+      },
+      {
+        "id": "B",
+        "text": "System Properties > Email"
+      },
+      {
+        "id": "C",
+        "text": "System Properties > Security"
+      },
+      {
+        "id": "D",
+        "text": "System Properties > CMDB"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "MIME type validation for file attachments is controlled through System Properties > Security. The default setting for MIME type validation on a new instance is No (disabled).",
+    "distractor_notes": {
+      "A": "General properties control broad platform settings, not MIME validation.",
+      "B": "Email properties control mail server behavior, not file attachment MIME checking.",
+      "D": "CMDB properties relate to configuration management, not file attachments."
+    },
+    "references": [
+      {
+        "title": "Available system properties",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/r_AvailableSystemProperties.html"
+      }
+    ],
+    "tags": [
+      "system-properties",
+      "mime-type",
+      "security"
+    ]
+  },
+  {
+    "id": "csa-ic-077",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "Update Sets",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An admin wants to start capturing a specific set of form layout changes for a new incident workspace redesign. What should they do before making any changes?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Enable tracking mode in System Diagnostics"
+      },
+      {
+        "id": "B",
+        "text": "Create a new named update set and set it as the current update set"
+      },
+      {
+        "id": "C",
+        "text": "Export the current default update set before beginning"
+      },
+      {
+        "id": "D",
+        "text": "Create a backup of the production database"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Before making configuration changes intended for a specific update set, the admin should create a new named update set and set it as the current update set so all subsequent changes are captured in it.",
+    "distractor_notes": {
+      "A": "System Diagnostics does not include an update set tracking mode.",
+      "C": "Exporting the current default update set does not create a new capture container for the new changes.",
+      "D": "Creating a database backup is good practice but is unrelated to update set management."
+    },
+    "references": [
+      {
+        "title": "Update sets",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/ia-update-set.html"
+      }
+    ],
+    "tags": [
+      "update-sets",
+      "current-update-set"
+    ]
+  },
+  {
+    "id": "csa-ic-078",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "Notifications",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What does an email template provide in ServiceNow notifications?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The trigger conditions for when a notification fires"
+      },
+      {
+        "id": "B",
+        "text": "Reusable content for the subject line and message body of notifications"
+      },
+      {
+        "id": "C",
+        "text": "The list of recipients for a notification"
+      },
+      {
+        "id": "D",
+        "text": "The delivery channel selection (email vs SMS)"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Email templates provide reusable content for the subject line and message body of email notifications. They can be referenced across multiple notifications to maintain consistent messaging.",
+    "distractor_notes": {
+      "A": "Trigger conditions are defined in the 'When to send' section of the notification, not the template.",
+      "C": "Recipients are defined in the 'Who receives' section of the notification.",
+      "D": "Delivery channel (email vs SMS) is a notification-level setting, not part of the email template."
+    },
+    "references": [
+      {
+        "title": "Email and SMS notifications",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/c_EmailNotifications.html"
+      }
+    ],
+    "tags": [
+      "notifications",
+      "email-templates"
+    ]
+  },
+  {
+    "id": "csa-ic-079",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Instance Configuration",
+    "subdomain": "Update Sets",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "During preview of an update set on the target instance, a collision is detected for a business rule that was customized locally. What options does the admin have?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The update set must be rejected entirely; partial commits are not allowed"
+      },
+      {
+        "id": "B",
+        "text": "The admin can accept the incoming version, skip the colliding record, or manually merge the changes"
+      },
+      {
+        "id": "C",
+        "text": "The collision is automatically resolved using the most recent timestamp"
+      },
+      {
+        "id": "D",
+        "text": "The local version is always preserved and the incoming change is discarded"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "When a collision is detected during preview, the admin can choose to accept the incoming version from the update set, skip that individual record, or manually resolve by merging both sets of changes.",
+    "distractor_notes": {
+      "A": "Partial commits are possible; individual colliding records can be skipped.",
+      "C": "Collisions are not automatically resolved by timestamp; they require manual admin decision.",
+      "D": "The local version is not automatically preserved; the admin makes the decision."
+    },
+    "references": [
+      {
+        "title": "Update sets",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-administration/ia-update-set.html"
+      }
+    ],
+    "tags": [
+      "update-sets",
+      "collision",
+      "preview",
+      "scenario"
     ]
   }
 ]
