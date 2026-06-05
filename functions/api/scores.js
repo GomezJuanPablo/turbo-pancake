@@ -97,5 +97,32 @@ export async function onRequest(context) {
     }
   }
 
+  // ── PUT (temporary seed) ───────────────────────────────────────────
+  if (method === 'PUT') {
+    let body;
+    try { body = await request.json(); }
+    catch { return respond({ error: 'Invalid JSON body' }, 400); }
+    if (!body || body.key !== 'seed_osNTUgSo8tVfNRRynIt7WH9o5nJ2M3g0') return respond({ error: 'Unauthorized' }, 401);
+    const examUpper = (body.exam ?? '').toUpperCase();
+    if (!VALID_EXAMS.has(examUpper)) return respond({ error: 'Unknown exam' }, 400);
+    if (!Array.isArray(body.scores) || body.scores.length === 0) return respond({ error: 'bad scores' }, 400);
+    const board = [];
+    for (const r of body.scores) {
+      const score = Number(r.score), total = Number(r.total);
+      if (!r.username || typeof r.username !== 'string' || r.username.length > 24) continue;
+      if (!Number.isFinite(score) || !Number.isFinite(total) || total <= 0 || score < 0 || score > total) continue;
+      board.push({
+        username: r.username.trim(), exam: examUpper,
+        mode: typeof r.mode === 'string' ? r.mode.slice(0, 40) : 'Exam Sim 1',
+        score, total, pct: Math.round((score / total) * 100),
+        at: typeof r.at === 'string' ? r.at : new Date().toISOString(),
+      });
+    }
+    board.sort((a, b) => b.pct - a.pct || b.score - a.score);
+    const trimmed = board.slice(0, TOP_N);
+    await env.leaderboard.put(`top:${examUpper}`, JSON.stringify(trimmed));
+    return respond({ ok: true, count: trimmed.length });
+  }
+
   return respond({ error: 'Method not allowed' }, 405);
 }
