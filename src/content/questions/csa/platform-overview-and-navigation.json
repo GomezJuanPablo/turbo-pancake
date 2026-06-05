@@ -31,7 +31,7 @@
     ],
     "rationale": "The Unified Navigation header is the persistent top bar in Next Experience. It surfaces the company logo, primary navigation, the global search, and user controls, and stays in place as you move between classic UI pages and Workspaces.",
     "distractor_notes": {
-      "A": "The Application Navigator is the left-side filter/menu tree (favorites, history, all apps) — it's a navigation panel inside a page, not the global header.",
+      "A": "The Application Navigator is the left-side filter/menu tree (favorites, history, all apps) \u2014 it's a navigation panel inside a page, not the global header.",
       "C": "The form header is the band that sits on top of a single record form. It's local to the record, not global.",
       "D": "The Service Portal banner only appears inside Service Portal pages, not across the Now Platform UI."
     },
@@ -77,9 +77,9 @@
     "correct": [
       "A"
     ],
-    "rationale": "The Filter Navigator sits at the top of the Application Navigator and matches application menus and modules as you type — the fastest way to find a module without scrolling.",
+    "rationale": "The Filter Navigator sits at the top of the Application Navigator and matches application menus and modules as you type \u2014 the fastest way to find a module without scrolling.",
     "distractor_notes": {
-      "B": "Breadcrumbs show where you are inside a list query — they don't filter the nav tree.",
+      "B": "Breadcrumbs show where you are inside a list query \u2014 they don't filter the nav tree.",
       "C": "Reference lookups appear on reference fields inside forms to find related records. They aren't part of the nav.",
       "D": "Context menus are right-click menus on lists, forms, and fields. They don't filter the nav tree."
     },
@@ -129,7 +129,7 @@
     "distractor_notes": {
       "A": "There's no 'everything I've ever updated' view in the Application Navigator. Audit data lives on the record itself.",
       "C": "Per-record audit history appears on the record (Activity Log, Audit), not in the navigator's History tab.",
-      "D": "Hidden modules are governed by roles and module visibility — not by the History tab."
+      "D": "Hidden modules are governed by roles and module visibility \u2014 not by the History tab."
     },
     "references": [
       {
@@ -175,7 +175,7 @@
     "rationale": "Favorites are managed by selecting the star icon next to a module or page. The starred items appear under the user's Favorites in Next Experience and persist per user.",
     "distractor_notes": {
       "B": "There's no 'Save as Favorite' option in the form header context menu. Form headers expose record-level actions, not nav favorites.",
-      "C": "Typing into global search runs a search across configured indexed tables — it doesn't favorite anything.",
+      "C": "Typing into global search runs a search across configured indexed tables \u2014 it doesn't favorite anything.",
       "D": "There is no glide.user.favorites system property. Favorites are stored per user in platform tables, managed through the UI."
     },
     "references": [
@@ -228,7 +228,7 @@
     },
     "references": [
       {
-        "title": "Tags — Common UI elements",
+        "title": "Tags \u2014 Common UI elements",
         "url": "https://www.servicenow.com/docs/r/zurich/platform-user-interface/c_Tags.html"
       }
     ],
@@ -316,7 +316,7 @@
     "correct": [
       "B"
     ],
-    "rationale": "The List Editor lets users update field values directly from the list view by double-clicking a cell — perfect for quick edits to a handful of records without opening each form.",
+    "rationale": "The List Editor lets users update field values directly from the list view by double-clicking a cell \u2014 perfect for quick edits to a handful of records without opening each form.",
     "distractor_notes": {
       "A": "Related list personalization controls which columns appear in a related list and their order. It doesn't enable inline edits.",
       "C": "Reference qualifiers restrict which records a reference field can select. They have nothing to do with editing values from a list.",
@@ -364,7 +364,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "A Related List shows records from another table that share a relationship with the record you're on — incidents on a caller, tasks on a change, attachments on an incident, and so on. It's how the form exposes connected data without leaving the page.",
+    "rationale": "A Related List shows records from another table that share a relationship with the record you're on \u2014 incidents on a caller, tasks on a change, attachments on an incident, and so on. It's how the form exposes connected data without leaving the page.",
     "distractor_notes": {
       "B": "Audit information lives in the Activity Log and Audit related lists (which are themselves related lists, but the term 'Related List' is broader and isn't synonymous with audit).",
       "C": "Read access is governed by ACLs. It isn't surfaced as a generic related list.",
@@ -393,19 +393,19 @@
     "options": [
       {
         "id": "A",
-        "text": "Form Layout (admin) — modify the form definition."
+        "text": "Form Layout (admin) \u2014 modify the form definition."
       },
       {
         "id": "B",
-        "text": "Personalize Form — adjust which fields appear for this user only."
+        "text": "Personalize Form \u2014 adjust which fields appear for this user only."
       },
       {
         "id": "C",
-        "text": "Update Set — package the change as a customization."
+        "text": "Update Set \u2014 package the change as a customization."
       },
       {
         "id": "D",
-        "text": "Business Rule — hide the fields server-side."
+        "text": "Business Rule \u2014 hide the fields server-side."
       }
     ],
     "correct": [
@@ -510,7 +510,7 @@
     "rationale": "Global search queries the tables and fields that admins have configured for search indexes, then presents results grouped by record type (Incident, Change, KB, etc.). It's scoped, performant, and respects each user's access rights.",
     "distractor_notes": {
       "A": "Searching every column of every table would be unusable. Global search is built around configured search groups, not exhaustive scans.",
-      "C": "Global search doesn't pick a single table and turn into a list filter — it returns results across configured tables.",
+      "C": "Global search doesn't pick a single table and turn into a list filter \u2014 it returns results across configured tables.",
       "D": "There's no per-user SQL LIKE behavior. The platform uses indexed search and ACLs to filter what each user sees."
     },
     "references": [
@@ -554,7 +554,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "An embedded list is a related list rendered inline as part of a form section, so the connected records are visible without scrolling to the very bottom of the form. It's still a related list — just embedded.",
+    "rationale": "An embedded list is a related list rendered inline as part of a form section, so the connected records are visible without scrolling to the very bottom of the form. It's still a related list \u2014 just embedded.",
     "distractor_notes": {
       "B": "Audit history surfaces in the Activity Log and audit-related lists. It isn't what 'embedded list' means.",
       "C": "A reference field opens a lookup picker, not an inline list of related records.",
@@ -580,7 +580,7 @@
     "subdomain": "Unified Navigation Administration",
     "difficulty": "scenario",
     "type": "single_select",
-    "stem": "An admin needs to add a new custom menu — \"Operations\" — to the global header so it appears for users across every page. Which administration feature is the right starting point?",
+    "stem": "An admin needs to add a new custom menu \u2014 \"Operations\" \u2014 to the global header so it appears for users across every page. Which administration feature is the right starting point?",
     "options": [
       {
         "id": "A",
@@ -602,7 +602,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "Custom menus for the global header are configured through the Unified Navigation administration tooling. You define the menu, choose what it contains, and assign the audience that should see it — and then it appears in the header for those users.",
+    "rationale": "Custom menus for the global header are configured through the Unified Navigation administration tooling. You define the menu, choose what it contains, and assign the audience that should see it \u2014 and then it appears in the header for those users.",
     "distractor_notes": {
       "B": "User profiles store per-user data and preferences but don't add globally visible menus to the header.",
       "C": "Service Portal is a separate experience layer for self-service end users; it doesn't drive Next Experience global header menus.",
@@ -640,7 +640,7 @@
       },
       {
         "id": "C",
-        "text": "Tables, fields, and forms are independent objects — none of them are related at the data layer."
+        "text": "Tables, fields, and forms are independent objects \u2014 none of them are related at the data layer."
       },
       {
         "id": "D",
@@ -671,6 +671,1425 @@
       "tables",
       "fields",
       "forms"
+    ]
+  },
+  {
+    "id": "csa-pon-015",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Next Experience Unified Navigation",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which component of the Next Experience Unified Navigation allows a user to quickly navigate to a specific module by typing its name, even with missing letters?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Global Search"
+      },
+      {
+        "id": "B",
+        "text": "Filter field"
+      },
+      {
+        "id": "C",
+        "text": "All menu"
+      },
+      {
+        "id": "D",
+        "text": "Contextual app pill"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The Filter field in the Unified Navigation supports fuzzy matching \u2014 it accommodates missing letters in queries \u2014 letting users quickly jump to a module without typing the exact name.",
+    "distractor_notes": {
+      "A": "Global Search searches record content across tables; it does not navigate to modules by name.",
+      "C": "The All menu lists all available modules but does not have a fuzzy-match filter built into the navigation bar itself.",
+      "D": "The contextual app pill shows where you currently are and lets you favorite that page; it does not filter modules."
+    },
+    "references": [
+      {
+        "title": "Using the Next Experience Unified Navigation",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/using-the-next-experience-global-header.html"
+      }
+    ],
+    "tags": [
+      "unified-navigation",
+      "filter"
+    ]
+  },
+  {
+    "id": "csa-pon-016",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Next Experience Unified Navigation",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "In the Next Experience Unified Navigation, what does clicking the ServiceNow logo do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Opens the All menu"
+      },
+      {
+        "id": "B",
+        "text": "Returns the user to the Next Experience landing page"
+      },
+      {
+        "id": "C",
+        "text": "Opens the user preferences panel"
+      },
+      {
+        "id": "D",
+        "text": "Logs the user out of the instance"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The Logo in the Unified Navigation returns you to the Next Experience landing page. Administrators can replace it with a company logo, but its function remains the same.",
+    "distractor_notes": {
+      "A": "The All menu is a separate control in the Unified Navigation; the logo does not open it.",
+      "C": "User preferences are accessed through the User menu, not the logo.",
+      "D": "Logging out is done through the User menu, not the logo."
+    },
+    "references": [
+      {
+        "title": "Using the Next Experience Unified Navigation",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/using-the-next-experience-global-header.html"
+      }
+    ],
+    "tags": [
+      "unified-navigation",
+      "logo"
+    ]
+  },
+  {
+    "id": "csa-pon-017",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Next Experience Unified Navigation",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "To navigate directly to a list view for the sys_properties table using the Unified Navigation filter field, what should a user type?",
+    "options": [
+      {
+        "id": "A",
+        "text": "sys_properties"
+      },
+      {
+        "id": "B",
+        "text": "sys_properties.list"
+      },
+      {
+        "id": "C",
+        "text": "sys_properties.do"
+      },
+      {
+        "id": "D",
+        "text": "list.sys_properties"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "For a list view, enter the table name in the format name.list \u2014 for example, sys_properties.list. Using the .do suffix opens a form view instead.",
+    "distractor_notes": {
+      "A": "Typing just the table name searches modules by name but does not guarantee a list view.",
+      "C": "The .do suffix opens a form (record) view, not a list view.",
+      "D": "list.sys_properties is not a valid format in ServiceNow navigation."
+    },
+    "references": [
+      {
+        "title": "Using the Next Experience Unified Navigation",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/using-the-next-experience-global-header.html"
+      }
+    ],
+    "tags": [
+      "unified-navigation",
+      "filter",
+      "list-view"
+    ]
+  },
+  {
+    "id": "csa-pon-018",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Next Experience Unified Navigation",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A user wants the Unified Navigation All menu to reflect the most recent module additions without clearing the browser cache. What should they do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Log out and back in to the instance"
+      },
+      {
+        "id": "B",
+        "text": "Select the refresh icon inside the All menu"
+      },
+      {
+        "id": "C",
+        "text": "Navigate to System Properties and flush the cache"
+      },
+      {
+        "id": "D",
+        "text": "Use the Filter field to search for the new module"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The All menu includes a refresh icon that obtains the latest menu items without needing to manually clear the cache or log out.",
+    "distractor_notes": {
+      "A": "Logging out would work but is unnecessary \u2014 the refresh icon in the All menu is the correct lightweight approach.",
+      "C": "Flushing the system cache from System Properties is an admin operation for server-side caching, not related to Unified Navigation menu state.",
+      "D": "The Filter field searches existing menu items; it does not reload the menu from the server."
+    },
+    "references": [
+      {
+        "title": "Using the Next Experience Unified Navigation",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/using-the-next-experience-global-header.html"
+      }
+    ],
+    "tags": [
+      "unified-navigation",
+      "all-menu",
+      "refresh"
+    ]
+  },
+  {
+    "id": "csa-pon-019",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Favorites",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which role is required to add a favorite in Next Experience?",
+    "options": [
+      {
+        "id": "A",
+        "text": "admin"
+      },
+      {
+        "id": "B",
+        "text": "itil"
+      },
+      {
+        "id": "C",
+        "text": "No role is required"
+      },
+      {
+        "id": "D",
+        "text": "personalize_list"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Adding favorites in Next Experience requires no role. Any authenticated user can favorite pages, modules, and records.",
+    "distractor_notes": {
+      "A": "The admin role is not required for favorites; this is a basic user feature.",
+      "B": "The itil role grants access to ITSM modules but is not related to the favorites feature.",
+      "D": "personalize_list controls list column personalization, not favorites."
+    },
+    "references": [
+      {
+        "title": "Managing your favorites in Next Experience",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/managing-your-favorites.html"
+      }
+    ],
+    "tags": [
+      "favorites",
+      "roles"
+    ]
+  },
+  {
+    "id": "csa-pon-020",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Favorites",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A user is viewing an incident record in the classic environment and wants to add it to their Favorites. What is the correct approach?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Select the star icon in the contextual app pill in the Unified Navigation"
+      },
+      {
+        "id": "B",
+        "text": "Select the context menu icon next to the record title, then choose Create Favorite"
+      },
+      {
+        "id": "C",
+        "text": "Right-click the browser tab and bookmark the page"
+      },
+      {
+        "id": "D",
+        "text": "Navigate to System Settings and add the URL manually"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "From a list or record in the classic environment, select the context menu icon next to the list or record title, then select Create Favorite. Different favorites can be saved for each view of the same record.",
+    "distractor_notes": {
+      "A": "The star in the contextual app pill works for Next Experience pages; for classic environment records the context menu approach is used.",
+      "C": "Browser bookmarks are not the same as ServiceNow Favorites and do not appear in the Favorites menu.",
+      "D": "There is no System Settings option to manually add URLs as favorites."
+    },
+    "references": [
+      {
+        "title": "Managing your favorites in Next Experience",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/managing-your-favorites.html"
+      }
+    ],
+    "tags": [
+      "favorites",
+      "classic-environment"
+    ]
+  },
+  {
+    "id": "csa-pon-021",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Global Search",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "A user types an incident number into the Unified Navigation search field and sees a preview with an 'Exact Match' tag. What happens when they select that preview?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The system opens the search results page filtered to that incident number"
+      },
+      {
+        "id": "B",
+        "text": "The user is taken directly to the matching record, bypassing the search results page"
+      },
+      {
+        "id": "C",
+        "text": "The system opens a new browser tab with the record"
+      },
+      {
+        "id": "D",
+        "text": "The system prompts the user to confirm which table to search"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "When a record number matches exactly, the Exact Match preview lets you navigate directly to that record without going through the search results page.",
+    "distractor_notes": {
+      "A": "The search results page is bypassed entirely when an Exact Match is selected.",
+      "C": "No new tab is opened; the record opens in the current context.",
+      "D": "The Exact Match feature resolves to a specific record automatically with no table confirmation prompt."
+    },
+    "references": [
+      {
+        "title": "Using search in Next Experience",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/using-search-next-experience.html"
+      }
+    ],
+    "tags": [
+      "global-search",
+      "exact-match"
+    ]
+  },
+  {
+    "id": "csa-pon-022",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Global Search",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "On the Next Experience search results page, what does selecting a source table entry in the left-side list do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Opens a new global search scoped to only that table"
+      },
+      {
+        "id": "B",
+        "text": "Filters the results page to show matches from only that source table"
+      },
+      {
+        "id": "C",
+        "text": "Creates a saved filter for that table in the navigator"
+      },
+      {
+        "id": "D",
+        "text": "Exports the results from that table to a spreadsheet"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The search results page includes a list of source tables showing matching record counts. Selecting a source table filters the results to show records from that table only.",
+    "distractor_notes": {
+      "A": "No new global search is triggered; you are filtering the existing results.",
+      "C": "Selecting a source table does not create a navigator filter.",
+      "D": "There is no export-to-spreadsheet action when selecting a source table on the results page."
+    },
+    "references": [
+      {
+        "title": "Using search in Next Experience",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/using-search-next-experience.html"
+      }
+    ],
+    "tags": [
+      "global-search",
+      "results-page"
+    ]
+  },
+  {
+    "id": "csa-pon-023",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Global Search",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What appears when a user clicks the empty Unified Navigation search field without typing anything?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A list of all searchable tables in the instance"
+      },
+      {
+        "id": "B",
+        "text": "Recently Searched queries and Recently Viewed search result records"
+      },
+      {
+        "id": "C",
+        "text": "A prompt to install the global search plugin"
+      },
+      {
+        "id": "D",
+        "text": "The user's saved search filters"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "When you select the empty search field, the system displays your most recent search queries (Recently Searched) and your most recently viewed search results (Recently Viewed).",
+    "distractor_notes": {
+      "A": "Clicking the empty search field does not list all searchable tables.",
+      "C": "Global search is a base platform feature; no plugin prompt appears.",
+      "D": "Saved filters belong to the list/filter context, not the global search field."
+    },
+    "references": [
+      {
+        "title": "Using search in Next Experience",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/using-search-next-experience.html"
+      }
+    ],
+    "tags": [
+      "global-search",
+      "recently-viewed"
+    ]
+  },
+  {
+    "id": "csa-pon-024",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Keyboard Shortcuts",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which keyboard shortcut opens the keyboard shortcuts modal for the page currently being viewed in Next Experience on Windows?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Control+Shift+k"
+      },
+      {
+        "id": "B",
+        "text": "Control+/"
+      },
+      {
+        "id": "C",
+        "text": "Control+Alt+h"
+      },
+      {
+        "id": "D",
+        "text": "Control+Alt+s"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Control+/ (Command+/ on macOS) opens the keyboard shortcuts modal, which shows shortcuts specific to the screen you are currently viewing, grouped by category.",
+    "distractor_notes": {
+      "A": "Control+Shift+k is not a documented Next Experience keyboard shortcut.",
+      "C": "Control+Alt+h is not the shortcut for the keyboard shortcuts modal.",
+      "D": "Control+Alt+s is not documented as a keyboard shortcut in Next Experience."
+    },
+    "references": [
+      {
+        "title": "Next Experience keyboard shortcuts",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/next-experience-keyboard-shortcuts.html"
+      }
+    ],
+    "tags": [
+      "keyboard-shortcuts"
+    ]
+  },
+  {
+    "id": "csa-pon-025",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Keyboard Shortcuts",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the Windows keyboard shortcut to create a new record in Next Experience?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Control+n"
+      },
+      {
+        "id": "B",
+        "text": "Control+Alt+n"
+      },
+      {
+        "id": "C",
+        "text": "Shift+Alt+n"
+      },
+      {
+        "id": "D",
+        "text": "Control+Shift+n"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Shift+Alt+n (Shift+Option+n on macOS) creates a new record in Next Experience.",
+    "distractor_notes": {
+      "A": "Control+n is a common browser shortcut for a new tab, not a ServiceNow new record shortcut.",
+      "B": "Control+Alt+n is not documented as the new record shortcut.",
+      "D": "Control+Shift+n opens an incognito window in Chrome, not a new ServiceNow record."
+    },
+    "references": [
+      {
+        "title": "Next Experience keyboard shortcuts",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/next-experience-keyboard-shortcuts.html"
+      }
+    ],
+    "tags": [
+      "keyboard-shortcuts",
+      "new-record"
+    ]
+  },
+  {
+    "id": "csa-pon-026",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Keyboard Shortcuts",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which keyboard shortcut saves a record in Next Experience on Windows?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Control+Enter"
+      },
+      {
+        "id": "B",
+        "text": "Control+s"
+      },
+      {
+        "id": "C",
+        "text": "Control+Shift+s"
+      },
+      {
+        "id": "D",
+        "text": "Alt+s"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Control+s (Command+s on macOS) saves the current record in Next Experience.",
+    "distractor_notes": {
+      "A": "Control+Enter is not the documented save shortcut in Next Experience.",
+      "C": "Control+Shift+s is not documented as a save shortcut.",
+      "D": "Alt+s is not a documented Next Experience keyboard shortcut."
+    },
+    "references": [
+      {
+        "title": "Next Experience keyboard shortcuts",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/next-experience-keyboard-shortcuts.html"
+      }
+    ],
+    "tags": [
+      "keyboard-shortcuts",
+      "save"
+    ]
+  },
+  {
+    "id": "csa-pon-027",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Start Page Options",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which Next Experience start page option is described as a deprecated feature that is read-only from the Tokyo release onward?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Responsive dashboards"
+      },
+      {
+        "id": "B",
+        "text": "Configurable workspace home"
+      },
+      {
+        "id": "C",
+        "text": "Homepages"
+      },
+      {
+        "id": "D",
+        "text": "User-selected landing page"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Homepages are a deprecated feature. From the Tokyo release, homepages are read-only in Next Experience-enabled instances. Administrators should convert them to responsive dashboards.",
+    "distractor_notes": {
+      "A": "Responsive dashboards are the recommended replacement for deprecated homepages, not deprecated themselves.",
+      "B": "Configurable workspace home is a current, supported start page option.",
+      "D": "User-selected landing page is a supported, current option."
+    },
+    "references": [
+      {
+        "title": "Configuring Next Experience start page options",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/next-experience-start-option.html"
+      }
+    ],
+    "tags": [
+      "start-page",
+      "homepages",
+      "deprecated"
+    ]
+  },
+  {
+    "id": "csa-pon-028",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Start Page Options",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An administrator needs to configure a role-based landing page that routes users to different configurable workspaces depending on their role. Which start page option supports this?",
+    "options": [
+      {
+        "id": "A",
+        "text": "User-selected landing page"
+      },
+      {
+        "id": "B",
+        "text": "Next Experience default landing page"
+      },
+      {
+        "id": "C",
+        "text": "Admin-selected landing page"
+      },
+      {
+        "id": "D",
+        "text": "Responsive dashboard"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "The admin-selected landing page option supports role-based logic that directs users to different configurable workspaces. The admin configures per-user or global landing pages, including role-based routing.",
+    "distractor_notes": {
+      "A": "User-selected landing page is set by individual users, not by admins applying role-based logic.",
+      "B": "The Next Experience default landing page is a fixed page, not role-configurable per workspace.",
+      "D": "Responsive dashboards are a valid start page but do not natively support role-based workspace routing."
+    },
+    "references": [
+      {
+        "title": "Next Experience administrator start options",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/ne-start-options-admin.html"
+      }
+    ],
+    "tags": [
+      "start-page",
+      "admin",
+      "role-based"
+    ]
+  },
+  {
+    "id": "csa-pon-029",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Lists",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "In the classic environment, what is the primary definition of a ServiceNow list?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A form that displays one record from a table"
+      },
+      {
+        "id": "B",
+        "text": "A set of records displayed from a table"
+      },
+      {
+        "id": "C",
+        "text": "A saved query stored in a user's profile"
+      },
+      {
+        "id": "D",
+        "text": "A dashboard widget that shows aggregated data"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "A list in the classic environment displays a set of records from a table. Users can search, sort, filter, and edit data in lists.",
+    "distractor_notes": {
+      "A": "That describes a form, not a list. A form displays one record; a list displays many.",
+      "C": "A saved query is a filter condition, not a list itself.",
+      "D": "A dashboard widget shows aggregated reporting data; that is distinct from a record list."
+    },
+    "references": [
+      {
+        "title": "Lists in the classic environment",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/c_UseLists.html"
+      }
+    ],
+    "tags": [
+      "lists",
+      "classic-environment"
+    ]
+  },
+  {
+    "id": "csa-pon-030",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Lists",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What does each column in a classic environment list correspond to?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A related table in the database"
+      },
+      {
+        "id": "B",
+        "text": "A field on the table being displayed"
+      },
+      {
+        "id": "C",
+        "text": "A UI action defined on the table"
+      },
+      {
+        "id": "D",
+        "text": "A section defined on the associated form"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Each column in a list corresponds to a field on the table. The list interface consists of a title bar, filters and breadcrumbs, columns of data, and a footer.",
+    "distractor_notes": {
+      "A": "Columns represent fields, not related tables. Related tables appear as related lists.",
+      "C": "UI actions are buttons or links, not columns.",
+      "D": "Form sections organize fields on a form view; they do not correspond to list columns."
+    },
+    "references": [
+      {
+        "title": "Lists in the classic environment",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/c_UseLists.html"
+      }
+    ],
+    "tags": [
+      "lists",
+      "columns",
+      "fields"
+    ]
+  },
+  {
+    "id": "csa-pon-031",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Lists",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the purpose of a hierarchical list in the classic environment?",
+    "options": [
+      {
+        "id": "A",
+        "text": "To display records sorted by a parent-child field relationship"
+      },
+      {
+        "id": "B",
+        "text": "To allow users to view related list records without navigating to a form"
+      },
+      {
+        "id": "C",
+        "text": "To restrict list access to users with the admin role"
+      },
+      {
+        "id": "D",
+        "text": "To merge multiple tables into a single view"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Hierarchical lists allow users to view records from related lists directly within list view, without having to navigate to a form. Users expand or collapse sublists using the arrow icon.",
+    "distractor_notes": {
+      "A": "Hierarchical lists are about expanding related records in-place, not just sorting by parent-child fields.",
+      "C": "Hierarchical lists do not restrict access; administrators enable them per table.",
+      "D": "Merging multiple tables into one view describes a joined list or reporting feature, not a hierarchical list."
+    },
+    "references": [
+      {
+        "title": "Lists in the classic environment",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/c_UseLists.html"
+      }
+    ],
+    "tags": [
+      "lists",
+      "hierarchical-list"
+    ]
+  },
+  {
+    "id": "csa-pon-032",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Lists",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An administrator enables detail rows on the Incident list and configures the Short Description field as the source. What is the effect on the list?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The Short Description column is hidden from the list, and its value appears as a detail row below each record"
+      },
+      {
+        "id": "B",
+        "text": "The Short Description field is bolded in the list to make it more prominent"
+      },
+      {
+        "id": "C",
+        "text": "The Short Description becomes a mandatory filter on the list"
+      },
+      {
+        "id": "D",
+        "text": "A second list view is created showing only the Short Description"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "When a field is designated as the source for list detail rows, the system hides the list column for that field and instead displays its value as a detail row below each record row.",
+    "distractor_notes": {
+      "B": "Detail rows do not bold the field; they display it below each record in a separate row.",
+      "C": "Detail rows have nothing to do with filters or making fields mandatory.",
+      "D": "Detail rows modify the existing list view in place; no second list is created."
+    },
+    "references": [
+      {
+        "title": "Lists in the classic environment",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/c_UseLists.html"
+      }
+    ],
+    "tags": [
+      "lists",
+      "detail-rows"
+    ]
+  },
+  {
+    "id": "csa-pon-033",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Forms",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the definition of a form in the classic ServiceNow environment?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A list that groups records by a common field value"
+      },
+      {
+        "id": "B",
+        "text": "A view that displays information from one record in a data table"
+      },
+      {
+        "id": "C",
+        "text": "A dashboard that shows performance metrics for a single table"
+      },
+      {
+        "id": "D",
+        "text": "A template used to pre-populate multiple records at once"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "A form in the classic environment displays information from one record in a data table. Users can view and edit records in forms, and administrators can configure what appears on them.",
+    "distractor_notes": {
+      "A": "Grouping records by a field is a list feature, not a form.",
+      "C": "Performance metrics are shown in dashboards/reports, not forms.",
+      "D": "Templates can populate fields on a form, but a template is not the same as a form itself."
+    },
+    "references": [
+      {
+        "title": "Forms in the classic environment",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/c_UsingForms.html"
+      }
+    ],
+    "tags": [
+      "forms",
+      "classic-environment"
+    ]
+  },
+  {
+    "id": "csa-pon-034",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Forms",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which form element provides access to additional functions based on record type and system setup, and can be extended by administrators using UI actions?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Related lists"
+      },
+      {
+        "id": "B",
+        "text": "Sections"
+      },
+      {
+        "id": "C",
+        "text": "Related links"
+      },
+      {
+        "id": "D",
+        "text": "Embedded lists"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Related links provide access to additional functions based on record type and system setup. Administrators can add related links to forms using UI actions.",
+    "distractor_notes": {
+      "A": "Related lists display records in other tables with relationships to the current record, not additional functions.",
+      "B": "Sections group related information on the form; they are not action-based.",
+      "D": "Embedded lists allow editing related records without leaving the form, but are not the mechanism for additional function links."
+    },
+    "references": [
+      {
+        "title": "Forms in the classic environment",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/c_UsingForms.html"
+      }
+    ],
+    "tags": [
+      "forms",
+      "related-links",
+      "ui-actions"
+    ]
+  },
+  {
+    "id": "csa-pon-035",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Forms",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A user collapses a section on an Incident form. What happens the next time they open any record using that same form?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The section is reset to expanded by default"
+      },
+      {
+        "id": "B",
+        "text": "The section remains collapsed, as the preference is saved per user"
+      },
+      {
+        "id": "C",
+        "text": "All other users on the instance also see the section collapsed"
+      },
+      {
+        "id": "D",
+        "text": "The section is hidden permanently until an admin restores it"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "When a user collapses or expands a form section, the selection is saved as a user preference. The next time they access a record using the same form, the sections remain in the same state.",
+    "distractor_notes": {
+      "A": "The preference is persisted, not reset; the section stays collapsed.",
+      "C": "Form section collapse state is a per-user preference, not a global setting affecting all users.",
+      "D": "The section is not hidden permanently; it can be expanded again at any time."
+    },
+    "references": [
+      {
+        "title": "Forms in the classic environment",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/c_UsingForms.html"
+      }
+    ],
+    "tags": [
+      "forms",
+      "sections",
+      "user-preferences"
+    ]
+  },
+  {
+    "id": "csa-pon-036",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Forms",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What distinguishes an embedded list from a related list on a ServiceNow form?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Embedded lists show records from unrelated tables; related lists show records from the same table"
+      },
+      {
+        "id": "B",
+        "text": "Changes to an embedded list are saved when the form is saved; related lists save immediately"
+      },
+      {
+        "id": "C",
+        "text": "Embedded lists require the admin role to view; related lists are visible to all users"
+      },
+      {
+        "id": "D",
+        "text": "Embedded lists only display read-only data; related lists allow editing"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "An embedded list allows editing related records without navigating away from the form, and changes are saved when the parent form is saved. Related lists save changes to their records independently.",
+    "distractor_notes": {
+      "A": "Both embedded lists and related lists display records from tables related to the current record.",
+      "C": "There is no role restriction on viewing embedded lists vs related lists.",
+      "D": "Embedded lists support editing; they are not read-only."
+    },
+    "references": [
+      {
+        "title": "Forms in the classic environment",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/c_UsingForms.html"
+      }
+    ],
+    "tags": [
+      "forms",
+      "embedded-lists",
+      "related-lists"
+    ]
+  },
+  {
+    "id": "csa-pon-037",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Next Experience Unified Navigation",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "In the Next Experience Unified Navigation, which area shows the user their current location in the instance and lets them favorite that page?",
+    "options": [
+      {
+        "id": "A",
+        "text": "User menu"
+      },
+      {
+        "id": "B",
+        "text": "All menu"
+      },
+      {
+        "id": "C",
+        "text": "Contextual app pill"
+      },
+      {
+        "id": "D",
+        "text": "Notifications panel"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "The contextual app pill in the Unified Navigation shows where you currently are in the instance and allows you to favorite the current item if desired.",
+    "distractor_notes": {
+      "A": "The User menu provides access to preferences and profile settings, not current location context.",
+      "B": "The All menu lists all available modules; it does not show your current location.",
+      "D": "The Notifications panel shows alerts and notifications, not your current navigation context."
+    },
+    "references": [
+      {
+        "title": "Working in the Next Experience UI",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/next-experience-ui.html"
+      }
+    ],
+    "tags": [
+      "unified-navigation",
+      "contextual-app-pill"
+    ]
+  },
+  {
+    "id": "csa-pon-038",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Next Experience Unified Navigation",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which keyboard shortcut opens the All menu in Next Experience on Windows?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Control+Shift+a"
+      },
+      {
+        "id": "B",
+        "text": "Control+Alt+a"
+      },
+      {
+        "id": "C",
+        "text": "Control+Alt+m"
+      },
+      {
+        "id": "D",
+        "text": "Shift+Alt+a"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Control+Alt+a (Command+Option+a on macOS) opens the All menu in Next Experience.",
+    "distractor_notes": {
+      "A": "Control+Shift+a opens the Admin menu, not the All menu.",
+      "C": "Control+Alt+m is not a documented shortcut for the All menu.",
+      "D": "Shift+Alt+a is not the documented shortcut for the All menu."
+    },
+    "references": [
+      {
+        "title": "Next Experience keyboard shortcuts",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/next-experience-keyboard-shortcuts.html"
+      }
+    ],
+    "tags": [
+      "keyboard-shortcuts",
+      "all-menu"
+    ]
+  },
+  {
+    "id": "csa-pon-039",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Favorites",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A user wants to add all modules under the 'Incident' application to their favorites at once. What is the most efficient method in the All menu?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Select the star icon next to each individual module one by one"
+      },
+      {
+        "id": "B",
+        "text": "Select the star icon next to the application name to favorite all its modules"
+      },
+      {
+        "id": "C",
+        "text": "Right-click the application name and choose 'Favorite all'"
+      },
+      {
+        "id": "D",
+        "text": "Navigate to System Settings and bulk-add the modules"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "In the All menu, selecting the star icon next to an application name favorites all the modules under that application at once, which is faster than starring each module individually.",
+    "distractor_notes": {
+      "A": "This would work but is inefficient when you want all modules under an application.",
+      "C": "There is no right-click 'Favorite all' option in the All menu.",
+      "D": "There is no bulk-favorite option in System Settings."
+    },
+    "references": [
+      {
+        "title": "Managing your favorites in Next Experience",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/managing-your-favorites.html"
+      }
+    ],
+    "tags": [
+      "favorites",
+      "all-menu",
+      "bulk"
+    ]
+  },
+  {
+    "id": "csa-pon-040",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Lists",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A user creates a personal list on the Incident table that shows different columns and ordering than the default view. Who else can see this personal list?",
+    "options": [
+      {
+        "id": "A",
+        "text": "All users who access the Incident table"
+      },
+      {
+        "id": "B",
+        "text": "Only users with the admin role"
+      },
+      {
+        "id": "C",
+        "text": "Only the user who created it"
+      },
+      {
+        "id": "D",
+        "text": "All users in the same group as the creator"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Personal lists modify a specific list view according to individual preferences. They are visible only to the user who created them and do not affect other users' views.",
+    "distractor_notes": {
+      "A": "Personal lists are private; changing the default view for all users requires a different approach (list administration).",
+      "B": "Admin role does not grant visibility into other users' personal lists.",
+      "D": "Personal lists are not group-shared; they are strictly per-user."
+    },
+    "references": [
+      {
+        "title": "Lists in the classic environment",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/c_UseLists.html"
+      }
+    ],
+    "tags": [
+      "lists",
+      "personal-lists"
+    ]
+  },
+  {
+    "id": "csa-pon-041",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Forms",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which form element in the classic environment provides navigation tools and actions related to the record?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Sections"
+      },
+      {
+        "id": "B",
+        "text": "Form header"
+      },
+      {
+        "id": "C",
+        "text": "Related lists"
+      },
+      {
+        "id": "D",
+        "text": "Fields"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The form header provides navigation tools and actions related to the record, such as save, insert, and navigation arrows.",
+    "distractor_notes": {
+      "A": "Sections group related information on the form; they do not provide navigation tools.",
+      "C": "Related lists display records from related tables, not navigation tools.",
+      "D": "Fields store specific data about the record; they are not navigation elements."
+    },
+    "references": [
+      {
+        "title": "Forms in the classic environment",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/c_UsingForms.html"
+      }
+    ],
+    "tags": [
+      "forms",
+      "form-header"
+    ]
+  },
+  {
+    "id": "csa-pon-042",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Global Search",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A user has access to the CSM/FSM Configurable Workspace. After performing a global search, how can they view the results specifically within that workspace?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Open the workspace separately and run the search again"
+      },
+      {
+        "id": "B",
+        "text": "Select the workspace from the context menu that appears at the right of the search field after searching"
+      },
+      {
+        "id": "C",
+        "text": "Navigate to the workspace and use its built-in search bar"
+      },
+      {
+        "id": "D",
+        "text": "Filter the global search results page by source table"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "After performing a global search, an arrow appears at the right of the Unified Navigation search field that shows a context menu of available workspace applications. Selecting one switches the results to that workspace.",
+    "distractor_notes": {
+      "A": "Re-running the search is unnecessary; the context menu switch is available after the initial search.",
+      "C": "While workspace search is an option, the context menu within the Unified Navigation search field is the correct mechanism described in the docs.",
+      "D": "Filtering by source table still shows global search results, not workspace-scoped results."
+    },
+    "references": [
+      {
+        "title": "Using search in Next Experience",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/using-search-next-experience.html"
+      }
+    ],
+    "tags": [
+      "global-search",
+      "workspace",
+      "context-menu"
+    ]
+  },
+  {
+    "id": "csa-pon-043",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Next Experience UI",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which of the following best describes what Next Experience landing pages provide?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A fixed layout identical for all users showing open incidents"
+      },
+      {
+        "id": "B",
+        "text": "Role-specific information including lists, Performance Analytics data, and prioritized tasks to help users start working"
+      },
+      {
+        "id": "C",
+        "text": "A configuration interface for administrators to manage system properties"
+      },
+      {
+        "id": "D",
+        "text": "A read-only summary of the past week's activity across all tables"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Next Experience landing pages provide information specific to the user's role and tasks, typically including lists, Performance Analytics and Reporting (PAR) data, and features to access new and prioritized tasks from one location.",
+    "distractor_notes": {
+      "A": "Landing pages are personalized by role, not a fixed incident list for all users.",
+      "C": "System properties are managed in System Administration, not the landing page.",
+      "D": "Landing pages are forward-looking (tasks to do) and role-personalized, not a read-only activity summary."
+    },
+    "references": [
+      {
+        "title": "Working in the Next Experience UI",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/next-experience-ui.html"
+      }
+    ],
+    "tags": [
+      "next-experience",
+      "landing-page"
+    ]
+  },
+  {
+    "id": "csa-pon-044",
+    "exam": "CSA",
+    "release": "Australia",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Forms",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Where does the Response Time Indicator appear on a ServiceNow form?",
+    "options": [
+      {
+        "id": "A",
+        "text": "In the form header, next to the record number"
+      },
+      {
+        "id": "B",
+        "text": "At the bottom of the form"
+      },
+      {
+        "id": "C",
+        "text": "In the Related Lists section"
+      },
+      {
+        "id": "D",
+        "text": "In the breadcrumb above the form"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The Response Time Indicator appears at the bottom of some forms (and lists) to indicate the processing time required to display the form.",
+    "distractor_notes": {
+      "A": "The form header contains navigation tools and record actions, not the response time indicator.",
+      "C": "Related lists display related records; the response time indicator is not placed there.",
+      "D": "The breadcrumb shows navigation context above the form, not performance data."
+    },
+    "references": [
+      {
+        "title": "Forms in the classic environment",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/c_UsingForms.html"
+      }
+    ],
+    "tags": [
+      "forms",
+      "response-time-indicator"
     ]
   }
 ]
