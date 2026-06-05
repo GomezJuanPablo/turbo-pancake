@@ -1,0 +1,2879 @@
+[
+  {
+    "id": "cisitsm-scr-001",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Service Catalog and Request Management",
+    "subdomain": "Record producer",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is a record producer in Service Catalog?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A specific type of catalog item that lets end users create task-based records, such as incidents, from the catalog"
+      },
+      {
+        "id": "B",
+        "text": "A workflow activity that approves requests"
+      },
+      {
+        "id": "C",
+        "text": "A report that lists open requested items"
+      },
+      {
+        "id": "D",
+        "text": "A CMDB identification rule"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "A record producer is a catalog item with a friendly form that creates a task-based record — like an incident — instead of going through a regular task form. Same catalog look and feel, different output.",
+    "distractor_notes": {
+      "B": "Approvals are workflow/flow activities, not record producers.",
+      "C": "A list of requested items is a report or list view.",
+      "D": "Identification rules are CMDB / Data Foundations configuration."
+    },
+    "references": [
+      {
+        "title": "Record Producer",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/c_RecordProducer.html"
+      }
+    ],
+    "tags": [
+      "service-catalog",
+      "record-producer"
+    ]
+  },
+  {
+    "id": "cisitsm-scr-002",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Service Catalog and Request Management",
+    "subdomain": "Record producer",
+    "difficulty": "recall",
+    "type": "multi_select",
+    "stem": "Which statements about record producers are correct?",
+    "options": [
+      {
+        "id": "A",
+        "text": "They generate a task-based record (for example, an incident) rather than a requested item"
+      },
+      {
+        "id": "B",
+        "text": "Their look and feel is similar to a catalog item"
+      },
+      {
+        "id": "C",
+        "text": "They should be used only to create task-based records"
+      },
+      {
+        "id": "D",
+        "text": "They are the recommended way to create requested item (RITM) records"
+      },
+      {
+        "id": "E",
+        "text": "They can only be submitted through two-step checkout"
+      }
+    ],
+    "correct": [
+      "A",
+      "B",
+      "C"
+    ],
+    "rationale": "Record producers look like catalog items but output a task record such as an incident, and they should be reserved for task-based records. To create requested items the right way — so workflows fire as expected — use catalog items, not record producers.",
+    "distractor_notes": {
+      "D": "Requested items should be created from catalog items, not record producers.",
+      "E": "Checkout style is unrelated to record producers; they submit directly."
+    },
+    "references": [
+      {
+        "title": "Record Producer",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/c_RecordProducer.html"
+      }
+    ],
+    "tags": [
+      "service-catalog",
+      "record-producer"
+    ]
+  },
+  {
+    "id": "cisitsm-scr-003",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Service Catalog and Request Management",
+    "subdomain": "Catalog items",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What does defining a catalog item let you do in Service Catalog?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Create, edit, and copy individual catalog items that users can request"
+      },
+      {
+        "id": "B",
+        "text": "Reconcile duplicate CIs in the CMDB"
+      },
+      {
+        "id": "C",
+        "text": "Schedule change blackout windows"
+      },
+      {
+        "id": "D",
+        "text": "Assess the root cause of a problem"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Catalog items are the orderable offerings in the catalog — defining one means creating, editing, or copying the item end users request.",
+    "distractor_notes": {
+      "B": "CI reconciliation is a CMDB / IRE activity.",
+      "C": "Blackout windows are a Change Management scheduling concept.",
+      "D": "Root cause analysis is Problem Management."
+    },
+    "references": [
+      {
+        "title": "Define a catalog item",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/t_DefineACatalogItem.html"
+      }
+    ],
+    "tags": [
+      "service-catalog",
+      "catalog-item"
+    ]
+  },
+  {
+    "id": "cisitsm-scr-004",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Service Catalog and Request Management",
+    "subdomain": "Catalog Builder",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the Catalog Builder?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A visual, guided experience for creating or editing a catalog item or record producer, which lets you delegate catalog creation and maintenance"
+      },
+      {
+        "id": "B",
+        "text": "A tool for building CMDB dependency maps"
+      },
+      {
+        "id": "C",
+        "text": "A dashboard of incident SLAs"
+      },
+      {
+        "id": "D",
+        "text": "The CAB workbench"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Catalog Builder is the guided, visual way to build catalog items and record producers — with restrictions — so creating and maintaining the catalog can be safely delegated to non-developers.",
+    "distractor_notes": {
+      "B": "Dependency maps are a CMDB feature.",
+      "C": "Incident SLA dashboards belong to Incident/SLM.",
+      "D": "The CAB workbench is a Change Management tool."
+    },
+    "references": [
+      {
+        "title": "Catalog Builder",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/catalog-builder.html"
+      }
+    ],
+    "tags": [
+      "service-catalog",
+      "catalog-builder"
+    ]
+  },
+  {
+    "id": "cisitsm-scr-005",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Service Catalog and Request Management",
+    "subdomain": "Catalog Builder",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "What does a catalog item template (used with Catalog Builder) let you do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Pre-specify values or restrictions for attributes like catalogs, categories, variable types, and portal settings during item creation or editing"
+      },
+      {
+        "id": "B",
+        "text": "Automatically resolve related incidents"
+      },
+      {
+        "id": "C",
+        "text": "Generate the CMDB baseline"
+      },
+      {
+        "id": "D",
+        "text": "Define change approval policies"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "A catalog item template sets defaults and guardrails — catalogs, categories, allowed variable types, portal settings — so delegated editors create items within the lines you define.",
+    "distractor_notes": {
+      "B": "Resolving incidents is Incident Management.",
+      "C": "CMDB baselines are a Data Foundations concept.",
+      "D": "Approval policies belong to Change Management."
+    },
+    "references": [
+      {
+        "title": "Creating or editing catalog item template",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/create-cat-item-template-cat-builder.html"
+      }
+    ],
+    "tags": [
+      "service-catalog",
+      "catalog-builder",
+      "template"
+    ]
+  },
+  {
+    "id": "cisitsm-scr-006",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Service Catalog and Request Management",
+    "subdomain": "Order guides",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the purpose of an order guide?",
+    "options": [
+      {
+        "id": "A",
+        "text": "To order a set of related catalog items together through a multi-step (two- or three-step) ordering process"
+      },
+      {
+        "id": "B",
+        "text": "To detect scheduling conflicts between changes"
+      },
+      {
+        "id": "C",
+        "text": "To reconcile CIs in the CMDB"
+      },
+      {
+        "id": "D",
+        "text": "To define an incident's priority"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "An order guide bundles related items into one guided ordering flow — handy for things like onboarding, where a single request should produce a laptop, phone, and account setup together.",
+    "distractor_notes": {
+      "B": "Conflict detection is a Change Management feature.",
+      "C": "CI reconciliation is a CMDB activity.",
+      "D": "Incident priority comes from impact and urgency."
+    },
+    "references": [
+      {
+        "title": "Create an order guide",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/t_CreateAnOrderGuide.html"
+      }
+    ],
+    "tags": [
+      "service-catalog",
+      "order-guide"
+    ]
+  },
+  {
+    "id": "cisitsm-scr-007",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Service Catalog and Request Management",
+    "subdomain": "Order guides",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "In an order guide, what does cascading variables accomplish?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Values entered for variables on the initial order form are passed to the equivalent variables in the ordered catalog items"
+      },
+      {
+        "id": "B",
+        "text": "It deletes the order guide after submission"
+      },
+      {
+        "id": "C",
+        "text": "It converts the request into an incident"
+      },
+      {
+        "id": "D",
+        "text": "It disables all approvals"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Cascading saves the requester from re-typing: shared answers given once on the order-guide form flow down to the matching variables on each catalog item being ordered.",
+    "distractor_notes": {
+      "B": "Cascading copies values; it doesn't delete the guide.",
+      "C": "Order guides produce requested items, not incidents.",
+      "D": "Cascading has nothing to do with approvals."
+    },
+    "references": [
+      {
+        "title": "Cascade an order guide variable",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/c_CascadeTheOrderGuideVariables.html"
+      }
+    ],
+    "tags": [
+      "service-catalog",
+      "order-guide",
+      "cascade"
+    ]
+  },
+  {
+    "id": "cisitsm-scr-008",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Service Catalog and Request Management",
+    "subdomain": "Order guides",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "How can an order guide automatically include certain catalog items based on the requester's answers?",
+    "options": [
+      {
+        "id": "A",
+        "text": "By defining order guide rules that add catalog items when specific conditions are met"
+      },
+      {
+        "id": "B",
+        "text": "By raising a change request"
+      },
+      {
+        "id": "C",
+        "text": "By running CMDB Discovery"
+      },
+      {
+        "id": "D",
+        "text": "By editing the incident state model"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Order guide rules add items conditionally — for example, include a monitor only if the requester selects a desktop — so the bundle adapts to each requester.",
+    "distractor_notes": {
+      "B": "Change requests modify CIs; they don't build an order guide.",
+      "C": "Discovery populates the CMDB, unrelated to order guide composition.",
+      "D": "Incident state models are Incident Management configuration."
+    },
+    "references": [
+      {
+        "title": "Create order guide rule to add catalog item",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/t_CreateARule.html"
+      }
+    ],
+    "tags": [
+      "service-catalog",
+      "order-guide",
+      "rules"
+    ]
+  },
+  {
+    "id": "cisitsm-scr-009",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Service Catalog and Request Management",
+    "subdomain": "Variables",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is a variable set in Service Catalog?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A reusable set of variables that can be added to multiple catalog items and order guides"
+      },
+      {
+        "id": "B",
+        "text": "A list of CMDB classes"
+      },
+      {
+        "id": "C",
+        "text": "A schedule of CAB meetings"
+      },
+      {
+        "id": "D",
+        "text": "A type of incident category"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "A variable set is a bundle of variables you build once and reuse across many items and order guides — change it in one place and every item that uses it benefits.",
+    "distractor_notes": {
+      "B": "CMDB classes are Data Foundations structures.",
+      "C": "CAB meetings are Change Management.",
+      "D": "Incident categories are an Incident Management field."
+    },
+    "references": [
+      {
+        "title": "Add a variable set to a catalog item or order guide",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/t_CreateAVariableSet.html"
+      }
+    ],
+    "tags": [
+      "service-catalog",
+      "variables",
+      "variable-set"
+    ]
+  },
+  {
+    "id": "cisitsm-scr-010",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Service Catalog and Request Management",
+    "subdomain": "Advanced",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Which of the following are examples of advanced capabilities you can add to a catalog item?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Catalog client scripts, data lookup rules, and advanced reference qualifiers"
+      },
+      {
+        "id": "B",
+        "text": "CMDB identification rules and reconciliation rules"
+      },
+      {
+        "id": "C",
+        "text": "Change blackout schedules and maintenance windows"
+      },
+      {
+        "id": "D",
+        "text": "Problem tasks and known errors"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Advanced item behavior comes from catalog client scripts, data lookup rules, and advanced reference qualifiers — the tools that make a catalog form dynamic and validated.",
+    "distractor_notes": {
+      "B": "Identification and reconciliation rules are CMDB / Data Foundations.",
+      "C": "Blackout and maintenance schedules are Change Management.",
+      "D": "Problem tasks and known errors are Problem Management."
+    },
+    "references": [
+      {
+        "title": "Add advanced capabilities to a catalog item",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/add-advanced-capabilities.html"
+      }
+    ],
+    "tags": [
+      "service-catalog",
+      "advanced",
+      "client-script"
+    ]
+  },
+  {
+    "id": "cisitsm-scr-011",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Service Catalog and Request Management",
+    "subdomain": "Client scripts",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What are catalog client scripts used for on a catalog item?",
+    "options": [
+      {
+        "id": "A",
+        "text": "To define client-side dynamic behavior or validations on the item"
+      },
+      {
+        "id": "B",
+        "text": "To assign change requests to groups"
+      },
+      {
+        "id": "C",
+        "text": "To populate the CMDB from Discovery"
+      },
+      {
+        "id": "D",
+        "text": "To calculate problem priority"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Catalog client scripts run in the browser to make the item form react — showing/hiding fields, setting values, or validating input as the requester fills it out.",
+    "distractor_notes": {
+      "B": "Change assignment is handled by change assignment rules.",
+      "C": "Discovery populates the CMDB server-side, unrelated to catalog client scripts.",
+      "D": "Problem priority is set in Problem Management."
+    },
+    "references": [
+      {
+        "title": "Catalog client script form",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/client-script-form.html"
+      }
+    ],
+    "tags": [
+      "service-catalog",
+      "client-script",
+      "variables"
+    ]
+  },
+  {
+    "id": "cisitsm-scr-012",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Service Catalog and Request Management",
+    "subdomain": "Cart",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the purpose of the shopping cart in Service Catalog?",
+    "options": [
+      {
+        "id": "A",
+        "text": "To store catalog items or order guides in one place so they can be checked out together"
+      },
+      {
+        "id": "B",
+        "text": "To store CMDB relationships"
+      },
+      {
+        "id": "C",
+        "text": "To hold draft knowledge articles"
+      },
+      {
+        "id": "D",
+        "text": "To queue change approvals"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The cart collects the items a requester wants so they can review and check them out together, just like online shopping.",
+    "distractor_notes": {
+      "B": "CMDB relationships live in the CMDB.",
+      "C": "Draft articles are managed in Knowledge Management.",
+      "D": "Change approvals are queued by Change Management."
+    },
+    "references": [
+      {
+        "title": "Add a catalog item to the shopping cart",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/add-to-cart-portal.html"
+      }
+    ],
+    "tags": [
+      "service-catalog",
+      "cart",
+      "checkout"
+    ]
+  },
+  {
+    "id": "cisitsm-scr-013",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Service Catalog and Request Management",
+    "subdomain": "Checkout",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which checkout model does the service catalog use by default, and what else is available?",
+    "options": [
+      {
+        "id": "A",
+        "text": "It defaults to one-step checkout, and also allows a two-step checkout model"
+      },
+      {
+        "id": "B",
+        "text": "It defaults to two-step checkout with no alternative"
+      },
+      {
+        "id": "C",
+        "text": "It has no checkout; items are auto-ordered on view"
+      },
+      {
+        "id": "D",
+        "text": "Checkout is only available in the mobile app"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Out of the box the catalog uses one-step checkout, but you can switch on a two-step model when you need an extra review/confirmation stage before the request is submitted.",
+    "distractor_notes": {
+      "B": "One-step is the default; two-step is optional, not mandatory.",
+      "C": "Items aren't auto-ordered; a checkout step always submits the request.",
+      "D": "Checkout works on desktop and portal, not just mobile."
+    },
+    "references": [
+      {
+        "title": "Enable the two-step checkout process",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/c_EnableATwoStepCheckout.html"
+      }
+    ],
+    "tags": [
+      "service-catalog",
+      "checkout",
+      "two-step"
+    ]
+  },
+  {
+    "id": "cisitsm-scr-014",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Service Catalog and Request Management",
+    "subdomain": "Checkout",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Which role enables and configures the two-step checkout model, including how the delivery address is populated?",
+    "options": [
+      {
+        "id": "A",
+        "text": "catalog_admin"
+      },
+      {
+        "id": "B",
+        "text": "itil_admin"
+      },
+      {
+        "id": "C",
+        "text": "knowledge_guest"
+      },
+      {
+        "id": "D",
+        "text": "sn_change_cab.cab_manager"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The catalog_admin role owns catalog configuration, including turning on two-step checkout and controlling how the delivery address is populated.",
+    "distractor_notes": {
+      "B": "itil_admin governs incident/task processes, not catalog checkout configuration.",
+      "C": "knowledge_guest is a knowledge consumer role.",
+      "D": "The CAB manager role governs Change Advisory Board meetings."
+    },
+    "references": [
+      {
+        "title": "Enable the two-step checkout process",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/c_EnableATwoStepCheckout.html"
+      }
+    ],
+    "tags": [
+      "service-catalog",
+      "checkout",
+      "roles"
+    ]
+  },
+  {
+    "id": "cisitsm-scr-015",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Service Catalog and Request Management",
+    "subdomain": "Cart",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "What can catalog administrators do with the cart layout configuration?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Configure the layout and functionality of the service catalog cart used to place requests"
+      },
+      {
+        "id": "B",
+        "text": "Define CMDB identification rules"
+      },
+      {
+        "id": "C",
+        "text": "Schedule CAB meetings"
+      },
+      {
+        "id": "D",
+        "text": "Set incident auto-close timing"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Cart layout configuration lets catalog admins shape how the cart looks and behaves when users place their requests.",
+    "distractor_notes": {
+      "B": "Identification rules are CMDB configuration.",
+      "C": "CAB scheduling is Change Management.",
+      "D": "Auto-close timing is an Incident Management property."
+    },
+    "references": [
+      {
+        "title": "Cart layout",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/c_ConfigureCartLayout.html"
+      }
+    ],
+    "tags": [
+      "service-catalog",
+      "cart",
+      "configuration"
+    ]
+  },
+  {
+    "id": "cisitsm-scr-016",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Service Catalog and Request Management",
+    "subdomain": "Wish list",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the purpose of the wish list in the catalog (Service Portal / Employee Center)?",
+    "options": [
+      {
+        "id": "A",
+        "text": "To add catalog items or record producers so they can be reviewed later when needed"
+      },
+      {
+        "id": "B",
+        "text": "To permanently delete catalog items"
+      },
+      {
+        "id": "C",
+        "text": "To approve requested items"
+      },
+      {
+        "id": "D",
+        "text": "To run Discovery on a CI"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The wish list is a hold-for-later spot — add items or record producers now and come back to review them when you're ready, without ordering immediately.",
+    "distractor_notes": {
+      "B": "The wish list saves items; it doesn't delete catalog content.",
+      "C": "Approvals happen in the request workflow, not the wish list.",
+      "D": "Discovery is unrelated to the wish list."
+    },
+    "references": [
+      {
+        "title": "Add an item to the wish list in Service Portal",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/add-to-wishlist-portal.html"
+      }
+    ],
+    "tags": [
+      "service-catalog",
+      "wish-list"
+    ]
+  },
+  {
+    "id": "cisitsm-scr-017",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Service Catalog and Request Management",
+    "subdomain": "Catalogs and categories",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Can a single catalog item appear in more than one catalog or category?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Yes — Service Catalog lets you add a catalog item to multiple catalogs and categories"
+      },
+      {
+        "id": "B",
+        "text": "No — an item can belong to exactly one category only"
+      },
+      {
+        "id": "C",
+        "text": "Only record producers can be in multiple categories"
+      },
+      {
+        "id": "D",
+        "text": "Only if the item has no variables"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Items aren't locked to one place — you can surface the same catalog item across multiple catalogs and categories so requesters find it wherever they look.",
+    "distractor_notes": {
+      "B": "Items are not limited to a single category.",
+      "C": "This applies to catalog items generally, not just record producers.",
+      "D": "Having variables has no bearing on multi-category placement."
+    },
+    "references": [
+      {
+        "title": "Add a catalog item to additional catalogs and categories",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/t_AssignItemToAddlCatalogsCategory.html"
+      }
+    ],
+    "tags": [
+      "service-catalog",
+      "catalogs",
+      "categories"
+    ]
+  },
+  {
+    "id": "cisitsm-scr-018",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Service Catalog and Request Management",
+    "subdomain": "User criteria",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "What do you use to control which users can see and access specific catalog items and categories?",
+    "options": [
+      {
+        "id": "A",
+        "text": "User criteria records applied to items and categories"
+      },
+      {
+        "id": "B",
+        "text": "Change approval policies"
+      },
+      {
+        "id": "C",
+        "text": "CMDB reconciliation rules"
+      },
+      {
+        "id": "D",
+        "text": "Incident priority lookup rules"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "User criteria define the 'available for' and 'not available for' audiences on items and categories — the mechanism that decides who sees what in the catalog.",
+    "distractor_notes": {
+      "B": "Approval policies govern change approvals, not catalog visibility.",
+      "C": "Reconciliation rules are CMDB configuration.",
+      "D": "Priority lookup rules set incident priority."
+    },
+    "references": [
+      {
+        "title": "Apply user criteria to items and categories",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/t_AppUserCritItemsCat.html"
+      }
+    ],
+    "tags": [
+      "service-catalog",
+      "user-criteria",
+      "access"
+    ]
+  },
+  {
+    "id": "cisitsm-scr-019",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Service Catalog and Request Management",
+    "subdomain": "Categories",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What do dynamic categories let you do in the service catalog?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Organize and display commonly requested items and knowledge articles"
+      },
+      {
+        "id": "B",
+        "text": "Schedule change maintenance windows"
+      },
+      {
+        "id": "C",
+        "text": "Calculate change risk"
+      },
+      {
+        "id": "D",
+        "text": "Define problem state transitions"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Dynamic categories surface what people request most — commonly requested items and relevant knowledge articles — typically on the catalog homepage, so popular content is easy to reach.",
+    "distractor_notes": {
+      "B": "Maintenance windows are Change Management.",
+      "C": "Change risk is calculated via the risk lookup.",
+      "D": "Problem state transitions are Problem Management."
+    },
+    "references": [
+      {
+        "title": "Configure dynamic categories",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/t_ConfigureDynamicCategories.html"
+      }
+    ],
+    "tags": [
+      "service-catalog",
+      "categories",
+      "dynamic"
+    ]
+  },
+  {
+    "id": "cisitsm-scr-020",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Service Catalog and Request Management",
+    "subdomain": "Categories",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the role of categories in the service catalog?",
+    "options": [
+      {
+        "id": "A",
+        "text": "They group catalog items so users can browse to the items within them"
+      },
+      {
+        "id": "B",
+        "text": "They define the incident priority matrix"
+      },
+      {
+        "id": "C",
+        "text": "They store CMDB relationships"
+      },
+      {
+        "id": "D",
+        "text": "They schedule CAB meetings"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Categories are the catalog's folders — they group related items so users can navigate to and find what they need.",
+    "distractor_notes": {
+      "B": "The priority matrix is an Incident Management construct.",
+      "C": "CMDB relationships are stored in the CMDB.",
+      "D": "CAB scheduling is Change Management."
+    },
+    "references": [
+      {
+        "title": "Access Service Catalog categories in Service Portal",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/access-categories-portal.html"
+      }
+    ],
+    "tags": [
+      "service-catalog",
+      "categories"
+    ]
+  },
+  {
+    "id": "cisitsm-scr-021",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Service Catalog and Request Management",
+    "subdomain": "Fulfillment",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What do execution plans provide in Service Catalog?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A fulfillment mechanism you can associate with catalog items to define the work needed to deliver them"
+      },
+      {
+        "id": "B",
+        "text": "A way to reconcile CIs in the CMDB"
+      },
+      {
+        "id": "C",
+        "text": "A method to calculate change risk"
+      },
+      {
+        "id": "D",
+        "text": "A report of incident reopen rates"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Execution plans are a fulfillment scaffold associated with catalog items — they spell out the tasks required to deliver the item.",
+    "distractor_notes": {
+      "B": "CI reconciliation is a CMDB activity.",
+      "C": "Change risk uses the risk lookup.",
+      "D": "Reopen rate is an Incident Management metric."
+    },
+    "references": [
+      {
+        "title": "Associate execution plan with items",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/c_UsingExecutionPlans.html"
+      }
+    ],
+    "tags": [
+      "service-catalog",
+      "fulfillment",
+      "execution-plan"
+    ]
+  },
+  {
+    "id": "cisitsm-scr-022",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Service Catalog and Request Management",
+    "subdomain": "Fulfillment",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What does an execution plan contain?",
+    "options": [
+      {
+        "id": "A",
+        "text": "One or more task templates, each defining work that a specific fulfillment group completes"
+      },
+      {
+        "id": "B",
+        "text": "A list of CMDB identification rules"
+      },
+      {
+        "id": "C",
+        "text": "A set of change blackout windows"
+      },
+      {
+        "id": "D",
+        "text": "A catalog of known errors"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "An execution plan is made of task templates; each template defines a unit of work assigned to a particular fulfillment group, so the right team handles each step.",
+    "distractor_notes": {
+      "B": "Identification rules are CMDB configuration.",
+      "C": "Blackout windows are Change Management.",
+      "D": "Known errors are Problem Management."
+    },
+    "references": [
+      {
+        "title": "Creating execution plan tasks",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/c_CreatingExecutionPlanTasks.html"
+      }
+    ],
+    "tags": [
+      "service-catalog",
+      "execution-plan",
+      "task-template"
+    ]
+  },
+  {
+    "id": "cisitsm-scr-023",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Service Catalog and Request Management",
+    "subdomain": "Fulfillment",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "To whom are execution plan tasks (such as an approval or delivery step) assigned?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A fulfillment group"
+      },
+      {
+        "id": "B",
+        "text": "The original requester"
+      },
+      {
+        "id": "C",
+        "text": "The CMDB owner"
+      },
+      {
+        "id": "D",
+        "text": "The CAB manager"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Each execution plan task is routed to a fulfillment group — the team responsible for that step of delivering the requested item.",
+    "distractor_notes": {
+      "B": "The requester receives the item; they don't fulfill the tasks.",
+      "C": "The CMDB owner manages CI data, not catalog fulfillment tasks.",
+      "D": "The CAB manager runs change reviews."
+    },
+    "references": [
+      {
+        "title": "Delivery information for tasks",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/c_ExecutionPlanTasks.html"
+      }
+    ],
+    "tags": [
+      "service-catalog",
+      "execution-plan",
+      "fulfillment-group"
+    ]
+  },
+  {
+    "id": "cisitsm-scr-024",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Service Catalog and Request Management",
+    "subdomain": "Request Management",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What does Request Management allow employees to do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Submit requests for services, products, or information through a self-service portal, with streamlined fulfillment workflows"
+      },
+      {
+        "id": "B",
+        "text": "Restore failed services after an outage"
+      },
+      {
+        "id": "C",
+        "text": "Identify the root cause of incidents"
+      },
+      {
+        "id": "D",
+        "text": "Reconcile duplicate CIs"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Request Management is the self-service front door: employees ask for services, products, or information, and the platform streamlines fulfillment while improving visibility for users and agents alike.",
+    "distractor_notes": {
+      "B": "Restoring failed services is Incident Management.",
+      "C": "Root cause analysis is Problem Management.",
+      "D": "CI reconciliation is a CMDB activity."
+    },
+    "references": [
+      {
+        "title": "Request Management",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/c_RequestManagement.html"
+      }
+    ],
+    "tags": [
+      "request-management",
+      "self-service"
+    ]
+  },
+  {
+    "id": "cisitsm-scr-025",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Service Catalog and Request Management",
+    "subdomain": "Request Management",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "According to Request Management, how are catalog items fulfilled?",
+    "options": [
+      {
+        "id": "A",
+        "text": "They are requested and fulfilled based on defined flows"
+      },
+      {
+        "id": "B",
+        "text": "They are fulfilled only by manual email"
+      },
+      {
+        "id": "C",
+        "text": "They are fulfilled by reconciling the CMDB"
+      },
+      {
+        "id": "D",
+        "text": "They are fulfilled by closing the related problem"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Request Management drives fulfillment through defined flows — the automation behind a catalog item carries the request from submission to delivery.",
+    "distractor_notes": {
+      "B": "Fulfillment is automated via flows, not manual email.",
+      "C": "Reconciling the CMDB is unrelated to fulfilling a request.",
+      "D": "Closing a problem doesn't fulfill a catalog request."
+    },
+    "references": [
+      {
+        "title": "Exploring Request Management",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/exploring-request-management.html"
+      }
+    ],
+    "tags": [
+      "request-management",
+      "flows",
+      "fulfillment"
+    ]
+  },
+  {
+    "id": "cisitsm-scr-026",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Service Catalog and Request Management",
+    "subdomain": "Request Management",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Request Management architecture describes the platform's approach to what?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Allowing catalog items to be requested and fulfilled based on defined flows"
+      },
+      {
+        "id": "B",
+        "text": "Calculating change success scores"
+      },
+      {
+        "id": "C",
+        "text": "Detecting CMDB duplicates"
+      },
+      {
+        "id": "D",
+        "text": "Managing CAB meeting agendas"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The Request Management architecture is built around requesting catalog items and fulfilling them through defined flows — the structural backbone of the request process.",
+    "distractor_notes": {
+      "B": "Change success scores are a Change Management feature.",
+      "C": "Duplicate detection is a CMDB activity.",
+      "D": "CAB agendas are Change Management."
+    },
+    "references": [
+      {
+        "title": "Request Management architecture",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/request-management-architecture.html"
+      }
+    ],
+    "tags": [
+      "request-management",
+      "architecture"
+    ]
+  },
+  {
+    "id": "cisitsm-scr-027",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Service Catalog and Request Management",
+    "subdomain": "Request Management",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "What does configuring Request Management enable agents to do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Efficiently manage multiple incidents, catalog requests, and catalog tasks"
+      },
+      {
+        "id": "B",
+        "text": "Edit the CMDB class hierarchy"
+      },
+      {
+        "id": "C",
+        "text": "Define change blackout windows"
+      },
+      {
+        "id": "D",
+        "text": "Author knowledge taxonomies"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Configuring Request Management sets agents up to juggle incidents, catalog requests, and catalog tasks efficiently from one place.",
+    "distractor_notes": {
+      "B": "The CMDB class hierarchy is Data Foundations.",
+      "C": "Blackout windows are Change Management.",
+      "D": "Knowledge taxonomies are Knowledge Management."
+    },
+    "references": [
+      {
+        "title": "Configuring Request Management",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/configuring-request-management.html"
+      }
+    ],
+    "tags": [
+      "request-management",
+      "configuration"
+    ]
+  },
+  {
+    "id": "cisitsm-scr-028",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Service Catalog and Request Management",
+    "subdomain": "Request Management",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Why would you create a catalog request in Agent Workspace from within an incident flow?",
+    "options": [
+      {
+        "id": "A",
+        "text": "To join the Service Catalog flow from another flow and associate the request with the incident for end-to-end tracking"
+      },
+      {
+        "id": "B",
+        "text": "To delete the incident"
+      },
+      {
+        "id": "C",
+        "text": "To reconcile the CMDB"
+      },
+      {
+        "id": "D",
+        "text": "To bypass all approvals"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Creating a catalog request from an incident links the two, so a request that arises while working an incident is tracked alongside it — and vice versa.",
+    "distractor_notes": {
+      "B": "Creating a related request doesn't delete the incident.",
+      "C": "CMDB reconciliation is unrelated.",
+      "D": "Approvals still apply to the request as configured."
+    },
+    "references": [
+      {
+        "title": "Create a catalog request in Agent Workspace",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/create-request-workspace.html"
+      }
+    ],
+    "tags": [
+      "request-management",
+      "agent-workspace",
+      "incident-link"
+    ]
+  },
+  {
+    "id": "cisitsm-scr-029",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Service Catalog and Request Management",
+    "subdomain": "Scenario",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "You want end users to report issues through a simple, friendly catalog form that opens an incident record rather than a requested item. What should you build?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A record producer"
+      },
+      {
+        "id": "B",
+        "text": "A standard catalog item with an execution plan"
+      },
+      {
+        "id": "C",
+        "text": "An order guide"
+      },
+      {
+        "id": "D",
+        "text": "A variable set"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "When the catalog form should produce a task record like an incident, a record producer is the right tool — it gives the catalog experience while creating the incident directly.",
+    "distractor_notes": {
+      "B": "A standard catalog item produces a requested item, not an incident.",
+      "C": "An order guide bundles multiple catalog items; it doesn't create an incident.",
+      "D": "A variable set is reusable fields, not a record-creating form."
+    },
+    "references": [
+      {
+        "title": "Record Producer",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/c_RecordProducer.html"
+      }
+    ],
+    "tags": [
+      "service-catalog",
+      "record-producer",
+      "scenario"
+    ]
+  },
+  {
+    "id": "cisitsm-scr-030",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Service Catalog and Request Management",
+    "subdomain": "Scenario",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A new-hire onboarding request should let a manager order a laptop, a phone, and account setup together in one guided flow, sharing common answers like start date. What is the best catalog construct?",
+    "options": [
+      {
+        "id": "A",
+        "text": "An order guide with cascading variables"
+      },
+      {
+        "id": "B",
+        "text": "A single record producer"
+      },
+      {
+        "id": "C",
+        "text": "A knowledge article"
+      },
+      {
+        "id": "D",
+        "text": "A change request"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "An order guide bundles the related items into one guided flow, and cascading variables push shared answers (like start date) into each item — exactly the onboarding pattern.",
+    "distractor_notes": {
+      "B": "A record producer creates a single task record, not a multi-item ordered bundle.",
+      "C": "A knowledge article is reference content, not an ordering flow.",
+      "D": "A change request modifies CIs; it isn't how a manager orders onboarding items."
+    },
+    "references": [
+      {
+        "title": "Create an order guide",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/t_CreateAnOrderGuide.html"
+      }
+    ],
+    "tags": [
+      "service-catalog",
+      "order-guide",
+      "scenario"
+    ]
+  },
+  {
+    "id": "cisitsm-scr-031",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Service Catalog and Request Management",
+    "subdomain": "Catalog item form",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the Catalog Item form used for?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Configuring the fields and attributes that define a catalog item"
+      },
+      {
+        "id": "B",
+        "text": "Detecting change scheduling conflicts"
+      },
+      {
+        "id": "C",
+        "text": "Reconciling CIs in the CMDB"
+      },
+      {
+        "id": "D",
+        "text": "Assessing a problem"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The Catalog Item form is where you set up the item's defining fields and attributes — name, catalog/category, workflow, variables, and so on.",
+    "distractor_notes": {
+      "B": "Conflict detection is a Change Management feature.",
+      "C": "CI reconciliation is a CMDB activity.",
+      "D": "Assessing a problem is Problem Management."
+    },
+    "references": [
+      {
+        "title": "Catalog Item form",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/catalog-item-form.html"
+      }
+    ],
+    "tags": [
+      "service-catalog",
+      "catalog-item",
+      "form"
+    ]
+  },
+  {
+    "id": "cisitsm-scr-032",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Service Catalog and Request Management",
+    "subdomain": "Catalog workflow",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "What kinds of activities can you add to a catalog workflow to fulfill a requested item?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Activities such as running a script, sending notifications, or requesting approvals"
+      },
+      {
+        "id": "B",
+        "text": "CMDB identification rules"
+      },
+      {
+        "id": "C",
+        "text": "Change blackout windows"
+      },
+      {
+        "id": "D",
+        "text": "Problem state transitions"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Catalog workflow activities do the fulfillment work — run scripts, send notifications, request approvals — and each activity can succeed or fail, branching the flow accordingly.",
+    "distractor_notes": {
+      "B": "Identification rules are CMDB configuration.",
+      "C": "Blackout windows are Change Management.",
+      "D": "Problem state transitions belong to Problem Management."
+    },
+    "references": [
+      {
+        "title": "Add an activity to a catalog workflow",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/t_AddActiviToServiceCataWorkflow.html"
+      }
+    ],
+    "tags": [
+      "service-catalog",
+      "workflow",
+      "fulfillment"
+    ]
+  },
+  {
+    "id": "cisitsm-scr-033",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Service Catalog and Request Management",
+    "subdomain": "Fulfillment",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What does configuring a step-based service fulfillment flow let you do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Define service fulfillment steps while creating a catalog item in Catalog Builder"
+      },
+      {
+        "id": "B",
+        "text": "Detect duplicate CIs"
+      },
+      {
+        "id": "C",
+        "text": "Schedule CAB meetings"
+      },
+      {
+        "id": "D",
+        "text": "Set incident priority"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "A service fulfillment flow lets you lay out the fulfillment steps right inside Catalog Builder as you create the item — a modern, flow-based alternative to legacy workflows.",
+    "distractor_notes": {
+      "B": "Duplicate detection is a CMDB activity.",
+      "C": "CAB scheduling is Change Management.",
+      "D": "Incident priority comes from impact and urgency."
+    },
+    "references": [
+      {
+        "title": "Configure a step-based service fulfillment flow",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configure-flow-sf-flow.html"
+      }
+    ],
+    "tags": [
+      "service-catalog",
+      "fulfillment",
+      "catalog-builder"
+    ]
+  },
+  {
+    "id": "cisitsm-scr-034",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Service Catalog and Request Management",
+    "subdomain": "Order guides",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "What does configuring a sequence (in Playbooks) for an order guide accomplish?",
+    "options": [
+      {
+        "id": "A",
+        "text": "It fulfills items in an order so that required items are completed before their dependent items, without manual checking"
+      },
+      {
+        "id": "B",
+        "text": "It deletes the order guide after submission"
+      },
+      {
+        "id": "C",
+        "text": "It converts the order guide into an incident"
+      },
+      {
+        "id": "D",
+        "text": "It disables cascading variables"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "A sequence enforces dependency order — dependent items wait until their prerequisites are fulfilled — so you don't have to manually police what gets done first.",
+    "distractor_notes": {
+      "B": "A sequence orders fulfillment; it doesn't delete the guide.",
+      "C": "Order guides produce requested items, not incidents.",
+      "D": "Sequences and cascading are independent features."
+    },
+    "references": [
+      {
+        "title": "Configure a sequence",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/generate-order-guide-sequence.html"
+      }
+    ],
+    "tags": [
+      "service-catalog",
+      "order-guide",
+      "sequence"
+    ]
+  },
+  {
+    "id": "cisitsm-scr-035",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Service Catalog and Request Management",
+    "subdomain": "Order guides",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "What is the purpose of an item variable assignment in an order guide?",
+    "options": [
+      {
+        "id": "A",
+        "text": "To set up a default value mechanism so the user can focus only on the required values"
+      },
+      {
+        "id": "B",
+        "text": "To reconcile CIs in the CMDB"
+      },
+      {
+        "id": "C",
+        "text": "To define an SLA"
+      },
+      {
+        "id": "D",
+        "text": "To create a known error"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Item variable assignments pre-populate defaults in the order guide context, so requesters only deal with the values that actually need their input.",
+    "distractor_notes": {
+      "B": "CI reconciliation is a CMDB activity.",
+      "C": "SLAs are defined in Service Level Management.",
+      "D": "Known errors are Problem Management."
+    },
+    "references": [
+      {
+        "title": "Create an item variable assignment",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/t_CreateAnItemVarAssignment.html"
+      }
+    ],
+    "tags": [
+      "service-catalog",
+      "order-guide",
+      "variable-assignment"
+    ]
+  },
+  {
+    "id": "cisitsm-scr-036",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Service Catalog and Request Management",
+    "subdomain": "Variables",
+    "difficulty": "recall",
+    "type": "multi_select",
+    "stem": "Which of the following are catalog variable types?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Attachment"
+      },
+      {
+        "id": "B",
+        "text": "Check box"
+      },
+      {
+        "id": "C",
+        "text": "Break"
+      },
+      {
+        "id": "D",
+        "text": "Execution plan"
+      },
+      {
+        "id": "E",
+        "text": "User criteria"
+      }
+    ],
+    "correct": [
+      "A",
+      "B",
+      "C"
+    ],
+    "rationale": "Attachment, Check box, and Break are catalog variable types (an upload field, a toggle, and a layout divider). Execution plans are a fulfillment construct and user criteria control access — neither is a variable type.",
+    "distractor_notes": {
+      "D": "An execution plan is a fulfillment mechanism, not a variable type.",
+      "E": "User criteria control who can see items/categories; they aren't variables."
+    },
+    "references": [
+      {
+        "title": "Attachment variable",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/attachment.html"
+      }
+    ],
+    "tags": [
+      "service-catalog",
+      "variables",
+      "variable-types"
+    ]
+  },
+  {
+    "id": "cisitsm-scr-037",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Service Catalog and Request Management",
+    "subdomain": "Variables",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What does the attachment variable let a requester do on a catalog item?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Upload an attachment for a question of the item"
+      },
+      {
+        "id": "B",
+        "text": "Approve the request"
+      },
+      {
+        "id": "C",
+        "text": "Reassign the request to another group"
+      },
+      {
+        "id": "D",
+        "text": "Define the fulfillment workflow"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The attachment variable adds an upload control to the item form, letting the requester attach a file in response to a question.",
+    "distractor_notes": {
+      "B": "Approvals are handled by the workflow/flow, not a variable.",
+      "C": "Reassignment is an agent action, not a variable behavior.",
+      "D": "The fulfillment workflow is configured separately from variables."
+    },
+    "references": [
+      {
+        "title": "Attachment variable",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/attachment.html"
+      }
+    ],
+    "tags": [
+      "service-catalog",
+      "variables",
+      "attachment"
+    ]
+  },
+  {
+    "id": "cisitsm-scr-038",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Service Catalog and Request Management",
+    "subdomain": "Variables",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "What does configuring a variable's default width control?",
+    "options": [
+      {
+        "id": "A",
+        "text": "What percentage of the screen size the variable can span on a catalog item page"
+      },
+      {
+        "id": "B",
+        "text": "How many approvals the request needs"
+      },
+      {
+        "id": "C",
+        "text": "The fulfillment group assigned to the task"
+      },
+      {
+        "id": "D",
+        "text": "The item's price"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Variable width is a layout setting — it sets how much of the screen width a variable occupies on the item page, helping you build tidy multi-column forms.",
+    "distractor_notes": {
+      "B": "Approvals are set in the workflow, not by width.",
+      "C": "Fulfillment groups come from the workflow/execution plan.",
+      "D": "Price is a separate item attribute."
+    },
+    "references": [
+      {
+        "title": "Configure a default width",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configure-variable-width.html"
+      }
+    ],
+    "tags": [
+      "service-catalog",
+      "variables",
+      "layout"
+    ]
+  },
+  {
+    "id": "cisitsm-scr-039",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Service Catalog and Request Management",
+    "subdomain": "Variables",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Why would you audit service catalog variables?",
+    "options": [
+      {
+        "id": "A",
+        "text": "So the audit history records all changes to the named variables"
+      },
+      {
+        "id": "B",
+        "text": "To delete the variables automatically"
+      },
+      {
+        "id": "C",
+        "text": "To grant the catalog_admin role"
+      },
+      {
+        "id": "D",
+        "text": "To bypass approvals"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Auditing variables turns on change tracking, so the audit history captures every change to those variables — useful for traceability and troubleshooting.",
+    "distractor_notes": {
+      "B": "Auditing records changes; it doesn't delete variables.",
+      "C": "Auditing doesn't grant roles.",
+      "D": "Auditing has nothing to do with approvals."
+    },
+    "references": [
+      {
+        "title": "Audit service catalog variables",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/t_AuditableServiceCatalogVariables.html"
+      }
+    ],
+    "tags": [
+      "service-catalog",
+      "variables",
+      "audit"
+    ]
+  },
+  {
+    "id": "cisitsm-scr-040",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Service Catalog and Request Management",
+    "subdomain": "Search",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "How does keyword search for catalog items return results?",
+    "options": [
+      {
+        "id": "A",
+        "text": "By considering certain fields of the catalog item table when matching the keyword"
+      },
+      {
+        "id": "B",
+        "text": "By scanning the CMDB for matching CIs"
+      },
+      {
+        "id": "C",
+        "text": "By searching only closed incidents"
+      },
+      {
+        "id": "D",
+        "text": "By matching change request numbers"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Catalog keyword search matches against specific fields of the catalog item table, so a requester's search surfaces the relevant items.",
+    "distractor_notes": {
+      "B": "It searches catalog items, not CMDB CIs.",
+      "C": "It doesn't search incidents.",
+      "D": "Change request numbers are unrelated to catalog search."
+    },
+    "references": [
+      {
+        "title": "Configure keyword search for catalog items",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/search-catalog-item.html"
+      }
+    ],
+    "tags": [
+      "service-catalog",
+      "search"
+    ]
+  },
+  {
+    "id": "cisitsm-scr-041",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Service Catalog and Request Management",
+    "subdomain": "Browse",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Besides the category hierarchy, what other structure can users use to browse catalog items for context?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The catalog hierarchy"
+      },
+      {
+        "id": "B",
+        "text": "The CMDB class hierarchy"
+      },
+      {
+        "id": "C",
+        "text": "The incident state model"
+      },
+      {
+        "id": "D",
+        "text": "The change schedule"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Users can browse by the catalog hierarchy in addition to categories, giving them another way to find items in the right context.",
+    "distractor_notes": {
+      "B": "The CMDB class hierarchy organizes CIs, not catalog browsing.",
+      "C": "The incident state model is Incident Management.",
+      "D": "The change schedule is Change Management."
+    },
+    "references": [
+      {
+        "title": "Browse catalog items using the catalog hierarchy",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/now-mob-browse-cat-item-catalog.html"
+      }
+    ],
+    "tags": [
+      "service-catalog",
+      "browse",
+      "hierarchy"
+    ]
+  },
+  {
+    "id": "cisitsm-scr-042",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Service Catalog and Request Management",
+    "subdomain": "Mobile",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "When configuring catalogs for the Now Mobile app, what happens if no catalogs are selected?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Users can view and request items from all catalogs in the system"
+      },
+      {
+        "id": "B",
+        "text": "Users see no catalog items at all"
+      },
+      {
+        "id": "C",
+        "text": "The catalog is disabled"
+      },
+      {
+        "id": "D",
+        "text": "All requests are auto-approved"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "If you don't restrict to specific catalogs, the app falls back to showing everything — users can view and request from all catalogs (the app uses Service Catalog by default).",
+    "distractor_notes": {
+      "B": "No selection means all catalogs, not none.",
+      "C": "The catalog isn't disabled by leaving the selection empty.",
+      "D": "Approvals are unaffected by catalog selection."
+    },
+    "references": [
+      {
+        "title": "Configure catalogs",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configure-catalog.html"
+      }
+    ],
+    "tags": [
+      "service-catalog",
+      "mobile",
+      "catalogs"
+    ]
+  },
+  {
+    "id": "cisitsm-scr-043",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Service Catalog and Request Management",
+    "subdomain": "Checkout",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What can you configure with Service Catalog preview (cart) screens?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Shopping cart preview screens for the one-step and two-step carts, the wish list, and the Classic Mobile app"
+      },
+      {
+        "id": "B",
+        "text": "The CMDB reconciliation schedule"
+      },
+      {
+        "id": "C",
+        "text": "The change risk lookup"
+      },
+      {
+        "id": "D",
+        "text": "The problem state model"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Preview screen configuration covers the cart previews for one-step and two-step checkout, the wish list, and Classic Mobile — letting you tailor what the requester sees before submitting.",
+    "distractor_notes": {
+      "B": "Reconciliation schedules are CMDB configuration.",
+      "C": "The risk lookup is Change Management.",
+      "D": "The problem state model is Problem Management."
+    },
+    "references": [
+      {
+        "title": "Configure Service Catalog preview screens",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/service-catalog-screens.html"
+      }
+    ],
+    "tags": [
+      "service-catalog",
+      "cart",
+      "preview-screens"
+    ]
+  },
+  {
+    "id": "cisitsm-scr-044",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Service Catalog and Request Management",
+    "subdomain": "Checkout",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What do Service Catalog status screens let you configure?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Shopping cart status screens for desktop and Classic Mobile orders"
+      },
+      {
+        "id": "B",
+        "text": "The CMDB class hierarchy"
+      },
+      {
+        "id": "C",
+        "text": "Change blackout windows"
+      },
+      {
+        "id": "D",
+        "text": "Incident priority lookup rules"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Status screens show requesters where their order stands — you configure these for desktop and Classic Mobile orders.",
+    "distractor_notes": {
+      "B": "The class hierarchy is a CMDB structure.",
+      "C": "Blackout windows are Change Management.",
+      "D": "Priority lookup rules are Incident Management."
+    },
+    "references": [
+      {
+        "title": "Configure Service Catalog status screens",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/service-catalog-status-screens.html"
+      }
+    ],
+    "tags": [
+      "service-catalog",
+      "status-screens"
+    ]
+  },
+  {
+    "id": "cisitsm-scr-045",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Service Catalog and Request Management",
+    "subdomain": "Checkout",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Why might you modify the checkout form?",
+    "options": [
+      {
+        "id": "A",
+        "text": "To use an alternate description field or to add the request item number for each line"
+      },
+      {
+        "id": "B",
+        "text": "To reconcile CIs in the CMDB"
+      },
+      {
+        "id": "C",
+        "text": "To schedule a CAB meeting"
+      },
+      {
+        "id": "D",
+        "text": "To assess a problem"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The checkout form is customizable — for example, you can swap in an alternate description field or display the request item number for each line so requesters have clearer references.",
+    "distractor_notes": {
+      "B": "CI reconciliation is a CMDB activity.",
+      "C": "CAB scheduling is Change Management.",
+      "D": "Assessing a problem is Problem Management."
+    },
+    "references": [
+      {
+        "title": "Add the request item number on checkout form",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/c_ModifyTheCheckoutForm.html"
+      }
+    ],
+    "tags": [
+      "service-catalog",
+      "checkout",
+      "form"
+    ]
+  },
+  {
+    "id": "cisitsm-scr-046",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Service Catalog and Request Management",
+    "subdomain": "Order on behalf",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Which property governs the default behavior for requesting items on behalf of another user when no roles are specified?",
+    "options": [
+      {
+        "id": "A",
+        "text": "glide.sc.req_for.roles"
+      },
+      {
+        "id": "B",
+        "text": "glide.ui.autoclose.time"
+      },
+      {
+        "id": "C",
+        "text": "change.conflict.useprogressworker"
+      },
+      {
+        "id": "D",
+        "text": "glide.knowman.search"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The glide.sc.req_for.roles property controls who can order on behalf of others; when no roles are specified, it defines the default behavior for the 'requested for' capability.",
+    "distractor_notes": {
+      "B": "glide.ui.autoclose.time governs incident auto-close timing.",
+      "C": "change.conflict.useprogressworker tunes change conflict detection.",
+      "D": "glide.knowman.search relates to knowledge search."
+    },
+    "references": [
+      {
+        "title": "Configure default behavior to request items for users",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/config-default-behavior-request-other-user.html"
+      }
+    ],
+    "tags": [
+      "service-catalog",
+      "order-on-behalf",
+      "property"
+    ]
+  },
+  {
+    "id": "cisitsm-scr-047",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Service Catalog and Request Management",
+    "subdomain": "Bulk requests",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "When cloning a request, for how many users on the notification list can it be cloned?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Up to 10 users"
+      },
+      {
+        "id": "B",
+        "text": "Exactly 1 user"
+      },
+      {
+        "id": "C",
+        "text": "Up to 100 users"
+      },
+      {
+        "id": "D",
+        "text": "Unlimited users"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "A request can be cloned for up to 10 users on the notification list — handy for ordering the same thing for a small group at once.",
+    "distractor_notes": {
+      "B": "Cloning supports multiple users, not just one.",
+      "C": "The documented limit is 10, not 100.",
+      "D": "There's a defined cap of 10, not unlimited."
+    },
+    "references": [
+      {
+        "title": "Clone a request",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/t_UsingBulkRequests.html"
+      }
+    ],
+    "tags": [
+      "service-catalog",
+      "bulk-request",
+      "clone"
+    ]
+  },
+  {
+    "id": "cisitsm-scr-048",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Service Catalog and Request Management",
+    "subdomain": "Employee Center",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What can a user do with the shopping cart in Employee Center?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Add a catalog item or order guide to store in one place and check out together"
+      },
+      {
+        "id": "B",
+        "text": "Reconcile CIs in the CMDB"
+      },
+      {
+        "id": "C",
+        "text": "Approve change requests"
+      },
+      {
+        "id": "D",
+        "text": "Define SLAs"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The Employee Center cart works like any shopping cart — collect items or order guides in one place and check them out together.",
+    "distractor_notes": {
+      "B": "CI reconciliation is a CMDB activity.",
+      "C": "Change approvals are handled in Change Management.",
+      "D": "SLAs are defined in Service Level Management."
+    },
+    "references": [
+      {
+        "title": "Add a catalog item to the shopping cart in Employee Center",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/add-to-cart-ec.html"
+      }
+    ],
+    "tags": [
+      "service-catalog",
+      "employee-center",
+      "cart"
+    ]
+  },
+  {
+    "id": "cisitsm-scr-049",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Service Catalog and Request Management",
+    "subdomain": "Employee Center",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Why would you associate a catalog item with a taxonomy topic in Employee Center?",
+    "options": [
+      {
+        "id": "A",
+        "text": "So the catalog item appears as content within the relevant topic or child topics in Employee Center"
+      },
+      {
+        "id": "B",
+        "text": "To delete the catalog item"
+      },
+      {
+        "id": "C",
+        "text": "To convert it into an incident"
+      },
+      {
+        "id": "D",
+        "text": "To calculate change risk"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Associating items (and articles or quick links) with taxonomy topics surfaces them as content under the matching topics and child topics in Employee Center, so users find them where they browse.",
+    "distractor_notes": {
+      "B": "Association surfaces the item; it doesn't delete it.",
+      "C": "Catalog items aren't converted into incidents.",
+      "D": "Change risk is a Change Management calculation."
+    },
+    "references": [
+      {
+        "title": "Associate a catalog item with a taxonomy topic in Employee Center",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/associate-cat-item-taxonomy-ec.html"
+      }
+    ],
+    "tags": [
+      "service-catalog",
+      "employee-center",
+      "taxonomy"
+    ]
+  },
+  {
+    "id": "cisitsm-scr-050",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Service Catalog and Request Management",
+    "subdomain": "Portal widgets",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "What can you configure with Service Catalog cart widgets?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Widgets for the shopping cart, catalog items, and order guides"
+      },
+      {
+        "id": "B",
+        "text": "The CMDB identification engine"
+      },
+      {
+        "id": "C",
+        "text": "Change maintenance schedules"
+      },
+      {
+        "id": "D",
+        "text": "Problem categories"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "These widgets control the catalog experience in the portal — the cart, catalog item pages, and order guides can each be configured via their widgets.",
+    "distractor_notes": {
+      "B": "The identification engine is a CMDB component.",
+      "C": "Maintenance schedules are Change Management.",
+      "D": "Problem categories are Problem Management."
+    },
+    "references": [
+      {
+        "title": "Configure Service Catalog cart widgets",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/service-catalog-cart-widgets.html"
+      }
+    ],
+    "tags": [
+      "service-catalog",
+      "portal",
+      "widgets"
+    ]
+  },
+  {
+    "id": "cisitsm-scr-051",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Service Catalog and Request Management",
+    "subdomain": "Universal Request",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What does integrating Request Management with Universal Request enable?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Creating a universal request by submitting a request from a catalog item or record producer, for a consistent ticketing experience"
+      },
+      {
+        "id": "B",
+        "text": "Reconciling CIs across domains"
+      },
+      {
+        "id": "C",
+        "text": "Calculating change success scores"
+      },
+      {
+        "id": "D",
+        "text": "Auto-closing incidents"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The integration lets a submission from a catalog item or record producer create a universal request, giving employees and agents a consistent ticketing experience and easier inter-department transfers.",
+    "distractor_notes": {
+      "B": "CI reconciliation is a CMDB activity.",
+      "C": "Change success scores are Change Management.",
+      "D": "Auto-close is an Incident Management behavior."
+    },
+    "references": [
+      {
+        "title": "Request Management integration with Universal Request",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/request-mgmt-integration-ur.html"
+      }
+    ],
+    "tags": [
+      "request-management",
+      "universal-request",
+      "integration"
+    ]
+  },
+  {
+    "id": "cisitsm-scr-052",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Service Catalog and Request Management",
+    "subdomain": "Universal Request",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "How can you reduce implementation time when enabling Universal Request creation across the catalog?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Configure all catalog items or all record producers at once for universal request creation"
+      },
+      {
+        "id": "B",
+        "text": "Edit each item's CMDB class individually"
+      },
+      {
+        "id": "C",
+        "text": "Disable the service catalog"
+      },
+      {
+        "id": "D",
+        "text": "Convert every item into an order guide"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Rather than flipping each item one by one, you can configure all catalog items or all record producers at once for universal request creation, cutting implementation effort.",
+    "distractor_notes": {
+      "B": "CMDB classes are unrelated to UR configuration.",
+      "C": "Disabling the catalog defeats the purpose.",
+      "D": "Converting items to order guides doesn't enable UR."
+    },
+    "references": [
+      {
+        "title": "Configure all catalog items or record producers to create a universal request",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configure-all-cat-items-ur.html"
+      }
+    ],
+    "tags": [
+      "request-management",
+      "universal-request",
+      "bulk-config"
+    ]
+  },
+  {
+    "id": "cisitsm-scr-053",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Service Catalog and Request Management",
+    "subdomain": "Universal Request",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "As a routing agent, what do you do when you create a request from a universal request?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Create the request and assign it to the appropriate assignment group for the request manager to fulfill"
+      },
+      {
+        "id": "B",
+        "text": "Delete the universal request"
+      },
+      {
+        "id": "C",
+        "text": "Close all related incidents"
+      },
+      {
+        "id": "D",
+        "text": "Reconcile the CMDB"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The routing agent spins a request off a universal request and routes it to the right assignment group; the request manager then handles the requested items and drives fulfillment.",
+    "distractor_notes": {
+      "B": "Creating a request doesn't delete the universal request.",
+      "C": "Closing incidents isn't part of this routing step.",
+      "D": "CMDB reconciliation is unrelated."
+    },
+    "references": [
+      {
+        "title": "Create a request from Universal Request",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/create-request-from-ur.html"
+      }
+    ],
+    "tags": [
+      "request-management",
+      "universal-request",
+      "routing"
+    ]
+  },
+  {
+    "id": "cisitsm-scr-054",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Service Catalog and Request Management",
+    "subdomain": "Universal Request",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Why would you map requested item states to universal request (UR) states?",
+    "options": [
+      {
+        "id": "A",
+        "text": "To provide a better user experience and track progress as the requested item state transitions"
+      },
+      {
+        "id": "B",
+        "text": "To delete requested items"
+      },
+      {
+        "id": "C",
+        "text": "To calculate change risk"
+      },
+      {
+        "id": "D",
+        "text": "To author knowledge articles"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "State mapping keeps the universal request in sync with the requested item, giving users a clearer, consistent picture of progress as the item moves through its states.",
+    "distractor_notes": {
+      "B": "Mapping aligns states; it doesn't delete items.",
+      "C": "Change risk is a Change Management calculation.",
+      "D": "Article authoring is Knowledge Management."
+    },
+    "references": [
+      {
+        "title": "Requested item state mapping",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/req-item-state-mapping.html"
+      }
+    ],
+    "tags": [
+      "request-management",
+      "universal-request",
+      "state-mapping"
+    ]
+  },
+  {
+    "id": "cisitsm-scr-055",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Service Catalog and Request Management",
+    "subdomain": "Request transfer",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "What does transferring a request to another department allow?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Moving the request to another department, with or without resolution, to fulfill it"
+      },
+      {
+        "id": "B",
+        "text": "Deleting the request permanently"
+      },
+      {
+        "id": "C",
+        "text": "Converting it into a problem"
+      },
+      {
+        "id": "D",
+        "text": "Bypassing all approvals"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "When a request belongs with a different team, you can transfer it to another department — either with or without resolving the current portion — so the right group can fulfill it.",
+    "distractor_notes": {
+      "B": "Transferring moves the request; it doesn't delete it.",
+      "C": "Requests aren't converted into problems.",
+      "D": "Transfer doesn't bypass approvals."
+    },
+    "references": [
+      {
+        "title": "Transfer a request to another department",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/req-transfer-ur.html"
+      }
+    ],
+    "tags": [
+      "request-management",
+      "transfer",
+      "universal-request"
+    ]
+  },
+  {
+    "id": "cisitsm-scr-056",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Service Catalog and Request Management",
+    "subdomain": "Request Management",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "According to Using Request Management, catalog items are requested and fulfilled based on what?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Defined flows"
+      },
+      {
+        "id": "B",
+        "text": "Random assignment"
+      },
+      {
+        "id": "C",
+        "text": "CMDB discovery schedules"
+      },
+      {
+        "id": "D",
+        "text": "Change blackout windows"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Request Management runs on defined flows — the configured automation behind each item carries it from request to fulfillment.",
+    "distractor_notes": {
+      "B": "Fulfillment is flow-driven, not random.",
+      "C": "Discovery schedules populate the CMDB.",
+      "D": "Blackout windows are Change Management."
+    },
+    "references": [
+      {
+        "title": "Using Request Management",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/using-request-management.html"
+      }
+    ],
+    "tags": [
+      "request-management",
+      "flows"
+    ]
+  },
+  {
+    "id": "cisitsm-scr-057",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Service Catalog and Request Management",
+    "subdomain": "Roles",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "How are the Request Management user roles added to an instance?",
+    "options": [
+      {
+        "id": "A",
+        "text": "They are installed with the activation of the ITSM Roles - Request Management plugin"
+      },
+      {
+        "id": "B",
+        "text": "They are created automatically for every user on login"
+      },
+      {
+        "id": "C",
+        "text": "They come from the CMDB identification engine"
+      },
+      {
+        "id": "D",
+        "text": "They are defined in the change risk lookup"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Request Management's roles arrive with the ITSM Roles - Request Management plugin, giving finer control over what agents, technicians, and managers can do in the request process.",
+    "distractor_notes": {
+      "B": "Roles aren't auto-assigned to every user on login.",
+      "C": "The identification engine is a CMDB component, not a role source.",
+      "D": "The risk lookup is Change Management."
+    },
+    "references": [
+      {
+        "title": "Components installed with ITSM Roles — Request Management",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/req-mgmnt-roles-instld-itsm.html"
+      }
+    ],
+    "tags": [
+      "request-management",
+      "roles",
+      "plugin"
+    ]
+  },
+  {
+    "id": "cisitsm-scr-058",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Service Catalog and Request Management",
+    "subdomain": "Scenario",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A manager needs to order equipment for a brand-new employee who does not yet have an account in the system. What catalog capability supports this?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Requesting items on behalf of another user (the 'requested for' capability, governed by glide.sc.req_for.roles)"
+      },
+      {
+        "id": "B",
+        "text": "Cascading order guide variables"
+      },
+      {
+        "id": "C",
+        "text": "A record producer"
+      },
+      {
+        "id": "D",
+        "text": "A known error article"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Ordering for someone else is exactly the 'requested for' / order-on-behalf capability, controlled by glide.sc.req_for.roles — so a manager can request items for a new hire.",
+    "distractor_notes": {
+      "B": "Cascading copies variable values within an order guide; it isn't about ordering for another user.",
+      "C": "A record producer creates a task record, not an order on someone's behalf.",
+      "D": "A known error article documents a problem's cause and workaround."
+    },
+    "references": [
+      {
+        "title": "Configure default behavior to request items for users",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/config-default-behavior-request-other-user.html"
+      }
+    ],
+    "tags": [
+      "service-catalog",
+      "order-on-behalf",
+      "scenario"
+    ]
+  },
+  {
+    "id": "cisitsm-scr-059",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Service Catalog and Request Management",
+    "subdomain": "Scenario",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "You are building a new catalog item in Catalog Builder and want to define its fulfillment as a series of modern, flow-based steps rather than a legacy workflow. What should you configure?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A step-based service fulfillment flow"
+      },
+      {
+        "id": "B",
+        "text": "A user criteria record"
+      },
+      {
+        "id": "C",
+        "text": "A dynamic category"
+      },
+      {
+        "id": "D",
+        "text": "A variable set"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "A step-based service fulfillment flow lets you define the fulfillment steps directly in Catalog Builder — the modern, flow-based path instead of an execution plan or legacy workflow.",
+    "distractor_notes": {
+      "B": "User criteria control visibility/access, not fulfillment steps.",
+      "C": "Dynamic categories organize items for browsing.",
+      "D": "A variable set is reusable fields, not a fulfillment definition."
+    },
+    "references": [
+      {
+        "title": "Configure a step-based service fulfillment flow",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configure-flow-sf-flow.html"
+      }
+    ],
+    "tags": [
+      "service-catalog",
+      "fulfillment",
+      "scenario"
+    ]
+  },
+  {
+    "id": "cisitsm-scr-060",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Service Catalog and Request Management",
+    "subdomain": "Scenario",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A request lands with the wrong team and actually needs to be handled by Facilities instead of IT. What is the appropriate action?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Transfer the request to the other department, with or without resolution, so the right team can fulfill it"
+      },
+      {
+        "id": "B",
+        "text": "Delete the request and tell the user to resubmit"
+      },
+      {
+        "id": "C",
+        "text": "Convert the request into a problem"
+      },
+      {
+        "id": "D",
+        "text": "Close it as resolved without action"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Transferring the request to the correct department routes it to the team that can fulfill it while preserving the record and history — far better than deleting or closing it.",
+    "distractor_notes": {
+      "B": "Deleting and resubmitting loses history and frustrates the user.",
+      "C": "A misrouted request isn't a problem record.",
+      "D": "Closing without action leaves the user's need unmet."
+    },
+    "references": [
+      {
+        "title": "Transfer a request to another department",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/req-transfer-ur.html"
+      }
+    ],
+    "tags": [
+      "request-management",
+      "transfer",
+      "scenario"
+    ]
+  }
+]

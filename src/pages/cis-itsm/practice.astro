@@ -1,0 +1,233 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import { getCollection, getEntry } from 'astro:content';
+
+const blueprint = await getEntry('blueprints', 'cis-itsm');
+const allQuestions = await getCollection('questions');
+const examQuestions = allQuestions
+  .filter((e) => e.id.startsWith('cis-itsm/'))
+  .flatMap((e) => e.data);
+
+// Build a small blueprint weight map for the client-side selector
+const weights: Record<string, number> = {};
+for (const d of blueprint!.data.domains) weights[d.name] = d.weight;
+---
+<BaseLayout
+  title="CIS-ITSM Practice — GlideUp.net"
+  description="Practice CIS-ITSM questions with goblin-encouraging explanations and verified doc links."
+  activeNav="cis-itsm"
+>
+  <Breadcrumb crumbs={[
+    { label: 'Practice', href: '/' },
+    { label: 'CIS-ITSM', href: '/cis-itsm/' },
+    { label: 'Question' },
+  ]} />
+
+  <div id="practice-root" class="practice-root" data-exam="CIS-ITSM">
+    <div class="practice-meta">
+      <span class="practice-meta__item" data-position>Question <span data-answered>0</span> answered</span>
+      <span class="practice-meta__item">Accuracy <strong data-accuracy>—</strong></span>
+    </div>
+
+    <article
+      class="question"
+      data-question-card
+      hidden
+    >
+      <div class="question__meta">
+        <span data-domain>—</span>
+        <span>•</span>
+        <span data-difficulty>—</span>
+      </div>
+      <h2 class="question__stem" data-stem></h2>
+      <div class="options" role="radiogroup" aria-label="Answer options" data-options></div>
+      <div class="feedback" hidden data-feedback>
+        <div class="feedback__opener" data-feedback-opener></div>
+        <p class="feedback__rationale" data-rationale></p>
+        <div class="feedback__distractors" data-distractors></div>
+        <div class="feedback__refs" data-refs></div>
+      </div>
+      <div style="margin-top:16px;display:flex;gap:8px;">
+        <button type="button" class="btn btn--primary" data-submit hidden>Check answer</button>
+        <button type="button" class="btn btn--primary" data-next hidden>Next question →</button>
+      </div>
+    </article>
+
+    <div class="card" data-empty hidden>
+      <h2 style="font-size:16px;font-weight:600;margin-bottom:8px;">Out of questions for now</h2>
+      <p style="font-size:13px;color:var(--text-muted);">
+        You've seen them all. Want to start a fresh pass? Clear your local progress on the
+        <a href="/about/">about</a> page.
+      </p>
+    </div>
+  </div>
+</BaseLayout>
+
+<script
+  type="application/json"
+  id="glideup-bank"
+  set:html={JSON.stringify({ questions: examQuestions, weights })}
+/>
+
+<script>
+  import { load, recordAnswer } from '../../lib/progress.js';
+  import { pickNext } from '../../lib/selection.js';
+  import { isCorrect } from '../../lib/scoring.js';
+
+  const bankEl = document.getElementById('glideup-bank');
+  const { questions: bank, weights } = JSON.parse(bankEl.textContent || '{"questions":[],"weights":{}}');
+
+  const root = document.getElementById('practice-root');
+  const card = root.querySelector('[data-question-card]');
+  const emptyEl = root.querySelector('[data-empty]');
+  const stemEl = root.querySelector('[data-stem]');
+  const domainEl = root.querySelector('[data-domain]');
+  const diffEl = root.querySelector('[data-difficulty]');
+  const optionsEl = root.querySelector('[data-options]');
+  const feedbackEl = root.querySelector('[data-feedback]');
+  const openerEl = root.querySelector('[data-feedback-opener]');
+  const rationaleEl = root.querySelector('[data-rationale]');
+  const distractorsEl = root.querySelector('[data-distractors]');
+  const refsEl = root.querySelector('[data-refs]');
+  const submitBtn = root.querySelector('[data-submit]');
+  const nextBtn = root.querySelector('[data-next]');
+  const answeredEl = root.querySelector('[data-answered]');
+  const accuracyEl = root.querySelector('[data-accuracy]');
+
+  const OPENERS_CORRECT = ['✅ Boom. Nailed it.', '✅ Locked in.', '✅ Clean answer.'];
+  const OPENERS_INCORRECT = ['⚠️ Not quite — but now you know.', '⚠️ Close, but read the rationale.'];
+  const pick = (xs) => xs[Math.floor(Math.random() * xs.length)];
+
+  function updateStats() {
+    const state = load();
+    const byQ = state.byQuestion || {};
+    const ids = Object.keys(byQ);
+    const total = ids.length;
+    const correct = ids.filter((id) => byQ[id].correct).length;
+    answeredEl.textContent = String(total);
+    accuracyEl.textContent = total > 0 ? Math.round((correct / total) * 100) + '%' : '—';
+  }
+
+  let selected = null;
+  let revealed = false;
+  let current = null;
+
+  function renderQuestion(q) {
+    current = q;
+    selected = null;
+    revealed = false;
+
+    card.hidden = false;
+    emptyEl.hidden = true;
+    feedbackEl.hidden = true;
+    feedbackEl.classList.remove('is-correct', 'is-incorrect');
+    submitBtn.hidden = true;
+    nextBtn.hidden = true;
+
+    stemEl.textContent = q.stem;
+    domainEl.textContent = q.domain;
+    diffEl.textContent = q.difficulty;
+
+    optionsEl.innerHTML = '';
+    for (const opt of q.options) {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'option';
+      btn.dataset.option = opt.id;
+      btn.setAttribute('role', 'radio');
+      btn.setAttribute('aria-checked', 'false');
+      btn.innerHTML = `<span class="option__letter">${opt.id}</span><span class="option__text"></span>`;
+      btn.querySelector('.option__text').textContent = opt.text;
+      btn.addEventListener('click', () => {
+        if (revealed) return;
+        for (const b of optionsEl.querySelectorAll('.option')) {
+          b.setAttribute('aria-checked', 'false');
+          b.classList.remove('is-selected');
+        }
+        btn.setAttribute('aria-checked', 'true');
+        btn.classList.add('is-selected');
+        selected = opt.id;
+        submitBtn.hidden = false;
+      });
+      optionsEl.appendChild(btn);
+    }
+
+    rationaleEl.textContent = q.rationale;
+    distractorsEl.innerHTML = '';
+    for (const [letter, note] of Object.entries(q.distractor_notes || {})) {
+      const row = document.createElement('div');
+      row.className = 'feedback__distractor';
+      const strong = document.createElement('strong');
+      strong.textContent = letter + '.';
+      row.appendChild(strong);
+      row.appendChild(document.createTextNode(' ' + note));
+      distractorsEl.appendChild(row);
+    }
+    refsEl.innerHTML = '<strong>References:</strong> ';
+    for (const r of (q.references || [])) {
+      const a = document.createElement('a');
+      a.href = r.url;
+      a.target = '_blank';
+      a.rel = 'noopener noreferrer';
+      a.textContent = r.title + ' ↗';
+      refsEl.appendChild(a);
+      refsEl.appendChild(document.createTextNode(' '));
+    }
+  }
+
+  function advance() {
+    const next = pickNext(bank, weights, 'CIS-ITSM');
+    if (!next) {
+      card.hidden = true;
+      emptyEl.hidden = false;
+      return;
+    }
+    renderQuestion(next);
+  }
+
+  submitBtn?.addEventListener('click', () => {
+    if (!selected || !current || revealed) return;
+    revealed = true;
+    const correct = isCorrect([selected], current.correct);
+
+    for (const b of optionsEl.querySelectorAll('.option')) {
+      const letter = b.dataset.option;
+      if (current.correct.includes(letter)) b.classList.add('is-correct');
+      else if (letter === selected) b.classList.add('is-incorrect');
+      b.disabled = true;
+    }
+
+    feedbackEl.hidden = false;
+    feedbackEl.classList.add(correct ? 'is-correct' : 'is-incorrect');
+    openerEl.textContent = correct ? pick(OPENERS_CORRECT) : pick(OPENERS_INCORRECT);
+
+    recordAnswer({
+      questionId: current.id,
+      exam: current.exam,
+      domain: current.domain,
+      correct,
+    });
+    updateStats();
+
+    submitBtn.hidden = true;
+    nextBtn.hidden = false;
+  });
+
+  nextBtn?.addEventListener('click', advance);
+
+  updateStats();
+  advance();
+</script>
+
+<style>
+  .practice-root { max-width: 820px; }
+  .practice-meta {
+    display: flex;
+    gap: 16px;
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+  }
+  .practice-meta strong { color: var(--primary-dark); font-weight: 700; }
+</style>

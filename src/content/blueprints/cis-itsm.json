@@ -1,0 +1,16 @@
+{
+  "exam": "CIS-ITSM",
+  "name": "Certified Implementation Specialist — IT Service Management",
+  "release": "Australia",
+  "kb": "KB0011560",
+  "totalQuestions": 240,
+  "format_note": "Live exam is 60 questions / 90 min. Current six-domain blueprint (Knowledge Management was replaced by Service Portfolio Management; Release folded into Change). CIS-Data Foundations is now a prerequisite. GlideUp bank scales to 240 for practice depth.",
+  "domains": [
+    { "id": "incident-management",                   "name": "Incident Management",                   "weight": 25, "target": 60 },
+    { "id": "problem-management",                    "name": "Problem Management",                    "weight": 15, "target": 36 },
+    { "id": "change-management",                     "name": "Change Management",                     "weight": 25, "target": 60 },
+    { "id": "service-portfolio-management",          "name": "Service Portfolio Management",          "weight": 5,  "target": 12 },
+    { "id": "service-catalog-and-request-management","name": "Service Catalog and Request Management","weight": 25, "target": 60 },
+    { "id": "configuration-management-database",     "name": "Configuration Management Database (CMDB)","weight": 5, "target": 12 }
+  ]
+}

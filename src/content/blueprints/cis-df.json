@@ -1,0 +1,15 @@
+{
+  "exam": "CIS-DF",
+  "name": "Certified Implementation Specialist — Data Foundations (CMDB and CSDM)",
+  "release": "Australia",
+  "kb": "KB0012913",
+  "totalQuestions": 240,
+  "format_note": "Live exam is 60 questions / 90 min, 70% pass. Five-domain blueprint (CMDB + CSDM). CSDM v5 is the current model. Prerequisite for all CIS specialty tracks. GlideUp bank scales to 240 for practice depth.",
+  "domains": [
+    { "id": "govern",             "name": "Govern",              "weight": 35, "target": 84 },
+    { "id": "insight",            "name": "Insight",             "weight": 20, "target": 48 },
+    { "id": "ingest",             "name": "Ingest",              "weight": 19, "target": 46 },
+    { "id": "configuration",      "name": "Configuration",       "weight": 15, "target": 36 },
+    { "id": "csdm-fundamentals",  "name": "CSDM Fundamentals",   "weight": 11, "target": 26 }
+  ]
+}

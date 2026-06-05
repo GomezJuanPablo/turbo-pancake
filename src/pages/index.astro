@@ -24,6 +24,15 @@ const csaPct = csaTarget > 0 ? Math.round((csaAuthored / csaTarget) * 100) : 0;
 const cadTarget = cadBlueprint!.data.totalQuestions;
 const cadAuthored = cadQuestions.length;
 
+const cisitsmBlueprint = await getEntry('blueprints', 'cis-itsm');
+const cisdfBlueprint = await getEntry('blueprints', 'cis-df');
+const cisitsmQuestions = allQuestions.filter((e) => e.id.startsWith('cis-itsm/')).flatMap((e) => e.data);
+const cisdfQuestions = allQuestions.filter((e) => e.id.startsWith('cis-df/')).flatMap((e) => e.data);
+const cisitsmAuthored = cisitsmQuestions.length;
+const cisdfAuthored = cisdfQuestions.length;
+const cisitsmTarget = cisitsmBlueprint!.data.totalQuestions;
+const cisdfTarget = cisdfBlueprint!.data.totalQuestions;
+
 const exams = [
   {
     code: 'CSA',
@@ -48,20 +57,23 @@ const exams = [
     name: 'Certified Implementation Specialist — ITSM',
     description: 'IT Service Management implementation patterns and process.',
     href: '/cis-itsm/',
-    status: 'soon',
-    questions: 0,
-    target: 240,
+    status: cisitsmAuthored > 0 ? 'live' : 'soon',
+    questions: cisitsmAuthored,
+    target: cisitsmTarget,
   },
   {
     code: 'CIS-DF',
     name: 'Certified Implementation Specialist — Data Foundations',
     description: 'CMDB, data hygiene, integrations, the data layer.',
     href: '/cis-df/',
-    status: 'soon',
-    questions: 0,
-    target: 240,
+    status: cisdfAuthored > 0 ? 'live' : 'soon',
+    questions: cisdfAuthored,
+    target: cisdfTarget,
   },
 ];
+
+const liveCount = exams.filter((e) => e.status === 'live').length;
+const liveQuestions = csaAuthored + cadAuthored + cisitsmAuthored + cisdfAuthored;
 ---
 <BaseLayout
   title="GlideUp.net — Free ServiceNow Cert Practice"
@@ -82,8 +94,8 @@ const exams = [
   />
 
   <div class="stat-grid">
-    <StatCard label="Exams" value={`${exams.length}`} delta="CSA + CAD live" deltaTone="up" />
-    <StatCard label="Questions live" value={`${csaAuthored + cadAuthored}`} delta="across CSA + CAD" deltaTone="up" />
+    <StatCard label="Exams" value={`${exams.length}`} delta={`${liveCount} live`} deltaTone="up" />
+    <StatCard label="Questions live" value={`${liveQuestions}`} delta="across live exams" deltaTone="up" />
     <StatCard label="Doc-anchored" value="100%" delta="every question" deltaTone="up" />
   </div>
 

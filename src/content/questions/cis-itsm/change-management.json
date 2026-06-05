@@ -1,0 +1,2891 @@
+[
+  {
+    "id": "cisitsm-chg-001",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Change Management",
+    "subdomain": "Purpose",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What does the ServiceNow Change Management application provide?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A systematic approach to control the lifecycle of all changes, enabling beneficial changes with minimum disruption to IT services"
+      },
+      {
+        "id": "B",
+        "text": "A way to restore service as fast as possible after an outage"
+      },
+      {
+        "id": "C",
+        "text": "A method to find the root cause of recurring incidents"
+      },
+      {
+        "id": "D",
+        "text": "A catalog for ordering hardware and software"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Change Management is the controlled on-ramp for modifying services: a systematic lifecycle that lets useful changes happen while keeping disruption to a minimum.",
+    "distractor_notes": {
+      "B": "Restoring service fast is Incident Management.",
+      "C": "Root cause hunting is Problem Management.",
+      "D": "Ordering items is Request Management / Service Catalog."
+    },
+    "references": [
+      {
+        "title": "Change Management",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/c_ITILChangeManagement.html"
+      }
+    ],
+    "tags": [
+      "change-management",
+      "purpose",
+      "lifecycle"
+    ]
+  },
+  {
+    "id": "cisitsm-chg-002",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Change Management",
+    "subdomain": "Change types",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which three types of service change does ServiceNow Change Management support, per ITIL?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Standard, emergency, and normal"
+      },
+      {
+        "id": "B",
+        "text": "Major, minor, and cosmetic"
+      },
+      {
+        "id": "C",
+        "text": "Pre-approved, post-approved, and rejected"
+      },
+      {
+        "id": "D",
+        "text": "Incident, problem, and request"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "ServiceNow follows ITIL's three change types: standard, emergency, and normal. Each carries its own process expectations.",
+    "distractor_notes": {
+      "B": "Major/minor/cosmetic isn't the ServiceNow change-type set.",
+      "C": "Approval status isn't how the types are named.",
+      "D": "Incident, problem, and request are separate ITSM processes, not change types."
+    },
+    "references": [
+      {
+        "title": "Change types",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/change-types.html"
+      }
+    ],
+    "tags": [
+      "change-management",
+      "change-types"
+    ]
+  },
+  {
+    "id": "cisitsm-chg-003",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Change Management",
+    "subdomain": "Change types",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What does the change type of a change request determine?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Which state model is invoked and the change process that must be followed"
+      },
+      {
+        "id": "B",
+        "text": "The CMDB class of the affected CI"
+      },
+      {
+        "id": "C",
+        "text": "The caller's notification preferences"
+      },
+      {
+        "id": "D",
+        "text": "The instance's release version"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Choosing the change type isn't cosmetic — it selects the state model and the process the change must travel through, from approvals to scheduling.",
+    "distractor_notes": {
+      "B": "The CI's class comes from the CMDB, independent of change type.",
+      "C": "Notification preferences are user settings, not driven by change type.",
+      "D": "The release version is a platform attribute, unrelated to change type."
+    },
+    "references": [
+      {
+        "title": "Change types",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/change-types.html"
+      }
+    ],
+    "tags": [
+      "change-management",
+      "change-types",
+      "state-model"
+    ]
+  },
+  {
+    "id": "cisitsm-chg-004",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Change Management",
+    "subdomain": "Standard change",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which description best fits a standard change?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A pre-authorized, low-risk, repeatable change with a proven history of success that follows a specified procedure"
+      },
+      {
+        "id": "B",
+        "text": "A high-priority change that bypasses normal approvals to resolve an outage"
+      },
+      {
+        "id": "C",
+        "text": "Any change that is neither standard nor emergency"
+      },
+      {
+        "id": "D",
+        "text": "A change that always requires CAB authorization"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Standard changes are the routine, proven, low-risk ones — pre-authorized and following a set procedure, so they don't need fresh approvals each time.",
+    "distractor_notes": {
+      "B": "That describes an emergency change.",
+      "C": "That describes a normal change.",
+      "D": "Standard changes are pre-approved and specifically skip CAB authorization."
+    },
+    "references": [
+      {
+        "title": "Change types",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/change-types.html"
+      }
+    ],
+    "tags": [
+      "change-management",
+      "standard-change"
+    ]
+  },
+  {
+    "id": "cisitsm-chg-005",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Change Management",
+    "subdomain": "Standard change",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Because standard changes are pre-approved, which approval steps do they skip?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Group/peer approval and CAB authorization"
+      },
+      {
+        "id": "B",
+        "text": "The creation of the change record"
+      },
+      {
+        "id": "C",
+        "text": "All implementation tasks"
+      },
+      {
+        "id": "D",
+        "text": "The closure of the change"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Pre-approval is the whole point of a standard change: it streamlines the flow by skipping group/peer approval and CAB authorization, since the change is already vetted.",
+    "distractor_notes": {
+      "B": "You still create the change record — it's the approvals that are streamlined.",
+      "C": "Implementation tasks still happen; the change still has to be done.",
+      "D": "Closure still occurs at the end of the change."
+    },
+    "references": [
+      {
+        "title": "Change types",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/change-types.html"
+      }
+    ],
+    "tags": [
+      "change-management",
+      "standard-change",
+      "approvals"
+    ]
+  },
+  {
+    "id": "cisitsm-chg-006",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Change Management",
+    "subdomain": "Emergency change",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A critical security patch must be deployed immediately to stop an active exploit. Which change type applies, and what is distinctive about its approval path?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Emergency change — it bypasses group and peer review and goes straight to the Authorize state for the CAB approval group"
+      },
+      {
+        "id": "B",
+        "text": "Standard change — it needs no record because it is pre-approved"
+      },
+      {
+        "id": "C",
+        "text": "Normal change — it must complete two full levels of approval before any action"
+      },
+      {
+        "id": "D",
+        "text": "It is not a change at all; it should be logged only as an incident"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "An urgent fix like a security patch is an emergency change. Speed matters, so it skips group and peer review and jumps straight to Authorize for the CAB approval group.",
+    "distractor_notes": {
+      "B": "Standard changes are pre-approved but still create a record; an urgent unproven patch isn't a standard change anyway.",
+      "C": "Waiting for two full approval levels defeats the urgency of an emergency.",
+      "D": "Deploying a patch is a change; the incident may be what triggered it, but the patch itself is a change."
+    },
+    "references": [
+      {
+        "title": "Change types",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/change-types.html"
+      }
+    ],
+    "tags": [
+      "change-management",
+      "emergency-change",
+      "scenario"
+    ]
+  },
+  {
+    "id": "cisitsm-chg-007",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Change Management",
+    "subdomain": "Normal change",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What does a normal change require before it is implemented?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A prescriptive process with assessments and authorizations, including peer/technical approval and CAB authorization"
+      },
+      {
+        "id": "B",
+        "text": "No approvals at all"
+      },
+      {
+        "id": "C",
+        "text": "Only the caller's confirmation"
+      },
+      {
+        "id": "D",
+        "text": "Immediate implementation that bypasses all review"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Normal changes go the full distance: assessments and multiple authorizations — peer/technical, change management, and CAB — to keep disruption low before they're implemented, reviewed, and closed.",
+    "distractor_notes": {
+      "B": "No approvals describes a standard change, which is pre-approved.",
+      "C": "Caller confirmation isn't the authorization mechanism for a normal change.",
+      "D": "Bypassing review is an emergency-change trait, not normal."
+    },
+    "references": [
+      {
+        "title": "Change types",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/change-types.html"
+      }
+    ],
+    "tags": [
+      "change-management",
+      "normal-change",
+      "approvals"
+    ]
+  },
+  {
+    "id": "cisitsm-chg-008",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Change Management",
+    "subdomain": "Normal change",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "How is a normal change defined relative to the other change types?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Any service change that is not a standard change or an emergency change"
+      },
+      {
+        "id": "B",
+        "text": "Only changes that resolve major incidents"
+      },
+      {
+        "id": "C",
+        "text": "Only pre-approved catalog-based changes"
+      },
+      {
+        "id": "D",
+        "text": "Changes that never touch configuration items"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Normal is the catch-all: if a change isn't a pre-approved standard change or an urgent emergency change, it's a normal change and follows the full prescriptive process.",
+    "distractor_notes": {
+      "B": "Resolving major incidents urgently points to an emergency change.",
+      "C": "Pre-approved catalog-based changes are standard changes.",
+      "D": "Whether CIs are touched doesn't define the normal type."
+    },
+    "references": [
+      {
+        "title": "Change types",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/change-types.html"
+      }
+    ],
+    "tags": [
+      "change-management",
+      "normal-change",
+      "definition"
+    ]
+  },
+  {
+    "id": "cisitsm-chg-009",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Change Management",
+    "subdomain": "Create change",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "What is the purpose of creating a change request?",
+    "options": [
+      {
+        "id": "A",
+        "text": "To implement a controlled process for modifying approved and supported configuration items"
+      },
+      {
+        "id": "B",
+        "text": "To document an unplanned service outage"
+      },
+      {
+        "id": "C",
+        "text": "To request access to a knowledge base"
+      },
+      {
+        "id": "D",
+        "text": "To record a customer's satisfaction score"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "A change request wraps a controlled process around modifying approved, supported CIs — so changes happen deliberately rather than ad hoc.",
+    "distractor_notes": {
+      "B": "An unplanned outage is an incident.",
+      "C": "Knowledge access isn't what a change request is for.",
+      "D": "Satisfaction scores relate to incidents/requests, not change creation."
+    },
+    "references": [
+      {
+        "title": "Create a change request",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/t_CreateAChange.html"
+      }
+    ],
+    "tags": [
+      "change-management",
+      "create-change",
+      "controlled-process"
+    ]
+  },
+  {
+    "id": "cisitsm-chg-010",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Change Management",
+    "subdomain": "Standard change catalog",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "How are approved standard changes typically made available for efficient, repeatable requesting?",
+    "options": [
+      {
+        "id": "A",
+        "text": "As a catalog of predefined standard change templates"
+      },
+      {
+        "id": "B",
+        "text": "As individual incidents"
+      },
+      {
+        "id": "C",
+        "text": "As CMDB identification rules"
+      },
+      {
+        "id": "D",
+        "text": "As problem tasks"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Approved standard changes live as templates in a standard change catalog, which makes requesting them quick and lets the Change team control exactly what's authorized as standard.",
+    "distractor_notes": {
+      "B": "Incidents track disruptions, not reusable standard changes.",
+      "C": "Identification rules are CMDB configuration.",
+      "D": "Problem tasks belong to Problem Management."
+    },
+    "references": [
+      {
+        "title": "Configure standard change catalog properties",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/t_ConfigureTheStandardChangeCatalog.html"
+      }
+    ],
+    "tags": [
+      "change-management",
+      "standard-change",
+      "catalog"
+    ]
+  },
+  {
+    "id": "cisitsm-chg-011",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Change Management",
+    "subdomain": "Standard change catalog",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "How does a user raise a new standard change quickly?",
+    "options": [
+      {
+        "id": "A",
+        "text": "By creating it from a published standard change catalog template"
+      },
+      {
+        "id": "B",
+        "text": "By submitting it for full CAB authorization first"
+      },
+      {
+        "id": "C",
+        "text": "By converting an incident into a change"
+      },
+      {
+        "id": "D",
+        "text": "By editing the CMDB schema"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Standard changes are raised straight from published catalog templates — the template carries the pre-approved details, so the requester just fills in specifics.",
+    "distractor_notes": {
+      "B": "Standard changes are pre-approved and don't go to CAB authorization.",
+      "C": "Promoting an incident creates a change, but the streamlined standard-change path is the catalog template.",
+      "D": "Editing the CMDB schema has nothing to do with raising a standard change."
+    },
+    "references": [
+      {
+        "title": "Create a standard change request from the catalog",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/t_RaiseNewStdCngeFmTempl.html"
+      }
+    ],
+    "tags": [
+      "change-management",
+      "standard-change",
+      "template"
+    ]
+  },
+  {
+    "id": "cisitsm-chg-012",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Change Management",
+    "subdomain": "Templates",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the purpose of change templates?",
+    "options": [
+      {
+        "id": "A",
+        "text": "To standardize the creation of change requests, based on the available change models"
+      },
+      {
+        "id": "B",
+        "text": "To delete change records in bulk"
+      },
+      {
+        "id": "C",
+        "text": "To calculate the CMDB health score"
+      },
+      {
+        "id": "D",
+        "text": "To assign incidents to groups"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Change templates make change creation consistent by basing new requests on defined change models — less re-keying, fewer mistakes, more repeatability.",
+    "distractor_notes": {
+      "B": "Templates create standardized changes; they don't bulk-delete records.",
+      "C": "CMDB health is a Data Foundations metric.",
+      "D": "Incident assignment is handled by incident assignment rules."
+    },
+    "references": [
+      {
+        "title": "Change templates",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/change-templates.html"
+      }
+    ],
+    "tags": [
+      "change-management",
+      "templates",
+      "standardization"
+    ]
+  },
+  {
+    "id": "cisitsm-chg-013",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Change Management",
+    "subdomain": "Templates",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "What happens to files attached to a standard change template when a change request is created from it?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The attached files are copied to the change request created from the template"
+      },
+      {
+        "id": "B",
+        "text": "The files are deleted from the template"
+      },
+      {
+        "id": "C",
+        "text": "The files are emailed to the CAB manager"
+      },
+      {
+        "id": "D",
+        "text": "The files are uploaded to the CMDB"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Attachments on a standard change template carry over: the change request created from the template gets a copy of those files, so supporting docs travel with the change.",
+    "distractor_notes": {
+      "B": "The template keeps its files; copies go to the new change.",
+      "C": "There's no automatic email to the CAB manager.",
+      "D": "Attachments aren't pushed into the CMDB."
+    },
+    "references": [
+      {
+        "title": "Attach files to a standard change template",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/attach-files-change-templates.html"
+      }
+    ],
+    "tags": [
+      "change-management",
+      "templates",
+      "attachments"
+    ]
+  },
+  {
+    "id": "cisitsm-chg-014",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Change Management",
+    "subdomain": "Change tasks",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is a change task?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A piece of work related to a change request, such as planning, implementing, testing, and reviewing the change"
+      },
+      {
+        "id": "B",
+        "text": "A pre-approved catalog item"
+      },
+      {
+        "id": "C",
+        "text": "A record that documents the root cause of incidents"
+      },
+      {
+        "id": "D",
+        "text": "A CMDB relationship between two CIs"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Change tasks break a change into the actual work — plan it, implement it, test it, review it — so the steps can be tracked and assigned individually under the parent change.",
+    "distractor_notes": {
+      "B": "A catalog item is a request offering, not a change task.",
+      "C": "Documenting root cause is a Problem Management activity.",
+      "D": "CI relationships live in the CMDB, not as change tasks."
+    },
+    "references": [
+      {
+        "title": "Create a change task",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/create-a-change-task.html"
+      }
+    ],
+    "tags": [
+      "change-management",
+      "change-task",
+      "work"
+    ]
+  },
+  {
+    "id": "cisitsm-chg-015",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Change Management",
+    "subdomain": "Assignment",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "How can you automate routing change requests to the appropriate group or individual?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Define change request assignment rules"
+      },
+      {
+        "id": "B",
+        "text": "Run conflict detection"
+      },
+      {
+        "id": "C",
+        "text": "Create a known error article"
+      },
+      {
+        "id": "D",
+        "text": "Enable the auto-close property"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Assignment rules automate the routing of change requests to the right group or person, so changes don't sit unassigned waiting for manual triage.",
+    "distractor_notes": {
+      "B": "Conflict detection finds scheduling clashes; it doesn't assign work.",
+      "C": "Known errors belong to Problem Management.",
+      "D": "Auto-close relates to incidents, not change assignment."
+    },
+    "references": [
+      {
+        "title": "Create a change request assignment rule",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/t_DefineAnAssignRuleForChange.html"
+      }
+    ],
+    "tags": [
+      "change-management",
+      "assignment-rules",
+      "routing"
+    ]
+  },
+  {
+    "id": "cisitsm-chg-016",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Change Management",
+    "subdomain": "Affected CIs",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "What does creating a change request from a configuration item (CI) let you do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Create a change from a list of CIs, or add selected CIs from a list to a change record"
+      },
+      {
+        "id": "B",
+        "text": "Delete the CI from the CMDB"
+      },
+      {
+        "id": "C",
+        "text": "Convert the CI into an incident"
+      },
+      {
+        "id": "D",
+        "text": "Reset the CI's discovery source"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Starting from CIs lets you spin up a change directly from a list of them, or attach selected CIs to a change — handy when you already know which items the change will touch.",
+    "distractor_notes": {
+      "B": "Creating a change doesn't delete the CI.",
+      "C": "CIs aren't converted into incidents.",
+      "D": "Discovery source isn't reset by creating a change from a CI."
+    },
+    "references": [
+      {
+        "title": "Create a change request from a configuration item (CI)",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/t_CreateAChangeFromACI.html"
+      }
+    ],
+    "tags": [
+      "change-management",
+      "affected-ci",
+      "create-change"
+    ]
+  },
+  {
+    "id": "cisitsm-chg-017",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Change Management",
+    "subdomain": "Affected CIs",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "How can additional affected CIs or services be associated with a change request?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Through related lists on the Change Request form, and from the dependency views map"
+      },
+      {
+        "id": "B",
+        "text": "Only by editing the CMDB schema"
+      },
+      {
+        "id": "C",
+        "text": "Only through a MID Server"
+      },
+      {
+        "id": "D",
+        "text": "Only by the original caller"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "You attach affected CIs and services using the related lists on the change form, and you can also pull them in visually from the dependency views map.",
+    "distractor_notes": {
+      "B": "You don't need to alter the CMDB schema to associate CIs with a change.",
+      "C": "A MID Server is discovery infrastructure, not how you associate CIs on a change.",
+      "D": "Any appropriately permitted user can associate CIs, not only the caller."
+    },
+    "references": [
+      {
+        "title": "Associated CIs on a change request",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/c_AffectedCIsAndImpactedServices.html"
+      }
+    ],
+    "tags": [
+      "change-management",
+      "affected-ci",
+      "dependency-views"
+    ]
+  },
+  {
+    "id": "cisitsm-chg-018",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Change Management",
+    "subdomain": "Risk and impact",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "After creating a change request, what can you do to evaluate it before scheduling?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Assess and analyze the risk and impact, and review any conflicts that are detected"
+      },
+      {
+        "id": "B",
+        "text": "Automatically promote it to a major incident"
+      },
+      {
+        "id": "C",
+        "text": "Delete all related change tasks"
+      },
+      {
+        "id": "D",
+        "text": "Convert it into a problem"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Before you commit to a window, you assess the change's risk and impact and review any detected conflicts — the homework that keeps a change from causing more harm than good.",
+    "distractor_notes": {
+      "B": "Changes aren't promoted to major incidents.",
+      "C": "Deleting tasks isn't part of risk/impact analysis.",
+      "D": "Converting to a problem is unrelated to assessing change risk."
+    },
+    "references": [
+      {
+        "title": "Analyze change request risk and impact",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/change-risk-conflict-analysis.html"
+      }
+    ],
+    "tags": [
+      "change-management",
+      "risk",
+      "impact"
+    ]
+  },
+  {
+    "id": "cisitsm-chg-019",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Change Management",
+    "subdomain": "Risk",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What does the risk lookup table use to determine a change's calculated risk value?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The success probability value and the impact value"
+      },
+      {
+        "id": "B",
+        "text": "The caller's location and language"
+      },
+      {
+        "id": "C",
+        "text": "The number of attached knowledge articles"
+      },
+      {
+        "id": "D",
+        "text": "The CMDB discovery schedule"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The risk lookup table maps the calculated risk from the change's success probability and its impact — combining how likely it is to succeed with how much it would affect if it didn't.",
+    "distractor_notes": {
+      "B": "Caller location/language doesn't feed the risk calculation.",
+      "C": "Attached articles don't determine risk.",
+      "D": "The discovery schedule is unrelated to risk scoring."
+    },
+    "references": [
+      {
+        "title": "Calculated Risk Score",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/risk-lookup.html"
+      }
+    ],
+    "tags": [
+      "change-management",
+      "risk",
+      "risk-lookup"
+    ]
+  },
+  {
+    "id": "cisitsm-chg-020",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Change Management",
+    "subdomain": "Risk",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "What does the change success score help you determine?",
+    "options": [
+      {
+        "id": "A",
+        "text": "How likely a team is to complete the change request without issues, based on historical data"
+      },
+      {
+        "id": "B",
+        "text": "The number of CIs in the CMDB"
+      },
+      {
+        "id": "C",
+        "text": "The caller's satisfaction with the service desk"
+      },
+      {
+        "id": "D",
+        "text": "Which incidents to auto-close"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The change success score taps a team's historical performance to estimate how likely they are to land the change cleanly — useful signal when weighing risk.",
+    "distractor_notes": {
+      "B": "CI counts come from the CMDB, not the success score.",
+      "C": "Satisfaction surveys relate to incidents/requests.",
+      "D": "Auto-close is an incident behavior, unrelated to change success scoring."
+    },
+    "references": [
+      {
+        "title": "Change success score",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/change-success-score.html"
+      }
+    ],
+    "tags": [
+      "change-management",
+      "risk",
+      "success-score"
+    ]
+  },
+  {
+    "id": "cisitsm-chg-021",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Change Management",
+    "subdomain": "Conflict detection",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "On what basis does conflict detection identify potential scheduling conflicts for a change request?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The configuration items and the planned start and end dates, also checking blackout/maintenance schedules and other active changes"
+      },
+      {
+        "id": "B",
+        "text": "The caller's time zone only"
+      },
+      {
+        "id": "C",
+        "text": "The number of approvals on the change"
+      },
+      {
+        "id": "D",
+        "text": "The change's category alone"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Conflict detection looks at which CIs are involved and the planned start/end window, then cross-checks blackout and maintenance schedules and other active changes to flag clashes.",
+    "distractor_notes": {
+      "B": "Time zone alone doesn't drive conflict detection.",
+      "C": "Approval count isn't a conflict input.",
+      "D": "Category alone doesn't determine scheduling conflicts."
+    },
+    "references": [
+      {
+        "title": "Conflict detection",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/c_ConflictDetection.html"
+      }
+    ],
+    "tags": [
+      "change-management",
+      "conflict-detection",
+      "scheduling"
+    ]
+  },
+  {
+    "id": "cisitsm-chg-022",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Change Management",
+    "subdomain": "Conflict detection",
+    "difficulty": "application",
+    "type": "multi_select",
+    "stem": "Which of the following conditions can cause conflict detection to flag a change request?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The CI is already scheduled at the given date and time"
+      },
+      {
+        "id": "B",
+        "text": "The CI is in a blackout window"
+      },
+      {
+        "id": "C",
+        "text": "The CI is not in its maintenance window"
+      },
+      {
+        "id": "D",
+        "text": "The change is categorized as a standard change"
+      },
+      {
+        "id": "E",
+        "text": "The CI has no associated knowledge articles"
+      }
+    ],
+    "correct": [
+      "A",
+      "B",
+      "C"
+    ],
+    "rationale": "Conflicts fire when a CI (or its parent/child) is already scheduled, sits in a blackout window, or falls outside its maintenance window — all genuine scheduling clashes. Change type and knowledge articles are irrelevant to scheduling conflicts.",
+    "distractor_notes": {
+      "D": "Being a standard change is a process attribute, not a scheduling conflict trigger.",
+      "E": "Knowledge article counts have nothing to do with scheduling conflicts."
+    },
+    "references": [
+      {
+        "title": "Conflict detection",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/c_ConflictDetection.html"
+      }
+    ],
+    "tags": [
+      "change-management",
+      "conflict-detection",
+      "scheduling"
+    ]
+  },
+  {
+    "id": "cisitsm-chg-023",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Change Management",
+    "subdomain": "Conflict detection",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What does the conflict calendar provide, and what tool helps resolve the conflicts it shows?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A graphical view of potential scheduling conflicts, with the Scheduling Assistant to help resolve them"
+      },
+      {
+        "id": "B",
+        "text": "A list of CMDB identification rules, resolved with the IRE"
+      },
+      {
+        "id": "C",
+        "text": "A record of caller satisfaction, resolved with a survey"
+      },
+      {
+        "id": "D",
+        "text": "A library of knowledge articles, resolved with KCS"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The conflict calendar paints the scheduling conflicts visually — active changes, blackout schedules, and out-of-maintenance windows — and the Scheduling Assistant helps you shuffle the change to a clean slot.",
+    "distractor_notes": {
+      "B": "Identification rules and the IRE are CMDB / Data Foundations topics.",
+      "C": "Satisfaction surveys aren't what the conflict calendar shows.",
+      "D": "Knowledge articles and KCS are Knowledge Management."
+    },
+    "references": [
+      {
+        "title": "Conflict calendar",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/change-conflict-calendar.html"
+      }
+    ],
+    "tags": [
+      "change-management",
+      "conflict-calendar",
+      "scheduling-assistant"
+    ]
+  },
+  {
+    "id": "cisitsm-chg-024",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Change Management",
+    "subdomain": "Conflict detection",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "You changed a change request's planned start time and want to immediately re-check for clashes before submitting. What can you do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Run conflict detection manually for the change request and review the detected conflicts"
+      },
+      {
+        "id": "B",
+        "text": "Delete the maintenance schedule"
+      },
+      {
+        "id": "C",
+        "text": "Promote the change to a major incident"
+      },
+      {
+        "id": "D",
+        "text": "Set the change to On Hold with reason Awaiting Caller"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "You don't have to wait for the automatic run — you can trigger conflict detection manually for the change and review whatever conflicts come back, then adjust the schedule.",
+    "distractor_notes": {
+      "B": "Deleting the maintenance schedule removes a guardrail rather than checking for clashes.",
+      "C": "Changes aren't promoted to major incidents.",
+      "D": "Awaiting Caller is an incident On Hold reason, not a change action."
+    },
+    "references": [
+      {
+        "title": "Cancel conflict detection manually",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/t_RunManualConflictDetection.html"
+      }
+    ],
+    "tags": [
+      "change-management",
+      "conflict-detection",
+      "manual",
+      "scenario"
+    ]
+  },
+  {
+    "id": "cisitsm-chg-025",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Change Management",
+    "subdomain": "Maintenance schedules",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What does a maintenance schedule define?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The periods during which a configuration item or change can be implemented"
+      },
+      {
+        "id": "B",
+        "text": "The root cause of an incident"
+      },
+      {
+        "id": "C",
+        "text": "The CMDB class hierarchy"
+      },
+      {
+        "id": "D",
+        "text": "The caller's notification channel"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Maintenance schedules mark the windows when it's acceptable to implement a CI or change — work outside those windows is what conflict detection flags.",
+    "distractor_notes": {
+      "B": "Root cause is Problem Management.",
+      "C": "The CMDB class hierarchy is Data Foundations.",
+      "D": "Notification channels are user/notification settings."
+    },
+    "references": [
+      {
+        "title": "Configuring maintenance schedules - Best practices",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/configuring-maintenance-schedules-best-practices.html"
+      }
+    ],
+    "tags": [
+      "change-management",
+      "maintenance-schedule",
+      "windows"
+    ]
+  },
+  {
+    "id": "cisitsm-chg-026",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Change Management",
+    "subdomain": "Scheduling",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A normal change is planned during a defined change blackout window for a critical CI. What is the appropriate way to surface and address this before implementation?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Conflict detection flags the blackout window, and you reschedule the change to a valid maintenance window"
+      },
+      {
+        "id": "B",
+        "text": "Ignore it, since blackout windows do not apply to normal changes"
+      },
+      {
+        "id": "C",
+        "text": "Convert the change into a standard change to bypass scheduling rules"
+      },
+      {
+        "id": "D",
+        "text": "Delete the CI from the change so no conflict is detected"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Conflict detection catches the blackout overlap; the right move is to reschedule into a valid maintenance window rather than push through a freeze. Normal changes are meant to land outside blackout windows and inside maintenance windows.",
+    "distractor_notes": {
+      "B": "Blackout windows absolutely apply to normal changes.",
+      "C": "Reclassifying to dodge scheduling rules is gaming the process, not a fix.",
+      "D": "Stripping the CI hides the conflict instead of resolving the real scheduling risk."
+    },
+    "references": [
+      {
+        "title": "Conflict calendar",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/change-conflict-calendar.html"
+      }
+    ],
+    "tags": [
+      "change-management",
+      "scheduling",
+      "blackout",
+      "scenario"
+    ]
+  },
+  {
+    "id": "cisitsm-chg-027",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Change Management",
+    "subdomain": "Change schedule",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What view does the Change Schedules module provide of change requests?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A Gantt or timeline view based on criteria defined in a Change Schedule Definition"
+      },
+      {
+        "id": "B",
+        "text": "A pie chart of incident categories"
+      },
+      {
+        "id": "C",
+        "text": "A CMDB dependency map only"
+      },
+      {
+        "id": "D",
+        "text": "A list of knowledge articles"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The Change Schedules module lays changes out on a Gantt or timeline view, driven by the criteria in a Change Schedule Definition — so you can see what's planned and when at a glance.",
+    "distractor_notes": {
+      "B": "Incident category charts aren't what the change schedule shows.",
+      "C": "Dependency maps are a CMDB feature, separate from the change timeline.",
+      "D": "Knowledge article lists belong to Knowledge Management."
+    },
+    "references": [
+      {
+        "title": "Change schedules view",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/change-schedules-view.html"
+      }
+    ],
+    "tags": [
+      "change-management",
+      "change-schedule",
+      "timeline"
+    ]
+  },
+  {
+    "id": "cisitsm-chg-028",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Change Management",
+    "subdomain": "CAB",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What does the Change Advisory Board (CAB) workbench enable a CAB manager to do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Schedule, plan, and manage CAB meetings"
+      },
+      {
+        "id": "B",
+        "text": "Run CMDB discovery"
+      },
+      {
+        "id": "C",
+        "text": "Resolve incidents on behalf of agents"
+      },
+      {
+        "id": "D",
+        "text": "Author knowledge articles"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The CAB workbench is the CAB manager's command center for scheduling, planning, and managing CAB meetings — agendas, attendees, and the change schedule all in one place.",
+    "distractor_notes": {
+      "B": "Discovery is run by ITOM Discovery, not the CAB workbench.",
+      "C": "Resolving incidents is an Incident Management activity.",
+      "D": "Authoring articles is Knowledge Management."
+    },
+    "references": [
+      {
+        "title": "Change Advisory Board (CAB) workbench",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/cab-workbench.html"
+      }
+    ],
+    "tags": [
+      "change-management",
+      "cab",
+      "workbench"
+    ]
+  },
+  {
+    "id": "cisitsm-chg-029",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Change Management",
+    "subdomain": "CAB",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A CAB definition in ServiceNow is most similar to which of the following?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A recurring meeting invitation that determines the attributes of all CAB meetings generated from it"
+      },
+      {
+        "id": "B",
+        "text": "A single change request record"
+      },
+      {
+        "id": "C",
+        "text": "A CMDB identification rule"
+      },
+      {
+        "id": "D",
+        "text": "An incident SLA definition"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Think of a CAB definition as a recurring meeting invite: it sets the attributes that every CAB meeting spun up from that definition will inherit. Creating one requires the CAB manager role.",
+    "distractor_notes": {
+      "B": "A CAB definition generates meetings; it isn't a single change record.",
+      "C": "Identification rules are CMDB configuration.",
+      "D": "SLA definitions set response/resolution targets, unrelated to CAB meetings."
+    },
+    "references": [
+      {
+        "title": "Create a CAB definition",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/define-your-cab.html"
+      }
+    ],
+    "tags": [
+      "change-management",
+      "cab",
+      "cab-definition"
+    ]
+  },
+  {
+    "id": "cisitsm-chg-030",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Change Management",
+    "subdomain": "Approval policies",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "What is the role of change approval policies?",
+    "options": [
+      {
+        "id": "A",
+        "text": "They use approval definitions to generate approvals according to your business requirements"
+      },
+      {
+        "id": "B",
+        "text": "They detect scheduling conflicts between changes"
+      },
+      {
+        "id": "C",
+        "text": "They calculate the CMDB health score"
+      },
+      {
+        "id": "D",
+        "text": "They auto-close resolved incidents"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Change approval policies hold approval definitions that generate the right approvals for a change based on your business rules — codifying who must sign off and when.",
+    "distractor_notes": {
+      "B": "Detecting scheduling clashes is conflict detection's job.",
+      "C": "CMDB health is a Data Foundations metric.",
+      "D": "Auto-closing incidents is an Incident Management behavior."
+    },
+    "references": [
+      {
+        "title": "Change approval policies",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/change-approval-policy.html"
+      }
+    ],
+    "tags": [
+      "change-management",
+      "approval-policy",
+      "approvals"
+    ]
+  },
+  {
+    "id": "cisitsm-chg-031",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Change Management",
+    "subdomain": "Change models",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What does the Change models feature let change managers do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Tailor change activities and flows for specific use cases with fit-for-purpose state models"
+      },
+      {
+        "id": "B",
+        "text": "Restore failed services without approvals"
+      },
+      {
+        "id": "C",
+        "text": "Identify the root cause of recurring incidents"
+      },
+      {
+        "id": "D",
+        "text": "Generate the CMDB baseline"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Change models let managers shape fit-for-purpose change processes — custom activities and flows for particular use cases — extending the standard ITIL types rather than forcing one rigid flow.",
+    "distractor_notes": {
+      "B": "Restoring failed services without approvals is closer to an emergency-change action, not what change models are.",
+      "C": "Root cause is Problem Management.",
+      "D": "Generating the CMDB baseline is a Data Foundations activity."
+    },
+    "references": [
+      {
+        "title": "Change models",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/change-models.html"
+      }
+    ],
+    "tags": [
+      "change-management",
+      "change-models"
+    ]
+  },
+  {
+    "id": "cisitsm-chg-032",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Change Management",
+    "subdomain": "Change models",
+    "difficulty": "recall",
+    "type": "multi_select",
+    "stem": "Which of the following can you define using Change models?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Fit-for-purpose state models"
+      },
+      {
+        "id": "B",
+        "text": "State transitions"
+      },
+      {
+        "id": "C",
+        "text": "State transition conditions"
+      },
+      {
+        "id": "D",
+        "text": "CMDB identification rules"
+      },
+      {
+        "id": "E",
+        "text": "The incident priority matrix"
+      }
+    ],
+    "correct": [
+      "A",
+      "B",
+      "C"
+    ],
+    "rationale": "Change models let you define fit-for-purpose state models, the transitions between those states, and the conditions that gate each transition. Identification rules and the incident priority matrix belong to other areas entirely.",
+    "distractor_notes": {
+      "D": "Identification rules are CMDB / Data Foundations configuration, not part of change models.",
+      "E": "The incident priority matrix is defined by priority lookup rules in Incident Management."
+    },
+    "references": [
+      {
+        "title": "Change models",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/change-models.html"
+      }
+    ],
+    "tags": [
+      "change-management",
+      "change-models",
+      "state-model"
+    ]
+  },
+  {
+    "id": "cisitsm-chg-033",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Change Management",
+    "subdomain": "Change models",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Why would you create a change model?",
+    "options": [
+      {
+        "id": "A",
+        "text": "To configure the states and transitions that match your organization's change processes"
+      },
+      {
+        "id": "B",
+        "text": "To delete all standard changes"
+      },
+      {
+        "id": "C",
+        "text": "To assign incidents to groups"
+      },
+      {
+        "id": "D",
+        "text": "To run discovery on a CI"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Creating a change model is how you bake your organization's specific change process into states and transitions, so changes of that type follow the flow you actually use.",
+    "distractor_notes": {
+      "B": "Creating a model doesn't delete standard changes.",
+      "C": "Incident assignment is an Incident Management activity.",
+      "D": "Running discovery is an ITOM activity."
+    },
+    "references": [
+      {
+        "title": "Create a Change model",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/create-a-change-model.html"
+      }
+    ],
+    "tags": [
+      "change-management",
+      "change-models",
+      "create-model"
+    ]
+  },
+  {
+    "id": "cisitsm-chg-034",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Change Management",
+    "subdomain": "Change models",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "What do you do when you configure change model states?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Define the states for a change model and the transitions between them"
+      },
+      {
+        "id": "B",
+        "text": "Set the CMDB class hierarchy"
+      },
+      {
+        "id": "C",
+        "text": "Configure the global search sources"
+      },
+      {
+        "id": "D",
+        "text": "Define incident on-hold reasons"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Configuring change model states is where you lay out the states a change passes through and how it moves between them — the skeleton of the model's flow.",
+    "distractor_notes": {
+      "B": "The CMDB class hierarchy is Data Foundations configuration.",
+      "C": "Global search sources are a platform UI setting.",
+      "D": "On-hold reasons belong to the incident state model."
+    },
+    "references": [
+      {
+        "title": "Configure change model states",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/configure-change-model-states.html"
+      }
+    ],
+    "tags": [
+      "change-management",
+      "change-models",
+      "states"
+    ]
+  },
+  {
+    "id": "cisitsm-chg-035",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Change Management",
+    "subdomain": "Change models",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Why would you attach a process to a change model's states?",
+    "options": [
+      {
+        "id": "A",
+        "text": "To enable state transitions based on defined conditions"
+      },
+      {
+        "id": "B",
+        "text": "To delete the change model"
+      },
+      {
+        "id": "C",
+        "text": "To grant all users the admin role"
+      },
+      {
+        "id": "D",
+        "text": "To recalculate CMDB health"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Attaching a process with defined conditions to model states is what actually drives the transitions — it lets the change move from one state to the next when the conditions are met.",
+    "distractor_notes": {
+      "B": "Attaching a process configures transitions; it doesn't delete the model.",
+      "C": "It doesn't grant roles.",
+      "D": "CMDB health is unrelated to change model transitions."
+    },
+    "references": [
+      {
+        "title": "Attach a process for Change model states",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/attach-process-change-model.html"
+      }
+    ],
+    "tags": [
+      "change-management",
+      "change-models",
+      "transitions"
+    ]
+  },
+  {
+    "id": "cisitsm-chg-036",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Change Management",
+    "subdomain": "Change models",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the purpose of the Change Models properties?",
+    "options": [
+      {
+        "id": "A",
+        "text": "To enable access to the Change models capabilities when creating a change request"
+      },
+      {
+        "id": "B",
+        "text": "To define the company's holiday schedule"
+      },
+      {
+        "id": "C",
+        "text": "To configure incident SLAs"
+      },
+      {
+        "id": "D",
+        "text": "To set up the MID Server"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The Change Models properties switch on access to the change models capabilities so they're available when you create a change request.",
+    "distractor_notes": {
+      "B": "Holiday schedules are a platform schedule setting, not change model properties.",
+      "C": "Incident SLAs are configured in SLA definitions.",
+      "D": "MID Server setup is discovery infrastructure."
+    },
+    "references": [
+      {
+        "title": "Change Models properties",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/change-models-properties.html"
+      }
+    ],
+    "tags": [
+      "change-management",
+      "change-models",
+      "properties"
+    ]
+  },
+  {
+    "id": "cisitsm-chg-037",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Change Management",
+    "subdomain": "Change flows",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What do Change Management change flows provide?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A library of reusable actions and end-to-end implementations of the base-system change models"
+      },
+      {
+        "id": "B",
+        "text": "A list of all closed incidents"
+      },
+      {
+        "id": "C",
+        "text": "The CMDB identification engine"
+      },
+      {
+        "id": "D",
+        "text": "The knowledge base taxonomy"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Change flows are the prebuilt plumbing: a library of reusable actions plus full end-to-end implementations of the base change models you can use or adapt.",
+    "distractor_notes": {
+      "B": "Closed incident lists are an Incident Management view.",
+      "C": "The identification engine (IRE) is a CMDB / Data Foundations component.",
+      "D": "Knowledge taxonomy is Knowledge Management."
+    },
+    "references": [
+      {
+        "title": "Change flows",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/change-flows.html"
+      }
+    ],
+    "tags": [
+      "change-management",
+      "change-flows",
+      "actions"
+    ]
+  },
+  {
+    "id": "cisitsm-chg-038",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Change Management",
+    "subdomain": "Change flows",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Starting with the Yokohama release, what is the relationship between the new base-system change flows and the existing change workflows?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The new base-system flows replace the existing workflows, though you can still create or use custom workflows"
+      },
+      {
+        "id": "B",
+        "text": "Flows are forbidden and only workflows may be used"
+      },
+      {
+        "id": "C",
+        "text": "Workflows are deleted automatically on upgrade"
+      },
+      {
+        "id": "D",
+        "text": "Flows only work for incidents, not changes"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "From Yokohama onward, base-system flows replace the old workflows for Change Management. You're not forced off custom workflows, but new requirements should be built as flows.",
+    "distractor_notes": {
+      "B": "Flows are the recommended direction, not forbidden.",
+      "C": "Existing workflows aren't auto-deleted; you can continue using them.",
+      "D": "These flows are specifically for Change Management."
+    },
+    "references": [
+      {
+        "title": "Change flows",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/change-flows.html"
+      }
+    ],
+    "tags": [
+      "change-management",
+      "change-flows",
+      "workflows"
+    ]
+  },
+  {
+    "id": "cisitsm-chg-039",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Change Management",
+    "subdomain": "Change flows",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which tool is used to create, operate, and troubleshoot Change Management flows?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Workflow Studio"
+      },
+      {
+        "id": "B",
+        "text": "The CMDB Workspace"
+      },
+      {
+        "id": "C",
+        "text": "The Service Catalog designer"
+      },
+      {
+        "id": "D",
+        "text": "The Knowledge editor"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Flows are built and managed in Workflow Studio, the single interface that offers natural-language descriptions, runtime information, and consolidated configuration.",
+    "distractor_notes": {
+      "B": "The CMDB Workspace is for Data Foundations work.",
+      "C": "The catalog designer builds request items.",
+      "D": "The Knowledge editor authors articles."
+    },
+    "references": [
+      {
+        "title": "Change flows",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/change-flows.html"
+      }
+    ],
+    "tags": [
+      "change-management",
+      "change-flows",
+      "workflow-studio"
+    ]
+  },
+  {
+    "id": "cisitsm-chg-040",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Change Management",
+    "subdomain": "Change flows",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Under which Workflow Studio spoke are the Change Management flow actions available?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The ITSM spoke"
+      },
+      {
+        "id": "B",
+        "text": "The Discovery spoke"
+      },
+      {
+        "id": "C",
+        "text": "The HR spoke"
+      },
+      {
+        "id": "D",
+        "text": "The Integration Hub spoke for email"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Change Management's Workflow Studio actions live under the ITSM spoke, where they serve as building blocks for handling change models and types.",
+    "distractor_notes": {
+      "B": "The Discovery spoke is for ITOM discovery actions.",
+      "C": "The HR spoke is for HR Service Delivery.",
+      "D": "Email is a generic IntegrationHub action, not where the change actions live."
+    },
+    "references": [
+      {
+        "title": "Change Management Workflow Studio actions",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/change-flow-actions.html"
+      }
+    ],
+    "tags": [
+      "change-management",
+      "change-flows",
+      "itsm-spoke"
+    ]
+  },
+  {
+    "id": "cisitsm-chg-041",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Change Management",
+    "subdomain": "Change types",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Adding a new change request type to your change process typically involves managing which artifacts?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Script includes and workflows"
+      },
+      {
+        "id": "B",
+        "text": "CMDB identification rules"
+      },
+      {
+        "id": "C",
+        "text": "Service Graph Connectors"
+      },
+      {
+        "id": "D",
+        "text": "Knowledge categories"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Standing up a new change type isn't just a label — it involves managing the supporting script includes and workflows that drive that type's behavior.",
+    "distractor_notes": {
+      "B": "Identification rules are CMDB configuration.",
+      "C": "Service Graph Connectors are ingestion tooling.",
+      "D": "Knowledge categories belong to Knowledge Management."
+    },
+    "references": [
+      {
+        "title": "Add a new change request type",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/t_AddNewChangeType.html"
+      }
+    ],
+    "tags": [
+      "change-management",
+      "change-types",
+      "customization"
+    ]
+  },
+  {
+    "id": "cisitsm-chg-042",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Change Management",
+    "subdomain": "CAB",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Using the CAB workbench, what can a CAB manager do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "View and manage the details of a CAB meeting and its agenda items"
+      },
+      {
+        "id": "B",
+        "text": "Resolve incidents for the service desk"
+      },
+      {
+        "id": "C",
+        "text": "Edit the CMDB schema"
+      },
+      {
+        "id": "D",
+        "text": "Author and publish knowledge articles"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The CAB workbench gives the CAB manager control over the meeting and its agenda items — viewing and managing the details that make the meeting run.",
+    "distractor_notes": {
+      "B": "Resolving incidents is Incident Management.",
+      "C": "Editing the CMDB schema is Data Foundations.",
+      "D": "Authoring articles is Knowledge Management."
+    },
+    "references": [
+      {
+        "title": "CAB meeting management using the CAB workbench",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/manage-cab-meeting-using-cab-workbench.html"
+      }
+    ],
+    "tags": [
+      "change-management",
+      "cab",
+      "workbench"
+    ]
+  },
+  {
+    "id": "cisitsm-chg-043",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Change Management",
+    "subdomain": "CAB",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "As an itil user attending a CAB meeting through the CAB workbench, what can you do if you are also an approver?",
+    "options": [
+      {
+        "id": "A",
+        "text": "View the agenda items and change schedule, and approve a change request"
+      },
+      {
+        "id": "B",
+        "text": "Delete the CAB definition"
+      },
+      {
+        "id": "C",
+        "text": "Reassign the instance to a new release"
+      },
+      {
+        "id": "D",
+        "text": "Edit other users' roles"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Attendees see the agenda items and the change schedule in the workbench, and if you hold approver rights you can approve a change request right from the meeting.",
+    "distractor_notes": {
+      "B": "Deleting CAB definitions is a CAB manager configuration task, not a general attendee action.",
+      "C": "Release upgrades are a platform operation.",
+      "D": "Editing roles is an admin task unrelated to attending a CAB."
+    },
+    "references": [
+      {
+        "title": "CAB meeting attendance using the CAB workbench",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/attend-cab-meeting-using-cab-workbench.html"
+      }
+    ],
+    "tags": [
+      "change-management",
+      "cab",
+      "approval"
+    ]
+  },
+  {
+    "id": "cisitsm-chg-044",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Change Management",
+    "subdomain": "CAB",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Besides recurring CAB meetings from a definition, what else can you create when your requirements call for it?",
+    "options": [
+      {
+        "id": "A",
+        "text": "An individual, single CAB meeting occurrence"
+      },
+      {
+        "id": "B",
+        "text": "A duplicate of the entire CMDB"
+      },
+      {
+        "id": "C",
+        "text": "A new incident state model"
+      },
+      {
+        "id": "D",
+        "text": "A standard change without a record"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "When a one-off is needed, you can create a single CAB meeting occurrence rather than relying solely on the recurring meetings generated by a CAB definition.",
+    "distractor_notes": {
+      "B": "Duplicating the CMDB is unrelated and not a thing you do for a CAB.",
+      "C": "Incident state models are Incident Management configuration.",
+      "D": "Standard changes still create records."
+    },
+    "references": [
+      {
+        "title": "Create a single CAB meeting occurrence",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/create-a-cab-meeting.html"
+      }
+    ],
+    "tags": [
+      "change-management",
+      "cab",
+      "meeting"
+    ]
+  },
+  {
+    "id": "cisitsm-chg-045",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Change Management",
+    "subdomain": "CAB",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Why would you add agenda items to a CAB meeting?",
+    "options": [
+      {
+        "id": "A",
+        "text": "To customize the agenda and make the meeting more effective"
+      },
+      {
+        "id": "B",
+        "text": "To delete change requests in bulk"
+      },
+      {
+        "id": "C",
+        "text": "To recalculate change risk scores"
+      },
+      {
+        "id": "D",
+        "text": "To run conflict detection"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Adding agenda items lets you tailor what the CAB covers, keeping the meeting focused and effective rather than generic.",
+    "distractor_notes": {
+      "B": "Agenda items don't bulk-delete changes.",
+      "C": "Risk scores come from the risk lookup, not agenda items.",
+      "D": "Conflict detection is a separate scheduling function."
+    },
+    "references": [
+      {
+        "title": "Add new CAB meeting agenda items",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/add-new-agenda-items.html"
+      }
+    ],
+    "tags": [
+      "change-management",
+      "cab",
+      "agenda"
+    ]
+  },
+  {
+    "id": "cisitsm-chg-046",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Change Management",
+    "subdomain": "Approval policies",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "What is the purpose of the change approval policy decision builder?",
+    "options": [
+      {
+        "id": "A",
+        "text": "To define the approvals that should be generated for a change"
+      },
+      {
+        "id": "B",
+        "text": "To build CMDB dependency maps"
+      },
+      {
+        "id": "C",
+        "text": "To author knowledge articles"
+      },
+      {
+        "id": "D",
+        "text": "To schedule maintenance windows"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The decision builder is where you express, via conditions, which approvals a change should generate — codifying your approval logic into a policy.",
+    "distractor_notes": {
+      "B": "Dependency maps are a CMDB visualization.",
+      "C": "Article authoring is Knowledge Management.",
+      "D": "Maintenance windows are scheduled separately, not in the approval decision builder."
+    },
+    "references": [
+      {
+        "title": "Create a Change approval policy using decision builder",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/change-approval-policy-decision-builder.html"
+      }
+    ],
+    "tags": [
+      "change-management",
+      "approval-policy",
+      "decision-builder"
+    ]
+  },
+  {
+    "id": "cisitsm-chg-047",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Change Management",
+    "subdomain": "Approval policies",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What do Decision records contain in the context of change approval policies?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The conditions used to determine the change approval action"
+      },
+      {
+        "id": "B",
+        "text": "The list of affected CIs"
+      },
+      {
+        "id": "C",
+        "text": "The change's planned start and end dates"
+      },
+      {
+        "id": "D",
+        "text": "The caller's contact details"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "A Decision record holds the conditions that decide the approval action — built with the condition builder so the policy applies the right approval definition when those conditions match.",
+    "distractor_notes": {
+      "B": "Affected CIs are captured on the change, not in the decision record's conditions.",
+      "C": "Planned dates drive scheduling/conflict detection, not the approval decision conditions.",
+      "D": "Caller contact details aren't what a decision record stores."
+    },
+    "references": [
+      {
+        "title": "Create Decision records",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/create-decisions.html"
+      }
+    ],
+    "tags": [
+      "change-management",
+      "approval-policy",
+      "decisions"
+    ]
+  },
+  {
+    "id": "cisitsm-chg-048",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Change Management",
+    "subdomain": "Approval policies",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "What does the Change Approval Policy workflow activity do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Creates user and group approvals according to a change approval policy record"
+      },
+      {
+        "id": "B",
+        "text": "Detects scheduling conflicts"
+      },
+      {
+        "id": "C",
+        "text": "Closes related incidents"
+      },
+      {
+        "id": "D",
+        "text": "Runs CMDB reconciliation"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The Change Approval Policy workflow activity generates the user and group approvals dictated by a change approval policy record — and you can use multiple activities referencing the same or different policies.",
+    "distractor_notes": {
+      "B": "Conflict detection is a separate scheduling feature.",
+      "C": "Closing incidents is Incident Management.",
+      "D": "Reconciliation is a CMDB / IRE function."
+    },
+    "references": [
+      {
+        "title": "Change Approval Policy workflow activity",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/change-approval-policiy-wf-activity.html"
+      }
+    ],
+    "tags": [
+      "change-management",
+      "approval-policy",
+      "workflow"
+    ]
+  },
+  {
+    "id": "cisitsm-chg-049",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Change Management",
+    "subdomain": "Copy change",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Which records can you copy details from when creating a new change request via the copy feature?",
+    "options": [
+      {
+        "id": "A",
+        "text": "An active or canceled change request"
+      },
+      {
+        "id": "B",
+        "text": "Only a closed incident"
+      },
+      {
+        "id": "C",
+        "text": "Only a problem record"
+      },
+      {
+        "id": "D",
+        "text": "Only a knowledge article"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The copy feature lets you start a new change from the details of an active or canceled change request — handy for reusing the setup of a similar prior change.",
+    "distractor_notes": {
+      "B": "You copy from change requests, not from incidents.",
+      "C": "Problems aren't the source for copying a change.",
+      "D": "Knowledge articles aren't change records to copy from."
+    },
+    "references": [
+      {
+        "title": "Copy a change request",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/copy-a-change-request.html"
+      }
+    ],
+    "tags": [
+      "change-management",
+      "copy-change"
+    ]
+  },
+  {
+    "id": "cisitsm-chg-050",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Change Management",
+    "subdomain": "Configuration",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "How is the ability to copy a change request record controlled?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Through system properties"
+      },
+      {
+        "id": "B",
+        "text": "By the caller's role only"
+      },
+      {
+        "id": "C",
+        "text": "By the CMDB health score"
+      },
+      {
+        "id": "D",
+        "text": "By the incident auto-close job"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Whether copying a change is available is governed by system properties, so admins can turn the capability on or off for their instance.",
+    "distractor_notes": {
+      "B": "It's controlled by configuration properties, not solely the caller's role.",
+      "C": "CMDB health doesn't gate the copy feature.",
+      "D": "The auto-close job is an incident behavior, unrelated to copying changes."
+    },
+    "references": [
+      {
+        "title": "Configure ability to copy a change request",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/configure-copy-change-request.html"
+      }
+    ],
+    "tags": [
+      "change-management",
+      "copy-change",
+      "properties"
+    ]
+  },
+  {
+    "id": "cisitsm-chg-051",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Change Management",
+    "subdomain": "Configuration",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What do Change Management properties let administrators do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Configure Change Management behavior"
+      },
+      {
+        "id": "B",
+        "text": "Resolve incidents in bulk"
+      },
+      {
+        "id": "C",
+        "text": "Define the CSDM service model"
+      },
+      {
+        "id": "D",
+        "text": "Run Discovery schedules"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Change Management properties are the admin dials for how Change Management behaves across the instance.",
+    "distractor_notes": {
+      "B": "Bulk incident resolution is an Incident Management action.",
+      "C": "The CSDM service model is Data Foundations.",
+      "D": "Discovery schedules are run by ITOM Discovery."
+    },
+    "references": [
+      {
+        "title": "Change Management properties",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/r_ChangeManagementProperties.html"
+      }
+    ],
+    "tags": [
+      "change-management",
+      "properties",
+      "configuration"
+    ]
+  },
+  {
+    "id": "cisitsm-chg-052",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Change Management",
+    "subdomain": "Integrations",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Change Management can integrate with which other ServiceNow applications?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Discovery, Software Asset Management, and Hardware Asset Management"
+      },
+      {
+        "id": "B",
+        "text": "Only the Service Portal"
+      },
+      {
+        "id": "C",
+        "text": "Only Virtual Agent"
+      },
+      {
+        "id": "D",
+        "text": "Only the Knowledge base"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Change Management hooks into Discovery, Software Asset Management, and Hardware Asset Management, so changes can reflect real CI data, license cost, and asset actions.",
+    "distractor_notes": {
+      "B": "The Service Portal is a UI, not the integration set described.",
+      "C": "Virtual Agent is a conversational interface, not the listed integrations.",
+      "D": "The knowledge base is one touchpoint, but the documented integrations are Discovery, SAM, and HAM."
+    },
+    "references": [
+      {
+        "title": "Change management integrations",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/change-mgmt-integrations.html"
+      }
+    ],
+    "tags": [
+      "change-management",
+      "integrations"
+    ]
+  },
+  {
+    "id": "cisitsm-chg-053",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Change Management",
+    "subdomain": "Integrations",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "With the Change Management integration with ITOM Discovery/Visibility, what can happen for a CI with an IP address that is part of a change?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The CI can be maintained automatically, and fulfillers can manually request the discovery process for a CI"
+      },
+      {
+        "id": "B",
+        "text": "The CI is deleted from the CMDB"
+      },
+      {
+        "id": "C",
+        "text": "The change is auto-rejected"
+      },
+      {
+        "id": "D",
+        "text": "The caller is granted admin rights"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "If you're subscribed to ITOM Discovery/Visibility, the integration auto-enables, and CIs with an IP that are part of a change can be maintained automatically — fulfillers can also kick off discovery for a CI on demand.",
+    "distractor_notes": {
+      "B": "The integration maintains CI data; it doesn't delete the CI.",
+      "C": "It doesn't auto-reject changes.",
+      "D": "It grants no admin rights."
+    },
+    "references": [
+      {
+        "title": "Change Management integration with ITOM Visibility",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/change-mgmt-integ-wth-Discovery.html"
+      }
+    ],
+    "tags": [
+      "change-management",
+      "integrations",
+      "discovery"
+    ]
+  },
+  {
+    "id": "cisitsm-chg-054",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Change Management",
+    "subdomain": "Integrations",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "What does the Change Management integration with Hardware Asset Management (HAM) help determine?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The asset action to perform on the CI associated with a hardware asset, letting implementers update asset records from the change"
+      },
+      {
+        "id": "B",
+        "text": "The projected software licensing cost of the change"
+      },
+      {
+        "id": "C",
+        "text": "The root cause of related incidents"
+      },
+      {
+        "id": "D",
+        "text": "The caller's satisfaction score"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The HAM integration figures out the asset action needed on the CI tied to a hardware asset, so implementers can update asset records straight from the change and the Asset Manager sees the current state.",
+    "distractor_notes": {
+      "B": "Projected licensing cost is the Software Asset Management integration.",
+      "C": "Root cause is Problem Management.",
+      "D": "Satisfaction scores relate to incidents/requests."
+    },
+    "references": [
+      {
+        "title": "Change Management integration with Hardware Asset Management",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/change_mgmt-integ-with-HWAM.html"
+      }
+    ],
+    "tags": [
+      "change-management",
+      "integrations",
+      "ham"
+    ]
+  },
+  {
+    "id": "cisitsm-chg-055",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Change Management",
+    "subdomain": "Integrations",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "What does the Change Management integration with Software Asset Management (SAM) display?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The projected licensing cost implication of a change"
+      },
+      {
+        "id": "B",
+        "text": "The on-call escalation roster"
+      },
+      {
+        "id": "C",
+        "text": "The CMDB health dashboard"
+      },
+      {
+        "id": "D",
+        "text": "The incident reopen count"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The SAM integration surfaces the projected licensing cost impact of a change — particularly for changes to processor-licensed software on a CI's CPU or cores.",
+    "distractor_notes": {
+      "B": "On-call rosters relate to major incident escalation.",
+      "C": "CMDB health is a Data Foundations view.",
+      "D": "Reopen count is an incident metric."
+    },
+    "references": [
+      {
+        "title": "Change Management integration with Software Asset Management",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/change-mgmt-integ-wth-SAM.html"
+      }
+    ],
+    "tags": [
+      "change-management",
+      "integrations",
+      "sam"
+    ]
+  },
+  {
+    "id": "cisitsm-chg-056",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Change Management",
+    "subdomain": "Integrations",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A change proposes adding CPU cores to a server running software licensed per processor. Which integration surfaces the cost impact, and where is it shown on the change?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The Software Asset Management integration, shown in the License change projection form section"
+      },
+      {
+        "id": "B",
+        "text": "The Discovery integration, shown in the conflict calendar"
+      },
+      {
+        "id": "C",
+        "text": "The HAM integration, shown in the CMDB health dashboard"
+      },
+      {
+        "id": "D",
+        "text": "The Knowledge integration, shown in related articles"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Changing CPU/cores on processor-licensed software is exactly what the SAM integration watches — it captures the proposed change and displays the projected license cost in the License change projection section of the change.",
+    "distractor_notes": {
+      "B": "Discovery maintains CI data; the conflict calendar shows scheduling, not license cost.",
+      "C": "HAM handles hardware asset actions, not software license projections.",
+      "D": "The Knowledge integration is unrelated to license cost."
+    },
+    "references": [
+      {
+        "title": "Change Management integration with Software Asset Management",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/change-mgmt-integ-wth-SAM.html"
+      }
+    ],
+    "tags": [
+      "change-management",
+      "integrations",
+      "sam",
+      "scenario"
+    ]
+  },
+  {
+    "id": "cisitsm-chg-057",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Change Management",
+    "subdomain": "Templates",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the purpose of template categories?",
+    "options": [
+      {
+        "id": "A",
+        "text": "To classify templates by change model, template usage, and organizational areas"
+      },
+      {
+        "id": "B",
+        "text": "To define incident priorities"
+      },
+      {
+        "id": "C",
+        "text": "To set CMDB identification rules"
+      },
+      {
+        "id": "D",
+        "text": "To schedule CAB meetings"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Template categories (and child categories) organize templates by change model, how they're used, and organizational areas like software or security — making the right template easy to find.",
+    "distractor_notes": {
+      "B": "Incident priorities come from priority lookup rules.",
+      "C": "Identification rules are CMDB configuration.",
+      "D": "CAB meeting scheduling is done via CAB definitions/workbench."
+    },
+    "references": [
+      {
+        "title": "Configure template categories",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/configure-template-categories.html"
+      }
+    ],
+    "tags": [
+      "change-management",
+      "templates",
+      "categories"
+    ]
+  },
+  {
+    "id": "cisitsm-chg-058",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Change Management",
+    "subdomain": "Standard change",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "When is a standard change task template's related change task created?",
+    "options": [
+      {
+        "id": "A",
+        "text": "When the standard change request is created, provided the standard change proposal was approved"
+      },
+      {
+        "id": "B",
+        "text": "Immediately when the template is first drafted"
+      },
+      {
+        "id": "C",
+        "text": "Only after the change is closed"
+      },
+      {
+        "id": "D",
+        "text": "Never — task templates are decorative"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "A standard change task template lays out tasks on the proposal; once the proposal is approved, those related change tasks are created along with the standard change request.",
+    "distractor_notes": {
+      "B": "Drafting the template doesn't yet create the tasks.",
+      "C": "Tasks are created with the change request, not after closure.",
+      "D": "Task templates do produce real change tasks when the change is created."
+    },
+    "references": [
+      {
+        "title": "Create a standard change task template",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/create-a-standard-change-task-template.html"
+      }
+    ],
+    "tags": [
+      "change-management",
+      "standard-change",
+      "task-template"
+    ]
+  },
+  {
+    "id": "cisitsm-chg-059",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Change Management",
+    "subdomain": "Maintenance schedules",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "How do maintenance schedules assigned to configuration items help with change scheduling?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Assigning maintenance schedules to CIs lets conflict detection determine conflicts in a change schedule when those CIs are added to a change"
+      },
+      {
+        "id": "B",
+        "text": "They automatically approve the change"
+      },
+      {
+        "id": "C",
+        "text": "They delete the change request"
+      },
+      {
+        "id": "D",
+        "text": "They convert the change into an incident"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Once a CI has a maintenance schedule, adding that CI to a change lets conflict detection judge whether the change falls inside or outside the allowed window — surfacing schedule conflicts.",
+    "distractor_notes": {
+      "B": "Maintenance schedules inform conflicts; they don't grant approvals.",
+      "C": "They don't delete the change.",
+      "D": "They don't convert changes into incidents."
+    },
+    "references": [
+      {
+        "title": "Assign a maintenance schedule to configuration items",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/use-maintenance-schedule-management.html"
+      }
+    ],
+    "tags": [
+      "change-management",
+      "maintenance-schedule",
+      "conflict-detection"
+    ]
+  },
+  {
+    "id": "cisitsm-chg-060",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Change Management",
+    "subdomain": "Emergency change",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "During an emergency change, an unplanned configuration item change activity occurs. What does ServiceNow do in response?",
+    "options": [
+      {
+        "id": "A",
+        "text": "An unauthorized change request is created and sent for approvals"
+      },
+      {
+        "id": "B",
+        "text": "The emergency change is automatically closed as successful"
+      },
+      {
+        "id": "C",
+        "text": "The CI is deleted from the CMDB"
+      },
+      {
+        "id": "D",
+        "text": "All related incidents are reopened"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Emergencies move fast, so unplanned CI activity can slip in. ServiceNow catches it by creating an unauthorized change request and routing it for approvals, keeping accountability even under pressure.",
+    "distractor_notes": {
+      "B": "Unplanned activity doesn't auto-close the emergency change as successful.",
+      "C": "The CI isn't deleted; the unplanned activity is captured for approval.",
+      "D": "Related incidents aren't reopened by this."
+    },
+    "references": [
+      {
+        "title": "Unauthorized change request",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/unauthorized-change-request.html"
+      }
+    ],
+    "tags": [
+      "change-management",
+      "emergency-change",
+      "unauthorized-change",
+      "scenario"
+    ]
+  }
+]

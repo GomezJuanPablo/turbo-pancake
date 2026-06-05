@@ -1,0 +1,2890 @@
+[
+  {
+    "id": "cisitsm-inc-001",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Incident Management",
+    "subdomain": "Incident Management process and purpose",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "According to ServiceNow Incident Management, what is the primary goal of the incident management process?",
+    "options": [
+      {
+        "id": "A",
+        "text": "To identify the root cause of recurring issues and prevent them from happening again"
+      },
+      {
+        "id": "B",
+        "text": "To restore normal service operation as quickly as possible while minimizing impact to business operations and maintaining quality"
+      },
+      {
+        "id": "C",
+        "text": "To control the lifecycle of all changes so beneficial changes are made with minimum disruption"
+      },
+      {
+        "id": "D",
+        "text": "To fulfill requests for service, information, or access through the service catalog"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Incident Management is about getting service back to normal fast and limiting business impact — not hunting the underlying cause. The docs put it plainly: restore normal service operation while minimizing impact and maintaining quality. Speed and impact-containment are the heartbeat of the process.",
+    "distractor_notes": {
+      "A": "That's Problem Management. Incident Management cares about restoring service now; root-cause analysis is Problem's job (often kicked off after the incident is handled).",
+      "C": "That's Change Management — controlling the lifecycle of changes. Related neighbor, different process.",
+      "D": "That's Request Management / Service Catalog. A request isn't an incident; an incident is an unplanned interruption or degradation of service."
+    },
+    "references": [
+      {
+        "title": "Incident Management",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/c_IncidentManagement.html"
+      }
+    ],
+    "tags": [
+      "incident-management",
+      "itil",
+      "process-purpose"
+    ]
+  },
+  {
+    "id": "cisitsm-inc-002",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Incident Management",
+    "subdomain": "Prioritization",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "In ServiceNow Incident Management, the Priority of an incident is determined from which two values?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Impact and Urgency"
+      },
+      {
+        "id": "B",
+        "text": "Severity and Risk"
+      },
+      {
+        "id": "C",
+        "text": "Category and Subcategory"
+      },
+      {
+        "id": "D",
+        "text": "Assignment group and Configuration item"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Priority falls out of Impact (how big the effect on the business) combined with Urgency (how long resolution can be delayed before it bites). Set those two and the platform derives Priority for you, which then drives SLAs.",
+    "distractor_notes": {
+      "B": "Severity and Risk aren't the incident priority inputs. Risk-and-severity language shows up more in Change Management.",
+      "C": "Category and Subcategory classify what the incident is about; they don't drive the priority calculation.",
+      "D": "Assignment group and CI route and contextualize the incident, but they don't compute its priority."
+    },
+    "references": [
+      {
+        "title": "Exploring Incident Management",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/incident-management-process.html"
+      }
+    ],
+    "tags": [
+      "incident-management",
+      "priority",
+      "impact-urgency"
+    ]
+  },
+  {
+    "id": "cisitsm-inc-003",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Incident Management",
+    "subdomain": "Prioritization",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which feature defines the rules that map a combination of Impact and Urgency to the resulting Priority value on incidents?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Priority Lookup Rules"
+      },
+      {
+        "id": "B",
+        "text": "Assignment Rules"
+      },
+      {
+        "id": "C",
+        "text": "Inactivity Monitors"
+      },
+      {
+        "id": "D",
+        "text": "Data Policies"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Priority Lookup Rules (a Data Lookup definition under System Policy > Rules > Priority Lookup Rules) hold the Impact-plus-Urgency to Priority matrix. Adjust these rules and you reshape how every incident gets prioritized.",
+    "distractor_notes": {
+      "B": "Assignment Rules decide who or which group work goes to — not how priority is computed.",
+      "C": "Inactivity Monitors flag records that have gone stale; they don't set priority.",
+      "D": "Data Policies enforce mandatory and read-only data rules; they aren't the impact-urgency-to-priority mapping."
+    },
+    "references": [
+      {
+        "title": "Define priority lookup rules",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/def-prio-lookup-rules.html"
+      }
+    ],
+    "tags": [
+      "incident-management",
+      "priority-lookup-rules",
+      "data-lookup"
+    ]
+  },
+  {
+    "id": "cisitsm-inc-004",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Incident Management",
+    "subdomain": "Incident state model",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "When an incident is placed in the On Hold state, which of the following is a valid baseline On hold reason?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Awaiting Caller"
+      },
+      {
+        "id": "B",
+        "text": "Awaiting Approval"
+      },
+      {
+        "id": "C",
+        "text": "Awaiting Deployment"
+      },
+      {
+        "id": "D",
+        "text": "Awaiting Knowledge"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The baseline On hold reasons are Awaiting Caller, Awaiting Change, Awaiting Problem, and Awaiting Vendor. Awaiting Caller is the classic one — you're parked until the customer gets back to you.",
+    "distractor_notes": {
+      "B": "Awaiting Approval isn't a baseline On hold reason. Approvals live in Change and Request flows, not the incident On hold list.",
+      "C": "Awaiting Deployment isn't an out-of-the-box On hold reason.",
+      "D": "Awaiting Knowledge isn't one of the four baseline reasons."
+    },
+    "references": [
+      {
+        "title": "Life cycle of an Incident",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/c_IncidentManagementStateModel.html"
+      }
+    ],
+    "tags": [
+      "incident-management",
+      "on-hold",
+      "incident-state"
+    ]
+  },
+  {
+    "id": "cisitsm-inc-005",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Incident Management",
+    "subdomain": "Incident state model",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An incident is set to On Hold with the On hold reason of Awaiting Caller. As a result, which field becomes mandatory?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Additional comments (customer visible)"
+      },
+      {
+        "id": "B",
+        "text": "Work notes"
+      },
+      {
+        "id": "C",
+        "text": "Resolution code"
+      },
+      {
+        "id": "D",
+        "text": "Problem"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Choosing Awaiting Caller makes Additional comments mandatory — which makes sense, because those comments are customer-visible and tell the caller exactly what you need from them before work can continue.",
+    "distractor_notes": {
+      "B": "Work notes are internal and aren't forced mandatory by the Awaiting Caller reason.",
+      "C": "Resolution code is required when you resolve an incident, not when you put it on hold.",
+      "D": "The Problem field links an incident to a problem record; it isn't triggered by Awaiting Caller."
+    },
+    "references": [
+      {
+        "title": "Life cycle of an Incident",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/c_IncidentManagementStateModel.html"
+      }
+    ],
+    "tags": [
+      "incident-management",
+      "on-hold",
+      "awaiting-caller"
+    ]
+  },
+  {
+    "id": "cisitsm-inc-006",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Incident Management",
+    "subdomain": "Incident state model",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An incident is On Hold with the reason Awaiting Caller, and the caller then adds an update to the incident. What does the platform do automatically?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Clears the On hold reason and changes the state to In Progress, notifying the Assigned to user and the watch list"
+      },
+      {
+        "id": "B",
+        "text": "Closes the incident and sends a satisfaction survey"
+      },
+      {
+        "id": "C",
+        "text": "Promotes the incident to a major incident candidate"
+      },
+      {
+        "id": "D",
+        "text": "Leaves the state unchanged but flags the record for review"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "A caller update is the system's cue that the ball is back in IT's court, so it clears the On hold reason, flips the state to In Progress, and pings the Assigned to user plus the watch list. No manual nudging required.",
+    "distractor_notes": {
+      "B": "It doesn't auto-close — resolution and closure are separate, role-gated steps.",
+      "C": "A caller comment doesn't promote anything to a major incident; that's a deliberate, reviewed action.",
+      "D": "The state does change — it returns to In Progress rather than sitting still."
+    },
+    "references": [
+      {
+        "title": "Life cycle of an Incident",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/c_IncidentManagementStateModel.html"
+      }
+    ],
+    "tags": [
+      "incident-management",
+      "on-hold",
+      "state-transition"
+    ]
+  },
+  {
+    "id": "cisitsm-inc-007",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Incident Management",
+    "subdomain": "Incident state model",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which incident state represents an incident that has been logged but not yet investigated?",
+    "options": [
+      {
+        "id": "A",
+        "text": "New"
+      },
+      {
+        "id": "B",
+        "text": "In Progress"
+      },
+      {
+        "id": "C",
+        "text": "On Hold"
+      },
+      {
+        "id": "D",
+        "text": "Resolved"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "New is the starting line: the incident exists in the system but nobody has begun investigating yet. Once someone picks it up and digs in, it moves to In Progress.",
+    "distractor_notes": {
+      "B": "In Progress means the incident is assigned and actively being investigated — past the New stage.",
+      "C": "On Hold means work has paused while waiting on another party (caller, change, problem, or vendor).",
+      "D": "Resolved means a fix has been applied and service restored, pending closure."
+    },
+    "references": [
+      {
+        "title": "Life cycle of an Incident",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/c_IncidentManagementStateModel.html"
+      }
+    ],
+    "tags": [
+      "incident-management",
+      "incident-state",
+      "new"
+    ]
+  },
+  {
+    "id": "cisitsm-inc-008",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Incident Management",
+    "subdomain": "Resolution and closure",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "In a baseline configuration, which role is required to close an incident, as distinct from resolving it?",
+    "options": [
+      {
+        "id": "A",
+        "text": "itil_admin"
+      },
+      {
+        "id": "B",
+        "text": "itil"
+      },
+      {
+        "id": "C",
+        "text": "sn_incident_read"
+      },
+      {
+        "id": "D",
+        "text": "snc_internal"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Resolving an incident needs the itil role (or equivalent write access), but closing it is gated to itil_admin (or admin). Separating the two keeps closure as a more deliberate, privileged step.",
+    "distractor_notes": {
+      "B": "The itil role lets an agent resolve an incident, but closure specifically requires itil_admin or admin.",
+      "C": "sn_incident_read grants read access only — nowhere near enough to resolve or close.",
+      "D": "snc_internal is a broad internal-user role; it doesn't grant incident closure rights."
+    },
+    "references": [
+      {
+        "title": "Resolve and close an incident",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/resolve-and-close-an-incident.html"
+      }
+    ],
+    "tags": [
+      "incident-management",
+      "roles",
+      "close-incident"
+    ]
+  },
+  {
+    "id": "cisitsm-inc-009",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Incident Management",
+    "subdomain": "Major Incident Management",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A core business service goes down, affecting a large number of users and depriving the business of a crucial service. Which classification best fits this situation in ServiceNow Incident Management?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A major incident — highest impact, highest urgency"
+      },
+      {
+        "id": "B",
+        "text": "A standard change"
+      },
+      {
+        "id": "C",
+        "text": "A service request"
+      },
+      {
+        "id": "D",
+        "text": "A known error"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Highest impact plus highest urgency, a large affected population, and a crucial service knocked out is the textbook definition of a major incident — which kicks off the coordinated major incident response process.",
+    "distractor_notes": {
+      "B": "A standard change is a pre-approved, low-risk change — the opposite of an unplanned outage.",
+      "C": "A service request is a routine ask (access, information, an item) via the catalog, not an outage.",
+      "D": "A known error is a Problem Management artifact (a documented root cause with a workaround), not the live outage itself."
+    },
+    "references": [
+      {
+        "title": "Major Incident Management process",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/major-incident-management-process.html"
+      }
+    ],
+    "tags": [
+      "incident-management",
+      "major-incident",
+      "scenario"
+    ]
+  },
+  {
+    "id": "cisitsm-inc-010",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Incident Management",
+    "subdomain": "Major Incident Management",
+    "difficulty": "recall",
+    "type": "multi_select",
+    "stem": "Which of the following are phases of the ServiceNow Major Incident Management process?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Identification"
+      },
+      {
+        "id": "B",
+        "text": "Communication and Collaboration"
+      },
+      {
+        "id": "C",
+        "text": "Resolution"
+      },
+      {
+        "id": "D",
+        "text": "Standard Change Approval"
+      },
+      {
+        "id": "E",
+        "text": "Catalog Item Publishing"
+      }
+    ],
+    "correct": [
+      "A",
+      "B",
+      "C"
+    ],
+    "rationale": "The major incident process is broadly split into Identification (spotting or proposing the candidate), Communication and Collaboration (keeping stakeholders informed via communication plans), and Resolution (the coordinated fix). The other two belong to Change and Request flows.",
+    "distractor_notes": {
+      "D": "Standard Change Approval is a Change Management concept, not a major incident phase.",
+      "E": "Catalog Item Publishing belongs to Service Catalog / Request Management."
+    },
+    "references": [
+      {
+        "title": "Major Incident Management process",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/major-incident-management-process.html"
+      }
+    ],
+    "tags": [
+      "incident-management",
+      "major-incident",
+      "process-phases"
+    ]
+  },
+  {
+    "id": "cisitsm-inc-011",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Incident Management",
+    "subdomain": "Major Incident Management",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "After a major incident is resolved and service is restored, which follow-up action does the Major Incident Management process recommend to address the underlying cause?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Create a problem for root cause analysis and conduct a major incident review"
+      },
+      {
+        "id": "B",
+        "text": "Immediately delete the incident to keep the queue clean"
+      },
+      {
+        "id": "C",
+        "text": "Convert the incident into a standard change template"
+      },
+      {
+        "id": "D",
+        "text": "Reassign the incident back to the caller for verification"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Restoring service ends the firefight, not the story. The process calls for a major incident review plus creating a Problem so root cause analysis can stop it recurring. Fix now, learn after.",
+    "distractor_notes": {
+      "B": "Deleting records destroys the audit trail and the learning opportunity — never the recommended move.",
+      "C": "There's no conversion to a standard change; remediation may lead to changes, but that's a separate, risk-assessed process.",
+      "D": "Callers don't own root cause analysis; that's a Problem Management activity."
+    },
+    "references": [
+      {
+        "title": "Major Incident Management process",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/major-incident-management-process.html"
+      }
+    ],
+    "tags": [
+      "incident-management",
+      "major-incident",
+      "problem-rca"
+    ]
+  },
+  {
+    "id": "cisitsm-inc-012",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Incident Management",
+    "subdomain": "Major Incident Management",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "During a major incident, your team needs P1 incidents to send stakeholder updates more frequently than P2 incidents. Which mechanism supports defining different update cadences like this?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Communication plans defined by type, priority, or target audience"
+      },
+      {
+        "id": "B",
+        "text": "Inactivity monitors on the incident table"
+      },
+      {
+        "id": "C",
+        "text": "The priority lookup rules"
+      },
+      {
+        "id": "D",
+        "text": "Assignment rules"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Communication plans are built for exactly this: you can define one or more based on incident type, priority, or audience, so a P1 plan pushes more frequent updates than a P2 plan and everyone stays appropriately informed.",
+    "distractor_notes": {
+      "B": "Inactivity monitors detect stale records; they don't orchestrate stakeholder communication cadence.",
+      "C": "Priority lookup rules compute Priority from impact and urgency — they don't control update frequency.",
+      "D": "Assignment rules route work to groups or users; they're unrelated to communication cadence."
+    },
+    "references": [
+      {
+        "title": "Major Incident Management process",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/major-incident-management-process.html"
+      }
+    ],
+    "tags": [
+      "incident-management",
+      "major-incident",
+      "communication-plan",
+      "scenario"
+    ]
+  },
+  {
+    "id": "cisitsm-inc-013",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Incident Management",
+    "subdomain": "Incident creation",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What does an incident record fundamentally document?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A deviation from an expected standard of operation"
+      },
+      {
+        "id": "B",
+        "text": "A planned, pre-approved piece of work"
+      },
+      {
+        "id": "C",
+        "text": "A request for a new catalog item"
+      },
+      {
+        "id": "D",
+        "text": "A configuration item and its relationships"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "An incident captures an unplanned interruption or reduction in quality of a service — in the docs' words, a deviation from an expected standard of operation. If service is behaving normally, you don't have an incident.",
+    "distractor_notes": {
+      "B": "Planned, pre-approved work is a change (often a standard change), not an incident.",
+      "C": "Asking for a new item is a service request handled through the catalog.",
+      "D": "A CI and its relationships live in the CMDB; the incident may reference a CI but isn't itself a CI record."
+    },
+    "references": [
+      {
+        "title": "Create an incident",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/create-an-incident.html"
+      }
+    ],
+    "tags": [
+      "incident-management",
+      "incident-creation",
+      "definition"
+    ]
+  },
+  {
+    "id": "cisitsm-inc-014",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Incident Management",
+    "subdomain": "Categorization",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the main purpose of assigning a category and subcategory to an incident?",
+    "options": [
+      {
+        "id": "A",
+        "text": "To classify the incident so it routes to the correct team and supports reporting"
+      },
+      {
+        "id": "B",
+        "text": "To calculate the incident's priority automatically"
+      },
+      {
+        "id": "C",
+        "text": "To close the incident without a resolution code"
+      },
+      {
+        "id": "D",
+        "text": "To grant the caller the itil role"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Category and subcategory classify what the incident is about, which helps route it to the right team for faster resolution and gives you something meaningful to report on later.",
+    "distractor_notes": {
+      "B": "Priority comes from impact and urgency, not from category.",
+      "C": "Categorization doesn't bypass the resolution code required at closure.",
+      "D": "Categorization has nothing to do with granting roles."
+    },
+    "references": [
+      {
+        "title": "Add a category or a subcategory",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/add-new-category.html"
+      }
+    ],
+    "tags": [
+      "incident-management",
+      "categorization",
+      "routing"
+    ]
+  },
+  {
+    "id": "cisitsm-inc-015",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Incident Management",
+    "subdomain": "Assignment",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Which feature is used to automatically identify the right group or user skilled to work on an incident?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Assignment rules"
+      },
+      {
+        "id": "B",
+        "text": "Priority lookup rules"
+      },
+      {
+        "id": "C",
+        "text": "Inactivity monitors"
+      },
+      {
+        "id": "D",
+        "text": "Data policies"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Assignment rules evaluate the incident and route it to the group or user best suited to handle it — so work lands with the right team without manual triage every time.",
+    "distractor_notes": {
+      "B": "Priority lookup rules compute Priority from impact and urgency; they don't assign work.",
+      "C": "Inactivity monitors flag stalled records; they don't perform assignment.",
+      "D": "Data policies enforce mandatory and read-only rules on data, not routing."
+    },
+    "references": [
+      {
+        "title": "Define assignment rules for incidents",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/t_DefinAnAssignRuleIncidents.html"
+      }
+    ],
+    "tags": [
+      "incident-management",
+      "assignment-rules",
+      "routing"
+    ]
+  },
+  {
+    "id": "cisitsm-inc-016",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Incident Management",
+    "subdomain": "Incident tasks",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Why would an agent create an incident task on an incident?",
+    "options": [
+      {
+        "id": "A",
+        "text": "To request work from an assignment group other than the one assigned to the incident"
+      },
+      {
+        "id": "B",
+        "text": "To permanently delete the parent incident"
+      },
+      {
+        "id": "C",
+        "text": "To change the incident's number"
+      },
+      {
+        "id": "D",
+        "text": "To convert the incident into a change request"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Incident tasks let you parcel out work to other assignment groups while keeping everything tied to the one parent incident — handy when resolution needs hands from more than one team.",
+    "distractor_notes": {
+      "B": "Tasks don't delete the parent; they hang off it.",
+      "C": "Incident numbers are system-generated and aren't changed by creating a task.",
+      "D": "Converting to a change is a separate promote action, not what an incident task does."
+    },
+    "references": [
+      {
+        "title": "Create an incident task",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/create-incident-task.html"
+      }
+    ],
+    "tags": [
+      "incident-management",
+      "incident-task",
+      "collaboration"
+    ]
+  },
+  {
+    "id": "cisitsm-inc-017",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Incident Management",
+    "subdomain": "Incident tasks",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "When an incident is closed, what state are its still-open incident tasks set to?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Closed Incomplete"
+      },
+      {
+        "id": "B",
+        "text": "Closed Skipped"
+      },
+      {
+        "id": "C",
+        "text": "Resolved"
+      },
+      {
+        "id": "D",
+        "text": "On Hold"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Closing the parent incident sweeps any open incident tasks into Closed Incomplete — they never finished, but they shouldn't be left hanging once the incident itself is done.",
+    "distractor_notes": {
+      "B": "Closed Skipped is what open tasks become when the incident is canceled, not closed.",
+      "C": "Resolved is an incident state, not the auto-state applied to open tasks at closure.",
+      "D": "On Hold is a pause state and isn't applied automatically at incident closure."
+    },
+    "references": [
+      {
+        "title": "Synchronization between an incident and its incident tasks",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/inci-inci-task-state-sync.html"
+      }
+    ],
+    "tags": [
+      "incident-management",
+      "incident-task",
+      "state-sync"
+    ]
+  },
+  {
+    "id": "cisitsm-inc-018",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Incident Management",
+    "subdomain": "Incident tasks",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "When an incident is canceled, what state are its still-open incident tasks set to?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Closed Skipped"
+      },
+      {
+        "id": "B",
+        "text": "Closed Incomplete"
+      },
+      {
+        "id": "C",
+        "text": "Cancelled Pending"
+      },
+      {
+        "id": "D",
+        "text": "In Progress"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Canceling the parent incident pushes any open incident tasks to Closed Skipped — the work was never needed, so the tasks are skipped rather than marked incomplete.",
+    "distractor_notes": {
+      "B": "Closed Incomplete is the result when the incident is closed, not canceled.",
+      "C": "Cancelled Pending isn't a baseline incident task state.",
+      "D": "In Progress would mean active work — the opposite of what happens when the parent is canceled."
+    },
+    "references": [
+      {
+        "title": "Synchronization between an incident and its incident tasks",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/inci-inci-task-state-sync.html"
+      }
+    ],
+    "tags": [
+      "incident-management",
+      "incident-task",
+      "state-sync"
+    ]
+  },
+  {
+    "id": "cisitsm-inc-019",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Incident Management",
+    "subdomain": "Child incidents",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What does the Create Child Incident functionality do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Copies the parent incident's details into a new incident and links the new incident to the parent"
+      },
+      {
+        "id": "B",
+        "text": "Deletes the parent incident after copying it"
+      },
+      {
+        "id": "C",
+        "text": "Promotes the incident to a major incident automatically"
+      },
+      {
+        "id": "D",
+        "text": "Merges two problems into one"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Create Child Incident clones the parent's details into a fresh incident and links the two together, so related incidents stay connected for coordinated handling.",
+    "distractor_notes": {
+      "B": "The parent is preserved — the child is linked to it, not a replacement.",
+      "C": "Creating a child doesn't auto-promote anything to a major incident.",
+      "D": "Merging problems is unrelated to child incidents."
+    },
+    "references": [
+      {
+        "title": "Copy an incident or create a child incident",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/copy-incident-or-create-child-incident.html"
+      }
+    ],
+    "tags": [
+      "incident-management",
+      "child-incident",
+      "copy-incident"
+    ]
+  },
+  {
+    "id": "cisitsm-inc-020",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Incident Management",
+    "subdomain": "Child incidents",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "After using Copy Incident, how does the new incident indicate where it came from?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Its Work notes are updated with a note referencing the original incident number"
+      },
+      {
+        "id": "B",
+        "text": "The original incident is automatically closed"
+      },
+      {
+        "id": "C",
+        "text": "The caller field is cleared"
+      },
+      {
+        "id": "D",
+        "text": "The new incident is set to the Closed Incomplete state"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Copying an incident stamps the new record's Work notes with a note that it was created from a similar incident, including the source incident number — leaving a clear trail back to the original.",
+    "distractor_notes": {
+      "B": "Copying doesn't touch the state of the original incident.",
+      "C": "Field values are copied over, including caller — not cleared.",
+      "D": "A freshly copied incident starts new, not in a closed state."
+    },
+    "references": [
+      {
+        "title": "Copy an incident or create a child incident",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/copy-incident-or-create-child-incident.html"
+      }
+    ],
+    "tags": [
+      "incident-management",
+      "copy-incident",
+      "work-notes"
+    ]
+  },
+  {
+    "id": "cisitsm-inc-021",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Incident Management",
+    "subdomain": "Reopening",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "When a resolved incident is reopened, which state does it move to?",
+    "options": [
+      {
+        "id": "A",
+        "text": "In Progress"
+      },
+      {
+        "id": "B",
+        "text": "New"
+      },
+      {
+        "id": "C",
+        "text": "On Hold"
+      },
+      {
+        "id": "D",
+        "text": "Closed"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Reopening pulls a Resolved incident back to In Progress so an agent can keep investigating — it doesn't reset all the way to New.",
+    "distractor_notes": {
+      "B": "It doesn't go back to New; the history and work so far are retained as it returns to In Progress.",
+      "C": "On Hold is a deliberate pause for waiting on another party, not the reopen target.",
+      "D": "Closed is the opposite direction — and a closed incident can't be reopened at all."
+    },
+    "references": [
+      {
+        "title": "Reopening an incident",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/reopening-incident.html"
+      }
+    ],
+    "tags": [
+      "incident-management",
+      "reopen",
+      "state-transition"
+    ]
+  },
+  {
+    "id": "cisitsm-inc-022",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Incident Management",
+    "subdomain": "Reopening",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A caller wants to reopen an incident that is already in the Closed state by replying to the resolution email. What actually happens?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A new incident is opened with selected fields copied from the closed incident"
+      },
+      {
+        "id": "B",
+        "text": "The closed incident is reopened and set back to In Progress"
+      },
+      {
+        "id": "C",
+        "text": "Nothing — closed incidents cannot generate any follow-up"
+      },
+      {
+        "id": "D",
+        "text": "The closed incident is deleted and recreated with the same number"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Closed incidents are sealed — you can't reopen them. Replying with 'Please reopen' to the resolution email instead spins up a brand-new incident, copying selected fields from the closed one (controlled by an incident property).",
+    "distractor_notes": {
+      "B": "Reopening to In Progress works for Resolved incidents, not Closed ones.",
+      "C": "There is a path — it just creates a new incident rather than reopening the old one.",
+      "D": "Nothing is deleted; the closed record stays intact and a separate new incident is created."
+    },
+    "references": [
+      {
+        "title": "Reopening an incident",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/reopening-incident.html"
+      }
+    ],
+    "tags": [
+      "incident-management",
+      "reopen",
+      "closed-incident"
+    ]
+  },
+  {
+    "id": "cisitsm-inc-023",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Incident Management",
+    "subdomain": "Reopening",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which fields are automatically populated when a resolved incident is reopened?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Last reopened by and Last reopened at"
+      },
+      {
+        "id": "B",
+        "text": "Opened by and Opened at"
+      },
+      {
+        "id": "C",
+        "text": "Resolved by and Resolved at"
+      },
+      {
+        "id": "D",
+        "text": "Closed by and Closed at"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Reopening stamps Last reopened by and Last reopened at (and bumps the Reopen count) so there's a clean audit trail of who reopened the incident and when.",
+    "distractor_notes": {
+      "B": "Opened by and Opened at record the original creation, not the reopen event.",
+      "C": "Resolved by and Resolved at capture resolution, not reopening.",
+      "D": "Closed by and Closed at relate to closure; reopening a closed incident isn't even possible."
+    },
+    "references": [
+      {
+        "title": "Reopening an incident",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/reopening-incident.html"
+      }
+    ],
+    "tags": [
+      "incident-management",
+      "reopen",
+      "audit-fields"
+    ]
+  },
+  {
+    "id": "cisitsm-inc-024",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Incident Management",
+    "subdomain": "Auto-close",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "In the incident auto-close configuration, what does setting the number of days to 0 (glide.ui.autoclose.time = 0) do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Disables the auto-close feature"
+      },
+      {
+        "id": "B",
+        "text": "Closes resolved incidents immediately"
+      },
+      {
+        "id": "C",
+        "text": "Closes all incidents regardless of state"
+      },
+      {
+        "id": "D",
+        "text": "Reopens closed incidents after zero days"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "A value of 0 in the auto-close days property switches the feature off entirely — no resolved incident gets auto-closed until you set a positive number of days.",
+    "distractor_notes": {
+      "B": "Zero doesn't mean 'instantly' — it means 'never auto-close'.",
+      "C": "Auto-close only acts on resolved incidents, and 0 turns it off anyway.",
+      "D": "The property governs auto-closing resolved incidents, not reopening closed ones."
+    },
+    "references": [
+      {
+        "title": "Configure incidents to close automatically",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/configure-incident-auto-close.html"
+      }
+    ],
+    "tags": [
+      "incident-management",
+      "auto-close",
+      "properties"
+    ]
+  },
+  {
+    "id": "cisitsm-inc-025",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Incident Management",
+    "subdomain": "Auto-close",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Can a major incident be closed by the standard incident auto-close property?",
+    "options": [
+      {
+        "id": "A",
+        "text": "No — a major incident cannot be auto-closed and must be closed manually after validating the resolution"
+      },
+      {
+        "id": "B",
+        "text": "Yes — major incidents auto-close like any other incident"
+      },
+      {
+        "id": "C",
+        "text": "Yes, but only if the Reopen count is zero"
+      },
+      {
+        "id": "D",
+        "text": "No — major incidents can never be closed"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Major incidents are too consequential to close on a timer. The auto-close property explicitly excludes them — a major incident is closed manually once it's Resolved and the fix has been validated.",
+    "distractor_notes": {
+      "B": "Major incidents are specifically excluded from the auto-close behavior.",
+      "C": "Reopen count doesn't gate major incident closure; the exclusion is unconditional.",
+      "D": "They can absolutely be closed — just manually, not by the auto-close job."
+    },
+    "references": [
+      {
+        "title": "Close a major incident",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/close-major-incident.html"
+      }
+    ],
+    "tags": [
+      "incident-management",
+      "auto-close",
+      "major-incident"
+    ]
+  },
+  {
+    "id": "cisitsm-inc-026",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Incident Management",
+    "subdomain": "Auto-close",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "Resolved incidents at your site never auto-close. You discover an inactivity monitor keeps firing on those incidents. What configuration prevents it from resetting the auto-close clock?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Set a Reset Condition on the inactivity monitor so it does not reset when the incident state is Resolved"
+      },
+      {
+        "id": "B",
+        "text": "Delete the Autoclose Incidents scheduled job"
+      },
+      {
+        "id": "C",
+        "text": "Set glide.ui.autoclose.time to 0"
+      },
+      {
+        "id": "D",
+        "text": "Remove the itil role from all agents"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Each time the inactivity monitor triggers it resets the auto-close timer. Giving the monitor a Reset Condition of incident state is not Resolved stops it from interfering once the incident is resolved, so the auto-close clock can run.",
+    "distractor_notes": {
+      "B": "Deleting the scheduled job removes auto-close entirely rather than fixing the reset problem.",
+      "C": "Setting the value to 0 disables auto-close — the opposite of what you want.",
+      "D": "Roles have nothing to do with the inactivity monitor resetting the timer."
+    },
+    "references": [
+      {
+        "title": "Configure incidents to close automatically",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/configure-incident-auto-close.html"
+      }
+    ],
+    "tags": [
+      "incident-management",
+      "auto-close",
+      "inactivity-monitor",
+      "scenario"
+    ]
+  },
+  {
+    "id": "cisitsm-inc-027",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Incident Management",
+    "subdomain": "Knowledge from incident",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "In which incident state must an incident be for the Create Knowledge option to appear (assuming no article already exists)?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Resolved"
+      },
+      {
+        "id": "B",
+        "text": "New"
+      },
+      {
+        "id": "C",
+        "text": "On Hold"
+      },
+      {
+        "id": "D",
+        "text": "Canceled"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Create Knowledge surfaces once an incident is Resolved (and no article exists yet for it) — that's the natural moment to capture the fix as reusable knowledge before closing.",
+    "distractor_notes": {
+      "B": "At New, nothing has been investigated or resolved, so there's no resolution to document.",
+      "C": "On Hold means work is paused; the resolution isn't ready to capture.",
+      "D": "A canceled incident has no resolution to turn into a knowledge article."
+    },
+    "references": [
+      {
+        "title": "Create a knowledge article from an incident",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/create-knowledge-incident.html"
+      }
+    ],
+    "tags": [
+      "incident-management",
+      "knowledge",
+      "resolved-state"
+    ]
+  },
+  {
+    "id": "cisitsm-inc-028",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Incident Management",
+    "subdomain": "Knowledge from incident",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "What does activating the KCS Integration for Incident Management plugin provide?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Integration of Incident Management with the Advanced Knowledge Management features"
+      },
+      {
+        "id": "B",
+        "text": "Automatic priority recalculation for all incidents"
+      },
+      {
+        "id": "C",
+        "text": "A new major incident workbench"
+      },
+      {
+        "id": "D",
+        "text": "Domain separation for the incident table"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The KCS Integration for Incident Management plugin wires incidents into the Advanced Knowledge Management capabilities so agents can capture and reuse knowledge as part of the incident workflow.",
+    "distractor_notes": {
+      "B": "Priority recalculation is driven by priority lookup rules, not this plugin.",
+      "C": "The major incident workbench comes with Major Incident Management, a separate plugin.",
+      "D": "Domain separation is a platform capability, not something this knowledge plugin enables."
+    },
+    "references": [
+      {
+        "title": "Activate KCS Integration for Incident Management",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/activate-kcs-integration-for-im.html"
+      }
+    ],
+    "tags": [
+      "incident-management",
+      "kcs",
+      "knowledge-plugin"
+    ]
+  },
+  {
+    "id": "cisitsm-inc-029",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Incident Management",
+    "subdomain": "Related records",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Directly from an incident record, which related records can an agent create using the promote/create-record action?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A problem, a change, or a request"
+      },
+      {
+        "id": "B",
+        "text": "A CMDB class and an identification rule"
+      },
+      {
+        "id": "C",
+        "text": "A MID Server and a Service Graph Connector"
+      },
+      {
+        "id": "D",
+        "text": "A theme and a landing page"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "When an incident points to something bigger, you can create a problem (for root cause), a change (to fix it safely), or a request (for needed items) straight from the incident — keeping everything linked.",
+    "distractor_notes": {
+      "B": "CMDB classes and identification rules are Data Foundations / CMDB configuration, not records created from an incident.",
+      "C": "MID Servers and Service Graph Connectors are discovery/ingestion infrastructure.",
+      "D": "Themes and landing pages are UI configuration, unrelated to incident promotion."
+    },
+    "references": [
+      {
+        "title": "Create a record from incident",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/t_PromoteAnIncident.html"
+      }
+    ],
+    "tags": [
+      "incident-management",
+      "promote",
+      "related-records"
+    ]
+  },
+  {
+    "id": "cisitsm-inc-030",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Incident Management",
+    "subdomain": "Related records",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "While working an incident you determine the user also needs a new laptop ordered. What is the appropriate action to keep the work tracked?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Create a request from the incident so the catalog item and the incident stay linked"
+      },
+      {
+        "id": "B",
+        "text": "Close the incident immediately and tell the user to start over"
+      },
+      {
+        "id": "C",
+        "text": "Promote the incident to a major incident"
+      },
+      {
+        "id": "D",
+        "text": "Convert the incident into a knowledge article"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "When an incident surfaces a need for a catalog item, you create a request from the incident. That keeps the request and the incident cross-linked so neither falls through the cracks.",
+    "distractor_notes": {
+      "B": "Dumping the work back on the user breaks the trail and the service experience.",
+      "C": "A single user needing a laptop isn't a highest-impact, highest-urgency major incident.",
+      "D": "A knowledge article documents a resolution; it doesn't order hardware."
+    },
+    "references": [
+      {
+        "title": "Create a request from an incident",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/create-request-from-incident.html"
+      }
+    ],
+    "tags": [
+      "incident-management",
+      "request",
+      "scenario"
+    ]
+  },
+  {
+    "id": "cisitsm-inc-031",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Incident Management",
+    "subdomain": "Related records",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "You realize the issue on an incident is actually owned by another department that can resolve it. Which action links the work to that department?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Create an associated ticket from the incident"
+      },
+      {
+        "id": "B",
+        "text": "Delete the incident and ask the other department to recreate it"
+      },
+      {
+        "id": "C",
+        "text": "Change the incident's Number to the other department's prefix"
+      },
+      {
+        "id": "D",
+        "text": "Set the incident to On Hold with reason Awaiting Vendor"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Creating an associated ticket spins up a record for the relevant department while keeping it tied to the original incident, so both teams can track the shared work.",
+    "distractor_notes": {
+      "B": "Deleting and recreating loses history and the link between the records.",
+      "C": "Incident numbers are system-generated and aren't repurposed as a routing trick.",
+      "D": "Awaiting Vendor is for waiting on a third-party vendor, not handing off to an internal department."
+    },
+    "references": [
+      {
+        "title": "Create an associated ticket from an incident",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/create-associated-tickets.html"
+      }
+    ],
+    "tags": [
+      "incident-management",
+      "associated-ticket",
+      "handoff"
+    ]
+  },
+  {
+    "id": "cisitsm-inc-032",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Incident Management",
+    "subdomain": "Affected CIs",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Why would you associate affected or impacted configuration items (CIs) with an incident?",
+    "options": [
+      {
+        "id": "A",
+        "text": "To understand how the incident affects other CIs through dependent relationships"
+      },
+      {
+        "id": "B",
+        "text": "To recalculate the incident's priority from the CI count"
+      },
+      {
+        "id": "C",
+        "text": "To grant the caller write access to the CMDB"
+      },
+      {
+        "id": "D",
+        "text": "To automatically close the incident"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Linking affected and impacted CIs lets you see the blast radius — how the incident ripples out to other CIs through their dependency relationships, which is gold for impact analysis.",
+    "distractor_notes": {
+      "B": "Priority is driven by impact and urgency, not by how many CIs are attached.",
+      "C": "Associating CIs doesn't change anyone's CMDB permissions.",
+      "D": "Linking CIs is about visibility, not closing the incident."
+    },
+    "references": [
+      {
+        "title": "Associate CIs with incident",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/associate-cis-with-incident.html"
+      }
+    ],
+    "tags": [
+      "incident-management",
+      "affected-ci",
+      "cmdb"
+    ]
+  },
+  {
+    "id": "cisitsm-inc-033",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Incident Management",
+    "subdomain": "Affected CIs",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Capturing affected CI (asset) information on an incident is primarily used to keep a record of what?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Configuration items that were updated, repaired, swapped, or retired"
+      },
+      {
+        "id": "B",
+        "text": "Every user who viewed the incident"
+      },
+      {
+        "id": "C",
+        "text": "The SLA pause history"
+      },
+      {
+        "id": "D",
+        "text": "The list of knowledge articles attached to the incident"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Recording affected CIs of type asset gives you a durable record of which configuration items were updated, repaired, swapped, or retired while resolving the incident — useful for asset and audit history.",
+    "distractor_notes": {
+      "B": "Viewers are tracked through other auditing mechanisms, not the affected CI list.",
+      "C": "SLA pause history lives with the SLA records, not the affected CI capture.",
+      "D": "Attached knowledge articles are a separate relationship from affected CIs."
+    },
+    "references": [
+      {
+        "title": "Capture affected CI information",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/track-ci.html"
+      }
+    ],
+    "tags": [
+      "incident-management",
+      "affected-ci",
+      "asset"
+    ]
+  },
+  {
+    "id": "cisitsm-inc-034",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Incident Management",
+    "subdomain": "Major Incident Management",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is a major incident candidate?",
+    "options": [
+      {
+        "id": "A",
+        "text": "An incident proposed for review, which a major incident manager evaluates and may promote to a major incident"
+      },
+      {
+        "id": "B",
+        "text": "A change request awaiting CAB approval"
+      },
+      {
+        "id": "C",
+        "text": "A knowledge article pending publication"
+      },
+      {
+        "id": "D",
+        "text": "A problem record with a confirmed root cause"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "A candidate is an incident flagged as a possible major incident. A major incident manager reviews it and decides whether to promote it — candidates are the on-ramp to the major incident process.",
+    "distractor_notes": {
+      "B": "CAB approval belongs to Change Management, not the major incident candidate flow.",
+      "C": "Article publication is a Knowledge Management step.",
+      "D": "A problem with a root cause is a Problem Management artifact, not a major incident candidate."
+    },
+    "references": [
+      {
+        "title": "Create a major incident candidate",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/create-major-incident-candidate.html"
+      }
+    ],
+    "tags": [
+      "incident-management",
+      "major-incident",
+      "candidate"
+    ]
+  },
+  {
+    "id": "cisitsm-inc-035",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Incident Management",
+    "subdomain": "Major Incident Management",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Who reviews a major incident candidate and decides whether to accept or reject it?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A major incident manager"
+      },
+      {
+        "id": "B",
+        "text": "The caller who logged the incident"
+      },
+      {
+        "id": "C",
+        "text": "The change advisory board"
+      },
+      {
+        "id": "D",
+        "text": "Any user with the snc_internal role"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The major incident manager is the gatekeeper: they accept a candidate when it genuinely needs accelerated, coordinated resolution, or reject it otherwise.",
+    "distractor_notes": {
+      "B": "Callers report incidents; they don't adjudicate major incident promotion.",
+      "C": "The CAB governs changes, not major incident candidates.",
+      "D": "A broad internal role doesn't confer major incident manager authority."
+    },
+    "references": [
+      {
+        "title": "Accept or reject a major incident candidate",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/accept-reject-major-incident-candidate.html"
+      }
+    ],
+    "tags": [
+      "incident-management",
+      "major-incident",
+      "manager"
+    ]
+  },
+  {
+    "id": "cisitsm-inc-036",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Incident Management",
+    "subdomain": "Major Incident Management",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An incident was accepted as a major incident but was later found to have been classified incorrectly. What action returns it to being handled as a regular incident?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Demote the major incident"
+      },
+      {
+        "id": "B",
+        "text": "Cancel the incident"
+      },
+      {
+        "id": "C",
+        "text": "Delete the incident and recreate it"
+      },
+      {
+        "id": "D",
+        "text": "Set it to On Hold with reason Awaiting Problem"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Demoting a major incident — even after it was accepted — drops it back to a regular incident, so it can be worked through the normal process without the major incident machinery.",
+    "distractor_notes": {
+      "B": "Canceling ends the incident entirely; demotion keeps it active as a normal incident.",
+      "C": "Deleting and recreating throws away history; demotion is the clean path.",
+      "D": "On Hold pauses work; it doesn't change the major incident classification."
+    },
+    "references": [
+      {
+        "title": "Demote a major incident",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/demote-major-incident.html"
+      }
+    ],
+    "tags": [
+      "incident-management",
+      "major-incident",
+      "demote"
+    ]
+  },
+  {
+    "id": "cisitsm-inc-037",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Incident Management",
+    "subdomain": "Major Incident Management",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the purpose of major incident trigger rules?",
+    "options": [
+      {
+        "id": "A",
+        "text": "To define conditions under which an incident is automatically considered a major incident candidate"
+      },
+      {
+        "id": "B",
+        "text": "To assign incidents to the on-call engineer"
+      },
+      {
+        "id": "C",
+        "text": "To calculate the SLA breach time"
+      },
+      {
+        "id": "D",
+        "text": "To publish knowledge articles automatically"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Trigger rules let you codify what 'this looks major' means — when an incident matches the conditions, it's automatically proposed as a major incident candidate for a manager to review.",
+    "distractor_notes": {
+      "B": "On-call assignment is handled by on-call scheduling, not trigger rules.",
+      "C": "SLA timing is governed by SLA definitions, not major incident trigger rules.",
+      "D": "Knowledge publication is a separate Knowledge Management workflow."
+    },
+    "references": [
+      {
+        "title": "Create trigger rules for major incidents",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/major-incident-trigger-rules.html"
+      }
+    ],
+    "tags": [
+      "incident-management",
+      "major-incident",
+      "trigger-rules"
+    ]
+  },
+  {
+    "id": "cisitsm-inc-038",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Incident Management",
+    "subdomain": "Major Incident Management",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Under what condition can a major incident be closed manually?",
+    "options": [
+      {
+        "id": "A",
+        "text": "After validating the resolution and when the major incident is in the Resolved state"
+      },
+      {
+        "id": "B",
+        "text": "At any time, regardless of state"
+      },
+      {
+        "id": "C",
+        "text": "Only while it is still In Progress"
+      },
+      {
+        "id": "D",
+        "text": "Only by the original caller"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "You close a major incident manually once it's Resolved and you've validated the fix actually held — a deliberate final check given how much a major incident affects.",
+    "distractor_notes": {
+      "B": "Closing isn't allowed from just any state; it must be Resolved first.",
+      "C": "In Progress means work is ongoing — not the point at which you close.",
+      "D": "Closure is role-gated to appropriate staff; it isn't reserved to the caller (an ESS caller can't even close a major incident)."
+    },
+    "references": [
+      {
+        "title": "Close a major incident",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/close-major-incident.html"
+      }
+    ],
+    "tags": [
+      "incident-management",
+      "major-incident",
+      "closure"
+    ]
+  },
+  {
+    "id": "cisitsm-inc-039",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Incident Management",
+    "subdomain": "Major Incident Management",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What are the two ways to create a major incident in ServiceNow?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Create one directly, or review candidates and promote a candidate"
+      },
+      {
+        "id": "B",
+        "text": "Only by importing it from an external system"
+      },
+      {
+        "id": "C",
+        "text": "Only by closing a problem record"
+      },
+      {
+        "id": "D",
+        "text": "Only by merging two changes"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "You can create a major incident outright, or you can review the queue of candidates and promote one. Both roads lead into the coordinated major incident response.",
+    "distractor_notes": {
+      "B": "External import isn't the defined method for creating major incidents.",
+      "C": "Closing a problem doesn't create a major incident.",
+      "D": "Merging changes is unrelated to major incident creation."
+    },
+    "references": [
+      {
+        "title": "Create a major incident",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/create-a-major-incident.html"
+      }
+    ],
+    "tags": [
+      "incident-management",
+      "major-incident",
+      "creation"
+    ]
+  },
+  {
+    "id": "cisitsm-inc-040",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Incident Management",
+    "subdomain": "Major Incident Management",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "From the major incident workbench, what can you do when no well-defined communication plan exists yet?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Create a new communication plan or add a communication task to an existing plan"
+      },
+      {
+        "id": "B",
+        "text": "Recalculate the priority lookup rules"
+      },
+      {
+        "id": "C",
+        "text": "Edit the CMDB identification rules"
+      },
+      {
+        "id": "D",
+        "text": "Reassign the CSA certification"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The workbench lets you stand up a communication plan on the fly — or bolt a communication task onto an existing one — which is handy when a major incident hits and you don't already have a polished plan ready.",
+    "distractor_notes": {
+      "B": "Priority lookup rules are configured under System Policy, not the MIM workbench.",
+      "C": "CMDB identification rules are Data Foundations configuration, unrelated to the workbench.",
+      "D": "Certifications aren't a ServiceNow record action at all."
+    },
+    "references": [
+      {
+        "title": "Add communication plan from the major incident workbench",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/add-comm-plan-from-mim-workbench.html"
+      }
+    ],
+    "tags": [
+      "incident-management",
+      "major-incident",
+      "communication-plan"
+    ]
+  },
+  {
+    "id": "cisitsm-inc-041",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Incident Management",
+    "subdomain": "Major Incident Management",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "During a major incident you need to quickly reach the right support group. What does the major incident workbench give you to do that?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Access to the on-call roster and escalation details so you can reach the support group"
+      },
+      {
+        "id": "B",
+        "text": "A list of all closed incidents from last year"
+      },
+      {
+        "id": "C",
+        "text": "The CMDB health dashboard"
+      },
+      {
+        "id": "D",
+        "text": "The service catalog item designer"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The workbench surfaces the on-call roster and escalation path right where you're managing the major incident, so you can reach the correct support group fast instead of hunting through schedules.",
+    "distractor_notes": {
+      "B": "Historical closed incidents aren't what you need to escalate a live major incident.",
+      "C": "CMDB health is a Data Foundations view, not the MIM escalation tool.",
+      "D": "Catalog item design is unrelated to escalation during an incident."
+    },
+    "references": [
+      {
+        "title": "Access on-call escalation path from major incident workbench",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/access-escalation-path.html"
+      }
+    ],
+    "tags": [
+      "incident-management",
+      "major-incident",
+      "on-call",
+      "scenario"
+    ]
+  },
+  {
+    "id": "cisitsm-inc-042",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Incident Management",
+    "subdomain": "Bulk actions",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "What must be true to close multiple incidents simultaneously from the incident list?",
+    "options": [
+      {
+        "id": "A",
+        "text": "They can share the same resolution code"
+      },
+      {
+        "id": "B",
+        "text": "They must all have the same incident number"
+      },
+      {
+        "id": "C",
+        "text": "They must all be major incidents"
+      },
+      {
+        "id": "D",
+        "text": "They must all be unassigned"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Bulk closing from the list works when the incidents can take the same resolution code — you apply one closing reason across the selected set rather than touching each record individually.",
+    "distractor_notes": {
+      "B": "Incident numbers are unique, so 'same number' is impossible by design.",
+      "C": "Bulk close isn't restricted to major incidents — and major incidents are closed deliberately.",
+      "D": "Assignment status isn't the gate; the shared resolution code is."
+    },
+    "references": [
+      {
+        "title": "Close multiple incidents from list",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/t_ClosingIncidentsFromAList.html"
+      }
+    ],
+    "tags": [
+      "incident-management",
+      "bulk-close",
+      "resolution-code"
+    ]
+  },
+  {
+    "id": "cisitsm-inc-043",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Incident Management",
+    "subdomain": "Templates",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the main benefit of creating an incident template?",
+    "options": [
+      {
+        "id": "A",
+        "text": "It pre-populates field values so incidents are logged consistently and quickly"
+      },
+      {
+        "id": "B",
+        "text": "It permanently locks the incident form for all users"
+      },
+      {
+        "id": "C",
+        "text": "It calculates priority from the CMDB"
+      },
+      {
+        "id": "D",
+        "text": "It deletes resolved incidents on a schedule"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Templates fill in standard field values up front, so recurring incident types get logged the same way every time with less manual typing and fewer mistakes.",
+    "distractor_notes": {
+      "B": "Templates pre-fill values; they don't lock the form for everyone.",
+      "C": "Priority is from impact and urgency, not the template or CMDB.",
+      "D": "Deleting resolved incidents isn't a template function."
+    },
+    "references": [
+      {
+        "title": "Create incident template",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/t_CreateAnIncidentTemplate.html"
+      }
+    ],
+    "tags": [
+      "incident-management",
+      "template",
+      "consistency"
+    ]
+  },
+  {
+    "id": "cisitsm-inc-044",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Incident Management",
+    "subdomain": "Universal Request",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "When you create an incident from a Universal Request record, what is a key behavior of that link?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The incident is tied to the universal request, and selected field values can be copied across"
+      },
+      {
+        "id": "B",
+        "text": "The universal request is deleted once the incident is created"
+      },
+      {
+        "id": "C",
+        "text": "The incident is automatically promoted to a major incident"
+      },
+      {
+        "id": "D",
+        "text": "The caller loses access to the incident"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Creating an incident from a Universal Request keeps the two connected and can auto-copy selected fields from the UR to the incident, saving you from re-keying the same details.",
+    "distractor_notes": {
+      "B": "The universal request stays — it's the parent that ties related work together.",
+      "C": "Origin from a UR doesn't make an incident major.",
+      "D": "Caller access isn't stripped by creating the incident from a UR."
+    },
+    "references": [
+      {
+        "title": "Create incident from Universal Request",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/create-incident-from-univ-req.html"
+      }
+    ],
+    "tags": [
+      "incident-management",
+      "universal-request",
+      "linkage"
+    ]
+  },
+  {
+    "id": "cisitsm-inc-045",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Incident Management",
+    "subdomain": "Channels",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What does the ServiceNow Add-in for Microsoft Outlook allow users to do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Create incidents and Visual Task Board tasks, and chat with a virtual agent, from within Outlook"
+      },
+      {
+        "id": "B",
+        "text": "Run CMDB discovery from Outlook"
+      },
+      {
+        "id": "C",
+        "text": "Publish knowledge articles to the portal"
+      },
+      {
+        "id": "D",
+        "text": "Configure SLA definitions"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The Outlook add-in brings ServiceNow into the inbox: users can create incidents and VTB tasks and chat with a virtual agent without leaving Outlook.",
+    "distractor_notes": {
+      "B": "Discovery runs via MID Servers and Discovery schedules, not an email add-in.",
+      "C": "Knowledge publishing happens in the platform, not through the Outlook add-in.",
+      "D": "SLA definitions are configured by admins in the platform, not from Outlook."
+    },
+    "references": [
+      {
+        "title": "Configuring Microsoft Outlook to create incidents and VTB tasks",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/create-incident-outlook.html"
+      }
+    ],
+    "tags": [
+      "incident-management",
+      "outlook-add-in",
+      "channels"
+    ]
+  },
+  {
+    "id": "cisitsm-inc-046",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Incident Management",
+    "subdomain": "Service Operations Workspace",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "What is the effect of enabling email notification redirection for incidents and major incidents?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Users are taken to the incident record in Service Operations Workspace (SOW) instead of the UI16 interface"
+      },
+      {
+        "id": "B",
+        "text": "All incident notifications are disabled"
+      },
+      {
+        "id": "C",
+        "text": "Notifications are sent only to the CMDB owner"
+      },
+      {
+        "id": "D",
+        "text": "Incidents are auto-closed when a notification is sent"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "With redirection enabled, the links in incident notifications drop users into the record in Service Operations Workspace rather than the classic UI16 form — keeping people in the modern workspace experience.",
+    "distractor_notes": {
+      "B": "Redirection changes where links point, not whether notifications are sent.",
+      "C": "Recipients are determined by notification configuration, not redirected to the CMDB owner.",
+      "D": "Sending a notification doesn't close an incident."
+    },
+    "references": [
+      {
+        "title": "Email notification redirection",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/email-notif-redirt-inci-major-inci.html"
+      }
+    ],
+    "tags": [
+      "incident-management",
+      "service-operations-workspace",
+      "notifications"
+    ]
+  },
+  {
+    "id": "cisitsm-inc-047",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Incident Management",
+    "subdomain": "Special handling notes",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What are incident special handling notes used for?",
+    "options": [
+      {
+        "id": "A",
+        "text": "To display informative notes on records meeting conditions, guiding the action taken or the next step"
+      },
+      {
+        "id": "B",
+        "text": "To store the caller's password securely"
+      },
+      {
+        "id": "C",
+        "text": "To define the priority matrix"
+      },
+      {
+        "id": "D",
+        "text": "To schedule the auto-close job"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Special handling notes surface helpful, conditional guidance on a record — for example reminding agents of a VIP caller or a special procedure — so the right action or next step is clear.",
+    "distractor_notes": {
+      "B": "Passwords are never stored or displayed in notes.",
+      "C": "The priority matrix is defined by priority lookup rules.",
+      "D": "The auto-close job is a scheduled job, unrelated to special handling notes."
+    },
+    "references": [
+      {
+        "title": "Enable the display of incident special handling notes",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/create-special-handling-notes.html"
+      }
+    ],
+    "tags": [
+      "incident-management",
+      "special-handling-notes",
+      "guidance"
+    ]
+  },
+  {
+    "id": "cisitsm-inc-048",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Incident Management",
+    "subdomain": "Domain separation",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "In the context of Incident Management, what does domain separation enable?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Separating data, processes, and administrative tasks into logical groupings called domains, controlling who can see and access data"
+      },
+      {
+        "id": "B",
+        "text": "Splitting an incident into multiple knowledge articles"
+      },
+      {
+        "id": "C",
+        "text": "Automatically translating incident text into all languages"
+      },
+      {
+        "id": "D",
+        "text": "Merging all customers' incidents into one shared queue"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Domain separation carves data, processes, and admin into domains so different tenants or business units only see and manage their own incidents — useful for managed service providers and multi-tenant setups.",
+    "distractor_notes": {
+      "B": "Splitting into articles is a knowledge action, not domain separation.",
+      "C": "Translation is handled by localization features, not domain separation.",
+      "D": "Domain separation isolates data rather than merging everyone into one queue."
+    },
+    "references": [
+      {
+        "title": "Domain separation and Incident Management",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/domain-separation-incident-management.html"
+      }
+    ],
+    "tags": [
+      "incident-management",
+      "domain-separation",
+      "multi-tenant"
+    ]
+  },
+  {
+    "id": "cisitsm-inc-049",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Incident Management",
+    "subdomain": "Security",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "The ITSM Enhanced Security Features plugin helps prevent unauthorized access to incident-related tables by using which mechanism?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Deny-unless-authenticated ACLs"
+      },
+      {
+        "id": "B",
+        "text": "Priority lookup rules"
+      },
+      {
+        "id": "C",
+        "text": "Inactivity monitors"
+      },
+      {
+        "id": "D",
+        "text": "Visual Task Boards"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The enhanced security plugin layers deny-unless ACLs over incident tables, so access is blocked for non-authenticated users unless a rule explicitly allows it — a tighter default than relying on permissive ACLs.",
+    "distractor_notes": {
+      "B": "Priority lookup rules compute priority; they don't secure tables.",
+      "C": "Inactivity monitors detect stalled records, not unauthorized access.",
+      "D": "Visual Task Boards are a work-management UI, not a security control."
+    },
+    "references": [
+      {
+        "title": "Activate ITSM Enhanced Security Features for Incident Management",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/activate-itsm-enhanced-security-inci-mangmnt.html"
+      }
+    ],
+    "tags": [
+      "incident-management",
+      "security",
+      "acl"
+    ]
+  },
+  {
+    "id": "cisitsm-inc-050",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Incident Management",
+    "subdomain": "Roles",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which plugin installs the user roles specific to Incident Management?",
+    "options": [
+      {
+        "id": "A",
+        "text": "ITSM Roles — Incident Management"
+      },
+      {
+        "id": "B",
+        "text": "Major Incident Management"
+      },
+      {
+        "id": "C",
+        "text": "KCS Integration for Incident Management"
+      },
+      {
+        "id": "D",
+        "text": "Predictive Intelligence for Incident"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The ITSM Roles — Incident Management plugin is the one that delivers the incident-specific user roles, keeping role definitions packaged with the capability they govern.",
+    "distractor_notes": {
+      "B": "Major Incident Management adds the MIM capability, not the base incident role set.",
+      "C": "The KCS plugin adds knowledge integration, not the incident roles.",
+      "D": "Predictive Intelligence adds ML solutions, not user roles."
+    },
+    "references": [
+      {
+        "title": "Components installed with ITSM Roles — Incident Management",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/inci-roles-instld-itsm-roles.html"
+      }
+    ],
+    "tags": [
+      "incident-management",
+      "roles",
+      "plugin"
+    ]
+  },
+  {
+    "id": "cisitsm-inc-051",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Incident Management",
+    "subdomain": "Integrations",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What characterizes a bi-directional incident ticketing integration?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Incident data is synchronized in both directions between ServiceNow and a third-party system"
+      },
+      {
+        "id": "B",
+        "text": "Data flows only from ServiceNow out to the third-party system"
+      },
+      {
+        "id": "C",
+        "text": "It only works inside a single instance"
+      },
+      {
+        "id": "D",
+        "text": "It replaces the CMDB with the third-party data model"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Bi-directional means two-way: updates made in either ServiceNow or the connected third-party system flow to the other, keeping incident records in sync across both.",
+    "distractor_notes": {
+      "B": "One-way outbound only is a uni-directional integration, not bi-directional.",
+      "C": "Integrations span systems by definition; a single-instance-only behavior isn't an integration.",
+      "D": "Integrations exchange data; they don't swap out the CMDB model."
+    },
+    "references": [
+      {
+        "title": "Bi-directional incident ticketing integrations",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/c_BiDiIncidentTicketingIntegrations.html"
+      }
+    ],
+    "tags": [
+      "incident-management",
+      "integration",
+      "bi-directional"
+    ]
+  },
+  {
+    "id": "cisitsm-inc-052",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Incident Management",
+    "subdomain": "Configuration",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Incident properties are primarily used by administrators to do what?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Configure incident behavior and features such as auto-close, copy/child incident, and incident task closure"
+      },
+      {
+        "id": "B",
+        "text": "Define the company's chart of accounts"
+      },
+      {
+        "id": "C",
+        "text": "Grant the CSA certification to users"
+      },
+      {
+        "id": "D",
+        "text": "Build the service catalog UI"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Incident properties are the admin switchboard for incident behavior — toggling features like auto-close, copy and child incident, and how tasks close when the incident does.",
+    "distractor_notes": {
+      "B": "A chart of accounts is a finance concept, not an incident property.",
+      "C": "Certifications aren't granted via properties.",
+      "D": "The catalog UI is built with catalog tools, not incident properties."
+    },
+    "references": [
+      {
+        "title": "Incident Management properties",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/incident-management-properties.html"
+      }
+    ],
+    "tags": [
+      "incident-management",
+      "properties",
+      "configuration"
+    ]
+  },
+  {
+    "id": "cisitsm-inc-053",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Incident Management",
+    "subdomain": "Channels",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "What does a record producer configured for incidents allow an end user to do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Log an incident directly from the Service Catalog"
+      },
+      {
+        "id": "B",
+        "text": "Approve a change request"
+      },
+      {
+        "id": "C",
+        "text": "Edit the CMDB schema"
+      },
+      {
+        "id": "D",
+        "text": "Run a discovery schedule"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "A record producer is a catalog-friendly front door: it lets users log an incident through the Service Catalog using a simple form, which then creates the incident record behind the scenes.",
+    "distractor_notes": {
+      "B": "Approving changes is a Change Management activity, not a record producer for incidents.",
+      "C": "Editing the CMDB schema is Data Foundations work, unrelated to a record producer.",
+      "D": "Discovery schedules are run by Discovery, not a catalog record producer."
+    },
+    "references": [
+      {
+        "title": "Create a record producer to log incidents",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/t_CreateARecordProducer.html"
+      }
+    ],
+    "tags": [
+      "incident-management",
+      "record-producer",
+      "service-catalog"
+    ]
+  },
+  {
+    "id": "cisitsm-inc-054",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Incident Management",
+    "subdomain": "Managing incidents",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Managing an incident in ServiceNow typically involves which set of activities?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Diagnosing, investigating, and escalating or promoting the incident"
+      },
+      {
+        "id": "B",
+        "text": "Designing CI classes and identification rules"
+      },
+      {
+        "id": "C",
+        "text": "Building dashboards in the CMDB Workspace"
+      },
+      {
+        "id": "D",
+        "text": "Writing Service Graph Connector mappings"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Working an incident is hands-on: you diagnose the issue, investigate it, and escalate or promote it when it needs more muscle — all aimed at restoring service.",
+    "distractor_notes": {
+      "B": "Designing CI classes and identification rules is Data Foundations work.",
+      "C": "CMDB Workspace dashboards are a Data Foundations / CMDB activity.",
+      "D": "Service Graph Connector mappings are an ingestion/Discovery task."
+    },
+    "references": [
+      {
+        "title": "Managing incidents",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/work-on-incidents.html"
+      }
+    ],
+    "tags": [
+      "incident-management",
+      "managing-incidents",
+      "lifecycle"
+    ]
+  },
+  {
+    "id": "cisitsm-inc-055",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Incident Management",
+    "subdomain": "Reopening",
+    "difficulty": "scenario",
+    "type": "multi_select",
+    "stem": "Which of the following users can reopen a RESOLVED (not closed) regular incident?",
+    "options": [
+      {
+        "id": "A",
+        "text": "An agent with incident write access (sn_incident_write)"
+      },
+      {
+        "id": "B",
+        "text": "The caller for the incident"
+      },
+      {
+        "id": "C",
+        "text": "The Opened by (requester) user for the incident"
+      },
+      {
+        "id": "D",
+        "text": "An ESS user attempting to reopen a major incident"
+      }
+    ],
+    "correct": [
+      "A",
+      "B",
+      "C"
+    ],
+    "rationale": "A resolved regular incident can be reopened by an agent with sn_incident_write, by the caller, or by the Opened by requester. The exception is a major incident — an ESS (no-role) user cannot resolve, reopen, or close one even if they are the caller.",
+    "distractor_notes": {
+      "D": "An ESS user explicitly cannot reopen a major incident, even as the caller — that's the documented exception."
+    },
+    "references": [
+      {
+        "title": "Reopening an incident",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/reopening-incident.html"
+      }
+    ],
+    "tags": [
+      "incident-management",
+      "reopen",
+      "roles"
+    ]
+  },
+  {
+    "id": "cisitsm-inc-056",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Incident Management",
+    "subdomain": "Incident tasks",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "An incident's resolution needs work done by a different assignment group than the one the incident is assigned to, while keeping everything coordinated under one record. What is the best mechanism?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Create an incident task assigned to the other group"
+      },
+      {
+        "id": "B",
+        "text": "Reassign the whole incident permanently to the other group"
+      },
+      {
+        "id": "C",
+        "text": "Create a child incident and close the parent"
+      },
+      {
+        "id": "D",
+        "text": "Open a separate, unrelated incident"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "An incident task lets you delegate a slice of work to another assignment group while the parent incident stays the single coordination point — exactly the pattern for multi-team resolution.",
+    "distractor_notes": {
+      "B": "Reassigning the whole incident hands off ownership rather than just the slice of work.",
+      "C": "Closing the parent breaks the coordination you're trying to keep.",
+      "D": "A separate unrelated incident loses the link and the shared context."
+    },
+    "references": [
+      {
+        "title": "Create an incident task",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/create-incident-task.html"
+      }
+    ],
+    "tags": [
+      "incident-management",
+      "incident-task",
+      "scenario"
+    ]
+  },
+  {
+    "id": "cisitsm-inc-057",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Incident Management",
+    "subdomain": "Categorization",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "When categorizing an incident, what is the minimum classification typically applied?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A category and at least one subcategory"
+      },
+      {
+        "id": "B",
+        "text": "A resolution code only"
+      },
+      {
+        "id": "C",
+        "text": "A configuration item only"
+      },
+      {
+        "id": "D",
+        "text": "An SLA definition only"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Categorization assigns a category plus at least one subcategory, giving enough classification to route the incident correctly and report on it meaningfully.",
+    "distractor_notes": {
+      "B": "A resolution code is set at resolution, not during initial categorization.",
+      "C": "A CI may be attached but isn't the categorization itself.",
+      "D": "SLA definitions apply based on conditions; they aren't the categorization step."
+    },
+    "references": [
+      {
+        "title": "Configure incident category or subcategory",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/t_AddRemoveIncCatSubbCat.html"
+      }
+    ],
+    "tags": [
+      "incident-management",
+      "categorization",
+      "subcategory"
+    ]
+  },
+  {
+    "id": "cisitsm-inc-058",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Incident Management",
+    "subdomain": "Templates",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "What happens when you apply a template to a new incident form?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Applicable field values from the template are pre-populated, saving manual entry"
+      },
+      {
+        "id": "B",
+        "text": "The incident is immediately closed"
+      },
+      {
+        "id": "C",
+        "text": "The incident is converted to a problem"
+      },
+      {
+        "id": "D",
+        "text": "All other open incidents are reassigned"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Applying a template stamps its predefined values onto the new incident, so you don't re-enter the same fields by hand for recurring incident types.",
+    "distractor_notes": {
+      "B": "Applying a template fills fields; it doesn't close the incident.",
+      "C": "Conversion to a problem is a separate promote action.",
+      "D": "Templates affect the current record, not other incidents."
+    },
+    "references": [
+      {
+        "title": "Apply a template in the Incident form",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/t_UseATemplateFromAForm.html"
+      }
+    ],
+    "tags": [
+      "incident-management",
+      "template",
+      "apply-template"
+    ]
+  },
+  {
+    "id": "cisitsm-inc-059",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Incident Management",
+    "subdomain": "Child incidents",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "Several incidents are all symptoms of one underlying parent issue, and you want them linked to a single parent record for coordinated handling. Which capability fits best?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Create child incidents linked to the parent incident"
+      },
+      {
+        "id": "B",
+        "text": "Merge them into a knowledge article"
+      },
+      {
+        "id": "C",
+        "text": "Set each to On Hold with reason Awaiting Problem"
+      },
+      {
+        "id": "D",
+        "text": "Delete the duplicates"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Create Child Incident links the related records to a parent, so a group of connected incidents can be coordinated through the parent rather than worked in isolation.",
+    "distractor_notes": {
+      "B": "A knowledge article documents a fix; it doesn't link active incidents for coordination.",
+      "C": "Awaiting Problem pauses each incident separately and doesn't link them under a parent.",
+      "D": "Deleting destroys records and history; the incidents are real and need handling."
+    },
+    "references": [
+      {
+        "title": "Copy an incident or create a child incident",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/copy-incident-or-create-child-incident.html"
+      }
+    ],
+    "tags": [
+      "incident-management",
+      "child-incident",
+      "scenario"
+    ]
+  },
+  {
+    "id": "cisitsm-inc-060",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Incident Management",
+    "subdomain": "Knowledge from incident",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "With the KCS integration active, what happens regarding knowledge when an incident is auto-closed or closed by the caller?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A draft knowledge article is created"
+      },
+      {
+        "id": "B",
+        "text": "The incident is permanently deleted"
+      },
+      {
+        "id": "C",
+        "text": "The caller is automatically granted the knowledge_admin role"
+      },
+      {
+        "id": "D",
+        "text": "All related incidents are reopened"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "When an incident is auto-closed or closed by the caller, the platform spins up a draft knowledge article — capturing the resolution as reusable knowledge without an agent having to remember to do it.",
+    "distractor_notes": {
+      "B": "Closing doesn't delete the incident; the record persists.",
+      "C": "Closure doesn't grant the caller any administrative knowledge role.",
+      "D": "Closing one incident doesn't reopen related incidents."
+    },
+    "references": [
+      {
+        "title": "Create a knowledge article from an incident",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/create-knowledge-incident.html"
+      }
+    ],
+    "tags": [
+      "incident-management",
+      "knowledge",
+      "draft-article"
+    ]
+  }
+]
