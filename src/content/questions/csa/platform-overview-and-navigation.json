@@ -31,7 +31,7 @@
     ],
     "rationale": "The Unified Navigation header is the persistent top bar in Next Experience. It surfaces the company logo, primary navigation, the global search, and user controls, and stays in place as you move between classic UI pages and Workspaces.",
     "distractor_notes": {
-      "A": "The Application Navigator is the left-side filter/menu tree (favorites, history, all apps) \u2014 it's a navigation panel inside a page, not the global header.",
+      "A": "The Application Navigator is the left-side filter/menu tree (favorites, history, all apps) — it's a navigation panel inside a page, not the global header.",
       "C": "The form header is the band that sits on top of a single record form. It's local to the record, not global.",
       "D": "The Service Portal banner only appears inside Service Portal pages, not across the Now Platform UI."
     },
@@ -77,9 +77,9 @@
     "correct": [
       "A"
     ],
-    "rationale": "The Filter Navigator sits at the top of the Application Navigator and matches application menus and modules as you type \u2014 the fastest way to find a module without scrolling.",
+    "rationale": "The Filter Navigator sits at the top of the Application Navigator and matches application menus and modules as you type — the fastest way to find a module without scrolling.",
     "distractor_notes": {
-      "B": "Breadcrumbs show where you are inside a list query \u2014 they don't filter the nav tree.",
+      "B": "Breadcrumbs show where you are inside a list query — they don't filter the nav tree.",
       "C": "Reference lookups appear on reference fields inside forms to find related records. They aren't part of the nav.",
       "D": "Context menus are right-click menus on lists, forms, and fields. They don't filter the nav tree."
     },
@@ -129,7 +129,7 @@
     "distractor_notes": {
       "A": "There's no 'everything I've ever updated' view in the Application Navigator. Audit data lives on the record itself.",
       "C": "Per-record audit history appears on the record (Activity Log, Audit), not in the navigator's History tab.",
-      "D": "Hidden modules are governed by roles and module visibility \u2014 not by the History tab."
+      "D": "Hidden modules are governed by roles and module visibility — not by the History tab."
     },
     "references": [
       {
@@ -175,7 +175,7 @@
     "rationale": "Favorites are managed by selecting the star icon next to a module or page. The starred items appear under the user's Favorites in Next Experience and persist per user.",
     "distractor_notes": {
       "B": "There's no 'Save as Favorite' option in the form header context menu. Form headers expose record-level actions, not nav favorites.",
-      "C": "Typing into global search runs a search across configured indexed tables \u2014 it doesn't favorite anything.",
+      "C": "Typing into global search runs a search across configured indexed tables — it doesn't favorite anything.",
       "D": "There is no glide.user.favorites system property. Favorites are stored per user in platform tables, managed through the UI."
     },
     "references": [
@@ -228,7 +228,7 @@
     },
     "references": [
       {
-        "title": "Tags \u2014 Common UI elements",
+        "title": "Tags — Common UI elements",
         "url": "https://www.servicenow.com/docs/r/zurich/platform-user-interface/c_Tags.html"
       }
     ],
@@ -316,7 +316,7 @@
     "correct": [
       "B"
     ],
-    "rationale": "The List Editor lets users update field values directly from the list view by double-clicking a cell \u2014 perfect for quick edits to a handful of records without opening each form.",
+    "rationale": "The List Editor lets users update field values directly from the list view by double-clicking a cell — perfect for quick edits to a handful of records without opening each form.",
     "distractor_notes": {
       "A": "Related list personalization controls which columns appear in a related list and their order. It doesn't enable inline edits.",
       "C": "Reference qualifiers restrict which records a reference field can select. They have nothing to do with editing values from a list.",
@@ -364,7 +364,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "A Related List shows records from another table that share a relationship with the record you're on \u2014 incidents on a caller, tasks on a change, attachments on an incident, and so on. It's how the form exposes connected data without leaving the page.",
+    "rationale": "A Related List shows records from another table that share a relationship with the record you're on — incidents on a caller, tasks on a change, attachments on an incident, and so on. It's how the form exposes connected data without leaving the page.",
     "distractor_notes": {
       "B": "Audit information lives in the Activity Log and Audit related lists (which are themselves related lists, but the term 'Related List' is broader and isn't synonymous with audit).",
       "C": "Read access is governed by ACLs. It isn't surfaced as a generic related list.",
@@ -393,19 +393,19 @@
     "options": [
       {
         "id": "A",
-        "text": "Form Layout (admin) \u2014 modify the form definition."
+        "text": "Form Layout (admin) — modify the form definition."
       },
       {
         "id": "B",
-        "text": "Personalize Form \u2014 adjust which fields appear for this user only."
+        "text": "Personalize Form — adjust which fields appear for this user only."
       },
       {
         "id": "C",
-        "text": "Update Set \u2014 package the change as a customization."
+        "text": "Update Set — package the change as a customization."
       },
       {
         "id": "D",
-        "text": "Business Rule \u2014 hide the fields server-side."
+        "text": "Business Rule — hide the fields server-side."
       }
     ],
     "correct": [
@@ -510,7 +510,7 @@
     "rationale": "Global search queries the tables and fields that admins have configured for search indexes, then presents results grouped by record type (Incident, Change, KB, etc.). It's scoped, performant, and respects each user's access rights.",
     "distractor_notes": {
       "A": "Searching every column of every table would be unusable. Global search is built around configured search groups, not exhaustive scans.",
-      "C": "Global search doesn't pick a single table and turn into a list filter \u2014 it returns results across configured tables.",
+      "C": "Global search doesn't pick a single table and turn into a list filter — it returns results across configured tables.",
       "D": "There's no per-user SQL LIKE behavior. The platform uses indexed search and ACLs to filter what each user sees."
     },
     "references": [
@@ -554,7 +554,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "An embedded list is a related list rendered inline as part of a form section, so the connected records are visible without scrolling to the very bottom of the form. It's still a related list \u2014 just embedded.",
+    "rationale": "An embedded list is a related list rendered inline as part of a form section, so the connected records are visible without scrolling to the very bottom of the form. It's still a related list — just embedded.",
     "distractor_notes": {
       "B": "Audit history surfaces in the Activity Log and audit-related lists. It isn't what 'embedded list' means.",
       "C": "A reference field opens a lookup picker, not an inline list of related records.",
@@ -580,7 +580,7 @@
     "subdomain": "Unified Navigation Administration",
     "difficulty": "scenario",
     "type": "single_select",
-    "stem": "An admin needs to add a new custom menu \u2014 \"Operations\" \u2014 to the global header so it appears for users across every page. Which administration feature is the right starting point?",
+    "stem": "An admin needs to add a new custom menu — \"Operations\" — to the global header so it appears for users across every page. Which administration feature is the right starting point?",
     "options": [
       {
         "id": "A",
@@ -602,7 +602,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "Custom menus for the global header are configured through the Unified Navigation administration tooling. You define the menu, choose what it contains, and assign the audience that should see it \u2014 and then it appears in the header for those users.",
+    "rationale": "Custom menus for the global header are configured through the Unified Navigation administration tooling. You define the menu, choose what it contains, and assign the audience that should see it — and then it appears in the header for those users.",
     "distractor_notes": {
       "B": "User profiles store per-user data and preferences but don't add globally visible menus to the header.",
       "C": "Service Portal is a separate experience layer for self-service end users; it doesn't drive Next Experience global header menus.",
@@ -640,7 +640,7 @@
       },
       {
         "id": "C",
-        "text": "Tables, fields, and forms are independent objects \u2014 none of them are related at the data layer."
+        "text": "Tables, fields, and forms are independent objects — none of them are related at the data layer."
       },
       {
         "id": "D",
@@ -703,7 +703,7 @@
     "correct": [
       "B"
     ],
-    "rationale": "The Filter field in the Unified Navigation supports fuzzy matching \u2014 it accommodates missing letters in queries \u2014 letting users quickly jump to a module without typing the exact name.",
+    "rationale": "The Filter field in the Unified Navigation supports fuzzy matching — it accommodates missing letters in queries — letting users quickly jump to a module without typing the exact name.",
     "distractor_notes": {
       "A": "Global Search searches record content across tables; it does not navigate to modules by name.",
       "C": "The All menu lists all available modules but does not have a fuzzy-match filter built into the navigation bar itself.",
@@ -797,7 +797,7 @@
     "correct": [
       "B"
     ],
-    "rationale": "For a list view, enter the table name in the format name.list \u2014 for example, sys_properties.list. Using the .do suffix opens a form view instead.",
+    "rationale": "For a list view, enter the table name in the format name.list — for example, sys_properties.list. Using the .do suffix opens a form view instead.",
     "distractor_notes": {
       "A": "Typing just the table name searches modules by name but does not guarantee a list view.",
       "C": "The .do suffix opens a form (record) view, not a list view.",
@@ -847,7 +847,7 @@
     ],
     "rationale": "The All menu includes a refresh icon that obtains the latest menu items without needing to manually clear the cache or log out.",
     "distractor_notes": {
-      "A": "Logging out would work but is unnecessary \u2014 the refresh icon in the All menu is the correct lightweight approach.",
+      "A": "Logging out would work but is unnecessary — the refresh icon in the All menu is the correct lightweight approach.",
       "C": "Flushing the system cache from System Properties is an admin operation for server-side caching, not related to Unified Navigation menu state.",
       "D": "The Filter field searches existing menu items; it does not reload the menu from the server."
     },
@@ -2174,7 +2174,7 @@
     "distractor_notes": {
       "A": "Clicking a breadcrumb removes conditions to its right, not the breadcrumb itself. To remove only one condition, click the separator (>) before it.",
       "C": "Clicking 'All' would remove all conditions. Clicking a mid-breadcrumb only removes conditions to its right.",
-      "D": "Clicking a breadcrumb navigates/filters \u2014 it does not open an edit dialog."
+      "D": "Clicking a breadcrumb navigates/filters — it does not open an edit dialog."
     },
     "references": [
       {
@@ -2267,7 +2267,7 @@
     ],
     "rationale": "Clicking New in a filtered list automatically applies the same filter conditions to the new record. The new form opens with the filter field values pre-populated, such as State = Resolved and Priority = High.",
     "distractor_notes": {
-      "A": "The form is not blank when opened from a filtered list \u2014 filter values are applied.",
+      "A": "The form is not blank when opened from a filtered list — filter values are applied.",
       "C": "There is no confirmation prompt; the values are applied directly.",
       "D": "The New button opens an editable form, not a read-only preview."
     },
@@ -2550,9 +2550,9 @@
     ],
     "rationale": "The 'Add email address' icon lets you enter an email address for users who are not in the User [sys_user] table or who do not have an email address defined in their user record.",
     "distractor_notes": {
-      "A": "The 'Add me' icon adds the currently logged-in user \u2014 not arbitrary email addresses.",
+      "A": "The 'Add me' icon adds the currently logged-in user — not arbitrary email addresses.",
       "B": "The 'Add/remove multiple' icon opens the Edit Members window for users already in sys_user, and is only available after the record has been saved.",
-      "D": "The 'Lookup using list' opens the Users list to select a single user from sys_user \u2014 it requires the user to already exist in the table."
+      "D": "The 'Lookup using list' opens the Users list to select a single user from sys_user — it requires the user to already exist in the table."
     },
     "references": [
       {
@@ -2881,7 +2881,7 @@
     ],
     "rationale": "The Notifications preference category controls how and where users receive system and in-product notifications, including banners, badges, and delivery channels such as email.",
     "distractor_notes": {
-      "A": "Display preferences control how the interface looks \u2014 layout, visual density, presentation.",
+      "A": "Display preferences control how the interface looks — layout, visual density, presentation.",
       "B": "Accessibility preferences adjust the interface for accessibility needs such as keyboard navigation and contrast.",
       "D": "User Experience preferences manage high-level Next Experience behaviors like enabling/disabling the experience and selecting a start page."
     },
@@ -2955,11 +2955,11 @@
     "options": [
       {
         "id": "A",
-        "text": "Exact match only \u2014 the word must appear verbatim"
+        "text": "Exact match only — the word must appear verbatim"
       },
       {
         "id": "B",
-        "text": "Fuzzy search \u2014 returns results even with shortened or partial text"
+        "text": "Fuzzy search — returns results even with shortened or partial text"
       },
       {
         "id": "C",
@@ -4476,7 +4476,7 @@
     "correct": [
       "B"
     ],
-    "rationale": "For date fields, the quick filter context menu includes Show Before, Show After, and Filter Out \u2014 options not available for standard text fields which only have Show Matching and Filter Out.",
+    "rationale": "For date fields, the quick filter context menu includes Show Before, Show After, and Filter Out — options not available for standard text fields which only have Show Matching and Filter Out.",
     "distractor_notes": {
       "A": "Show Matching and Filter Out are the options available for non-date fields, not date-specific extras.",
       "C": "Group By and Ungroup are column header options, not quick filter options.",
@@ -4712,7 +4712,7 @@
     "correct": [
       "B"
     ],
-    "rationale": "Adding frequently used modules to Favorites and organizing them in groups in the Favorites menu is the purpose of the feature \u2014 it provides quick access to most-used pages, reducing navigation time.",
+    "rationale": "Adding frequently used modules to Favorites and organizing them in groups in the Favorites menu is the purpose of the feature — it provides quick access to most-used pages, reducing navigation time.",
     "distractor_notes": {
       "A": "Saved filters narrow list results; they do not reduce navigation clicks between modules.",
       "C": "Setting the Incident table as the landing page helps for Incidents but doesn't address quick access to Change.",
@@ -5373,7 +5373,7 @@
     "correct": [
       "C"
     ],
-    "rationale": "The 'Copy query' option is not available for the 'All' breadcrumb \u2014 it only applies to specific filter conditions. 'All' represents no filter, so there is no encoded query to copy.",
+    "rationale": "The 'Copy query' option is not available for the 'All' breadcrumb — it only applies to specific filter conditions. 'All' represents no filter, so there is no encoded query to copy.",
     "distractor_notes": {
       "A": "Open new window is available for the All breadcrumb.",
       "B": "Copy URL is available for the All breadcrumb.",
@@ -5672,6 +5672,582 @@
     "tags": [
       "personal-lists",
       "display-options"
+    ]
+  },
+  {
+    "id": "csa-pon-121",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "List Filters",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A user wants to see only their team's active incidents and reuse that exact view tomorrow without rebuilding the filter. What should they do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Build the filter in the condition builder and save it as a favorite/saved filter"
+      },
+      {
+        "id": "B",
+        "text": "Sort the list by the Assigned to column"
+      },
+      {
+        "id": "C",
+        "text": "Personalize the form layout"
+      },
+      {
+        "id": "D",
+        "text": "Change their display time zone"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The condition builder lets you define multi-field filters, and saving the result (as a favorite or saved filter) makes the view one click to reopen later. Sorting only reorders rows; it doesn't restrict them to the team's active records.",
+    "distractor_notes": {
+      "B": "Sorting changes order, not which records are shown.",
+      "C": "Form personalization changes a form's fields, not a list filter.",
+      "D": "Time zone affects how times display, not record filtering."
+    },
+    "references": [
+      {
+        "title": "Configure and use list functions",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-user-interface/configure-use-list-functions.html"
+      }
+    ],
+    "tags": [
+      "lists",
+      "filters",
+      "favorites"
+    ]
+  },
+  {
+    "id": "csa-pon-122",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "List Editor",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An agent needs to update the State field on 20 incidents quickly without opening each record. Which capability is designed for this?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Inline editing in the list (list editor)"
+      },
+      {
+        "id": "B",
+        "text": "A UI policy on the form"
+      },
+      {
+        "id": "C",
+        "text": "A saved favorite"
+      },
+      {
+        "id": "D",
+        "text": "The global search box"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The list editor lets you edit field values directly from a list by double-clicking a cell — perfect for fast updates across many rows. For identical changes you could also use a list's bulk actions, but inline editing is the built-in per-cell tool.",
+    "distractor_notes": {
+      "B": "UI policies control form behavior, not in-list editing.",
+      "C": "Favorites store quick links, not editing tools.",
+      "D": "Global search finds records; it doesn't edit them in bulk."
+    },
+    "references": [
+      {
+        "title": "Use the list editor",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-user-interface/t_UseTheListEditor.html"
+      }
+    ],
+    "tags": [
+      "lists",
+      "list-editor",
+      "inline-edit"
+    ]
+  },
+  {
+    "id": "csa-pon-123",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Related Lists",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "On an incident form, a user wants to see all tasks that reference this incident as their parent. Which form element shows these connected records?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A related list"
+      },
+      {
+        "id": "B",
+        "text": "A breadcrumb"
+      },
+      {
+        "id": "C",
+        "text": "A favorite"
+      },
+      {
+        "id": "D",
+        "text": "A watch list"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Related lists appear below the form and display records connected to the current record — like child tasks pointing back to this incident. They make relationships visible and editable from the parent record.",
+    "distractor_notes": {
+      "B": "Breadcrumbs show and edit the current filter on a list, not related records.",
+      "C": "Favorites are saved navigation shortcuts.",
+      "D": "A watch list controls who gets notified, not related record display."
+    },
+    "references": [
+      {
+        "title": "Related lists",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-user-interface/c_RelatedLists.html"
+      }
+    ],
+    "tags": [
+      "forms",
+      "related-lists",
+      "relationships"
+    ]
+  },
+  {
+    "id": "csa-pon-124",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Filters and Breadcrumbs",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Looking at a filtered incident list, a user wants to quickly remove just the last condition they added. What's the fastest way?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Click the appropriate segment of the breadcrumb above the list"
+      },
+      {
+        "id": "B",
+        "text": "Refresh the browser"
+      },
+      {
+        "id": "C",
+        "text": "Re-sort the list"
+      },
+      {
+        "id": "D",
+        "text": "Personalize the list layout"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The breadcrumb above a list shows the active filter conditions left to right. Clicking a segment re-runs the query up to that point, so clicking the second-to-last segment drops the last condition instantly.",
+    "distractor_notes": {
+      "B": "A refresh reloads the same filter; it doesn't remove a condition.",
+      "C": "Sorting changes order, not the filter conditions.",
+      "D": "Layout personalization changes columns, not the active filter."
+    },
+    "references": [
+      {
+        "title": "Filters and breadcrumbs",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/c_UsingFiltersAndBreadcrumbs.html"
+      }
+    ],
+    "tags": [
+      "breadcrumbs",
+      "filters",
+      "lists"
+    ]
+  },
+  {
+    "id": "csa-pon-125",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Form Personalization",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "An individual user wants to hide a few fields on their own incident form view without affecting anyone else. Which option does this?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Personalize Form (gear/personalize) — affects only that user"
+      },
+      {
+        "id": "B",
+        "text": "Configure Form Layout — affects all users"
+      },
+      {
+        "id": "C",
+        "text": "A business rule"
+      },
+      {
+        "id": "D",
+        "text": "An ACL on each field"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Personalize Form is per-user: it hides or shows fields just for that individual's view. Configure Form Layout, by contrast, changes the form for everyone, so it's the wrong tool for a personal tweak.",
+    "distractor_notes": {
+      "B": "Configure Form Layout changes the form for all users — broader than intended.",
+      "C": "Business rules run server logic; they don't personalize a single user's form.",
+      "D": "ACLs restrict access for security, not personal field visibility preferences."
+    },
+    "references": [
+      {
+        "title": "Personalize a form",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/t_PersonalizeAForm.html"
+      }
+    ],
+    "tags": [
+      "forms",
+      "personalization",
+      "per-user"
+    ]
+  },
+  {
+    "id": "csa-pon-126",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Watch Lists",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A stakeholder who is not the assignee wants email updates whenever a specific incident changes. What should be used?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Add them to the record's watch list"
+      },
+      {
+        "id": "B",
+        "text": "Assign the incident to them"
+      },
+      {
+        "id": "C",
+        "text": "Give them the admin role"
+      },
+      {
+        "id": "D",
+        "text": "Add the incident to their favorites"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "A watch list adds people who should receive notifications about a record's activity without changing ownership. It's the right way to keep an interested stakeholder informed.",
+    "distractor_notes": {
+      "B": "Reassigning changes ownership and workload — more than the stakeholder needs.",
+      "C": "The admin role is a major over-grant just to follow one record.",
+      "D": "Favorites create a personal shortcut but don't send update notifications."
+    },
+    "references": [
+      {
+        "title": "Add users to a watch list",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/t_UseAWatchList.html"
+      }
+    ],
+    "tags": [
+      "watch-list",
+      "notifications",
+      "following"
+    ]
+  },
+  {
+    "id": "csa-pon-127",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "URL Navigation",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A user wants to bookmark a direct link that opens one specific incident record. Which approach produces a reliable direct link?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Use the record's URL containing its table and sys_id"
+      },
+      {
+        "id": "B",
+        "text": "Bookmark the global search box"
+      },
+      {
+        "id": "C",
+        "text": "Save the incident number as a system property"
+      },
+      {
+        "id": "D",
+        "text": "Add a UI policy"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "A record's URL identifies it by table and sys_id, so that link reliably reopens the exact record. The sys_id is the unique key behind every record, which is why URL-based navigation is precise.",
+    "distractor_notes": {
+      "B": "Bookmarking search would just reopen a search box, not the record.",
+      "C": "System properties store configuration values, not navigation links.",
+      "D": "UI policies change form behavior, not navigation."
+    },
+    "references": [
+      {
+        "title": "Navigate to a record or module using a URL",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/navigate-using-url.html"
+      }
+    ],
+    "tags": [
+      "navigation",
+      "url",
+      "sys_id"
+    ]
+  },
+  {
+    "id": "csa-pon-128",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Global Search",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A user types a phrase into global search and gets results grouped under several headings. What do those groups represent?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Matching records grouped by the tables (search groups) configured for search"
+      },
+      {
+        "id": "B",
+        "text": "The user's favorites"
+      },
+      {
+        "id": "C",
+        "text": "Update sets containing the phrase"
+      },
+      {
+        "id": "D",
+        "text": "Scheduled jobs"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Global search runs across the tables/search groups configured for it and presents matches grouped by source, so you can jump to the right type of record (incidents, knowledge, users, and so on). It's a fast cross-platform lookup.",
+    "distractor_notes": {
+      "B": "Favorites are personal shortcuts, not search result groupings.",
+      "C": "Update sets capture configuration changes, unrelated to search results.",
+      "D": "Scheduled jobs run on timers; they're not search categories."
+    },
+    "references": [
+      {
+        "title": "Using search in Next Experience",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/using-search-next-experience.html"
+      }
+    ],
+    "tags": [
+      "global-search",
+      "search-groups",
+      "navigation"
+    ]
+  },
+  {
+    "id": "csa-pon-129",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Grouped Lists",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A manager wants a list of incidents organized into collapsible sections by Priority, with counts per section. Which list feature provides this?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Group By on the list column"
+      },
+      {
+        "id": "B",
+        "text": "A watch list"
+      },
+      {
+        "id": "C",
+        "text": "Form personalization"
+      },
+      {
+        "id": "D",
+        "text": "An inbound email action"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Group By reorganizes a list into collapsible groups (for example, by Priority) with a count on each group header — a quick way to see distribution without leaving the list.",
+    "distractor_notes": {
+      "B": "Watch lists handle notifications, not grouping.",
+      "C": "Form personalization changes form fields, not list grouping.",
+      "D": "Inbound email actions process email, unrelated to lists."
+    },
+    "references": [
+      {
+        "title": "Configure and use list functions",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-user-interface/configure-use-list-functions.html"
+      }
+    ],
+    "tags": [
+      "lists",
+      "group-by",
+      "reporting"
+    ]
+  },
+  {
+    "id": "csa-pon-130",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Tags",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A user wants a personal label to quickly gather a handful of unrelated records they're tracking across different tables. Which feature fits?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Tags"
+      },
+      {
+        "id": "B",
+        "text": "Update sets"
+      },
+      {
+        "id": "C",
+        "text": "ACLs"
+      },
+      {
+        "id": "D",
+        "text": "Dictionary overrides"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Tags let a user label records (privately or shared) and then pull up everything with that tag, even across different tables. They're a lightweight, personal way to group things you're watching.",
+    "distractor_notes": {
+      "B": "Update sets package configuration changes, not record labels.",
+      "C": "ACLs control access, not personal grouping.",
+      "D": "Dictionary overrides change field behavior on extended tables."
+    },
+    "references": [
+      {
+        "title": "Tags — Common UI elements",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-user-interface/c_Tags.html"
+      }
+    ],
+    "tags": [
+      "tags",
+      "organization",
+      "records"
+    ]
+  },
+  {
+    "id": "csa-pon-131",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Lists",
+    "difficulty": "scenario",
+    "type": "multi_select",
+    "stem": "Which TWO actions can a user perform directly from a list without opening individual records?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Edit a field value inline with the list editor"
+      },
+      {
+        "id": "B",
+        "text": "Group rows by a column to see counts"
+      },
+      {
+        "id": "C",
+        "text": "Activate a plugin"
+      },
+      {
+        "id": "D",
+        "text": "Change another user's password"
+      }
+    ],
+    "correct": [
+      "A",
+      "B"
+    ],
+    "rationale": "Lists are powerful on their own: you can inline-edit cells and group rows by a column to summarize — both without opening a record. Plugin activation and password changes are administrative tasks done elsewhere.",
+    "distractor_notes": {
+      "C": "Activating plugins is done in plugin administration, not from a list.",
+      "D": "Password management is a user-administration task, not a list action."
+    },
+    "references": [
+      {
+        "title": "Configure and use list functions",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-user-interface/configure-use-list-functions.html"
+      }
+    ],
+    "tags": [
+      "lists",
+      "list-editor",
+      "group-by"
+    ]
+  },
+  {
+    "id": "csa-pon-132",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Platform Overview and Navigation",
+    "subdomain": "Next Experience UI",
+    "difficulty": "application",
+    "type": "multi_select",
+    "stem": "Which TWO are true about navigating the Next Experience UI?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The Application Navigator filter text box helps you quickly find modules"
+      },
+      {
+        "id": "B",
+        "text": "Favorites provide one-click shortcuts to records, lists, or modules"
+      },
+      {
+        "id": "C",
+        "text": "Global search can only search a single table at a time"
+      },
+      {
+        "id": "D",
+        "text": "Breadcrumbs are used to assign records to users"
+      }
+    ],
+    "correct": [
+      "A",
+      "B"
+    ],
+    "rationale": "The Application Navigator's filter box quickly narrows to the module you want, and favorites give one-click access to the things you use most. Global search spans multiple configured tables, and breadcrumbs edit filters — not assignments.",
+    "distractor_notes": {
+      "C": "Global search covers multiple configured search groups/tables, not just one.",
+      "D": "Breadcrumbs show and edit the active list filter; they don't assign records."
+    },
+    "references": [
+      {
+        "title": "Working in the Next Experience UI",
+        "url": "https://www.servicenow.com/docs/r/australia/platform-user-interface/next-experience-ui.html"
+      }
+    ],
+    "tags": [
+      "next-experience",
+      "navigation",
+      "favorites"
     ]
   }
 ]

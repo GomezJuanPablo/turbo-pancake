@@ -33,7 +33,7 @@
     "distractor_notes": {
       "B": "sys_user_group holds the groups themselves (one row per group), not individual users.",
       "C": "sys_user_role is the catalog of roles available in the instance, not where users live.",
-      "D": "sys_user_has_role is the join table that links users to roles \u2014 useful, but it doesn't store the user records."
+      "D": "sys_user_has_role is the join table that links users to roles — useful, but it doesn't store the user records."
     },
     "references": [
       {
@@ -77,7 +77,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "A group is a collection of users (records on sys_user_group). Groups can carry roles that flow to their members, be used as approvers, and be assignment targets on tasks \u2014 that's why they're the workhorse for assignment routing.",
+    "rationale": "A group is a collection of users (records on sys_user_group). Groups can carry roles that flow to their members, be used as approvers, and be assignment targets on tasks — that's why they're the workhorse for assignment routing.",
     "distractor_notes": {
       "B": "ACLs are access control rules. They can require roles, but groups themselves aren't ACLs.",
       "C": "Department is a separate field on the user record. A group isn't just a department filter.",
@@ -127,7 +127,7 @@
     ],
     "rationale": "Roles can be granted directly on the user, granted to a group the user belongs to (the user inherits the group's roles), or contained by another role (parent roles include their child roles). All three paths produce effective permissions.",
     "distractor_notes": {
-      "B": "You don't run SQL to assign roles \u2014 you use the platform UI. sys_user_has_role is the join table behind the scenes.",
+      "B": "You don't run SQL to assign roles — you use the platform UI. sys_user_has_role is the join table behind the scenes.",
       "C": "Org unit / department doesn't grant roles by itself.",
       "D": "Plugins can ship new roles, but activating a plugin doesn't assign those roles to users automatically."
     },
@@ -175,7 +175,7 @@
     ],
     "rationale": "Assigning the role to the group is the maintainable pattern: every current and future member inherits the role just by being in the group. Removing someone from the group automatically removes the inherited access.",
     "distractor_notes": {
-      "B": "Per-user assignment works once, but it drifts the moment the team changes \u2014 exactly what the group-based model is designed to avoid.",
+      "B": "Per-user assignment works once, but it drifts the moment the team changes — exactly what the group-based model is designed to avoid.",
       "C": "Bypassing ACLs for one group is a security anti-pattern and isn't how role evaluation is supposed to work.",
       "D": "Granting admin to everyone solves the access problem by destroying the security model. Don't."
     },
@@ -221,7 +221,7 @@
     "correct": [
       "B"
     ],
-    "rationale": "The admin role is the platform's super-role \u2014 it inherits and contains a large set of administrative roles and is required to perform broad configuration and security work.",
+    "rationale": "The admin role is the platform's super-role — it inherits and contains a large set of administrative roles and is required to perform broad configuration and security work.",
     "distractor_notes": {
       "A": "itil is the standard role for ITSM agents (incidents, problems, changes). It is not a platform admin.",
       "C": "approver_user lets a user act on approval requests assigned to them. It grants no admin power.",
@@ -366,7 +366,7 @@
     ],
     "rationale": "Demo data is intended to help admins and developers evaluate a plugin in a sub-production environment. It's standard practice not to load demo data on a production instance.",
     "distractor_notes": {
-      "B": "Demo data is regular platform data \u2014 it isn't encrypted, and it can be removed.",
+      "B": "Demo data is regular platform data — it isn't encrypted, and it can be removed.",
       "C": "Plugin activation and the demo data it ships are tracked separately from a developer's current update set.",
       "D": "Demo data is inserted; it doesn't overwrite existing records of the same table based on field collisions."
     },
@@ -459,7 +459,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "An update set is a portable container for configuration changes (the things admins and developers customize \u2014 UI, scripts, policies, etc.) that can be exported from one instance and applied to another.",
+    "rationale": "An update set is a portable container for configuration changes (the things admins and developers customize — UI, scripts, policies, etc.) that can be exported from one instance and applied to another.",
     "distractor_notes": {
       "B": "Update sets don't capture data records. They capture configuration changes tracked by the platform.",
       "C": "Update sets are for configuration, not for attachments or binaries.",
@@ -510,7 +510,7 @@
     "distractor_notes": {
       "B": "Disabling logging would just blind the admin. Update sets track configuration changes regardless.",
       "C": "Demo data is for evaluation; it isn't a promotion mechanism.",
-      "D": "Read-Only mode prevents changes \u2014 exactly the opposite of what's needed."
+      "D": "Read-Only mode prevents changes — exactly the opposite of what's needed."
     },
     "references": [
       {
@@ -554,7 +554,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "System properties live on the sys_properties table. Entering sys_properties.list in the filter opens the full list \u2014 the standard way for an admin to view, search, and edit platform configuration values.",
+    "rationale": "System properties live on the sys_properties table. Entering sys_properties.list in the filter opens the full list — the standard way for an admin to view, search, and edit platform configuration values.",
     "distractor_notes": {
       "B": "sys_user.list opens the users table, not the system properties.",
       "C": "sys_dictionary.list shows the data dictionary (field metadata), not configuration properties.",
@@ -649,7 +649,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "The right tool is an email notification on the Incident table \u2014 set the condition to priority = 1, the trigger to record update, and the To/recipients to the assigned_to field. That's exactly the use case notifications are designed for.",
+    "rationale": "The right tool is an email notification on the Incident table — set the condition to priority = 1, the trigger to record update, and the To/recipients to the assigned_to field. That's exactly the use case notifications are designed for.",
     "distractor_notes": {
       "B": "UI policies change form visibility/behavior. They don't send email.",
       "C": "ACLs control access, not communications.",
@@ -697,7 +697,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "Email properties are the instance-level switches that control how the platform sends and receives email \u2014 enable/disable sending, test mode, mail server configuration, and how inbound replies are interpreted.",
+    "rationale": "Email properties are the instance-level switches that control how the platform sends and receives email — enable/disable sending, test mode, mail server configuration, and how inbound replies are interpreted.",
     "distractor_notes": {
       "B": "Personal signatures are user-level settings, not instance email properties.",
       "C": "Attachment caching isn't what email properties are for.",
@@ -774,19 +774,19 @@
     "options": [
       {
         "id": "A",
-        "text": "Retrieve \u2192 Preview \u2192 Commit"
+        "text": "Retrieve → Preview → Commit"
       },
       {
         "id": "B",
-        "text": "Commit \u2192 Retrieve \u2192 Preview"
+        "text": "Commit → Retrieve → Preview"
       },
       {
         "id": "C",
-        "text": "Preview \u2192 Commit \u2192 Retrieve"
+        "text": "Preview → Commit → Retrieve"
       },
       {
         "id": "D",
-        "text": "Export \u2192 Import \u2192 Validate"
+        "text": "Export → Import → Validate"
       }
     ],
     "correct": [
@@ -794,7 +794,7 @@
     ],
     "rationale": "On the target instance you Retrieve the remote update set (pull it across), Preview it (resolve any collisions or warnings), and then Commit it (apply the changes to the instance). Doing those steps out of order is the classic foot-gun.",
     "distractor_notes": {
-      "B": "Committing before retrieving is impossible \u2014 there's nothing to commit yet.",
+      "B": "Committing before retrieving is impossible — there's nothing to commit yet.",
       "C": "Preview comes after Retrieve, not first.",
       "D": "Export/Import/Validate isn't the supported update-set vocabulary."
     },
@@ -830,7 +830,7 @@
       },
       {
         "id": "B",
-        "text": "Force-commit without resolving \u2014 collisions are informational only."
+        "text": "Force-commit without resolving — collisions are informational only."
       },
       {
         "id": "C",
@@ -844,7 +844,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "Collisions surface during preview so the admin can decide what to do per change \u2014 accept the incoming change, skip it, or merge \u2014 before committing. That deliberation is the whole point of the preview step.",
+    "rationale": "Collisions surface during preview so the admin can decide what to do per change — accept the incoming change, skip it, or merge — before committing. That deliberation is the whole point of the preview step.",
     "distractor_notes": {
       "B": "Commits don't ignore unresolved problems quietly. The preview step exists so problems are addressed first.",
       "C": "Deleting target records by hand is dangerous and not the supported workflow for collision resolution.",
@@ -892,11 +892,11 @@
     "correct": [
       "C"
     ],
-    "rationale": "Update sets capture configuration changes \u2014 scripts, policies, forms, fields, and so on. Operational data records (an incident the team logged today) are not configuration and aren't carried in update sets.",
+    "rationale": "Update sets capture configuration changes — scripts, policies, forms, fields, and so on. Operational data records (an incident the team logged today) are not configuration and aren't carried in update sets.",
     "distractor_notes": {
-      "A": "Business rules are configuration \u2014 they are captured.",
-      "B": "UI policies are configuration \u2014 they are captured.",
-      "D": "Client scripts are configuration \u2014 they are captured."
+      "A": "Business rules are configuration — they are captured.",
+      "B": "UI policies are configuration — they are captured.",
+      "D": "Client scripts are configuration — they are captured."
     },
     "references": [
       {
@@ -939,11 +939,11 @@
     "correct": [
       "A"
     ],
-    "rationale": "The instance logo for the Next Experience header is changed through the platform's branding configuration \u2014 the supported, upgrade-safe path. It updates centrally and applies for all users.",
+    "rationale": "The instance logo for the Next Experience header is changed through the platform's branding configuration — the supported, upgrade-safe path. It updates centrally and applies for all users.",
     "distractor_notes": {
       "B": "Instances aren't browsed as files; you can't rename favicon assets on a host file system.",
       "C": "Script includes are reusable server scripts. They aren't where you set the logo.",
-      "D": "A user's profile picture is just their avatar \u2014 not the company branding."
+      "D": "A user's profile picture is just their avatar — not the company branding."
     },
     "references": [
       {
@@ -973,7 +973,7 @@
       },
       {
         "id": "B",
-        "text": "It is automatically global \u2014 all scopes have full access by default."
+        "text": "It is automatically global — all scopes have full access by default."
       },
       {
         "id": "C",
@@ -1082,7 +1082,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "The Default update set is a catch-all for changes made when no purposeful set is active. It captures the change but is not the right vehicle for moving deliberate work between instances \u2014 always select a named set before making changes you intend to promote.",
+    "rationale": "The Default update set is a catch-all for changes made when no purposeful set is active. It captures the change but is not the right vehicle for moving deliberate work between instances — always select a named set before making changes you intend to promote.",
     "distractor_notes": {
       "B": "Production update sets aren't auto-edited by other instances. There's no remote write.",
       "C": "Changes persist; they aren't held in memory only.",
@@ -1130,7 +1130,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "Committed update sets can be backed out, which reverses the changes they applied. It's the right first move when a commit causes a regression \u2014 restore the prior state, then root-cause the problem on a sub-prod instance.",
+    "rationale": "Committed update sets can be backed out, which reverses the changes they applied. It's the right first move when a commit causes a regression — restore the prior state, then root-cause the problem on a sub-prod instance.",
     "distractor_notes": {
       "B": "Disabling the instance is wildly disproportionate and isn't a normal recovery step.",
       "C": "Manual deletes create more drift and don't address the root cause.",
@@ -1968,7 +1968,7 @@
       },
       {
         "id": "C",
-        "text": "No \u2014 the system strips the body of encrypted emails because it cannot process encrypted content"
+        "text": "No — the system strips the body of encrypted emails because it cannot process encrypted content"
       },
       {
         "id": "D",
@@ -2073,7 +2073,7 @@
     "correct": [
       "B"
     ],
-    "rationale": "Update sets capture configuration changes \u2014 such as form layouts, business rules, client scripts, and UI policies \u2014 allowing them to be moved between instances. Data records are not captured.",
+    "rationale": "Update sets capture configuration changes — such as form layouts, business rules, client scripts, and UI policies — allowing them to be moved between instances. Data records are not captured.",
     "distractor_notes": {
       "A": "Data records (incidents, changes) are not captured in standard update sets.",
       "C": "User account changes and role assignments are data-level changes not typically captured in update sets.",
@@ -2687,7 +2687,7 @@
     "correct": [
       "B"
     ],
-    "rationale": "User impersonation allows an admin to temporarily simulate another user's session \u2014 seeing exactly what that user sees \u2014 which is useful for testing configurations, troubleshooting access issues, and verifying role-based behavior.",
+    "rationale": "User impersonation allows an admin to temporarily simulate another user's session — seeing exactly what that user sees — which is useful for testing configurations, troubleshooting access issues, and verifying role-based behavior.",
     "distractor_notes": {
       "A": "Impersonation is temporary and session-scoped, not permanent.",
       "C": "Impersonation does not elevate the target user's roles; it simulates their existing access.",
@@ -3208,7 +3208,7 @@
     "correct": [
       "B"
     ],
-    "rationale": "An empty value in the com.glide.attachment.max_size field allows attachments up to a maximum of 1KB. This is a known edge case \u2014 the default 1024MB applies when the property holds the value '1024', not when it is blank.",
+    "rationale": "An empty value in the com.glide.attachment.max_size field allows attachments up to a maximum of 1KB. This is a known edge case — the default 1024MB applies when the property holds the value '1024', not when it is blank.",
     "distractor_notes": {
       "A": "File uploads are not blocked by an empty property; they are limited to 1KB.",
       "C": "The 1024MB default applies when the property value is set to 1024, not when it is empty.",
@@ -3781,9 +3781,9 @@
     ],
     "rationale": "A Business Rule is a server-side script that executes automatically when a record is read, created, updated, or deleted in the database. Business rules run on the server, not the browser.",
     "distractor_notes": {
-      "A": "Client-side scripts run in the browser \u2014 that describes Client Scripts, not Business Rules.",
+      "A": "Client-side scripts run in the browser — that describes Client Scripts, not Business Rules.",
       "C": "Showing/hiding fields based on conditions describes UI Policies.",
-      "D": "Scheduled jobs run on a time-based schedule \u2014 that is a different automation type."
+      "D": "Scheduled jobs run on a time-based schedule — that is a different automation type."
     },
     "references": [
       {
@@ -3873,11 +3873,11 @@
     "correct": [
       "D"
     ],
-    "rationale": "Async Business Rules execute after the database commit in a background thread, which means the save operation returns to the user immediately without waiting for the script to complete \u2014 ideal for non-critical operations like sending notifications.",
+    "rationale": "Async Business Rules execute after the database commit in a background thread, which means the save operation returns to the user immediately without waiting for the script to complete — ideal for non-critical operations like sending notifications.",
     "distractor_notes": {
       "A": "Before rules run before the DB write; they would delay the user's save.",
       "B": "After rules run synchronously after the DB write; they still block the user's response.",
-      "C": "Display rules run when a form loads to set display values \u2014 they are not for post-save non-blocking operations."
+      "C": "Display rules run when a form loads to set display values — they are not for post-save non-blocking operations."
     },
     "references": [
       {
@@ -4062,7 +4062,7 @@
     "correct": [
       "B"
     ],
-    "rationale": "UI Policies dynamically control form field attributes \u2014 making fields mandatory, read-only, or hidden/visible \u2014 based on configurable conditions, without requiring scripting.",
+    "rationale": "UI Policies dynamically control form field attributes — making fields mandatory, read-only, or hidden/visible — based on configurable conditions, without requiring scripting.",
     "distractor_notes": {
       "A": "Server-side logic on record save is handled by Business Rules.",
       "C": "Field-level security is handled by ACL rules, not UI Policies.",
@@ -4909,7 +4909,7 @@
     "correct": [
       "C"
     ],
-    "rationale": "Roles with the 'Elevated privilege' flag require users to explicitly request elevation to that role within their session, adding a layer of security for sensitive operations. Simply being assigned the role is not enough \u2014 elevation is required each session.",
+    "rationale": "Roles with the 'Elevated privilege' flag require users to explicitly request elevation to that role within their session, adding a layer of security for sensitive operations. Simply being assigned the role is not enough — elevation is required each session.",
     "distractor_notes": {
       "A": "Elevated privilege roles are not auto-assigned to admins.",
       "B": "Elevated privilege is a session security feature, not an environment restriction.",
@@ -5384,7 +5384,7 @@
     ],
     "rationale": "Business Rules are server-side scripts that execute on the ServiceNow server. Client Scripts are client-side scripts that execute in the user's browser.",
     "distractor_notes": {
-      "A": "This is backwards \u2014 Business Rules are server-side, Client Scripts are client-side.",
+      "A": "This is backwards — Business Rules are server-side, Client Scripts are client-side.",
       "B": "Client Scripts specifically run in the browser, not the server.",
       "D": "Business Rules specifically run on the server, not the browser."
     },
@@ -5432,7 +5432,7 @@
     ],
     "rationale": "The Retrieve Update Sets step allows a target instance to pull update sets directly from a connected source instance over the network, rather than requiring a manual XML export and import.",
     "distractor_notes": {
-      "A": "The target pulls, the source does not push \u2014 the direction is pull from target.",
+      "A": "The target pulls, the source does not push — the direction is pull from target.",
       "C": "Validation happens during Preview, which is a separate step after retrieval.",
       "D": "No backup is created during the retrieve step."
     },
@@ -5524,7 +5524,7 @@
     "correct": [
       "C"
     ],
-    "rationale": "Catalog item definitions \u2014 the offerings shown to users in the Service Catalog \u2014 are stored in the sc_cat_item table.",
+    "rationale": "Catalog item definitions — the offerings shown to users in the Service Catalog — are stored in the sc_cat_item table.",
     "distractor_notes": {
       "A": "sc_request stores the parent request record when a user places an order.",
       "B": "sc_req_item stores the request item (ordered instance) records.",
@@ -5682,6 +5682,582 @@
       "roles",
       "audit",
       "role-assignment"
+    ]
+  },
+  {
+    "id": "csa-ic-121",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Instance Configuration",
+    "subdomain": "Update Sets",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "Before building a configuration change in a sub-production instance, an admin wants those changes captured so they can be moved to production later. What should they do first?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Create and select an update set as the current update set"
+      },
+      {
+        "id": "B",
+        "text": "Switch the application scope to Global"
+      },
+      {
+        "id": "C",
+        "text": "Activate a plugin"
+      },
+      {
+        "id": "D",
+        "text": "Impersonate an admin"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Set a current update set before making changes — captured configuration is recorded into the active set so it can be moved later. If you build first with Default selected, those changes aren't grouped for transport.",
+    "distractor_notes": {
+      "B": "Scope affects where artifacts live, not whether changes are captured for transport.",
+      "C": "Activating a plugin adds features; it doesn't capture your changes.",
+      "D": "Impersonation tests another user's experience; it doesn't record changes."
+    },
+    "references": [
+      {
+        "title": "Create and select an update set as the current set",
+        "url": "https://www.servicenow.com/docs/r/zurich/application-development/system-update-sets/create-select-update-set.html"
+      }
+    ],
+    "tags": [
+      "update-sets",
+      "current-set",
+      "migration"
+    ]
+  },
+  {
+    "id": "csa-ic-122",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Instance Configuration",
+    "subdomain": "Update Set Lifecycle",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "An admin finished changes in a development instance and wants to move that update set to production. What is the correct order of operations?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Mark Complete in dev, then retrieve, preview, and commit in production"
+      },
+      {
+        "id": "B",
+        "text": "Commit it in dev, then it auto-appears in production"
+      },
+      {
+        "id": "C",
+        "text": "Export each record manually to production"
+      },
+      {
+        "id": "D",
+        "text": "Delete it in dev so production regenerates it"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The lifecycle is: mark the set Complete in the source, then in the target retrieve it, Preview (to catch collisions), and Commit. Preview before commit is the safety step that surfaces conflicts before they land.",
+    "distractor_notes": {
+      "B": "Committing in dev applies it there; it doesn't transport to production automatically.",
+      "C": "Manual record export defeats the purpose of update sets and is error-prone.",
+      "D": "Deleting a set doesn't regenerate anything in production."
+    },
+    "references": [
+      {
+        "title": "Preview a remote update set",
+        "url": "https://www.servicenow.com/docs/r/zurich/application-development/system-update-sets/t_PreviewARemoteUpdateSet.html"
+      }
+    ],
+    "tags": [
+      "update-sets",
+      "preview",
+      "commit"
+    ]
+  },
+  {
+    "id": "csa-ic-123",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Instance Configuration",
+    "subdomain": "Update Set Preview",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "During Preview of a retrieved update set, the system reports collisions. What does this mean and what should you do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Incoming changes conflict with local changes; resolve the collisions before committing"
+      },
+      {
+        "id": "B",
+        "text": "The update set is empty and can be ignored"
+      },
+      {
+        "id": "C",
+        "text": "Commit anyway — collisions resolve themselves automatically"
+      },
+      {
+        "id": "D",
+        "text": "The instance must be reinstalled"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Collisions flag where the incoming update set conflicts with changes already on the target. Preview lets you review and resolve (accept/skip) each one before committing, so you don't overwrite something important by accident.",
+    "distractor_notes": {
+      "B": "Collisions mean there ARE changes that conflict — not that the set is empty.",
+      "C": "Committing without resolving can overwrite or break things; resolve first.",
+      "D": "Reinstalling is unnecessary and unrelated to update set collisions."
+    },
+    "references": [
+      {
+        "title": "Commit an update set",
+        "url": "https://www.servicenow.com/docs/r/zurich/application-development/system-update-sets/t_CommitAnUpdateSet.html"
+      }
+    ],
+    "tags": [
+      "update-sets",
+      "collisions",
+      "preview"
+    ]
+  },
+  {
+    "id": "csa-ic-124",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Instance Configuration",
+    "subdomain": "Roles",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A new team of 12 agents all need the same set of roles, and membership will change over time. What is the most maintainable way to grant access?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Assign the roles to a group and add the users to the group"
+      },
+      {
+        "id": "B",
+        "text": "Assign each role to each user individually"
+      },
+      {
+        "id": "C",
+        "text": "Give the team the admin role"
+      },
+      {
+        "id": "D",
+        "text": "Share one login among the team"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Granting roles to a group and managing membership means access updates automatically as people join or leave — far easier than per-user role grants. It's the standard, maintainable access pattern.",
+    "distractor_notes": {
+      "B": "Per-user grants multiply maintenance and drift as the team changes.",
+      "C": "Admin is a massive over-grant and a security risk.",
+      "D": "Shared logins break accountability and violate security practice."
+    },
+    "references": [
+      {
+        "title": "Assign a role to a group",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/user-administration/t_AssignRoleToGroup.html"
+      }
+    ],
+    "tags": [
+      "roles",
+      "groups",
+      "access"
+    ]
+  },
+  {
+    "id": "csa-ic-125",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Instance Configuration",
+    "subdomain": "Impersonation",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "An admin wants to verify what a specific end user can see and do after an access change, without logging out. What's the safe way to check?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Impersonate the user"
+      },
+      {
+        "id": "B",
+        "text": "Reset the user's password and log in as them"
+      },
+      {
+        "id": "C",
+        "text": "Grant themselves the user's manager role"
+      },
+      {
+        "id": "D",
+        "text": "Edit the user's session record"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Impersonation lets an admin temporarily experience the platform exactly as that user — same roles and ACL outcomes — to confirm access is correct, then switch back. It's logged and far safer than borrowing credentials.",
+    "distractor_notes": {
+      "B": "Logging in as someone via a password reset is insecure and unnecessary.",
+      "C": "Adding roles to yourself changes your own access, not a test of theirs.",
+      "D": "Editing session records isn't a supported way to test access."
+    },
+    "references": [
+      {
+        "title": "Impersonate a user",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/user-administration/c_ImpersonateAUser.html"
+      }
+    ],
+    "tags": [
+      "impersonation",
+      "testing",
+      "access"
+    ]
+  },
+  {
+    "id": "csa-ic-126",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Instance Configuration",
+    "subdomain": "Application Scope",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "While building in a scoped application, an admin finds they can't directly modify a record that belongs to the Global scope. Why?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Application scope protects artifacts; cross-scope changes are restricted by default"
+      },
+      {
+        "id": "B",
+        "text": "Their account lacks the itil role"
+      },
+      {
+        "id": "C",
+        "text": "The instance is in maintenance mode"
+      },
+      {
+        "id": "D",
+        "text": "Scoped apps cannot contain any records"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Application scope isolates and protects each app's artifacts. Editing across scopes is restricted by default (and governed by the target app's settings), which prevents one app from accidentally changing another's components.",
+    "distractor_notes": {
+      "B": "This is a scope boundary, not an itil-role issue.",
+      "C": "Maintenance mode blocks logins generally, not specific cross-scope edits.",
+      "D": "Scoped apps absolutely contain records; they're just protected by scope."
+    },
+    "references": [
+      {
+        "title": "Application scope",
+        "url": "https://www.servicenow.com/docs/r/zurich/application-development/c_ApplicationScope.html"
+      }
+    ],
+    "tags": [
+      "application-scope",
+      "scoped-apps",
+      "protection"
+    ]
+  },
+  {
+    "id": "csa-ic-127",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Instance Configuration",
+    "subdomain": "Plugins",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An admin wants to try a plugin's features safely before using it in production. What is the recommended practice?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Activate it on a sub-production (dev/test) instance first, with demo data if offered"
+      },
+      {
+        "id": "B",
+        "text": "Activate it directly in production during business hours"
+      },
+      {
+        "id": "C",
+        "text": "Edit the plugin's source files manually"
+      },
+      {
+        "id": "D",
+        "text": "Add it to an update set instead of activating it"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Plugins should be activated and evaluated in a sub-production instance first, often with the optional demo data, so you can validate behavior before touching production. Some plugins can't be deactivated cleanly, which makes testing first important.",
+    "distractor_notes": {
+      "B": "Activating untested in production risks disruption during business hours.",
+      "C": "You don't hand-edit plugin source; you activate it.",
+      "D": "Plugin activation isn't captured by update sets the way configuration is."
+    },
+    "references": [
+      {
+        "title": "Activate a plugin",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/t_ActivateAPlugin.html"
+      }
+    ],
+    "tags": [
+      "plugins",
+      "sub-production",
+      "testing"
+    ]
+  },
+  {
+    "id": "csa-ic-128",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Instance Configuration",
+    "subdomain": "Notifications",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "Stakeholders should get an email when an incident's Priority becomes 1. Which configuration delivers this?",
+    "options": [
+      {
+        "id": "A",
+        "text": "An email notification triggered by the record condition (Priority is 1)"
+      },
+      {
+        "id": "B",
+        "text": "A UI policy on the incident form"
+      },
+      {
+        "id": "C",
+        "text": "A favorite"
+      },
+      {
+        "id": "D",
+        "text": "A coalesce field"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Email notifications send messages when their trigger conditions are met — here, when Priority becomes 1 — to the recipients you define. UI policies and favorites don't send email.",
+    "distractor_notes": {
+      "B": "UI policies change form behavior; they don't send notifications.",
+      "C": "Favorites are personal shortcuts, not alerts.",
+      "D": "Coalesce is an import-matching concept."
+    },
+    "references": [
+      {
+        "title": "Create an email notification",
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/t_CreateAnEmailNotification.html"
+      }
+    ],
+    "tags": [
+      "notifications",
+      "email",
+      "conditions"
+    ]
+  },
+  {
+    "id": "csa-ic-129",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Instance Configuration",
+    "subdomain": "System Properties",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An admin needs to change an instance-wide behavior controlled by a system property but isn't sure of the exact name. Where can they look them up?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The system properties (sys_properties) list of available properties"
+      },
+      {
+        "id": "B",
+        "text": "The user's watch list"
+      },
+      {
+        "id": "C",
+        "text": "The incident form layout"
+      },
+      {
+        "id": "D",
+        "text": "A transform map"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "System properties (sys_properties) hold instance-wide configuration values; you can browse the available properties to find and adjust the right one. Changing the wrong property can have broad effects, so confirm before editing.",
+    "distractor_notes": {
+      "B": "Watch lists handle notifications, not configuration values.",
+      "C": "Form layout controls one form's fields, not instance-wide settings.",
+      "D": "Transform maps handle imports, not system properties."
+    },
+    "references": [
+      {
+        "title": "Available system properties",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/r_AvailableSystemProperties.html"
+      }
+    ],
+    "tags": [
+      "system-properties",
+      "configuration",
+      "sys_properties"
+    ]
+  },
+  {
+    "id": "csa-ic-130",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Instance Configuration",
+    "subdomain": "Branding",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An organization wants its own logo to appear in the instance header. Which administrative option changes this?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The instance banner/logo branding setting"
+      },
+      {
+        "id": "B",
+        "text": "A business rule on sys_user"
+      },
+      {
+        "id": "C",
+        "text": "An ACL on the logo field"
+      },
+      {
+        "id": "D",
+        "text": "A scheduled job"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Branding settings let an admin replace the header logo (and related visual elements) with the organization's own. It's a configuration setting, not something you script.",
+    "distractor_notes": {
+      "B": "Business rules run record logic; they don't set the header logo.",
+      "C": "ACLs control access, not branding.",
+      "D": "Scheduled jobs run on timers, unrelated to branding."
+    },
+    "references": [
+      {
+        "title": "Change instance banner logo in Next Experience",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-user-interface/change-instance-logo.html"
+      }
+    ],
+    "tags": [
+      "branding",
+      "logo",
+      "next-experience"
+    ]
+  },
+  {
+    "id": "csa-ic-131",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Instance Configuration",
+    "subdomain": "Update Sets",
+    "difficulty": "scenario",
+    "type": "multi_select",
+    "stem": "Which TWO are true about moving configuration with update sets?",
+    "options": [
+      {
+        "id": "A",
+        "text": "You should Preview a retrieved set before committing it"
+      },
+      {
+        "id": "B",
+        "text": "The set should be marked Complete in the source before transport"
+      },
+      {
+        "id": "C",
+        "text": "Update sets capture data records like incidents and users"
+      },
+      {
+        "id": "D",
+        "text": "Committing in the source instance moves it to the target automatically"
+      }
+    ],
+    "correct": [
+      "A",
+      "B"
+    ],
+    "rationale": "Two safe-transport truths: mark the set Complete in the source before moving it, and Preview in the target before Commit to catch collisions. Update sets carry configuration, not operational data, and committing in the source doesn't transport anything.",
+    "distractor_notes": {
+      "C": "Update sets capture configuration changes, not data records like incidents or users.",
+      "D": "Committing applies the set where you commit; transport requires retrieving it in the target."
+    },
+    "references": [
+      {
+        "title": "System update sets",
+        "url": "https://www.servicenow.com/docs/r/zurich/application-development/system-update-sets/system-update-sets.html"
+      }
+    ],
+    "tags": [
+      "update-sets",
+      "preview",
+      "complete"
+    ]
+  },
+  {
+    "id": "csa-ic-132",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Instance Configuration",
+    "subdomain": "Roles",
+    "difficulty": "application",
+    "type": "multi_select",
+    "stem": "Which TWO statements about roles and groups are correct?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Roles can be granted to users directly or through groups"
+      },
+      {
+        "id": "B",
+        "text": "A role can contain other roles, which are then inherited"
+      },
+      {
+        "id": "C",
+        "text": "Only the admin can ever hold more than one role"
+      },
+      {
+        "id": "D",
+        "text": "Granting a group a role removes it from all individual users"
+      }
+    ],
+    "correct": [
+      "A",
+      "B"
+    ],
+    "rationale": "Roles are flexible: assign them directly or via group membership, and a role can contain other roles that come along when granted. Users can hold many roles, and group grants add access rather than stripping it from individuals.",
+    "distractor_notes": {
+      "C": "Any user can hold multiple roles — that's normal.",
+      "D": "Group role grants are additive; they don't remove users' existing roles."
+    },
+    "references": [
+      {
+        "title": "Assign a role to a user",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/user-administration/t_AssignARoleToAUser.html"
+      }
+    ],
+    "tags": [
+      "roles",
+      "groups",
+      "inheritance"
     ]
   }
 ]
