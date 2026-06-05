@@ -6259,5 +6259,581 @@
       "groups",
       "inheritance"
     ]
+  },
+  {
+    "id": "csa-ic-133",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Instance Configuration",
+    "subdomain": "Update Set Best Practice",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A teammate reports their configuration changes can't be moved to test because everything went into the Default update set. What practice would have prevented this?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Create and select a named update set before making changes"
+      },
+      {
+        "id": "B",
+        "text": "Make changes in the Default set, then rename it later"
+      },
+      {
+        "id": "C",
+        "text": "Edit records directly in the test instance instead"
+      },
+      {
+        "id": "D",
+        "text": "Export each changed record by hand"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Changes captured in the Default set aren't meant to be transported. Selecting a named update set before working ensures the changes are grouped and movable. It's the core update-set discipline.",
+    "distractor_notes": {
+      "B": "The Default set isn't designed for transport; renaming after the fact isn't the supported flow.",
+      "C": "Editing directly in test skips change control and won't promote consistently.",
+      "D": "Hand-exporting records is error-prone and defeats update sets."
+    },
+    "references": [
+      {
+        "title": "Create and select an update set as the current set",
+        "url": "https://www.servicenow.com/docs/r/zurich/application-development/system-update-sets/create-select-update-set.html"
+      }
+    ],
+    "tags": [
+      "update-sets",
+      "default-set",
+      "best-practice"
+    ]
+  },
+  {
+    "id": "csa-ic-134",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Instance Configuration",
+    "subdomain": "Notifications",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An email notification should go to the incident's Assigned to and its Watch list. How are recipients like these specified on a notification?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Use the 'Who will receive' options (Users/Groups fields, event parm, or record fields like Watch list)"
+      },
+      {
+        "id": "B",
+        "text": "Hard-code every email address in the body"
+      },
+      {
+        "id": "C",
+        "text": "Add recipients with a coalesce field"
+      },
+      {
+        "id": "D",
+        "text": "Set recipients in a UI policy"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Notifications define recipients through the 'Who will receive' settings — specific users/groups, the user in a field (like Assigned to), and options such as the record's watch list. That keeps recipients dynamic per record.",
+    "distractor_notes": {
+      "B": "Hard-coding addresses can't follow the record's actual assignee or watchers.",
+      "C": "Coalesce is an import-matching concept.",
+      "D": "UI policies change form behavior, not notification recipients."
+    },
+    "references": [
+      {
+        "title": "Create an email notification",
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/t_CreateAnEmailNotification.html"
+      }
+    ],
+    "tags": [
+      "notifications",
+      "recipients",
+      "watch-list"
+    ]
+  },
+  {
+    "id": "csa-ic-135",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Instance Configuration",
+    "subdomain": "Email Templates",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Several notifications should share the same branded greeting and footer. What lets you reuse that content instead of retyping it in each notification?",
+    "options": [
+      {
+        "id": "A",
+        "text": "An email template"
+      },
+      {
+        "id": "B",
+        "text": "A coalesce field"
+      },
+      {
+        "id": "C",
+        "text": "A watch list"
+      },
+      {
+        "id": "D",
+        "text": "A dictionary override"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Email templates store reusable message content (and can include field variables), so multiple notifications share consistent, branded text without duplication.",
+    "distractor_notes": {
+      "B": "Coalesce matches import records.",
+      "C": "Watch lists define recipients, not reusable content.",
+      "D": "Dictionary overrides change field behavior on extended tables."
+    },
+    "references": [
+      {
+        "title": "Notifications",
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/c_Notifications.html"
+      }
+    ],
+    "tags": [
+      "notifications",
+      "email-template",
+      "reuse"
+    ]
+  },
+  {
+    "id": "csa-ic-136",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Instance Configuration",
+    "subdomain": "High Security ACL Editing",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "With high security settings enabled, an admin tries to modify an ACL and is blocked until they elevate privileges. Which role must they elevate to?",
+    "options": [
+      {
+        "id": "A",
+        "text": "security_admin (elevated privilege)"
+      },
+      {
+        "id": "B",
+        "text": "itil"
+      },
+      {
+        "id": "C",
+        "text": "approver_user"
+      },
+      {
+        "id": "D",
+        "text": "catalog_admin"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Editing access controls under high security requires elevating to the security_admin role for the session — an extra safeguard so ACL changes are deliberate. The other roles don't grant ACL editing.",
+    "distractor_notes": {
+      "B": "itil supports ITSM work, not ACL administration.",
+      "C": "approver_user handles approvals.",
+      "D": "catalog_admin manages the service catalog, not ACLs."
+    },
+    "references": [
+      {
+        "title": "Base system roles",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/user-administration/r_BaseSystemRoles.html"
+      }
+    ],
+    "tags": [
+      "security_admin",
+      "acl",
+      "elevated-privilege"
+    ]
+  },
+  {
+    "id": "csa-ic-137",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Instance Configuration",
+    "subdomain": "Scoped Applications",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A team wants a custom application whose tables and artifacts are isolated and protected from accidental changes by other apps. Which model should they use?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A scoped application"
+      },
+      {
+        "id": "B",
+        "text": "The Global scope"
+      },
+      {
+        "id": "C",
+        "text": "A single business rule"
+      },
+      {
+        "id": "D",
+        "text": "An update set"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Scoped applications namespace and protect their own artifacts, with controlled boundaries for cross-scope access. Global is the legacy shared space without that isolation.",
+    "distractor_notes": {
+      "B": "Global lacks the isolation/protection that scoping provides.",
+      "C": "A business rule is logic, not an application container.",
+      "D": "Update sets move configuration; they don't define app isolation."
+    },
+    "references": [
+      {
+        "title": "Create a custom application",
+        "url": "https://www.servicenow.com/docs/r/zurich/application-development/t_CreateACustomApp.html"
+      }
+    ],
+    "tags": [
+      "scoped-app",
+      "isolation",
+      "custom-app"
+    ]
+  },
+  {
+    "id": "csa-ic-138",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Instance Configuration",
+    "subdomain": "System Properties",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An admin wants to toggle a platform behavior on or off instance-wide. Which type of system property value is appropriate?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A true/false (boolean) property"
+      },
+      {
+        "id": "B",
+        "text": "A reference to a user"
+      },
+      {
+        "id": "C",
+        "text": "A coalesce field"
+      },
+      {
+        "id": "D",
+        "text": "A watch list"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "System properties come in types including true/false, string, and integer. A boolean property is the right choice for an on/off, instance-wide toggle.",
+    "distractor_notes": {
+      "B": "A user reference points to a person, not an on/off setting.",
+      "C": "Coalesce is an import concept.",
+      "D": "Watch lists define notification recipients."
+    },
+    "references": [
+      {
+        "title": "Available system properties",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/r_AvailableSystemProperties.html"
+      }
+    ],
+    "tags": [
+      "system-properties",
+      "boolean",
+      "configuration"
+    ]
+  },
+  {
+    "id": "csa-ic-139",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Instance Configuration",
+    "subdomain": "Roles Audit",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Security asks which users currently hold the admin role. What's the most direct way to answer?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Query the user role assignments (sys_user_has_role) for the admin role"
+      },
+      {
+        "id": "B",
+        "text": "Read the update set log"
+      },
+      {
+        "id": "C",
+        "text": "Check each user's favorites"
+      },
+      {
+        "id": "D",
+        "text": "Open the import set table"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Role grants are stored as user-to-role records (sys_user_has_role). Filtering that for the admin role lists exactly who holds it — the standard way to audit role membership.",
+    "distractor_notes": {
+      "B": "Update set logs track configuration moves, not role membership.",
+      "C": "Favorites are personal shortcuts.",
+      "D": "Import set tables stage incoming data."
+    },
+    "references": [
+      {
+        "title": "Assign a role to a user",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/user-administration/t_AssignARoleToAUser.html"
+      }
+    ],
+    "tags": [
+      "roles",
+      "audit",
+      "sys_user_has_role"
+    ]
+  },
+  {
+    "id": "csa-ic-140",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Instance Configuration",
+    "subdomain": "Update Set Back Out",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "After committing an update set in test, a problem surfaces and the team wants to reverse those changes. What capability supports this?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Back out the committed update set"
+      },
+      {
+        "id": "B",
+        "text": "Delete the instance database"
+      },
+      {
+        "id": "C",
+        "text": "Re-import the data via a transform map"
+      },
+      {
+        "id": "D",
+        "text": "Add the change to a watch list"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "A committed update set can be backed out, reversing the captured changes it applied. It's the controlled way to undo a problematic promotion rather than scrambling to fix things manually.",
+    "distractor_notes": {
+      "B": "Dropping the database is catastrophic and unnecessary.",
+      "C": "Transform maps move data, not undo configuration changes.",
+      "D": "Watch lists send notifications; they don't revert changes."
+    },
+    "references": [
+      {
+        "title": "System update set administration",
+        "url": "https://www.servicenow.com/docs/r/zurich/application-development/c_SystemUpdateSetsAdministration.html"
+      }
+    ],
+    "tags": [
+      "update-sets",
+      "back-out",
+      "recovery"
+    ]
+  },
+  {
+    "id": "csa-ic-141",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Instance Configuration",
+    "subdomain": "Plugins",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An admin wants new functionality that ServiceNow ships but which isn't active yet on the instance. What action turns it on?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Activate the relevant plugin"
+      },
+      {
+        "id": "B",
+        "text": "Create a business rule"
+      },
+      {
+        "id": "C",
+        "text": "Add a coalesce field"
+      },
+      {
+        "id": "D",
+        "text": "Personalize the form"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Plugins package optional features; activating the plugin makes its capabilities available. Best practice is to try it in a sub-production instance first.",
+    "distractor_notes": {
+      "B": "Business rules add logic but don't enable shipped feature sets.",
+      "C": "Coalesce is an import concept.",
+      "D": "Form personalization changes a view, not platform features."
+    },
+    "references": [
+      {
+        "title": "ServiceNow plugins",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_ServiceNowPlugins.html"
+      }
+    ],
+    "tags": [
+      "plugins",
+      "activation",
+      "features"
+    ]
+  },
+  {
+    "id": "csa-ic-142",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Instance Configuration",
+    "subdomain": "Impersonation",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Why is impersonation preferred over creating a test account to verify a user's experience?",
+    "options": [
+      {
+        "id": "A",
+        "text": "It reproduces the actual user's roles and is logged, with an easy switch back"
+      },
+      {
+        "id": "B",
+        "text": "It permanently grants you their roles"
+      },
+      {
+        "id": "C",
+        "text": "It disables ACLs while active"
+      },
+      {
+        "id": "D",
+        "text": "It edits the user's stored password"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Impersonation runs as the real user — their exact roles and ACL outcomes — and is logged for accountability, with a quick return to your own session. A separate test account may not match the real user's access.",
+    "distractor_notes": {
+      "B": "Impersonation is temporary; it doesn't permanently grant roles.",
+      "C": "ACLs still apply — that's the point of testing access accurately.",
+      "D": "It doesn't touch the user's password."
+    },
+    "references": [
+      {
+        "title": "Impersonate a user",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/user-administration/c_ImpersonateAUser.html"
+      }
+    ],
+    "tags": [
+      "impersonation",
+      "testing",
+      "accountability"
+    ]
+  },
+  {
+    "id": "csa-ic-143",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Instance Configuration",
+    "subdomain": "Update Sets",
+    "difficulty": "application",
+    "type": "multi_select",
+    "stem": "Which TWO are update-set best practices?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Use a named update set rather than Default for changes you intend to move"
+      },
+      {
+        "id": "B",
+        "text": "Preview a retrieved set and resolve collisions before committing"
+      },
+      {
+        "id": "C",
+        "text": "Commit in the source instance to transport it to the target"
+      },
+      {
+        "id": "D",
+        "text": "Store imported incident data in the update set"
+      }
+    ],
+    "correct": [
+      "A",
+      "B"
+    ],
+    "rationale": "Use a named set (not Default) and preview/resolve collisions before commit — two pillars of safe promotion. Committing in the source doesn't transport it, and update sets carry configuration, not operational data.",
+    "distractor_notes": {
+      "C": "Committing applies the set where you commit; transport requires retrieving it in the target.",
+      "D": "Update sets capture configuration, not data records like incidents."
+    },
+    "references": [
+      {
+        "title": "System update sets",
+        "url": "https://www.servicenow.com/docs/r/zurich/application-development/system-update-sets/system-update-sets.html"
+      }
+    ],
+    "tags": [
+      "update-sets",
+      "best-practice",
+      "preview"
+    ]
+  },
+  {
+    "id": "csa-ic-144",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Instance Configuration",
+    "subdomain": "Notifications",
+    "difficulty": "application",
+    "type": "multi_select",
+    "stem": "Which TWO are true about email notifications?",
+    "options": [
+      {
+        "id": "A",
+        "text": "They can be triggered by record conditions or events"
+      },
+      {
+        "id": "B",
+        "text": "Recipients can be derived from record fields like Assigned to or the watch list"
+      },
+      {
+        "id": "C",
+        "text": "They require a coalesce field to send"
+      },
+      {
+        "id": "D",
+        "text": "They can only be sent to a single hard-coded address"
+      }
+    ],
+    "correct": [
+      "A",
+      "B"
+    ],
+    "rationale": "Notifications fire on conditions/events and can target dynamic recipients pulled from record fields (Assigned to, watch list, and more). No coalesce is involved, and recipients aren't limited to one hard-coded address.",
+    "distractor_notes": {
+      "C": "Coalesce is an import-matching concept, unrelated to notifications.",
+      "D": "Recipients can be multiple and dynamic, not a single fixed address."
+    },
+    "references": [
+      {
+        "title": "Create an email notification",
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/t_CreateAnEmailNotification.html"
+      }
+    ],
+    "tags": [
+      "notifications",
+      "triggers",
+      "recipients"
+    ]
   }
 ]

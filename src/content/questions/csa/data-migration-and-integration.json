@@ -6291,5 +6291,581 @@
       "discovery",
       "integration"
     ]
+  },
+  {
+    "id": "csa-dmi-133",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Data Migration and Integration",
+    "subdomain": "Scheduled Import",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A data source should be loaded automatically every night without anyone clicking 'Load'. What feature automates this recurring import?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A scheduled import (scheduled data import)"
+      },
+      {
+        "id": "B",
+        "text": "A coalesce field"
+      },
+      {
+        "id": "C",
+        "text": "A UI policy"
+      },
+      {
+        "id": "D",
+        "text": "A watch list"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "A scheduled import runs a data source load on a defined cadence (for example, nightly), then the transform map processes the staged rows — fully hands-off recurring ingestion.",
+    "distractor_notes": {
+      "B": "Coalesce controls record matching, not scheduling.",
+      "C": "UI policies act on forms.",
+      "D": "Watch lists handle notifications."
+    },
+    "references": [
+      {
+        "title": "Load data using import sets",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/t_LoadDataUsingImportSets.html"
+      }
+    ],
+    "tags": [
+      "scheduled-import",
+      "automation",
+      "data-source"
+    ]
+  },
+  {
+    "id": "csa-dmi-134",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Data Migration and Integration",
+    "subdomain": "Multiple Transform Maps",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "One import file contains both user and location data that must populate two different target tables. How can a single import set handle this?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Apply multiple transform maps from the same import set to different target tables"
+      },
+      {
+        "id": "B",
+        "text": "It's impossible; you need two separate files"
+      },
+      {
+        "id": "C",
+        "text": "Use a coalesce field to split the file"
+      },
+      {
+        "id": "D",
+        "text": "Store both in one record via a watch list"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "An import set table can have more than one transform map, each writing to a different target table. That lets a single load populate users and locations from the same staged data.",
+    "distractor_notes": {
+      "B": "Multiple transform maps make a single file workable for several targets.",
+      "C": "Coalesce matches records; it doesn't split files across tables.",
+      "D": "Watch lists are for notifications, not data routing."
+    },
+    "references": [
+      {
+        "title": "Transform maps",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_TransformMaps.html"
+      }
+    ],
+    "tags": [
+      "transform-map",
+      "multiple-maps",
+      "import"
+    ]
+  },
+  {
+    "id": "csa-dmi-135",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Data Migration and Integration",
+    "subdomain": "Field Map Source Script",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "During transform, a target field's value must be computed by combining two source columns. Where do you put that small piece of logic?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Use a source script on the field map"
+      },
+      {
+        "id": "B",
+        "text": "Add an ACL on the field"
+      },
+      {
+        "id": "C",
+        "text": "Create a UI policy"
+      },
+      {
+        "id": "D",
+        "text": "Set a coalesce field"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "A field map can use a source script to derive the target value (for example, concatenating two columns) instead of a straight column-to-field copy. It's the per-field hook for light transformation logic.",
+    "distractor_notes": {
+      "B": "ACLs control access, not value derivation during import.",
+      "C": "UI policies run on forms, not server-side transforms.",
+      "D": "Coalesce decides match-on-update, not value computation."
+    },
+    "references": [
+      {
+        "title": "Create a field map",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/t_CreateAFieldMap.html"
+      }
+    ],
+    "tags": [
+      "field-map",
+      "source-script",
+      "transform"
+    ]
+  },
+  {
+    "id": "csa-dmi-136",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Data Migration and Integration",
+    "subdomain": "Inbound REST",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An external system needs to create incident records in ServiceNow programmatically over HTTP. Which inbound capability supports this directly?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The inbound REST Table API"
+      },
+      {
+        "id": "B",
+        "text": "An outbound REST message"
+      },
+      {
+        "id": "C",
+        "text": "A scheduled job"
+      },
+      {
+        "id": "D",
+        "text": "A coalesce field"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The Table API (inbound REST) lets external systems create, read, update, and delete records over HTTP using standard methods — the direct path for an outside app to insert incidents.",
+    "distractor_notes": {
+      "B": "Outbound REST is ServiceNow calling out, not receiving inbound calls.",
+      "C": "Scheduled jobs run internal tasks on a timer.",
+      "D": "Coalesce is an import-matching concept."
+    },
+    "references": [
+      {
+        "title": "REST API",
+        "url": "https://www.servicenow.com/docs/r/zurich/integrate-applications/c_RESTAPI.html"
+      }
+    ],
+    "tags": [
+      "rest",
+      "table-api",
+      "inbound"
+    ]
+  },
+  {
+    "id": "csa-dmi-137",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Data Migration and Integration",
+    "subdomain": "REST Security",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "For a recurring integration where you don't want to embed a user's password, which authentication is generally preferred for REST?",
+    "options": [
+      {
+        "id": "A",
+        "text": "OAuth 2.0"
+      },
+      {
+        "id": "B",
+        "text": "Basic auth with a shared admin password"
+      },
+      {
+        "id": "C",
+        "text": "No authentication"
+      },
+      {
+        "id": "D",
+        "text": "A coalesce token"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "OAuth 2.0 issues scoped, revocable tokens, avoiding stored passwords — a stronger choice for ongoing integrations. Basic auth embeds credentials, and no auth is insecure.",
+    "distractor_notes": {
+      "B": "Basic auth stores a reusable password and is weaker for ongoing integrations.",
+      "C": "No authentication exposes the endpoint to anyone.",
+      "D": "There's no such thing as a coalesce token; coalesce is for imports."
+    },
+    "references": [
+      {
+        "title": "REST API",
+        "url": "https://www.servicenow.com/docs/r/zurich/integrate-applications/c_RESTAPI.html"
+      }
+    ],
+    "tags": [
+      "rest",
+      "oauth",
+      "security"
+    ]
+  },
+  {
+    "id": "csa-dmi-138",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Data Migration and Integration",
+    "subdomain": "Batch vs Real-Time",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A partner can only provide a nightly CSV export of their data. Which integration approach fits this constraint best?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A scheduled import of the file via a data source and transform map"
+      },
+      {
+        "id": "B",
+        "text": "A real-time inbound REST call per record"
+      },
+      {
+        "id": "C",
+        "text": "An outbound SOAP call every minute"
+      },
+      {
+        "id": "D",
+        "text": "A UI policy"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "When the source is a periodic file, batch ingestion via a scheduled import (data source plus transform map) matches the cadence. Real-time APIs suit event-driven, per-record integration — not a nightly file.",
+    "distractor_notes": {
+      "B": "Real-time REST doesn't fit a once-nightly file export.",
+      "C": "Polling SOAP every minute is wasteful for nightly data.",
+      "D": "UI policies are form-only and unrelated to ingestion."
+    },
+    "references": [
+      {
+        "title": "Import sets",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_ImportSets.html"
+      }
+    ],
+    "tags": [
+      "import-sets",
+      "batch",
+      "integration-choice"
+    ]
+  },
+  {
+    "id": "csa-dmi-139",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Data Migration and Integration",
+    "subdomain": "Coalesce Empty",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "During an import, a row's coalesce value is empty. What is the typical effect?",
+    "options": [
+      {
+        "id": "A",
+        "text": "With no coalesce match, a new record is inserted"
+      },
+      {
+        "id": "B",
+        "text": "The entire import aborts"
+      },
+      {
+        "id": "C",
+        "text": "The row updates every existing record"
+      },
+      {
+        "id": "D",
+        "text": "The instance reboots"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "If there's no value to match on, the engine can't find an existing record, so it inserts a new one. That's why a poorly chosen or empty coalesce field can produce unexpected duplicates.",
+    "distractor_notes": {
+      "B": "A single empty coalesce value doesn't abort the whole import.",
+      "C": "It won't mass-update every record; an empty value just fails to match.",
+      "D": "Imports don't reboot the instance."
+    },
+    "references": [
+      {
+        "title": "Coalesce fields",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/r_CoalesceFields.html"
+      }
+    ],
+    "tags": [
+      "coalesce",
+      "empty-value",
+      "insert"
+    ]
+  },
+  {
+    "id": "csa-dmi-140",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Data Migration and Integration",
+    "subdomain": "Import Set Cleanup",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Over time, staging import set tables accumulate large volumes of processed rows. What is the appropriate way to manage this growth?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Periodically clear old import set data (e.g., via a scheduled cleanup)"
+      },
+      {
+        "id": "B",
+        "text": "Never touch import set tables; they self-delete instantly"
+      },
+      {
+        "id": "C",
+        "text": "Move the rows into the Incident table"
+      },
+      {
+        "id": "D",
+        "text": "Encrypt the import set table"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Import set tables are staging; processed rows can be cleared on a schedule to control growth without affecting the transformed target data. Leaving them to balloon wastes storage.",
+    "distractor_notes": {
+      "B": "They don't auto-purge instantly; cleanup is a maintenance task.",
+      "C": "Staging rows shouldn't be repurposed as incidents.",
+      "D": "Encryption doesn't address table growth."
+    },
+    "references": [
+      {
+        "title": "Import sets",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_ImportSets.html"
+      }
+    ],
+    "tags": [
+      "import-sets",
+      "cleanup",
+      "maintenance"
+    ]
+  },
+  {
+    "id": "csa-dmi-141",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Data Migration and Integration",
+    "subdomain": "Transform Order",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Two transform maps on one import set must run in a specific sequence so one table is populated before the other. What controls the sequence?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The Order value on each transform map"
+      },
+      {
+        "id": "B",
+        "text": "A coalesce field"
+      },
+      {
+        "id": "C",
+        "text": "The alphabetical table name"
+      },
+      {
+        "id": "D",
+        "text": "A UI policy"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Transform maps have an Order field that controls execution sequence when multiple maps run against the same import set — lower runs first. That lets you populate prerequisite data before dependent data.",
+    "distractor_notes": {
+      "B": "Coalesce affects matching, not run order.",
+      "C": "Order is explicit, not based on table name spelling.",
+      "D": "UI policies run on forms."
+    },
+    "references": [
+      {
+        "title": "Transform maps",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_TransformMaps.html"
+      }
+    ],
+    "tags": [
+      "transform-map",
+      "order",
+      "sequence"
+    ]
+  },
+  {
+    "id": "csa-dmi-142",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Data Migration and Integration",
+    "subdomain": "Data Source Formats",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Which is a valid way for a data source to obtain external records for import?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A file (CSV/Excel), a JDBC database connection, or a retrieved attachment"
+      },
+      {
+        "id": "B",
+        "text": "Only by typing rows into a UI policy"
+      },
+      {
+        "id": "C",
+        "text": "Only through a watch list"
+      },
+      {
+        "id": "D",
+        "text": "Only by encrypting a field"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Data sources support multiple formats and connections — file uploads (CSV/Excel), JDBC to a database, and more — defining how rows are pulled in before transformation.",
+    "distractor_notes": {
+      "B": "UI policies don't ingest data.",
+      "C": "Watch lists handle notifications.",
+      "D": "Encryption protects data; it isn't an ingestion method."
+    },
+    "references": [
+      {
+        "title": "Create a data source",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/t_CreateADataSource.html"
+      }
+    ],
+    "tags": [
+      "data-source",
+      "formats",
+      "jdbc"
+    ]
+  },
+  {
+    "id": "csa-dmi-143",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Data Migration and Integration",
+    "subdomain": "REST",
+    "difficulty": "application",
+    "type": "multi_select",
+    "stem": "Which TWO statements about REST integrations in ServiceNow are correct?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The inbound Table API lets external systems create and update records"
+      },
+      {
+        "id": "B",
+        "text": "Outbound REST lets ServiceNow call an external API"
+      },
+      {
+        "id": "C",
+        "text": "REST integrations cannot use authentication"
+      },
+      {
+        "id": "D",
+        "text": "REST replaces the need for ACLs on the affected tables"
+      }
+    ],
+    "correct": [
+      "A",
+      "B"
+    ],
+    "rationale": "Inbound (Table API) supports external create/update; outbound REST calls external services. REST integrations authenticate (basic, OAuth), and ACLs still govern what the integration user can do.",
+    "distractor_notes": {
+      "C": "REST supports authentication such as basic and OAuth 2.0.",
+      "D": "ACLs still apply to the integration user's access."
+    },
+    "references": [
+      {
+        "title": "REST API",
+        "url": "https://www.servicenow.com/docs/r/zurich/integrate-applications/c_RESTAPI.html"
+      }
+    ],
+    "tags": [
+      "rest",
+      "inbound",
+      "outbound"
+    ]
+  },
+  {
+    "id": "csa-dmi-144",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Data Migration and Integration",
+    "subdomain": "Import Pipeline",
+    "difficulty": "application",
+    "type": "multi_select",
+    "stem": "Which TWO objects are part of the standard import pipeline?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A data source that defines the external connection/format"
+      },
+      {
+        "id": "B",
+        "text": "A transform map that maps staged rows to a target table"
+      },
+      {
+        "id": "C",
+        "text": "A watch list that routes the rows"
+      },
+      {
+        "id": "D",
+        "text": "A UI policy that validates the file"
+      }
+    ],
+    "correct": [
+      "A",
+      "B"
+    ],
+    "rationale": "The pipeline is: data source brings rows into a staging import set table, then a transform map writes them to the target. Watch lists and UI policies aren't part of importing.",
+    "distractor_notes": {
+      "C": "Watch lists handle notifications, not data routing.",
+      "D": "UI policies act on forms, not server-side import validation."
+    },
+    "references": [
+      {
+        "title": "Load data using import sets",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/t_LoadDataUsingImportSets.html"
+      }
+    ],
+    "tags": [
+      "import-pipeline",
+      "data-source",
+      "transform-map"
+    ]
   }
 ]
