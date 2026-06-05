@@ -1,0 +1,148 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+---
+<BaseLayout
+  title="How to Practice — GlideUp.net"
+  description="The different ways to practice on GlideUp — full sessions, exam simulations, domain focus, and how the streak system works."
+  activeNav="how-to-use"
+>
+  <Breadcrumb crumbs={[
+    { label: 'Practice', href: '/' },
+    { label: 'How to Practice' },
+  ]} />
+
+  <h1 style="font-size:22px;font-weight:700;margin-bottom:8px;">How to Practice</h1>
+  <p style="font-size:13px;color:var(--text-muted);margin-bottom:28px;max-width:680px;line-height:1.6;">
+    GlideUp has a few different practice modes depending on how you want to study. Here's what each one does and when to use it.
+  </p>
+
+  <div class="mode-grid">
+
+    <article class="card mode-card">
+      <div class="mode-card__icon">♾️</div>
+      <div>
+        <h2 class="mode-card__title">Full Practice</h2>
+        <p class="mode-card__desc">
+          All questions for the exam, no session limit. The engine prioritizes questions you
+          haven't seen yet, followed by questions you've previously gotten wrong. Questions you
+          know cold get deprioritized over time. Good for ongoing review and building a complete picture of the exam.
+        </p>
+        <div class="mode-card__how">Start from the exam dashboard → <strong>Start — 240 questions</strong></div>
+      </div>
+    </article>
+
+    <article class="card mode-card">
+      <div class="mode-card__icon">🎯</div>
+      <div>
+        <h2 class="mode-card__title">Exam Simulation (Sets 1–4)</h2>
+        <p class="mode-card__desc">
+          Four distinct 60-question sets per exam, each blueprint-weighted to match the real
+          exam's domain distribution. Questions are randomly shuffled every session so the order
+          is never the same twice. The four sets are partitioned — running all four covers the
+          full bank without exact repeats across sets. Closest thing to sitting the real exam.
+        </p>
+        <div class="mode-card__how">Exam dashboard → <strong>Modes tab</strong> → pick Exam Sim 1, 2, 3, or 4</div>
+      </div>
+    </article>
+
+    <article class="card mode-card">
+      <div class="mode-card__icon">🔬</div>
+      <div>
+        <h2 class="mode-card__title">Domain Focus</h2>
+        <p class="mode-card__desc">
+          Drill a single domain with up to 60 questions. Good if you already know your weak spots
+          and want to go deep on one area without cycling through everything else. Each domain card
+          shows how many questions are currently available. A second 60Q session unlocks
+          automatically once the domain bank reaches 120 questions.
+        </p>
+        <div class="mode-card__how">Exam dashboard → <strong>Modes tab</strong> → scroll to Domain Focus → pick a domain</div>
+      </div>
+    </article>
+
+    <article class="card mode-card">
+      <div class="mode-card__icon">🧌</div>
+      <div>
+        <h2 class="mode-card__title">Streak System</h2>
+        <p class="mode-card__desc">
+          Answer questions in a row without breaking — the feedback escalates as your streak
+          builds. First few correct answers are neutral. Hit three in a row and the goblin starts
+          paying attention. Five straight and it gets excited. Ten straight and things get a
+          little unhinged. Wrong answers reset the streak counter but not your session score.
+          The goblin also makes an appearance in the corner every few correct answers.
+        </p>
+        <div class="mode-card__how">Just answer questions — the streak tracks automatically</div>
+      </div>
+    </article>
+
+    <article class="card mode-card">
+      <div class="mode-card__icon">📊</div>
+      <div>
+        <h2 class="mode-card__title">Domain Mastery</h2>
+        <p class="mode-card__desc">
+          Each domain tracks your progress independently. Answer enough questions with high
+          accuracy and a domain levels up from Bronze to Silver to Gold. All domains are
+          unlocked from question one — there's no gate. The tier reflects how well you know
+          the material, not whether you're allowed to practice it.
+        </p>
+        <div class="mode-card__how">Visible on each exam's Overview tab</div>
+      </div>
+    </article>
+
+    <article class="card mode-card">
+      <div class="mode-card__icon">🔒</div>
+      <div>
+        <h2 class="mode-card__title">Your Progress is Private</h2>
+        <p class="mode-card__desc">
+          All progress — XP, streak, domain accuracy, question history — lives in your browser's
+          localStorage only. Nothing is sent to a server. No account required. Clearing your
+          browser data or switching devices starts fresh. You can reset manually anytime from
+          the About page.
+        </p>
+        <div class="mode-card__how">Reset anytime → <a href="/about/">About</a> → Reset local progress</div>
+      </div>
+    </article>
+
+  </div>
+
+  <h2 style="font-size:16px;font-weight:600;margin:32px 0 12px;">When to use what</h2>
+  <div class="card" style="max-width:680px;">
+    <table class="when-table">
+      <thead>
+        <tr><th>Situation</th><th>Mode</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Just starting a new exam</td><td>Full Practice</td></tr>
+        <tr><td>Exam is two weeks away</td><td>Exam Sim sets, rotate through all four</td></tr>
+        <tr><td>Exam is tomorrow</td><td>Exam Sim + Domain Focus on weak areas</td></tr>
+        <tr><td>Know you're weak on one domain</td><td>Domain Focus</td></tr>
+        <tr><td>Want to measure readiness</td><td>Exam Sim — your score at 60Q is a proxy for exam day</td></tr>
+        <tr><td>Ongoing maintenance / staying sharp</td><td>Full Practice, a few questions daily</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+</BaseLayout>
+
+<style>
+  .mode-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  .mode-card { display: flex; gap: 14px; align-items: flex-start; }
+  .mode-card__icon { font-size: 24px; line-height: 1; margin-top: 2px; flex-shrink: 0; }
+  .mode-card__title { font-size: 15px; font-weight: 600; margin-bottom: 6px; color: var(--text); }
+  .mode-card__desc { font-size: 13px; color: var(--text-muted); line-height: 1.6; margin-bottom: 8px; }
+  .mode-card__how {
+    font-size: 12px; color: var(--text-muted);
+    background: var(--bg); border: 1px solid var(--border);
+    border-radius: 6px; padding: 6px 10px;
+  }
+  .mode-card__how strong { color: var(--text); }
+  .when-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .when-table th { text-align: left; font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); padding: 0 12px 8px 0; }
+  .when-table td { padding: 8px 12px 8px 0; border-top: 1px solid var(--border); color: var(--text-muted); vertical-align: top; }
+  .when-table td:last-child { color: var(--primary-dark); font-weight: 500; }
+</style>
