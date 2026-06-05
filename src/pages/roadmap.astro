@@ -72,6 +72,65 @@ const principles = [
     ))}
   </div>
 
+
+  <h2 style="font-size:16px;font-weight:600;margin:32px 0 8px;">What we're building</h2>
+  <p style="font-size:13px;color:var(--text-muted);margin-bottom:16px;max-width:640px;">
+    Every domain in every exam is expanding to 120 questions minimum, so domain focus practice and exam simulations have real depth.
+    Each bar shows current questions toward the 120Q-per-domain target.
+  </p>
+  <div class="build-grid">
+      <div class="build-row">
+        <div class="build-row__label">
+          <span class="build-row__code">CSA</span>
+          <span class="build-row__name">Certified System Administrator</span>
+        </div>
+        <div class="build-row__bar">
+          <div class="build-row__fill" style="width:73%"></div>
+        </div>
+        <span class="build-row__count">526 / 720</span>
+      </div>
+      <div class="build-row">
+        <div class="build-row__label">
+          <span class="build-row__code">CAD</span>
+          <span class="build-row__name">Certified Application Developer</span>
+        </div>
+        <div class="build-row__bar">
+          <div class="build-row__fill" style="width:33%"></div>
+        </div>
+        <span class="build-row__count">240 / 720</span>
+      </div>
+      <div class="build-row">
+        <div class="build-row__label">
+          <span class="build-row__code">CIS-ITSM</span>
+          <span class="build-row__name">CIS - IT Service Management</span>
+        </div>
+        <div class="build-row__bar">
+          <div class="build-row__fill" style="width:33%"></div>
+        </div>
+        <span class="build-row__count">240 / 720</span>
+      </div>
+      <div class="build-row">
+        <div class="build-row__label">
+          <span class="build-row__code">CIS-DF</span>
+          <span class="build-row__name">CIS - Data Foundations</span>
+        </div>
+        <div class="build-row__bar">
+          <div class="build-row__fill" style="width:40%"></div>
+        </div>
+        <span class="build-row__count">240 / 600</span>
+      </div>
+      <div class="build-row">
+        <div class="build-row__label">
+          <span class="build-row__code">CIS-SM</span>
+          <span class="build-row__name">CIS - Service Mapping</span>
+        </div>
+        <div class="build-row__bar">
+          <div class="build-row__fill" style="width:33%"></div>
+        </div>
+        <span class="build-row__count">240 / 720</span>
+      </div>
+  </div>
+
   <h2 style="font-size:16px;font-weight:600;margin:32px 0 12px;">Principles we don't trade off</h2>
   <div class="card-grid">
     {principles.map((p) => (
@@ -101,4 +160,15 @@ const principles = [
   .roadmap__item-code { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; color: var(--primary-dark); margin-bottom: 4px; }
   .roadmap__item-title { font-size: 14px; font-weight: 600; margin-bottom: 6px; }
   .roadmap__item-detail { font-size: 12px; color: var(--text-muted); line-height: 1.5; }
+
+  .build-grid { display: flex; flex-direction: column; gap: 12px; max-width: 780px; margin-bottom: 32px; }
+  .build-row { display: grid; grid-template-columns: 240px 1fr 80px; align-items: center; gap: 12px; }
+  .build-row__label { display: flex; flex-direction: column; }
+  .build-row__code { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; color: var(--primary-dark); }
+  .build-row__name { font-size: 12px; color: var(--text-muted); }
+  .build-row__bar { height: 8px; background: var(--border); border-radius: 4px; overflow: hidden; }
+  .build-row__fill { height: 100%; background: var(--primary); border-radius: 4px; transition: width 0.4s; }
+  .build-row__count { font-size: 12px; color: var(--text-muted); text-align: right; white-space: nowrap; }
+  @media (max-width: 680px) { .build-row { grid-template-columns: 1fr 60px; } .build-row__label { grid-column: 1/-1; } }
+
 </style>

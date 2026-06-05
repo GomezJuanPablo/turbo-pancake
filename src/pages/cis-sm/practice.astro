@@ -130,9 +130,18 @@ for (const d of blueprint!.data.domains) weights[d.name] = d.weight;
     else          modeLabelEl.textContent = 'Full Practice';
   }
 
-  const OPENERS_CORRECT   = ['✅ Boom. Nailed it.', '✅ Locked in.', '✅ Clean answer.'];
-  const OPENERS_INCORRECT = ['⚠️ Not quite - but now you know.', '⚠️ Close, but read the rationale.'];
+  const OPENERS_CORRECT_LOW  = ['✅ Correct.', '✅ Locked in.', '✅ Solid.', '✅ Right on.'];
+  const OPENERS_CORRECT_MID  = ['✅ Three in a row. Warming up.', '✅ The goblin is nodding. 🧌', '✅ On a roll.', '✅ Four straight. Keep going.'];
+  const OPENERS_CORRECT_HIGH = ['✅ Five straight. 🧌 The goblin approves.', "✅ Can't stop, won't stop.", '✅ The goblin is doing a little dance. 🧌', "✅ You're locked in. Don't break the streak."];
+  const OPENERS_CORRECT_FIRE = ['✅ 🧌🔥 Ten straight. The goblin is losing its mind.', '✅ Unstoppable. The goblin bows.', '✅ 🧌 This is the way.', '✅ Double digits. The goblin demands a victory lap.'];
+  const OPENERS_INCORRECT = ["⚠️ Not this one — but that's why we practice.", '⚠️ The goblin felt that. Read the rationale.', '⚠️ Close — check the explanation below.', '⚠️ Not quite. The goblin believes in you anyway. 🧌'];
   const pick = (xs) => xs[Math.floor(Math.random() * xs.length)];
+  function streakOpener(streak) {
+    if (streak >= 10) return pick(OPENERS_CORRECT_FIRE);
+    if (streak >= 5)  return pick(OPENERS_CORRECT_HIGH);
+    if (streak >= 3)  return pick(OPENERS_CORRECT_MID);
+    return pick(OPENERS_CORRECT_LOW);
+  }
 
   let selected = null;
   let revealed = false;
@@ -252,7 +261,14 @@ for (const d of blueprint!.data.domains) weights[d.name] = d.weight;
 
     feedbackEl.hidden = false;
     feedbackEl.classList.add(correct ? 'is-correct' : 'is-incorrect');
-    openerEl.textContent = correct ? pick(OPENERS_CORRECT) : pick(OPENERS_INCORRECT);
+    openerEl.textContent = correct ? streakOpener(sessionCorrect) : pick(OPENERS_INCORRECT);
+    if (correct && (sessionCorrect % 3 === 0 || sessionCorrect >= 5)) {
+      const goblinEl = root.querySelector('[data-goblin-pop]');
+      if (goblinEl) {
+        goblinEl.classList.add('is-visible');
+        setTimeout(() => goblinEl.classList.remove('is-visible'), 1800);
+      }
+    }
 
     recordAnswer({ questionId: current.id, exam: current.exam, domain: current.domain, correct });
     sessionAnswered++;
@@ -277,4 +293,13 @@ for (const d of blueprint!.data.domains) weights[d.name] = d.weight;
     margin-bottom: 12px;
   }
   .practice-meta strong { color: var(--primary-dark); font-weight: 700; }
+
+  .goblin-pop {
+    position: fixed; bottom: 32px; right: 32px; font-size: 52px;
+    opacity: 0; transform: scale(0.4) translateY(20px);
+    transition: opacity 0.25s, transform 0.25s;
+    pointer-events: none; z-index: 500; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.25));
+  }
+  .goblin-pop.is-visible { opacity: 1; transform: scale(1) translateY(0); }
+
 </style>
