@@ -2231,5 +2231,581 @@
       "reply",
       "threading"
     ]
+  },
+  {
+    "id": "csa-ssa-048",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Self-Service and Automation",
+    "subdomain": "Business Rule Timing",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "You need to validate and adjust a field's value just before a record is written to the database. Which kind of business rule should you use?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A before business rule"
+      },
+      {
+        "id": "B",
+        "text": "An after business rule"
+      },
+      {
+        "id": "C",
+        "text": "An async business rule"
+      },
+      {
+        "id": "D",
+        "text": "A display business rule"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Before business rules run during the save, before the database write, so you can inspect and modify field values on current. After/async run once the write has happened — too late to change what's stored.",
+    "distractor_notes": {
+      "B": "After rules run post-write, so changing field values there won't affect the saved record without an extra update.",
+      "C": "Async rules run later via the scheduler, well after the save.",
+      "D": "Display rules run before a form loads to set up client data, not at save time."
+    },
+    "references": [
+      {
+        "title": "Business rule execution order",
+        "url": "https://www.servicenow.com/docs/r/zurich/application-development/r_BusinessRulesExecutionOrder.html"
+      }
+    ],
+    "tags": [
+      "business-rules",
+      "before",
+      "validation"
+    ]
+  },
+  {
+    "id": "csa-ssa-049",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Self-Service and Automation",
+    "subdomain": "Async Business Rule",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A heavy integration callout should run after a record is saved without making the user wait. Which business rule type fits best?",
+    "options": [
+      {
+        "id": "A",
+        "text": "An async business rule"
+      },
+      {
+        "id": "B",
+        "text": "A before business rule"
+      },
+      {
+        "id": "C",
+        "text": "A client script"
+      },
+      {
+        "id": "D",
+        "text": "A UI policy"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Async business rules are queued to the scheduler and run after the transaction commits, so the user isn't blocked by slow work like external callouts. Before rules would delay the save; client-side options can't do server work.",
+    "distractor_notes": {
+      "B": "A before rule runs inline during save and would make the user wait.",
+      "C": "Client scripts run in the browser and can't perform server-side callouts reliably.",
+      "D": "UI policies manipulate form fields, not server processing."
+    },
+    "references": [
+      {
+        "title": "Business Rules",
+        "url": "https://www.servicenow.com/docs/r/zurich/application-development/c_BusinessRules.html"
+      }
+    ],
+    "tags": [
+      "business-rules",
+      "async",
+      "performance"
+    ]
+  },
+  {
+    "id": "csa-ssa-050",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Self-Service and Automation",
+    "subdomain": "Client Script vs Business Rule",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A validation must apply no matter how a record is created — form, import set, or web service. Where should the logic live?",
+    "options": [
+      {
+        "id": "A",
+        "text": "In a server-side business rule"
+      },
+      {
+        "id": "B",
+        "text": "In an onSubmit client script"
+      },
+      {
+        "id": "C",
+        "text": "In a UI policy"
+      },
+      {
+        "id": "D",
+        "text": "In the form layout"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Client scripts and UI policies only run in the browser/form, so imports and web services slip past them. A business rule runs server-side on the database operation, so it enforces the rule across every entry channel.",
+    "distractor_notes": {
+      "B": "onSubmit client scripts only fire when a form is submitted, not on imports or APIs.",
+      "C": "UI policies are form-only and won't catch non-form data.",
+      "D": "Form layout controls appearance, not validation."
+    },
+    "references": [
+      {
+        "title": "Client Scripts",
+        "url": "https://www.servicenow.com/docs/r/zurich/application-development/c_ClientScripts.html"
+      }
+    ],
+    "tags": [
+      "business-rules",
+      "client-scripts",
+      "server-side"
+    ]
+  },
+  {
+    "id": "csa-ssa-051",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Self-Service and Automation",
+    "subdomain": "onChange Client Script",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "When a user changes the Category field on a form, a related field should update immediately in the browser. Which client script type responds to that field change?",
+    "options": [
+      {
+        "id": "A",
+        "text": "An onChange client script"
+      },
+      {
+        "id": "B",
+        "text": "An onLoad client script"
+      },
+      {
+        "id": "C",
+        "text": "An async business rule"
+      },
+      {
+        "id": "D",
+        "text": "A scheduled job"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "onChange client scripts fire when a specific field's value changes on the form, ideal for live, in-browser reactions. onLoad runs once when the form opens; server-side options don't react to a live field change.",
+    "distractor_notes": {
+      "B": "onLoad runs only when the form first loads, not on a later change.",
+      "C": "Async rules run server-side after save, not live in the browser.",
+      "D": "Scheduled jobs run on a timer, unrelated to a form field change."
+    },
+    "references": [
+      {
+        "title": "Client Scripts",
+        "url": "https://www.servicenow.com/docs/r/zurich/application-development/c_ClientScripts.html"
+      }
+    ],
+    "tags": [
+      "client-scripts",
+      "onchange",
+      "form"
+    ]
+  },
+  {
+    "id": "csa-ssa-052",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Self-Service and Automation",
+    "subdomain": "Flow Triggers",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "You want automation to run every time a new incident is created. In Flow Designer, what starts the flow?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A record-based trigger (Created) on Incident"
+      },
+      {
+        "id": "B",
+        "text": "An onLoad client script"
+      },
+      {
+        "id": "C",
+        "text": "A coalesce field"
+      },
+      {
+        "id": "D",
+        "text": "A dictionary override"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Flows begin with a trigger. A record trigger set to 'Created' on Incident launches the flow whenever a new incident is inserted. Triggers can also be scheduled, inbound email, or based on updates.",
+    "distractor_notes": {
+      "B": "Client scripts run on forms; they don't trigger flows.",
+      "C": "Coalesce is an import concept, not a flow trigger.",
+      "D": "Dictionary overrides adjust field behavior, not automation triggers."
+    },
+    "references": [
+      {
+        "title": "Flow trigger",
+        "url": "https://www.servicenow.com/docs/r/zurich/build-workflows/flow-trigger.html"
+      }
+    ],
+    "tags": [
+      "flow-designer",
+      "trigger",
+      "automation"
+    ]
+  },
+  {
+    "id": "csa-ssa-053",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Self-Service and Automation",
+    "subdomain": "Subflows",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Several flows repeat the same sequence of steps. What is the best way to define that logic once and reuse it with inputs and outputs?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Build it as a subflow and call it from each flow"
+      },
+      {
+        "id": "B",
+        "text": "Copy the steps into every flow"
+      },
+      {
+        "id": "C",
+        "text": "Use an onLoad client script"
+      },
+      {
+        "id": "D",
+        "text": "Create a separate update set per flow"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "A subflow packages reusable logic with defined inputs and outputs, callable from many flows. Define once, reuse everywhere — easier to maintain than copy-pasted steps.",
+    "distractor_notes": {
+      "B": "Copying steps creates duplication and drift — the problem subflows solve.",
+      "C": "Client scripts are unrelated to flow reuse.",
+      "D": "Update sets move config between instances; they don't make flow logic reusable."
+    },
+    "references": [
+      {
+        "title": "Subflow",
+        "url": "https://www.servicenow.com/docs/r/zurich/build-workflows/subflow.html"
+      }
+    ],
+    "tags": [
+      "flow-designer",
+      "subflow",
+      "reuse"
+    ]
+  },
+  {
+    "id": "csa-ssa-054",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Self-Service and Automation",
+    "subdomain": "Flow Run As",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A flow should respect the access rights of the person who triggered it rather than running with elevated system rights. Which setting controls this?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The flow's 'Run As' setting (User who initiates vs System)"
+      },
+      {
+        "id": "B",
+        "text": "The flow's trigger type"
+      },
+      {
+        "id": "C",
+        "text": "A coalesce field on the trigger"
+      },
+      {
+        "id": "D",
+        "text": "The instance time zone"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Flow Designer's 'Run As' setting decides whose security context the flow uses: the triggering user (ACLs apply to them) or System (elevated). Choose 'User who initiates' when the flow should honor the user's own permissions.",
+    "distractor_notes": {
+      "B": "The trigger decides when a flow starts, not whose permissions it runs under.",
+      "C": "Coalesce is an import concept and has no role here.",
+      "D": "Time zone affects scheduling/display, not security context."
+    },
+    "references": [
+      {
+        "title": "Flow Designer",
+        "url": "https://www.servicenow.com/docs/r/zurich/build-workflows/flow-designer.html"
+      }
+    ],
+    "tags": [
+      "flow-designer",
+      "run-as",
+      "security-context"
+    ]
+  },
+  {
+    "id": "csa-ssa-055",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Self-Service and Automation",
+    "subdomain": "Inbound Email Actions",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "Emails sent to a monitored support mailbox should automatically create incident records. Which feature processes those emails into records?",
+    "options": [
+      {
+        "id": "A",
+        "text": "An inbound email action"
+      },
+      {
+        "id": "B",
+        "text": "An outbound REST message"
+      },
+      {
+        "id": "C",
+        "text": "A UI policy"
+      },
+      {
+        "id": "D",
+        "text": "A coalesce field"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Inbound email actions match incoming messages and run logic to create or update records — for example, turning a support email into an incident. They're the standard email-to-record automation.",
+    "distractor_notes": {
+      "B": "Outbound REST sends data out; it doesn't process inbound email.",
+      "C": "UI policies act on forms, not email processing.",
+      "D": "Coalesce is for import matching, not email."
+    },
+    "references": [
+      {
+        "title": "Inbound email actions",
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/c_InboundEmailActions.html"
+      }
+    ],
+    "tags": [
+      "inbound-email",
+      "automation",
+      "incident"
+    ]
+  },
+  {
+    "id": "csa-ssa-056",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Self-Service and Automation",
+    "subdomain": "SLA",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "Management wants to track a resolution-time target on incidents, pausing the clock while a ticket is 'On hold.' Which feature models this?",
+    "options": [
+      {
+        "id": "A",
+        "text": "An SLA definition with start, pause, and stop conditions"
+      },
+      {
+        "id": "B",
+        "text": "A coalesce field"
+      },
+      {
+        "id": "C",
+        "text": "An onLoad client script"
+      },
+      {
+        "id": "D",
+        "text": "A dictionary override"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "SLA definitions track time against a target using start, pause, and stop conditions plus a schedule — so the clock can pause while a ticket is On hold and resume later. That's exactly the response/resolution tracking management wants.",
+    "distractor_notes": {
+      "B": "Coalesce is an import matching concept.",
+      "C": "A client script can't track elapsed SLA time with pause logic.",
+      "D": "Dictionary overrides change field behavior, not time tracking."
+    },
+    "references": [
+      {
+        "title": "Define an SLA",
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/t_DefineAnSLA.html"
+      }
+    ],
+    "tags": [
+      "sla",
+      "pause",
+      "tracking"
+    ]
+  },
+  {
+    "id": "csa-ssa-057",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Self-Service and Automation",
+    "subdomain": "Scheduled Jobs",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A cleanup script must run automatically at 2 a.m. every night. Which feature schedules it?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A scheduled job"
+      },
+      {
+        "id": "B",
+        "text": "An onChange client script"
+      },
+      {
+        "id": "C",
+        "text": "A before business rule"
+      },
+      {
+        "id": "D",
+        "text": "An ACL"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Scheduled jobs run scripts (or other tasks) on a defined schedule, such as nightly at 2 a.m. Business rules and client scripts run in response to record or form events, not on a timer.",
+    "distractor_notes": {
+      "B": "Client scripts react to form events, not a nightly timer.",
+      "C": "Before rules run on a database operation, not on a schedule.",
+      "D": "ACLs control access, not scheduling."
+    },
+    "references": [
+      {
+        "title": "Scheduled jobs",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_ScheduledJobs.html"
+      }
+    ],
+    "tags": [
+      "scheduled-jobs",
+      "automation",
+      "timer"
+    ]
+  },
+  {
+    "id": "csa-ssa-058",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Self-Service and Automation",
+    "subdomain": "Business Rule Timing",
+    "difficulty": "scenario",
+    "type": "multi_select",
+    "stem": "Which TWO statements correctly contrast before and after business rules?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Before rules can change field values that get saved with the record"
+      },
+      {
+        "id": "B",
+        "text": "After rules run once the database write has completed"
+      },
+      {
+        "id": "C",
+        "text": "Before rules run in the user's browser"
+      },
+      {
+        "id": "D",
+        "text": "After rules cannot access the current record"
+      }
+    ],
+    "correct": [
+      "A",
+      "B"
+    ],
+    "rationale": "Before rules run during the save and can still shape what's written via current; after rules run once the write is done (handy for related updates or notifications). Both are server-side and both can read current.",
+    "distractor_notes": {
+      "C": "Business rules are server-side, not browser-side — that's client scripts.",
+      "D": "After rules can absolutely access current; they just run after the write."
+    },
+    "references": [
+      {
+        "title": "Business rule execution order",
+        "url": "https://www.servicenow.com/docs/r/zurich/application-development/r_BusinessRulesExecutionOrder.html"
+      }
+    ],
+    "tags": [
+      "business-rules",
+      "before-after",
+      "server-side"
+    ]
+  },
+  {
+    "id": "csa-ssa-059",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Self-Service and Automation",
+    "subdomain": "Flow Designer",
+    "difficulty": "application",
+    "type": "multi_select",
+    "stem": "Which TWO are true of Flow Designer?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Flows start from a trigger such as a record change or a schedule"
+      },
+      {
+        "id": "B",
+        "text": "Reusable logic can be packaged as a subflow with inputs and outputs"
+      },
+      {
+        "id": "C",
+        "text": "Flows can only be built by writing server-side scripts"
+      },
+      {
+        "id": "D",
+        "text": "A flow's security context cannot be configured"
+      }
+    ],
+    "correct": [
+      "A",
+      "B"
+    ],
+    "rationale": "Flow Designer is low-code: flows start from triggers and can call reusable subflows with inputs/outputs. You don't have to script it, and you can set its 'Run As' security context.",
+    "distractor_notes": {
+      "C": "Flow Designer is low-code/no-code; scripting is optional, not required.",
+      "D": "The 'Run As' setting configures the flow's security context."
+    },
+    "references": [
+      {
+        "title": "Flow Designer",
+        "url": "https://www.servicenow.com/docs/r/zurich/build-workflows/flow-designer.html"
+      }
+    ],
+    "tags": [
+      "flow-designer",
+      "subflow",
+      "low-code"
+    ]
   }
 ]

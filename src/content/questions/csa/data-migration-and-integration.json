@@ -32,7 +32,7 @@
     "rationale": "Import Sets are staging tables. Incoming data lands there first; transform maps then move and reshape it into the target table. Staging gives you a chance to inspect and transform before touching live data.",
     "distractor_notes": {
       "B": "Import sets aren't mirrors of production tables.",
-      "C": "Saved queries are stored on sys_user_filter or similar \u2014 not import sets.",
+      "C": "Saved queries are stored on sys_user_filter or similar — not import sets.",
       "D": "UI policies govern form behavior."
     },
     "references": [
@@ -76,7 +76,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "Data Sources tell the platform where the data is coming from and how to retrieve and parse it \u2014 file, FTP, REST, JDBC, etc. They feed import sets, which feed transform maps.",
+    "rationale": "Data Sources tell the platform where the data is coming from and how to retrieve and parse it — file, FTP, REST, JDBC, etc. They feed import sets, which feed transform maps.",
     "distractor_notes": {
       "B": "Audit rows are change history.",
       "C": "KB categories are unrelated.",
@@ -105,7 +105,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Create a Data Source pointing at the CSV \u2192 Load the data into an Import Set staging table \u2192 Build a Transform Map to the target table \u2192 Run the transform."
+        "text": "Create a Data Source pointing at the CSV → Load the data into an Import Set staging table → Build a Transform Map to the target table → Run the transform."
       },
       {
         "id": "B",
@@ -123,7 +123,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "Data Source \u2192 Import Set \u2192 Transform Map \u2192 Target is the canonical pipeline. Each step is inspectable and reusable.",
+    "rationale": "Data Source → Import Set → Transform Map → Target is the canonical pipeline. Each step is inspectable and reusable.",
     "distractor_notes": {
       "B": "Manual editing doesn't scale and skips every safeguard.",
       "C": "Copy/paste isn't a supported pattern.",
@@ -218,7 +218,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "Out-of-the-box import data sources support CSV, Excel, XML/JSON, and similar structured formats \u2014 plus JDBC, REST, FTP. Word documents are document format, not a structured data source.",
+    "rationale": "Out-of-the-box import data sources support CSV, Excel, XML/JSON, and similar structured formats — plus JDBC, REST, FTP. Word documents are document format, not a structured data source.",
     "distractor_notes": {
       "B": "CSV is supported.",
       "C": "Excel (XLS/XLSX) is supported.",
@@ -294,7 +294,7 @@
     "options": [
       {
         "id": "A",
-        "text": "ACLs evaluate at insert/update on the target table when transforms write records, the same way they evaluate any other write \u2014 so import users still need the right permissions."
+        "text": "ACLs evaluate at insert/update on the target table when transforms write records, the same way they evaluate any other write — so import users still need the right permissions."
       },
       {
         "id": "B",
@@ -312,7 +312,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "Transforms write to the target like any other server-side write, and ACLs evaluate accordingly. Import users (or the configured run-as user) need the right permissions on the target \u2014 otherwise the writes fail.",
+    "rationale": "Transforms write to the target like any other server-side write, and ACLs evaluate accordingly. Import users (or the configured run-as user) need the right permissions on the target — otherwise the writes fail.",
     "distractor_notes": {
       "B": "Imports don't bypass ACLs.",
       "C": "ACLs evaluate at write-time, not on a delay.",
@@ -455,7 +455,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "Each staging row tracks what happened to it during the transform \u2014 useful for both auditing and re-running just the failed rows.",
+    "rationale": "Each staging row tracks what happened to it during the transform — useful for both auditing and re-running just the failed rows.",
     "distractor_notes": {
       "B": "Staging is separate from the target.",
       "C": "Staging rows can be cleaned up.",
@@ -502,7 +502,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "Parsing options on the Data Source \u2014 including whether the first row is headers, what delimiter to use, and what character encoding to assume \u2014 control how the file is interpreted.",
+    "rationale": "Parsing options on the Data Source — including whether the first row is headers, what delimiter to use, and what character encoding to assume — control how the file is interpreted.",
     "distractor_notes": {
       "B": "User profile doesn't influence CSV parsing.",
       "C": "Favicon is unrelated.",
@@ -550,7 +550,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "Coalesce on the transform map makes the same pipeline handle both initial and delta loads \u2014 match by a stable key, update existing, insert new. Reusing the artifacts keeps maintenance manageable.",
+    "rationale": "Coalesce on the transform map makes the same pipeline handle both initial and delta loads — match by a stable key, update existing, insert new. Reusing the artifacts keeps maintenance manageable.",
     "distractor_notes": {
       "B": "Duplicate pipelines drift.",
       "C": "Weekly full reloads waste resources and can churn user records.",
@@ -674,7 +674,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Marks the field as a match key \u2014 if a target record exists with the same value, the transform updates it; otherwise it inserts a new record."
+        "text": "Marks the field as a match key — if a target record exists with the same value, the transform updates it; otherwise it inserts a new record."
       },
       {
         "id": "B",
@@ -769,7 +769,7 @@
     "options": [
       {
         "id": "A",
-        "text": "All coalesce fields together form a composite match key \u2014 the transform matches a target only when all coalesce values match."
+        "text": "All coalesce fields together form a composite match key — the transform matches a target only when all coalesce values match."
       },
       {
         "id": "B",
@@ -834,7 +834,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "onStart fires once at the beginning of the transform run \u2014 useful for setting up counters, looking up reference data, or one-time logging.",
+    "rationale": "onStart fires once at the beginning of the transform run — useful for setting up counters, looking up reference data, or one-time logging.",
     "distractor_notes": {
       "B": "onBefore runs before each row.",
       "C": "onAfter runs after each row.",
@@ -928,7 +928,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "onBefore is where per-row filtering belongs. Inspect the source, decide whether to process, and skip when the rule says skip \u2014 all before the target write.",
+    "rationale": "onBefore is where per-row filtering belongs. Inspect the source, decide whether to process, and skip when the rule says skip — all before the target write.",
     "distractor_notes": {
       "B": "Form UI policies don't affect imports.",
       "C": "Cleanup after the fact is brittle and expensive.",
@@ -1165,7 +1165,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "Inbound REST exposes the instance's tables (and custom endpoints) over HTTP with JSON. External systems use it to push and pull data \u2014 the canonical 'how things talk to ServiceNow' interface.",
+    "rationale": "Inbound REST exposes the instance's tables (and custom endpoints) over HTTP with JSON. External systems use it to push and pull data — the canonical 'how things talk to ServiceNow' interface.",
     "distractor_notes": {
       "B": "USB key login isn't a thing here.",
       "C": "Marketing pages aren't the REST API.",
@@ -1195,7 +1195,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Letting the instance call external HTTP/JSON APIs \u2014 for integrations, notifications, lookups, and triggering external systems."
+        "text": "Letting the instance call external HTTP/JSON APIs — for integrations, notifications, lookups, and triggering external systems."
       },
       {
         "id": "B",
@@ -1261,7 +1261,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "SOAP support is still there \u2014 important for legacy integrations. New work typically uses REST because it's lighter and easier to debug, but SOAP isn't going anywhere yet.",
+    "rationale": "SOAP support is still there — important for legacy integrations. New work typically uses REST because it's lighter and easier to debug, but SOAP isn't going anywhere yet.",
     "distractor_notes": {
       "B": "SOAP is supported.",
       "C": "REST exists alongside SOAP.",
@@ -1385,7 +1385,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A framework that extends Flow Designer with integration capabilities \u2014 including spokes (pre-built integration packs), custom actions, and connection management \u2014 for connecting to external systems with low code."
+        "text": "A framework that extends Flow Designer with integration capabilities — including spokes (pre-built integration packs), custom actions, and connection management — for connecting to external systems with low code."
       },
       {
         "id": "B",
@@ -1451,7 +1451,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "A spoke bundles ready-made actions targeting a specific system \u2014 install, configure the connection, and you've got low-code actions to use inside flows.",
+    "rationale": "A spoke bundles ready-made actions targeting a specific system — install, configure the connection, and you've got low-code actions to use inside flows.",
     "distractor_notes": {
       "B": "Different kind of spoke.",
       "C": "Not a field type.",
@@ -1498,7 +1498,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "Table API uses GET on /api/now/table/incident/{sys_id} for retrieve-by-id. POST creates, PATCH/PUT updates, DELETE deletes \u2014 REST verb semantics map to the underlying operations.",
+    "rationale": "Table API uses GET on /api/now/table/incident/{sys_id} for retrieve-by-id. POST creates, PATCH/PUT updates, DELETE deletes — REST verb semantics map to the underlying operations.",
     "distractor_notes": {
       "B": "DELETE would remove the record.",
       "C": "POST creates a new record.",
@@ -2356,7 +2356,7 @@
     "correct": [
       "B"
     ],
-    "rationale": "sysparm_query filters the records returned by the API using an encoded query string (e.g., sysparm_query=active=true^priority=1) \u2014 the same query format used in the platform URL.",
+    "rationale": "sysparm_query filters the records returned by the API using an encoded query string (e.g., sysparm_query=active=true^priority=1) — the same query format used in the platform URL.",
     "distractor_notes": {
       "A": "sysparm_fields specifies which fields to return.",
       "C": "sysparm_limit sets the maximum number of records.",
@@ -3686,7 +3686,7 @@
     "correct": [
       "B"
     ],
-    "rationale": "The correct approach is to fix the root cause \u2014 either the source data is missing the value or the transform script is not populating the mandatory field \u2014 then re-run the transform for the errored rows.",
+    "rationale": "The correct approach is to fix the root cause — either the source data is missing the value or the transform script is not populating the mandatory field — then re-run the transform for the errored rows.",
     "distractor_notes": {
       "A": "Deleting and re-importing is unnecessary; transform errors can be corrected and re-run.",
       "C": "Disabling mandatory flags in production data structures is risky and should be avoided.",
@@ -4597,7 +4597,7 @@
     "rationale": "The Content-Type header tells the server how the request body is formatted. Setting it to application/json instructs the Table API to parse the incoming request body as JSON.",
     "distractor_notes": {
       "A": "The response format preference is communicated through the Accept header, not Content-Type.",
-      "C": "Content-Type describes the body format, not compression \u2014 compression uses the Accept-Encoding header.",
+      "C": "Content-Type describes the body format, not compression — compression uses the Accept-Encoding header.",
       "D": "Authentication is communicated through the Authorization header, not Content-Type."
     },
     "references": [
@@ -4957,7 +4957,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Create two separate transform maps \u2014 one coalescing on emp_number and one on legacy_id \u2014 and run them sequentially"
+        "text": "Create two separate transform maps — one coalescing on emp_number and one on legacy_id — and run them sequentially"
       },
       {
         "id": "B",
@@ -4978,7 +4978,7 @@
     "rationale": "When coalesce needs to handle variable source fields, an onBefore transform script can normalize the data by setting a canonical target field from whichever source column is populated. Coalescing on that single canonical field then works reliably.",
     "distractor_notes": {
       "A": "Two sequential transform maps could create race conditions and still produce duplicates on the second run.",
-      "B": "Setting Coalesce on multiple field maps creates a compound key (AND condition) \u2014 all fields must match \u2014 which would not handle the OR scenario described.",
+      "B": "Setting Coalesce on multiple field maps creates a compound key (AND condition) — all fields must match — which would not handle the OR scenario described.",
       "D": "There is no 'Multiple coalesce' system property for this purpose; the logic must be handled in a transform script."
     },
     "references": [
@@ -5309,11 +5309,11 @@
     "correct": [
       "C"
     ],
-    "rationale": "When a coalesce lookup finds multiple matching records in the target table, the row is marked as Error because the match is ambiguous \u2014 the system cannot determine which record to update.",
+    "rationale": "When a coalesce lookup finds multiple matching records in the target table, the row is marked as Error because the match is ambiguous — the system cannot determine which record to update.",
     "distractor_notes": {
       "A": "Updating all matching records would risk unintended bulk updates; ServiceNow marks the row as Error instead.",
       "B": "Selecting the most recently modified record is not the default behavior; ambiguous matches produce an error.",
-      "D": "Multiple matches produce an Error state, not Ignored \u2014 Ignored is used when a transform script explicitly skips the row."
+      "D": "Multiple matches produce an Error state, not Ignored — Ignored is used when a transform script explicitly skips the row."
     },
     "references": [
       {
@@ -5552,7 +5552,7 @@
     ],
     "rationale": "A 403 Forbidden means authentication succeeded but authorization failed. The most likely cause is that the HR table has specific ACL rules requiring an HR role the integration user does not have, even with web_service_access_only.",
     "distractor_notes": {
-      "A": "web_service_access_only restricts to API access; it does not itself grant data access \u2014 the user still needs appropriate data roles. But the issue is a missing HR-specific role, not that web_service_access_only forbids all data access.",
+      "A": "web_service_access_only restricts to API access; it does not itself grant data access — the user still needs appropriate data roles. But the issue is a missing HR-specific role, not that web_service_access_only forbids all data access.",
       "B": "An expired account would produce a 401 Unauthorized, not a 403 Forbidden.",
       "D": "A network port block would prevent the connection entirely, resulting in a connection timeout rather than a 403 response from the server."
     },
@@ -5630,19 +5630,19 @@
     "options": [
       {
         "id": "A",
-        "text": "onBefore \u2014 by returning IGNORE for the current row"
+        "text": "onBefore — by returning IGNORE for the current row"
       },
       {
         "id": "B",
-        "text": "onAfter \u2014 by setting the row state to Error"
+        "text": "onAfter — by setting the row state to Error"
       },
       {
         "id": "C",
-        "text": "onStart \u2014 by calling abort() to stop before any rows are processed"
+        "text": "onStart — by calling abort() to stop before any rows are processed"
       },
       {
         "id": "D",
-        "text": "onBefore \u2014 by calling producer.abort() or setting the answer to ERROR and stopping the thread"
+        "text": "onBefore — by calling producer.abort() or setting the answer to ERROR and stopping the thread"
       }
     ],
     "correct": [
@@ -5678,15 +5678,15 @@
     "options": [
       {
         "id": "A",
-        "text": "The integration user lacks write permissions \u2014 switching to admin credentials will prevent duplicates"
+        "text": "The integration user lacks write permissions — switching to admin credentials will prevent duplicates"
       },
       {
         "id": "B",
-        "text": "The POST calls are being retried on timeout, and each retry creates a new record because POST is not idempotent \u2014 implementing deduplication logic or using a coalesce-capable import set API would fix this"
+        "text": "The POST calls are being retried on timeout, and each retry creates a new record because POST is not idempotent — implementing deduplication logic or using a coalesce-capable import set API would fix this"
       },
       {
         "id": "C",
-        "text": "The Table API adds duplicate records when sysparm_limit is not set \u2014 adding sysparm_limit=1 to POST requests prevents this"
+        "text": "The Table API adds duplicate records when sysparm_limit is not set — adding sysparm_limit=1 to POST requests prevents this"
       },
       {
         "id": "D",
@@ -5696,7 +5696,7 @@
     "correct": [
       "B"
     ],
-    "rationale": "POST requests are not idempotent \u2014 each call creates a new record regardless of existing data. If the integration retries on timeouts, each retry creates a duplicate. Using the Import Set API with a coalesce-capable transform, or checking for existing records before POSTing, prevents duplicates.",
+    "rationale": "POST requests are not idempotent — each call creates a new record regardless of existing data. If the integration retries on timeouts, each retry creates a duplicate. Using the Import Set API with a coalesce-capable transform, or checking for existing records before POSTing, prevents duplicates.",
     "distractor_notes": {
       "A": "Permissions affect whether records can be created at all, not whether duplicates are created; the issue is the non-idempotent POST pattern.",
       "C": "sysparm_limit is a query parameter for GET requests and does not affect POST behavior or prevent duplicates.",
@@ -5714,6 +5714,582 @@
       "idempotent",
       "duplicates",
       "scenario"
+    ]
+  },
+  {
+    "id": "csa-dmi-121",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Data Migration and Integration",
+    "subdomain": "Coalesce",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A nightly user import keeps creating duplicate records instead of updating the existing ones. What should you configure on the transform map field map to fix this?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Mark the matching field (e.g., email) as a coalesce field"
+      },
+      {
+        "id": "B",
+        "text": "Increase the import set batch size"
+      },
+      {
+        "id": "C",
+        "text": "Set the transform map to run business rules"
+      },
+      {
+        "id": "D",
+        "text": "Add an onComplete transform script"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Coalesce tells the transform engine which field identifies an existing record. When the coalesce value matches, that record is updated instead of inserted — no more duplicates. Pick a field that's truly unique, like email or a correlation ID.",
+    "distractor_notes": {
+      "B": "Batch size affects throughput, not whether matching records are updated.",
+      "C": "Running business rules changes what fires during transform, not duplicate detection.",
+      "D": "onComplete runs once after the whole transform; it doesn't match rows to existing records."
+    },
+    "references": [
+      {
+        "title": "Coalesce fields",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/r_CoalesceFields.html"
+      }
+    ],
+    "tags": [
+      "coalesce",
+      "transform-map",
+      "duplicates"
+    ]
+  },
+  {
+    "id": "csa-dmi-122",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Data Migration and Integration",
+    "subdomain": "Multiple Coalesce",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Two field maps in a transform map are both marked as coalesce fields. How is an existing record matched?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Both coalesce values must match the same record (AND)"
+      },
+      {
+        "id": "B",
+        "text": "Either coalesce value matching is enough (OR)"
+      },
+      {
+        "id": "C",
+        "text": "Only the first coalesce field is used"
+      },
+      {
+        "id": "D",
+        "text": "Coalescing is disabled when more than one field is set"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "With multiple coalesce fields, a record is considered a match only when ALL coalesce values match the same target record — it's an AND. Useful when no single field is unique but a combination is.",
+    "distractor_notes": {
+      "B": "OR matching would risk false matches; the engine requires all coalesce fields to agree.",
+      "C": "All coalesce fields participate, not just the first.",
+      "D": "Multiple coalesce fields are explicitly supported."
+    },
+    "references": [
+      {
+        "title": "Coalesce fields",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/r_CoalesceFields.html"
+      }
+    ],
+    "tags": [
+      "coalesce",
+      "multiple-coalesce",
+      "matching"
+    ]
+  },
+  {
+    "id": "csa-dmi-123",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Data Migration and Integration",
+    "subdomain": "Import Set Staging",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "During an import, where does the raw incoming data land before it reaches the target table?",
+    "options": [
+      {
+        "id": "A",
+        "text": "In a temporary import set (staging) table"
+      },
+      {
+        "id": "B",
+        "text": "Directly in the target table, then cleaned up"
+      },
+      {
+        "id": "C",
+        "text": "In the sys_audit table"
+      },
+      {
+        "id": "D",
+        "text": "In the update set currently selected"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Imports use a staging pattern: data first loads into an import set table, then a transform map maps and writes it to the target table. Staging lets you validate and transform without touching production data directly.",
+    "distractor_notes": {
+      "B": "The target is only written by the transform — raw data never lands there first.",
+      "C": "sys_audit stores field-change history, not import staging.",
+      "D": "Update sets capture configuration changes, not imported data rows."
+    },
+    "references": [
+      {
+        "title": "Import sets",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_ImportSets.html"
+      }
+    ],
+    "tags": [
+      "import-sets",
+      "staging",
+      "transform-map"
+    ]
+  },
+  {
+    "id": "csa-dmi-124",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Data Migration and Integration",
+    "subdomain": "Data Source",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "You need to pull records from an external CSV file on a recurring basis. Which object defines the connection and format of that external data?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A Data Source"
+      },
+      {
+        "id": "B",
+        "text": "A Transform Map"
+      },
+      {
+        "id": "C",
+        "text": "A coalesce field"
+      },
+      {
+        "id": "D",
+        "text": "An ACL"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "A Data Source defines where the data comes from and how it's formatted (file, FTP, JDBC, etc.). It feeds the import set table; a transform map then maps those rows onto the target table.",
+    "distractor_notes": {
+      "B": "A transform map maps staged rows to the target — it doesn't define the external connection.",
+      "C": "Coalesce controls match-on-update behavior, not the source connection.",
+      "D": "ACLs govern access, not data ingestion."
+    },
+    "references": [
+      {
+        "title": "Create a data source",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/t_CreateADataSource.html"
+      }
+    ],
+    "tags": [
+      "data-source",
+      "import",
+      "csv"
+    ]
+  },
+  {
+    "id": "csa-dmi-125",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Data Migration and Integration",
+    "subdomain": "Transform Scripts",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "Imported phone numbers need to be reformatted before they are written to the target record. Which transform map script runs at the right time to adjust the value per row?",
+    "options": [
+      {
+        "id": "A",
+        "text": "An onBefore transform script"
+      },
+      {
+        "id": "B",
+        "text": "An onComplete transform script"
+      },
+      {
+        "id": "C",
+        "text": "A scheduled job"
+      },
+      {
+        "id": "D",
+        "text": "A UI policy"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "onBefore transform scripts run for each row just before it's written, so you can clean or reshape the value (like normalizing phone formats) before it lands. onComplete runs once at the end — too late for per-row edits.",
+    "distractor_notes": {
+      "B": "onComplete fires once after the whole transform, not per row before write.",
+      "C": "A scheduled job runs on a timer, unrelated to per-row transform logic.",
+      "D": "UI policies act on forms, not on server-side imports."
+    },
+    "references": [
+      {
+        "title": "Transform map scripts",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_TransformMapScripts.html"
+      }
+    ],
+    "tags": [
+      "transform-script",
+      "onbefore",
+      "data-cleansing"
+    ]
+  },
+  {
+    "id": "csa-dmi-126",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Data Migration and Integration",
+    "subdomain": "MID Server",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "ServiceNow (cloud) needs to read data from an on-premises database that sits behind the corporate firewall, without opening inbound ports. What enables this securely?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A MID Server using outbound connections"
+      },
+      {
+        "id": "B",
+        "text": "Opening an inbound firewall rule to the database"
+      },
+      {
+        "id": "C",
+        "text": "An inbound email action"
+      },
+      {
+        "id": "D",
+        "text": "A client script"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "A MID Server is a lightweight app installed inside the customer network. It initiates outbound connections to the instance, so internal systems stay reachable without exposing inbound ports — the secure bridge for on-prem integrations and Discovery.",
+    "distractor_notes": {
+      "B": "Opening inbound ports is exactly the exposure the MID Server avoids.",
+      "C": "Inbound email actions process email, not database access.",
+      "D": "Client scripts run in the browser and can't reach an on-prem database."
+    },
+    "references": [
+      {
+        "title": "MID Server",
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/mid-server/mid-server-landing.html"
+      }
+    ],
+    "tags": [
+      "mid-server",
+      "on-prem",
+      "integration"
+    ]
+  },
+  {
+    "id": "csa-dmi-127",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Data Migration and Integration",
+    "subdomain": "IntegrationHub",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A flow needs to call a third-party service using prebuilt, low-code actions instead of hand-written REST scripts. Which capability provides those actions (spokes)?",
+    "options": [
+      {
+        "id": "A",
+        "text": "IntegrationHub"
+      },
+      {
+        "id": "B",
+        "text": "Import sets"
+      },
+      {
+        "id": "C",
+        "text": "Update sets"
+      },
+      {
+        "id": "D",
+        "text": "Access control rules"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "IntegrationHub delivers spokes — packaged, low-code actions usable inside Flow Designer to talk to external systems without writing REST by hand. It's how you wire integrations into automations quickly.",
+    "distractor_notes": {
+      "B": "Import sets bring data in for transformation; they don't provide flow actions.",
+      "C": "Update sets move configuration between instances.",
+      "D": "ACLs control access, not integrations."
+    },
+    "references": [
+      {
+        "title": "IntegrationHub",
+        "url": "https://www.servicenow.com/docs/r/zurich/build-workflows/integrationhub.html"
+      }
+    ],
+    "tags": [
+      "integrationhub",
+      "spokes",
+      "flow-designer"
+    ]
+  },
+  {
+    "id": "csa-dmi-128",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Data Migration and Integration",
+    "subdomain": "Outbound REST",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Your instance must send data to a modern JSON web API hosted by a partner. Which integration method is the most appropriate?",
+    "options": [
+      {
+        "id": "A",
+        "text": "An outbound REST message"
+      },
+      {
+        "id": "B",
+        "text": "An inbound email action"
+      },
+      {
+        "id": "C",
+        "text": "A transform map"
+      },
+      {
+        "id": "D",
+        "text": "A coalesce field"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Outbound REST is the standard way to call modern JSON/HTTP APIs from ServiceNow. You define the endpoint, method, and auth, then invoke it from scripts or flows. SOAP exists for legacy XML services, but REST fits a modern JSON API.",
+    "distractor_notes": {
+      "B": "Inbound email actions handle incoming email, not outbound API calls.",
+      "C": "Transform maps move imported rows to tables; they don't call external APIs.",
+      "D": "Coalesce is about matching records on import."
+    },
+    "references": [
+      {
+        "title": "Outbound REST web service",
+        "url": "https://www.servicenow.com/docs/r/zurich/integrate-applications/c_OutboundRESTWebService.html"
+      }
+    ],
+    "tags": [
+      "rest",
+      "outbound",
+      "integration"
+    ]
+  },
+  {
+    "id": "csa-dmi-129",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Data Migration and Integration",
+    "subdomain": "Transform Business Rules",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "After enabling 'Run business rules' on a transform map, an import becomes much slower and side-effect notifications start firing. Why?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Each transformed row now triggers the target table's business rules"
+      },
+      {
+        "id": "B",
+        "text": "Coalesce is recalculated twice per row"
+      },
+      {
+        "id": "C",
+        "text": "The import set table is encrypted on write"
+      },
+      {
+        "id": "D",
+        "text": "Business rules only run on the staging table"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "With 'Run business rules' on, writing each transformed row fires the target table's business rules — which can mean notifications, recalculations, and slower imports. It's sometimes necessary for correctness, but it's a known performance and side-effect trade-off.",
+    "distractor_notes": {
+      "B": "Coalesce isn't doubled by this setting.",
+      "C": "Encryption isn't toggled by the run-business-rules option.",
+      "D": "The point of the setting is that rules run on the TARGET table during transform, not only staging."
+    },
+    "references": [
+      {
+        "title": "Transform maps",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_TransformMaps.html"
+      }
+    ],
+    "tags": [
+      "transform-map",
+      "business-rules",
+      "performance"
+    ]
+  },
+  {
+    "id": "csa-dmi-130",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Data Migration and Integration",
+    "subdomain": "Transform Map",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "Staged import set rows need their columns mapped onto the fields of the Incident table. Which object defines that column-to-field mapping?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A transform map"
+      },
+      {
+        "id": "B",
+        "text": "A data source"
+      },
+      {
+        "id": "C",
+        "text": "A business rule"
+      },
+      {
+        "id": "D",
+        "text": "A dictionary override"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "A transform map is the bridge: it defines how each import set column maps to a target table field, plus coalesce and scripts. The data source brings rows in; the transform map decides where each value goes.",
+    "distractor_notes": {
+      "B": "The data source defines the external connection/format, not the field mapping.",
+      "C": "Business rules run logic on records; they don't define import field mappings.",
+      "D": "Dictionary overrides change field behavior on extended tables, unrelated to import mapping."
+    },
+    "references": [
+      {
+        "title": "Create a field map",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/t_CreateAFieldMap.html"
+      }
+    ],
+    "tags": [
+      "transform-map",
+      "field-map",
+      "import"
+    ]
+  },
+  {
+    "id": "csa-dmi-131",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Data Migration and Integration",
+    "subdomain": "Import Sets",
+    "difficulty": "scenario",
+    "type": "multi_select",
+    "stem": "Which TWO statements about the import set / transform process are correct?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Raw data loads into a staging import set table before transformation"
+      },
+      {
+        "id": "B",
+        "text": "A coalesce match updates the existing record instead of inserting a new one"
+      },
+      {
+        "id": "C",
+        "text": "Transform maps write data directly to the data source"
+      },
+      {
+        "id": "D",
+        "text": "Import sets permanently replace the target table"
+      }
+    ],
+    "correct": [
+      "A",
+      "B"
+    ],
+    "rationale": "Two core truths: data stages in an import set table first, and coalescing on a matching field updates the existing record rather than duplicating it. Together they make repeatable imports safe and idempotent.",
+    "distractor_notes": {
+      "C": "Transform maps write to the TARGET table, not back to the data source.",
+      "D": "Imports add or update rows; they don't replace the entire target table."
+    },
+    "references": [
+      {
+        "title": "Load data using import sets",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/t_LoadDataUsingImportSets.html"
+      }
+    ],
+    "tags": [
+      "import-sets",
+      "coalesce",
+      "staging"
+    ]
+  },
+  {
+    "id": "csa-dmi-132",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Data Migration and Integration",
+    "subdomain": "Integration Choice",
+    "difficulty": "application",
+    "type": "multi_select",
+    "stem": "Which TWO scenarios are appropriate uses of a MID Server?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Running Discovery against on-premises infrastructure"
+      },
+      {
+        "id": "B",
+        "text": "Reaching an internal database behind the firewall without inbound ports"
+      },
+      {
+        "id": "C",
+        "text": "Storing the instance's encrypted attachments"
+      },
+      {
+        "id": "D",
+        "text": "Replacing the need for any authentication on integrations"
+      }
+    ],
+    "correct": [
+      "A",
+      "B"
+    ],
+    "rationale": "MID Servers shine for on-prem work: they run Discovery inside the network and bridge to internal systems via outbound connections, so no inbound ports are exposed. They don't store data or remove the need for authentication.",
+    "distractor_notes": {
+      "C": "Attachment storage is handled by the platform, not the MID Server.",
+      "D": "Integrations still authenticate; the MID Server is a connectivity bridge, not an auth bypass."
+    },
+    "references": [
+      {
+        "title": "MID Server",
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/mid-server/mid-server-landing.html"
+      }
+    ],
+    "tags": [
+      "mid-server",
+      "discovery",
+      "integration"
     ]
   }
 ]
