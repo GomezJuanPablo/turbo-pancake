@@ -5,7 +5,7 @@ import Breadcrumb from '../components/Breadcrumb.astro';
 const exams = ['CSA','CAD','CIS-ITSM','CIS-DF','CIS-SM'];
 ---
 <BaseLayout
-  title="Leaderboard — GlideUp.net"
+  title="Leaderboard - GlideUp.net"
   description="Top scores from exam simulations across all GlideUp exams. Opt-in, anonymous."
   activeNav="leaderboard"
 >
@@ -17,7 +17,7 @@ const exams = ['CSA','CAD','CIS-ITSM','CIS-DF','CIS-SM'];
   <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:20px;">
     <div>
       <h1 style="font-size:22px;font-weight:700;margin-bottom:4px;">Leaderboard</h1>
-      <p style="font-size:13px;color:var(--text-muted);">Top 25 exam simulation scores. Opt-in only — submit yours after finishing a sim.</p>
+      <p style="font-size:13px;color:var(--text-muted);">Top 25 exam simulation scores. Opt-in only - submit yours after finishing a sim.</p>
     </div>
     <div class="exam-tabs" id="exam-tabs" role="tablist">
       {exams.map((e, i) => (

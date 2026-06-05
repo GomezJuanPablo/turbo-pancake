@@ -1,81 +1,101 @@
 /**
  * GlideUp Leaderboard API — Cloudflare Pages Function
- * KV binding: LEADERBOARD (bind in CF Pages dashboard)
- *
- * POST /api/scores  { username, exam, mode, score, total }
- * GET  /api/scores?exam=CSA
+ * Handles: GET /api/scores?exam=CSA  |  POST /api/scores
+ * KV binding: leaderboard (set in CF Pages → Settings → Bindings)
  */
 
-const CORS = {
+const CORS_HEADERS = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
   'Access-Control-Allow-Headers': 'Content-Type',
 };
 
-function json(data, status = 200) {
-  return new Response(JSON.stringify(data), {
+const VALID_EXAMS = new Set(['CSA','CAD','CIS-ITSM','CIS-DF','CIS-SM']);
+const TOP_N = 25;
+
+function respond(body, status = 200) {
+  return new Response(JSON.stringify(body), {
     status,
-    headers: { 'Content-Type': 'application/json', ...CORS },
+    headers: { 'Content-Type': 'application/json', ...CORS_HEADERS },
   });
 }
 
-const TOP_N   = 25;
-const EXAMS   = ['CSA','CAD','CIS-ITSM','CIS-DF','CIS-SM'];
-const BAD_NAMES = /[<>&"'`]/; // basic XSS guard
+export async function onRequest(context) {
+  const { request, env } = context;
+  const method = request.method.toUpperCase();
 
-export async function onRequest({ request, env }) {
-  const url = new URL(request.url);
-
-  if (request.method === 'OPTIONS') return new Response(null, { headers: CORS });
-
-  // ── GET /api/scores?exam=CSA ───────────────────────────────────────
-  if (request.method === 'GET') {
-    const exam = (url.searchParams.get('exam') || '').toUpperCase();
-    if (!EXAMS.includes(exam)) return json({ error: 'Unknown exam' }, 400);
-
-    const raw = await env.leaderboard.get(`top:${exam}`);
-    const board = raw ? JSON.parse(raw) : [];
-    return json({ exam, scores: board });
+  if (method === 'OPTIONS') {
+    return new Response(null, { status: 204, headers: CORS_HEADERS });
   }
 
-  // ── POST /api/scores ───────────────────────────────────────────────
-  if (request.method === 'POST') {
+  // Verify KV binding exists
+  if (!env.leaderboard) {
+    return respond({ error: 'Leaderboard storage not configured. Check KV binding.' }, 503);
+  }
+
+  const url = new URL(request.url);
+
+  // ── GET ────────────────────────────────────────────────────────────
+  if (method === 'GET') {
+    const exam = (url.searchParams.get('exam') || '').toUpperCase();
+    if (!VALID_EXAMS.has(exam)) {
+      return respond({ error: `Unknown exam. Valid: ${[...VALID_EXAMS].join(', ')}` }, 400);
+    }
+    try {
+      const raw = await env.leaderboard.get(`top:${exam}`);
+      const scores = raw ? JSON.parse(raw) : [];
+      return respond({ exam, scores });
+    } catch (err) {
+      return respond({ error: 'Failed to read scores', detail: String(err) }, 500);
+    }
+  }
+
+  // ── POST ───────────────────────────────────────────────────────────
+  if (method === 'POST') {
     let body;
-    try { body = await request.json(); } catch { return json({ error: 'Bad JSON' }, 400); }
+    try { body = await request.json(); }
+    catch { return respond({ error: 'Invalid JSON body' }, 400); }
 
-    const { username, exam, mode, score, total } = body;
+    const { username, exam, mode, score, total } = body ?? {};
+    const examUpper = (exam ?? '').toUpperCase();
 
-    if (!username || typeof username !== 'string' || username.length < 1 || username.length > 24)
-      return json({ error: 'Username must be 1–24 characters' }, 400);
-    if (BAD_NAMES.test(username))
-      return json({ error: 'Username contains invalid characters' }, 400);
-    if (!EXAMS.includes((exam || '').toUpperCase()))
-      return json({ error: 'Unknown exam' }, 400);
-    if (typeof score !== 'number' || typeof total !== 'number' || total <= 0 || score < 0 || score > total)
-      return json({ error: 'Invalid score' }, 400);
+    if (!username || typeof username !== 'string' || username.length < 1 || username.length > 24) {
+      return respond({ error: 'Username must be 1-24 characters' }, 400);
+    }
+    if (/[<>&"'`]/.test(username)) {
+      return respond({ error: 'Username contains invalid characters' }, 400);
+    }
+    if (!VALID_EXAMS.has(examUpper)) {
+      return respond({ error: 'Unknown exam' }, 400);
+    }
+    if (typeof score !== 'number' || typeof total !== 'number' || total <= 0 || score < 0 || score > total) {
+      return respond({ error: 'Invalid score values' }, 400);
+    }
 
     const entry = {
       username: username.trim(),
-      exam: exam.toUpperCase(),
-      mode: mode || 'Practice',
+      exam: examUpper,
+      mode: typeof mode === 'string' ? mode.slice(0, 40) : 'Practice',
       score,
       total,
       pct: Math.round((score / total) * 100),
       at: new Date().toISOString(),
     };
 
-    // Update the top-N list for this exam
-    const key = `top:${entry.exam}`;
-    const raw = await env.leaderboard.get(key);
-    const board = raw ? JSON.parse(raw) : [];
-
-    board.push(entry);
-    board.sort((a, b) => b.pct - a.pct || b.score - a.score);
-    const trimmed = board.slice(0, TOP_N);
-
-    await env.leaderboard.put(key, JSON.stringify(trimmed));
-    return json({ ok: true, rank: trimmed.findIndex(e => e.at === entry.at) + 1 });
+    try {
+      const key = `top:${examUpper}`;
+      const existing = await env.leaderboard.get(key);
+      const board = existing ? JSON.parse(existing) : [];
+      board.push(entry);
+      board.sort((a, b) => b.pct - a.pct || b.score - a.score);
+      const trimmed = board.slice(0, TOP_N);
+      await env.leaderboard.put(key, JSON.stringify(trimmed));
+      const rank = trimmed.findIndex(e => e.at === entry.at) + 1;
+      return respond({ ok: true, rank });
+    } catch (err) {
+      return respond({ error: 'Failed to save score', detail: String(err) }, 500);
+    }
   }
 
-  return json({ error: 'Method not allowed' }, 405);
+  return respond({ error: 'Method not allowed' }, 405);
 }
