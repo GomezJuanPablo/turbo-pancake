@@ -24,6 +24,7 @@ import { stat } from 'node:fs/promises';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
 const QUESTIONS_DIR = join(ROOT, 'src', 'content', 'questions');
+const BLUEPRINTS_DIR = join(ROOT, 'src', 'content', 'blueprints');
 
 const argv = process.argv.slice(2);
 const schemaOnly = argv.includes('--schema-only');
@@ -252,6 +253,57 @@ async function loadBanks() {
   return banks;
 }
 
+/* ---------- Cross-bank structural checks ---------- */
+async function loadBlueprintDomains() {
+  // exam (e.g. "CIS-ITSM") -> Set of valid domain names
+  const map = {};
+  let files = [];
+  try { files = await readdir(BLUEPRINTS_DIR); } catch { return map; }
+  for (const f of files) {
+    if (!f.endsWith('.json')) continue;
+    try {
+      const bp = JSON.parse(await readFile(join(BLUEPRINTS_DIR, f), 'utf-8'));
+      const exam = (bp.exam || f.replace('.json', '')).toUpperCase();
+      map[exam] = new Set((bp.domains || []).map((d) => d.name));
+    } catch { /* ignore */ }
+  }
+  return map;
+}
+
+async function crossBankChecks(banks) {
+  const bpDomains = await loadBlueprintDomains();
+  const idSeen = new Map();   // id -> file
+  const stemSeen = new Map(); // normalized stem -> {file, id}
+  for (const { file, questions } of banks) {
+    for (const q of questions) {
+      if (!q || typeof q !== 'object') continue;
+      // cross-file duplicate id
+      if (q.id) {
+        if (idSeen.has(q.id) && idSeen.get(q.id) !== file) {
+          err(file, q.id, `duplicate question id also in ${idSeen.get(q.id).replace(ROOT + '/', '')}`);
+        } else if (!idSeen.has(q.id)) {
+          idSeen.set(q.id, file);
+        }
+      }
+      // domain must exist in the exam blueprint
+      const exam = (q.exam || '').toUpperCase();
+      if (exam && bpDomains[exam] && q.domain && !bpDomains[exam].has(q.domain)) {
+        err(file, q.id || '(?)', `domain "${q.domain}" not in ${exam} blueprint`);
+      }
+      // duplicate stem (warn only; cross-exam repeats are acceptable but flagged)
+      if (typeof q.stem === 'string') {
+        const norm = q.stem.trim().toLowerCase();
+        if (stemSeen.has(norm)) {
+          const prev = stemSeen.get(norm);
+          warn(file, q.id || '(?)', `duplicate stem of ${prev.id} (${prev.file.replace(ROOT + '/', '')})`);
+        } else {
+          stemSeen.set(norm, { file, id: q.id || '(?)' });
+        }
+      }
+    }
+  }
+}
+
 /* ---------- Main ---------- */
 
 async function main() {
@@ -281,6 +333,7 @@ async function main() {
         validateQuestion(q, file);
       }
     }
+    await crossBankChecks(banks);
     phase++;
   }
 

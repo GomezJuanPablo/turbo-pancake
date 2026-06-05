@@ -1,6 +1,10 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
+import { getCollection } from 'astro:content';
+
+const allQ = await getCollection('questions');
+const totalQuestions = allQ.flatMap((e) => e.data).length;
 ---
 <BaseLayout
   title="About — GlideUp.net"
@@ -33,9 +37,9 @@ import Breadcrumb from '../components/Breadcrumb.astro';
         learn the platform, not just the answer.
       </p>
       <p style="margin-bottom:12px;line-height:1.6;">
-        Five exams are live: <strong>CSA</strong>, <strong>CAD</strong>, <strong>CIS-ITSM</strong>, <strong>CIS-DF</strong>, and <strong>CIS-SM</strong> (1,200 questions total).
+        Five exams are live: <strong>CSA</strong>, <strong>CAD</strong>, <strong>CIS-ITSM</strong>, <strong>CIS-DF</strong>, and <strong>CIS-SM</strong> ({totalQuestions.toLocaleString()} questions total).
         <strong>CIS-RC</strong> and <strong>CIS-HAM</strong> are coming next.
-        Each exam covers 240 questions across the official blueprint domains.
+        Each exam covers the official blueprint domains in depth, with new questions added regularly.
       </p>
       <p style="margin-bottom:12px;line-height:1.6;">
         No login. No PII. No ads. Progress lives in your browser's localStorage only.

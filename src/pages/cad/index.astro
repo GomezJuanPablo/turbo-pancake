@@ -41,14 +41,13 @@ const bankIndex = cadQuestions.map((q) => ({
 
   <CosmicHero
     title="Certified Application Developer"
-    subtitle={`${totalAuthored} of ${totalTarget} questions ready • Zurich release`}
-    progressPct={heroPct}
+    subtitle={`${totalAuthored} questions ready • Zurich release`}
     ctaLabel="Practice"
     ctaHref="/cad/practice/"
   />
 
   <div class="stat-grid">
-    <StatCard label="Questions ready" value={`${totalAuthored}`} delta={totalAuthored >= totalTarget ? 'complete' : `${totalTarget - totalAuthored} to go`} deltaTone={totalAuthored >= totalTarget ? 'up' : 'neutral'} />
+    <StatCard label="Questions ready" value={`${totalAuthored}`} delta="doc-anchored" deltaTone="up" />
     <StatCard label="Domains" value={`${blueprint!.data.domains.length}`} />
     <StatCard label="Your accuracy" value="—" delta="answer some to see" deltaTone="neutral" data-stat="accuracy" />
     <StatCard label="Best streak" value="0 days" data-stat="streak" />
@@ -115,7 +114,6 @@ const bankIndex = cadQuestions.map((q) => ({
       <div class="card-grid" data-domain-grid-modes>
         {authoredByDomain.map((d) => {
           const simCount = d.authored >= 120 ? 2 : d.authored >= 60 ? 1 : 0;
-          const available = d.authored > 0 ? d.authored : d.target;
           return (
             <div class="domain-focus-card card">
               <div class="domain-focus-card__head">
@@ -163,7 +161,7 @@ const bankIndex = cadQuestions.map((q) => ({
           title={d.name}
           weight={`${d.weight}%`}
           answered={0}
-          total={d.target}
+          total={d.authored}
         />
       ))}
     </div>
@@ -209,7 +207,7 @@ const bankIndex = cadQuestions.map((q) => ({
             <tr data-bp-domain={d.name}>
               <td>{d.name}</td>
               <td style="text-align:right;">{d.weight}%</td>
-              <td style="text-align:right;">{d.authored} / {d.target}</td>
+              <td style="text-align:right;">{d.authored}</td>
               <td style="text-align:right;" data-bp-answered>0</td>
               <td style="text-align:right;" data-bp-accuracy>—</td>
             </tr>
