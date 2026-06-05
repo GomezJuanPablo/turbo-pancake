@@ -3989,5 +3989,581 @@
       "data-at-rest",
       "field-security"
     ]
+  },
+  {
+    "id": "csa-dbs-085",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "ACL Creation",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "You need to allow only members of the hr group to read records on a custom HR table. What is the correct way to build this?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Create a read ACL on the table with a role/condition requiring the hr role"
+      },
+      {
+        "id": "B",
+        "text": "Add the users to a watch list"
+      },
+      {
+        "id": "C",
+        "text": "Personalize the form for HR users"
+      },
+      {
+        "id": "D",
+        "text": "Create a UI policy that hides the records"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Record visibility is controlled by ACLs. A read ACL on the table that requires the hr role (or a matching condition) grants access to HR and denies everyone else by default. Forms and UI policies don't enforce security.",
+    "distractor_notes": {
+      "B": "Watch lists send notifications; they don't restrict reads.",
+      "C": "Form personalization changes one user's view, not access control.",
+      "D": "UI policies run on forms and can't secure data from imports or APIs."
+    },
+    "references": [
+      {
+        "title": "Create an ACL rule",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/access-control/t_CreateAnACLRule.html"
+      }
+    ],
+    "tags": [
+      "acl",
+      "roles",
+      "read"
+    ]
+  },
+  {
+    "id": "csa-dbs-086",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "ACL Script Condition",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An ACL must grant access only when the logged-in user is the record's Assigned to. Besides roles and a condition, what can an ACL use to evaluate this?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A script that returns true or false"
+      },
+      {
+        "id": "B",
+        "text": "A coalesce field"
+      },
+      {
+        "id": "C",
+        "text": "A scheduled job"
+      },
+      {
+        "id": "D",
+        "text": "A transform map"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "An ACL can combine required roles, a condition, AND a script that returns true/false for fine-grained logic — such as comparing the current user to the record's assigned_to. All applicable parts must pass.",
+    "distractor_notes": {
+      "B": "Coalesce matches records on import; it has no role in ACL evaluation.",
+      "C": "Scheduled jobs run on timers, not per-access checks.",
+      "D": "Transform maps move imported data, not access logic."
+    },
+    "references": [
+      {
+        "title": "ACL rule processing",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/r_ACLRuleProcessing.html"
+      }
+    ],
+    "tags": [
+      "acl",
+      "script",
+      "condition"
+    ]
+  },
+  {
+    "id": "csa-dbs-087",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "ACL Evaluation",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Two read ACLs match the same record at the same (row) level. What must happen for the user to read the record?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The user needs to pass at least one of the matching same-level ACLs"
+      },
+      {
+        "id": "B",
+        "text": "The user must pass both ACLs"
+      },
+      {
+        "id": "C",
+        "text": "Both ACLs are ignored and access defaults to allow"
+      },
+      {
+        "id": "D",
+        "text": "The newer ACL automatically wins"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "When multiple ACLs apply at the same granularity level, they are OR'd — passing any one grants access. (Across different levels, like row and field, it's an AND.) That's a frequently tested nuance.",
+    "distractor_notes": {
+      "B": "AND logic applies across levels, not among same-level ACLs.",
+      "C": "Unmatched access defaults to deny, not allow.",
+      "D": "Recency doesn't decide; it's OR among same-level matches."
+    },
+    "references": [
+      {
+        "title": "ACL rule processing",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/r_ACLRuleProcessing.html"
+      }
+    ],
+    "tags": [
+      "acl",
+      "or-logic",
+      "evaluation"
+    ]
+  },
+  {
+    "id": "csa-dbs-088",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "High Security",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A newly created table is readable by users you didn't intend. You discover an overly broad wildcard ACL grants read on many tables. What's the safest fix?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Add a specific ACL for the table so the more specific rule governs access"
+      },
+      {
+        "id": "B",
+        "text": "Delete all ACLs on the instance"
+      },
+      {
+        "id": "C",
+        "text": "Give every user the admin role"
+      },
+      {
+        "id": "D",
+        "text": "Disable contextual security globally"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "ServiceNow evaluates the most specific matching ACL, so adding a precise ACL for your table lets you control its access without touching the broad wildcard. Disabling security or granting admin broadly would make things far less safe.",
+    "distractor_notes": {
+      "B": "Deleting all ACLs removes protection everywhere — dangerous.",
+      "C": "Granting admin broadly is a severe over-permission.",
+      "D": "Turning off contextual security weakens the whole instance."
+    },
+    "references": [
+      {
+        "title": "Contextual security",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/contextual-security.html"
+      }
+    ],
+    "tags": [
+      "acl",
+      "specificity",
+      "wildcard"
+    ]
+  },
+  {
+    "id": "csa-dbs-089",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "Data Policy",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A field must be mandatory whether records arrive by form, import, or web service. Which tool enforces this at the data layer?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A Data Policy"
+      },
+      {
+        "id": "B",
+        "text": "A UI Policy"
+      },
+      {
+        "id": "C",
+        "text": "An onLoad client script"
+      },
+      {
+        "id": "D",
+        "text": "A favorite"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Data Policies enforce mandatory/read-only rules at the database level, so every entry channel is covered. UI Policies and client scripts only run on the form.",
+    "distractor_notes": {
+      "B": "UI Policy is form-only; imports and APIs bypass it.",
+      "C": "Client scripts run in the browser, not on server imports.",
+      "D": "Favorites are navigation shortcuts."
+    },
+    "references": [
+      {
+        "title": "Data Policy",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_DataPolicy.html"
+      }
+    ],
+    "tags": [
+      "data-policy",
+      "mandatory",
+      "enforcement"
+    ]
+  },
+  {
+    "id": "csa-dbs-090",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "Field Auditing",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "After enabling auditing on a field, where can a user review the history of who changed it and when?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The record's History (List/Calendar), backed by sys_audit"
+      },
+      {
+        "id": "B",
+        "text": "The update set log"
+      },
+      {
+        "id": "C",
+        "text": "The sys_user table"
+      },
+      {
+        "id": "D",
+        "text": "The import set table"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Audited changes are recorded in sys_audit and surfaced through the record's History (List or Calendar), giving a who/when/old-to-new trail. Update sets and import sets serve different purposes.",
+    "distractor_notes": {
+      "B": "Update set logs track configuration moves, not field history.",
+      "C": "sys_user stores user accounts, not change history.",
+      "D": "Import set tables stage incoming data, not audit trails."
+    },
+    "references": [
+      {
+        "title": "Audit tables",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_AuditTables.html"
+      }
+    ],
+    "tags": [
+      "auditing",
+      "history",
+      "sys_audit"
+    ]
+  },
+  {
+    "id": "csa-dbs-091",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "Authentication",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An organization using SSO wants local ServiceNow accounts to remain usable as a fallback if the identity provider is unavailable. What is the typical approach?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Keep a local login path (e.g., the side-door login URL) for admins/fallback"
+      },
+      {
+        "id": "B",
+        "text": "Delete all local accounts once SSO is on"
+      },
+      {
+        "id": "C",
+        "text": "Disable MFA entirely"
+      },
+      {
+        "id": "D",
+        "text": "Store IdP passwords in a system property"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "With SSO, teams keep a local login path (the side-door login) so admins can still get in if the IdP has problems. Removing all local access risks a full lockout when the IdP is down.",
+    "distractor_notes": {
+      "B": "Deleting all local accounts risks total lockout during an IdP outage.",
+      "C": "Disabling MFA weakens security and isn't the fallback strategy.",
+      "D": "Storing IdP passwords is insecure and unsupported."
+    },
+    "references": [
+      {
+        "title": "Authentication overview",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/c_AuthenticationOverview.html"
+      }
+    ],
+    "tags": [
+      "authentication",
+      "sso",
+      "fallback"
+    ]
+  },
+  {
+    "id": "csa-dbs-092",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "Password Reset",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "To reduce help-desk volume, you want users to securely reset their own ServiceNow passwords. Which capability supports this?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Self-service Password Reset"
+      },
+      {
+        "id": "B",
+        "text": "A coalesce field"
+      },
+      {
+        "id": "C",
+        "text": "A UI policy"
+      },
+      {
+        "id": "D",
+        "text": "A watch list"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Password Reset lets users verify their identity and reset their own credentials through a defined process, cutting help-desk load. It's the platform feature built for exactly this.",
+    "distractor_notes": {
+      "B": "Coalesce matches import records.",
+      "C": "UI policies change form behavior, not credentials.",
+      "D": "Watch lists handle notifications."
+    },
+    "references": [
+      {
+        "title": "Password reset",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_PasswordReset.html"
+      }
+    ],
+    "tags": [
+      "password-reset",
+      "self-service",
+      "authentication"
+    ]
+  },
+  {
+    "id": "csa-dbs-093",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "Field Types",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "You need a field that stores a link to a single user record and enforces that the value is a real user. Which field type fits?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Reference (to the User table)"
+      },
+      {
+        "id": "B",
+        "text": "String"
+      },
+      {
+        "id": "C",
+        "text": "True/False"
+      },
+      {
+        "id": "D",
+        "text": "Choice"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "A Reference field stores a pointer (sys_id) to a record on another table and validates that the selection exists — ideal for linking to a user. String and Choice can't guarantee a valid user record.",
+    "distractor_notes": {
+      "B": "A string accepts any text, with no guarantee it's a real user.",
+      "C": "True/False is a boolean, not a record link.",
+      "D": "Choice offers a fixed list, not a live reference to user records."
+    },
+    "references": [
+      {
+        "title": "Field types",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/r_FieldTypes.html"
+      }
+    ],
+    "tags": [
+      "fields",
+      "reference",
+      "data-model"
+    ]
+  },
+  {
+    "id": "csa-dbs-094",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "Encryption",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A security review requires that a sensitive field's value be unreadable in the database to anyone without the encryption context, even other admins. Which control meets the requirement?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Field-level encryption"
+      },
+      {
+        "id": "B",
+        "text": "A read ACL"
+      },
+      {
+        "id": "C",
+        "text": "Marking the field read-only"
+      },
+      {
+        "id": "D",
+        "text": "Removing the field from the form"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Only encryption renders the stored value unreadable without the proper encryption context — protecting data at rest even from users who otherwise have access. Access and display controls leave the underlying value in plaintext.",
+    "distractor_notes": {
+      "B": "A read ACL hides the value from some users but stores it in plaintext.",
+      "C": "Read-only stops edits; it doesn't encrypt at rest.",
+      "D": "Hiding from the form is cosmetic; the data is still readable in the database."
+    },
+    "references": [
+      {
+        "title": "Encryption support",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/c_EncryptionSupport.html"
+      }
+    ],
+    "tags": [
+      "encryption",
+      "data-at-rest",
+      "security"
+    ]
+  },
+  {
+    "id": "csa-dbs-095",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "ACL Debugging",
+    "difficulty": "application",
+    "type": "multi_select",
+    "stem": "Which TWO are good practices when an ACL isn't behaving as expected?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Use Debug Security Rules / session debugging to see which ACL is failing"
+      },
+      {
+        "id": "B",
+        "text": "Check both the row-level and field-level ACLs that apply"
+      },
+      {
+        "id": "C",
+        "text": "Grant the user the admin role to make it work"
+      },
+      {
+        "id": "D",
+        "text": "Delete the ACL and rely on default allow"
+      }
+    ],
+    "correct": [
+      "A",
+      "B"
+    ],
+    "rationale": "Turn on security debugging to see exactly which ACL passes or fails, and remember access requires both the row and field ACLs to pass — so check both levels. Granting admin or deleting ACLs masks the problem and weakens security.",
+    "distractor_notes": {
+      "C": "Admin bypasses ACLs, hiding the real issue and over-permissioning.",
+      "D": "There's no default allow; removing ACLs typically denies (or exposes) incorrectly."
+    },
+    "references": [
+      {
+        "title": "ACL rule processing",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/r_ACLRuleProcessing.html"
+      }
+    ],
+    "tags": [
+      "acl",
+      "debugging",
+      "troubleshooting"
+    ]
+  },
+  {
+    "id": "csa-dbs-096",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "Authentication",
+    "difficulty": "application",
+    "type": "multi_select",
+    "stem": "Which TWO measures strengthen login security on an instance?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Requiring multi-factor authentication for privileged roles"
+      },
+      {
+        "id": "B",
+        "text": "Delegating authentication to a trusted IdP via SAML SSO"
+      },
+      {
+        "id": "C",
+        "text": "Sharing one admin account across the team"
+      },
+      {
+        "id": "D",
+        "text": "Turning off password policies"
+      }
+    ],
+    "correct": [
+      "A",
+      "B"
+    ],
+    "rationale": "MFA adds a second factor for sensitive roles, and SAML SSO centralizes authentication with a trusted IdP (and its controls). Shared accounts and disabled password policies do the opposite.",
+    "distractor_notes": {
+      "C": "Shared accounts destroy accountability and are a security risk.",
+      "D": "Disabling password policies weakens the first authentication factor."
+    },
+    "references": [
+      {
+        "title": "Multi-factor authentication",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/c_MultifactorAuthentication.html"
+      }
+    ],
+    "tags": [
+      "authentication",
+      "mfa",
+      "sso"
+    ]
   }
 ]

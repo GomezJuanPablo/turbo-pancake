@@ -2807,5 +2807,581 @@
       "subflow",
       "low-code"
     ]
+  },
+  {
+    "id": "csa-ssa-060",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Self-Service and Automation",
+    "subdomain": "Reports",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A manager wants to see the count of open incidents broken down by Assignment group as proportions of the whole. Which report type best communicates this?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A pie (or donut) report"
+      },
+      {
+        "id": "B",
+        "text": "A single-score report"
+      },
+      {
+        "id": "C",
+        "text": "A calendar report"
+      },
+      {
+        "id": "D",
+        "text": "A map report"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Pie/donut reports show parts of a whole, ideal for proportions across categories like assignment group. A bar chart also works for comparison, but proportions of a whole map naturally to a pie.",
+    "distractor_notes": {
+      "B": "A single score shows one number, not a breakdown by group.",
+      "C": "Calendar reports plot records by date, not category proportions.",
+      "D": "Map reports plot geographic data."
+    },
+    "references": [
+      {
+        "title": "Reports overview",
+        "url": "https://www.servicenow.com/docs/r/zurich/now-intelligence/c_ReportsOverview.html"
+      }
+    ],
+    "tags": [
+      "reports",
+      "pie",
+      "visualization"
+    ]
+  },
+  {
+    "id": "csa-ssa-061",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Self-Service and Automation",
+    "subdomain": "Reports",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "You want one number on a dashboard: the total count of P1 incidents open right now. Which report type fits?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A single-score report"
+      },
+      {
+        "id": "B",
+        "text": "A pivot table"
+      },
+      {
+        "id": "C",
+        "text": "A trend report"
+      },
+      {
+        "id": "D",
+        "text": "A list report"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "A single-score report displays one aggregate value (like a current count) prominently — perfect for a KPI tile. Pivot, trend, and list reports show breakdowns or rows, not a single headline number.",
+    "distractor_notes": {
+      "B": "Pivot tables cross two dimensions; that's more than one number.",
+      "C": "Trend reports plot a value over time, not a single current count.",
+      "D": "List reports show rows of records."
+    },
+    "references": [
+      {
+        "title": "Create a report",
+        "url": "https://www.servicenow.com/docs/r/zurich/now-intelligence/t_CreateAReport.html"
+      }
+    ],
+    "tags": [
+      "reports",
+      "single-score",
+      "kpi"
+    ]
+  },
+  {
+    "id": "csa-ssa-062",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Self-Service and Automation",
+    "subdomain": "Dashboards",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Several related reports should be viewable together on one screen with shared interactive filters. What should you build?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A dashboard containing the reports"
+      },
+      {
+        "id": "B",
+        "text": "A knowledge article listing them"
+      },
+      {
+        "id": "C",
+        "text": "An update set"
+      },
+      {
+        "id": "D",
+        "text": "A coalesce field"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Dashboards assemble multiple reports/widgets on one canvas and can apply interactive filters across them. They're the standard way to give a combined, at-a-glance view.",
+    "distractor_notes": {
+      "B": "A knowledge article is static text, not live reports.",
+      "C": "Update sets move configuration, not display dashboards to users.",
+      "D": "Coalesce is an import concept."
+    },
+    "references": [
+      {
+        "title": "Dashboards",
+        "url": "https://www.servicenow.com/docs/r/zurich/now-intelligence/dashboards.html"
+      }
+    ],
+    "tags": [
+      "dashboards",
+      "reports",
+      "filters"
+    ]
+  },
+  {
+    "id": "csa-ssa-063",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Self-Service and Automation",
+    "subdomain": "Performance Analytics",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "Leadership wants to track how average resolution time trends month over month, using historical snapshots rather than just the current value. Which capability is designed for this?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Performance Analytics"
+      },
+      {
+        "id": "B",
+        "text": "A single list report"
+      },
+      {
+        "id": "C",
+        "text": "A UI policy"
+      },
+      {
+        "id": "D",
+        "text": "An ACL"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Performance Analytics captures periodic snapshots (scores) so you can analyze trends over time — exactly what month-over-month tracking needs. Standard reports show point-in-time data without that historical time series.",
+    "distractor_notes": {
+      "B": "A list report shows current rows, not historical trend snapshots.",
+      "C": "UI policies change form behavior.",
+      "D": "ACLs control access."
+    },
+    "references": [
+      {
+        "title": "Performance Analytics",
+        "url": "https://www.servicenow.com/docs/r/zurich/now-intelligence/performance-analytics/c_PerformanceAnalytics.html"
+      }
+    ],
+    "tags": [
+      "performance-analytics",
+      "trends",
+      "snapshots"
+    ]
+  },
+  {
+    "id": "csa-ssa-064",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Self-Service and Automation",
+    "subdomain": "Service Portal",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "End users need a simple, branded web interface to search knowledge and submit catalog requests without the admin UI. What provides this?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Service Portal"
+      },
+      {
+        "id": "B",
+        "text": "The Application Navigator"
+      },
+      {
+        "id": "C",
+        "text": "A transform map"
+      },
+      {
+        "id": "D",
+        "text": "A scheduled job"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Service Portal is the configurable, branded self-service front end built from pages and widgets, giving end users knowledge search and catalog ordering without the platform admin UI.",
+    "distractor_notes": {
+      "B": "The Application Navigator is the admin/agent navigation, not an end-user portal.",
+      "C": "Transform maps move imported data.",
+      "D": "Scheduled jobs run on timers."
+    },
+    "references": [
+      {
+        "title": "Service Portal",
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/c_ServicePortal.html"
+      }
+    ],
+    "tags": [
+      "service-portal",
+      "self-service",
+      "widgets"
+    ]
+  },
+  {
+    "id": "csa-ssa-065",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Self-Service and Automation",
+    "subdomain": "Flow Actions",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "In a flow, the output of an earlier step (like a created record's number) needs to be used in a later step's email. How is that data passed?",
+    "options": [
+      {
+        "id": "A",
+        "text": "By referencing the earlier step's output as a data pill"
+      },
+      {
+        "id": "B",
+        "text": "By hard-coding the value"
+      },
+      {
+        "id": "C",
+        "text": "With a coalesce field"
+      },
+      {
+        "id": "D",
+        "text": "Through an ACL"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Flow Designer passes data between steps using data pills — drag the earlier step's output (or trigger data) into a later step's input. That keeps flows dynamic instead of hard-coded.",
+    "distractor_notes": {
+      "B": "Hard-coding ignores the actual runtime value from the prior step.",
+      "C": "Coalesce is an import-matching concept.",
+      "D": "ACLs control access, not data passing in a flow."
+    },
+    "references": [
+      {
+        "title": "Flow actions",
+        "url": "https://www.servicenow.com/docs/r/zurich/build-workflows/workflow-studio/flow-actions.html"
+      }
+    ],
+    "tags": [
+      "flow-designer",
+      "data-pills",
+      "actions"
+    ]
+  },
+  {
+    "id": "csa-ssa-066",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Self-Service and Automation",
+    "subdomain": "Business Rule Condition",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A business rule should only run when an incident's Priority changes to 1. Where do you most efficiently restrict it so it doesn't run on every update?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Set the rule's When/Filter Conditions (and 'changes to') so it only fires on that condition"
+      },
+      {
+        "id": "B",
+        "text": "Add a UI policy"
+      },
+      {
+        "id": "C",
+        "text": "Use a coalesce field"
+      },
+      {
+        "id": "D",
+        "text": "Lower the table's ACLs"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Business rules have condition fields (and field-change options like 'changes to') that gate execution, so the rule only fires when Priority changes to 1 — efficient and precise. Checking inside the script after it always runs is wasteful.",
+    "distractor_notes": {
+      "B": "UI policies run on forms, not server-side on every update.",
+      "C": "Coalesce is for imports.",
+      "D": "ACLs control access, not rule triggering."
+    },
+    "references": [
+      {
+        "title": "Business Rules",
+        "url": "https://www.servicenow.com/docs/r/zurich/application-development/c_BusinessRules.html"
+      }
+    ],
+    "tags": [
+      "business-rules",
+      "conditions",
+      "efficiency"
+    ]
+  },
+  {
+    "id": "csa-ssa-067",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Self-Service and Automation",
+    "subdomain": "SLA Schedule",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An SLA should only count elapsed time during business hours (8am-5pm, weekdays). What controls which hours the SLA timer counts?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The schedule attached to the SLA definition"
+      },
+      {
+        "id": "B",
+        "text": "A coalesce field"
+      },
+      {
+        "id": "C",
+        "text": "A UI policy"
+      },
+      {
+        "id": "D",
+        "text": "The user's favorites"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "A schedule defines the working hours an SLA counts, so off-hours don't burn the clock. Pair it with start/pause/stop conditions for accurate response/resolution tracking.",
+    "distractor_notes": {
+      "B": "Coalesce matches import records.",
+      "C": "UI policies change form behavior.",
+      "D": "Favorites are personal shortcuts."
+    },
+    "references": [
+      {
+        "title": "Define an SLA",
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/t_DefineAnSLA.html"
+      }
+    ],
+    "tags": [
+      "sla",
+      "schedule",
+      "business-hours"
+    ]
+  },
+  {
+    "id": "csa-ssa-068",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Self-Service and Automation",
+    "subdomain": "Surveys",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "After incidents are resolved, the team wants to automatically gather customer satisfaction feedback. Which feature is intended for this?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Survey Management"
+      },
+      {
+        "id": "B",
+        "text": "A transform map"
+      },
+      {
+        "id": "C",
+        "text": "An ACL"
+      },
+      {
+        "id": "D",
+        "text": "A coalesce field"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Survey Management creates and distributes surveys (like post-resolution CSAT) and collects responses for analysis — the built-in tool for structured feedback.",
+    "distractor_notes": {
+      "B": "Transform maps move imported data, not collect survey responses.",
+      "C": "ACLs control access.",
+      "D": "Coalesce is an import-matching concept."
+    },
+    "references": [
+      {
+        "title": "Survey Management",
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/c_SurveyManagement.html"
+      }
+    ],
+    "tags": [
+      "surveys",
+      "csat",
+      "feedback"
+    ]
+  },
+  {
+    "id": "csa-ssa-069",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Self-Service and Automation",
+    "subdomain": "Scheduled Jobs",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A report should be emailed to leadership automatically every Monday at 7am. Which feature schedules this delivery?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A scheduled job (scheduled report)"
+      },
+      {
+        "id": "B",
+        "text": "An onChange client script"
+      },
+      {
+        "id": "C",
+        "text": "A UI policy"
+      },
+      {
+        "id": "D",
+        "text": "A coalesce field"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Scheduled jobs run tasks on a defined cadence; a scheduled report uses this to generate and email a report (for example, every Monday at 7am). Client scripts and UI policies are event/form driven, not time driven.",
+    "distractor_notes": {
+      "B": "Client scripts react to form events, not a weekly timer.",
+      "C": "UI policies change form behavior.",
+      "D": "Coalesce matches import records."
+    },
+    "references": [
+      {
+        "title": "Scheduled jobs",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_ScheduledJobs.html"
+      }
+    ],
+    "tags": [
+      "scheduled-jobs",
+      "reports",
+      "delivery"
+    ]
+  },
+  {
+    "id": "csa-ssa-070",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Self-Service and Automation",
+    "subdomain": "Reporting",
+    "difficulty": "application",
+    "type": "multi_select",
+    "stem": "Which TWO statements about reports and dashboards are correct?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A dashboard can display multiple reports together with shared filters"
+      },
+      {
+        "id": "B",
+        "text": "Report types include bar, pie, trend, and single score"
+      },
+      {
+        "id": "C",
+        "text": "Reports can only be built by administrators with scripting"
+      },
+      {
+        "id": "D",
+        "text": "Dashboards store the source data instead of querying it"
+      }
+    ],
+    "correct": [
+      "A",
+      "B"
+    ],
+    "rationale": "Dashboards combine multiple reports with interactive filters, and the report designer offers many types (bar, pie, trend, single score, and more) without scripting. Dashboards visualize live queries; they don't store the data.",
+    "distractor_notes": {
+      "C": "Reports are built in a no-code designer, not exclusively by scripting.",
+      "D": "Dashboards render live report queries; they don't hold the source data."
+    },
+    "references": [
+      {
+        "title": "Reports overview",
+        "url": "https://www.servicenow.com/docs/r/zurich/now-intelligence/c_ReportsOverview.html"
+      }
+    ],
+    "tags": [
+      "reports",
+      "dashboards",
+      "reporting"
+    ]
+  },
+  {
+    "id": "csa-ssa-071",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Self-Service and Automation",
+    "subdomain": "Automation Choice",
+    "difficulty": "application",
+    "type": "multi_select",
+    "stem": "Which TWO are appropriate uses of Flow Designer?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Automatically assign and notify when a record is created"
+      },
+      {
+        "id": "B",
+        "text": "Call a reusable subflow with inputs and outputs"
+      },
+      {
+        "id": "C",
+        "text": "Enforce field-level read security"
+      },
+      {
+        "id": "D",
+        "text": "Encrypt a field at rest"
+      }
+    ],
+    "correct": [
+      "A",
+      "B"
+    ],
+    "rationale": "Flow Designer automates record-driven work (assignment, notifications) and can call reusable subflows. Field-level security is an ACL job and encryption is a data-security control — not flow responsibilities.",
+    "distractor_notes": {
+      "C": "Read security is enforced by ACLs, not flows.",
+      "D": "Encryption at rest is a data-security feature, not automation."
+    },
+    "references": [
+      {
+        "title": "Flow Designer",
+        "url": "https://www.servicenow.com/docs/r/zurich/build-workflows/flow-designer.html"
+      }
+    ],
+    "tags": [
+      "flow-designer",
+      "automation",
+      "subflow"
+    ]
   }
 ]
