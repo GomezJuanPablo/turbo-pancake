@@ -3413,5 +3413,581 @@
       "posture",
       "operations"
     ]
+  },
+  {
+    "id": "csa-dbs-073",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "ACL Evaluation",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A user can open an incident record but the Caller field renders blank, even though it is populated. Record-level read access is confirmed. Which ACL is most likely denying the field?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The row-level (table) read ACL on incident"
+      },
+      {
+        "id": "B",
+        "text": "The field-level read ACL on incident.caller_id"
+      },
+      {
+        "id": "C",
+        "text": "A write ACL on the Caller field"
+      },
+      {
+        "id": "D",
+        "text": "The default deny ACL on the sys_user table"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "To see a field's value a user must pass BOTH the row-level ACL and the field-level ACL. Row access is confirmed, so the value is being stripped by the read ACL on the specific field (incident.caller_id). That's the goblin's favorite gotcha: the record opens, but one field stays empty. 🧌",
+    "distractor_notes": {
+      "A": "Row access is confirmed — the record opens, so the table read ACL is passing.",
+      "C": "Write ACLs control editing, not whether a value is displayed. A blank read is a read-ACL issue.",
+      "D": "The Caller reference points at sys_user, but a denied reference would still show the value text or a lock — a fully blank field is the incident.caller_id read ACL."
+    },
+    "references": [
+      {
+        "title": "ACL rule processing",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/r_ACLRuleProcessing.html"
+      }
+    ],
+    "tags": [
+      "acl",
+      "field-level-security",
+      "read-access"
+    ]
+  },
+  {
+    "id": "csa-dbs-074",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "ACL Evaluation",
+    "difficulty": "scenario",
+    "type": "multi_select",
+    "stem": "To write to a single field via a form, which TWO access checks must a user pass?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The table (row) write ACL"
+      },
+      {
+        "id": "B",
+        "text": "The field write ACL"
+      },
+      {
+        "id": "C",
+        "text": "Any one read ACL on the field"
+      },
+      {
+        "id": "D",
+        "text": "An execute ACL on the table"
+      }
+    ],
+    "correct": [
+      "A",
+      "B"
+    ],
+    "rationale": "Write access is evaluated across granularity levels: the user must pass the row-level write ACL AND the field-level write ACL. Within a single level multiple matching ACLs are OR'd, but across the record and field levels it's an AND.",
+    "distractor_notes": {
+      "C": "Read ACLs govern visibility, not the ability to write a value.",
+      "D": "Execute ACLs protect operations like UI actions and script execution, not field writes."
+    },
+    "references": [
+      {
+        "title": "Access control rules",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/access-control/access-control-rules.html"
+      }
+    ],
+    "tags": [
+      "acl",
+      "write-access",
+      "and-logic"
+    ]
+  },
+  {
+    "id": "csa-dbs-075",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "Default Deny",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "An administrator creates a brand-new custom table and writes no ACLs for it. With the platform's high-security default, what happens when a non-admin tries to read records?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Access is denied because no matching ACL grants it"
+      },
+      {
+        "id": "B",
+        "text": "Access is granted because no ACL forbids it"
+      },
+      {
+        "id": "C",
+        "text": "Only the record's creator can read it"
+      },
+      {
+        "id": "D",
+        "text": "The table inherits read access from the Incident table"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "ServiceNow's security model is default-deny: if no ACL explicitly grants access to an operation, the operation is denied. New tables need at least one granting ACL (or table inheritance) before non-admins can use them. Admins bypass ACLs, which is why it 'works for you but not them.'",
+    "distractor_notes": {
+      "B": "That's a default-allow model — the opposite of ServiceNow's contextual security default.",
+      "C": "There's no implicit creator-only rule; visibility comes from ACLs.",
+      "D": "Tables only inherit ACLs when they extend a parent table; a standalone custom table inherits nothing."
+    },
+    "references": [
+      {
+        "title": "Contextual security",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/contextual-security.html"
+      }
+    ],
+    "tags": [
+      "acl",
+      "default-deny",
+      "custom-table"
+    ]
+  },
+  {
+    "id": "csa-dbs-076",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "Table Extension ACLs",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A custom table extends the Task table. Which statement about its access control is correct?",
+    "options": [
+      {
+        "id": "A",
+        "text": "It inherits the ACLs defined on Task unless more specific ACLs override them"
+      },
+      {
+        "id": "B",
+        "text": "It ignores Task ACLs entirely and needs its own complete set"
+      },
+      {
+        "id": "C",
+        "text": "It can only be secured with row-level ACLs, not field-level"
+      },
+      {
+        "id": "D",
+        "text": "Extending Task automatically makes all records public"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Extended tables inherit the parent's ACLs. You can add more specific ACLs on the child table or its fields to override or tighten what's inherited — most specific wins. This is why extending Task gives you a sensible security baseline for free.",
+    "distractor_notes": {
+      "B": "Inheritance is the whole point of extension — the child starts with Task's ACLs.",
+      "C": "Both row- and field-level ACLs work on extended tables.",
+      "D": "Extension changes schema and inheritance, not public visibility."
+    },
+    "references": [
+      {
+        "title": "Access control rules",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/access-control/access-control-rules.html"
+      }
+    ],
+    "tags": [
+      "acl",
+      "table-extension",
+      "inheritance"
+    ]
+  },
+  {
+    "id": "csa-dbs-077",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "Data Policy vs UI Policy",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "Records imported through an import set are bypassing a 'Short description is mandatory' rule that works fine on the form. Which tool enforces the rule regardless of how the data enters?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Data Policy"
+      },
+      {
+        "id": "B",
+        "text": "UI Policy"
+      },
+      {
+        "id": "C",
+        "text": "Client Script"
+      },
+      {
+        "id": "D",
+        "text": "Form layout configuration"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "UI Policies and Client Scripts only run in the form/browser, so imports and web services slip right past them. A Data Policy enforces mandatory and read-only rules at the database level — UI, import sets, and inbound API all included. Same intent, deeper enforcement.",
+    "distractor_notes": {
+      "B": "UI Policy runs only on the form, so import sets bypass it — exactly the problem here.",
+      "C": "Client Scripts are browser-side and don't fire on server-side imports.",
+      "D": "Form layout controls what appears on the form, not data validation on import."
+    },
+    "references": [
+      {
+        "title": "Data Policy",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_DataPolicy.html"
+      }
+    ],
+    "tags": [
+      "data-policy",
+      "ui-policy",
+      "import-sets"
+    ]
+  },
+  {
+    "id": "csa-dbs-078",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "Data Policy Reuse",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "You built a Data Policy and now want the same mandatory/read-only behavior to also apply live on the form as the user types. What's the supported way to do this?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Enable 'Use as UI Policy on client' on the Data Policy"
+      },
+      {
+        "id": "B",
+        "text": "Manually recreate the rules as a separate UI Policy"
+      },
+      {
+        "id": "C",
+        "text": "Data Policies cannot affect the form at all"
+      },
+      {
+        "id": "D",
+        "text": "Convert the Data Policy into a Business Rule"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "A Data Policy has a 'Use as UI Policy on client' option that mirrors its rules onto the form in real time — one definition, enforced both server-side and on-screen. No need to maintain a duplicate UI Policy.",
+    "distractor_notes": {
+      "B": "That duplicates logic and risks drift; the built-in client option does it for you.",
+      "C": "They can — that's precisely what the client option enables.",
+      "D": "Business Rules run server-side logic but don't give you the on-form mandatory/read-only behavior the way the client option does."
+    },
+    "references": [
+      {
+        "title": "Data Policy",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_DataPolicy.html"
+      }
+    ],
+    "tags": [
+      "data-policy",
+      "ui-policy",
+      "client"
+    ]
+  },
+  {
+    "id": "csa-dbs-079",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "Field Auditing",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "Compliance asks you to track every change to the Priority field on Incident — who changed it, when, and from what value. What is the correct first step?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Set the Audit dictionary attribute on the Priority field"
+      },
+      {
+        "id": "B",
+        "text": "Add a read ACL to the Priority field"
+      },
+      {
+        "id": "C",
+        "text": "Enable a UI Policy on Priority"
+      },
+      {
+        "id": "D",
+        "text": "Create a Data Policy marking Priority read-only"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Enabling auditing on a field is a dictionary setting (the Audit attribute). Once on, ServiceNow records each change in sys_audit and you can view it through the record's History (List or Calendar). ACLs and policies control access and validation, not change tracking.",
+    "distractor_notes": {
+      "B": "A read ACL controls who can see the field, not whether changes are logged.",
+      "C": "UI Policies change form behavior; they don't record an audit trail.",
+      "D": "A Data Policy could make Priority read-only, but it won't log the history compliance needs."
+    },
+    "references": [
+      {
+        "title": "Audit tables",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_AuditTables.html"
+      }
+    ],
+    "tags": [
+      "auditing",
+      "dictionary",
+      "history"
+    ]
+  },
+  {
+    "id": "csa-dbs-080",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "Role Inheritance",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A manager is granted the itil_admin role and unexpectedly gains all the abilities of the itil role too. Why?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Roles can contain other roles, and the contained roles are inherited"
+      },
+      {
+        "id": "B",
+        "text": "Granting any admin role automatically grants the admin (super) role"
+      },
+      {
+        "id": "C",
+        "text": "Roles are additive only at the group level, never the user level"
+      },
+      {
+        "id": "D",
+        "text": "ACLs copied the itil role onto the user record"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Roles can be nested — a role that 'contains' other roles passes all of them along when granted. itil_admin contains itil, so the manager inherits itil's access automatically. Handy for building tiered access, and worth remembering when access seems broader than expected.",
+    "distractor_notes": {
+      "B": "There's no automatic elevation to the all-powerful admin role; that would be a serious security flaw.",
+      "C": "Roles can be assigned to users directly or via groups — both work.",
+      "D": "ACLs evaluate access; they don't assign roles to users."
+    },
+    "references": [
+      {
+        "title": "Contextual security",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/contextual-security.html"
+      }
+    ],
+    "tags": [
+      "roles",
+      "inheritance",
+      "access"
+    ]
+  },
+  {
+    "id": "csa-dbs-081",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "Multi-Factor Authentication",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Security policy requires every user with the admin role to use a second authentication factor at login. Which capability satisfies this?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Multi-factor authentication (MFA)"
+      },
+      {
+        "id": "B",
+        "text": "A password complexity policy"
+      },
+      {
+        "id": "C",
+        "text": "An ACL on the sys_user table"
+      },
+      {
+        "id": "D",
+        "text": "Field encryption on the password field"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "MFA adds a second factor (such as a time-based code from an authenticator app) on top of the password, and it can be required for sensitive roles like admin. Strong passwords help, but only MFA delivers the 'something you have' second factor the policy is asking for.",
+    "distractor_notes": {
+      "B": "Password policy strengthens the first factor but doesn't add a second one.",
+      "C": "An ACL controls record access, not login authentication.",
+      "D": "Encrypting a field protects stored data, not the login flow."
+    },
+    "references": [
+      {
+        "title": "Multi-factor authentication",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/c_MultifactorAuthentication.html"
+      }
+    ],
+    "tags": [
+      "mfa",
+      "authentication",
+      "admin"
+    ]
+  },
+  {
+    "id": "csa-dbs-082",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "SSO / SAML",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "An organization wants users to log in to ServiceNow with their existing corporate identity provider instead of local ServiceNow passwords. Which approach should they configure?",
+    "options": [
+      {
+        "id": "A",
+        "text": "SAML 2.0 single sign-on via the Multiple Provider SSO framework"
+      },
+      {
+        "id": "B",
+        "text": "A stronger local password policy for all users"
+      },
+      {
+        "id": "C",
+        "text": "An import set that copies passwords from the IdP nightly"
+      },
+      {
+        "id": "D",
+        "text": "Per-user ACLs that check the corporate domain"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "SAML 2.0 SSO (configured through Multiple Provider SSO) delegates authentication to the corporate identity provider, so users sign in with their existing credentials and ServiceNow trusts the IdP's assertion. No local passwords to manage, and you can add providers as needed.",
+    "distractor_notes": {
+      "B": "Local password policy keeps authentication inside ServiceNow — the opposite of delegating to the IdP.",
+      "C": "Copying passwords is insecure and unsupported; SSO trusts assertions, it doesn't sync passwords.",
+      "D": "ACLs authorize access after login; they don't perform authentication against an IdP."
+    },
+    "references": [
+      {
+        "title": "SAML 2.0 web SSO",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/c_SAML20Web.html"
+      }
+    ],
+    "tags": [
+      "sso",
+      "saml",
+      "authentication"
+    ]
+  },
+  {
+    "id": "csa-dbs-083",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "Instance Security Center",
+    "difficulty": "scenario",
+    "type": "multi_select",
+    "stem": "An administrator wants one place to review the instance's security posture and track hardening progress over time. Which TWO statements about the Instance Security Center are true?",
+    "options": [
+      {
+        "id": "A",
+        "text": "It surfaces a security dashboard with compliance and hardening metrics"
+      },
+      {
+        "id": "B",
+        "text": "It lets you act on configuration hardening recommendations"
+      },
+      {
+        "id": "C",
+        "text": "It replaces the need for ACLs on tables"
+      },
+      {
+        "id": "D",
+        "text": "It is the only way to reset user passwords"
+      }
+    ],
+    "correct": [
+      "A",
+      "B"
+    ],
+    "rationale": "The Instance Security Center is the hub for security posture: a dashboard of compliance/hardening metrics plus actionable hardening recommendations you can work through over time. It complements ACLs and authentication — it doesn't replace them.",
+    "distractor_notes": {
+      "C": "ACLs are still your record-level control; the Security Center reports posture, it doesn't remove the need for access control.",
+      "D": "Password resets are handled through user administration and self-service, not exclusively here."
+    },
+    "references": [
+      {
+        "title": "Instance Security Center",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/instance-security-center.html"
+      }
+    ],
+    "tags": [
+      "instance-security-center",
+      "hardening",
+      "posture"
+    ]
+  },
+  {
+    "id": "csa-dbs-084",
+    "exam": "CSA",
+    "release": "Zurich",
+    "domain": "Database Management and Platform Security",
+    "subdomain": "Field Encryption",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A team must protect a sensitive custom field so that even users who can open the record cannot read its raw stored value without the proper encryption context. Which capability fits?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Column-level / field encryption"
+      },
+      {
+        "id": "B",
+        "text": "A read ACL on the field"
+      },
+      {
+        "id": "C",
+        "text": "Making the field read-only with a Data Policy"
+      },
+      {
+        "id": "D",
+        "text": "Hiding the field from the form layout"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Field (column-level) encryption stores the value as ciphertext so it's unreadable without the encryption context, protecting data at rest beyond what visibility controls do. ACLs, read-only rules, and form layout all control access or display, but the underlying stored value remains plaintext.",
+    "distractor_notes": {
+      "B": "A read ACL hides the value from some users, but the stored data is still plaintext in the database.",
+      "C": "Read-only stops edits; it doesn't encrypt the stored value.",
+      "D": "Removing it from the form only hides it visually — the value is unprotected at rest."
+    },
+    "references": [
+      {
+        "title": "Encryption support",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/c_EncryptionSupport.html"
+      }
+    ],
+    "tags": [
+      "encryption",
+      "data-at-rest",
+      "field-security"
+    ]
   }
 ]
