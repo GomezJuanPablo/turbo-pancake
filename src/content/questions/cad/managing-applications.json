@@ -11,7 +11,7 @@
     "options": [
       {
         "id": "A",
-        "text": "ServiceNow Store (purchasable / free certified apps), the developer / company's private application repository, and Update Sets (for non-Store distribution between owned instances)."
+        "text": "The ServiceNow Store, a private app repo, and Update Sets."
       },
       {
         "id": "B",
@@ -59,7 +59,7 @@
     "options": [
       {
         "id": "A",
-        "text": "The marketplace for certified ServiceNow applications."
+        "text": "The marketplace for certified apps."
       },
       {
         "id": "B",
@@ -67,11 +67,11 @@
       },
       {
         "id": "C",
-        "text": "An ACL."
+        "text": "An access control rule."
       },
       {
         "id": "D",
-        "text": "A scheduled job."
+        "text": "A scheduled cleanup job."
       }
     ],
     "correct": [
@@ -345,7 +345,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A centralized admin console for managing custom apps across an organization."
+        "text": "A console for managing custom apps."
       },
       {
         "id": "B",
@@ -353,11 +353,11 @@
       },
       {
         "id": "C",
-        "text": "A type of UI Action."
+        "text": "A type of UI Action button."
       },
       {
         "id": "D",
-        "text": "A user role."
+        "text": "A built-in user role."
       }
     ],
     "correct": [
@@ -396,7 +396,7 @@
       },
       {
         "id": "B",
-        "text": "The platform performs an upgrade: applies the differences between versions to the existing artifacts, runs any data-fix-up scripts the app declares."
+        "text": "An upgrade applying version differences to existing artifacts."
       },
       {
         "id": "C",
@@ -439,7 +439,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Publish to the company's private application repository."
+        "text": "Publish to the company's private app repository."
       },
       {
         "id": "B",
@@ -486,15 +486,15 @@
     "options": [
       {
         "id": "A",
-        "text": "Bump MAJOR."
+        "text": "Bump the MAJOR version."
       },
       {
         "id": "B",
-        "text": "Bump PATCH (e.g., 1.4.7 → 1.4.8) — small, backwards-compatible bug fixes. MINOR for backwards-compatible features; MAJOR for breaking changes."
+        "text": "Bump PATCH for a bug fix."
       },
       {
         "id": "C",
-        "text": "Don't bump anything."
+        "text": "Don't bump the version."
       },
       {
         "id": "D",
@@ -533,15 +533,15 @@
     "options": [
       {
         "id": "A",
-        "text": "Hire more clickers."
+        "text": "Hire more people to click."
       },
       {
         "id": "B",
-        "text": "Treat the app as a publishable artifact: publish a versioned release to an Update Set."
+        "text": "Publish a versioned Update Set."
       },
       {
         "id": "C",
-        "text": "Skip Test."
+        "text": "Skip the Test stage."
       },
       {
         "id": "D",
@@ -581,15 +581,15 @@
     "options": [
       {
         "id": "A",
-        "text": "A platform feature that lets multiple developers collaborate on an app across multiple development instances."
+        "text": "Dev collaboration across instances."
       },
       {
         "id": "B",
-        "text": "A user role."
+        "text": "A built-in user role."
       },
       {
         "id": "C",
-        "text": "An ACL."
+        "text": "An access control rule."
       },
       {
         "id": "D",
@@ -632,11 +632,11 @@
       },
       {
         "id": "B",
-        "text": "An internal ServiceNow version-tracking mechanism."
+        "text": "ServiceNow's internal version tracking."
       },
       {
         "id": "C",
-        "text": "Subversion (SVN)."
+        "text": "Subversion (SVN) repository."
       },
       {
         "id": "D",
@@ -724,19 +724,19 @@
     "options": [
       {
         "id": "A",
-        "text": "Production."
+        "text": "A Production instance."
       },
       {
         "id": "B",
-        "text": "Parent instance — the shared baseline that child (developer) instances push to and pull from."
+        "text": "The Parent instance baseline."
       },
       {
         "id": "C",
-        "text": "Sub instance."
+        "text": "A Sub instance node."
       },
       {
         "id": "D",
-        "text": "Snapshot instance."
+        "text": "A Snapshot instance."
       }
     ],
     "correct": [
@@ -823,11 +823,11 @@
       },
       {
         "id": "B",
-        "text": "Depends on the team's workflow: Team Development is simpler and stays on-platform."
+        "text": "Depends on the team's workflow."
       },
       {
         "id": "C",
-        "text": "Always Git."
+        "text": "Always use Git integration."
       },
       {
         "id": "D",
@@ -868,7 +868,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Use Team Development's version comparison views: a reviewer can compare a developer's pushed changes against the baseline at the parent instance, see record-level diffs, comment."
+        "text": "Compare pushed changes in Team Development."
       },
       {
         "id": "B",
@@ -915,7 +915,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Update Sets are part of every ServiceNow developer's life: ANY developer change."
+        "text": "Any developer change is captured in an Update Set."
       },
       {
         "id": "B",
@@ -1108,15 +1108,15 @@
       },
       {
         "id": "B",
-        "text": "Adopt a shared parent (Team Development) or a Git integration so changes flow through one shared source of truth instead of email. Train the team on the workflow. Versioning chaos is almost always a process-and-tooling problem, not a hiring problem."
+        "text": "Adopt Team Development or Git."
       },
       {
         "id": "C",
-        "text": "Email more carefully."
+        "text": "Email changes more carefully."
       },
       {
         "id": "D",
-        "text": "Stop developing new features."
+        "text": "Stop building new features."
       }
     ],
     "correct": [
@@ -1152,19 +1152,19 @@
     "options": [
       {
         "id": "A",
-        "text": "An update to a record that originated as a customization."
+        "text": "A record change from a customization."
       },
       {
         "id": "B",
-        "text": "A purchase from the customer."
+        "text": "A purchase made by a customer."
       },
       {
         "id": "C",
-        "text": "A scheduled job."
+        "text": "A scheduled cleanup job."
       },
       {
         "id": "D",
-        "text": "An ACL."
+        "text": "An access control rule."
       }
     ],
     "correct": [
@@ -1251,7 +1251,7 @@
       },
       {
         "id": "B",
-        "text": "A 'Default' Update Set associated with that application scope."
+        "text": "A 'Default' Update Set for that application scope."
       },
       {
         "id": "C",
@@ -1259,7 +1259,7 @@
       },
       {
         "id": "D",
-        "text": "Always in Global."
+        "text": "Always in the Global scope."
       }
     ],
     "correct": [
@@ -1294,7 +1294,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A platform feature that runs a suite of checks against the instance to identify quality, performance, security."
+        "text": "Scans the instance for issues."
       },
       {
         "id": "B",
@@ -1302,7 +1302,7 @@
       },
       {
         "id": "C",
-        "text": "An ACL."
+        "text": "An access control rule."
       },
       {
         "id": "D",
@@ -1341,7 +1341,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A platform-native test framework for authoring and running automated tests against ServiceNow."
+        "text": "A native automated test framework."
       },
       {
         "id": "B",
@@ -1349,11 +1349,11 @@
       },
       {
         "id": "C",
-        "text": "A UI Action."
+        "text": "A type of UI Action."
       },
       {
         "id": "D",
-        "text": "A type of ACL."
+        "text": "A kind of access rule."
       }
     ],
     "correct": [
@@ -1436,7 +1436,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Dev → Test → Prod (with optional staging, training, or sandbox instances) — apps and update sets flow Dev → Test → Prod, with promotion gates and testing at each step."
+        "text": "Dev → Test → Prod, plus staging."
       },
       {
         "id": "B",
@@ -1444,7 +1444,7 @@
       },
       {
         "id": "C",
-        "text": "Production only."
+        "text": "Production only, one node."
       },
       {
         "id": "D",
@@ -1536,11 +1536,11 @@
       },
       {
         "id": "B",
-        "text": "Use the platform's Delete Application workflow from App Manager."
+        "text": "Use the Delete Application workflow."
       },
       {
         "id": "C",
-        "text": "Drop the database."
+        "text": "Drop the database table."
       },
       {
         "id": "D",
@@ -1583,7 +1583,7 @@
       },
       {
         "id": "B",
-        "text": "Invest in a real test discipline: ATF tests for the critical user journeys, run them as part of every promotion."
+        "text": "Build ATF tests for critical journeys, run on each promote."
       },
       {
         "id": "C",
@@ -1631,7 +1631,7 @@
       },
       {
         "id": "B",
-        "text": "Small, focused Update Sets make reviews easier, reduce blast radius if you need to skip/revert a feature, simplify conflict resolution on commit."
+        "text": "Small sets ease review and revert."
       },
       {
         "id": "C",
@@ -1675,7 +1675,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Plan platform fit → design data model and scope → develop on Dev with Update Sets and."
+        "text": "Plan → design data model → develop on Dev with Update Sets."
       },
       {
         "id": "B",

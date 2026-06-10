@@ -403,7 +403,7 @@
       },
       {
         "id": "B",
-        "text": "List of Records, with the table set to the loaner request table and an argument filter like state=open."
+        "text": "List of Records, table = loaner request, filter state=open."
       },
       {
         "id": "C",
@@ -547,7 +547,7 @@
       },
       {
         "id": "B",
-        "text": "App Engine Studio — a low-code/no-code experience that guides users through creating data, experiences, logic, and security visually."
+        "text": "App Engine Studio — a guided low-code/no-code experience."
       },
       {
         "id": "C",
@@ -595,7 +595,7 @@
       },
       {
         "id": "B",
-        "text": "It captures customizations made to the instance so the changes can be moved to another instance."
+        "text": "Captures customizations so they can move between instances."
       },
       {
         "id": "C",
@@ -796,7 +796,7 @@
       },
       {
         "id": "B",
-        "text": "Create a new base table (no parent), since a Vendor is not work; other tables reference it via a Reference field."
+        "text": "A new base table (no parent), referenced via a Reference field."
       },
       {
         "id": "C",
@@ -845,19 +845,19 @@
     "options": [
       {
         "id": "A",
-        "text": "String"
+        "text": "String field"
       },
       {
         "id": "B",
-        "text": "Choice"
+        "text": "Choice field"
       },
       {
         "id": "C",
-        "text": "Reference (pointing to sys_user)"
+        "text": "Reference field"
       },
       {
         "id": "D",
-        "text": "URL"
+        "text": "URL field"
       }
     ],
     "correct": [
@@ -942,7 +942,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Only scripts running in this application's scope can read/write the table by default."
+        "text": "Only this app's scoped scripts can read/write it by default."
       },
       {
         "id": "B",
@@ -994,7 +994,7 @@
       },
       {
         "id": "B",
-        "text": "Publish the application (to an Update Set or to the appropriate store/repo) so the new version can be installed on the target instance."
+        "text": "Publish the app (to an Update Set or store) for install."
       },
       {
         "id": "C",
@@ -1141,7 +1141,7 @@
       },
       {
         "id": "B",
-        "text": "On the sn_inventory side, grant a cross-scope access privilege that allows sn_loaner to execute LaptopUtils."
+        "text": "On sn_inventory, grant sn_loaner cross-scope access."
       },
       {
         "id": "C",
@@ -1387,7 +1387,7 @@
       },
       {
         "id": "B",
-        "text": "Choice — a fixed small set of values, stored as integers with labels in sys_choice."
+        "text": "Choice — a small fixed set stored in sys_choice."
       },
       {
         "id": "C",
@@ -1632,7 +1632,7 @@
       },
       {
         "id": "B",
-        "text": "It records other applications or plugins this app requires to function so the platform can ensure they are present."
+        "text": "Records other apps or plugins this app requires."
       },
       {
         "id": "C",
@@ -1728,7 +1728,7 @@
       },
       {
         "id": "B",
-        "text": "Push back: 5-second high-volume telemetry across a shared instance will create write amplification and performance noise."
+        "text": "Push back: 5-second telemetry will hurt instance performance."
       },
       {
         "id": "C",

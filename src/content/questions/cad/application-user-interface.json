@@ -111,7 +111,7 @@
       },
       {
         "id": "B",
-        "text": "Sections group related fields together on a form, typically rendered as tabs or collapsible groups, to organize long forms into digestible chunks."
+        "text": "Group related fields into tabs or collapsible groups."
       },
       {
         "id": "C",
@@ -260,7 +260,7 @@
       },
       {
         "id": "B",
-        "text": "A list view feature that lets users edit field values directly in the list cells without opening each record's form."
+        "text": "Edit field values directly in list cells."
       },
       {
         "id": "C",
@@ -308,7 +308,7 @@
       },
       {
         "id": "B",
-        "text": "Use Personalize List (the gear icon) to add columns; the customization is saved as a personal list view for that user only."
+        "text": "Use Personalize List (gear) to add personal columns."
       },
       {
         "id": "C",
@@ -452,7 +452,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A list embedded at the bottom of a form that shows records from another table related to the current record."
+        "text": "An inline list of related records from another table."
       },
       {
         "id": "B",
@@ -555,7 +555,7 @@
       },
       {
         "id": "B",
-        "text": "Field-level ACLs (write rules) on the Status field deny the change for those users, or a Business Rule / Data Policy is blocking the new value. List Editor honors all the same write protections as the form does."
+        "text": "Field-level write ACLs (or a Business Rule) block the change."
       },
       {
         "id": "C",
@@ -704,7 +704,7 @@
       },
       {
         "id": "C",
-        "text": "onSubmit — run on save, validate the values, return false to block submission and surface a message."
+        "text": "onSubmit — validate on save and block if invalid."
       },
       {
         "id": "D",
@@ -796,7 +796,7 @@
       },
       {
         "id": "B",
-        "text": "UI Policy — it's declarative, no-code, easier to maintain, and exactly the use case it was designed for. Reach for Client Scripts only when behavior can't be expressed declaratively."
+        "text": "UI Policy — the declarative, no-code fit for this."
       },
       {
         "id": "C",
@@ -849,7 +849,7 @@
       },
       {
         "id": "B",
-        "text": "A configurable button, link, or context-menu item on forms and lists that runs server-side."
+        "text": "A configurable button or link on forms and lists."
       },
       {
         "id": "C",
@@ -857,7 +857,7 @@
       },
       {
         "id": "D",
-        "text": "A dashboard widget."
+        "text": "A dashboard reporting widget."
       }
     ],
     "correct": [
@@ -1233,7 +1233,7 @@
       },
       {
         "id": "B",
-        "text": "When = before, on Insert, script sets current.loaner_type = 'standard' if current.loaner_type is empty."
+        "text": "When=before/Insert, default loaner_type if empty."
       },
       {
         "id": "C",
@@ -1277,7 +1277,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Move the When to async — long-running follow-on work that doesn't need to be part of the save transaction belongs there."
+        "text": "Move it to async — it doesn't belong in the save."
       },
       {
         "id": "B",
@@ -1378,7 +1378,7 @@
       },
       {
         "id": "B",
-        "text": "Create a client-callable Script Include with a method getManager(userId), then call it from the client script via GlideAjax."
+        "text": "Call a client-callable Script Include via GlideAjax."
       },
       {
         "id": "C",
@@ -1426,7 +1426,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Enables the Script Include to be invoked from a Client Script via GlideAjax."
+        "text": "Lets a Client Script call it via GlideAjax."
       },
       {
         "id": "B",
@@ -1521,7 +1521,7 @@
     "options": [
       {
         "id": "A",
-        "text": "gr.get(sysIdValue) — returns true if found, false if not, populating gr with the record when found."
+        "text": "gr.get(sysId) — returns true and loads the record."
       },
       {
         "id": "B",
@@ -1529,7 +1529,7 @@
       },
       {
         "id": "C",
-        "text": "gr.fetchAllAsJSON()"
+        "text": "gr.fetchAllAsJSON() helper."
       },
       {
         "id": "D",
@@ -1573,7 +1573,7 @@
       },
       {
         "id": "B",
-        "text": "Add an explicit setLimit / chunked query / queue the work to a Scheduled Script."
+        "text": "Add setLimit/chunking or queue to a Scheduled Script."
       },
       {
         "id": "C",
@@ -1720,7 +1720,7 @@
       },
       {
         "id": "B",
-        "text": "Extract the logic into a Script Include with a clear method, then call it from each of the four locations."
+        "text": "Extract it into a Script Include and call it."
       },
       {
         "id": "C",
@@ -1765,7 +1765,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A Catalog Item that, when ordered, creates a record on a chosen target table."
+        "text": "A Catalog Item that creates a record on a target table."
       },
       {
         "id": "B",
@@ -1865,15 +1865,15 @@
     "options": [
       {
         "id": "A",
-        "text": "A modern, configurable, public-facing-friendly web portal framework used to surface catalog, knowledge, requests."
+        "text": "An end-user web portal framework."
       },
       {
         "id": "B",
-        "text": "A scheduled job that runs nightly."
+        "text": "A nightly scheduled job."
       },
       {
         "id": "C",
-        "text": "A database server."
+        "text": "A database server host."
       },
       {
         "id": "D",
@@ -1960,7 +1960,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A list of records from a referenced/child table embedded inline on a parent form so users can view and edit child rows without leaving the parent."
+        "text": "An inline, editable list of child records on a form."
       },
       {
         "id": "B",
@@ -1968,11 +1968,11 @@
       },
       {
         "id": "C",
-        "text": "A spreadsheet attachment."
+        "text": "A spreadsheet attachment file."
       },
       {
         "id": "D",
-        "text": "A printout of the form."
+        "text": "A printout of the form page."
       }
     ],
     "correct": [
@@ -2007,7 +2007,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Sets the value that will populate this field automatically on new records when no other source supplies one."
+        "text": "Sets the value used on new records when none is supplied."
       },
       {
         "id": "B",
@@ -2058,15 +2058,15 @@
       },
       {
         "id": "B",
-        "text": "A before/Insert Business Rule that calculates current.return_date = pickup_date + 14 days when return_date is empty."
+        "text": "A before/Insert Business Rule computing return_date."
       },
       {
         "id": "C",
-        "text": "A UI Policy condition."
+        "text": "A simple UI Policy condition."
       },
       {
         "id": "D",
-        "text": "An ACL."
+        "text": "A read ACL on the field."
       }
     ],
     "correct": [
@@ -2110,7 +2110,7 @@
       },
       {
         "id": "B",
-        "text": "False — mobile experiences are configured separately (in Mobile App Builder / mobile cards), allowing layouts tuned for small screens and touch interactions."
+        "text": "False — mobile is configured separately for small screens."
       },
       {
         "id": "C",

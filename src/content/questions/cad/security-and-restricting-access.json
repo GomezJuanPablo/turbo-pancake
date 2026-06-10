@@ -110,7 +110,7 @@
       },
       {
         "id": "B",
-        "text": "Table (all rows), Field (specific column on a table), and record-set-by-condition — letting you control access at row and column granularity."
+        "text": "Table, field, and row level."
       },
       {
         "id": "C",
@@ -118,7 +118,7 @@
       },
       {
         "id": "D",
-        "text": "Only at the instance level."
+        "text": "Only at instance level."
       }
     ],
     "correct": [
@@ -158,7 +158,7 @@
       },
       {
         "id": "B",
-        "text": "All three must pass: the Condition must evaluate true, the user must have at least one of the listed Roles."
+        "text": "All three must pass — condition, role, and script."
       },
       {
         "id": "C",
@@ -206,7 +206,7 @@
       },
       {
         "id": "B",
-        "text": "At least one of them — when multiple ACLs apply to the same operation+resource, they're ORed; if any rule grants access, the operation is allowed."
+        "text": "Any one — multiple ACLs are ORed; one grant allows it."
       },
       {
         "id": "C",
@@ -352,19 +352,19 @@
     "options": [
       {
         "id": "A",
-        "text": "itil"
+        "text": "The itil role."
       },
       {
         "id": "B",
-        "text": "security_admin (must be elevated via the elevate roles dialog)"
+        "text": "The security_admin role."
       },
       {
         "id": "C",
-        "text": "asset"
+        "text": "The asset role."
       },
       {
         "id": "D",
-        "text": "knowledge_manager"
+        "text": "The knowledge_manager role."
       }
     ],
     "correct": [
@@ -452,7 +452,7 @@
       },
       {
         "id": "B",
-        "text": "A Role is a permission token referenced by ACLs and other access checks."
+        "text": "A permission token referenced by ACLs."
       },
       {
         "id": "C",
@@ -496,7 +496,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Set answer = true to allow or answer = false to deny."
+        "text": "Set answer = true to allow, false to deny."
       },
       {
         "id": "B",
@@ -597,7 +597,7 @@
     "options": [
       {
         "id": "A",
-        "text": "An ACL pattern that restricts access to specific records based on conditions about the record's data."
+        "text": "An ACL restricting records by data."
       },
       {
         "id": "B",
@@ -797,7 +797,7 @@
       },
       {
         "id": "B",
-        "text": "Either a user with the loaner manager role OR the user whose ID matches the record's requester field can perform the operation."
+        "text": "The loaner manager OR the record's requester."
       },
       {
         "id": "C",
@@ -805,7 +805,7 @@
       },
       {
         "id": "D",
-        "text": "Only on weekends."
+        "text": "Only allowed on weekends."
       }
     ],
     "correct": [
@@ -946,7 +946,7 @@
       },
       {
         "id": "B",
-        "text": "A standard GlideRecord query in a Business Rule runs with the system's privileges by default."
+        "text": "It runs with system privileges by default."
       },
       {
         "id": "C",
@@ -994,7 +994,7 @@
       },
       {
         "id": "B",
-        "text": "No — UI Policy only hides the field on the form. A non-HR user could still read the value via the list view, the API, or by inspecting page source. For real security, add a read ACL on the field (table.field, read, requires HR role) so the platform refuses to return the value."
+        "text": "No — UI Policy only hides it on the form; add a read ACL."
       },
       {
         "id": "C",
@@ -1138,11 +1138,11 @@
     "options": [
       {
         "id": "A",
-        "text": "Restart the instance."
+        "text": "Restart the whole instance."
       },
       {
         "id": "B",
-        "text": "Enable ACL Debug (Elevate → security_admin → enable Debug Security Rules) while impersonating the user. Replay the action and read the trace to see which ACL rule denied access (or which rule was missing that should have granted)."
+        "text": "Enable Debug Security Rules and impersonate."
       },
       {
         "id": "C",
@@ -1328,7 +1328,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Set the 'Roles' field on both the Application Menu and the relevant Modules to x_acme_loaner.manager."
+        "text": "Set 'Roles' on the Application Menu and its Modules."
       },
       {
         "id": "B",
@@ -1380,7 +1380,7 @@
       },
       {
         "id": "B",
-        "text": "Create a write ACL on x_acme_loaner_request.manager_notes requiring the x_acme_loaner.manager role."
+        "text": "A write ACL on manager_notes requiring the manager role."
       },
       {
         "id": "C",
@@ -1388,7 +1388,7 @@
       },
       {
         "id": "D",
-        "text": "Encrypt the field."
+        "text": "Encrypt the whole field."
       }
     ],
     "correct": [
@@ -1428,7 +1428,7 @@
       },
       {
         "id": "B",
-        "text": "Cross-scope privileges enforce explicit, minimal grants between applications, so a vulnerability or bug in one app cannot freely traverse and modify another app's tables, scripts."
+        "text": "Minimal grants stop apps traversing each other."
       },
       {
         "id": "C",
@@ -1573,7 +1573,7 @@
       },
       {
         "id": "B",
-        "text": "Define x_acme_loaner.super_manager and add x_acme_loaner.manager to it as a CONTAINED role."
+        "text": "Define super_manager and contain the manager role in it."
       },
       {
         "id": "C",
@@ -1617,19 +1617,19 @@
     "options": [
       {
         "id": "A",
-        "text": "sys_audit (the Audit table) — fields marked as audited are recorded, and the Activity / Audit related list surfaces the history per record."
+        "text": "sys_audit records audited fields."
       },
       {
         "id": "B",
-        "text": "ACL debug logs only."
+        "text": "Only ACL debug logs."
       },
       {
         "id": "C",
-        "text": "Browser history."
+        "text": "The browser's history."
       },
       {
         "id": "D",
-        "text": "There's no auditing in ServiceNow."
+        "text": "There's no auditing at all."
       }
     ],
     "correct": [
@@ -1668,7 +1668,7 @@
       },
       {
         "id": "B",
-        "text": "Cross-scope privilege rules require that the calling scope."
+        "text": "Cross-scope privilege rules must allow the call."
       },
       {
         "id": "C",
@@ -1717,7 +1717,7 @@
       },
       {
         "id": "B",
-        "text": "Apply least privilege: give users only the roles required for their job, design ACLs to deny by default and grant explicitly, encrypt sensitive data."
+        "text": "Least privilege: minimal roles, deny by default, encrypt."
       },
       {
         "id": "C",
@@ -1812,7 +1812,7 @@
       },
       {
         "id": "B",
-        "text": "A Data Policy with the requester field marked Mandatory."
+        "text": "A Data Policy marking requester Mandatory."
       },
       {
         "id": "C",
@@ -1820,7 +1820,7 @@
       },
       {
         "id": "D",
-        "text": "An ACL with a script."
+        "text": "An ACL with a deny script."
       }
     ],
     "correct": [
@@ -1860,7 +1860,7 @@
       },
       {
         "id": "B",
-        "text": "An equivalent UI Policy is created so the form also enforces the rule, AND the constraints can be applied to existing records as you go."
+        "text": "An equivalent UI Policy is created to enforce it on the form."
       },
       {
         "id": "C",
@@ -1908,7 +1908,7 @@
       },
       {
         "id": "B",
-        "text": "SAML 2.0 is an XML-based, federated single sign-on protocol the instance can use as its identity provider integration."
+        "text": "An XML-based federated single sign-on (SSO) protocol."
       },
       {
         "id": "C",
@@ -1952,19 +1952,19 @@
     "options": [
       {
         "id": "A",
-        "text": "sys_user_role — every record represents (user, role) along with whether it was inherited via a group and when it was granted"
+        "text": "The sys_user_role table."
       },
       {
         "id": "B",
-        "text": "sys_role_user"
+        "text": "The sys_role_user table."
       },
       {
         "id": "C",
-        "text": "sys_grants"
+        "text": "The sys_grants table."
       },
       {
         "id": "D",
-        "text": "sys_audit_role"
+        "text": "The sys_audit_role table."
       }
     ],
     "correct": [
@@ -2000,11 +2000,11 @@
     "options": [
       {
         "id": "A",
-        "text": "A third-party plugin for ad-blocking."
+        "text": "A third-party ad-blocker."
       },
       {
         "id": "B",
-        "text": "A platform dashboard that surfaces the instance's security posture."
+        "text": "A security-posture dashboard."
       },
       {
         "id": "C",
@@ -2012,7 +2012,7 @@
       },
       {
         "id": "D",
-        "text": "A user role."
+        "text": "A built-in user role."
       }
     ],
     "correct": [
@@ -2149,7 +2149,7 @@
       },
       {
         "id": "B",
-        "text": "It grants access to anyone the rule applies to, because empty fields are treated as 'no constraint'."
+        "text": "Grants access — empty fields mean 'no constraint'."
       },
       {
         "id": "C",
@@ -2197,7 +2197,7 @@
       },
       {
         "id": "B",
-        "text": "Review the Update Set for any sys_security_acl changes, compare to expected scope of the release, test on a clone of prod by impersonating representative end users."
+        "text": "Review the Update Set's ACL changes and test on a clone."
       },
       {
         "id": "C",
