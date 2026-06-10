@@ -206,7 +206,7 @@
       },
       {
         "id": "B",
-        "text": "Tags are user-defined labels that can be applied to records across many tables and can be private, shared with a group."
+        "text": "Tags are user-defined labels applied across many tables."
       },
       {
         "id": "C",
@@ -536,7 +536,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A related list that has been promoted to display directly inside a form section instead of at the bottom of the form."
+        "text": "A related list promoted to display inside a form section."
       },
       {
         "id": "B",
@@ -732,11 +732,11 @@
     "options": [
       {
         "id": "A",
-        "text": "Opens the All menu"
+        "text": "Opens the All menu list."
       },
       {
         "id": "B",
-        "text": "Returns the user to the Next Experience landing page"
+        "text": "Returns to the Next Experience landing page."
       },
       {
         "id": "C",
@@ -1067,7 +1067,7 @@
       },
       {
         "id": "B",
-        "text": "Recently Searched queries and Recently Viewed search result records"
+        "text": "Recently Searched and Recently Viewed records."
       },
       {
         "id": "C",
@@ -1488,7 +1488,7 @@
     "options": [
       {
         "id": "A",
-        "text": "The Short Description column is hidden from the list, and its value appears as a detail row below each record"
+        "text": "Short Description hides from the list and shows as a detail row."
       },
       {
         "id": "B",
@@ -1966,7 +1966,7 @@
       },
       {
         "id": "B",
-        "text": "Select the workspace from the context menu that appears at the right of the search field after searching"
+        "text": "Pick the workspace from the context menu by the search field."
       },
       {
         "id": "C",
@@ -3007,7 +3007,7 @@
       },
       {
         "id": "B",
-        "text": "Only when the user has access to Workspace and Workspace is in focus"
+        "text": "Only with Workspace access and in focus."
       },
       {
         "id": "C",
@@ -3015,7 +3015,7 @@
       },
       {
         "id": "D",
-        "text": "Only on mobile devices"
+        "text": "Only on mobile devices only."
       }
     ],
     "correct": [
@@ -3242,7 +3242,7 @@
       },
       {
         "id": "B",
-        "text": "From the classic form UI only, even when Next Experience is active"
+        "text": "From the classic form UI only."
       },
       {
         "id": "C",
@@ -3336,7 +3336,7 @@
       },
       {
         "id": "B",
-        "text": "Right-click the Category field value 'Software' on a record in the list and select Show Matching"
+        "text": "Right-click the Category value and pick Show Matching."
       },
       {
         "id": "C",
@@ -3945,7 +3945,7 @@
       },
       {
         "id": "B",
-        "text": "Wrap column text and Compact rows options"
+        "text": "Wrap column text and Compact rows."
       },
       {
         "id": "C",
@@ -3992,7 +3992,7 @@
       },
       {
         "id": "B",
-        "text": "By clicking the gear icon in the banner frame and toggling the Tabbed forms option"
+        "text": "Click the banner gear and toggle Tabbed forms."
       },
       {
         "id": "C",
@@ -4039,7 +4039,7 @@
       },
       {
         "id": "B",
-        "text": "Opens the results list for that breadcrumb condition in a browser tab"
+        "text": "Opens that breadcrumb condition's list in a new tab."
       },
       {
         "id": "C",
@@ -4411,11 +4411,11 @@
     "options": [
       {
         "id": "A",
-        "text": "Via email only"
+        "text": "Via email only delivery."
       },
       {
         "id": "B",
-        "text": "Via banner messages and persistent alerts in the Notifications menu"
+        "text": "Via banner and Notifications menu."
       },
       {
         "id": "C",
@@ -4931,11 +4931,11 @@
     "options": [
       {
         "id": "A",
-        "text": "Fields with long text"
+        "text": "Fields holding long text."
       },
       {
         "id": "B",
-        "text": "Mandatory fields and fields already hidden by UI policies or client scripts"
+        "text": "Mandatory fields and those hidden by UI policies."
       },
       {
         "id": "C",
@@ -5686,7 +5686,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Build the filter in the condition builder and save it as a favorite/saved filter"
+        "text": "Build the filter and save it as a favorite."
       },
       {
         "id": "B",
@@ -5830,19 +5830,19 @@
     "options": [
       {
         "id": "A",
-        "text": "Click the appropriate segment of the breadcrumb above the list"
+        "text": "Click the breadcrumb segment."
       },
       {
         "id": "B",
-        "text": "Refresh the browser"
+        "text": "Refresh the whole browser."
       },
       {
         "id": "C",
-        "text": "Re-sort the list"
+        "text": "Re-sort the list view."
       },
       {
         "id": "D",
-        "text": "Personalize the list layout"
+        "text": "Personalize the list layout."
       }
     ],
     "correct": [
@@ -5878,7 +5878,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Personalize Form (gear/personalize) — affects only that user"
+        "text": "Personalize Form (only that user)."
       },
       {
         "id": "B",
@@ -5886,11 +5886,11 @@
       },
       {
         "id": "C",
-        "text": "A business rule"
+        "text": "A simple business rule."
       },
       {
         "id": "D",
-        "text": "An ACL on each field"
+        "text": "An ACL on each field."
       }
     ],
     "correct": [
@@ -6166,15 +6166,15 @@
     "options": [
       {
         "id": "A",
-        "text": "Edit a field value inline with the list editor"
+        "text": "Inline-edit a field in the list."
       },
       {
         "id": "B",
-        "text": "Group rows by a column to see counts"
+        "text": "Group rows by a column."
       },
       {
         "id": "C",
-        "text": "Activate a plugin"
+        "text": "Activate a plugin remotely."
       },
       {
         "id": "D",

@@ -11,7 +11,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A low-code, web-based environment for building automated business logic using triggers, actions."
+        "text": "A low-code environment for building automated logic."
       },
       {
         "id": "B",
@@ -59,7 +59,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A record-based trigger (Created, Updated, Created or Updated, Deleted) on a specified table with optional conditions."
+        "text": "A record-based trigger (Created/Updated) on a table."
       },
       {
         "id": "B",
@@ -106,7 +106,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A reusable building block that performs a discrete operation."
+        "text": "A reusable block that performs one operation."
       },
       {
         "id": "B",
@@ -153,7 +153,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A reusable flow with defined inputs and outputs that can be called from other flows or actions, like a function in code."
+        "text": "A reusable flow with inputs and outputs, like a function."
       },
       {
         "id": "B",
@@ -297,7 +297,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A REST action — either an out-of-the-box action from a Spoke or a custom action built around the REST step."
+        "text": "A REST action (from a Spoke or custom REST step)."
       },
       {
         "id": "B",
@@ -724,7 +724,7 @@
     "options": [
       {
         "id": "A",
-        "text": "The execution order relative to other business rules on the same table and 'When'."
+        "text": "Execution order vs other rules on the table and 'When'."
       },
       {
         "id": "B",
@@ -771,7 +771,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A script that runs in the user's browser when a form loads or changes, used to react to user input without a server round-trip."
+        "text": "A script that runs in the browser on form load/change."
       },
       {
         "id": "B",
@@ -865,11 +865,11 @@
     "options": [
       {
         "id": "A",
-        "text": "A declarative configuration that controls whether fields on a form are visible, mandatory."
+        "text": "Declaratively control field visibility and state."
       },
       {
         "id": "B",
-        "text": "A server-side ACL."
+        "text": "A server-side ACL rule."
       },
       {
         "id": "C",
@@ -1103,7 +1103,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Tighten the rule's Filter Conditions and revisit whether its 'When' should be Async, so it only runs when it must and does heavy work outside the user's transaction."
+        "text": "Tighten Filter Conditions and consider Async 'When'."
       },
       {
         "id": "B",
@@ -1151,7 +1151,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A modern, configurable, mobile-friendly self-service web interface built from portals, pages."
+        "text": "A configurable self-service web interface (portals/pages)."
       },
       {
         "id": "B",
@@ -1245,7 +1245,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A saved query against a table with a chosen visualization."
+        "text": "A saved query with a chosen visualization."
       },
       {
         "id": "B",
@@ -1340,7 +1340,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A configurable page that surfaces multiple reports and interactive analytics widgets together, typically organized by tabs."
+        "text": "A page surfacing multiple reports and widgets."
       },
       {
         "id": "B",
@@ -1435,7 +1435,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A Portal record (sp_portal) with a URL suffix and references to the homepage and theme."
+        "text": "A Portal record (sp_portal) with URL suffix and theme."
       },
       {
         "id": "B",
@@ -1579,7 +1579,7 @@
     "options": [
       {
         "id": "A",
-        "text": "ACLs are filtering rows differently for the two users based on their roles, group memberships."
+        "text": "ACLs filter rows differently by the users' roles."
       },
       {
         "id": "B",
@@ -1627,7 +1627,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Service Portal is intended primarily for self-service end users, while fulfiller/agents typically work in Next Experience or workspaces; both can coexist."
+        "text": "Service Portal is for end users; agents use workspaces."
       },
       {
         "id": "B",
@@ -1675,7 +1675,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Configure a Performance Analytics indicator that snapshots the count on a scheduled cadence."
+        "text": "A Performance Analytics indicator snapshotting on a schedule."
       },
       {
         "id": "B",
@@ -1770,7 +1770,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A Schedule referenced by the SLA Definition that defines the business hours used to measure duration."
+        "text": "A Schedule on the SLA Definition setting business hours."
       },
       {
         "id": "B",
@@ -1818,7 +1818,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Add a Pause condition (state = Awaiting Caller) on the SLA Definition so the timer pauses while that condition is true."
+        "text": "A Pause condition on the SLA Definition."
       },
       {
         "id": "B",
@@ -1913,7 +1913,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A configuration that runs when the platform receives email matching a condition."
+        "text": "A config that runs when matching email arrives."
       },
       {
         "id": "B",
@@ -1925,7 +1925,7 @@
       },
       {
         "id": "D",
-        "text": "A type of UI policy."
+        "text": "A type of UI policy rule."
       }
     ],
     "correct": [
@@ -1960,7 +1960,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Configure an Inbound Email Action of type 'New' on the Incident table that creates a record from inbound messages matching the condition."
+        "text": "An Inbound Email Action of type 'New' on Incident."
       },
       {
         "id": "B",
@@ -2007,7 +2007,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A configurable, server-side task that runs on a defined schedule."
+        "text": "A server-side task that runs on a schedule."
       },
       {
         "id": "B",
@@ -2054,11 +2054,11 @@
     "options": [
       {
         "id": "A",
-        "text": "A Task SLA record (task_sla) that tracks elapsed/remaining time and lifecycle of that specific SLA on that task."
+        "text": "A Task SLA (task_sla) record."
       },
       {
         "id": "B",
-        "text": "A new Change Request."
+        "text": "A new Change Request record."
       },
       {
         "id": "C",
@@ -2436,19 +2436,19 @@
     "options": [
       {
         "id": "A",
-        "text": "A record-based trigger (Created) on Incident"
+        "text": "A record Created trigger."
       },
       {
         "id": "B",
-        "text": "An onLoad client script"
+        "text": "An onLoad client script."
       },
       {
         "id": "C",
-        "text": "A coalesce field"
+        "text": "A coalesce field map."
       },
       {
         "id": "D",
-        "text": "A dictionary override"
+        "text": "A dictionary override."
       }
     ],
     "correct": [
@@ -2628,19 +2628,19 @@
     "options": [
       {
         "id": "A",
-        "text": "An SLA definition with start, pause, and stop conditions"
+        "text": "An SLA with start, pause, stop."
       },
       {
         "id": "B",
-        "text": "A coalesce field"
+        "text": "A coalesce field map."
       },
       {
         "id": "C",
-        "text": "An onLoad client script"
+        "text": "An onLoad client script."
       },
       {
         "id": "D",
-        "text": "A dictionary override"
+        "text": "A dictionary override."
       }
     ],
     "correct": [
@@ -2724,11 +2724,11 @@
     "options": [
       {
         "id": "A",
-        "text": "Before rules can change field values that get saved with the record"
+        "text": "Before rules can change saved field values."
       },
       {
         "id": "B",
-        "text": "After rules run once the database write has completed"
+        "text": "After rules run after the write."
       },
       {
         "id": "C",
@@ -3060,19 +3060,19 @@
     "options": [
       {
         "id": "A",
-        "text": "By referencing the earlier step's output as a data pill"
+        "text": "Reference its output as a data pill."
       },
       {
         "id": "B",
-        "text": "By hard-coding the value"
+        "text": "By hard-coding the value in."
       },
       {
         "id": "C",
-        "text": "With a coalesce field"
+        "text": "With a coalesce field map."
       },
       {
         "id": "D",
-        "text": "Through an ACL"
+        "text": "Through an ACL rule."
       }
     ],
     "correct": [
@@ -3108,19 +3108,19 @@
     "options": [
       {
         "id": "A",
-        "text": "Set the rule's When/Filter Conditions"
+        "text": "Set the Filter Conditions."
       },
       {
         "id": "B",
-        "text": "Add a UI policy"
+        "text": "Add a UI policy rule."
       },
       {
         "id": "C",
-        "text": "Use a coalesce field"
+        "text": "Use a coalesce field."
       },
       {
         "id": "D",
-        "text": "Lower the table's ACLs"
+        "text": "Lower the table's ACLs."
       }
     ],
     "correct": [
@@ -3156,19 +3156,19 @@
     "options": [
       {
         "id": "A",
-        "text": "The schedule attached to the SLA definition"
+        "text": "The schedule on the SLA definition."
       },
       {
         "id": "B",
-        "text": "A coalesce field"
+        "text": "A coalesce field map."
       },
       {
         "id": "C",
-        "text": "A UI policy"
+        "text": "A simple UI policy."
       },
       {
         "id": "D",
-        "text": "The user's favorites"
+        "text": "The user's favorites list."
       }
     ],
     "correct": [
@@ -3252,7 +3252,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A scheduled job (scheduled report)"
+        "text": "A scheduled report job."
       },
       {
         "id": "B",
@@ -3260,11 +3260,11 @@
       },
       {
         "id": "C",
-        "text": "A UI policy"
+        "text": "A simple UI policy."
       },
       {
         "id": "D",
-        "text": "A coalesce field"
+        "text": "A coalesce field map."
       }
     ],
     "correct": [
@@ -3348,11 +3348,11 @@
     "options": [
       {
         "id": "A",
-        "text": "Automatically assign and notify when a record is created"
+        "text": "Assign and notify on record creation."
       },
       {
         "id": "B",
-        "text": "Call a reusable subflow with inputs and outputs"
+        "text": "Call a reusable subflow."
       },
       {
         "id": "C",

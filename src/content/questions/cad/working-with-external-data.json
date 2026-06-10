@@ -11,7 +11,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A staging table that holds raw rows from an external source."
+        "text": "A staging table for raw imported rows."
       },
       {
         "id": "B",
@@ -19,7 +19,7 @@
       },
       {
         "id": "C",
-        "text": "A type of UI Action."
+        "text": "A type of UI Action record."
       },
       {
         "id": "D",
@@ -58,7 +58,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A record that maps fields from an Import Set staging row to fields on a target table, with per-field transformations and conditions."
+        "text": "Maps staging fields to target fields."
       },
       {
         "id": "B",
@@ -66,11 +66,11 @@
       },
       {
         "id": "C",
-        "text": "A type of ACL."
+        "text": "A type of access rule."
       },
       {
         "id": "D",
-        "text": "A backup mechanism."
+        "text": "A backup mechanism record."
       }
     ],
     "correct": [
@@ -105,7 +105,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Which source (staging) field provides the value for which target field, with optional Choice Action handling and Coalesce flag."
+        "text": "Maps a source field to a target field."
       },
       {
         "id": "B",
@@ -117,7 +117,7 @@
       },
       {
         "id": "D",
-        "text": "An ACL rule."
+        "text": "An access control rule."
       }
     ],
     "correct": [
@@ -200,15 +200,15 @@
     "options": [
       {
         "id": "A",
-        "text": "A configuration record that describes WHERE imported data comes from."
+        "text": "Where imported data comes from."
       },
       {
         "id": "B",
-        "text": "A type of ACL."
+        "text": "A type of access rule."
       },
       {
         "id": "C",
-        "text": "A scheduled email."
+        "text": "A scheduled email job."
       },
       {
         "id": "D",
@@ -295,7 +295,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Hook into specific points of the transform."
+        "text": "Hooks at specific transform points."
       },
       {
         "id": "B",
@@ -303,11 +303,11 @@
       },
       {
         "id": "C",
-        "text": "Send marketing emails."
+        "text": "Send out marketing emails."
       },
       {
         "id": "D",
-        "text": "Configure SAML."
+        "text": "Configure SAML SSO."
       }
     ],
     "correct": [
@@ -347,7 +347,7 @@
       },
       {
         "id": "B",
-        "text": "The source employee_number values have inconsistent formatting."
+        "text": "Source employee_number values are inconsistent."
       },
       {
         "id": "C",
@@ -439,19 +439,19 @@
     "options": [
       {
         "id": "A",
-        "text": "Transform History — per-import-set record showing inserts/updates/ignored/errors, with drill-down to per-row results. Read it before declaring success."
+        "text": "The Transform History record."
       },
       {
         "id": "B",
-        "text": "The Email logs."
+        "text": "Check the Email logs."
       },
       {
         "id": "C",
-        "text": "ACL Debug."
+        "text": "Check ACL Debug."
       },
       {
         "id": "D",
-        "text": "Browser DevTools."
+        "text": "Browser DevTools console."
       }
     ],
     "correct": [
@@ -486,7 +486,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Configure a Scheduled Import / Scheduled Data Import on the Data Source."
+        "text": "A Scheduled Import on the Data Source."
       },
       {
         "id": "B",
@@ -537,7 +537,7 @@
       },
       {
         "id": "B",
-        "text": "Some department_name values in the CSV don't exactly match any cmn_department record's display name."
+        "text": "Some CSV values don't match a department."
       },
       {
         "id": "C",
@@ -629,7 +629,7 @@
     "options": [
       {
         "id": "A",
-        "text": "The platform makes HTTP calls to external REST endpoints."
+        "text": "The platform makes HTTP calls to external APIs."
       },
       {
         "id": "B",
@@ -773,11 +773,11 @@
     "options": [
       {
         "id": "A",
-        "text": "Basic Auth, OAuth 2.0 (multiple grant types), mutual TLS, and API key (custom header), among others — configured on the REST Message or via a shared Connection & Credential Alias."
+        "text": "Basic Auth, OAuth 2.0, and API key."
       },
       {
         "id": "B",
-        "text": "Only Basic Auth."
+        "text": "Only Basic Auth allowed."
       },
       {
         "id": "C",
@@ -785,7 +785,7 @@
       },
       {
         "id": "D",
-        "text": "Only SAML."
+        "text": "Only SAML is supported."
       }
     ],
     "correct": [
@@ -821,7 +821,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A custom REST endpoint defined on the instance, with one or more resources."
+        "text": "A custom REST endpoint you define."
       },
       {
         "id": "B",
@@ -829,7 +829,7 @@
       },
       {
         "id": "C",
-        "text": "A client-side library."
+        "text": "A client-side JS library."
       },
       {
         "id": "D",
@@ -916,7 +916,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A small Java application installed inside the customer's network that the ServiceNow instance can task with executing actions on internal resources."
+        "text": "A Java app inside the network."
       },
       {
         "id": "B",
@@ -924,7 +924,7 @@
       },
       {
         "id": "C",
-        "text": "A scheduled job."
+        "text": "A scheduled job record."
       },
       {
         "id": "D",
@@ -967,7 +967,7 @@
       },
       {
         "id": "B",
-        "text": "REST — typically simpler, JSON-based, better tooling support in Flow Designer (REST Step, spokes), and more aligned with ServiceNow's modern direction. SOAP remains acceptable when REST isn't available, but pick REST when you have a choice."
+        "text": "REST — simpler and JSON-based."
       },
       {
         "id": "C",
@@ -1019,7 +1019,7 @@
       },
       {
         "id": "B",
-        "text": "Audit the transform: are field-map source scripts inefficient, are queries on the target table un-indexed, is the data source returning more rows than needed? Right-size by querying only changed rows."
+        "text": "Audit the transform: scripts, indexes, and rows returned."
       },
       {
         "id": "C",
@@ -1111,11 +1111,11 @@
     "options": [
       {
         "id": "A",
-        "text": "The Table API — endpoints like /api/now/table/{tableName} that support GET (read), POST (create), PATCH (update), DELETE — with sysparm_query and other query parameters for filtering, sorting, and field selection."
+        "text": "The Table API — full CRUD via /api/now/table."
       },
       {
         "id": "B",
-        "text": "The ACL API."
+        "text": "The ACL REST API."
       },
       {
         "id": "C",
@@ -1123,7 +1123,7 @@
       },
       {
         "id": "D",
-        "text": "The Print API."
+        "text": "The Print REST API."
       }
     ],
     "correct": [
