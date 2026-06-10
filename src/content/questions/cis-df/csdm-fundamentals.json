@@ -11,7 +11,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A standard, prescriptive framework for how to organize service and CI data in the CMDB across ServiceNow products"
+        "text": "A prescriptive framework for CMDB service data."
       },
       {
         "id": "B",
@@ -59,7 +59,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Foundation, Design, Build, Manage Technical Services, and Sell/Consume"
+        "text": "Foundation, Design, Build, Manage, Sell/Consume."
       },
       {
         "id": "B",
@@ -203,7 +203,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A software application viewed from a business/architecture perspective, independent of where it is deployed"
+        "text": "A software app from a business/architecture view."
       },
       {
         "id": "B",
@@ -251,7 +251,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A deployed, running instance of an application and its supporting CIs that together deliver a service"
+        "text": "A running instance delivering a service."
       },
       {
         "id": "B",
@@ -259,7 +259,7 @@
       },
       {
         "id": "C",
-        "text": "A user's mailbox"
+        "text": "A user's personal mailbox."
       },
       {
         "id": "D",
@@ -347,7 +347,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A Service Offering is a specific variation of a service with defined commitments"
+        "text": "A specific variation of a service with commitments."
       },
       {
         "id": "B",
@@ -395,19 +395,19 @@
     "options": [
       {
         "id": "A",
-        "text": "A Technical (Technology Management) Service Offering related to the CIs"
+        "text": "A Technical Service Offering."
       },
       {
         "id": "B",
-        "text": "A CMDB Health dashboard"
+        "text": "A CMDB Health dashboard view."
       },
       {
         "id": "C",
-        "text": "A knowledge article"
+        "text": "A knowledge article page."
       },
       {
         "id": "D",
-        "text": "An incident SLA"
+        "text": "An incident SLA record."
       }
     ],
     "correct": [
@@ -443,7 +443,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Impact assessments for incident, problem, and change against Business Services / Application Services"
+        "text": "Impact assessments against services."
       },
       {
         "id": "B",
@@ -491,7 +491,7 @@
     "options": [
       {
         "id": "A",
-        "text": "It places data in consistent, expected locations so ITSM, ITOM, SecOps"
+        "text": "It places data in consistent, expected locations."
       },
       {
         "id": "B",
@@ -539,11 +539,11 @@
     "options": [
       {
         "id": "A",
-        "text": "Strengthening operational resiliency"
+        "text": "Strengthening operational resiliency."
       },
       {
         "id": "B",
-        "text": "Streamlining incident and change management with service context"
+        "text": "Streamlining incident/change with service context."
       },
       {
         "id": "C",
@@ -587,11 +587,11 @@
     "options": [
       {
         "id": "A",
-        "text": "Understanding the impact of a change on related services"
+        "text": "Understanding a change's impact on related services."
       },
       {
         "id": "B",
-        "text": "Identifying blackout/maintenance windows relevant to the affected CIs/services"
+        "text": "Identifying maintenance windows for affected CIs."
       },
       {
         "id": "C",
@@ -683,11 +683,11 @@
     "options": [
       {
         "id": "A",
-        "text": "Identifying which IT infrastructure has a given vulnerability"
+        "text": "Identifying which infrastructure has a vulnerability."
       },
       {
         "id": "B",
-        "text": "Helping the security team assess and remediate based on affected CIs and their service context"
+        "text": "Helping security remediate based on affected CIs."
       },
       {
         "id": "C",
@@ -779,7 +779,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Life Cycle Mapping [life_cycle_mapping]"
+        "text": "Life Cycle Mapping table."
       },
       {
         "id": "B",
@@ -787,7 +787,7 @@
       },
       {
         "id": "C",
-        "text": "User [sys_user]"
+        "text": "User [sys_user] table."
       },
       {
         "id": "D",
@@ -827,7 +827,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Resolve any incomplete mappings flagged in the Discrepancy Report before activating"
+        "text": "Resolve Discrepancy Report mappings first."
       },
       {
         "id": "B",
@@ -835,11 +835,11 @@
       },
       {
         "id": "C",
-        "text": "Disable CMDB Health"
+        "text": "Disable CMDB Health checks."
       },
       {
         "id": "D",
-        "text": "Retire every CI"
+        "text": "Retire every CI now."
       }
     ],
     "correct": [
@@ -923,11 +923,11 @@
     "options": [
       {
         "id": "A",
-        "text": "Analyze data (understand the gap and its scope)"
+        "text": "Analyze data (understand the gap)."
       },
       {
         "id": "B",
-        "text": "Fix data (remediate the identified records)"
+        "text": "Fix data (remediate records)."
       },
       {
         "id": "C",
@@ -971,7 +971,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Because solid Foundation data must exist before advanced service modeling delivers reliable value"
+        "text": "Foundation data must exist before service modeling pays off."
       },
       {
         "id": "B",
@@ -1019,11 +1019,11 @@
     "options": [
       {
         "id": "A",
-        "text": "Technical (Technology) Service Owner"
+        "text": "Technical Service Owner."
       },
       {
         "id": "B",
-        "text": "Enterprise Architect"
+        "text": "An Enterprise Architect."
       },
       {
         "id": "C",
@@ -1119,15 +1119,15 @@
       },
       {
         "id": "B",
-        "text": "Sell/Consume"
+        "text": "The Sell/Consume domain."
       },
       {
         "id": "C",
-        "text": "Foundation"
+        "text": "The Foundation domain."
       },
       {
         "id": "D",
-        "text": "Design"
+        "text": "The Design domain."
       }
     ],
     "correct": [
@@ -1163,7 +1163,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Because a correctly structured, CSDM-aligned CMDB underpins the service data that ITSM, ITOM, SecOps"
+        "text": "A CSDM-aligned CMDB underpins ITSM, ITOM, SecOps data."
       },
       {
         "id": "B",
@@ -1211,7 +1211,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Business Service Management understanding the operational impact across mapped services"
+        "text": "Business Service Management — impact across services."
       },
       {
         "id": "B",
@@ -1259,7 +1259,7 @@
     "options": [
       {
         "id": "A",
-        "text": "The Foundation domain (core data like organizations, locations, users)"
+        "text": "The Foundation domain (orgs, locations, users)."
       },
       {
         "id": "B",
@@ -1451,11 +1451,11 @@
     "options": [
       {
         "id": "A",
-        "text": "A prescriptive, standard framework for modeling data so downstream products work consistently"
+        "text": "A prescriptive data framework."
       },
       {
         "id": "B",
-        "text": "A faster MID Server"
+        "text": "A faster MID Server host."
       },
       {
         "id": "C",
@@ -1547,7 +1547,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Use Service Mapping/Discovery to populate the Application Service relationships"
+        "text": "Use Service Mapping to populate relationships."
       },
       {
         "id": "B",
@@ -1559,7 +1559,7 @@
       },
       {
         "id": "D",
-        "text": "Disable IRE"
+        "text": "Disable IRE entirely."
       }
     ],
     "correct": [
@@ -1691,7 +1691,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Consistent, service-aware data unlocks reliable reporting, impact analysis"
+        "text": "Service-aware data enables reliable reporting."
       },
       {
         "id": "B",
@@ -1703,7 +1703,7 @@
       },
       {
         "id": "D",
-        "text": "It encrypts the CMDB"
+        "text": "It encrypts the CMDB data."
       }
     ],
     "correct": [

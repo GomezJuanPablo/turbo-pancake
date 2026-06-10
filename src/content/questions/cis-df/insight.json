@@ -15,7 +15,7 @@
       },
       {
         "id": "B",
-        "text": "To measure and visualize the quality of CMDB data across defined metrics so issues can be found and improved"
+        "text": "Measure and visualize CMDB data quality."
       },
       {
         "id": "C",
@@ -59,7 +59,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Completeness, Compliance, and Correctness"
+        "text": "Completeness, Compliance, Correctness."
       },
       {
         "id": "B",
@@ -67,7 +67,7 @@
       },
       {
         "id": "C",
-        "text": "Red, Amber, and Green"
+        "text": "Red, Amber, and Green."
       },
       {
         "id": "D",
@@ -255,7 +255,7 @@
       },
       {
         "id": "B",
-        "text": "Relationships power service maps and impact analysis, so missing or broken ones reduce the CMDB's usefulness"
+        "text": "Relationships power service maps, so missing ones hurt."
       },
       {
         "id": "C",
@@ -351,7 +351,7 @@
       },
       {
         "id": "B",
-        "text": "Drill down by dimension, class, and rule to the underlying failing CIs for remediation"
+        "text": "Drill down by dimension/class/rule to the failing CIs."
       },
       {
         "id": "C",
@@ -395,7 +395,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Scheduled health jobs/dashboards that evaluate CIs against metric definitions"
+        "text": "Scheduled health jobs evaluating CIs vs metrics."
       },
       {
         "id": "B",
@@ -403,7 +403,7 @@
       },
       {
         "id": "C",
-        "text": "The email server"
+        "text": "The instance email server."
       },
       {
         "id": "D",
@@ -447,7 +447,7 @@
       },
       {
         "id": "B",
-        "text": "Health score trends/history tracked over time"
+        "text": "Health-score trends tracked over time."
       },
       {
         "id": "C",
@@ -491,7 +491,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Visually building queries that traverse CIs and their relationships to answer dependency questions"
+        "text": "Build queries across CI relationships."
       },
       {
         "id": "B",
@@ -499,7 +499,7 @@
       },
       {
         "id": "C",
-        "text": "Approving changes"
+        "text": "Approving change records."
       },
       {
         "id": "D",
@@ -539,11 +539,11 @@
     "options": [
       {
         "id": "A",
-        "text": "To focus quality effort on the CIs that matter most to critical business services"
+        "text": "Focus quality effort on CIs for critical services."
       },
       {
         "id": "B",
-        "text": "To avoid letting low-priority CI classes mask or distort the score for important ones"
+        "text": "Avoid low-priority classes masking the score."
       },
       {
         "id": "C",
@@ -587,7 +587,7 @@
     "options": [
       {
         "id": "A",
-        "text": "How long since the CI was last updated or confirmed by a source"
+        "text": "How long since the CI was updated or confirmed."
       },
       {
         "id": "B",
@@ -635,7 +635,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Attributes are filled in, but there are duplicates or inaccurate values"
+        "text": "Attributes are filled but duplicated or inaccurate."
       },
       {
         "id": "B",
@@ -683,7 +683,7 @@
     "options": [
       {
         "id": "A",
-        "text": "CMDB/Configuration managers and data owners responsible for data quality"
+        "text": "CMDB managers and data owners."
       },
       {
         "id": "B",
@@ -731,7 +731,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Whether the expected relationships between the application and those servers exist in the CMDB"
+        "text": "Whether the app-to-server relationships exist."
       },
       {
         "id": "B",
@@ -875,7 +875,7 @@
     "options": [
       {
         "id": "A",
-        "text": "So organizations can define which attributes are required and what 'good' means for their context"
+        "text": "So orgs define required attributes and what 'good' means."
       },
       {
         "id": "B",
@@ -923,7 +923,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A scoped health dashboard/report filtered to those services that refreshes on the health schedule"
+        "text": "A scoped health dashboard for those services, on schedule."
       },
       {
         "id": "B",
@@ -971,11 +971,11 @@
     "options": [
       {
         "id": "A",
-        "text": "Prioritizing remediation based on where quality is worst or most impactful"
+        "text": "Prioritizing remediation where quality is worst."
       },
       {
         "id": "B",
-        "text": "Demonstrating data-quality improvement over time to stakeholders"
+        "text": "Showing data-quality improvement over time."
       },
       {
         "id": "C",
@@ -1019,7 +1019,7 @@
     "options": [
       {
         "id": "A",
-        "text": "The identification rules / source data feeding that class via IRE"
+        "text": "The identification rules and source data."
       },
       {
         "id": "B",
@@ -1115,7 +1115,7 @@
     "options": [
       {
         "id": "A",
-        "text": "It inflates the score without improving actual data quality"
+        "text": "It inflates the score, not the data quality."
       },
       {
         "id": "B",
@@ -1211,7 +1211,7 @@
     "options": [
       {
         "id": "A",
-        "text": "By breaking the score down by class, service, or owner so each team can see and own its portion of data quality"
+        "text": "Break the score down by class, service, or owner."
       },
       {
         "id": "B",
@@ -1307,7 +1307,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Lets users build relationship-aware queries visually without coding"
+        "text": "Build relationship-aware queries visually, no code."
       },
       {
         "id": "B",
@@ -1403,7 +1403,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Overall health score plus dimension breakdown and trend over time"
+        "text": "Overall score plus dimension breakdown and trend."
       },
       {
         "id": "B",
@@ -1451,7 +1451,7 @@
     "options": [
       {
         "id": "A",
-        "text": "As a correctness issue, with the duplicate sets identified for de-duplication/remediation"
+        "text": "As a correctness issue, flagged for de-dup."
       },
       {
         "id": "B",
@@ -1499,7 +1499,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Prioritize remediation for the class supporting critical services, since equal scores don't mean equal business impact"
+        "text": "Prioritize the class supporting critical services."
       },
       {
         "id": "B",
@@ -1547,7 +1547,7 @@
     "options": [
       {
         "id": "A",
-        "text": "The Insight stage — measuring and understanding the quality of data that has been ingested"
+        "text": "The Insight stage — measuring ingested data quality."
       },
       {
         "id": "B",
@@ -1595,11 +1595,11 @@
     "options": [
       {
         "id": "A",
-        "text": "Whether required attributes for the CI class are populated"
+        "text": "Whether required attributes are populated."
       },
       {
         "id": "B",
-        "text": "Whether expected relationships for the CI exist"
+        "text": "Whether expected relationships exist."
       },
       {
         "id": "C",
@@ -1643,7 +1643,7 @@
     "options": [
       {
         "id": "A",
-        "text": "The health-score trend comparing this month to last month"
+        "text": "The health-score trend, this month vs last."
       },
       {
         "id": "B",
@@ -1691,7 +1691,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Data quality drifts as environments change, so ongoing measurement catches new issues early"
+        "text": "Data quality drifts, so ongoing measurement catches issues."
       },
       {
         "id": "B",
@@ -1739,7 +1739,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Correctness — the values may be present and rule-conformant yet inaccurate or duplicated"
+        "text": "Correctness — values present yet inaccurate or duplicated."
       },
       {
         "id": "B",
@@ -1787,7 +1787,7 @@
     "options": [
       {
         "id": "A",
-        "text": "CMDB Query Builder / relationship traversal"
+        "text": "CMDB Query Builder."
       },
       {
         "id": "B",
@@ -1795,11 +1795,11 @@
       },
       {
         "id": "C",
-        "text": "The survey designer"
+        "text": "The survey designer tool."
       },
       {
         "id": "D",
-        "text": "The email client"
+        "text": "The email client app."
       }
     ],
     "correct": [
@@ -1835,7 +1835,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Each finding should point to specific CIs and a clear fix, so it can drive remediation rather than just inform"
+        "text": "Each finding should point to specific CIs and a fix."
       },
       {
         "id": "B",
@@ -1883,7 +1883,7 @@
     "options": [
       {
         "id": "A",
-        "text": "They highlight where expected dependencies are missing so service maps can be made complete"
+        "text": "They show where dependencies are missing."
       },
       {
         "id": "B",
@@ -1931,7 +1931,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Use the correctness drill-down to find which CIs/duplicates the new source introduced, then address identification/reconciliation for that source"
+        "text": "Use correctness drill-down to find the source's duplicates."
       },
       {
         "id": "B",
@@ -1979,7 +1979,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Insight measures whether the data is good enough to support the processes that rely on it"
+        "text": "Insight measures whether data supports the processes using it."
       },
       {
         "id": "B",
@@ -2123,7 +2123,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Health can measure how well CIs and services conform to the CSDM model"
+        "text": "Health can measure conformance to the CSDM model."
       },
       {
         "id": "B",
@@ -2267,7 +2267,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Report the overall score for simplicity, but pair it with dimension and class breakdowns so detail is available on drill-down"
+        "text": "Report the overall score, with drill-down breakdowns."
       },
       {
         "id": "B",
@@ -2315,7 +2315,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Required attributes or relationships are missing on many server CIs"
+        "text": "Many CIs lack required attributes."
       },
       {
         "id": "B",
@@ -2555,7 +2555,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Scored KPIs for completeness, correctness, and compliance"
+        "text": "Scored KPIs for the three dimensions."
       },
       {
         "id": "B",
@@ -2603,7 +2603,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Work the de-duplication tasks to merge duplicates into one CI"
+        "text": "Work the de-duplication tasks to merge duplicates."
       },
       {
         "id": "B",
@@ -2651,11 +2651,11 @@
     "options": [
       {
         "id": "A",
-        "text": "Apply a CMDB group that defines the relevant CIs"
+        "text": "Apply a CMDB group of those CIs."
       },
       {
         "id": "B",
-        "text": "Delete unrelated CIs"
+        "text": "Delete unrelated CIs now."
       },
       {
         "id": "C",
@@ -2663,7 +2663,7 @@
       },
       {
         "id": "D",
-        "text": "Turn off IRE"
+        "text": "Turn off IRE entirely."
       }
     ],
     "correct": [
@@ -2699,7 +2699,7 @@
     "options": [
       {
         "id": "A",
-        "text": "By tracking KPI scores over time to show trend improvement"
+        "text": "Track KPI scores over time to show improvement."
       },
       {
         "id": "B",
@@ -2843,11 +2843,11 @@
     "options": [
       {
         "id": "A",
-        "text": "Populate missing required attributes/relationships"
+        "text": "Populate missing required attributes."
       },
       {
         "id": "B",
-        "text": "Resolve de-duplication tasks"
+        "text": "Resolve de-duplication tasks."
       },
       {
         "id": "C",

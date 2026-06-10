@@ -59,11 +59,11 @@
     "options": [
       {
         "id": "A",
-        "text": "Add the new class under an appropriate parent class so it inherits the correct structure"
+        "text": "Add the class under an appropriate parent to inherit structure."
       },
       {
         "id": "B",
-        "text": "Install or update the 'CMDB CI Class Models' store application and verify the class does not already exist"
+        "text": "Install/update 'CMDB CI Class Models' and check it doesn't exist."
       },
       {
         "id": "C",
@@ -107,7 +107,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Create the new class in CI Class Manager and configure table inheritance so it inherits from an appropriate parent class"
+        "text": "Create the class in CI Class Manager with table inheritance."
       },
       {
         "id": "B",
@@ -203,11 +203,11 @@
     "options": [
       {
         "id": "A",
-        "text": "Install or upgrade the 'CMDB CI Class Models' store app to find a suitable existing class that already accommodates the CI"
+        "text": "Install/upgrade 'CMDB CI Class Models' to find a suitable class."
       },
       {
         "id": "B",
-        "text": "Extend an existing CI class table to add the custom class attributes"
+        "text": "Extend an existing CI class table for the attributes."
       },
       {
         "id": "C",
@@ -251,7 +251,7 @@
     "options": [
       {
         "id": "A",
-        "text": "In CI Class Manager, on the class's Basic Info tab"
+        "text": "On the class's Basic Info tab."
       },
       {
         "id": "B",
@@ -543,15 +543,15 @@
       },
       {
         "id": "B",
-        "text": "Version"
+        "text": "The Version field."
       },
       {
         "id": "C",
-        "text": "Class"
+        "text": "The Class field."
       },
       {
         "id": "D",
-        "text": "Vendor"
+        "text": "The Vendor field."
       }
     ],
     "correct": [
@@ -683,7 +683,7 @@
     "options": [
       {
         "id": "A",
-        "text": "The CI can be uniquely identified on its own attributes, without needing a related parent CI"
+        "text": "The CI can be identified on its own attributes."
       },
       {
         "id": "B",
@@ -731,7 +731,7 @@
     "options": [
       {
         "id": "A",
-        "text": "To recommend the expected relationship types for that class"
+        "text": "Recommend expected relationship types."
       },
       {
         "id": "B",
@@ -879,15 +879,15 @@
       },
       {
         "id": "B",
-        "text": "glide.ui.theme.cmdb360"
+        "text": "glide.identification_engine.multisource"
       },
       {
         "id": "C",
-        "text": "glide.discovery.enabled"
+        "text": "glide.discovery.engine.enabled"
       },
       {
         "id": "D",
-        "text": "glide.cmdb.health.enabled"
+        "text": "glide.cmdb.health.scan.enabled"
       }
     ],
     "correct": [
@@ -923,7 +923,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Narrow the scope of CIs included in the identification process based on defined conditions"
+        "text": "Narrow which CIs the identification process includes."
       },
       {
         "id": "B",
@@ -971,11 +971,11 @@
     "options": [
       {
         "id": "A",
-        "text": "Implement identification and reconciliation rules so CIs are matched and classified consistently"
+        "text": "Identification/reconciliation rules so CIs match consistently."
       },
       {
         "id": "B",
-        "text": "Use CI Class Manager to establish standardized CI classes and attributes across all sources"
+        "text": "Use CI Class Manager to standardize classes and attributes."
       },
       {
         "id": "C",
@@ -1067,7 +1067,7 @@
     "options": [
       {
         "id": "A",
-        "text": "They are inherited from parent classes up the table hierarchy"
+        "text": "Inherited from parent classes up the hierarchy."
       },
       {
         "id": "B",
@@ -1355,19 +1355,19 @@
     "options": [
       {
         "id": "A",
-        "text": "Identification and Reconciliation"
+        "text": "Identification & Reconciliation."
       },
       {
         "id": "B",
-        "text": "CI List tab"
+        "text": "The CI List tab here."
       },
       {
         "id": "C",
-        "text": "Dashboard tab"
+        "text": "The Dashboard view tab."
       },
       {
         "id": "D",
-        "text": "Notifications tab"
+        "text": "The Notifications panel."
       }
     ],
     "correct": [
@@ -1403,7 +1403,7 @@
     "options": [
       {
         "id": "A",
-        "text": "CIs of that class become available choices in CI reference pickers"
+        "text": "CIs of that class appear in CI reference pickers."
       },
       {
         "id": "B",
@@ -1547,7 +1547,7 @@
     "options": [
       {
         "id": "A",
-        "text": "As a criterion attribute within the class's identifier entry in CI Class Manager"
+        "text": "In the class's identifier entry."
       },
       {
         "id": "B",
@@ -1595,7 +1595,7 @@
     "options": [
       {
         "id": "A",
-        "text": "It is the central tool to view and manage CI classes, their attributes, identification/reconciliation rules, and relationships"
+        "text": "The central tool to manage classes and rules."
       },
       {
         "id": "B",
@@ -1691,7 +1691,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Changes to base classes ripple to all child classes and can complicate upgrades and performance"
+        "text": "Base-class changes ripple to children."
       },
       {
         "id": "B",
@@ -1883,7 +1883,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Extend the existing server class so the new class inherits its attributes"
+        "text": "Extend the server class so the new class inherits attributes."
       },
       {
         "id": "B",
@@ -1931,19 +1931,19 @@
     "options": [
       {
         "id": "A",
-        "text": "Reconciliation rules per attribute in CI Class Manager"
+        "text": "Reconciliation rules per attribute."
       },
       {
         "id": "B",
-        "text": "A UI policy"
+        "text": "A simple UI policy rule."
       },
       {
         "id": "C",
-        "text": "A favorite"
+        "text": "A favorite shortcut link."
       },
       {
         "id": "D",
-        "text": "A coalesce field"
+        "text": "A coalesce field mapping."
       }
     ],
     "correct": [
@@ -1979,7 +1979,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Asset and CI are separate but synchronized records representing different perspectives of the same item"
+        "text": "Asset and CI are separate but synchronized records."
       },
       {
         "id": "B",
@@ -2027,19 +2027,19 @@
     "options": [
       {
         "id": "A",
-        "text": "A CI relationship (e.g., Runs on::Runs)"
+        "text": "A CI relationship (Runs on)."
       },
       {
         "id": "B",
-        "text": "A coalesce field"
+        "text": "A coalesce field map."
       },
       {
         "id": "C",
-        "text": "A watch list"
+        "text": "A watch list entry."
       },
       {
         "id": "D",
-        "text": "A UI policy"
+        "text": "A simple UI policy."
       }
     ],
     "correct": [
@@ -2171,7 +2171,7 @@
     "options": [
       {
         "id": "A",
-        "text": "The criterion attribute(s) used to match incoming data to an existing CI"
+        "text": "The criterion attributes to match a CI."
       },
       {
         "id": "B",
@@ -2183,7 +2183,7 @@
       },
       {
         "id": "D",
-        "text": "The branding logo"
+        "text": "The branding logo image."
       }
     ],
     "correct": [
@@ -2267,11 +2267,11 @@
     "options": [
       {
         "id": "A",
-        "text": "It moves a CI to a more or less specific class while preserving its identity"
+        "text": "It moves a CI between classes, keeping identity."
       },
       {
         "id": "B",
-        "text": "Fixing identification rules helps prevent recurring mis-classification"
+        "text": "Fixing identification rules stops mis-classification."
       },
       {
         "id": "C",
