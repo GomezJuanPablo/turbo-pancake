@@ -159,7 +159,7 @@
       },
       {
         "id": "B",
-        "text": "To schedule tasks asking responsible users to verify that specified CI data is accurate and up to date"
+        "text": "Schedule tasks for users to verify CI data accuracy."
       },
       {
         "id": "C",
@@ -251,7 +251,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Which discovery source (data source) is allowed to write a given attribute, so authoritative data isn't overwritten by a lesser source"
+        "text": "Which source may write a given attribute (authority)."
       },
       {
         "id": "B",
@@ -303,7 +303,7 @@
       },
       {
         "id": "B",
-        "text": "A de-duplication task (duplicate CI remediation)"
+        "text": "A de-duplication task."
       },
       {
         "id": "C",
@@ -351,7 +351,7 @@
       },
       {
         "id": "B",
-        "text": "Monitor CMDB health, triage remediation, and manage CI data from a role-based workspace"
+        "text": "Monitor CMDB health and remediate from a workspace."
       },
       {
         "id": "C",
@@ -395,7 +395,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Run the policy in preview/dry-run to see the impacted CIs before committing"
+        "text": "Run the policy in preview to see impacted CIs first."
       },
       {
         "id": "B",
@@ -495,7 +495,7 @@
       },
       {
         "id": "B",
-        "text": "A definition that groups one or more identifier entries used to identify CIs of a given class"
+        "text": "A definition grouping identifier entries for a class."
       },
       {
         "id": "C",
@@ -543,7 +543,7 @@
       },
       {
         "id": "B",
-        "text": "A dependent identifier (identification using a related parent CI)"
+        "text": "A dependent identifier (parent CI)."
       },
       {
         "id": "C",
@@ -587,7 +587,7 @@
     "options": [
       {
         "id": "A",
-        "text": "To define repeatable, condition-based rules that enforce how CI data is maintained, retired, or cleaned up"
+        "text": "Condition-based rules for how CI data is maintained."
       },
       {
         "id": "B",
@@ -687,7 +687,7 @@
       },
       {
         "id": "B",
-        "text": "The discrepancies are remediated/corrected so the data once again reflects reality"
+        "text": "The discrepancies are corrected to reflect reality."
       },
       {
         "id": "C",
@@ -875,7 +875,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A mandatory-attribute data policy / required fields enforced for the CI class"
+        "text": "A mandatory-attribute data policy for the CI class."
       },
       {
         "id": "B",
@@ -923,7 +923,7 @@
     "options": [
       {
         "id": "A",
-        "text": "It is the name identifying which integration/process supplied the data, used to enforce attribute authority"
+        "text": "The source name used to enforce attribute authority."
       },
       {
         "id": "B",
@@ -975,7 +975,7 @@
       },
       {
         "id": "B",
-        "text": "Without relationships they can't participate in service maps or impact analysis"
+        "text": "Without relationships they can't join service maps."
       },
       {
         "id": "C",
@@ -1023,7 +1023,7 @@
       },
       {
         "id": "B",
-        "text": "A manual / human attestation control complementing automated scanning"
+        "text": "A manual attestation control."
       },
       {
         "id": "C",
@@ -1115,7 +1115,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A governed, policy-driven, auditable framework for managing CI lifecycle at scale"
+        "text": "A policy-driven, auditable CI lifecycle framework."
       },
       {
         "id": "B",
@@ -1167,7 +1167,7 @@
       },
       {
         "id": "B",
-        "text": "It records, per attribute, the value reported by each contributing source alongside the reconciled value"
+        "text": "It records each source's value plus the reconciled value."
       },
       {
         "id": "C",
@@ -1211,7 +1211,7 @@
     "options": [
       {
         "id": "A",
-        "text": "To rank sources so the most authoritative one wins when several report the same attribute"
+        "text": "Rank sources so the most authoritative one wins."
       },
       {
         "id": "B",
@@ -1307,7 +1307,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A CMDB Health KPI or rule flagging CIs that violate a quality standard"
+        "text": "A KPI flagging non-compliant CIs."
       },
       {
         "id": "B",
@@ -1455,7 +1455,7 @@
       },
       {
         "id": "B",
-        "text": "Retire on decommission, archive for the retention window, then destroy after two years"
+        "text": "Retire on decommission, archive, then destroy after 2 years."
       },
       {
         "id": "C",
@@ -1499,7 +1499,7 @@
     "options": [
       {
         "id": "A",
-        "text": "To control which CIs/payload items IRE will process or skip based on defined conditions"
+        "text": "Control which CIs IRE processes or skips by condition."
       },
       {
         "id": "B",
@@ -1551,7 +1551,7 @@
       },
       {
         "id": "B",
-        "text": "Consistent naming improves identification accuracy, reduces duplicates"
+        "text": "Consistent naming improves identification."
       },
       {
         "id": "C",
@@ -1595,7 +1595,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Which CIs/records are selected for the certification tasks"
+        "text": "Which CIs the certification tasks select."
       },
       {
         "id": "B",
@@ -1647,7 +1647,7 @@
       },
       {
         "id": "B",
-        "text": "Because a workspace surfaces the highest-impact issues, tracks ownership"
+        "text": "A workspace surfaces high-impact issues and ownership."
       },
       {
         "id": "C",
@@ -1695,7 +1695,7 @@
       },
       {
         "id": "B",
-        "text": "An ambiguous/multiple-match condition that should be surfaced for review rather than blindly updated"
+        "text": "An ambiguous multi-match that should be reviewed."
       },
       {
         "id": "C",
@@ -1887,7 +1887,7 @@
       },
       {
         "id": "B",
-        "text": "Data source rules / IRE rules that restrict whether a source may insert"
+        "text": "Rules on whether a source may insert."
       },
       {
         "id": "C",
@@ -1935,7 +1935,7 @@
       },
       {
         "id": "B",
-        "text": "Reviewed by an owner, then applied or rejected with the decision tracked"
+        "text": "Reviewed by an owner, then applied or rejected (tracked)."
       },
       {
         "id": "C",
@@ -1983,7 +1983,7 @@
       },
       {
         "id": "B",
-        "text": "A policy applies the same rules, conditions, and downstream actions uniformly and leaves an audit trail"
+        "text": "A policy applies uniform rules and leaves an audit trail."
       },
       {
         "id": "C",
@@ -2031,7 +2031,7 @@
       },
       {
         "id": "B",
-        "text": "CI Class Manager is where identification and reconciliation rules for classes are viewed and maintained"
+        "text": "CI Class Manager maintains identification rules."
       },
       {
         "id": "C",
@@ -2123,7 +2123,7 @@
     "options": [
       {
         "id": "A",
-        "text": "It shows the per-source reported values and which source won, so the analyst can see why the reconciled value is what it is"
+        "text": "It shows each source's value and which source won."
       },
       {
         "id": "B",
@@ -2223,7 +2223,7 @@
       },
       {
         "id": "B",
-        "text": "Require all sources to submit through IRE so identification and reconciliation always apply"
+        "text": "Require all sources to submit through IRE."
       },
       {
         "id": "C",
@@ -2271,7 +2271,7 @@
       },
       {
         "id": "B",
-        "text": "It removes CIs from active operational use while preserving a recoverable record for audit or historical analysis"
+        "text": "It removes CIs from active use but keeps a record."
       },
       {
         "id": "C",
@@ -2319,7 +2319,7 @@
       },
       {
         "id": "B",
-        "text": "One reconciled, trusted CMDB that all processes reference, rather than competing data silos"
+        "text": "One reconciled, trusted CMDB all processes reference."
       },
       {
         "id": "C",
@@ -2363,7 +2363,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Treats it as a match on the higher-priority serial_number entry and updates that CI"
+        "text": "Treats it as a serial_number match and updates that CI."
       },
       {
         "id": "B",
@@ -2459,7 +2459,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A reconciliation rule designating the HR source as authoritative for that attribute"
+        "text": "A reconciliation rule making HR authoritative for it."
       },
       {
         "id": "B",
@@ -2511,7 +2511,7 @@
       },
       {
         "id": "B",
-        "text": "On a defined schedule/frequency so data is re-verified periodically before it goes stale"
+        "text": "On a schedule, re-verified before stale."
       },
       {
         "id": "C",
@@ -2555,7 +2555,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Update the policy's retention condition to 1 year so the change applies consistently going forward"
+        "text": "Set the policy's retention to 1 year."
       },
       {
         "id": "B",
@@ -2651,7 +2651,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A CMDB governance policy / data management charter"
+        "text": "A CMDB governance policy."
       },
       {
         "id": "B",
@@ -2703,7 +2703,7 @@
       },
       {
         "id": "B",
-        "text": "Prioritize by impact (e.g., CIs supporting critical services first), assign owners, and track remediation over time"
+        "text": "Prioritize by impact, assign owners, track remediation."
       },
       {
         "id": "C",
@@ -2747,7 +2747,7 @@
     "options": [
       {
         "id": "A",
-        "text": "It uses the CI class (and its inheritance) to apply the correct identifier and reconciliation rules"
+        "text": "It uses the CI class to apply the right rules."
       },
       {
         "id": "B",
@@ -2795,7 +2795,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Data Certification campaigns routed to the responsible business owners"
+        "text": "Data Certification campaigns to the responsible owners."
       },
       {
         "id": "B",
@@ -2843,7 +2843,7 @@
     "options": [
       {
         "id": "A",
-        "text": "It could remove relationships, break service maps, and erase audit history with no consistent process or trail"
+        "text": "It could break maps and erase audit history."
       },
       {
         "id": "B",
@@ -2895,7 +2895,7 @@
       },
       {
         "id": "B",
-        "text": "Authority should be based on which source is most reliable for that attribute, enforced by reconciliation"
+        "text": "Authority follows the most reliable source, via reconciliation."
       },
       {
         "id": "C",
@@ -2943,7 +2943,7 @@
       },
       {
         "id": "B",
-        "text": "Sponsorship secures funding, cross-team cooperation, and authority to enforce standards that span organizational silos"
+        "text": "Sponsorship secures funding and authority across silos."
       },
       {
         "id": "C",
@@ -2991,7 +2991,7 @@
       },
       {
         "id": "B",
-        "text": "Accountability — someone is responsible for fixing each issue, and progress can be tracked to closure"
+        "text": "Accountability — someone owns each fix, tracked to closure."
       },
       {
         "id": "C",
@@ -3035,7 +3035,7 @@
     "options": [
       {
         "id": "A",
-        "text": "The CI has not been updated/seen by any authoritative source for a defined stale period"
+        "text": "Not seen by a source for a stale period."
       },
       {
         "id": "B",
@@ -3083,7 +3083,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Deciding, when multiple sources report data for the same CI"
+        "text": "Deciding which source's value wins for a CI."
       },
       {
         "id": "B",
@@ -3179,7 +3179,7 @@
     "options": [
       {
         "id": "A",
-        "text": "The person/role accountable for the accuracy and maintenance of a defined set of CI data"
+        "text": "The role accountable for CI data accuracy."
       },
       {
         "id": "B",
@@ -3227,7 +3227,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Align identification — either have the integration supply serial numbers or add a reliable MAC-based identifier entry — so IRE can match correctly"
+        "text": "Align identification so IRE matches."
       },
       {
         "id": "B",
@@ -3327,7 +3327,7 @@
       },
       {
         "id": "B",
-        "text": "Recurring attestation keeps key attributes accurate and surfaces drift early"
+        "text": "Recurring attestation keeps data accurate."
       },
       {
         "id": "C",
@@ -3423,7 +3423,7 @@
       },
       {
         "id": "B",
-        "text": "Because each environment's data sources and attribute availability differ, so rules may need adjustment to match reliably and avoid duplicates"
+        "text": "Each environment's sources differ, so rules need tuning."
       },
       {
         "id": "C",
@@ -3563,7 +3563,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A target CI scope/condition plus the lifecycle action(s) and timing to apply"
+        "text": "A CI scope plus action and timing."
       },
       {
         "id": "B",
@@ -3611,7 +3611,7 @@
     "options": [
       {
         "id": "A",
-        "text": "The certification filter/scope or assignment is misaligned and should be refined to match actual ownership"
+        "text": "The certification scope is misaligned."
       },
       {
         "id": "B",
@@ -3659,7 +3659,7 @@
     "options": [
       {
         "id": "A",
-        "text": "It lets you trace who or what changed a value and when"
+        "text": "It traces who or what changed a value and when."
       },
       {
         "id": "B",
@@ -3711,7 +3711,7 @@
       },
       {
         "id": "B",
-        "text": "Duplicate CIs distort reporting, impact analysis, and service maps"
+        "text": "Duplicates distort reporting, impact analysis, and maps."
       },
       {
         "id": "C",
@@ -3755,7 +3755,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Percentage of CIs with a complete set of required attributes"
+        "text": "Percentage of CIs with all required attributes."
       },
       {
         "id": "B",
@@ -3803,7 +3803,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Relationships should be handled deliberately, because retiring a CI affects the service maps and dependencies it participates in"
+        "text": "Relationships need care — retiring a CI affects its maps."
       },
       {
         "id": "B",
@@ -3851,11 +3851,11 @@
     "options": [
       {
         "id": "A",
-        "text": "An identifier entry contains one or more criterion attributes used to match CIs"
+        "text": "An identifier entry holds criterion attributes to match CIs."
       },
       {
         "id": "B",
-        "text": "Identifier entries can be ordered by priority so stronger matches are tried first"
+        "text": "Identifier entries can be ordered by priority."
       },
       {
         "id": "C",
@@ -3899,7 +3899,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Strengthening identification rules and source data quality so duplicates aren't created in the first place"
+        "text": "Strengthen identification to prevent dupes."
       },
       {
         "id": "B",
@@ -3995,7 +3995,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Data Manager execution history/logs and policy run results, reviewed periodically"
+        "text": "Data Manager execution logs and policy run results."
       },
       {
         "id": "B",
@@ -4091,7 +4091,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Configure reconciliation rules so only Discovery can update that attribute"
+        "text": "Reconciliation so only Discovery updates it."
       },
       {
         "id": "B",
@@ -4287,15 +4287,15 @@
       },
       {
         "id": "B",
-        "text": "A coalesce field"
+        "text": "A coalesce field map."
       },
       {
         "id": "C",
-        "text": "A UI policy"
+        "text": "A simple UI policy."
       },
       {
         "id": "D",
-        "text": "The watch list"
+        "text": "The record watch list."
       }
     ],
     "correct": [
@@ -4379,19 +4379,19 @@
     "options": [
       {
         "id": "A",
-        "text": "CMDB data policies / required-attribute rules"
+        "text": "Required-attribute data policies."
       },
       {
         "id": "B",
-        "text": "A coalesce field"
+        "text": "A coalesce field map."
       },
       {
         "id": "C",
-        "text": "A favorite"
+        "text": "A favorite shortcut."
       },
       {
         "id": "D",
-        "text": "A scheduled report"
+        "text": "A scheduled report job."
       }
     ],
     "correct": [
@@ -4427,7 +4427,7 @@
     "options": [
       {
         "id": "A",
-        "text": "IRE centrally identifies and reconciles CIs no matter which ingestion path is used"
+        "text": "IRE identifies and reconciles CIs on any ingestion path."
       },
       {
         "id": "B",
@@ -4523,11 +4523,11 @@
     "options": [
       {
         "id": "A",
-        "text": "Identifying whether incoming data matches an existing CI"
+        "text": "Identifying whether incoming data matches a CI."
       },
       {
         "id": "B",
-        "text": "Reconciling which source is authoritative for an attribute"
+        "text": "Reconciling which source is authoritative."
       },
       {
         "id": "C",

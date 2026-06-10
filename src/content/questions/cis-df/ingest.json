@@ -11,7 +11,7 @@
     "options": [
       {
         "id": "A",
-        "text": "To automatically find devices and applications on the network and create/update their CIs"
+        "text": "Find devices/apps on the network and create their CIs."
       },
       {
         "id": "B",
@@ -59,7 +59,7 @@
     "options": [
       {
         "id": "A",
-        "text": "It is a lightweight application that runs inside the customer network to securely execute probes/commands and relay data to the ServiceNow instance"
+        "text": "A lightweight in-network app that runs probes for the instance."
       },
       {
         "id": "B",
@@ -107,7 +107,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A productized, IRE-based integration that imports third-party data into the CMDB following CSDM and identification rules"
+        "text": "An IRE integration for third-party data."
       },
       {
         "id": "B",
@@ -115,11 +115,11 @@
       },
       {
         "id": "C",
-        "text": "A dashboard widget"
+        "text": "A dashboard widget tool."
       },
       {
         "id": "D",
-        "text": "A type of incident"
+        "text": "A type of incident record."
       }
     ],
     "correct": [
@@ -155,7 +155,7 @@
     "options": [
       {
         "id": "A",
-        "text": "So identification prevents duplicates and reconciliation protects authoritative attributes"
+        "text": "So identification and reconciliation protect data."
       },
       {
         "id": "B",
@@ -203,7 +203,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A guided tool to transform and map third-party import data to CMDB classes/attributes and load it via IRE"
+        "text": "A guided tool to map data to CMDB."
       },
       {
         "id": "B",
@@ -215,7 +215,7 @@
       },
       {
         "id": "D",
-        "text": "A change calendar"
+        "text": "A change calendar view."
       }
     ],
     "correct": [
@@ -347,7 +347,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A certified Service Graph Connector for that tool on the ServiceNow Store"
+        "text": "A certified Service Graph Connector on the Store."
       },
       {
         "id": "B",
@@ -395,11 +395,11 @@
     "options": [
       {
         "id": "A",
-        "text": "A set of declarative operations that defines how to probe a target and extract CI data, used instead of legacy probe/sensor scripting"
+        "text": "Declarative probe operations."
       },
       {
         "id": "B",
-        "text": "A scheduled email"
+        "text": "A scheduled email job."
       },
       {
         "id": "C",
@@ -443,7 +443,7 @@
     "options": [
       {
         "id": "A",
-        "text": "The credentials configured for the MID Server to access those targets"
+        "text": "The MID Server's target credentials."
       },
       {
         "id": "B",
@@ -491,7 +491,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Route the load through the Identification and Reconciliation engine"
+        "text": "Route the load through IRE."
       },
       {
         "id": "B",
@@ -779,7 +779,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Updates for the SCCM Service Graph Connector will be skipped during upgrades because the mapping was customized"
+        "text": "Customized SCCM connector mapping is skipped on upgrade."
       },
       {
         "id": "B",
@@ -1067,7 +1067,7 @@
     "options": [
       {
         "id": "A",
-        "text": "To identify and compare CI attribute values contributed by multiple data sources"
+        "text": "Compare CI attribute values from multiple sources."
       },
       {
         "id": "B",
@@ -1115,11 +1115,11 @@
     "options": [
       {
         "id": "A",
-        "text": "Gaps in attribute data across different data sources"
+        "text": "Gaps in attribute data across sources."
       },
       {
         "id": "B",
-        "text": "Different attribute values reported by different data sources"
+        "text": "Different values reported by different sources."
       },
       {
         "id": "C",
@@ -1403,7 +1403,7 @@
     "options": [
       {
         "id": "A",
-        "text": "No — CI data can come from many sources (integrations, imports, Service Graph Connectors), and reconciliation rules can use any discovery source"
+        "text": "No — CI data can come from many sources, and rules use any."
       },
       {
         "id": "B",
@@ -1499,11 +1499,11 @@
     "options": [
       {
         "id": "A",
-        "text": "The number of levels displayed on the map can be modified"
+        "text": "The number of map levels can be changed."
       },
       {
         "id": "B",
-        "text": "Map nodes can be filtered based on user preferences"
+        "text": "Map nodes can be filtered by preference."
       },
       {
         "id": "C",
@@ -1595,7 +1595,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Implement identification and reconciliation rules so CIs are matched and classified consistently regardless of source"
+        "text": "Use identification/reconciliation rules so CIs match consistently."
       },
       {
         "id": "B",
@@ -1643,7 +1643,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Network reachability/firewall and credentials between the MID Server and the target devices"
+        "text": "Reachability and credentials to the targets."
       },
       {
         "id": "B",
@@ -1739,7 +1739,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Agent Client Collector (ACC), using a lightweight agent on the endpoint"
+        "text": "Agent Client Collector (ACC) agent."
       },
       {
         "id": "B",
@@ -1747,7 +1747,7 @@
       },
       {
         "id": "C",
-        "text": "Manual CI entry only"
+        "text": "Manual CI entry only here."
       },
       {
         "id": "D",
@@ -1787,7 +1787,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A scheduled data import (import set/transform, ideally via IRE) that updates the attributes from the external source"
+        "text": "A scheduled data import via IRE that updates the attributes."
       },
       {
         "id": "B",
@@ -1835,7 +1835,7 @@
     "options": [
       {
         "id": "A",
-        "text": "To detect which ports are open on targets so the device type can be classified"
+        "text": "Detect open ports to classify the device."
       },
       {
         "id": "B",
@@ -1931,7 +1931,7 @@
     "options": [
       {
         "id": "A",
-        "text": "The type of device/CI (e.g., Windows vs Linux server) so the correct identification and exploration logic is applied"
+        "text": "The CI type, to apply correct logic."
       },
       {
         "id": "B",
@@ -1979,7 +1979,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Use the certified Cloud Service Graph Connectors / Cloud Discovery for those providers"
+        "text": "Use certified Cloud Service Graph Connectors / Cloud Discovery."
       },
       {
         "id": "B",
@@ -2027,7 +2027,7 @@
     "options": [
       {
         "id": "A",
-        "text": "How and from where to retrieve the import data"
+        "text": "How and where to retrieve the import data."
       },
       {
         "id": "B",
@@ -2075,7 +2075,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Quick Discovery (discover a single target on demand)"
+        "text": "Quick Discovery (one target on demand)."
       },
       {
         "id": "B",
@@ -2123,7 +2123,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A relationship (e.g., 'Runs on::Runs') between the application CI and the host server CI"
+        "text": "A 'Runs on' relationship between app and host."
       },
       {
         "id": "B",
@@ -2171,7 +2171,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Use least-privilege credentials scoped to what Discovery needs, managed centrally and rotated"
+        "text": "Use least-privilege credentials, managed centrally and rotated."
       },
       {
         "id": "B",
@@ -2411,7 +2411,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Through manual entry or import for non-discoverable data"
+        "text": "Manual entry or import."
       },
       {
         "id": "B",
@@ -2423,7 +2423,7 @@
       },
       {
         "id": "D",
-        "text": "Via a UI policy"
+        "text": "Via a simple UI policy."
       }
     ],
     "correct": [
@@ -2651,7 +2651,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Route all sources through IRE and define reconciliation precedence for overlapping attributes"
+        "text": "Route all sources through IRE with reconciliation precedence."
       },
       {
         "id": "B",
@@ -2699,11 +2699,11 @@
     "options": [
       {
         "id": "A",
-        "text": "Agentless Discovery via a MID Server"
+        "text": "Agentless Discovery via a MID Server."
       },
       {
         "id": "B",
-        "text": "A Service Graph Connector for a certified source"
+        "text": "A Service Graph Connector."
       },
       {
         "id": "C",
@@ -2711,7 +2711,7 @@
       },
       {
         "id": "D",
-        "text": "A watch list"
+        "text": "A watch list entry."
       }
     ],
     "correct": [
@@ -2747,11 +2747,11 @@
     "options": [
       {
         "id": "A",
-        "text": "Discovery is well suited to scanning the live environment for CIs"
+        "text": "Discovery scans the live environment for CIs."
       },
       {
         "id": "B",
-        "text": "IntegrationHub ETL is well suited to mapping arbitrary external data into CMDB classes"
+        "text": "IntegrationHub ETL maps arbitrary external data to CMDB."
       },
       {
         "id": "C",
