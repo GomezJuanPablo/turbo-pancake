@@ -157,7 +157,7 @@
       },
       {
         "id": "B",
-        "text": "A reusable flow that has its own inputs and outputs and can be called from other flows or actions."
+        "text": "A reusable flow callable from other flows."
       },
       {
         "id": "C",
@@ -304,7 +304,7 @@
       },
       {
         "id": "B",
-        "text": "Flow Designer — for new work, ServiceNow recommends Flow Designer. Legacy Workflow remains supported for existing workflows and certain scenarios, but new automation should default to Flow Designer."
+        "text": "Flow Designer, recommended for new automation."
       },
       {
         "id": "C",
@@ -312,7 +312,7 @@
       },
       {
         "id": "D",
-        "text": "Excel macros."
+        "text": "Scheduled Jobs running inline scripts."
       }
     ],
     "correct": [
@@ -448,7 +448,7 @@
       },
       {
         "id": "B",
-        "text": "Scheduled trigger configured for weekdays at 09:00 in the desired timezone."
+        "text": "A Scheduled trigger set for weekdays at 09:00."
       },
       {
         "id": "C",
@@ -589,7 +589,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A record that defines an outgoing email."
+        "text": "Defines an outgoing email."
       },
       {
         "id": "B",
@@ -597,11 +597,11 @@
       },
       {
         "id": "C",
-        "text": "A scheduled job."
+        "text": "A scheduled cleanup job."
       },
       {
         "id": "D",
-        "text": "A UI Action."
+        "text": "A UI Action on the form."
       }
     ],
     "correct": [
@@ -688,7 +688,7 @@
       },
       {
         "id": "B",
-        "text": "Create an Email Notification with When = Record inserted or updated, Condition = state changes to Approved, To = requester."
+        "text": "An Email Notification fired when state becomes Approved."
       },
       {
         "id": "C",
@@ -732,19 +732,19 @@
     "options": [
       {
         "id": "A",
-        "text": "A record that defines how the platform reacts to incoming email."
+        "text": "Defines a reaction to incoming email."
       },
       {
         "id": "B",
-        "text": "A reply-to-all macro."
+        "text": "A reply-to-all email macro."
       },
       {
         "id": "C",
-        "text": "A spam filter."
+        "text": "A spam filtering rule."
       },
       {
         "id": "D",
-        "text": "A UI button."
+        "text": "A UI button on the form."
       }
     ],
     "correct": [
@@ -831,7 +831,7 @@
       },
       {
         "id": "B",
-        "text": "Create an Application Property x_acme_loaner.default_loan_days = 14."
+        "text": "An Application Property holding the default loan days."
       },
       {
         "id": "C",
@@ -973,7 +973,7 @@
       },
       {
         "id": "B",
-        "text": "An Inbound Email Action that matches the watermark/in-reply-to of the original notification, finds the target record."
+        "text": "An Inbound Email Action matched by the reply watermark."
       },
       {
         "id": "C",
@@ -1070,7 +1070,7 @@
       },
       {
         "id": "B",
-        "text": "Look at the Email logs (System Logs → Emails) to see the actual outbound records: who sent them, when, and what notification triggered each. Then check whether two Notifications match the same condition (or if a notification AND a Flow are both sending)."
+        "text": "Check System Logs → Emails to see what triggered each send."
       },
       {
         "id": "C",
@@ -1119,15 +1119,15 @@
       },
       {
         "id": "B",
-        "text": "g_form.getProperty()"
+        "text": "gs.getValue('x_acme_loaner.default_loan_days')"
       },
       {
         "id": "C",
-        "text": "current.getProperty()"
+        "text": "current.getProperty('x_acme_loaner.days')"
       },
       {
         "id": "D",
-        "text": "sys_properties.read()"
+        "text": "sys_properties.read('x_acme_loaner.days')"
       }
     ],
     "correct": [
@@ -1163,19 +1163,19 @@
     "options": [
       {
         "id": "A",
-        "text": "A record that defines a time-based commitment on a record."
+        "text": "A time-based commitment on a record."
       },
       {
         "id": "B",
-        "text": "An ACL rule."
+        "text": "An access control rule."
       },
       {
         "id": "C",
-        "text": "A scheduled job."
+        "text": "A scheduled cleanup job."
       },
       {
         "id": "D",
-        "text": "An email template."
+        "text": "An email template record."
       }
     ],
     "correct": [
@@ -1214,7 +1214,7 @@
       },
       {
         "id": "B",
-        "text": "Define an SLA Definition: Table = x_acme_loaner_request, Condition."
+        "text": "An SLA Definition on the Loaner Request table."
       },
       {
         "id": "C",
@@ -1258,19 +1258,19 @@
     "options": [
       {
         "id": "A",
-        "text": "Bar (column / horizontal column / stacked variants)."
+        "text": "Bar, with stacked variants."
       },
       {
         "id": "B",
-        "text": "Crystal Ball."
+        "text": "Spline timeline chart."
       },
       {
         "id": "C",
-        "text": "Tarot."
+        "text": "Polar bubble chart."
       },
       {
         "id": "D",
-        "text": "Pyramid."
+        "text": "Cascade ladder chart."
       }
     ],
     "correct": [
@@ -1309,7 +1309,7 @@
       },
       {
         "id": "B",
-        "text": "Create a Report (Bar by State, filtered to active=true) and configure Schedule Report to email a PDF to the ops group every Monday at 8am."
+        "text": "Create a Report and a Schedule Report to email the PDF weekly."
       },
       {
         "id": "C",
@@ -1448,19 +1448,19 @@
     "options": [
       {
         "id": "A",
-        "text": "Email them a screenshot."
+        "text": "Email them a static screenshot."
       },
       {
         "id": "B",
-        "text": "Set Visible to (groups, roles, users) on the report record, or share via the Report's sharing UI. The report respects the underlying table ACLs for row/field visibility — sharing the report doesn't bypass them."
+        "text": "Set 'Visible to' on the report record."
       },
       {
         "id": "C",
-        "text": "Give them the admin role."
+        "text": "Grant them the admin role."
       },
       {
         "id": "D",
-        "text": "Reports cannot be shared."
+        "text": "Reports cannot be shared at all."
       }
     ],
     "correct": [
@@ -1496,19 +1496,19 @@
     "options": [
       {
         "id": "A",
-        "text": "Restart the instance."
+        "text": "Restart the whole instance."
       },
       {
         "id": "B",
-        "text": "Open the affected Task SLA records and inspect the Schedule, business calendar, pause/resume history."
+        "text": "Check the Task SLA Schedule and pauses."
       },
       {
         "id": "C",
-        "text": "Disable the SLA."
+        "text": "Disable the SLA entirely."
       },
       {
         "id": "D",
-        "text": "Tell users to work faster."
+        "text": "Tell the team to work faster."
       }
     ],
     "correct": [
@@ -1545,7 +1545,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Capturing feedback from users via configurable forms."
+        "text": "Capturing user feedback via forms."
       },
       {
         "id": "B",
@@ -1553,11 +1553,11 @@
       },
       {
         "id": "C",
-        "text": "Logging in users."
+        "text": "Logging users into the portal."
       },
       {
         "id": "D",
-        "text": "Replacing Reports."
+        "text": "Replacing the Reports module."
       }
     ],
     "correct": [
@@ -1735,7 +1735,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A container record (kb_knowledge_base) for organizing articles by topic or audience, with its own access controls (User Criteria) for who can read/contribute to it."
+        "text": "A container that organizes articles by topic."
       },
       {
         "id": "B",
@@ -1743,11 +1743,11 @@
       },
       {
         "id": "C",
-        "text": "A subset of the navigator."
+        "text": "A subset of the navigator menu."
       },
       {
         "id": "D",
-        "text": "A scheduled job."
+        "text": "A scheduled cleanup job."
       }
     ],
     "correct": [
@@ -1786,7 +1786,7 @@
       },
       {
         "id": "B",
-        "text": "Who can read (or contribute to / order) the resource — a rule set referencing roles, groups, departments, locations, companies, and scripts that determines audience eligibility."
+        "text": "Who can read or order the resource."
       },
       {
         "id": "C",
@@ -1924,19 +1924,19 @@
     "options": [
       {
         "id": "A",
-        "text": "The lifecycle and workflow that fulfills the work behind a Catalog request."
+        "text": "The workflow that fulfills a request."
       },
       {
         "id": "B",
-        "text": "An email template."
+        "text": "An email notification template."
       },
       {
         "id": "C",
-        "text": "A type of ACL."
+        "text": "A type of access control rule."
       },
       {
         "id": "D",
-        "text": "A scheduled job."
+        "text": "A scheduled cleanup job."
       }
     ],
     "correct": [
@@ -2023,11 +2023,11 @@
       },
       {
         "id": "B",
-        "text": "A Scheduled Job (or scheduled Flow) that queries the audit table for records older than 90 days and deletes them in batches. Bound the query with setLimit and run async to avoid spikes; document the retention policy."
+        "text": "A Scheduled Job that purges records over 90 days old."
       },
       {
         "id": "C",
-        "text": "Disable the audit table."
+        "text": "Disable the audit table entirely."
       },
       {
         "id": "D",
@@ -2072,7 +2072,7 @@
       },
       {
         "id": "B",
-        "text": "Stagger the load: use a Scheduled trigger that batches the work."
+        "text": "Stagger the load with a batched Scheduled trigger."
       },
       {
         "id": "C",
@@ -2116,19 +2116,19 @@
     "options": [
       {
         "id": "A",
-        "text": "${requester.name} — field substitution using ${dot.walked.path} resolves to the value at send time"
+        "text": "${requester.name} substitution syntax."
       },
       {
         "id": "B",
-        "text": "{{requester.name}}"
+        "text": "{{requester.name}} syntax."
       },
       {
         "id": "C",
-        "text": "<%= requester.name %>"
+        "text": "<%= requester.name %> tag."
       },
       {
         "id": "D",
-        "text": "Just type the literal name."
+        "text": "Type the literal name in."
       }
     ],
     "correct": [
