@@ -299,7 +299,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Bundles of platform features and content that an administrator activates on the instance to enable additional functionality."
+        "text": "Bundles of features an admin activates on the instance."
       },
       {
         "id": "B",
@@ -631,7 +631,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Create an email notification on the Incident table with a condition that priority equals 1 and 'When to send' set to send on record update."
+        "text": "An email notification on Incident where priority = 1."
       },
       {
         "id": "B",
@@ -679,7 +679,7 @@
     "options": [
       {
         "id": "A",
-        "text": "They control instance-level email behavior such as sending enable/disable, test mode, SMTP/IMAP configuration values."
+        "text": "Control instance email behavior (send, test, SMTP/IMAP)."
       },
       {
         "id": "B",
@@ -878,11 +878,11 @@
       },
       {
         "id": "B",
-        "text": "A new UI policy."
+        "text": "A new UI policy rule."
       },
       {
         "id": "C",
-        "text": "A new incident record submitted by an end user."
+        "text": "A new incident record."
       },
       {
         "id": "D",
@@ -921,7 +921,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Through the platform's branding/Next Experience configuration that updates the instance logo."
+        "text": "The branding/Next Experience setting that updates the logo."
       },
       {
         "id": "B",
@@ -969,7 +969,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Its resources are namespaced and the application controls how other scopes may read or write them."
+        "text": "Its resources are namespaced and access is app-controlled."
       },
       {
         "id": "B",
@@ -981,7 +981,7 @@
       },
       {
         "id": "D",
-        "text": "It cannot define new roles."
+        "text": "It cannot define roles."
       }
     ],
     "correct": [
@@ -1112,7 +1112,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Use the Back Out option on the committed update set to reverse the captured changes, then investigate."
+        "text": "Use Back Out on the committed update set, then investigate."
       },
       {
         "id": "B",
@@ -1301,11 +1301,11 @@
     "options": [
       {
         "id": "A",
-        "text": "sys_user"
+        "text": "sys_user table"
       },
       {
         "id": "B",
-        "text": "sys_group"
+        "text": "sys_group table"
       },
       {
         "id": "C",
@@ -1313,7 +1313,7 @@
       },
       {
         "id": "D",
-        "text": "sys_team"
+        "text": "sys_team table"
       }
     ],
     "correct": [
@@ -1631,11 +1631,11 @@
     "options": [
       {
         "id": "A",
-        "text": "System Properties > Plugins"
+        "text": "System Properties > Plugins."
       },
       {
         "id": "B",
-        "text": "All > System Applications > All Available Applications > All"
+        "text": "System Applications > All Available."
       },
       {
         "id": "C",
@@ -1643,7 +1643,7 @@
       },
       {
         "id": "D",
-        "text": "Admin Center > Plugins"
+        "text": "Admin Center > Plugins."
       }
     ],
     "correct": [
@@ -1823,7 +1823,7 @@
       },
       {
         "id": "B",
-        "text": "Add a module in the Application Navigator pointing to the sys_properties table"
+        "text": "Add a module pointing to sys_properties."
       },
       {
         "id": "C",
@@ -1917,7 +1917,7 @@
       },
       {
         "id": "B",
-        "text": "A unique label generated at the bottom of each notification email to match incoming email to existing records"
+        "text": "A unique label matching incoming email to records."
       },
       {
         "id": "C",
@@ -1968,7 +1968,7 @@
       },
       {
         "id": "C",
-        "text": "No — the system strips the body of encrypted emails because it cannot process encrypted content"
+        "text": "No — the system strips encrypted email bodies."
       },
       {
         "id": "D",
@@ -2012,7 +2012,7 @@
       },
       {
         "id": "B",
-        "text": "A single email that summarizes activity for a notification and its target records during a specified time interval"
+        "text": "A single email summarizing activity over an interval."
       },
       {
         "id": "C",
@@ -2244,19 +2244,19 @@
     "options": [
       {
         "id": "A",
-        "text": "Business rules"
+        "text": "Business rule scripts."
       },
       {
         "id": "B",
-        "text": "Client scripts"
+        "text": "Client script records."
       },
       {
         "id": "C",
-        "text": "Data records such as users and incidents"
+        "text": "Data records like users."
       },
       {
         "id": "D",
-        "text": "Form layouts"
+        "text": "Form layout configs."
       }
     ],
     "correct": [
@@ -2385,11 +2385,11 @@
     "options": [
       {
         "id": "A",
-        "text": "sys_"
+        "text": "The sys_ prefix."
       },
       {
         "id": "B",
-        "text": "custom_"
+        "text": "The custom_ prefix."
       },
       {
         "id": "C",
@@ -2397,7 +2397,7 @@
       },
       {
         "id": "D",
-        "text": "app_"
+        "text": "The app_ prefix."
       }
     ],
     "correct": [
@@ -2574,7 +2574,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Email digests"
+        "text": "Email digest settings."
       },
       {
         "id": "B",
@@ -2582,11 +2582,11 @@
       },
       {
         "id": "C",
-        "text": "Watermarks"
+        "text": "Email watermark labels."
       },
       {
         "id": "D",
-        "text": "Email templates"
+        "text": "Email template records."
       }
     ],
     "correct": [
@@ -2763,7 +2763,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Email digest"
+        "text": "An email digest."
       },
       {
         "id": "B",
@@ -2771,11 +2771,11 @@
       },
       {
         "id": "C",
-        "text": "Email template"
+        "text": "An email template."
       },
       {
         "id": "D",
-        "text": "Watermark"
+        "text": "A watermark label."
       }
     ],
     "correct": [
@@ -2818,7 +2818,7 @@
       },
       {
         "id": "C",
-        "text": "Add the property to the System Property [sys_properties] table manually"
+        "text": "Add the property to sys_properties manually."
       },
       {
         "id": "D",
@@ -2957,7 +2957,7 @@
       },
       {
         "id": "B",
-        "text": "Relative URLs in the notification body are automatically converted to absolute links"
+        "text": "Relative URLs are converted to absolute links."
       },
       {
         "id": "C",
@@ -3004,7 +3004,7 @@
       },
       {
         "id": "B",
-        "text": "The scoped app cannot modify base platform artifacts that are outside its scope without explicit cross-scope access grants"
+        "text": "A scoped app can't modify base artifacts without a grant."
       },
       {
         "id": "C",
@@ -3285,7 +3285,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Assign the role directly on the user's sys_user record via the Roles related list"
+        "text": "Assign the role on the user's Roles related list."
       },
       {
         "id": "B",
@@ -3432,7 +3432,7 @@
       },
       {
         "id": "B",
-        "text": "It is the default scope for configurations that apply across all applications and are not isolated to a specific app"
+        "text": "The default scope for cross-application configurations."
       },
       {
         "id": "C",
@@ -4423,7 +4423,7 @@
       },
       {
         "id": "B",
-        "text": "A catalog item that groups multiple items for a user to request together in a single order"
+        "text": "A catalog item grouping multiple items into one order."
       },
       {
         "id": "C",
@@ -4470,7 +4470,7 @@
       },
       {
         "id": "B",
-        "text": "A server-side script configured to run automatically at specified time intervals"
+        "text": "A server-side script that runs on a schedule."
       },
       {
         "id": "C",
@@ -4560,19 +4560,19 @@
     "options": [
       {
         "id": "A",
-        "text": "System Properties > CSS"
+        "text": "System Properties > CSS."
       },
       {
         "id": "B",
-        "text": "System Properties > Basic Configuration UI16"
+        "text": "Basic Configuration UI16 properties."
       },
       {
         "id": "C",
-        "text": "System Definition > Tables"
+        "text": "System Definition > Tables."
       },
       {
         "id": "D",
-        "text": "User Preferences > Theme"
+        "text": "User Preferences > Theme."
       }
     ],
     "correct": [
@@ -4800,7 +4800,7 @@
       },
       {
         "id": "B",
-        "text": "At the end of the Before rule execution, before the DB insert/update"
+        "text": "At the end of the Before rule, before the DB write."
       },
       {
         "id": "C",
@@ -4899,7 +4899,7 @@
       },
       {
         "id": "C",
-        "text": "Users must explicitly elevate to this role during a session to use it, even if it is assigned to them"
+        "text": "Users must elevate to the role during a session."
       },
       {
         "id": "D",
@@ -5696,7 +5696,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Create and select an update set as the current update set"
+        "text": "Create and select a current update set."
       },
       {
         "id": "B",
@@ -5704,11 +5704,11 @@
       },
       {
         "id": "C",
-        "text": "Activate a plugin"
+        "text": "Activate a plugin first."
       },
       {
         "id": "D",
-        "text": "Impersonate an admin"
+        "text": "Impersonate an admin user."
       }
     ],
     "correct": [
@@ -5840,7 +5840,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Assign the roles to a group and add the users to the group"
+        "text": "Assign the roles to a group, add users to it."
       },
       {
         "id": "B",
@@ -6032,7 +6032,7 @@
     "options": [
       {
         "id": "A",
-        "text": "An email notification triggered by the record condition"
+        "text": "An email notification on condition."
       },
       {
         "id": "B",
@@ -6040,11 +6040,11 @@
       },
       {
         "id": "C",
-        "text": "A favorite"
+        "text": "A favorite shortcut."
       },
       {
         "id": "D",
-        "text": "A coalesce field"
+        "text": "A coalesce field map."
       }
     ],
     "correct": [
@@ -6080,11 +6080,11 @@
     "options": [
       {
         "id": "A",
-        "text": "The system properties (sys_properties) list of available properties"
+        "text": "The sys_properties list."
       },
       {
         "id": "B",
-        "text": "The user's watch list"
+        "text": "The user's watch list."
       },
       {
         "id": "C",
@@ -6092,7 +6092,7 @@
       },
       {
         "id": "D",
-        "text": "A transform map"
+        "text": "A transform map row."
       }
     ],
     "correct": [
@@ -6128,7 +6128,7 @@
     "options": [
       {
         "id": "A",
-        "text": "The instance banner/logo branding setting"
+        "text": "The instance logo/branding setting."
       },
       {
         "id": "B",
@@ -6140,7 +6140,7 @@
       },
       {
         "id": "D",
-        "text": "A scheduled job"
+        "text": "A scheduled job record."
       }
     ],
     "correct": [
@@ -6416,19 +6416,19 @@
     "options": [
       {
         "id": "A",
-        "text": "security_admin (elevated privilege)"
+        "text": "The security_admin role."
       },
       {
         "id": "B",
-        "text": "itil"
+        "text": "The itil role."
       },
       {
         "id": "C",
-        "text": "approver_user"
+        "text": "The approver_user role."
       },
       {
         "id": "D",
-        "text": "catalog_admin"
+        "text": "The catalog_admin role."
       }
     ],
     "correct": [
@@ -6512,19 +6512,19 @@
     "options": [
       {
         "id": "A",
-        "text": "A true/false (boolean) property"
+        "text": "A true/false (boolean) property."
       },
       {
         "id": "B",
-        "text": "A reference to a user"
+        "text": "A reference to a user."
       },
       {
         "id": "C",
-        "text": "A coalesce field"
+        "text": "A coalesce field map."
       },
       {
         "id": "D",
-        "text": "A watch list"
+        "text": "A watch list entry."
       }
     ],
     "correct": [
@@ -6704,7 +6704,7 @@
     "options": [
       {
         "id": "A",
-        "text": "It reproduces the actual user's roles and is logged, with an easy switch back"
+        "text": "Reproduces the user's roles, is logged, easy to undo."
       },
       {
         "id": "B",
@@ -6804,7 +6804,7 @@
       },
       {
         "id": "B",
-        "text": "Recipients can be derived from record fields like Assigned to or the watch list"
+        "text": "Recipients can come from record fields like Assigned to."
       },
       {
         "id": "C",
