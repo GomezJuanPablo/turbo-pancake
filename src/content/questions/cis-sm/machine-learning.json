@@ -77,7 +77,7 @@
     "correct": [
       "D"
     ],
-    "rationale": "Tag-based mapping starts by defining the tag values inside tag categories. Those categorized values are what Service Mapping matches against to group resources into services \u2014 so the categories are the foundation you build first.",
+    "rationale": "Tag-based mapping starts by defining the tag values inside tag categories. Those categorized values are what Service Mapping matches against to group resources into services — so the categories are the foundation you build first.",
     "distractor_notes": {
       "A": "'Tag libraries' isn't the defining location for tag values in this flow.",
       "B": "'Tag catalogs' isn't the construct used to hold tag values here.",
@@ -127,7 +127,7 @@
     ],
     "rationale": "Tags shine when membership is fluid: in cloud/dynamic estates resources come and go and get renamed, so associating them by tag (rather than fixed topology) keeps the map current automatically as the fleet changes.",
     "distractor_notes": {
-      "B": "A tiny stable service is better served by Manual Services \u2014 tags add needless dynamism.",
+      "B": "A tiny stable service is better served by Manual Services — tags add needless dynamism.",
       "C": "Tag-based mapping needs tags; with none it has nothing to match on.",
       "D": "Static, unchanging CIs don't benefit from tag-driven flexibility."
     },
@@ -318,7 +318,7 @@
       "A",
       "C"
     ],
-    "rationale": "Inside Agent Workspace, the service context surfaces operational signals on each CI \u2014 open incidents and active alerts (from Event Management/monitoring). That lets an operator triage impact without hopping to other modules.",
+    "rationale": "Inside Agent Workspace, the service context surfaces operational signals on each CI — open incidents and active alerts (from Event Management/monitoring). That lets an operator triage impact without hopping to other modules.",
     "distractor_notes": {
       "B": "Software releases aren't the operational signals surfaced in this view.",
       "D": "Problem KB articles aren't what the CI service context exposes here."
@@ -413,7 +413,7 @@
     "correct": [
       "B"
     ],
-    "rationale": "Service Mapping is top-down and dependency-focused: it discovers the applications and cloud services that compose a business service and \u2014 critically \u2014 the relationships between them. Those relationships are its key differentiator versus pure inventory discovery.",
+    "rationale": "Service Mapping is top-down and dependency-focused: it discovers the applications and cloud services that compose a business service and — critically — the relationships between them. Those relationships are its key differentiator versus pure inventory discovery.",
     "distractor_notes": {
       "A": "Licenses and bare IPs aren't the focus of service-level mapping.",
       "C": "Licenses aren't a Service Mapping output; applications and cloud services are.",
@@ -461,7 +461,7 @@
     "correct": [
       "B"
     ],
-    "rationale": "The Fix tile collects maps with issues \u2014 credential errors, broken connections, generic apps \u2014 so an operator can work the remediation queue. Map holds candidates to discover; Completed holds healthy finished maps.",
+    "rationale": "The Fix tile collects maps with issues — credential errors, broken connections, generic apps — so an operator can work the remediation queue. Map holds candidates to discover; Completed holds healthy finished maps.",
     "distractor_notes": {
       "A": "Map is for new/candidate services to discover, not problems.",
       "C": "Schedule isn't a status tile for remediation.",
@@ -509,7 +509,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "Dynamic CI Groups are a CMDB query construct \u2014 no Service Mapping license needed \u2014 and you visualize them instantly through list filters or saved queries. The trade-off is they don't perform pattern-based dependency discovery.",
+    "rationale": "Dynamic CI Groups are a CMDB query construct — no Service Mapping license needed — and you visualize them instantly through list filters or saved queries. The trade-off is they don't perform pattern-based dependency discovery.",
     "distractor_notes": {
       "B": "Dynamic groups don't produce a discovered dependency tree.",
       "C": "Process-to-process discovery is top-down mapping's job, not a dynamic group's.",
@@ -605,7 +605,7 @@
     "correct": [
       "B"
     ],
-    "rationale": "Candidates are suggestions, not finished maps. The admin reviews them on the Map tile, tweaks names/scope, and starts mapping for the real services \u2014 turning the load balancer's pools into proper, maintained service maps.",
+    "rationale": "Candidates are suggestions, not finished maps. The admin reviews them on the Map tile, tweaks names/scope, and starts mapping for the real services — turning the load balancer's pools into proper, maintained service maps.",
     "distractor_notes": {
       "A": "Disabling the LB would harm production, not map services.",
       "C": "Deleting them throws away useful suggestions.",
@@ -657,7 +657,7 @@
     "distractor_notes": {
       "A": "It does store relationships; that's the whole point of the map.",
       "B": "Rediscovery picks up new CIs rather than ignoring them.",
-      "D": "Environments change constantly \u2014 that's exactly why automatic rediscovery helps."
+      "D": "Environments change constantly — that's exactly why automatic rediscovery helps."
     },
     "references": [
       {
@@ -749,7 +749,7 @@
     "correct": [
       "B"
     ],
-    "rationale": "Confidence quantifies how sure the engine is that an observed connection truly belongs to the service \u2014 derived from signal count, protocol validation, and topology consistency. Higher confidence means the mapping is more likely correct and can be trusted with less manual review.",
+    "rationale": "Confidence quantifies how sure the engine is that an observed connection truly belongs to the service — derived from signal count, protocol validation, and topology consistency. Higher confidence means the mapping is more likely correct and can be trusted with less manual review.",
     "distractor_notes": {
       "A": "Prerequisite readiness is shown separately as a state, not as confidence.",
       "C": "Confidence is about connection membership in the service, not host-hosting probability.",
@@ -1037,7 +1037,7 @@
     "correct": [
       "C"
     ],
-    "rationale": "Running probes against hosts is the Discovery engine/MID Server's job. Predictive Intelligence works on already-collected data \u2014 proposing connections, scoring confidence, and helping triage what to trust. It analyzes; it doesn't probe.",
+    "rationale": "Running probes against hosts is the Discovery engine/MID Server's job. Predictive Intelligence works on already-collected data — proposing connections, scoring confidence, and helping triage what to trust. It analyzes; it doesn't probe.",
     "distractor_notes": {
       "A": "Prioritizing trust based on confidence is a PI benefit.",
       "B": "Suggesting connections is a core PI function.",
@@ -1053,6 +1053,582 @@
       "fundamentals-planning",
       "predictive-intelligence",
       "scope"
+    ]
+  },
+  {
+    "id": "cisms-fun-025",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Machine Learning",
+    "subdomain": "ML-powered Service Mapping",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "Traditional discovery leaves gaps where some connections between tiers aren't found. Which capability proposes likely missing connections by learning from existing maps?",
+    "options": [
+      {
+        "id": "A",
+        "text": "ML-powered Service Mapping (Predictive Intelligence connection suggestions)"
+      },
+      {
+        "id": "B",
+        "text": "A reconciliation rule"
+      },
+      {
+        "id": "C",
+        "text": "A coalesce field"
+      },
+      {
+        "id": "D",
+        "text": "A UI policy"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "ML-powered Service Mapping uses Predictive Intelligence to suggest connections that discovery missed, based on patterns learned from existing maps — helping close gaps that pattern and traffic methods didn't catch.",
+    "distractor_notes": {
+      "B": "Reconciliation rules govern attribute authority, not connection prediction.",
+      "C": "Coalesce matches import records.",
+      "D": "UI policies change form behavior."
+    },
+    "references": [
+      {
+        "title": "ML-powered Service Mapping",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/ml-service-mapping.html"
+      }
+    ],
+    "tags": [
+      "machine-learning",
+      "predictive",
+      "connections"
+    ]
+  },
+  {
+    "id": "cisms-fun-026",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Machine Learning",
+    "subdomain": "Connection suggestions",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "ML proposes several possible missing connections for a service. What is the appropriate way to handle these before they affect the map?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Review and accept/reject the suggested connections"
+      },
+      {
+        "id": "B",
+        "text": "Automatically trust every suggestion without review"
+      },
+      {
+        "id": "C",
+        "text": "Delete the application service"
+      },
+      {
+        "id": "D",
+        "text": "Disable the MID Server"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "ML connection suggestions are presented for human review — you accept the correct ones and reject the rest — so the map improves without blindly trusting predictions.",
+    "distractor_notes": {
+      "B": "Blindly accepting predictions can introduce wrong connections.",
+      "C": "Deleting the service discards the map.",
+      "D": "Disabling the MID Server stops discovery."
+    },
+    "references": [
+      {
+        "title": "Predictive Intelligence in Service Mapping",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/predictive-intelligence.html"
+      }
+    ],
+    "tags": [
+      "machine-learning",
+      "review",
+      "suggestions"
+    ]
+  },
+  {
+    "id": "cisms-fun-027",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Machine Learning",
+    "subdomain": "Predictive Intelligence",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "For ML connection suggestions to be useful, what does the model rely on to learn what 'normal' connections look like?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Patterns learned from existing, successfully mapped services"
+      },
+      {
+        "id": "B",
+        "text": "The instance's branding settings"
+      },
+      {
+        "id": "C",
+        "text": "The Service Catalog categories"
+      },
+      {
+        "id": "D",
+        "text": "Email templates"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Predictive Intelligence for Service Mapping learns from existing maps to recognize likely connections, so a healthy base of well-mapped services improves the quality of its suggestions.",
+    "distractor_notes": {
+      "B": "Branding is cosmetic and irrelevant to ML training.",
+      "C": "Catalog categories organize catalog items, not map learning.",
+      "D": "Email templates are unrelated to ML."
+    },
+    "references": [
+      {
+        "title": "Predictive Intelligence in Service Mapping",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/predictive-intelligence.html"
+      }
+    ],
+    "tags": [
+      "predictive-intelligence",
+      "training",
+      "maps"
+    ]
+  },
+  {
+    "id": "cisms-fun-028",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Machine Learning",
+    "subdomain": "Top 10 Service Issues",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A team wants to prioritize remediation by seeing which services have the most mapping problems. Which ML-driven report helps focus that effort?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The Top 10 Service Issues report"
+      },
+      {
+        "id": "B",
+        "text": "The CMDB Health completeness export"
+      },
+      {
+        "id": "C",
+        "text": "A scheduled branding job"
+      },
+      {
+        "id": "D",
+        "text": "The ECC Queue"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The Top 10 Service Issues report surfaces the services with the most issues, letting teams prioritize the highest-impact remediation first.",
+    "distractor_notes": {
+      "B": "CMDB Health completeness is broader CMDB quality, not the ML service-issue ranking.",
+      "C": "Branding jobs are cosmetic.",
+      "D": "The ECC Queue shows MID Server messages, not a service-issue ranking."
+    },
+    "references": [
+      {
+        "title": "Top 10 Service Issues report",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/ml-service-mapping-reports.html"
+      }
+    ],
+    "tags": [
+      "reporting",
+      "prioritization",
+      "issues"
+    ]
+  },
+  {
+    "id": "cisms-fun-029",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Machine Learning",
+    "subdomain": "Service Mapping Plus",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A customer wants the advanced ML connection-suggestion capabilities for Service Mapping. What should they confirm they have?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The appropriate entitlement (Service Mapping Plus) that includes ML features"
+      },
+      {
+        "id": "B",
+        "text": "A larger MID Server heap only"
+      },
+      {
+        "id": "C",
+        "text": "More watch lists"
+      },
+      {
+        "id": "D",
+        "text": "A coalesce field"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Advanced ML-powered capabilities are part of the Service Mapping Plus entitlement, so customers should confirm they have the right edition to use them.",
+    "distractor_notes": {
+      "B": "MID Server sizing helps performance but doesn't unlock ML features.",
+      "C": "Watch lists are unrelated.",
+      "D": "Coalesce matches import records."
+    },
+    "references": [
+      {
+        "title": "Service Mapping Plus",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/service-mapping-plus.html"
+      }
+    ],
+    "tags": [
+      "service-mapping-plus",
+      "entitlement",
+      "ml"
+    ]
+  },
+  {
+    "id": "cisms-fun-030",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Machine Learning",
+    "subdomain": "Connection suggestions",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "After accepting valid ML connection suggestions over time, what outcome should a team expect?",
+    "options": [
+      {
+        "id": "A",
+        "text": "More complete service maps with fewer manual interventions"
+      },
+      {
+        "id": "B",
+        "text": "The CMDB is encrypted automatically"
+      },
+      {
+        "id": "C",
+        "text": "Discovery no longer needs credentials"
+      },
+      {
+        "id": "D",
+        "text": "All patterns are deleted"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Accepting good ML suggestions fills gaps that discovery missed, yielding more complete maps and reducing the manual work of hunting down connections.",
+    "distractor_notes": {
+      "B": "ML suggestions don't encrypt the CMDB.",
+      "C": "Discovery still needs credentials to access targets.",
+      "D": "Patterns remain; ML complements them."
+    },
+    "references": [
+      {
+        "title": "ML-powered Service Mapping",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/ml-service-mapping.html"
+      }
+    ],
+    "tags": [
+      "machine-learning",
+      "completeness",
+      "maps"
+    ]
+  },
+  {
+    "id": "cisms-fun-031",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Machine Learning",
+    "subdomain": "ML vs patterns",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "How should ML-powered suggestions be positioned relative to pattern-based discovery?",
+    "options": [
+      {
+        "id": "A",
+        "text": "As a complement that fills gaps, not a replacement for patterns"
+      },
+      {
+        "id": "B",
+        "text": "As a full replacement for all patterns"
+      },
+      {
+        "id": "C",
+        "text": "As a way to avoid having any credentials"
+      },
+      {
+        "id": "D",
+        "text": "As a reconciliation mechanism"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "ML augments pattern-based discovery by suggesting connections it missed; patterns still do the primary, deterministic mapping. They work together.",
+    "distractor_notes": {
+      "B": "ML doesn't replace deterministic patterns.",
+      "C": "Credentials are still required for discovery.",
+      "D": "Reconciliation is a separate CMDB concept."
+    },
+    "references": [
+      {
+        "title": "ML-powered Service Mapping",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/ml-service-mapping.html"
+      }
+    ],
+    "tags": [
+      "machine-learning",
+      "patterns",
+      "complement"
+    ]
+  },
+  {
+    "id": "cisms-fun-032",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Machine Learning",
+    "subdomain": "Predictive Intelligence",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A newly deployed instance with very few existing service maps gets low-quality ML suggestions. What is the most likely reason?",
+    "options": [
+      {
+        "id": "A",
+        "text": "There isn't enough mapped data yet for the model to learn from"
+      },
+      {
+        "id": "B",
+        "text": "The instance time zone is wrong"
+      },
+      {
+        "id": "C",
+        "text": "The branding logo isn't set"
+      },
+      {
+        "id": "D",
+        "text": "There are too many watch lists"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "ML quality depends on learning from existing maps; with few maps, the model has little to learn from, so suggestions improve as more services are mapped successfully.",
+    "distractor_notes": {
+      "B": "Time zone affects scheduling/display, not ML quality.",
+      "C": "Branding is cosmetic.",
+      "D": "Watch lists are unrelated to ML training."
+    },
+    "references": [
+      {
+        "title": "Predictive Intelligence in Service Mapping",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/predictive-intelligence.html"
+      }
+    ],
+    "tags": [
+      "predictive-intelligence",
+      "data-volume",
+      "quality"
+    ]
+  },
+  {
+    "id": "cisms-fun-033",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Machine Learning",
+    "subdomain": "ML-powered Service Mapping",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "What is the primary goal of ML-powered Service Mapping?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Improve map completeness by predicting connections discovery missed"
+      },
+      {
+        "id": "B",
+        "text": "Replace the CMDB"
+      },
+      {
+        "id": "C",
+        "text": "Encrypt service maps"
+      },
+      {
+        "id": "D",
+        "text": "Send SLA notifications"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Its goal is more complete maps via predicted connections, reducing blind spots left by purely deterministic discovery.",
+    "distractor_notes": {
+      "B": "It enriches the CMDB, not replaces it.",
+      "C": "It doesn't encrypt maps.",
+      "D": "SLA notifications are service-level management."
+    },
+    "references": [
+      {
+        "title": "ML-powered Service Mapping",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/ml-service-mapping.html"
+      }
+    ],
+    "tags": [
+      "machine-learning",
+      "goal",
+      "completeness"
+    ]
+  },
+  {
+    "id": "cisms-fun-034",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Machine Learning",
+    "subdomain": "Reporting",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "What does the Top 10 Service Issues report primarily help teams do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Prioritize remediation on the services with the most issues"
+      },
+      {
+        "id": "B",
+        "text": "Order new hardware"
+      },
+      {
+        "id": "C",
+        "text": "Configure SSO"
+      },
+      {
+        "id": "D",
+        "text": "Set email properties"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "It ranks services by issue volume so teams fix the highest-impact problems first.",
+    "distractor_notes": {
+      "B": "Hardware ordering is a catalog/asset task.",
+      "C": "SSO is authentication configuration.",
+      "D": "Email properties are unrelated."
+    },
+    "references": [
+      {
+        "title": "Top 10 Service Issues report",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/ml-service-mapping-reports.html"
+      }
+    ],
+    "tags": [
+      "reporting",
+      "prioritization",
+      "remediation"
+    ]
+  },
+  {
+    "id": "cisms-fun-035",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Machine Learning",
+    "subdomain": "ML-powered Service Mapping",
+    "difficulty": "application",
+    "type": "multi_select",
+    "stem": "Which TWO are true about ML-powered Service Mapping?",
+    "options": [
+      {
+        "id": "A",
+        "text": "It suggests connections that discovery may have missed"
+      },
+      {
+        "id": "B",
+        "text": "Suggestions are reviewed before being applied"
+      },
+      {
+        "id": "C",
+        "text": "It removes the need for credentials"
+      },
+      {
+        "id": "D",
+        "text": "It replaces the CMDB"
+      }
+    ],
+    "correct": [
+      "A",
+      "B"
+    ],
+    "rationale": "ML proposes missed connections and those suggestions are reviewed before acceptance. It doesn't remove credential requirements or replace the CMDB.",
+    "distractor_notes": {
+      "C": "Discovery still needs credentials.",
+      "D": "The CMDB remains the system of record."
+    },
+    "references": [
+      {
+        "title": "Predictive Intelligence in Service Mapping",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/predictive-intelligence.html"
+      }
+    ],
+    "tags": [
+      "machine-learning",
+      "review",
+      "connections"
+    ]
+  },
+  {
+    "id": "cisms-fun-036",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Machine Learning",
+    "subdomain": "Predictive Intelligence",
+    "difficulty": "application",
+    "type": "multi_select",
+    "stem": "Which TWO factors improve ML suggestion quality in Service Mapping?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A larger base of successfully mapped services to learn from"
+      },
+      {
+        "id": "B",
+        "text": "Reviewing and accepting only correct suggestions over time"
+      },
+      {
+        "id": "C",
+        "text": "Turning off Discovery"
+      },
+      {
+        "id": "D",
+        "text": "Deleting existing maps"
+      }
+    ],
+    "correct": [
+      "A",
+      "B"
+    ],
+    "rationale": "More good maps give the model more to learn from, and careful review reinforces correct outcomes. Turning off Discovery or deleting maps reduces the data ML depends on.",
+    "distractor_notes": {
+      "C": "Discovery provides the deterministic base maps ML builds on.",
+      "D": "Deleting maps removes the learning data."
+    },
+    "references": [
+      {
+        "title": "Predictive Intelligence in Service Mapping",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/predictive-intelligence.html"
+      }
+    ],
+    "tags": [
+      "predictive-intelligence",
+      "quality",
+      "data"
     ]
   }
 ]

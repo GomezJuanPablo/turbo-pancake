@@ -29,7 +29,7 @@
     "correct": [
       "A"
     ],
-    "rationale": "A service is scoped to a focused business capability \u2014 it does one thing (or a few) well, like 'payment processing'. That tight scope is what makes dependency mapping and impact analysis meaningful, rather than modeling a sprawling everything-bucket.",
+    "rationale": "A service is scoped to a focused business capability — it does one thing (or a few) well, like 'payment processing'. That tight scope is what makes dependency mapping and impact analysis meaningful, rather than modeling a sprawling everything-bucket.",
     "distractor_notes": {
       "B": "Service size varies widely; there's no 50-CI rule.",
       "C": "Services frequently include cloud elements; Service Mapping supports hybrid/cloud.",
@@ -78,7 +78,7 @@
       "A",
       "D"
     ],
-    "rationale": "During an incident, the map shrinks the search space (only the service's CIs matter) and, tied to Change data, shows what changed recently on those CIs \u2014 the two fastest routes to root cause. It doesn't read source code or directly govern change volume.",
+    "rationale": "During an incident, the map shrinks the search space (only the service's CIs matter) and, tied to Change data, shows what changed recently on those CIs — the two fastest routes to root cause. It doesn't read source code or directly govern change volume.",
     "distractor_notes": {
       "B": "Better visibility can help change planning, but the map itself doesn't directly reduce unplanned changes during an incident.",
       "C": "Service Mapping shows dependencies, not code-level defects."
@@ -173,7 +173,7 @@
     "correct": [
       "B"
     ],
-    "rationale": "Alert Management rules act on alerts \u2014 they can auto-create incidents/changes, assign or suppress alerts, and trigger remediation. Event rules instead govern how raw events become alerts; the task-creation logic lives at the alert layer.",
+    "rationale": "Alert Management rules act on alerts — they can auto-create incidents/changes, assign or suppress alerts, and trigger remediation. Event rules instead govern how raw events become alerts; the task-creation logic lives at the alert layer.",
     "distractor_notes": {
       "A": "Reconciliation rules are a CMDB/IRE concept, unrelated to alert tasks.",
       "C": "There isn't a generic 'Task rule' that does this in Event Management.",
@@ -221,7 +221,7 @@
     "correct": [
       "B"
     ],
-    "rationale": "The Message Key groups related events into one alert. When it's absent, Event Management builds one from Source + Node + Type + Resource \u2014 the tool that reported it, the affected CI, the event category, and the specific component \u2014 so duplicate events collapse correctly.",
+    "rationale": "The Message Key groups related events into one alert. When it's absent, Event Management builds one from Source + Node + Type + Resource — the tool that reported it, the affected CI, the event category, and the specific component — so duplicate events collapse correctly.",
     "distractor_notes": {
       "A": "These aren't the identity fields used to derive a message key.",
       "C": "Number isn't part of the generated key; the set is Source/Node/Type/Resource.",
@@ -322,7 +322,7 @@
     "correct": [
       "B"
     ],
-    "rationale": "Event Management ingests events from many tools and correlates/de-duplicates them \u2014 using message keys and rules \u2014 so operators see a smaller set of meaningful, impact-aware alerts instead of a flood of raw events.",
+    "rationale": "Event Management ingests events from many tools and correlates/de-duplicates them — using message keys and rules — so operators see a smaller set of meaningful, impact-aware alerts instead of a flood of raw events.",
     "distractor_notes": {
       "A": "It consumes monitoring output; it doesn't disable the tools.",
       "C": "It doesn't blindly delete by age; it correlates by relationship/identity.",
@@ -423,7 +423,7 @@
     "correct": [
       "C"
     ],
-    "rationale": "Service maps shrink the search space during an outage \u2014 operators see exactly which CIs make up the impacted service and what changed \u2014 which is precisely what drives down Mean Time to Resolve. The other KPIs are influenced by other capabilities.",
+    "rationale": "Service maps shrink the search space during an outage — operators see exactly which CIs make up the impacted service and what changed — which is precisely what drives down Mean Time to Resolve. The other KPIs are influenced by other capabilities.",
     "distractor_notes": {
       "A": "Signal-to-noise is improved by Event Management correlation, not the map itself.",
       "B": "The count of major changes isn't directly reduced by a service map.",
@@ -471,7 +471,7 @@
     "correct": [
       "D"
     ],
-    "rationale": "Service Mapping depends on credentials to reach every host, and provisioning those (often elevated) credentials needs the security team's buy-in. Engaging them late is the most frequent cause of delays and rework \u2014 the other items are manageable or not blockers.",
+    "rationale": "Service Mapping depends on credentials to reach every host, and provisioning those (often elevated) credentials needs the security team's buy-in. Engaging them late is the most frequent cause of delays and rework — the other items are manageable or not blockers.",
     "distractor_notes": {
       "A": "Capacity is sized during design and is rarely the dominant risk.",
       "B": "AD isn't required; local/LDAP/token credentials also work.",
@@ -525,7 +525,7 @@
       "C",
       "D"
     ],
-    "rationale": "Tied to incident and change data, the map surfaces recent incidents and changes on the exact CIs of the impacted service and narrows the investigation to just those components \u2014 the three fastest routes to root cause. It can't read source code or directly govern change volume.",
+    "rationale": "Tied to incident and change data, the map surfaces recent incidents and changes on the exact CIs of the impacted service and narrows the investigation to just those components — the three fastest routes to root cause. It can't read source code or directly govern change volume.",
     "distractor_notes": {
       "B": "Service Mapping shows dependencies, not code-level defects.",
       "E": "Better visibility helps change planning but the map doesn't directly cut unplanned changes."
@@ -668,7 +668,7 @@
     "correct": [
       "D"
     ],
-    "rationale": "Because patterns rediscover on a schedule, additions, removals, and version changes flow into the map automatically \u2014 so teams spend far less time hand-maintaining topology compared with manually built maps.",
+    "rationale": "Because patterns rediscover on a schedule, additions, removals, and version changes flow into the map automatically — so teams spend far less time hand-maintaining topology compared with manually built maps.",
     "distractor_notes": {
       "A": "Credentials are still required to rediscover hosts.",
       "B": "Maps live in the CMDB; nothing is removed.",
@@ -716,7 +716,7 @@
     "correct": [
       "C"
     ],
-    "rationale": "Service Mapping is designed for modern, hybrid estates \u2014 it discovers and maps cloud services alongside on-prem components, building the dependencies that span both. Cloud elements are a normal part of a mapped service.",
+    "rationale": "Service Mapping is designed for modern, hybrid estates — it discovers and maps cloud services alongside on-prem components, building the dependencies that span both. Cloud elements are a normal part of a mapped service.",
     "distractor_notes": {
       "A": "Cloud resources are frequently part of mapped services.",
       "B": "Cloud services can absolutely be modeled within application services.",
@@ -754,7 +754,7 @@
       },
       {
         "id": "C",
-        "text": "Without authentication to targets, discovery can't collect data at all \u2014 sizing only affects speed once data flows"
+        "text": "Without authentication to targets, discovery can't collect data at all — sizing only affects speed once data flows"
       },
       {
         "id": "D",
@@ -764,7 +764,7 @@
     "correct": [
       "C"
     ],
-    "rationale": "Credentials are existential to discovery \u2014 no access, no data. MID Server capacity merely affects throughput once authentication works, and it's typically solved during design. That's why missing security engagement is the more impactful risk.",
+    "rationale": "Credentials are existential to discovery — no access, no data. MID Server capacity merely affects throughput once authentication works, and it's typically solved during design. That's why missing security engagement is the more impactful risk.",
     "distractor_notes": {
       "A": "Credentials are fundamentally required.",
       "B": "Undersized MID Servers slow discovery; they don't delete CIs.",
@@ -812,7 +812,7 @@
     "correct": [
       "B"
     ],
-    "rationale": "Service Mapping starts from a service and discovers the full chain of components it depends on, producing a dependency map that powers impact analysis, faster incident resolution, and safer change. It complements \u2014 not replaces \u2014 horizontal Discovery and Event Management.",
+    "rationale": "Service Mapping starts from a service and discovers the full chain of components it depends on, producing a dependency map that powers impact analysis, faster incident resolution, and safer change. It complements — not replaces — horizontal Discovery and Event Management.",
     "distractor_notes": {
       "A": "License management is Software Asset Management.",
       "C": "Event Management correlates events; Service Mapping maps dependencies.",
@@ -908,7 +908,7 @@
     "correct": [
       "B"
     ],
-    "rationale": "Service Mapping builds on CMDB data foundations and Discovery mechanics \u2014 IRE, identifiers, reconciliation, MID Server, patterns. Mastering that material (CIS-DF / Discovery) first is why those are treated as the prerequisite knowledge for CIS-SM.",
+    "rationale": "Service Mapping builds on CMDB data foundations and Discovery mechanics — IRE, identifiers, reconciliation, MID Server, patterns. Mastering that material (CIS-DF / Discovery) first is why those are treated as the prerequisite knowledge for CIS-SM.",
     "distractor_notes": {
       "A": "SPM concerns portfolio planning, not service discovery.",
       "C": "HRSD is unrelated to CMDB/Discovery foundations.",
@@ -1100,7 +1100,7 @@
     "correct": [
       "B"
     ],
-    "rationale": "Instance communication is outbound HTTPS on 443, which this firewall already allows \u2014 so the MID Server connects fine. (Internal target ports like SSH/WMI/SNMP are a separate, internal-network consideration, not this internet egress rule.)",
+    "rationale": "Instance communication is outbound HTTPS on 443, which this firewall already allows — so the MID Server connects fine. (Internal target ports like SSH/WMI/SNMP are a separate, internal-network consideration, not this internet egress rule.)",
     "distractor_notes": {
       "A": "The MID Server is outbound-only; no inbound 443 is required.",
       "C": "The MID Server specifically uses HTTPS to the instance.",
@@ -1116,6 +1116,582 @@
       "fundamentals-planning",
       "risk",
       "firewall"
+    ]
+  },
+  {
+    "id": "cisms-fun-037",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Engagement Readiness",
+    "subdomain": "MID Server validation",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "Before a Service Mapping engagement begins, you want to confirm the MID Server can actually reach and authenticate to the target environment. What should you do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Validate the MID Server (connectivity, capabilities, credentials) ahead of mapping"
+      },
+      {
+        "id": "B",
+        "text": "Begin mapping and fix problems only if they appear"
+      },
+      {
+        "id": "C",
+        "text": "Delete and reinstall the instance"
+      },
+      {
+        "id": "D",
+        "text": "Add a watch list"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Validating the MID Server (status/heartbeat, capabilities, and that credentials work against targets) before the engagement prevents wasted effort and failed maps once mapping starts.",
+    "distractor_notes": {
+      "B": "Discovering connectivity gaps mid-engagement wastes time; validate first.",
+      "C": "Reinstalling the instance is drastic and unnecessary.",
+      "D": "Watch lists handle notifications."
+    },
+    "references": [
+      {
+        "title": "Validate a MID Server",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/mid-server/validate-mid-server.html"
+      }
+    ],
+    "tags": [
+      "readiness",
+      "mid-server",
+      "validation"
+    ]
+  },
+  {
+    "id": "cisms-fun-038",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Engagement Readiness",
+    "subdomain": "Planning",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A Service Mapping rollout will cover hundreds of services. To set it up for success, what is a recommended early planning step?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Prioritize and scope which business services to map first"
+      },
+      {
+        "id": "B",
+        "text": "Map every service simultaneously with no order"
+      },
+      {
+        "id": "C",
+        "text": "Skip identifying entry points"
+      },
+      {
+        "id": "D",
+        "text": "Disable IRE during the project"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Implementation planning starts by scoping and prioritizing the services to map (often the most critical first), so the engagement delivers value early and stays manageable.",
+    "distractor_notes": {
+      "B": "Mapping everything at once with no priority is unmanageable.",
+      "C": "Entry points are essential seeds for top-down mapping.",
+      "D": "Disabling IRE would corrupt identification."
+    },
+    "references": [
+      {
+        "title": "Service Mapping implementation planning",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/service-mapping-planning.html"
+      }
+    ],
+    "tags": [
+      "readiness",
+      "planning",
+      "scope"
+    ]
+  },
+  {
+    "id": "cisms-fun-039",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Engagement Readiness",
+    "subdomain": "Prerequisites",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "Which prerequisite must be ready so Service Mapping can authenticate to hosts and applications during an engagement?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Working credentials (OS and applicative) available to the MID Server"
+      },
+      {
+        "id": "B",
+        "text": "A branding logo"
+      },
+      {
+        "id": "C",
+        "text": "A populated Service Catalog"
+      },
+      {
+        "id": "D",
+        "text": "A knowledge base"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Service Mapping needs valid OS and application-level credentials available to the MID Server to authenticate and discover service internals. Without them, mapping stalls at access errors.",
+    "distractor_notes": {
+      "B": "Branding is cosmetic.",
+      "C": "A service catalog isn't required to map services.",
+      "D": "A knowledge base isn't a mapping prerequisite."
+    },
+    "references": [
+      {
+        "title": "Service Mapping discovery requirements",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/service-mapping-requirements.html"
+      }
+    ],
+    "tags": [
+      "readiness",
+      "credentials",
+      "prerequisites"
+    ]
+  },
+  {
+    "id": "cisms-fun-040",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Engagement Readiness",
+    "subdomain": "Entry point inventory",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "As part of readiness, the team gathers the URLs and access points for the services in scope. Why is this important before mapping?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Entry points seed top-down mapping, so they're needed to start each service map"
+      },
+      {
+        "id": "B",
+        "text": "They set the instance time zone"
+      },
+      {
+        "id": "C",
+        "text": "They configure SSO"
+      },
+      {
+        "id": "D",
+        "text": "They define email templates"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Top-down mapping starts at an entry point, so collecting accurate entry points for in-scope services is a key readiness task that lets mapping begin smoothly.",
+    "distractor_notes": {
+      "B": "Time zone is unrelated to entry points.",
+      "C": "SSO is authentication configuration.",
+      "D": "Email templates are unrelated."
+    },
+    "references": [
+      {
+        "title": "Service Mapping implementation planning",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/service-mapping-planning.html"
+      }
+    ],
+    "tags": [
+      "readiness",
+      "entry-points",
+      "planning"
+    ]
+  },
+  {
+    "id": "cisms-fun-041",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Engagement Readiness",
+    "subdomain": "Implementer skills",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "Staffing a Service Mapping engagement, which skill set is most relevant for the implementer?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Understanding of infrastructure, networking, credentials, and pattern/discovery concepts"
+      },
+      {
+        "id": "B",
+        "text": "Graphic design only"
+      },
+      {
+        "id": "C",
+        "text": "Payroll administration"
+      },
+      {
+        "id": "D",
+        "text": "Copywriting"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Service Mapping implementers need infrastructure/networking knowledge, credential handling, and familiarity with discovery patterns to configure and troubleshoot mapping effectively.",
+    "distractor_notes": {
+      "B": "Graphic design isn't the core skill for mapping.",
+      "C": "Payroll is unrelated.",
+      "D": "Copywriting is unrelated."
+    },
+    "references": [
+      {
+        "title": "Service Mapping implementer skills",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/service-mapping-prerequisites.html"
+      }
+    ],
+    "tags": [
+      "readiness",
+      "skills",
+      "staffing"
+    ]
+  },
+  {
+    "id": "cisms-fun-042",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Engagement Readiness",
+    "subdomain": "Network access",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "During readiness checks, you find the MID Server can't reach a target subnet. What is the right action before mapping that subnet's services?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Resolve network access (routes/firewall) or place a MID Server that can reach it"
+      },
+      {
+        "id": "B",
+        "text": "Map it anyway and ignore the errors"
+      },
+      {
+        "id": "C",
+        "text": "Delete the services in that subnet"
+      },
+      {
+        "id": "D",
+        "text": "Disable IRE"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Mapping needs network reachability from a MID Server. Resolve routing/firewall access or deploy a MID Server that can reach the subnet before attempting to map its services.",
+    "distractor_notes": {
+      "B": "Mapping without reachability just produces failures.",
+      "C": "Deleting services destroys legitimate scope.",
+      "D": "IRE isn't the reachability problem."
+    },
+    "references": [
+      {
+        "title": "Service Mapping discovery requirements",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/service-mapping-requirements.html"
+      }
+    ],
+    "tags": [
+      "readiness",
+      "network",
+      "mid-server"
+    ]
+  },
+  {
+    "id": "cisms-fun-043",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Engagement Readiness",
+    "subdomain": "CMDB readiness",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "Why is reviewing CMDB health and identification rules part of Service Mapping readiness?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Clean identification reduces duplicates so maps attach to the correct CIs"
+      },
+      {
+        "id": "B",
+        "text": "It changes the instance branding"
+      },
+      {
+        "id": "C",
+        "text": "It configures SSO"
+      },
+      {
+        "id": "D",
+        "text": "It sets email properties"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Service Mapping writes through IRE, so sound identification rules and healthy CMDB data mean maps attach to the right CIs without creating duplicates — a key readiness consideration.",
+    "distractor_notes": {
+      "B": "Branding is cosmetic.",
+      "C": "SSO is authentication.",
+      "D": "Email properties are unrelated."
+    },
+    "references": [
+      {
+        "title": "Service Mapping implementation planning",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/service-mapping-planning.html"
+      }
+    ],
+    "tags": [
+      "readiness",
+      "cmdb",
+      "identification"
+    ]
+  },
+  {
+    "id": "cisms-fun-044",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Engagement Readiness",
+    "subdomain": "Readiness review",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "After initial mapping, which tool helps the team confirm which application services are ready and which need rework before sign-off?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The Application Service Readiness dashboard"
+      },
+      {
+        "id": "B",
+        "text": "The Service Catalog"
+      },
+      {
+        "id": "C",
+        "text": "A coalesce field"
+      },
+      {
+        "id": "D",
+        "text": "The branding settings"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The Application Service Readiness dashboard reports mapping status/quality so the team can confirm readiness and target the services needing rework before sign-off.",
+    "distractor_notes": {
+      "B": "The Service Catalog is for ordering.",
+      "C": "Coalesce matches import records.",
+      "D": "Branding is cosmetic."
+    },
+    "references": [
+      {
+        "title": "Application Service Readiness dashboard",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/application-service-readiness.html"
+      }
+    ],
+    "tags": [
+      "readiness",
+      "dashboard",
+      "sign-off"
+    ]
+  },
+  {
+    "id": "cisms-fun-045",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Engagement Readiness",
+    "subdomain": "Requirements",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Which is a core requirement for Service Mapping to discover a service end to end?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Network reachability and valid credentials from a MID Server to each tier"
+      },
+      {
+        "id": "B",
+        "text": "A populated knowledge base"
+      },
+      {
+        "id": "C",
+        "text": "A branding logo"
+      },
+      {
+        "id": "D",
+        "text": "A survey definition"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "To traverse each tier, the MID Server must reach the hosts and authenticate (OS and, where needed, applicative credentials). Without reachability and credentials, mapping can't proceed.",
+    "distractor_notes": {
+      "B": "Knowledge bases aren't required for mapping.",
+      "C": "Branding is cosmetic.",
+      "D": "Surveys are unrelated."
+    },
+    "references": [
+      {
+        "title": "Service Mapping discovery requirements",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/service-mapping-requirements.html"
+      }
+    ],
+    "tags": [
+      "requirements",
+      "credentials",
+      "network"
+    ]
+  },
+  {
+    "id": "cisms-fun-046",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Engagement Readiness",
+    "subdomain": "Planning",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "What is a sensible first scope choice for an initial Service Mapping engagement?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A small set of high-value, well-understood services"
+      },
+      {
+        "id": "B",
+        "text": "Every service in the enterprise at once"
+      },
+      {
+        "id": "C",
+        "text": "Only printers"
+      },
+      {
+        "id": "D",
+        "text": "No services; configure branding instead"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Starting with a focused set of important, well-understood services delivers early wins and builds the patterns/learning that make later mapping smoother.",
+    "distractor_notes": {
+      "B": "Boiling the ocean risks an unmanageable, slow rollout.",
+      "C": "Printers aren't representative high-value services.",
+      "D": "Branding doesn't advance service mapping."
+    },
+    "references": [
+      {
+        "title": "Service Mapping implementation planning",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/service-mapping-planning.html"
+      }
+    ],
+    "tags": [
+      "planning",
+      "scope",
+      "engagement"
+    ]
+  },
+  {
+    "id": "cisms-fun-047",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Engagement Readiness",
+    "subdomain": "Readiness checklist",
+    "difficulty": "application",
+    "type": "multi_select",
+    "stem": "Which TWO belong on a Service Mapping readiness checklist?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Credentials prepared and validated for targets"
+      },
+      {
+        "id": "B",
+        "text": "MID Server connectivity to in-scope networks confirmed"
+      },
+      {
+        "id": "C",
+        "text": "Instance branding finalized"
+      },
+      {
+        "id": "D",
+        "text": "All incidents closed"
+      }
+    ],
+    "correct": [
+      "A",
+      "B"
+    ],
+    "rationale": "Credential readiness and MID Server network reachability are essential readiness items. Branding and incident backlog aren't prerequisites for mapping.",
+    "distractor_notes": {
+      "C": "Branding is cosmetic and not a mapping prerequisite.",
+      "D": "Closing incidents is unrelated to mapping readiness."
+    },
+    "references": [
+      {
+        "title": "Service Mapping discovery requirements",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/service-mapping-requirements.html"
+      }
+    ],
+    "tags": [
+      "readiness",
+      "checklist",
+      "credentials"
+    ]
+  },
+  {
+    "id": "cisms-fun-048",
+    "exam": "CIS-SM",
+    "release": "Australia",
+    "domain": "Service Mapping Engagement Readiness",
+    "subdomain": "Planning",
+    "difficulty": "application",
+    "type": "multi_select",
+    "stem": "Which TWO planning practices improve Service Mapping engagement outcomes?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Prioritizing critical services first"
+      },
+      {
+        "id": "B",
+        "text": "Confirming CMDB identification is sound to avoid duplicates"
+      },
+      {
+        "id": "C",
+        "text": "Skipping entry-point collection"
+      },
+      {
+        "id": "D",
+        "text": "Disabling the MID Server during mapping"
+      }
+    ],
+    "correct": [
+      "A",
+      "B"
+    ],
+    "rationale": "Prioritizing high-value services and ensuring sound identification (so maps attach to correct CIs) both improve outcomes. Skipping entry points or disabling the MID Server would block mapping.",
+    "distractor_notes": {
+      "C": "Entry points seed top-down mapping; they're essential.",
+      "D": "The MID Server executes discovery; disabling it stops mapping."
+    },
+    "references": [
+      {
+        "title": "Service Mapping implementation planning",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/service-mapping-planning.html"
+      }
+    ],
+    "tags": [
+      "planning",
+      "prioritization",
+      "identification"
     ]
   }
 ]
