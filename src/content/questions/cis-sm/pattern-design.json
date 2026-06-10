@@ -63,7 +63,7 @@
       },
       {
         "id": "B",
-        "text": "Sections run one by one in listed order until the first one succeeds, which ends the Identification phase"
+        "text": "Sections run one by one in listed order until the first one succeeds"
       },
       {
         "id": "C",
@@ -779,7 +779,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Match one or more of the characters in the set (word char, digit, hyphen, or dot)"
+        "text": "Match one or more of the characters in the set"
       },
       {
         "id": "B",
@@ -883,7 +883,7 @@
       },
       {
         "id": "C",
-        "text": "Set a precondition on the step that evaluates to false (for example '1 Equals 2')"
+        "text": "Set a precondition on the step that evaluates to false"
       },
       {
         "id": "D",
@@ -1319,7 +1319,7 @@
       },
       {
         "id": "D",
-        "text": "An identification error occurs because a required criterion attribute (Version) is missing"
+        "text": "An identification error occurs because a required criterion attribute"
       }
     ],
     "correct": [
@@ -1459,7 +1459,7 @@
       },
       {
         "id": "C",
-        "text": "Opens the Command Line Console to send commands to the host 198.51.100.66 (via the MID Server)"
+        "text": "Opens the Command Line Console to send commands to the host 198.51.100.66"
       },
       {
         "id": "D",
@@ -1551,7 +1551,7 @@
       },
       {
         "id": "B",
-        "text": "Whether any process on the host is using (listening on) port 8080"
+        "text": "Whether any process on the host is using"
       },
       {
         "id": "C",
@@ -1595,7 +1595,7 @@
     "options": [
       {
         "id": "A",
-        "text": "It creates a task with the command; the MID Server collects it, executes it on the target, and returns the result to the instance as an XML payload"
+        "text": "It creates a task with the command"
       },
       {
         "id": "B",
@@ -3088,7 +3088,7 @@
     "options": [
       {
         "id": "A",
-        "text": "One Connection Section's steps failed (e.g., the second DB's connection string wasn't found)"
+        "text": "One Connection Section's steps failed"
       },
       {
         "id": "B",
@@ -3292,7 +3292,7 @@
       },
       {
         "id": "D",
-        "text": "The pattern gathers attributes; the identifier decides whether those attributes match an existing CI or create a new one"
+        "text": "The pattern gathers attributes"
       }
     ],
     "correct": [
@@ -3380,7 +3380,7 @@
       },
       {
         "id": "B",
-        "text": "The CI can be identified by its own attributes, without needing a related (parent) CI for context"
+        "text": "The CI can be identified by its own attributes, without needing a related"
       },
       {
         "id": "C",
@@ -3904,7 +3904,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Service Mapping builds a service-centric map of dependencies from an entry point; horizontal Discovery inventories devices broadly"
+        "text": "Service Mapping builds a service-centric map of dependencies from an entry point"
       },
       {
         "id": "B",

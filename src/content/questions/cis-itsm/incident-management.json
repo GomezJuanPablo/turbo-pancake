@@ -251,7 +251,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Clears the On hold reason and changes the state to In Progress, notifying the Assigned to user and the watch list"
+        "text": "Clears the On hold reason and changes the state to In Progress"
       },
       {
         "id": "B",
@@ -1554,7 +1554,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Configuration items that were updated, repaired, swapped, or retired"
+        "text": "Configuration items that were updated, repaired, swapped"
       },
       {
         "id": "B",
@@ -1602,7 +1602,7 @@
     "options": [
       {
         "id": "A",
-        "text": "An incident proposed for review, which a major incident manager evaluates and may promote to a major incident"
+        "text": "An incident proposed for review"
       },
       {
         "id": "B",
@@ -2179,7 +2179,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Users are taken to the incident record in Service Operations Workspace (SOW) instead of the UI16 interface"
+        "text": "Users are taken to the incident record in Service Operations Workspace"
       },
       {
         "id": "B",
@@ -2227,7 +2227,7 @@
     "options": [
       {
         "id": "A",
-        "text": "To display informative notes on records meeting conditions, guiding the action taken or the next step"
+        "text": "To display informative notes on records meeting conditions"
       },
       {
         "id": "B",
@@ -2275,7 +2275,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Separating data, processes, and administrative tasks into logical groupings called domains, controlling who can see and access data"
+        "text": "Separating data, processes, and administrative tasks into logical groupings called domains"
       },
       {
         "id": "B",
@@ -2467,7 +2467,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Configure incident behavior and features such as auto-close, copy/child incident, and incident task closure"
+        "text": "Configure incident behavior and features such as auto-close, copy/child incident"
       },
       {
         "id": "B",
@@ -2611,7 +2611,7 @@
     "options": [
       {
         "id": "A",
-        "text": "An agent with incident write access (sn_incident_write)"
+        "text": "An agent with incident write access"
       },
       {
         "id": "B",
@@ -2755,7 +2755,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Applicable field values from the template are pre-populated, saving manual entry"
+        "text": "Applicable field values from the template are pre-populated"
       },
       {
         "id": "B",

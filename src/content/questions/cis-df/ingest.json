@@ -251,7 +251,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Horizontal Discovery finds infrastructure CIs broadly; Service Mapping builds service-aware maps top-down from an entry point"
+        "text": "Horizontal Discovery finds infrastructure CIs broadly"
       },
       {
         "id": "B",
@@ -299,7 +299,7 @@
     "options": [
       {
         "id": "A",
-        "text": "The import set stages incoming source rows; the transform map maps and moves them to the target CMDB table (ideally via IRE)"
+        "text": "The import set stages incoming source rows"
       },
       {
         "id": "B",
@@ -491,7 +491,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Route the load through the Identification and Reconciliation engine (e.g., IRE-based transform / CMDB API) so matching applies"
+        "text": "Route the load through the Identification and Reconciliation engine"
       },
       {
         "id": "B",
@@ -543,7 +543,7 @@
       },
       {
         "id": "B",
-        "text": "They are tested/certified for CSDM alignment, reducing implementation risk"
+        "text": "They are tested/certified for CSDM alignment"
       },
       {
         "id": "C",
@@ -635,7 +635,7 @@
     "options": [
       {
         "id": "A",
-        "text": "The existing Apache Web Server CI is reconciled and its attributes (e.g., version) are updated"
+        "text": "The existing Apache Web Server CI is reconciled and its attributes"
       },
       {
         "id": "B",
@@ -971,7 +971,7 @@
     "options": [
       {
         "id": "A",
-        "text": "The customized mappings are not supported by ServiceNow; the customer is responsible for maintaining them"
+        "text": "The customized mappings are not supported by ServiceNow"
       },
       {
         "id": "B",
@@ -1019,7 +1019,7 @@
     "options": [
       {
         "id": "A",
-        "text": "It integrates third-party data into the CMDB (or into non-CMDB tables)"
+        "text": "It integrates third-party data into the CMDB"
       },
       {
         "id": "B",
@@ -1355,7 +1355,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Discovery actively probes infrastructure to collect data; ETL transforms and loads data that is supplied to it"
+        "text": "Discovery actively probes infrastructure to collect data"
       },
       {
         "id": "B",
@@ -1547,7 +1547,7 @@
     "options": [
       {
         "id": "A",
-        "text": "The Robust Transform Engine (RTE)"
+        "text": "The Robust Transform Engine"
       },
       {
         "id": "B",
@@ -1883,7 +1883,7 @@
     "options": [
       {
         "id": "A",
-        "text": "In the platform Credentials store (with credentials affinity/aliases that the MID Server retrieves securely)"
+        "text": "In the platform Credentials store"
       },
       {
         "id": "B",
@@ -2027,7 +2027,7 @@
     "options": [
       {
         "id": "A",
-        "text": "How and from where to retrieve the import data (e.g., file, JDBC, REST) before it is staged and transformed"
+        "text": "How and from where to retrieve the import data"
       },
       {
         "id": "B",
@@ -2555,7 +2555,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Ingest the existing data (Service Graph Connector or ETL) rather than running Discovery"
+        "text": "Ingest the existing data"
       },
       {
         "id": "B",
@@ -2603,7 +2603,7 @@
     "options": [
       {
         "id": "A",
-        "text": "ETL offers flexible custom mapping of arbitrary sources; a Service Graph Connector is a certified prebuilt integration for a specific source"
+        "text": "ETL offers flexible custom mapping of arbitrary sources"
       },
       {
         "id": "B",

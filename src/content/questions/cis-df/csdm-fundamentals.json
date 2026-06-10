@@ -347,7 +347,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A Service Offering is a specific variation of a service with defined commitments (e.g., levels, SLAs, audience), while the Service is the general definition"
+        "text": "A Service Offering is a specific variation of a service with defined commitments"
       },
       {
         "id": "B",
@@ -491,7 +491,7 @@
     "options": [
       {
         "id": "A",
-        "text": "It places data in consistent, expected locations so ITSM, ITOM, SecOps, and APM can all use it reliably"
+        "text": "It places data in consistent, expected locations so ITSM, ITOM, SecOps"
       },
       {
         "id": "B",
@@ -731,7 +731,7 @@
     "options": [
       {
         "id": "A",
-        "text": "By revealing the business impact of the CIs involved, showing which services are affected by the move"
+        "text": "By revealing the business impact of the CIs involved"
       },
       {
         "id": "B",
@@ -971,7 +971,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Because solid Foundation data must exist before advanced service modeling delivers reliable value; maturity builds in stages"
+        "text": "Because solid Foundation data must exist before advanced service modeling delivers reliable value"
       },
       {
         "id": "B",
@@ -1163,7 +1163,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Because a correctly structured, CSDM-aligned CMDB underpins the service data that ITSM, ITOM, SecOps, and other applications rely on"
+        "text": "Because a correctly structured, CSDM-aligned CMDB underpins the service data that ITSM, ITOM, SecOps"
       },
       {
         "id": "B",
@@ -1595,7 +1595,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Advance through the crawl-walk-run-fly stages, expanding service modeling and mapping"
+        "text": "Advance through the crawl-walk-run-fly stages"
       },
       {
         "id": "B",
@@ -1691,7 +1691,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Consistent, service-aware data unlocks reliable reporting, impact analysis, and downstream products"
+        "text": "Consistent, service-aware data unlocks reliable reporting, impact analysis"
       },
       {
         "id": "B",
@@ -1791,7 +1791,7 @@
       },
       {
         "id": "B",
-        "text": "An Application Service is a deployed, running instance mapped to its infrastructure"
+        "text": "An Application Service is a deployed"
       },
       {
         "id": "C",

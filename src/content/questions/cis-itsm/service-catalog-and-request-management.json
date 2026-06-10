@@ -11,7 +11,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A specific type of catalog item that lets end users create task-based records, such as incidents, from the catalog"
+        "text": "A specific type of catalog item that lets end users create task-based records"
       },
       {
         "id": "B",
@@ -58,7 +58,7 @@
     "options": [
       {
         "id": "A",
-        "text": "They generate a task-based record (for example, an incident) rather than a requested item"
+        "text": "They generate a task-based record"
       },
       {
         "id": "B",
@@ -157,7 +157,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A visual, guided experience for creating or editing a catalog item or record producer, which lets you delegate catalog creation and maintenance"
+        "text": "A visual, guided experience for creating or editing a catalog item or record producer"
       },
       {
         "id": "B",
@@ -204,7 +204,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Pre-specify values or restrictions for attributes like catalogs, categories, variable types, and portal settings during item creation or editing"
+        "text": "Pre-specify values or restrictions for attributes like catalogs, categories, variable types"
       },
       {
         "id": "B",
@@ -252,7 +252,7 @@
     "options": [
       {
         "id": "A",
-        "text": "To order a set of related catalog items together through a multi-step (two- or three-step) ordering process"
+        "text": "To order a set of related catalog items together through a multi-step"
       },
       {
         "id": "B",
@@ -1255,7 +1255,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Efficiently manage multiple incidents, catalog requests, and catalog tasks"
+        "text": "Efficiently manage multiple incidents, catalog requests"
       },
       {
         "id": "B",
@@ -1494,7 +1494,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Activities such as running a script, sending notifications, or requesting approvals"
+        "text": "Activities such as running a script"
       },
       {
         "id": "B",
@@ -2026,7 +2026,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Shopping cart preview screens for the one-step and two-step carts, the wish list, and the Classic Mobile app"
+        "text": "Shopping cart preview screens for the one-step and two-step carts, the wish list"
       },
       {
         "id": "B",
@@ -2744,7 +2744,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Requesting items on behalf of another user (the 'requested for' capability, governed by glide.sc.req_for.roles)"
+        "text": "Requesting items on behalf of another user"
       },
       {
         "id": "B",

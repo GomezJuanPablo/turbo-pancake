@@ -11,7 +11,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A base table that holds fields common to all work items (number, state, assigned_to, priority, etc.) from which Incident, Change, Problem, and many other tables extend."
+        "text": "A base table that holds fields common to all work items."
       },
       {
         "id": "B",
@@ -297,7 +297,7 @@
     "options": [
       {
         "id": "A",
-        "text": "To link this task to another task that contains it or that this task is part of, expressing a parent–child relationship between work items."
+        "text": "To link this task to another task that contains it or that this task is part of."
       },
       {
         "id": "B",
@@ -344,7 +344,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A chronological feed of field changes, comments, work notes, and notifications associated with the record."
+        "text": "A chronological feed of field changes, comments, work notes."
       },
       {
         "id": "B",
@@ -392,7 +392,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Work notes are intended for internal team communication; Comments (additional comments) are visible to the customer/end user."
+        "text": "Work notes are intended for internal team communication."
       },
       {
         "id": "B",
@@ -488,7 +488,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Each task-derived table has its own number-maintenance configuration (prefix + counter) so records are distinguishable across the platform."
+        "text": "Each task-derived table has its own number-maintenance configuration."
       },
       {
         "id": "B",
@@ -915,7 +915,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Open a Problem record, link the related incidents to it, and investigate root cause."
+        "text": "Open a Problem record, link the related incidents to it."
       },
       {
         "id": "B",
@@ -963,7 +963,7 @@
     "options": [
       {
         "id": "A",
-        "text": "An incident records a service-affecting event needing restoration; a problem investigates the underlying cause to prevent recurrence."
+        "text": "An incident records a service-affecting event needing restoration."
       },
       {
         "id": "B",
@@ -1058,7 +1058,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A defined auto-close interval passes after Resolved without reopening, or the caller confirms resolution — per the configured policy."
+        "text": "A defined auto-close interval passes after Resolved without reopening."
       },
       {
         "id": "B",
@@ -1201,7 +1201,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A container that holds related knowledge articles and has its own ownership, workflow, and access controls."
+        "text": "A container that holds related knowledge articles and has its own ownership, workflow."
       },
       {
         "id": "B",
@@ -1391,7 +1391,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Use the 'Create Knowledge' / 'Post Knowledge' action on the incident, which seeds a draft article using fields from the incident."
+        "text": "Use the 'Create Knowledge' / 'Post Knowledge' action on the incident."
       },
       {
         "id": "B",
@@ -1439,7 +1439,7 @@
     "options": [
       {
         "id": "A",
-        "text": "When an article is updated through the supported workflow, the platform can produce a new version, preserving the prior version for reference."
+        "text": "When an article is updated through the supported workflow, the platform can produce a new version."
       },
       {
         "id": "B",
@@ -1486,7 +1486,7 @@
     "options": [
       {
         "id": "A",
-        "text": "To separate ownership, workflows, access, and category trees by audience (e.g., IT, HR, Customer Service)."
+        "text": "To separate ownership, workflows, access, and category trees by audience."
       },
       {
         "id": "B",
@@ -1533,7 +1533,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Articles are placed in categories (and optional subcategories) within a KB, supporting hierarchical browsing alongside search."
+        "text": "Articles are placed in categories."
       },
       {
         "id": "B",
@@ -1771,7 +1771,7 @@
     "options": [
       {
         "id": "A",
-        "text": "An orderable thing in the catalog (laptop, access request, name change, etc.) with its own variables, workflow, and price/category."
+        "text": "An orderable thing in the catalog."
       },
       {
         "id": "B",
@@ -1818,7 +1818,7 @@
     "options": [
       {
         "id": "A",
-        "text": "They define the questions asked of the requester on a catalog item (text, choice, reference, etc.) and capture the answers used by the fulfillment workflow."
+        "text": "They define the questions asked of the requester on a catalog item."
       },
       {
         "id": "B",
@@ -1961,7 +1961,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A grouping that organizes catalog items under a heading users can browse (e.g., Hardware, Software, HR)."
+        "text": "A grouping that organizes catalog items under a heading users can browse."
       },
       {
         "id": "B",
@@ -2008,7 +2008,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A reusable group of variables (with their order, layout, and behavior) that can be attached to multiple catalog items."
+        "text": "A reusable group of variables."
       },
       {
         "id": "B",
@@ -2630,7 +2630,7 @@
     "options": [
       {
         "id": "A",
-        "text": "The change is the parent; the change tasks are its children"
+        "text": "The change is the parent"
       },
       {
         "id": "B",

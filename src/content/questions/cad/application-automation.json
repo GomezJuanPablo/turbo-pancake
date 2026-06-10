@@ -15,7 +15,7 @@
       },
       {
         "id": "B",
-        "text": "A low-code visual automation builder for designing flows — sequences of actions triggered by record events, schedules, or service-catalog requests — replacing many uses of the legacy Workflow engine."
+        "text": "A low-code visual automation builder for designing flows."
       },
       {
         "id": "C",
@@ -63,7 +63,7 @@
       },
       {
         "id": "B",
-        "text": "The event or condition that starts the flow — common triggers include record created/updated on a table, scheduled (time-based), service catalog request, REST inbound, and others."
+        "text": "The event or condition that starts the flow."
       },
       {
         "id": "C",
@@ -110,7 +110,7 @@
       },
       {
         "id": "B",
-        "text": "A reusable step in a flow that performs work — update a record, send email, ask for approval, call REST, run a script — accepting inputs and producing outputs other actions can use."
+        "text": "A reusable step in a flow that performs work."
       },
       {
         "id": "C",
@@ -157,7 +157,7 @@
       },
       {
         "id": "B",
-        "text": "A reusable flow that has its own inputs and outputs and can be called from other flows or actions — the building block for DRY automation logic, similar to a function in code."
+        "text": "A reusable flow that has its own inputs and outputs and can be called from other flows or actions."
       },
       {
         "id": "C",
@@ -205,7 +205,7 @@
       },
       {
         "id": "B",
-        "text": "A Flow Designer flow triggered on Loaner Request created, using an Ask for Approval action, then If/Else branching on the approval result, with Update Record and Create Task actions in each branch."
+        "text": "A Flow Designer flow triggered on Loaner Request created."
       },
       {
         "id": "C",
@@ -257,7 +257,7 @@
       },
       {
         "id": "B",
-        "text": "A capability that provides Spokes — pre-built sets of Flow Designer actions for common third-party systems (Slack, Microsoft 365, Jira, etc.) — so you can integrate without writing REST boilerplate."
+        "text": "A capability that provides Spokes."
       },
       {
         "id": "C",
@@ -352,7 +352,7 @@
       },
       {
         "id": "B",
-        "text": "A server-side script that runs on a defined schedule (e.g., hourly, daily, weekly, cron-style) — used for batch work, cleanup, integrations, and other periodic automation."
+        "text": "A server-side script that runs on a defined schedule."
       },
       {
         "id": "C",
@@ -400,7 +400,7 @@
       },
       {
         "id": "B",
-        "text": "Events are server-side notification primitives. Code (typically a Business Rule) calls gs.eventQueue('event.name', record, ...) to emit an event; one or more Script Actions, Notifications, or Flow triggers configured to listen for that event then run — decoupling the producer from consumers."
+        "text": "Events are server-side notification primitives."
       },
       {
         "id": "C",
@@ -495,7 +495,7 @@
       },
       {
         "id": "B",
-        "text": "Extract the 6 steps into a Subflow with inputs (the record and any context) and outputs (the approval result), then replace the inline steps in each of the five flows with a single Call Subflow action. One template change, one place to update."
+        "text": "Extract the 6 steps into a Subflow with inputs."
       },
       {
         "id": "C",
@@ -544,7 +544,7 @@
       },
       {
         "id": "B",
-        "text": "Open Flow Designer's execution history (Operations view): pick the failing execution, inspect each action's inputs/outputs and any error messages, and compare with the expected data. Most prod-only bugs become obvious here."
+        "text": "Open Flow Designer's execution history."
       },
       {
         "id": "C",
@@ -589,7 +589,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A record that defines an outgoing email — when it should be sent (record events or fired events), who receives it, and the subject/body template (with field substitutions)."
+        "text": "A record that defines an outgoing email."
       },
       {
         "id": "B",
@@ -688,7 +688,7 @@
       },
       {
         "id": "B",
-        "text": "Create an Email Notification with When = Record inserted or updated, Condition = state changes to Approved, To = requester (use a reference dot-walk), Subject and Body using ${field} substitutions including ${pickup_date}."
+        "text": "Create an Email Notification with When = Record inserted or updated, Condition = state changes to Approved, To = requester."
       },
       {
         "id": "C",
@@ -732,7 +732,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A record that defines how the platform reacts to incoming email — typically matching on subject/body patterns and then creating or updating a record, with conditions and a script for processing."
+        "text": "A record that defines how the platform reacts to incoming email."
       },
       {
         "id": "B",
@@ -783,7 +783,7 @@
       },
       {
         "id": "B",
-        "text": "It's an instance-level configuration value (name=value) that scripts and configurations read via gs.getProperty(name). Used for thresholds, toggles, default values, environment URLs, and other settings you don't want hard-coded."
+        "text": "It's an instance-level configuration value."
       },
       {
         "id": "C",
@@ -831,7 +831,7 @@
       },
       {
         "id": "B",
-        "text": "Create an Application Property x_acme_loaner.default_loan_days = 14. Read it in scripts via gs.getProperty('x_acme_loaner.default_loan_days', 14). Admins (or a scoped property page) can change it without touching code."
+        "text": "Create an Application Property x_acme_loaner.default_loan_days = 14."
       },
       {
         "id": "C",
@@ -878,7 +878,7 @@
       },
       {
         "id": "B",
-        "text": "Recipients can include literal addresses, user references (dot-walked from the triggering record, e.g., requester or assigned_to), group references, and dynamic recipient scripts — combined as needed."
+        "text": "Recipients can include literal addresses, user references."
       },
       {
         "id": "C",
@@ -922,7 +922,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Instance-wide email behavior — whether outbound is enabled, the from address, reply-to handling, sub-domains, throttling, and other email plumbing settings."
+        "text": "Instance-wide email behavior."
       },
       {
         "id": "B",
@@ -973,7 +973,7 @@
       },
       {
         "id": "B",
-        "text": "An Inbound Email Action that matches the watermark/in-reply-to of the original notification, finds the target record, and appends the email body to the Comments (or Work Notes) field as the sending user."
+        "text": "An Inbound Email Action that matches the watermark/in-reply-to of the original notification, finds the target record."
       },
       {
         "id": "C",
@@ -1021,7 +1021,7 @@
       },
       {
         "id": "B",
-        "text": "Build a System Property Category for the app (e.g., 'Loaner Request settings') and add the property to that category. Admins get a friendly page under System Properties → [App settings] to edit. Optionally surface the property on an Application Properties page within the app menu."
+        "text": "Build a System Property Category for the app."
       },
       {
         "id": "C",
@@ -1115,7 +1115,7 @@
     "options": [
       {
         "id": "A",
-        "text": "gs.getProperty('x_acme_loaner.default_loan_days', 14) — returns the property value (or the second-arg default if not set)."
+        "text": "gs.getProperty('x_acme_loaner.default_loan_days', 14)"
       },
       {
         "id": "B",
@@ -1163,7 +1163,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A record that defines a time-based commitment on a record (e.g., resolve within 8 business hours), including conditions for when it starts, pauses, stops, and breaches — automatically tracked by the platform on matching records."
+        "text": "A record that defines a time-based commitment on a record."
       },
       {
         "id": "B",
@@ -1214,7 +1214,7 @@
       },
       {
         "id": "B",
-        "text": "Define an SLA Definition: Table = x_acme_loaner_request, Condition (Start) = priority is High and state = New, Pause = state is Awaiting Customer Info, Stop = state is Fulfilled, Duration = 4 hours on the business calendar."
+        "text": "Define an SLA Definition: Table = x_acme_loaner_request, Condition."
       },
       {
         "id": "C",
@@ -1353,7 +1353,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A configurable page composed of widgets (reports, performance analytics indicators, custom HTML) that surfaces a curated view for a user or team."
+        "text": "A configurable page composed of widgets."
       },
       {
         "id": "B",
@@ -1404,7 +1404,7 @@
       },
       {
         "id": "B",
-        "text": "Time-series KPI tracking — snapshot indicators on a schedule, then visualize trends, targets, breakdowns, and forecasts over time. Heavier and more configurable than regular Reports."
+        "text": "Time-series KPI tracking."
       },
       {
         "id": "C",
@@ -1500,7 +1500,7 @@
       },
       {
         "id": "B",
-        "text": "Open the affected Task SLA records and inspect the Schedule, business calendar, pause/resume history, and elapsed-time calculation. Common cause: a calendar that omits the team's working hours, or a missing pause condition that should have stopped the clock during certain states."
+        "text": "Open the affected Task SLA records and inspect the Schedule, business calendar, pause/resume history."
       },
       {
         "id": "C",
@@ -1545,7 +1545,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Capturing feedback from users via configurable forms — typically triggered after a workflow stage (e.g., after a loaner is returned) and used to score satisfaction or gather structured responses."
+        "text": "Capturing feedback from users via configurable forms."
       },
       {
         "id": "B",
@@ -1596,7 +1596,7 @@
       },
       {
         "id": "B",
-        "text": "Use the 'Ask for Approval' action (or a Wait For Condition / Wait For Duration action), which suspends the flow execution and resumes when the trigger condition is met — no busy-waiting."
+        "text": "Use the 'Ask for Approval' action."
       },
       {
         "id": "C",
@@ -1644,7 +1644,7 @@
       },
       {
         "id": "B",
-        "text": "Reports respect the viewer's read ACLs. Some users can't read certain records (or the requester or department fields), so the report appears empty or partial for them. Verify their ACLs, not the report itself."
+        "text": "Reports respect the viewer's read ACLs."
       },
       {
         "id": "C",
@@ -1688,7 +1688,7 @@
     "options": [
       {
         "id": "A",
-        "text": "It's the platform's KB system — authored articles organized into Knowledge Bases (sets of articles by topic). Apps often surface related KB articles to users (e.g., on a request form or in Service Portal) to deflect support load."
+        "text": "It's the platform's KB system."
       },
       {
         "id": "B",
@@ -1833,7 +1833,7 @@
       },
       {
         "id": "B",
-        "text": "Create a Knowledge Base scoped to the app (or referenced from it), author the articles inside that KB, and include the KB + articles in the app's Update Set so installs carry the content."
+        "text": "Create a Knowledge Base scoped to the app."
       },
       {
         "id": "C",
@@ -1880,7 +1880,7 @@
       },
       {
         "id": "B",
-        "text": "On submit the platform creates a Request (REQ) and one or more Requested Items (RITM) that flow through approvals, tasks, and fulfillment workflow as configured on the item. Variables become fields on the RITM and downstream records."
+        "text": "On submit the platform creates a Request."
       },
       {
         "id": "C",
@@ -1924,7 +1924,7 @@
     "options": [
       {
         "id": "A",
-        "text": "The lifecycle and workflow that fulfills the work behind a Catalog request — typically driven by Workflow / Flow Designer plus approval and task assignment, ending with the RITM/REQ closing as 'closed_complete'."
+        "text": "The lifecycle and workflow that fulfills the work behind a Catalog request."
       },
       {
         "id": "B",
@@ -1975,7 +1975,7 @@
       },
       {
         "id": "B",
-        "text": "Service Portal surfaces the front-end (catalog items, record producers, knowledge articles, custom widgets) that triggers the back-end automation. End users interact with the portal, and Flow Designer / Workflow / Business Rules handle the rest."
+        "text": "Service Portal surfaces the front-end."
       },
       {
         "id": "C",
@@ -2072,7 +2072,7 @@
       },
       {
         "id": "B",
-        "text": "Stagger the load: use a Scheduled trigger that batches the work (e.g., process N records per minute, paginate the query), or split into smaller targeted flows. Avoid bursts that overwhelm the worker pool."
+        "text": "Stagger the load: use a Scheduled trigger that batches the work."
       },
       {
         "id": "C",
@@ -2116,7 +2116,7 @@
     "options": [
       {
         "id": "A",
-        "text": "${requester.name} — field substitution using ${dot.walked.path} resolves to the value at send time."
+        "text": "${requester.name} — field substitution using ${dot.walked.path} resolves to the value at send time"
       },
       {
         "id": "B",
@@ -2163,7 +2163,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Use a short, unique prefix tied to the app's scope (e.g., x_acme_loaner.default_loan_days) so properties are discoverable, sortable by app, and don't collide with platform or other-app properties."
+        "text": "Use a short, unique prefix tied to the app's scope."
       },
       {
         "id": "B",
@@ -2210,7 +2210,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Use the 'Run Script' action in the flow that calls the Script Include — or, better, wrap the Script Include as a custom Action (with explicit inputs/outputs) that other flows can reuse without ad-hoc scripts."
+        "text": "Use the 'Run Script' action in the flow that calls the Script Include."
       },
       {
         "id": "B",
@@ -2263,7 +2263,7 @@
       },
       {
         "id": "B",
-        "text": "Consolidate: pick a primary automation surface (Flow Designer for new work), migrate logic into clearly-defined flows and subflows, push pure data enforcement into a small number of Business Rules + Data Policies, and remove duplicate logic. The goal is a small, named set of authoritative components per concern."
+        "text": "Consolidate: pick a primary automation surface."
       },
       {
         "id": "C",

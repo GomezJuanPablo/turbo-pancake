@@ -15,7 +15,7 @@
       },
       {
         "id": "B",
-        "text": "To isolate an application's artifacts (tables, scripts, UI) from other applications and protect them from unintended changes."
+        "text": "To isolate an application's artifacts."
       },
       {
         "id": "C",
@@ -63,7 +63,7 @@
       },
       {
         "id": "B",
-        "text": "The update is blocked by default scope protection; the developer must switch into sn_my_app's scope to edit."
+        "text": "The update is blocked by default scope protection."
       },
       {
         "id": "C",
@@ -111,7 +111,7 @@
       },
       {
         "id": "B",
-        "text": "The application's scope identifier (for example, 'x_acme_')."
+        "text": "The application's scope identifier."
       },
       {
         "id": "C",
@@ -159,7 +159,7 @@
       },
       {
         "id": "B",
-        "text": "The workflow needs approvals, SLAs, a self-service portal, and reporting — all native platform capabilities — and integrates with existing CMDB/HR data already on the instance."
+        "text": "The workflow needs approvals, SLAs, a self-service portal."
       },
       {
         "id": "C",
@@ -207,7 +207,7 @@
       },
       {
         "id": "B",
-        "text": "The custom table inherits Task's fields, business rules, and behaviors; records in the child are also accessible via the parent table."
+        "text": "The custom table inherits Task's fields, business rules."
       },
       {
         "id": "C",
@@ -307,7 +307,7 @@
       },
       {
         "id": "B",
-        "text": "Only at the moment of table creation — extension cannot be added later."
+        "text": "Only at the moment of table creation."
       },
       {
         "id": "C",
@@ -355,7 +355,7 @@
       },
       {
         "id": "B",
-        "text": "An Application Menu groups one or more Modules; each Module is a clickable entry that opens a specific page (list, form, report, URL, etc.)."
+        "text": "An Application Menu groups one or more Modules."
       },
       {
         "id": "C",
@@ -451,7 +451,7 @@
       },
       {
         "id": "B",
-        "text": "It defines the application's metadata — name, scope, version, vendor, dependencies — and serves as the anchor that ties all of the app's artifacts together for packaging and deployment."
+        "text": "It defines the application's metadata."
       },
       {
         "id": "C",
@@ -499,7 +499,7 @@
       },
       {
         "id": "B",
-        "text": "Design mobile experiences using Mobile App Builder / Studio inside the platform; users access them through the Now Mobile app, which renders the configured experience on iOS and Android."
+        "text": "Design mobile experiences using Mobile App Builder / Studio inside the platform."
       },
       {
         "id": "C",
@@ -595,7 +595,7 @@
       },
       {
         "id": "B",
-        "text": "It captures customizations made to the instance so the changes can be moved to another instance (e.g., dev → test → prod)."
+        "text": "It captures customizations made to the instance so the changes can be moved to another instance."
       },
       {
         "id": "C",
@@ -643,7 +643,7 @@
       },
       {
         "id": "B",
-        "text": "Create a new Update Set, then on each modified record use 'Add to Update Set' (or batch-move records via the Default update set) to move the captured changes into the new set, then complete and export it."
+        "text": "Create a new Update Set, then on each modified record use 'Add to Update Set'."
       },
       {
         "id": "C",
@@ -747,7 +747,7 @@
       },
       {
         "id": "B",
-        "text": "Configure a cross-scope access privilege (or rely on the scope-to-scope settings) that explicitly allows sn_loaner to read cmdb_ci_computer, leaving other access blocked."
+        "text": "Configure a cross-scope access privilege."
       },
       {
         "id": "C",
@@ -901,7 +901,7 @@
       },
       {
         "id": "C",
-        "text": "The role was set on the Module's Application Menu (parent) but not on the Module itself, or vice versa — role checks apply to whichever record is being filtered. Confirm the role is on the right record."
+        "text": "The role was set on the Module's Application Menu."
       },
       {
         "id": "D",
@@ -942,7 +942,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Only scripts running in this application's scope can read/write the table by default; scripts in other scopes are blocked unless cross-scope access is granted."
+        "text": "Only scripts running in this application's scope can read/write the table by default."
       },
       {
         "id": "B",
@@ -1093,7 +1093,7 @@
       },
       {
         "id": "B",
-        "text": "Decline the use case for ServiceNow. Public marketing sites with heavy SEO/CSS demands aren't a platform fit — better to use a dedicated CMS or static site host, and only surface ServiceNow workflows where they add value (e.g., contact forms posting into a CSM workflow)."
+        "text": "Decline the use case for ServiceNow."
       },
       {
         "id": "C",
@@ -1141,7 +1141,7 @@
       },
       {
         "id": "B",
-        "text": "On the sn_inventory side, grant a cross-scope access privilege that allows sn_loaner to execute LaptopUtils; the privilege record is what unblocks the call."
+        "text": "On the sn_inventory side, grant a cross-scope access privilege that allows sn_loaner to execute LaptopUtils."
       },
       {
         "id": "C",
@@ -1189,7 +1189,7 @@
       },
       {
         "id": "B",
-        "text": "Table extension is set at creation and cannot be changed. The pragmatic path is to create a new base table, migrate the existing records (export/import or a transform), update references, and retire the old extended table."
+        "text": "Table extension is set at creation and cannot be changed."
       },
       {
         "id": "C",
@@ -1242,7 +1242,7 @@
       },
       {
         "id": "B",
-        "text": "Records flagged with unresolved errors may be skipped or applied incorrectly, leaving the target instance in an inconsistent state. Errors should be reviewed and resolved (Accept Remote / Skip / Resolve Conflict) before committing."
+        "text": "Records flagged with unresolved errors may be skipped or applied incorrectly."
       },
       {
         "id": "C",
@@ -1287,7 +1287,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Global scope artifacts are NOT prefixed with a scope identifier; many baseline ServiceNow tables and scripts live in Global."
+        "text": "Global scope artifacts are NOT prefixed with a scope identifier."
       },
       {
         "id": "B",
@@ -1435,7 +1435,7 @@
       },
       {
         "id": "B",
-        "text": "The prefix used in the application's scope identifier (e.g., x_acme_) — typically a short, instance-unique vendor or org identifier."
+        "text": "The prefix used in the application's scope identifier."
       },
       {
         "id": "C",
@@ -1479,7 +1479,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A mechanism on an extended (child) table to change selected dictionary attributes of an inherited field — for example, making a parent-defined field mandatory only on this child."
+        "text": "A mechanism on an extended."
       },
       {
         "id": "B",
@@ -1527,7 +1527,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Whether the module is Active and whether the user's role matches both the Module and (if restricted) the parent Application Menu."
+        "text": "Whether the module is Active and whether the user's role matches both the Module and."
       },
       {
         "id": "B",
@@ -1583,7 +1583,7 @@
       },
       {
         "id": "C",
-        "text": "Create a Loaner Accessory child table with a Reference field pointing back to the Loaner Request. Each accessory becomes its own record, and the request shows them as a Related List."
+        "text": "Create a Loaner Accessory child table with a Reference field pointing back to the Loaner Request."
       },
       {
         "id": "D",
@@ -1632,7 +1632,7 @@
       },
       {
         "id": "B",
-        "text": "It records other applications or plugins this app requires to function so the platform can ensure they are present (and the correct version) when the app is installed elsewhere."
+        "text": "It records other applications or plugins this app requires to function so the platform can ensure they are present."
       },
       {
         "id": "C",
@@ -1680,7 +1680,7 @@
       },
       {
         "id": "B",
-        "text": "Open the Custom Application record (sys_app) — it surfaces related lists for the app's artifacts (tables, scripts, UI, etc.) so the developer can see exactly what belongs to the application."
+        "text": "Open the Custom Application record."
       },
       {
         "id": "C",
@@ -1728,7 +1728,7 @@
       },
       {
         "id": "B",
-        "text": "Push back: 5-second high-volume telemetry across a shared instance will create write amplification and performance noise. Recommend an external time-series store for the high-frequency data and surface aggregated/summary records into ServiceNow at a lower cadence."
+        "text": "Push back: 5-second high-volume telemetry across a shared instance will create write amplification and performance noise."
       },
       {
         "id": "C",

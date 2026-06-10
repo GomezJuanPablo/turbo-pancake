@@ -835,7 +835,7 @@
       },
       {
         "id": "C",
-        "text": "A Windows authentication error — invalid credentials or insufficient local-admin rights"
+        "text": "A Windows authentication error"
       },
       {
         "id": "D",
@@ -875,7 +875,7 @@
     "options": [
       {
         "id": "A",
-        "text": "One MID Server runs the port scan; all three share classification and exploration"
+        "text": "One MID Server runs the port scan"
       },
       {
         "id": "B",
@@ -1259,7 +1259,7 @@
     "options": [
       {
         "id": "A",
-        "text": "No inbound firewall rules to the MID Server are required, reducing exposure"
+        "text": "No inbound firewall rules to the MID Server are required"
       },
       {
         "id": "B",
@@ -1355,7 +1355,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Patterns use a declarative, step-based language (run in Pattern Designer) instead of scripted probe/sensor pairs"
+        "text": "Patterns use a declarative, step-based language"
       },
       {
         "id": "B",
@@ -1607,7 +1607,7 @@
       },
       {
         "id": "D",
-        "text": "It triggers horizontal host discovery (probes/patterns) for that host through the MID Server"
+        "text": "It triggers horizontal host discovery"
       }
     ],
     "correct": [
@@ -1647,7 +1647,7 @@
       },
       {
         "id": "B",
-        "text": "The open ports and responses found during the Port Scan (Shazzam) phase"
+        "text": "The open ports and responses found during the Port Scan"
       },
       {
         "id": "C",
@@ -1883,7 +1883,7 @@
     "options": [
       {
         "id": "A",
-        "text": "One MID Server can support multiple ITOM applications (Discovery, Service Mapping, Orchestration, Event Management)"
+        "text": "One MID Server can support multiple ITOM applications"
       },
       {
         "id": "B",
@@ -1939,7 +1939,7 @@
       },
       {
         "id": "C",
-        "text": "Discovery inventories infrastructure broadly (horizontal); Service Mapping maps a service's dependencies top-down"
+        "text": "Discovery inventories infrastructure broadly"
       },
       {
         "id": "D",
@@ -1987,7 +1987,7 @@
       },
       {
         "id": "C",
-        "text": "Whether the responsible MID Server is Up (heartbeat) and validated"
+        "text": "Whether the responsible MID Server is Up"
       },
       {
         "id": "D",

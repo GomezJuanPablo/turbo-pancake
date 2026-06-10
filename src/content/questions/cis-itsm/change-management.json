@@ -11,7 +11,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A systematic approach to control the lifecycle of all changes, enabling beneficial changes with minimum disruption to IT services"
+        "text": "A systematic approach to control the lifecycle of all changes"
       },
       {
         "id": "B",
@@ -297,7 +297,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A prescriptive process with assessments and authorizations, including peer/technical approval and CAB authorization"
+        "text": "A prescriptive process with assessments and authorizations"
       },
       {
         "id": "B",
@@ -537,7 +537,7 @@
     "options": [
       {
         "id": "A",
-        "text": "To standardize the creation of change requests, based on the available change models"
+        "text": "To standardize the creation of change requests"
       },
       {
         "id": "B",
@@ -633,7 +633,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A piece of work related to a change request, such as planning, implementing, testing, and reviewing the change"
+        "text": "A piece of work related to a change request"
       },
       {
         "id": "B",
@@ -921,7 +921,7 @@
     "options": [
       {
         "id": "A",
-        "text": "How likely a team is to complete the change request without issues, based on historical data"
+        "text": "How likely a team is to complete the change request without issues"
       },
       {
         "id": "B",
@@ -2562,7 +2562,7 @@
     "options": [
       {
         "id": "A",
-        "text": "The asset action to perform on the CI associated with a hardware asset, letting implementers update asset records from the change"
+        "text": "The asset action to perform on the CI associated with a hardware asset"
       },
       {
         "id": "B",

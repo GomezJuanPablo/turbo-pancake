@@ -610,7 +610,7 @@
       },
       {
         "id": "C",
-        "text": "Credential and access requirements (often elevated) must be approved and provisioned to discover hosts"
+        "text": "Credential and access requirements"
       },
       {
         "id": "D",
@@ -706,7 +706,7 @@
       },
       {
         "id": "C",
-        "text": "Service Mapping supports hybrid and cloud (e.g., AWS, Azure, GCP) services and their dependencies"
+        "text": "Service Mapping supports hybrid and cloud"
       },
       {
         "id": "D",
@@ -754,7 +754,7 @@
       },
       {
         "id": "C",
-        "text": "Without authentication to targets, discovery can't collect data at all — sizing only affects speed once data flows"
+        "text": "Without authentication to targets, discovery can't collect data at all"
       },
       {
         "id": "D",
@@ -894,7 +894,7 @@
       },
       {
         "id": "B",
-        "text": "CIS-Discovery / Data Foundations (CMDB, IRE, MID Server)"
+        "text": "CIS-Discovery / Data Foundations"
       },
       {
         "id": "C",
@@ -1086,7 +1086,7 @@
       },
       {
         "id": "B",
-        "text": "The MID Server reaches the instance outbound over 443, which is already permitted"
+        "text": "The MID Server reaches the instance outbound over 443"
       },
       {
         "id": "C",
@@ -1322,7 +1322,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Understanding of infrastructure, networking, credentials, and pattern/discovery concepts"
+        "text": "Understanding of infrastructure"
       },
       {
         "id": "B",

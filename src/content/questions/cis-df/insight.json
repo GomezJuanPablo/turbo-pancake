@@ -1067,7 +1067,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A metric evaluates a specific rule/check; the score aggregates metrics into a higher-level health figure"
+        "text": "A metric evaluates a specific rule/check"
       },
       {
         "id": "B",
@@ -1115,7 +1115,7 @@
     "options": [
       {
         "id": "A",
-        "text": "It inflates the score without improving actual data quality, masking the real problem"
+        "text": "It inflates the score without improving actual data quality"
       },
       {
         "id": "B",
@@ -1163,7 +1163,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Missing expected relationships (e.g., an application with no 'runs on' server)"
+        "text": "Missing expected relationships"
       },
       {
         "id": "B",
@@ -1259,7 +1259,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Ensure the authoritative source (e.g., Discovery) reliably populates OS version, or adjust which source is responsible"
+        "text": "Ensure the authoritative source"
       },
       {
         "id": "B",
@@ -1307,7 +1307,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Lets users build relationship-aware queries visually without coding, and save/share them"
+        "text": "Lets users build relationship-aware queries visually without coding"
       },
       {
         "id": "B",
@@ -1355,7 +1355,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Because perfect data is rarely achievable at scale; pragmatic targets focus effort where it matters and stay motivating"
+        "text": "Because perfect data is rarely achievable at scale"
       },
       {
         "id": "B",
@@ -1787,7 +1787,7 @@
     "options": [
       {
         "id": "A",
-        "text": "CMDB Query Builder / relationship traversal (impact view) from the server upward to services"
+        "text": "CMDB Query Builder / relationship traversal"
       },
       {
         "id": "B",
@@ -2075,7 +2075,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Scope health views/metrics per business unit (e.g., by owning group or service) and compare their scores"
+        "text": "Scope health views/metrics per business unit"
       },
       {
         "id": "B",
@@ -2123,7 +2123,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Health can measure how well CIs and services conform to the CSDM model, helping assess CSDM adoption quality"
+        "text": "Health can measure how well CIs and services conform to the CSDM model"
       },
       {
         "id": "B",
@@ -2171,7 +2171,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Health is monitored on a cadence, findings feed prioritized remediation, and scores trend upward over time"
+        "text": "Health is monitored on a cadence, findings feed prioritized remediation"
       },
       {
         "id": "B",
@@ -2219,7 +2219,7 @@
     "options": [
       {
         "id": "A",
-        "text": "IRE prevents and flags duplicates at ingestion; Insight measures and reports remaining duplicate levels for remediation"
+        "text": "IRE prevents and flags duplicates at ingestion"
       },
       {
         "id": "B",
@@ -2843,11 +2843,11 @@
     "options": [
       {
         "id": "A",
-        "text": "Populate missing required attributes/relationships (completeness)"
+        "text": "Populate missing required attributes/relationships"
       },
       {
         "id": "B",
-        "text": "Resolve de-duplication tasks (correctness)"
+        "text": "Resolve de-duplication tasks"
       },
       {
         "id": "C",

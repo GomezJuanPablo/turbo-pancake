@@ -206,7 +206,7 @@
       },
       {
         "id": "B",
-        "text": "Tags are user-defined labels that can be applied to records across many tables and can be private, shared with a group, or visible to all users."
+        "text": "Tags are user-defined labels that can be applied to records across many tables and can be private, shared with a group."
       },
       {
         "id": "C",
@@ -493,7 +493,7 @@
       },
       {
         "id": "B",
-        "text": "The platform searches the tables and fields that have been indexed and are configured for global search, and groups results by record type."
+        "text": "The platform searches the tables and fields that have been indexed and are configured for global search."
       },
       {
         "id": "C",
@@ -636,7 +636,7 @@
       },
       {
         "id": "B",
-        "text": "Tables hold rows of data, fields are the columns on those tables, and forms are the UI layouts used to view or edit a single record from a table."
+        "text": "Tables hold rows of data, fields are the columns on those tables."
       },
       {
         "id": "C",
@@ -973,7 +973,7 @@
       },
       {
         "id": "B",
-        "text": "The user is taken directly to the matching record, bypassing the search results page"
+        "text": "The user is taken directly to the matching record"
       },
       {
         "id": "C",
@@ -1682,7 +1682,7 @@
       },
       {
         "id": "B",
-        "text": "Changes to an embedded list are saved when the form is saved; related lists save immediately"
+        "text": "Changes to an embedded list are saved when the form is saved"
       },
       {
         "id": "C",
@@ -2014,7 +2014,7 @@
       },
       {
         "id": "B",
-        "text": "Role-specific information including lists, Performance Analytics data, and prioritized tasks to help users start working"
+        "text": "Role-specific information including lists, Performance Analytics data"
       },
       {
         "id": "C",
@@ -2156,7 +2156,7 @@
       },
       {
         "id": "B",
-        "text": "All conditions to the right of Category = Software are removed, returning active software incidents"
+        "text": "All conditions to the right of Category = Software are removed"
       },
       {
         "id": "C",
@@ -3851,7 +3851,7 @@
       },
       {
         "id": "B",
-        "text": "Save the file in a different format, such as compressing it to .zip"
+        "text": "Save the file in a different format"
       },
       {
         "id": "C",
@@ -4274,7 +4274,7 @@
       },
       {
         "id": "B",
-        "text": "The record activity stream opens, allowing comments, work notes, and image previews"
+        "text": "The record activity stream opens"
       },
       {
         "id": "C",
@@ -4604,7 +4604,7 @@
       },
       {
         "id": "B",
-        "text": "The link opens the referenced record rather than the record in the current table, which may confuse users"
+        "text": "The link opens the referenced record rather than the record in the current table"
       },
       {
         "id": "C",
@@ -4888,7 +4888,7 @@
       },
       {
         "id": "B",
-        "text": "The personal list resets to follow the default view, removing the inactive field"
+        "text": "The personal list resets to follow the default view"
       },
       {
         "id": "C",
@@ -5312,7 +5312,7 @@
       },
       {
         "id": "B",
-        "text": "Navigate to All > Self-Service > Knowledge, open an article, and select the star icon in the header"
+        "text": "Navigate to All > Self-Service > Knowledge, open an article"
       },
       {
         "id": "C",
@@ -5402,7 +5402,7 @@
     "options": [
       {
         "id": "A",
-        "text": "On a list, sysparm_query filters records shown; on a form with sys_id=-1, it pre-populates field values on the new record"
+        "text": "On a list, sysparm_query filters records shown"
       },
       {
         "id": "B",
@@ -5734,7 +5734,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Inline editing in the list (list editor)"
+        "text": "Inline editing in the list"
       },
       {
         "id": "B",
@@ -6022,7 +6022,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Matching records grouped by the tables (search groups) configured for search"
+        "text": "Matching records grouped by the tables"
       },
       {
         "id": "B",
@@ -6218,7 +6218,7 @@
       },
       {
         "id": "B",
-        "text": "Favorites provide one-click shortcuts to records, lists, or modules"
+        "text": "Favorites provide one-click shortcuts to records, lists"
       },
       {
         "id": "C",

@@ -251,7 +251,7 @@
     "options": [
       {
         "id": "A",
-        "text": "In CI Class Manager, on the class's Basic Info tab (Principal Class check box)"
+        "text": "In CI Class Manager, on the class's Basic Info tab"
       },
       {
         "id": "B",
@@ -731,7 +731,7 @@
     "options": [
       {
         "id": "A",
-        "text": "To recommend the expected relationship types for that class, guiding consistent and complete modeling"
+        "text": "To recommend the expected relationship types for that class"
       },
       {
         "id": "B",
@@ -1067,7 +1067,7 @@
     "options": [
       {
         "id": "A",
-        "text": "They are inherited from parent classes up the table hierarchy (e.g., Server, cmdb_ci)"
+        "text": "They are inherited from parent classes up the table hierarchy"
       },
       {
         "id": "B",
@@ -1211,7 +1211,7 @@
     "options": [
       {
         "id": "A",
-        "text": "In the CI Relationship Type table (cmdb_rel_type)"
+        "text": "In the CI Relationship Type table"
       },
       {
         "id": "B",
@@ -1355,7 +1355,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Identification and Reconciliation (Identification Rule) tab"
+        "text": "Identification and Reconciliation"
       },
       {
         "id": "B",
@@ -1403,7 +1403,7 @@
     "options": [
       {
         "id": "A",
-        "text": "CIs of that class become available choices in CI reference pickers (e.g., on incidents/changes), filtering out non-principal classes"
+        "text": "CIs of that class become available choices in CI reference pickers"
       },
       {
         "id": "B",
@@ -1451,7 +1451,7 @@
     "options": [
       {
         "id": "A",
-        "text": "An attribute describes a property of one CI; a relationship connects two CIs to express dependency or association"
+        "text": "An attribute describes a property of one CI"
       },
       {
         "id": "B",
@@ -1499,7 +1499,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Verify a suitable class doesn't already exist (e.g., via the CMDB CI Class Models content) to avoid redundant custom classes"
+        "text": "Verify a suitable class doesn't already exist"
       },
       {
         "id": "B",
@@ -1691,7 +1691,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Changes to base classes ripple to all child classes and can complicate upgrades and performance; extend the appropriate specific class instead"
+        "text": "Changes to base classes ripple to all child classes and can complicate upgrades and performance"
       },
       {
         "id": "B",
@@ -1835,7 +1835,7 @@
     "options": [
       {
         "id": "A",
-        "text": "An identification rule with identifier entries (criterion attributes)"
+        "text": "An identification rule with identifier entries"
       },
       {
         "id": "B",

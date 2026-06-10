@@ -11,7 +11,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A low-code, web-based environment for building automated business logic using triggers, actions, and subflows — without writing custom scripts for most tasks."
+        "text": "A low-code, web-based environment for building automated business logic using triggers, actions."
       },
       {
         "id": "B",
@@ -106,7 +106,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A reusable building block that performs a discrete operation (create record, ask for approval, send email, REST call, etc.) and exposes inputs and outputs."
+        "text": "A reusable building block that performs a discrete operation."
       },
       {
         "id": "B",
@@ -201,7 +201,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A flow with a Record Created trigger on Incident (condition: priority = 1) and a Send Email action targeted at assigned_to."
+        "text": "A flow with a Record Created trigger on Incident."
       },
       {
         "id": "B",
@@ -249,7 +249,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Flow Designer is the modern, recommended automation tool; legacy Workflow remains for existing content, but new automation should generally be built in Flow Designer."
+        "text": "Flow Designer is the modern, recommended automation tool."
       },
       {
         "id": "B",
@@ -345,7 +345,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A reference to a piece of data — trigger fields, action outputs, flow variables — that can be dragged into action inputs."
+        "text": "A reference to a piece of data."
       },
       {
         "id": "B",
@@ -392,7 +392,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Configure the action's error handling (e.g., Continue, Stop with error, custom error path) on the flow step so downstream behavior is intentional."
+        "text": "Configure the action's error handling."
       },
       {
         "id": "B",
@@ -486,7 +486,7 @@
     "options": [
       {
         "id": "A",
-        "text": "The Executions view of the flow, which shows each run with per-step inputs, outputs, and status."
+        "text": "The Executions view of the flow."
       },
       {
         "id": "B",
@@ -534,7 +534,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Set the flow to run with the System User (or a service account) rather than the user who triggered it, so it has the permissions needed regardless of the trigger user."
+        "text": "Set the flow to run with the System User."
       },
       {
         "id": "B",
@@ -582,7 +582,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A server-side script that runs on database operations (insert, update, delete, query) on a chosen table, before, after, async, or as a display rule."
+        "text": "A server-side script that runs on database operations."
       },
       {
         "id": "B",
@@ -724,7 +724,7 @@
     "options": [
       {
         "id": "A",
-        "text": "The execution order relative to other business rules on the same table and 'When' — lower order runs first."
+        "text": "The execution order relative to other business rules on the same table and 'When'."
       },
       {
         "id": "B",
@@ -865,7 +865,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A declarative configuration that controls whether fields on a form are visible, mandatory, or read-only based on conditions — without writing a script in most cases."
+        "text": "A declarative configuration that controls whether fields on a form are visible, mandatory."
       },
       {
         "id": "B",
@@ -912,7 +912,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A UI Policy with condition State = Resolved, setting Resolution Notes to mandatory."
+        "text": "A UI Policy with condition State = Resolved."
       },
       {
         "id": "B",
@@ -960,7 +960,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Server-side, in a Business Rule (and an ACL), so the rule is enforced regardless of how the record is updated — UI, API, scripts, etc."
+        "text": "Server-side, in a Business Rule."
       },
       {
         "id": "B",
@@ -1151,7 +1151,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A modern, configurable, mobile-friendly self-service web interface built from portals, pages, and widgets — separate from the classic UI."
+        "text": "A modern, configurable, mobile-friendly self-service web interface built from portals, pages."
       },
       {
         "id": "B",
@@ -1198,7 +1198,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A reusable, self-contained UI component (HTML template + client/server controllers + CSS) that can be placed on portal pages."
+        "text": "A reusable, self-contained UI component."
       },
       {
         "id": "B",
@@ -1245,7 +1245,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A saved query against a table with a chosen visualization (list, bar, pie, time series, etc.) that can be shared and added to dashboards."
+        "text": "A saved query against a table with a chosen visualization."
       },
       {
         "id": "B",
@@ -1292,7 +1292,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Create a Report on the Incident table with a condition (state != Closed/Resolved), Group By assignment_group, visualized as a bar chart."
+        "text": "Create a Report on the Incident table with a condition."
       },
       {
         "id": "B",
@@ -1387,7 +1387,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Performance Analytics captures time-series snapshots of KPIs so trends, targets, and breakdowns are persistent over time — Reports query live data and don't preserve historical snapshots automatically."
+        "text": "Performance Analytics captures time-series snapshots of KPIs so trends, targets."
       },
       {
         "id": "B",
@@ -1483,7 +1483,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Reports can be shared with specific users, groups, or roles; recipients only see what they have access to under the platform's ACLs."
+        "text": "Reports can be shared with specific users, groups, or roles."
       },
       {
         "id": "B",
@@ -1531,7 +1531,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Create one dashboard, share it with the Network Ops group, and keep it updated centrally."
+        "text": "Create one dashboard, share it with the Network Ops group."
       },
       {
         "id": "B",
@@ -1579,7 +1579,7 @@
     "options": [
       {
         "id": "A",
-        "text": "ACLs are filtering rows differently for the two users based on their roles, group memberships, or other criteria."
+        "text": "ACLs are filtering rows differently for the two users based on their roles, group memberships."
       },
       {
         "id": "B",
@@ -1723,7 +1723,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A record that defines a measurable commitment — typically a duration tied to a condition on a target table — and the schedule used to count time."
+        "text": "A record that defines a measurable commitment."
       },
       {
         "id": "B",
@@ -1866,7 +1866,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Designing surveys with questions and categories, distributing them on triggers or schedules, and collecting and reporting on responses."
+        "text": "Designing surveys with questions and categories."
       },
       {
         "id": "B",
@@ -1913,7 +1913,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A configuration that runs when the platform receives email matching a condition — used to create or update records, reply, or trigger a flow."
+        "text": "A configuration that runs when the platform receives email matching a condition."
       },
       {
         "id": "B",
@@ -2007,7 +2007,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A configurable, server-side task that runs on a defined schedule (daily, weekly, cron) to perform work such as running scripts, sending reports, or triggering flows."
+        "text": "A configurable, server-side task that runs on a defined schedule."
       },
       {
         "id": "B",
@@ -2101,7 +2101,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Review and tighten the job's scope (filter conditions, batch size), and consider running it less frequently or off business hours."
+        "text": "Review and tighten the job's scope."
       },
       {
         "id": "B",
@@ -2148,7 +2148,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A survey with a trigger condition tied to incident closure (or a flow/business rule that sends the survey on the Closed transition)."
+        "text": "A survey with a trigger condition tied to incident closure."
       },
       {
         "id": "B",
@@ -2196,7 +2196,7 @@
     "options": [
       {
         "id": "A",
-        "text": "An Inbound Email Action of type 'Reply' (or 'Update') that matches on a reference (e.g., watermark, prefix in subject) and updates the existing record."
+        "text": "An Inbound Email Action of type 'Reply'."
       },
       {
         "id": "B",
@@ -2532,7 +2532,7 @@
     "options": [
       {
         "id": "A",
-        "text": "The flow's 'Run As' setting (User who initiates vs System)"
+        "text": "The flow's 'Run As' setting"
       },
       {
         "id": "B",
@@ -3108,7 +3108,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Set the rule's When/Filter Conditions (and 'changes to') so it only fires on that condition"
+        "text": "Set the rule's When/Filter Conditions"
       },
       {
         "id": "B",

@@ -11,7 +11,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Through Table Administration (Tables module / Tables & Columns), giving the table a label, name, and optional parent for extension."
+        "text": "Through Table Administration."
       },
       {
         "id": "B",
@@ -105,7 +105,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Label is the user-visible name; Name is the internal API/database identifier (typically lowercase with underscores)."
+        "text": "Label is the user-visible name."
       },
       {
         "id": "B",
@@ -246,7 +246,7 @@
     "options": [
       {
         "id": "A",
-        "text": "The metadata table that defines every field on every table — including type, label, max length, default value, and the table it belongs to."
+        "text": "The metadata table that defines every field on every table."
       },
       {
         "id": "B",
@@ -293,7 +293,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A 32-character globally unique identifier (GUID) that every record on every table receives as its primary key."
+        "text": "A 32-character globally unique identifier."
       },
       {
         "id": "B",
@@ -340,7 +340,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A Dictionary Override on the Incident table for that field, supplying the Incident-specific default."
+        "text": "A Dictionary Override on the Incident table for that field."
       },
       {
         "id": "B",
@@ -482,7 +482,7 @@
     "options": [
       {
         "id": "A",
-        "text": "On the Choice list for the State field on Incident (sys_choice for that table+field), adding a label, value, and sequence."
+        "text": "On the Choice list for the State field on Incident."
       },
       {
         "id": "B",
@@ -529,7 +529,7 @@
     "options": [
       {
         "id": "A",
-        "text": "On the Task table, so every extending table (including Vendor Contact, Incident, Change, Problem) inherits the new field automatically."
+        "text": "On the Task table, so every extending table."
       },
       {
         "id": "B",
@@ -576,7 +576,7 @@
     "options": [
       {
         "id": "A",
-        "text": "The field must have a non-empty value when the record is saved; the platform enforces it at the data layer."
+        "text": "The field must have a non-empty value when the record is saved."
       },
       {
         "id": "B",
@@ -623,7 +623,7 @@
     "options": [
       {
         "id": "A",
-        "text": "The single field shown by default when a record is referenced from another table or shown in a search result (e.g., 'name' on User, 'short_description' on Incident)."
+        "text": "The single field shown by default when a record is referenced from another table or shown in a search result."
       },
       {
         "id": "B",
@@ -670,7 +670,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Set the field's Reference attribute to point at the sys_user table; the platform uses sys_user's Display field to render the value."
+        "text": "Set the field's Reference attribute to point at the sys_user table."
       },
       {
         "id": "B",
@@ -717,7 +717,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A record that defines a security rule for a table, field, or row operation, evaluated when a user tries to perform that operation."
+        "text": "A record that defines a security rule for a table, field."
       },
       {
         "id": "B",
@@ -764,7 +764,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Read, Write, Create, Delete (and a few others)."
+        "text": "Read, Write, Create, Delete."
       },
       {
         "id": "B",
@@ -811,7 +811,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Roles, conditions, and a script — all three are evaluated to determine the final allow/deny."
+        "text": "Roles, conditions, and a script."
       },
       {
         "id": "B",
@@ -955,7 +955,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A write ACL on incident.resolution_notes with a condition checking that the current user equals current.assigned_to (and the user has the appropriate role)."
+        "text": "A write ACL on incident.resolution_notes with a condition checking that the current user equals current.assigned_to."
       },
       {
         "id": "B",
@@ -1003,7 +1003,7 @@
     "options": [
       {
         "id": "A",
-        "text": "If multiple roles are listed on an ACL, the user must have at least one of them (OR semantics)."
+        "text": "If multiple roles are listed on an ACL, the user must have at least one of them."
       },
       {
         "id": "B",
@@ -1097,7 +1097,7 @@
     "options": [
       {
         "id": "A",
-        "text": "The user must satisfy all three checks (role, condition, script) for that ACL to grant the operation."
+        "text": "The user must satisfy all three checks."
       },
       {
         "id": "B",
@@ -1193,7 +1193,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Enabling 'Security Debug' (ACL debug) to trace ACL rule evaluation and see which rule decided the outcome."
+        "text": "Enabling 'Security Debug'."
       },
       {
         "id": "B",
@@ -1287,7 +1287,7 @@
     "options": [
       {
         "id": "A",
-        "text": "The reading user lacks read access on sys_user (or the specific user record), so the platform can't show the display value."
+        "text": "The reading user lacks read access on sys_user."
       },
       {
         "id": "B",
@@ -1383,7 +1383,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Refactor the ACL script to avoid heavy queries inside the per-record evaluation, prefer indexed conditions, and lean on roles/conditions instead of script where possible."
+        "text": "Refactor the ACL script to avoid heavy queries inside the per-record evaluation, prefer indexed conditions."
       },
       {
         "id": "B",
@@ -1430,7 +1430,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A rule that enforces conditions on a record (e.g., mandatory, read-only) at the data layer, regardless of how the record is updated — form, API, import set, script."
+        "text": "A rule that enforces conditions on a record."
       },
       {
         "id": "B",
@@ -1525,7 +1525,7 @@
     "options": [
       {
         "id": "A",
-        "text": "The platform allows conversion in some cases, but each mechanism has a different enforcement scope; conversion isn't always exactly equivalent."
+        "text": "The platform allows conversion in some cases, but each mechanism has a different enforcement scope."
       },
       {
         "id": "B",
@@ -1572,7 +1572,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Records changes to designated fields (old value, new value, who, when) in the audit history so admins can see exactly how a record evolved."
+        "text": "Records changes to designated fields."
       },
       {
         "id": "B",
@@ -1619,7 +1619,7 @@
     "options": [
       {
         "id": "A",
-        "text": "In the audit history for that record/field — surfaced in the Activity Log and queryable on the audit tables."
+        "text": "In the audit history for that record/field."
       },
       {
         "id": "B",
@@ -1667,7 +1667,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Standardizing values stored in free-text fields (e.g., mapping 'Win10', 'Windows 10', 'win 10' to a canonical value) so reporting and automation work consistently."
+        "text": "Standardizing values stored in free-text fields."
       },
       {
         "id": "B",
@@ -1762,7 +1762,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Auditing is controlled per table (and can be tuned per field), so admins can opt into auditing only the fields they care about."
+        "text": "Auditing is controlled per table."
       },
       {
         "id": "B",
@@ -1809,7 +1809,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A Data Policy on the field set to Read-only when the record is not new (e.g., when sys_id is not empty), enforcing across all paths."
+        "text": "A Data Policy on the field set to Read-only when the record is not new."
       },
       {
         "id": "B",
@@ -2095,7 +2095,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Inspect the integration payload — the field that's now mandatory is missing — and either update the integration to supply the field or refine the Data Policy's condition to exempt the integration use case."
+        "text": "Inspect the integration payload."
       },
       {
         "id": "B",
@@ -2143,7 +2143,7 @@
     "options": [
       {
         "id": "A",
-        "text": "The process of verifying that a user (or system) is who they claim to be, before authorization decides what they can do."
+        "text": "The process of verifying that a user."
       },
       {
         "id": "B",
@@ -2190,7 +2190,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A standard for single sign-on where an Identity Provider (IdP) issues an assertion that ServiceNow (the Service Provider) trusts to authenticate users."
+        "text": "A standard for single sign-on where an Identity Provider."
       },
       {
         "id": "B",
@@ -2238,7 +2238,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Requiring at least two distinct authentication factors (e.g., something you know + something you have) before granting access."
+        "text": "Requiring at least two distinct authentication factors."
       },
       {
         "id": "B",
@@ -2333,7 +2333,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Configure SAML 2.0 between the instance (as Service Provider) and the corporate IdP, so authentication delegates to the IdP."
+        "text": "Configure SAML 2.0 between the instance."
       },
       {
         "id": "B",
@@ -2382,7 +2382,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Letting users reset their own password through self-service verification (security questions, email, mobile, etc.) instead of contacting the service desk."
+        "text": "Letting users reset their own password through self-service verification."
       },
       {
         "id": "B",
@@ -2429,7 +2429,7 @@
     "options": [
       {
         "id": "A",
-        "text": "An instance can be configured with multiple authentication methods (local, SAML, LDAP, OAuth/OIDC), with rules and order to choose between them."
+        "text": "An instance can be configured with multiple authentication methods."
       },
       {
         "id": "B",
@@ -2476,7 +2476,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Granting integrations or applications delegated access to the instance on behalf of a user (or service account) using tokens instead of passwords."
+        "text": "Granting integrations or applications delegated access to the instance on behalf of a user."
       },
       {
         "id": "B",
@@ -2572,7 +2572,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Admins can configure password complexity, expiration, history, and reuse rules for local accounts via password policy settings."
+        "text": "Admins can configure password complexity, expiration, history."
       },
       {
         "id": "B",
@@ -2666,7 +2666,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Configure the MFA policy with an exemption for that specific user or for a service-account group, and limit the account's allowed login methods (e.g., API tokens only)."
+        "text": "Configure the MFA policy with an exemption for that specific user or for a service-account group."
       },
       {
         "id": "B",
@@ -2762,7 +2762,7 @@
     "options": [
       {
         "id": "A",
-        "text": "The script was authenticating as the user with basic auth and now MFA blocks that path; switch the script to OAuth/token-based authentication or to a dedicated service account exempt from interactive MFA."
+        "text": "The script was authenticating as the user with basic auth and now MFA blocks that path."
       },
       {
         "id": "B",
@@ -2810,7 +2810,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A centralized dashboard that surfaces the security posture of the instance — configuration findings, hardening recommendations, and security-relevant events."
+        "text": "A centralized dashboard that surfaces the security posture of the instance."
       },
       {
         "id": "B",
@@ -2857,7 +2857,7 @@
     "options": [
       {
         "id": "A",
-        "text": "They configure platform-level safeguards (e.g., session timeouts, headers, content rules, password rules) that reduce the instance's exposure to common attacks."
+        "text": "They configure platform-level safeguards."
       },
       {
         "id": "B",
@@ -2904,7 +2904,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Contextual security: identity (auth) + role + ACL evaluation + scope + record context together decide what a user can do."
+        "text": "Contextual security: identity."
       },
       {
         "id": "B",
@@ -2951,7 +2951,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Decline. Grant the most specific roles needed for their work (e.g., itil) and refine permissions with groups and ACLs — never broadcast admin."
+        "text": "Decline. Grant the most specific roles needed for their work."
       },
       {
         "id": "B",
@@ -2999,7 +2999,7 @@
     "options": [
       {
         "id": "A",
-        "text": "To reduce common web vulnerabilities such as clickjacking, MIME-sniffing, and leaking referrer data, in defense in depth with the rest of the security model."
+        "text": "To reduce common web vulnerabilities such as clickjacking, MIME-sniffing."
       },
       {
         "id": "B",
@@ -3094,7 +3094,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Open Instance Security Center, review findings, address high-severity hardening items first, document exceptions, and put recurring review on the calendar."
+        "text": "Open Instance Security Center, review findings, address high-severity hardening items first, document exceptions."
       },
       {
         "id": "B",
@@ -3142,7 +3142,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Each plugin can ship new tables, roles, ACLs, and integrations — every one of which expands attack surface and configuration to maintain."
+        "text": "Each plugin can ship new tables, roles, ACLs, and integrations."
       },
       {
         "id": "B",
@@ -3283,7 +3283,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Investigate the business justification for the current value, align with the baseline if possible, and document an exception with renewal dates if the value must remain higher."
+        "text": "Investigate the business justification for the current value, align with the baseline if possible."
       },
       {
         "id": "B",
@@ -3331,7 +3331,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Develop and test the change on a sub-production instance, capture it in an update set, peer-review it, and promote via the documented change process."
+        "text": "Develop and test the change on a sub-production instance, capture it in an update set, peer-review it."
       },
       {
         "id": "B",
@@ -3379,7 +3379,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Security posture drifts as the instance changes; ongoing review and remediation are part of the operating model — not a one-time setup task."
+        "text": "Security posture drifts as the instance changes."
       },
       {
         "id": "B",
@@ -3810,7 +3810,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Multi-factor authentication (MFA)"
+        "text": "Multi-factor authentication"
       },
       {
         "id": "B",

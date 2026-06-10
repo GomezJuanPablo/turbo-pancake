@@ -59,7 +59,7 @@
     "options": [
       {
         "id": "A",
-        "text": "The marketplace for certified ServiceNow applications — both free and paid — that customers can install from their instance's App Manager. Apps in the Store have passed ServiceNow's certification process."
+        "text": "The marketplace for certified ServiceNow applications."
       },
       {
         "id": "B",
@@ -107,7 +107,7 @@
     "options": [
       {
         "id": "A",
-        "text": "The version of the application — used by the platform during install/upgrade to determine whether an incoming version is newer, the same, or older than what's currently installed. Bump the version with each release."
+        "text": "The version of the application."
       },
       {
         "id": "B",
@@ -158,7 +158,7 @@
       },
       {
         "id": "B",
-        "text": "Declare the dependency on the sys_app record's Dependencies related list. At install time, the platform checks for the dependency (activates it or refuses to install with a clear message) — so the app never lands on an instance that can't support it."
+        "text": "Declare the dependency on the sys_app record's Dependencies related list."
       },
       {
         "id": "C",
@@ -202,7 +202,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Package the current state of the application (with a specific version) into a deployable artifact — either to an Update Set, your company's app repository, or the ServiceNow Store. Publishing freezes a release version that other instances can install."
+        "text": "Package the current state of the application."
       },
       {
         "id": "B",
@@ -253,7 +253,7 @@
       },
       {
         "id": "B",
-        "text": "Publish the app to an Update Set (Publish to Update Set), export the Update Set XML, the customer Retrieves and Commits it on their instance. The app installs as if from a private channel — no Store required."
+        "text": "Publish the app to an Update Set."
       },
       {
         "id": "C",
@@ -297,7 +297,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Uninstall removes the application's artifacts (tables, scripts, UI, etc.) but may NOT automatically remove data created by the app (record rows). Plan for data retention/migration before uninstalling; once tables are dropped, the data is gone."
+        "text": "Uninstall removes the application's artifacts."
       },
       {
         "id": "B",
@@ -345,7 +345,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A centralized admin console for managing custom apps across an organization — visibility into installed apps, versions, environments, deployment status, and lifecycle."
+        "text": "A centralized admin console for managing custom apps across an organization."
       },
       {
         "id": "B",
@@ -396,7 +396,7 @@
       },
       {
         "id": "B",
-        "text": "The platform performs an upgrade: applies the differences between versions to the existing artifacts, runs any data-fix-up scripts the app declares, and updates the installed version on sys_app. Existing data is preserved."
+        "text": "The platform performs an upgrade: applies the differences between versions to the existing artifacts, runs any data-fix-up scripts the app declares."
       },
       {
         "id": "C",
@@ -439,7 +439,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Publish to the company's private application repository (via the App Manager 'Company applications' channel). Internal instances see and install from there; the public Store doesn't list them."
+        "text": "Publish to the company's private application repository."
       },
       {
         "id": "B",
@@ -537,7 +537,7 @@
       },
       {
         "id": "B",
-        "text": "Treat the app as a publishable artifact: publish a versioned release to an Update Set (or repository), then retrieve+commit on each target instance in a consistent sequence. Document the release checklist; consider automating retrieves with the platform's APIs or using AEMC for deployment orchestration."
+        "text": "Treat the app as a publishable artifact: publish a versioned release to an Update Set."
       },
       {
         "id": "C",
@@ -581,7 +581,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A platform feature that lets multiple developers collaborate on an app across multiple development instances — pushing, pulling, comparing record versions between parent/child instances, with code review built in. Think 'git for ServiceNow records' (at a high level)."
+        "text": "A platform feature that lets multiple developers collaborate on an app across multiple development instances."
       },
       {
         "id": "B",
@@ -632,7 +632,7 @@
       },
       {
         "id": "B",
-        "text": "An internal ServiceNow version-tracking mechanism (sys_update_version, etc.) — Team Development is its own system on the platform, not Git. ServiceNow ALSO offers separate Git integration for source-control-style workflows alongside Team Development."
+        "text": "An internal ServiceNow version-tracking mechanism."
       },
       {
         "id": "C",
@@ -680,7 +680,7 @@
       },
       {
         "id": "B",
-        "text": "Developer A pushes her changes (record versions) up to the parent instance via Team Development; Developer B pulls them down from the parent into B's instance. The parent acts as the shared baseline."
+        "text": "Developer A pushes her changes."
       },
       {
         "id": "C",
@@ -772,7 +772,7 @@
     "options": [
       {
         "id": "A",
-        "text": "An external real Git repository (GitHub, GitLab, Bitbucket) becomes a version-control backend for the application — developers can push application records to a Git repo as files, branch/merge, run code review off-platform, then import back into instances."
+        "text": "An external real Git repository."
       },
       {
         "id": "B",
@@ -823,7 +823,7 @@
       },
       {
         "id": "B",
-        "text": "Depends on the team's workflow: Team Development is simpler and stays on-platform — good when the team is ServiceNow-centric. Git is heavier but plugs into the broader engineering SDLC (PRs in GitHub, CI, branching, off-platform review). Some teams use BOTH for different purposes. There's no universal right answer."
+        "text": "Depends on the team's workflow: Team Development is simpler and stays on-platform."
       },
       {
         "id": "C",
@@ -868,7 +868,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Use Team Development's version comparison views: a reviewer can compare a developer's pushed changes against the baseline at the parent instance, see record-level diffs, comment, and approve or request changes before pulling/promoting downstream."
+        "text": "Use Team Development's version comparison views: a reviewer can compare a developer's pushed changes against the baseline at the parent instance, see record-level diffs, comment."
       },
       {
         "id": "B",
@@ -915,7 +915,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Update Sets are part of every ServiceNow developer's life: ANY developer change (Business Rule, Script Include, table change, UI Policy, etc.) is captured in the currently-selected Update Set for transport. Even Team Development users use Update Sets for cross-environment promotions."
+        "text": "Update Sets are part of every ServiceNow developer's life: ANY developer change."
       },
       {
         "id": "B",
@@ -966,7 +966,7 @@
       },
       {
         "id": "B",
-        "text": "Team Development surfaces a conflict — the same record was changed in incompatible ways. The developers (or a designated owner) resolve via the comparison UI: keep one version, merge changes by hand, or revise and re-push. Conflicts are part of normal collaborative work, not a bug."
+        "text": "Team Development surfaces a conflict."
       },
       {
         "id": "C",
@@ -1010,7 +1010,7 @@
     "options": [
       {
         "id": "A",
-        "text": "An app linked to Git can be developed on a branch (feature-x), and the Git workflow (merge to main, etc.) drives what reaches each instance. Branching is supported via the Git integration — Team Development on its own doesn't expose Git-style branching."
+        "text": "An app linked to Git can be developed on a branch."
       },
       {
         "id": "B",
@@ -1057,7 +1057,7 @@
     "options": [
       {
         "id": "A",
-        "text": "The Team Development Dashboard — the central UI for the feature, showing recent activity, status across instances, and entry points to the comparison/resolution tools."
+        "text": "The Team Development Dashboard."
       },
       {
         "id": "B",
@@ -1152,7 +1152,7 @@
     "options": [
       {
         "id": "A",
-        "text": "An update to a record that originated as a customization (i.e., a change tracked in sys_update_xml as part of an Update Set). The platform marks records as having customer updates so it knows what to ship between instances."
+        "text": "An update to a record that originated as a customization."
       },
       {
         "id": "B",
@@ -1203,7 +1203,7 @@
       },
       {
         "id": "B",
-        "text": "Investigate each skipped record. Decide per row whether to Accept Remote Update (overwrite target with incoming), keep the target as-is, or merge by hand. Skipped records can be the difference between a clean upgrade and a subtly broken one."
+        "text": "Investigate each skipped record."
       },
       {
         "id": "C",
@@ -1251,7 +1251,7 @@
       },
       {
         "id": "B",
-        "text": "A 'Default' Update Set associated with that application scope (not Global's Default). Each scope has its own Default; switching to a different update set within the scope captures subsequent changes there."
+        "text": "A 'Default' Update Set associated with that application scope."
       },
       {
         "id": "C",
@@ -1294,7 +1294,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A platform feature that runs a suite of checks against the instance to identify quality, performance, security, and best-practice issues — producing a report with actionable findings. Great for auditing custom apps and identifying technical debt."
+        "text": "A platform feature that runs a suite of checks against the instance to identify quality, performance, security."
       },
       {
         "id": "B",
@@ -1341,7 +1341,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A platform-native test framework for authoring and running automated tests against ServiceNow — UI tests (clicks, form interactions), record-level tests (assert field values, ACLs), REST tests, etc. Tests can run on demand or as part of an upgrade/release pipeline."
+        "text": "A platform-native test framework for authoring and running automated tests against ServiceNow."
       },
       {
         "id": "B",
@@ -1392,7 +1392,7 @@
       },
       {
         "id": "B",
-        "text": "Run the existing ATF suite (and any ServiceNow-provided regression suites) on a clone of prod before upgrading the real instance. Fix anything that breaks. Then upgrade the actual instance and re-run tests to confirm. ATF is exactly designed for this gate."
+        "text": "Run the existing ATF suite."
       },
       {
         "id": "C",
@@ -1483,7 +1483,7 @@
     "options": [
       {
         "id": "A",
-        "text": "The referenced table existed on Test (perhaps from a prior unrelated install) but not on Prod. The Update Set assumed the table was present but didn't carry it. Either include the table creation in the set, or install the prerequisite plugin/app first on Prod."
+        "text": "The referenced table existed on Test."
       },
       {
         "id": "B",
@@ -1536,7 +1536,7 @@
       },
       {
         "id": "B",
-        "text": "Use the platform's Delete Application workflow from App Manager — it removes the app's tables, scripts, UI elements, and customer updates in the correct order. Manual sys_app deletion can leave orphan records."
+        "text": "Use the platform's Delete Application workflow from App Manager."
       },
       {
         "id": "C",
@@ -1583,7 +1583,7 @@
       },
       {
         "id": "B",
-        "text": "Invest in a real test discipline: ATF tests for the critical user journeys, run them as part of every promotion (Dev → Test → Prod), and refuse to promote when tests fail. Catching regressions in CI/CD is dramatically cheaper than in production."
+        "text": "Invest in a real test discipline: ATF tests for the critical user journeys, run them as part of every promotion."
       },
       {
         "id": "C",
@@ -1631,7 +1631,7 @@
       },
       {
         "id": "B",
-        "text": "Small, focused Update Sets make reviews easier, reduce blast radius if you need to skip/revert a feature, simplify conflict resolution on commit, and make the deployment record an audit trail of intent. Huge sets are hard to review, hard to revert partially, and easy to commit by mistake."
+        "text": "Small, focused Update Sets make reviews easier, reduce blast radius if you need to skip/revert a feature, simplify conflict resolution on commit."
       },
       {
         "id": "C",
@@ -1675,7 +1675,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Plan platform fit → design data model and scope → develop on Dev with Update Sets and (Team Development or Git) → run ATF tests → promote through Test (with review) → promote to Prod (with version bump) → run Instance Scan / monitor → iterate. Documentation, dependencies, and roles are maintained alongside."
+        "text": "Plan platform fit → design data model and scope → develop on Dev with Update Sets and."
       },
       {
         "id": "B",

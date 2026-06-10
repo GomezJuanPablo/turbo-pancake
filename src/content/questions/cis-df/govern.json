@@ -15,7 +15,7 @@
       },
       {
         "id": "B",
-        "text": "The CMDB / Configuration Management governance board (CMDB owner / data governance team)"
+        "text": "The CMDB / Configuration Management governance board"
       },
       {
         "id": "C",
@@ -111,7 +111,7 @@
       },
       {
         "id": "B",
-        "text": "Archiving moves the CI out of active tables but retains a recoverable copy; destroying permanently removes the data"
+        "text": "Archiving moves the CI out of active tables but retains a recoverable copy"
       },
       {
         "id": "C",
@@ -207,7 +207,7 @@
       },
       {
         "id": "B",
-        "text": "It uses identifier entries (criterion attributes) to determine whether incoming data matches an existing CI or is new"
+        "text": "It uses identifier entries"
       },
       {
         "id": "C",
@@ -447,7 +447,7 @@
       },
       {
         "id": "B",
-        "text": "Because data quality requires ongoing policy, ownership, and continuous maintenance over time"
+        "text": "Because data quality requires ongoing policy, ownership"
       },
       {
         "id": "C",
@@ -731,7 +731,7 @@
     "options": [
       {
         "id": "A",
-        "text": "The Configuration / CMDB Manager (administrator)"
+        "text": "The Configuration / CMDB Manager"
       },
       {
         "id": "B",
@@ -783,7 +783,7 @@
       },
       {
         "id": "B",
-        "text": "Because IRE enforces consistent identification and reconciliation, preventing duplicates and uncontrolled overwrites"
+        "text": "Because IRE enforces consistent identification and reconciliation"
       },
       {
         "id": "C",
@@ -975,7 +975,7 @@
       },
       {
         "id": "B",
-        "text": "Without relationships they can't participate in service maps or impact analysis, undermining the CMDB's value"
+        "text": "Without relationships they can't participate in service maps or impact analysis"
       },
       {
         "id": "C",
@@ -1071,7 +1071,7 @@
       },
       {
         "id": "B",
-        "text": "Ensure the payload provides the criterion attributes the identifier needs, or adjust the identification rule appropriately"
+        "text": "Ensure the payload provides the criterion attributes the identifier needs"
       },
       {
         "id": "C",
@@ -1167,7 +1167,7 @@
       },
       {
         "id": "B",
-        "text": "It records, per attribute, the value reported by each contributing source alongside the reconciled value, giving visibility into source conflicts"
+        "text": "It records, per attribute, the value reported by each contributing source alongside the reconciled value"
       },
       {
         "id": "C",
@@ -1359,7 +1359,7 @@
       },
       {
         "id": "B",
-        "text": "The SCCM-sourced OS value is retained; Discovery is not allowed to overwrite that attribute"
+        "text": "The SCCM-sourced OS value is retained"
       },
       {
         "id": "C",
@@ -1551,7 +1551,7 @@
       },
       {
         "id": "B",
-        "text": "Consistent naming improves identification accuracy, reduces duplicates, and makes data usable across processes"
+        "text": "Consistent naming improves identification accuracy, reduces duplicates"
       },
       {
         "id": "C",
@@ -1647,7 +1647,7 @@
       },
       {
         "id": "B",
-        "text": "Because a workspace surfaces the highest-impact issues, tracks ownership, and provides guided actions and audit"
+        "text": "Because a workspace surfaces the highest-impact issues, tracks ownership"
       },
       {
         "id": "C",
@@ -1791,7 +1791,7 @@
       },
       {
         "id": "B",
-        "text": "Overall CMDB Health score (completeness, compliance, correctness)"
+        "text": "Overall CMDB Health score"
       },
       {
         "id": "C",
@@ -1835,7 +1835,7 @@
     "options": [
       {
         "id": "A",
-        "text": "The Identification and Reconciliation API (e.g., the CMDB Instance / createOrUpdateCI endpoints)"
+        "text": "The Identification and Reconciliation API"
       },
       {
         "id": "B",
@@ -1887,7 +1887,7 @@
       },
       {
         "id": "B",
-        "text": "Data source rules / IRE rules that restrict whether a source may insert (create) versus only update"
+        "text": "Data source rules / IRE rules that restrict whether a source may insert"
       },
       {
         "id": "C",
@@ -1983,7 +1983,7 @@
       },
       {
         "id": "B",
-        "text": "A policy applies the same rules, conditions, and downstream actions uniformly and leaves an audit trail, avoiding inconsistent ad-hoc handling"
+        "text": "A policy applies the same rules, conditions, and downstream actions uniformly and leaves an audit trail"
       },
       {
         "id": "C",
@@ -2031,7 +2031,7 @@
       },
       {
         "id": "B",
-        "text": "CI Class Manager is where identification and reconciliation rules for classes are viewed and maintained, and IRE is the engine that executes them"
+        "text": "CI Class Manager is where identification and reconciliation rules for classes are viewed and maintained"
       },
       {
         "id": "C",
@@ -2079,7 +2079,7 @@
       },
       {
         "id": "B",
-        "text": "Manual creation should be controlled and validated (roles, required attributes, IRE) to keep quality high"
+        "text": "Manual creation should be controlled and validated"
       },
       {
         "id": "C",
@@ -2171,7 +2171,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Certification relies on a human attesting to accuracy; Health evaluates data automatically against defined metrics/rules"
+        "text": "Certification relies on a human attesting to accuracy"
       },
       {
         "id": "B",
@@ -2363,7 +2363,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Treats it as a match on the higher-priority serial_number entry and updates that CI (including the name)"
+        "text": "Treats it as a match on the higher-priority serial_number entry and updates that CI"
       },
       {
         "id": "B",
@@ -2411,7 +2411,7 @@
     "options": [
       {
         "id": "A",
-        "text": "CIs missing required attributes (completeness gaps)"
+        "text": "CIs missing required attributes"
       },
       {
         "id": "B",
@@ -2607,7 +2607,7 @@
       },
       {
         "id": "B",
-        "text": "IRE cannot reliably match incoming data, leading to duplicate CIs"
+        "text": "IRE cannot reliably match incoming data"
       },
       {
         "id": "C",
@@ -2895,7 +2895,7 @@
       },
       {
         "id": "B",
-        "text": "Authority should be based on which source is most reliable for that attribute, enforced by reconciliation — not merely recency"
+        "text": "Authority should be based on which source is most reliable for that attribute, enforced by reconciliation"
       },
       {
         "id": "C",
@@ -3083,7 +3083,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Deciding, when multiple sources report data for the same CI, which source's values are kept"
+        "text": "Deciding, when multiple sources report data for the same CI"
       },
       {
         "id": "B",
@@ -3131,7 +3131,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Scope health metrics/dashboards to active CIs (e.g., exclude Retired) via filters/conditions"
+        "text": "Scope health metrics/dashboards to active CIs"
       },
       {
         "id": "B",
@@ -3275,7 +3275,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Health detects and measures data-quality problems; remediation acts to fix them"
+        "text": "Health detects and measures data-quality problems"
       },
       {
         "id": "B",
@@ -3327,7 +3327,7 @@
       },
       {
         "id": "B",
-        "text": "Recurring attestation keeps key attributes accurate and surfaces drift early, improving trust in the data"
+        "text": "Recurring attestation keeps key attributes accurate and surfaces drift early"
       },
       {
         "id": "C",
@@ -3467,7 +3467,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Defining what should be in the CMDB (scope), enforcing IRE, and running lifecycle management"
+        "text": "Defining what should be in the CMDB"
       },
       {
         "id": "B",
@@ -3515,7 +3515,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Review and update the reconciliation rule (and source authority) through the governance process, then let IRE enforce the new decision"
+        "text": "Review and update the reconciliation rule"
       },
       {
         "id": "B",
@@ -3659,7 +3659,7 @@
     "options": [
       {
         "id": "A",
-        "text": "It lets you trace who or what changed a value and when, supporting accountability and troubleshooting"
+        "text": "It lets you trace who or what changed a value and when"
       },
       {
         "id": "B",
@@ -3711,7 +3711,7 @@
       },
       {
         "id": "B",
-        "text": "Duplicate CIs distort reporting, impact analysis, and service maps, eroding trust in the CMDB"
+        "text": "Duplicate CIs distort reporting, impact analysis, and service maps"
       },
       {
         "id": "C",
@@ -3951,7 +3951,7 @@
       },
       {
         "id": "B",
-        "text": "Business value depends directly on data quality — poor data makes downstream processes (impact analysis, change, security) unreliable"
+        "text": "Business value depends directly on data quality"
       },
       {
         "id": "C",
@@ -4043,7 +4043,7 @@
     "options": [
       {
         "id": "A",
-        "text": "The Identification and Reconciliation Engine (IRE) using identifier rules"
+        "text": "The Identification and Reconciliation Engine"
       },
       {
         "id": "B",

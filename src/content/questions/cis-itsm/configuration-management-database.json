@@ -11,7 +11,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A series of connected tables that contain all the assets and business services controlled by a company, and their configurations"
+        "text": "A series of connected tables that contain all the assets and business services controlled by a company"
       },
       {
         "id": "B",
@@ -208,7 +208,7 @@
     "options": [
       {
         "id": "A",
-        "text": "CI identification through the IRE, which matches incoming data to existing CIs before creating new ones"
+        "text": "CI identification through the IRE"
       },
       {
         "id": "B",
@@ -257,7 +257,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Health indicators such as duplicate CIs, required CI fields, and audits are evaluated and aggregated into health scores at the class, health group, and service levels"
+        "text": "Health indicators such as duplicate CIs, required CI fields"
       },
       {
         "id": "B",
@@ -305,7 +305,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Centrally view, create, or edit class definitions, IRE class settings, and CMDB Health, and manage some Service Mapping definitions"
+        "text": "Centrally view, create, or edit class definitions, IRE class settings"
       },
       {
         "id": "B",
@@ -449,7 +449,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Building complex infrastructure and service queries that span multiple CMDB classes, non-CMDB tables, and many CIs connected by different relationships"
+        "text": "Building complex infrastructure and service queries that span multiple CMDB classes, non-CMDB tables"
       },
       {
         "id": "B",
@@ -497,7 +497,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A central, modernized workspace to search and explore the CMDB, examine health and recent activities, and access CMDB dashboards and tools"
+        "text": "A central, modernized workspace to search and explore the CMDB, examine health and recent activities"
       },
       {
         "id": "B",

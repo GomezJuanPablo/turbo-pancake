@@ -827,7 +827,7 @@
     "options": [
       {
         "id": "A",
-        "text": "It indicates how much to trust a suggested connection, guiding which to accept automatically vs. review"
+        "text": "It indicates how much to trust a suggested connection"
       },
       {
         "id": "B",
@@ -1067,7 +1067,7 @@
     "options": [
       {
         "id": "A",
-        "text": "ML-powered Service Mapping (Predictive Intelligence connection suggestions)"
+        "text": "ML-powered Service Mapping"
       },
       {
         "id": "B",
@@ -1259,7 +1259,7 @@
     "options": [
       {
         "id": "A",
-        "text": "The appropriate entitlement (Service Mapping Plus) that includes ML features"
+        "text": "The appropriate entitlement"
       },
       {
         "id": "B",

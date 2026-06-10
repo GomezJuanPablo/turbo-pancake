@@ -15,7 +15,7 @@
       },
       {
         "id": "B",
-        "text": "A drag-and-drop interface for arranging fields, sections, and form layout on a table's form view."
+        "text": "A drag-and-drop interface for arranging fields, sections."
       },
       {
         "id": "C",
@@ -63,7 +63,7 @@
       },
       {
         "id": "B",
-        "text": "The field is only removed from this form's layout — the column and any stored data remain on the table."
+        "text": "The field is only removed from this form's layout."
       },
       {
         "id": "C",
@@ -159,7 +159,7 @@
       },
       {
         "id": "B",
-        "text": "Drag a field type from the Form Designer field palette onto the form — the platform creates the dictionary entry and adds it to the form's layout in one step."
+        "text": "Drag a field type from the Form Designer field palette onto the form."
       },
       {
         "id": "C",
@@ -203,7 +203,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Deleting a field from the Dictionary drops the column and the stored data is lost — restore from a backup or recreate the field and re-import data."
+        "text": "Deleting a field from the Dictionary drops the column and the stored data is lost."
       },
       {
         "id": "B",
@@ -360,7 +360,7 @@
       },
       {
         "id": "B",
-        "text": "The List Layout for the table (configurable via Configure → List Layout), which is the shared default list view for that role/view combination."
+        "text": "The List Layout for the table."
       },
       {
         "id": "C",
@@ -408,7 +408,7 @@
       },
       {
         "id": "B",
-        "text": "Add three Sections to the form (Approval / Asset Details / Notes & Activity) and assign the relevant fields to each. ServiceNow renders multiple sections as tabs by default."
+        "text": "Add three Sections to the form."
       },
       {
         "id": "C",
@@ -452,7 +452,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A list embedded at the bottom of a form that shows records from another table related to the current record (typically via a Reference field)."
+        "text": "A list embedded at the bottom of a form that shows records from another table related to the current record."
       },
       {
         "id": "B",
@@ -503,7 +503,7 @@
       },
       {
         "id": "B",
-        "text": "Both edit the same form definition; Form Layout is the original list-based editor (Available / Selected boxes), and Form Designer is the modern drag-and-drop visual editor with a field palette."
+        "text": "Both edit the same form definition."
       },
       {
         "id": "C",
@@ -652,7 +652,7 @@
       },
       {
         "id": "B",
-        "text": "After the form is rendered, before the user can interact with any fields — typically used for setup, defaults, and read-only adjustments."
+        "text": "After the form is rendered, before the user can interact with any fields."
       },
       {
         "id": "C",
@@ -748,7 +748,7 @@
       },
       {
         "id": "B",
-        "text": "A declarative, no-code mechanism for making fields mandatory, read-only, or visible/hidden on a form based on conditions — evaluated entirely on the client."
+        "text": "A declarative, no-code mechanism for making fields mandatory, read-only."
       },
       {
         "id": "C",
@@ -849,7 +849,7 @@
       },
       {
         "id": "B",
-        "text": "A configurable button, link, or context-menu item on forms and lists that runs server-side (or optionally client-side) code when activated."
+        "text": "A configurable button, link, or context-menu item on forms and lists that runs server-side."
       },
       {
         "id": "C",
@@ -945,7 +945,7 @@
       },
       {
         "id": "B",
-        "text": "onChange on the 'State' field, using g_form.setValue('approver_notes', '') when the new value indicates a non-Approved state."
+        "text": "onChange on the 'State' field."
       },
       {
         "id": "C",
@@ -1088,7 +1088,7 @@
       },
       {
         "id": "B",
-        "text": "The UI Action lacks a role restriction (or has a developer-only role). Set the 'Requires role' field to a role that end users actually have, and confirm the underlying integration / outbound REST is permitted for that user context."
+        "text": "The UI Action lacks a role restriction."
       },
       {
         "id": "C",
@@ -1137,7 +1137,7 @@
       },
       {
         "id": "B",
-        "text": "A server-side script that runs when a record is queried, inserted, updated, or deleted on a table — used for enforcing logic and side-effects that should not be bypassed by any UI."
+        "text": "A server-side script that runs when a record is queried, inserted, updated."
       },
       {
         "id": "C",
@@ -1326,7 +1326,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A reusable, server-side JavaScript library (typically a class or function) that other server scripts — or client scripts via GlideAjax — can call."
+        "text": "A reusable, server-side JavaScript library."
       },
       {
         "id": "B",
@@ -1378,7 +1378,7 @@
       },
       {
         "id": "B",
-        "text": "Create a client-callable Script Include with a method getManager(userId), then call it from the client script via GlideAjax (.addParam, .getXMLAnswer or callback)."
+        "text": "Create a client-callable Script Include with a method getManager(userId), then call it from the client script via GlideAjax."
       },
       {
         "id": "C",
@@ -1426,7 +1426,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Enables the Script Include to be invoked from a Client Script via GlideAjax. When unchecked, only server-side callers can use it."
+        "text": "Enables the Script Include to be invoked from a Client Script via GlideAjax."
       },
       {
         "id": "B",
@@ -1473,7 +1473,7 @@
     "options": [
       {
         "id": "A",
-        "text": "var gr = new GlideRecord('x_acme_loaner_request'); gr.addQuery('active', true); gr.query(); while (gr.next()) { /* use gr */ }"
+        "text": "var gr = new GlideRecord('x_acme_loaner_request')"
       },
       {
         "id": "B",
@@ -1573,7 +1573,7 @@
       },
       {
         "id": "B",
-        "text": "Add an explicit setLimit / chunked query / queue the work to a Scheduled Script — don't iterate full-table scans inside an interactive Business Rule. Also confirm the rule's When/Order is appropriate and indexes exist on the queried fields."
+        "text": "Add an explicit setLimit / chunked query / queue the work to a Scheduled Script."
       },
       {
         "id": "C",
@@ -1621,7 +1621,7 @@
       },
       {
         "id": "B",
-        "text": "A before/Insert+Update Business Rule (or a Data Policy) — server-side enforcement guarantees the rule applies regardless of which UI or API the save came through."
+        "text": "A before/Insert+Update Business Rule."
       },
       {
         "id": "C",
@@ -1673,7 +1673,7 @@
       },
       {
         "id": "B",
-        "text": "The order in which Business Rules with the same When (e.g., before/Insert) fire relative to each other — lower numbers run first."
+        "text": "The order in which Business Rules with the same When."
       },
       {
         "id": "C",
@@ -1720,7 +1720,7 @@
       },
       {
         "id": "B",
-        "text": "Extract the logic into a Script Include with a clear method, then call it from each of the four locations. If any client caller needs it, mark the include client-callable and route through GlideAjax."
+        "text": "Extract the logic into a Script Include with a clear method, then call it from each of the four locations."
       },
       {
         "id": "C",
@@ -1765,7 +1765,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A Catalog Item that, when ordered, creates a record on a chosen target table — letting end users submit work via a friendly catalog form instead of editing the table form directly."
+        "text": "A Catalog Item that, when ordered, creates a record on a chosen target table."
       },
       {
         "id": "B",
@@ -1817,7 +1817,7 @@
       },
       {
         "id": "B",
-        "text": "Build a Record Producer targeting the Loaner Request table, surface it on the Service Portal catalog, and use Catalog variables for the inputs. The producer creates the record on submit."
+        "text": "Build a Record Producer targeting the Loaner Request table, surface it on the Service Portal catalog."
       },
       {
         "id": "C",
@@ -1865,7 +1865,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A modern, configurable, public-facing-friendly web portal framework used to surface catalog, knowledge, requests, and custom widgets to end users — separate from the classic Now Platform UI."
+        "text": "A modern, configurable, public-facing-friendly web portal framework used to surface catalog, knowledge, requests."
       },
       {
         "id": "B",
@@ -1916,7 +1916,7 @@
       },
       {
         "id": "B",
-        "text": "Defining the input fields users see and fill out on the catalog form — typed (string, choice, reference, etc.), labeled, validated, and mapped to fields on the target record."
+        "text": "Defining the input fields users see and fill out on the catalog form."
       },
       {
         "id": "C",
@@ -2058,7 +2058,7 @@
       },
       {
         "id": "B",
-        "text": "A before/Insert Business Rule that calculates current.return_date = pickup_date + 14 days when return_date is empty. (A scripted Dictionary default is also acceptable but Business Rule is easier to read and maintain for cross-field math.)"
+        "text": "A before/Insert Business Rule that calculates current.return_date = pickup_date + 14 days when return_date is empty."
       },
       {
         "id": "C",
@@ -2158,7 +2158,7 @@
       },
       {
         "id": "B",
-        "text": "Add the same validation as a before/Insert Business Rule (or Data Policy) on the target table — so the rule holds regardless of how the record was submitted. Client-side checks improve UX but never enforce security."
+        "text": "Add the same validation as a before/Insert Business Rule."
       },
       {
         "id": "C",
@@ -2211,7 +2211,7 @@
       },
       {
         "id": "B",
-        "text": "A Catalog Item typically generates a Request (REQ) and Requested Item (RITM) and follows the standard fulfillment workflow; a Record Producer creates a record directly on a target table you specify (e.g., Incident, custom Loaner Request) without the REQ/RITM scaffolding."
+        "text": "A Catalog Item typically generates a Request."
       },
       {
         "id": "C",
@@ -2259,7 +2259,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Use g_form.getReference('manager', callback) — it asynchronously fetches the referenced record and returns its fields via the callback. (Or call a client-callable Script Include via GlideAjax.)"
+        "text": "Use g_form.getReference('manager', callback)."
       },
       {
         "id": "B",
@@ -2312,7 +2312,7 @@
       },
       {
         "id": "B",
-        "text": "Map out which rules fire on what trigger, consolidate overlapping behavior (prefer declarative UI Policies where possible, push enforcement to a single server-side Business Rule), and document the State field's ownership. Reduce the surface area before adding more."
+        "text": "Map out which rules fire on what trigger, consolidate overlapping behavior."
       },
       {
         "id": "C",

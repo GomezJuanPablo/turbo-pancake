@@ -23,7 +23,7 @@
       },
       {
         "id": "D",
-        "text": "CIs in cmdb_ci_server and all of its child classes (e.g., Windows, Linux, Unix servers)"
+        "text": "CIs in cmdb_ci_server and all of its child classes"
       }
     ],
     "correct": [
@@ -351,7 +351,7 @@
       },
       {
         "id": "B",
-        "text": "It uses identifier entries (criterion attributes) to decide if incoming data matches an existing CI or is new"
+        "text": "It uses identifier entries"
       },
       {
         "id": "C",
@@ -399,7 +399,7 @@
       },
       {
         "id": "B",
-        "text": "A CI first discovered by Altiris is then discovered by ServiceNow — the update is allowed"
+        "text": "A CI first discovered by Altiris is then discovered by ServiceNow"
       },
       {
         "id": "C",
@@ -451,7 +451,7 @@
       },
       {
         "id": "C",
-        "text": "The SCCM-sourced OS value is retained; Discovery is not allowed to overwrite that attribute"
+        "text": "The SCCM-sourced OS value is retained"
       },
       {
         "id": "D",
@@ -787,7 +787,7 @@
       },
       {
         "id": "C",
-        "text": "Tables & Columns, Identification Rules, Identifier Entries, Dependencies, and Reconciliation Rules"
+        "text": "Tables & Columns, Identification Rules, Identifier Entries, Dependencies"
       },
       {
         "id": "D",
@@ -875,7 +875,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Precedence decides whose value wins on update; it does not control which source may create records"
+        "text": "Precedence decides whose value wins on update"
       },
       {
         "id": "B",
@@ -923,7 +923,7 @@
     "options": [
       {
         "id": "A",
-        "text": "It records, per attribute, what each contributing source reported alongside the reconciled value, exposing source conflicts"
+        "text": "It records, per attribute, what each contributing source reported alongside the reconciled value"
       },
       {
         "id": "B",
@@ -1027,7 +1027,7 @@
       },
       {
         "id": "C",
-        "text": "IRE enforces consistent identification and reconciliation, preventing duplicates and uncontrolled overwrites"
+        "text": "IRE enforces consistent identification and reconciliation"
       },
       {
         "id": "D",
@@ -1071,7 +1071,7 @@
       },
       {
         "id": "B",
-        "text": "Application Server is a child (subclass) of Application"
+        "text": "Application Server is a child"
       },
       {
         "id": "C",
@@ -1171,7 +1171,7 @@
       },
       {
         "id": "C",
-        "text": "The duplicate records are merged into a single CI, preserving relationships"
+        "text": "The duplicate records are merged into a single CI"
       },
       {
         "id": "D",
@@ -1223,7 +1223,7 @@
       },
       {
         "id": "D",
-        "text": "Ensure the payload supplies the criterion attributes the identifier needs (or adjust the identification rule appropriately)"
+        "text": "Ensure the payload supplies the criterion attributes the identifier needs"
       }
     ],
     "correct": [
@@ -1311,7 +1311,7 @@
       },
       {
         "id": "B",
-        "text": "Without relationships they can't participate in service maps or impact analysis, undermining the CMDB's value"
+        "text": "Without relationships they can't participate in service maps or impact analysis"
       },
       {
         "id": "C",
@@ -1655,7 +1655,7 @@
       },
       {
         "id": "D",
-        "text": "Service maps build on accurate, deduplicated CIs and relationships; poor data quality produces unreliable maps"
+        "text": "Service maps build on accurate, deduplicated CIs and relationships"
       }
     ],
     "correct": [

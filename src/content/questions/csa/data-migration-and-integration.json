@@ -11,7 +11,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A staging table that holds incoming external data so it can be inspected, transformed, and loaded into a target table."
+        "text": "A staging table that holds incoming external data so it can be inspected, transformed."
       },
       {
         "id": "B",
@@ -58,7 +58,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A configuration record that describes where incoming data comes from (file upload, FTP, JDBC, REST, etc.) and how to fetch and parse it."
+        "text": "A configuration record that describes where incoming data comes from."
       },
       {
         "id": "B",
@@ -153,7 +153,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Staging lets you inspect raw data, run validations, apply transformations, handle errors, and re-run without dirtying the target table."
+        "text": "Staging lets you inspect raw data, run validations, apply transformations, handle errors."
       },
       {
         "id": "B",
@@ -200,7 +200,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A live Microsoft Word .docx with table data."
+        "text": "A live Microsoft Word .docx with table data"
       },
       {
         "id": "B",
@@ -247,7 +247,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Use the platform's import set cleanup mechanism (e.g., scheduled cleanup or table rotation) to prune old staging rows after successful transforms."
+        "text": "Use the platform's import set cleanup mechanism."
       },
       {
         "id": "B",
@@ -294,7 +294,7 @@
     "options": [
       {
         "id": "A",
-        "text": "ACLs evaluate at insert/update on the target table when transforms write records, the same way they evaluate any other write — so import users still need the right permissions."
+        "text": "ACLs evaluate at insert/update on the target table when transforms write records, the same way they evaluate any other write."
       },
       {
         "id": "B",
@@ -341,7 +341,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Configure a Data Source of type SFTP (or FTP/FTPS) pointing at the file path, with credentials and a schedule to retrieve and parse it."
+        "text": "Configure a Data Source of type SFTP."
       },
       {
         "id": "B",
@@ -389,7 +389,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Inspect the import set rows with errors, fix the data or refine the transform map, and re-run the failed rows without re-importing the entire data set."
+        "text": "Inspect the import set rows with errors, fix the data or refine the transform map."
       },
       {
         "id": "B",
@@ -484,7 +484,7 @@
     "options": [
       {
         "id": "A",
-        "text": "On the Data Source's parsing configuration (e.g., headers in first row option) so the platform maps columns by header name."
+        "text": "On the Data Source's parsing configuration."
       },
       {
         "id": "B",
@@ -532,7 +532,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Reuse the Data Source and Transform Map for both initial and weekly delta loads, using coalesce fields on the transform map to update existing users and insert new ones."
+        "text": "Reuse the Data Source and Transform Map for both initial and weekly delta loads."
       },
       {
         "id": "B",
@@ -580,7 +580,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A configuration that maps fields from an Import Set's staging table to fields on a target table, with rules for coalescing, scripts, and field-level transformations."
+        "text": "A configuration that maps fields from an Import Set's staging table to fields on a target table, with rules for coalescing, scripts."
       },
       {
         "id": "B",
@@ -674,7 +674,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Marks the field as a match key — if a target record exists with the same value, the transform updates it; otherwise it inserts a new record."
+        "text": "Marks the field as a match key."
       },
       {
         "id": "B",
@@ -769,7 +769,7 @@
     "options": [
       {
         "id": "A",
-        "text": "All coalesce fields together form a composite match key — the transform matches a target only when all coalesce values match."
+        "text": "All coalesce fields together form a composite match key."
       },
       {
         "id": "B",
@@ -910,7 +910,7 @@
     "options": [
       {
         "id": "A",
-        "text": "An onBefore script that inspects source.u_status and sets ignore = true (or similar) so the row is skipped during the transform."
+        "text": "An onBefore script that inspects source.u_status and sets ignore = true."
       },
       {
         "id": "B",
@@ -958,7 +958,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Use a script on the Field Map (or an onBefore script) to look up the Department by normalized name and set the target reference to the sys_id of the matching record."
+        "text": "Use a script on the Field Map."
       },
       {
         "id": "B",
@@ -1006,7 +1006,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Configure a Coalesce field on the natural key (e.g., employee_number) so the second occurrence updates the existing record instead of inserting a duplicate."
+        "text": "Configure a Coalesce field on the natural key."
       },
       {
         "id": "B",
@@ -1100,7 +1100,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Move work that doesn't need per-row context (lookups, configuration loads) into onStart and onComplete; inside per-row scripts, cache lookups and avoid heavy queries."
+        "text": "Move work that doesn't need per-row context."
       },
       {
         "id": "B",
@@ -1195,7 +1195,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Letting the instance call external HTTP/JSON APIs — for integrations, notifications, lookups, and triggering external systems."
+        "text": "Letting the instance call external HTTP/JSON APIs."
       },
       {
         "id": "B",
@@ -1338,7 +1338,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Install a MID Server inside the corporate network, configure a JDBC data source through the MID Server, and have the instance read via MID."
+        "text": "Install a MID Server inside the corporate network, configure a JDBC data source through the MID Server."
       },
       {
         "id": "B",
@@ -1385,7 +1385,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A framework that extends Flow Designer with integration capabilities — including spokes (pre-built integration packs), custom actions, and connection management — for connecting to external systems with low code."
+        "text": "A framework that extends Flow Designer with integration capabilities."
       },
       {
         "id": "B",
@@ -1433,7 +1433,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A scoped application that packages pre-built actions and integration capabilities for a specific external system (e.g., a Slack spoke, a Microsoft Teams spoke)."
+        "text": "A scoped application that packages pre-built actions and integration capabilities for a specific external system."
       },
       {
         "id": "B",
@@ -1576,7 +1576,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Check whether an IntegrationHub spoke exists for that partner; if so, install and configure it, and use its actions inside the flow. Otherwise build a custom action wrapping a REST step."
+        "text": "Check whether an IntegrationHub spoke exists for that partner."
       },
       {
         "id": "B",
@@ -1672,7 +1672,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Use a dedicated MID Server user account with the minimum roles required, rotate credentials per policy, and monitor MID Server activity."
+        "text": "Use a dedicated MID Server user account with the minimum roles required, rotate credentials per policy."
       },
       {
         "id": "B",
@@ -2436,7 +2436,7 @@
       },
       {
         "id": "B",
-        "text": "A single operation within an action, such as an HTTP call or a script"
+        "text": "A single operation within an action"
       },
       {
         "id": "C",
@@ -2669,7 +2669,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Whether to return the record's display value (label) or internal value for reference and choice fields"
+        "text": "Whether to return the record's display value"
       },
       {
         "id": "B",
@@ -4007,7 +4007,7 @@
       },
       {
         "id": "B",
-        "text": "Retrieving a file from a web URL (HTTP/HTTPS) for import"
+        "text": "Retrieving a file from a web URL"
       },
       {
         "id": "C",
@@ -4151,7 +4151,7 @@
       },
       {
         "id": "B",
-        "text": "Details of each row's transform result including state, errors, and target record sys_id"
+        "text": "Details of each row's transform result including state, errors"
       },
       {
         "id": "C",
@@ -5151,7 +5151,7 @@
       },
       {
         "id": "B",
-        "text": "IntegrationHub provides a declarative, low-code interface with pre-built error handling, retry logic, and reusable actions that reduce custom script maintenance"
+        "text": "IntegrationHub provides a declarative, low-code interface with pre-built error handling, retry logic"
       },
       {
         "id": "C",
@@ -5540,7 +5540,7 @@
       },
       {
         "id": "C",
-        "text": "The HR table has ACL rules that require a specific HR role (such as sn_hr_core.admin) which the integration user lacks"
+        "text": "The HR table has ACL rules that require a specific HR role"
       },
       {
         "id": "D",
@@ -5682,7 +5682,7 @@
       },
       {
         "id": "B",
-        "text": "The POST calls are being retried on timeout, and each retry creates a new record because POST is not idempotent — implementing deduplication logic or using a coalesce-capable import set API would fix this"
+        "text": "The POST calls are being retried on timeout, and each retry creates a new record because POST is not idempotent"
       },
       {
         "id": "C",
@@ -5824,7 +5824,7 @@
     "options": [
       {
         "id": "A",
-        "text": "In a temporary import set (staging) table"
+        "text": "In a temporary import set"
       },
       {
         "id": "B",
@@ -6640,7 +6640,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Periodically clear old import set data (e.g., via a scheduled cleanup)"
+        "text": "Periodically clear old import set data"
       },
       {
         "id": "B",

@@ -59,7 +59,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A collection of users that can be assigned roles, used as approvers, and used as assignment targets on tasks."
+        "text": "A collection of users that can be assigned roles, used as approvers."
       },
       {
         "id": "B",
@@ -107,7 +107,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Directly on the user record, indirectly through group membership, or by inheritance from a parent role."
+        "text": "Directly on the user record, indirectly through group membership."
       },
       {
         "id": "B",
@@ -155,7 +155,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Assign the appropriate role to the ServiceDesk group; members inherit it through membership."
+        "text": "Assign the appropriate role to the ServiceDesk group."
       },
       {
         "id": "B",
@@ -394,7 +394,7 @@
     "options": [
       {
         "id": "A",
-        "text": "It identifies and protects the resources (tables, scripts, etc.) that belong to a specific application and controls how other applications can access them."
+        "text": "It identifies and protects the resources."
       },
       {
         "id": "B",
@@ -584,7 +584,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A record on a table that defines when and to whom the platform sends an email, SMS, or push message in response to events or conditions."
+        "text": "A record on a table that defines when and to whom the platform sends an email, SMS."
       },
       {
         "id": "B",
@@ -631,7 +631,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Create an email notification on the Incident table with a condition that priority equals 1 and 'When to send' set to send on record update; address it to the assigned_to field."
+        "text": "Create an email notification on the Incident table with a condition that priority equals 1 and 'When to send' set to send on record update."
       },
       {
         "id": "B",
@@ -679,7 +679,7 @@
     "options": [
       {
         "id": "A",
-        "text": "They control instance-level email behavior such as sending enable/disable, test mode, SMTP/IMAP configuration values, and reply parsing settings."
+        "text": "They control instance-level email behavior such as sending enable/disable, test mode, SMTP/IMAP configuration values."
       },
       {
         "id": "B",
@@ -826,7 +826,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Investigate the collision, choose to accept remote, skip, or merge as appropriate, then commit."
+        "text": "Investigate the collision, choose to accept remote, skip."
       },
       {
         "id": "B",
@@ -1064,7 +1064,7 @@
     "options": [
       {
         "id": "A",
-        "text": "In the Default update set, which is intended for unintentional or untracked changes and is not recommended for promotion."
+        "text": "In the Default update set."
       },
       {
         "id": "B",
@@ -2059,7 +2059,7 @@
       },
       {
         "id": "B",
-        "text": "Configuration changes such as form layouts, business rules, and scripts"
+        "text": "Configuration changes such as form layouts, business rules"
       },
       {
         "id": "C",
@@ -3145,7 +3145,7 @@
       },
       {
         "id": "B",
-        "text": "The incidents remain assigned to the group; the group's other members can still work them"
+        "text": "The incidents remain assigned to the group"
       },
       {
         "id": "C",
@@ -3716,7 +3716,7 @@
       },
       {
         "id": "B",
-        "text": "The admin can accept the incoming version, skip the colliding record, or manually merge the changes"
+        "text": "The admin can accept the incoming version, skip the colliding record"
       },
       {
         "id": "C",
@@ -4048,7 +4048,7 @@
       },
       {
         "id": "B",
-        "text": "To dynamically control field attributes (mandatory, read-only, visible) on a form based on conditions"
+        "text": "To dynamically control field attributes"
       },
       {
         "id": "C",
@@ -5372,7 +5372,7 @@
       },
       {
         "id": "C",
-        "text": "Business Rules run on the server; Client Scripts run in the browser"
+        "text": "Business Rules run on the server"
       },
       {
         "id": "D",
@@ -5652,7 +5652,7 @@
       },
       {
         "id": "B",
-        "text": "The Roles related list on the role record, which shows all users including those with inherited roles"
+        "text": "The Roles related list on the role record"
       },
       {
         "id": "C",
@@ -5792,7 +5792,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Incoming changes conflict with local changes; resolve the collisions before committing"
+        "text": "Incoming changes conflict with local changes"
       },
       {
         "id": "B",
@@ -5936,7 +5936,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Application scope protects artifacts; cross-scope changes are restricted by default"
+        "text": "Application scope protects artifacts"
       },
       {
         "id": "B",
@@ -5984,7 +5984,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Activate it on a sub-production (dev/test) instance first, with demo data if offered"
+        "text": "Activate it on a sub-production"
       },
       {
         "id": "B",
@@ -6032,7 +6032,7 @@
     "options": [
       {
         "id": "A",
-        "text": "An email notification triggered by the record condition (Priority is 1)"
+        "text": "An email notification triggered by the record condition"
       },
       {
         "id": "B",
@@ -6228,7 +6228,7 @@
       },
       {
         "id": "B",
-        "text": "A role can contain other roles, which are then inherited"
+        "text": "A role can contain other roles"
       },
       {
         "id": "C",
@@ -6320,7 +6320,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Use the 'Who will receive' options (Users/Groups fields, event parm, or record fields like Watch list)"
+        "text": "Use the 'Who will receive' options"
       },
       {
         "id": "B",
@@ -6560,7 +6560,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Query the user role assignments (sys_user_has_role) for the admin role"
+        "text": "Query the user role assignments"
       },
       {
         "id": "B",

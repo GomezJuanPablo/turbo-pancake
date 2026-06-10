@@ -15,7 +15,7 @@
       },
       {
         "id": "B",
-        "text": "Access Control List rule — a record that defines whether a user can perform a specific operation (read, write, create, delete) on a specific resource (table, field, or specific record set)."
+        "text": "Access Control List rule."
       },
       {
         "id": "C",
@@ -158,7 +158,7 @@
       },
       {
         "id": "B",
-        "text": "All three must pass: the Condition must evaluate true, the user must have at least one of the listed Roles (if any are specified), AND the Script must return true (if a script is specified). All three are ANDed together."
+        "text": "All three must pass: the Condition must evaluate true, the user must have at least one of the listed Roles."
       },
       {
         "id": "C",
@@ -255,7 +255,7 @@
       },
       {
         "id": "B",
-        "text": "The platform evaluates from most-specific to least-specific: table.field, then table.None (table-wide), then up the table-extension chain to parent tables. If access is granted at any level, the operation is allowed; if no rule grants access at any level, the operation is denied."
+        "text": "The platform evaluates from most-specific to least-specific: table.field, then table.None."
       },
       {
         "id": "C",
@@ -303,7 +303,7 @@
       },
       {
         "id": "B",
-        "text": "There may be a separate table-level write ACL (table.None) on x_acme_loaner_request that denies the write for this user. Remember that the FIELD write needs the table write to ALSO be allowed. Check ACL evaluation by elevating to security_admin and running the ACL Debug, or review both field and table ACLs."
+        "text": "There may be a separate table-level write ACL."
       },
       {
         "id": "C",
@@ -356,7 +356,7 @@
       },
       {
         "id": "B",
-        "text": "security_admin (must be elevated via the elevate roles dialog)."
+        "text": "security_admin (must be elevated via the elevate roles dialog)"
       },
       {
         "id": "C",
@@ -404,7 +404,7 @@
       },
       {
         "id": "B",
-        "text": "Use the Application Access form on the table (or table-creation wizard) to auto-generate baseline application ACLs and the app's default roles, then refine from there. The platform writes the create/read/write/delete table ACLs aligned to the auto-generated role."
+        "text": "Use the Application Access form on the table."
       },
       {
         "id": "C",
@@ -452,7 +452,7 @@
       },
       {
         "id": "B",
-        "text": "A Role is a permission token referenced by ACLs and other access checks. A Group is a collection of users (and can have roles attached); group membership grants users the group's roles transitively."
+        "text": "A Role is a permission token referenced by ACLs and other access checks."
       },
       {
         "id": "C",
@@ -496,7 +496,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Set answer = true to allow or answer = false to deny — the platform reads the answer variable as the script's verdict."
+        "text": "Set answer = true to allow or answer = false to deny."
       },
       {
         "id": "B",
@@ -548,7 +548,7 @@
       },
       {
         "id": "B",
-        "text": "Another ACL on the same operation+resource is granting access (remember: across-rule OR). Use ACL Debug as the user (or impersonate them) to see EXACTLY which rule granted the access, then decide whether to tighten the granting rule or replace it."
+        "text": "Another ACL on the same operation+resource is granting access."
       },
       {
         "id": "C",
@@ -597,7 +597,7 @@
     "options": [
       {
         "id": "A",
-        "text": "An ACL pattern that restricts access to specific records based on conditions about the record's data (e.g., 'only the assigned_to user can write this record') — not just role-based table access."
+        "text": "An ACL pattern that restricts access to specific records based on conditions about the record's data."
       },
       {
         "id": "B",
@@ -697,7 +697,7 @@
       },
       {
         "id": "B",
-        "text": "Create a read ACL on x_acme_loaner_request.None with a Condition (or script setting answer) that requires requester = current.user.getID() — and add appropriate role-based ACLs for managers/admins that should see all rows."
+        "text": "Create a read ACL on x_acme_loaner_request.None with a Condition."
       },
       {
         "id": "C",
@@ -846,7 +846,7 @@
       },
       {
         "id": "B",
-        "text": "Admin implicitly satisfies every role check on ACLs; in practice, admins bypass most role-gated rules. This is why you must test ACL changes as a non-admin."
+        "text": "Admin implicitly satisfies every role check on ACLs."
       },
       {
         "id": "C",
@@ -894,7 +894,7 @@
       },
       {
         "id": "B",
-        "text": "Impersonate the test user (System Administration → Impersonate User) while logged in as admin. The platform applies that user's roles and ACLs to the session."
+        "text": "Impersonate the test user."
       },
       {
         "id": "C",
@@ -946,7 +946,7 @@
       },
       {
         "id": "B",
-        "text": "A standard GlideRecord query in a Business Rule runs with the system's privileges by default — Business Rules execute server-side and honor scope rules but are not filtered by the calling user's ACLs unless the developer explicitly queries with user context."
+        "text": "A standard GlideRecord query in a Business Rule runs with the system's privileges by default."
       },
       {
         "id": "C",
@@ -1047,7 +1047,7 @@
       },
       {
         "id": "B",
-        "text": "A baseline application role (e.g., x_acme_loaner.user / .admin) and a starter set of table-level ACLs that gate the app's tables behind that role — giving the developer a working foundation to refine."
+        "text": "A baseline application role."
       },
       {
         "id": "C",
@@ -1095,7 +1095,7 @@
       },
       {
         "id": "B",
-        "text": "Scope provides a namespace boundary — scripts in other scopes can't casually read, write, or call the app's artifacts unless the owning scope grants cross-scope privileges. It's a second layer of protection alongside ACLs."
+        "text": "Scope provides a namespace boundary."
       },
       {
         "id": "C",
@@ -1190,7 +1190,7 @@
       },
       {
         "id": "B",
-        "text": "ServiceNow provides encryption options (such as Edge Encryption and Column-level Encryption Enterprise) that admins configure for specific fields/tables; encryption is not on for every field automatically."
+        "text": "ServiceNow provides encryption options."
       },
       {
         "id": "C",
@@ -1237,7 +1237,7 @@
       },
       {
         "id": "B",
-        "text": "Authentication answers WHO the user is (login). ACLs answer WHAT the user can do once authenticated. They're separate layers — an app developer usually configures ACLs and lets the instance's authentication infrastructure handle login."
+        "text": "Authentication answers WHO the user is."
       },
       {
         "id": "C",
@@ -1285,7 +1285,7 @@
       },
       {
         "id": "B",
-        "text": "MFA is a platform authentication enhancement requiring a second factor (e.g., authenticator app, FIDO2 key) in addition to the password — and in Zurich, MFA is enabled by default for new customers' internal local/LDAP logins."
+        "text": "MFA is a platform authentication enhancement requiring a second factor."
       },
       {
         "id": "C",
@@ -1328,7 +1328,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Set the 'Roles' field on both the Application Menu and the relevant Modules to x_acme_loaner.manager. The navigator filters menus and modules based on these role restrictions."
+        "text": "Set the 'Roles' field on both the Application Menu and the relevant Modules to x_acme_loaner.manager."
       },
       {
         "id": "B",
@@ -1380,7 +1380,7 @@
       },
       {
         "id": "B",
-        "text": "Create a write ACL on x_acme_loaner_request.manager_notes requiring the x_acme_loaner.manager role. Anyone with the table read ACL can read the field by default; only manager-role users pass the field-level write ACL."
+        "text": "Create a write ACL on x_acme_loaner_request.manager_notes requiring the x_acme_loaner.manager role."
       },
       {
         "id": "C",
@@ -1428,7 +1428,7 @@
       },
       {
         "id": "B",
-        "text": "Cross-scope privileges enforce explicit, minimal grants between applications, so a vulnerability or bug in one app cannot freely traverse and modify another app's tables, scripts, or APIs without an explicit privilege record."
+        "text": "Cross-scope privileges enforce explicit, minimal grants between applications, so a vulnerability or bug in one app cannot freely traverse and modify another app's tables, scripts."
       },
       {
         "id": "C",
@@ -1476,7 +1476,7 @@
       },
       {
         "id": "B",
-        "text": "Task has read ACLs that allow itil to read; because x_acme_loaner_request extends Task, those ACLs are inherited. To restrict to a more specific audience, add tighter ACLs on x_acme_loaner_request or design the table not to extend Task."
+        "text": "Task has read ACLs that allow itil to read."
       },
       {
         "id": "C",
@@ -1525,7 +1525,7 @@
       },
       {
         "id": "B",
-        "text": "record ACLs control access to table rows/fields (the common case). processor ACLs control access to specific UI Pages / scripts that handle URL requests outside the standard record CRUD path."
+        "text": "record ACLs control access to table rows/fields."
       },
       {
         "id": "C",
@@ -1573,7 +1573,7 @@
       },
       {
         "id": "B",
-        "text": "Define x_acme_loaner.super_manager and add x_acme_loaner.manager to it as a CONTAINED role (or list it on the role's 'Contains roles' field). The user with super_manager effectively gets manager too. Then add the few extras as new ACLs against super_manager."
+        "text": "Define x_acme_loaner.super_manager and add x_acme_loaner.manager to it as a CONTAINED role."
       },
       {
         "id": "C",
@@ -1668,7 +1668,7 @@
       },
       {
         "id": "B",
-        "text": "Cross-scope privilege rules require that the calling scope (where the ACL lives) be granted access to invoke the Script Include in the other scope. Without that privilege, the call fails for non-admin users (admins implicitly bypass many checks). Add a cross-scope privilege or move the helper logic into a same-scope Script Include."
+        "text": "Cross-scope privilege rules require that the calling scope."
       },
       {
         "id": "C",
@@ -1717,7 +1717,7 @@
       },
       {
         "id": "B",
-        "text": "Apply least privilege: give users only the roles required for their job, design ACLs to deny by default and grant explicitly, encrypt sensitive data, and test access by impersonating real end users (not from an admin session)."
+        "text": "Apply least privilege: give users only the roles required for their job, design ACLs to deny by default and grant explicitly, encrypt sensitive data."
       },
       {
         "id": "C",
@@ -1764,7 +1764,7 @@
       },
       {
         "id": "B",
-        "text": "Data Policies enforce field-level rules (mandatory, read-only) server-side regardless of how a record is saved (form, list, API, import). UI Policies enforce the same kinds of rules but only on the form, client-side."
+        "text": "Data Policies enforce field-level rules."
       },
       {
         "id": "C",
@@ -1812,7 +1812,7 @@
       },
       {
         "id": "B",
-        "text": "A Data Policy with the requester field marked Mandatory — Data Policies enforce on the server-side for all save paths, including API and imports."
+        "text": "A Data Policy with the requester field marked Mandatory."
       },
       {
         "id": "C",
@@ -1860,7 +1860,7 @@
       },
       {
         "id": "B",
-        "text": "An equivalent UI Policy is created so the form also enforces the rule, AND the constraints can be applied to existing records as you go. Together, that ensures both legacy data and new writes meet the rule."
+        "text": "An equivalent UI Policy is created so the form also enforces the rule, AND the constraints can be applied to existing records as you go."
       },
       {
         "id": "C",
@@ -1908,7 +1908,7 @@
       },
       {
         "id": "B",
-        "text": "SAML 2.0 is an XML-based, federated single sign-on protocol the instance can use as its identity provider integration — so users authenticate against an external IdP (Okta, ADFS, etc.) instead of (or in addition to) local credentials."
+        "text": "SAML 2.0 is an XML-based, federated single sign-on protocol the instance can use as its identity provider integration."
       },
       {
         "id": "C",
@@ -1952,7 +1952,7 @@
     "options": [
       {
         "id": "A",
-        "text": "sys_user_role — every record represents (user, role) along with whether it was inherited via a group and when it was granted."
+        "text": "sys_user_role — every record represents (user, role) along with whether it was inherited via a group and when it was granted"
       },
       {
         "id": "B",
@@ -2004,7 +2004,7 @@
       },
       {
         "id": "B",
-        "text": "A platform dashboard that surfaces the instance's security posture — security score, recommended hardening actions, and configuration insights — useful for admins to maintain a strong security baseline."
+        "text": "A platform dashboard that surfaces the instance's security posture."
       },
       {
         "id": "C",
@@ -2052,7 +2052,7 @@
       },
       {
         "id": "B",
-        "text": "Use the platform's public-access patterns: grant the 'public' role (or 'snc_internal' / 'public_user' depending on use case) to the specific table read ACLs that should be reachable by anonymous users, narrowly scoping which tables and fields are publicly readable. Don't disable ACLs — extend them."
+        "text": "Use the platform's public-access patterns: grant the 'public' role."
       },
       {
         "id": "C",
@@ -2101,7 +2101,7 @@
       },
       {
         "id": "B",
-        "text": "Design the Script Include so the only methods exposed via the prototype (and intended for external callers) are the safe ones; private helpers stay non-prototyped. Pair with cross-scope privilege records that grant sn_loaner access to the specific resource. Combined with code design, this limits the externally-callable surface area."
+        "text": "Design the Script Include so the only methods exposed via the prototype."
       },
       {
         "id": "C",
@@ -2149,7 +2149,7 @@
       },
       {
         "id": "B",
-        "text": "It grants access to anyone the rule applies to, because empty fields are treated as 'no constraint' — every required check trivially passes. (This is why a wide-open ACL is so easy to ship accidentally.)"
+        "text": "It grants access to anyone the rule applies to, because empty fields are treated as 'no constraint'."
       },
       {
         "id": "C",
@@ -2197,7 +2197,7 @@
       },
       {
         "id": "B",
-        "text": "Review the Update Set for any sys_security_acl changes, compare to expected scope of the release, test on a clone of prod by impersonating representative end users, and document any intended access changes for the change record. Use ACL Debug if anything looks off."
+        "text": "Review the Update Set for any sys_security_acl changes, compare to expected scope of the release, test on a clone of prod by impersonating representative end users."
       },
       {
         "id": "C",
@@ -2242,7 +2242,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Set the field's Dictionary 'read-only' attribute to true — server-side, applies everywhere a write would be attempted."
+        "text": "Set the field's Dictionary 'read-only' attribute to true."
       },
       {
         "id": "B",
@@ -2294,7 +2294,7 @@
       },
       {
         "id": "B",
-        "text": "Tighten the delete ACL: change it to require an admin (or a more privileged app role like x_acme_loaner.manager), test impersonating an ordinary user to confirm delete is now denied, capture the change in an Update Set, and ship. Audit and tighten is normal lifecycle hygiene."
+        "text": "Tighten the delete ACL: change it to require an admin."
       },
       {
         "id": "C",

@@ -11,7 +11,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A staging table that holds raw rows from an external source (CSV, Excel, JDBC, etc.); Transform Maps then move data from staging into target platform tables — preserving the original import for re-runs and debugging."
+        "text": "A staging table that holds raw rows from an external source."
       },
       {
         "id": "B",
@@ -58,7 +58,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A record that maps fields from an Import Set staging row to fields on a target table, with per-field transformations and conditions — defining HOW the staged data becomes target records."
+        "text": "A record that maps fields from an Import Set staging row to fields on a target table, with per-field transformations and conditions."
       },
       {
         "id": "B",
@@ -152,7 +152,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Set Coalesce = true on the Field Map for the unique key (e.g., employee_id mapping to sys_user.employee_number). On each row, the transform queries the target by the coalesce field — if found, it updates; if not, it inserts."
+        "text": "Set Coalesce = true on the Field Map for the unique key."
       },
       {
         "id": "B",
@@ -200,7 +200,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A configuration record that describes WHERE imported data comes from — file (CSV/Excel), JDBC database, REST endpoint, LDAP, etc. — including credentials, paths, and refresh schedule. Pairs with an Import Set table that defines the staging schema."
+        "text": "A configuration record that describes WHERE imported data comes from."
       },
       {
         "id": "B",
@@ -251,7 +251,7 @@
       },
       {
         "id": "B",
-        "text": "Load the data using Import Sets (Data Source = file with the CSV, Import Set table to stage, Transform Map to target the custom table with appropriate coalesce). Run the import, review the Transform History for errors, fix and re-run as needed."
+        "text": "Load the data using Import Sets."
       },
       {
         "id": "C",
@@ -295,7 +295,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Hook into specific points of the transform — for example, modify the target record before insert, run logic after a successful import, or handle the case where a foreign reference doesn't resolve."
+        "text": "Hook into specific points of the transform."
       },
       {
         "id": "B",
@@ -347,7 +347,7 @@
       },
       {
         "id": "B",
-        "text": "The source employee_number values have inconsistent formatting (leading zeros, whitespace, varying case) so the coalesce match fails for some rows and inserts a 'new' record alongside the existing one. Normalize the field in a source script before the coalesce."
+        "text": "The source employee_number values have inconsistent formatting."
       },
       {
         "id": "C",
@@ -486,7 +486,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Configure a Scheduled Import / Scheduled Data Import on the Data Source — specify the cadence (cron-style or simple), and the platform runs the load + transform pipeline at that time, recording each run in Transform History."
+        "text": "Configure a Scheduled Import / Scheduled Data Import on the Data Source."
       },
       {
         "id": "B",
@@ -537,7 +537,7 @@
       },
       {
         "id": "B",
-        "text": "Some department_name values in the CSV don't exactly match any cmn_department record's display name. Either clean the source data, add the missing departments, or set the field's Choice Action / onForeignInsert script to handle the unresolved case (create the department, log it, or set null) instead of erroring."
+        "text": "Some department_name values in the CSV don't exactly match any cmn_department record's display name."
       },
       {
         "id": "C",
@@ -582,7 +582,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A built-in set of REST endpoints (and the ability to define Scripted REST APIs) that allow external systems to read and write platform data over HTTP — authenticated, ACL-respecting, and JSON-serialized."
+        "text": "A built-in set of REST endpoints."
       },
       {
         "id": "B",
@@ -629,7 +629,7 @@
     "options": [
       {
         "id": "A",
-        "text": "The platform makes HTTP calls to external REST endpoints — typically configured as REST Message records with endpoints, methods, headers, auth, and parameters — and used from Flow Designer actions, Business Rules, and Script Includes."
+        "text": "The platform makes HTTP calls to external REST endpoints."
       },
       {
         "id": "B",
@@ -677,7 +677,7 @@
     "options": [
       {
         "id": "A",
-        "text": "SOAP is a legacy XML-based web services protocol; ServiceNow supports both inbound (the platform exposes SOAP endpoints) and outbound (SOAP Message records call external SOAP services) — though for new integrations, REST is generally preferred."
+        "text": "SOAP is a legacy XML-based web services protocol."
       },
       {
         "id": "B",
@@ -725,7 +725,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Configure a REST Message record (endpoint, auth, default headers, methods like GET/POST) and call it from script via new sn_ws.RESTMessageV2('My Message', 'method') — keeps endpoint config out of code and centralizes credentials."
+        "text": "Configure a REST Message record."
       },
       {
         "id": "B",
@@ -821,7 +821,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A custom REST endpoint defined on the instance, with one or more resources (paths) backed by server-side scripts that handle GET/POST/PUT/DELETE — used when the built-in Table API doesn't fit the integration shape."
+        "text": "A custom REST endpoint defined on the instance, with one or more resources."
       },
       {
         "id": "B",
@@ -872,7 +872,7 @@
       },
       {
         "id": "B",
-        "text": "Check the outbound REST logs (System Logs → Outbound HTTP requests) for the exact failures, the response codes/durations, and confirm timeouts, then increase the timeout on the REST Message, add retry with backoff, or coordinate with the external API team. Confirm whether the issue is sustained or correlated with their downtime."
+        "text": "Check the outbound REST logs."
       },
       {
         "id": "C",
@@ -916,7 +916,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A small Java application installed inside the customer's network that the ServiceNow instance can task with executing actions on internal resources (calling REST endpoints, running JDBC queries, running shell commands) — bridging the cloud instance and on-prem systems."
+        "text": "A small Java application installed inside the customer's network that the ServiceNow instance can task with executing actions on internal resources."
       },
       {
         "id": "B",
@@ -1019,7 +1019,7 @@
       },
       {
         "id": "B",
-        "text": "Audit the transform: are field-map source scripts inefficient, are queries on the target table un-indexed, is the data source returning more rows than needed? Right-size by querying only changed rows (delta loads via 'last modified since'), simplifying scripts, and adding indexes on coalesce fields. Also consider running off-hours and on a dedicated schedule."
+        "text": "Audit the transform: are field-map source scripts inefficient, are queries on the target table un-indexed, is the data source returning more rows than needed? Right-size by querying only changed rows."
       },
       {
         "id": "C",
@@ -1067,7 +1067,7 @@
       },
       {
         "id": "B",
-        "text": "Require authentication on the endpoint (or a specific role/credential), restrict the resource via ACLs to the partner's integration user, and consider IP-allowlisting. Never expose a Scripted REST endpoint anonymously unless that's explicitly the design."
+        "text": "Require authentication on the endpoint."
       },
       {
         "id": "C",

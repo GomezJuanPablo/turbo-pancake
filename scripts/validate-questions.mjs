@@ -149,6 +149,23 @@ function validateQuestion(q, file) {
 
 /* ---------- Voice anti-pattern scan ---------- */
 
+function checkAnswerLength(q, file) {
+    // answer-length balance: warn when the correct option is a large length outlier
+    const opts = Array.isArray(q.options) ? q.options : [];
+    const correct = new Set(Array.isArray(q.correct) ? q.correct : []);
+    if (opts.length < 2 || correct.size === 0) return;
+    const cor = opts.filter((o) => correct.has(o.id)).map((o) => (o.text || '').length);
+    const dis = opts.filter((o) => !correct.has(o.id)).map((o) => (o.text || '').length);
+    if (!cor.length || !dis.length) return;
+    const maxAll = Math.max(...opts.map((o) => (o.text || '').length));
+    const avgDis = dis.reduce((a, b) => a + b, 0) / dis.length;
+    const maxDis = Math.max(...dis);
+    const maxCor = Math.max(...cor);
+    if (maxCor >= maxAll && maxCor >= 1.6 * avgDis && maxCor >= 1.3 * maxDis) {
+      warn(file, q.id || '(?)', `answer-length balance: correct option (${maxCor} chars) is a length outlier vs distractors (avg ${Math.round(avgDis)})`);
+    }
+  }
+
 function scanVoice(q, file) {
   const qid = q?.id || '(missing id)';
   const corpus = [q.stem, q.rationale, ...(Object.values(q.distractor_notes || {}) || [])]
@@ -343,6 +360,7 @@ async function main() {
     for (const { file, questions } of banks) {
       for (const q of questions) {
         scanVoice(q, file);
+        checkAnswerLength(q, file);
         scanned++;
       }
     }
