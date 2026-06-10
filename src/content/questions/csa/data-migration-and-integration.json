@@ -11,7 +11,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A staging table that holds incoming external data so it can be inspected, transformed."
+        "text": "A staging table for incoming external data."
       },
       {
         "id": "B",
@@ -23,7 +23,7 @@
       },
       {
         "id": "D",
-        "text": "A type of UI policy."
+        "text": "A type of UI policy rule."
       }
     ],
     "correct": [
@@ -58,7 +58,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A configuration record that describes where incoming data comes from."
+        "text": "Describes where incoming data comes from."
       },
       {
         "id": "B",
@@ -105,7 +105,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Create a Data Source pointing at the CSV → Load the data into an Import Set staging table → Build a Transform Map to the target table → Run the transform."
+        "text": "Data Source → Import Set → Transform Map → run."
       },
       {
         "id": "B",
@@ -153,7 +153,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Staging lets you inspect raw data, run validations, apply transformations, handle errors."
+        "text": "Staging lets you inspect, validate, and transform raw data."
       },
       {
         "id": "B",
@@ -200,19 +200,19 @@
     "options": [
       {
         "id": "A",
-        "text": "A live Microsoft Word .docx with table data"
+        "text": "A live Word .docx file."
       },
       {
         "id": "B",
-        "text": "CSV"
+        "text": "A plain CSV file."
       },
       {
         "id": "C",
-        "text": "Excel (XLS/XLSX)"
+        "text": "Excel (XLS/XLSX) file."
       },
       {
         "id": "D",
-        "text": "XML / JSON"
+        "text": "An XML or JSON file."
       }
     ],
     "correct": [
@@ -294,7 +294,7 @@
     "options": [
       {
         "id": "A",
-        "text": "ACLs evaluate at insert/update on the target table when transforms write records, the same way they evaluate any other write."
+        "text": "ACLs evaluate at insert/update when transforms write."
       },
       {
         "id": "B",
@@ -389,7 +389,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Inspect the import set rows with errors, fix the data or refine the transform map."
+        "text": "Inspect errored rows, fix the data or transform map."
       },
       {
         "id": "B",
@@ -437,7 +437,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Each staging row corresponds to a record from the source data and has a state showing whether the transform inserted, updated, ignored, or errored on it."
+        "text": "Each staging row mirrors a source record with a state."
       },
       {
         "id": "B",
@@ -580,7 +580,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A configuration that maps fields from an Import Set's staging table to fields on a target table, with rules for coalescing, scripts."
+        "text": "Maps staging fields to target fields, with coalesce."
       },
       {
         "id": "B",
@@ -627,11 +627,11 @@
     "options": [
       {
         "id": "A",
-        "text": "A row that says 'source column X' maps to 'target field Y', optionally with a script for value transformation."
+        "text": "Maps a source column to a target field."
       },
       {
         "id": "B",
-        "text": "A type of UI policy."
+        "text": "A type of UI policy rule."
       },
       {
         "id": "C",
@@ -721,7 +721,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Mark the field map for employee_number as a Coalesce field on the transform map."
+        "text": "Mark employee_number as a Coalesce field."
       },
       {
         "id": "B",
@@ -1053,7 +1053,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Data sources and transform maps can be scheduled together so a recurring import + transform runs without manual intervention."
+        "text": "Data sources and transform maps can be scheduled together."
       },
       {
         "id": "B",
@@ -1147,7 +1147,7 @@
     "options": [
       {
         "id": "A",
-        "text": "HTTP endpoints (e.g., /api/now/table/incident) that external systems use to create, read, update, and delete records on the instance with JSON payloads."
+        "text": "HTTP endpoints to create/read/update/delete records."
       },
       {
         "id": "B",
@@ -1243,7 +1243,7 @@
     "options": [
       {
         "id": "A",
-        "text": "SOAP is supported (both inbound and outbound) for compatibility with systems that require it, although REST is generally preferred for new integrations."
+        "text": "SOAP is supported both ways, though REST is preferred."
       },
       {
         "id": "B",
@@ -1290,7 +1290,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A Java application installed on a customer's network that acts as a bridge between the ServiceNow instance and on-premises systems behind the corporate firewall."
+        "text": "A Java app bridging to on-prem systems."
       },
       {
         "id": "B",
@@ -1298,7 +1298,7 @@
       },
       {
         "id": "C",
-        "text": "A type of ACL."
+        "text": "A type of access rule."
       },
       {
         "id": "D",
@@ -1338,7 +1338,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Install a MID Server inside the corporate network, configure a JDBC data source through the MID Server."
+        "text": "Install a MID Server and configure a JDBC data source."
       },
       {
         "id": "B",
@@ -1385,11 +1385,11 @@
     "options": [
       {
         "id": "A",
-        "text": "A framework that extends Flow Designer with integration capabilities."
+        "text": "Adds integration to Flow Designer."
       },
       {
         "id": "B",
-        "text": "A type of incident."
+        "text": "A type of incident record."
       },
       {
         "id": "C",
@@ -1433,7 +1433,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A scoped application that packages pre-built actions and integration capabilities for a specific external system."
+        "text": "A pack of actions for a system."
       },
       {
         "id": "B",
@@ -1441,7 +1441,7 @@
       },
       {
         "id": "C",
-        "text": "A new field type."
+        "text": "A new field data type."
       },
       {
         "id": "D",
@@ -1528,7 +1528,7 @@
     "options": [
       {
         "id": "A",
-        "text": "OAuth (client credentials) with a dedicated service-account scope and least-privilege roles, rotating secrets per policy."
+        "text": "OAuth client credentials with a least-privilege account."
       },
       {
         "id": "B",
@@ -1672,7 +1672,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Use a dedicated MID Server user account with the minimum roles required, rotate credentials per policy."
+        "text": "A dedicated MID Server account with minimum roles."
       },
       {
         "id": "B",
@@ -1720,7 +1720,7 @@
     "options": [
       {
         "id": "A",
-        "text": "HTTP"
+        "text": "HTTP source."
       },
       {
         "id": "B",
@@ -1728,11 +1728,11 @@
       },
       {
         "id": "C",
-        "text": "JDBC"
+        "text": "JDBC source."
       },
       {
         "id": "D",
-        "text": "Email"
+        "text": "Email source."
       }
     ],
     "correct": [
@@ -1772,7 +1772,7 @@
       },
       {
         "id": "B",
-        "text": "To hold raw imported data temporarily before it is transformed into the target table"
+        "text": "Holds raw imported data temporarily before transform."
       },
       {
         "id": "C",
@@ -1866,7 +1866,7 @@
       },
       {
         "id": "B",
-        "text": "A direct database connection that queries a relational database to retrieve records for import"
+        "text": "A direct connection querying a relational database."
       },
       {
         "id": "C",
@@ -2294,7 +2294,7 @@
       },
       {
         "id": "B",
-        "text": "Passing a username and password encoded in Base64 in the Authorization header"
+        "text": "Username and password Base64-encoded in the header."
       },
       {
         "id": "C",
@@ -2483,7 +2483,7 @@
       },
       {
         "id": "B",
-        "text": "To facilitate communication between the ServiceNow instance and resources on a private network"
+        "text": "Connects the instance to a private network's resources."
       },
       {
         "id": "C",
@@ -2626,7 +2626,7 @@
       },
       {
         "id": "B",
-        "text": "A configured definition for calling an external REST API from ServiceNow"
+        "text": "A definition for calling an external REST API."
       },
       {
         "id": "C",
@@ -2720,7 +2720,7 @@
       },
       {
         "id": "B",
-        "text": "Providing token-based authentication for API access without passing credentials on every request"
+        "text": "Token-based API auth without sending credentials each call."
       },
       {
         "id": "C",
@@ -2954,7 +2954,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Scripted REST API"
+        "text": "A Scripted REST API."
       },
       {
         "id": "B",
@@ -2962,11 +2962,11 @@
       },
       {
         "id": "C",
-        "text": "MID Server REST probe"
+        "text": "A MID Server REST probe."
       },
       {
         "id": "D",
-        "text": "Outbound Email Action"
+        "text": "An Outbound Email Action."
       }
     ],
     "correct": [
@@ -3005,7 +3005,7 @@
       },
       {
         "id": "B",
-        "text": "With Run Business Rules disabled, event-based notifications triggered by Business Rules also do not fire"
+        "text": "With Business Rules off, their event notifications don't fire."
       },
       {
         "id": "C",
@@ -3339,7 +3339,7 @@
       },
       {
         "id": "B",
-        "text": "A dedicated integration user with the web_service_access_only role using Basic Auth or OAuth"
+        "text": "An integration user with web_service_access_only role."
       },
       {
         "id": "C",
@@ -3482,7 +3482,7 @@
       },
       {
         "id": "B",
-        "text": "A database table on the ServiceNow instance where input/output messages between the instance and MID Servers are stored"
+        "text": "A table storing input/output messages with MID Servers."
       },
       {
         "id": "C",
@@ -3572,11 +3572,11 @@
     "options": [
       {
         "id": "A",
-        "text": "admin"
+        "text": "The admin role."
       },
       {
         "id": "B",
-        "text": "itil"
+        "text": "The itil role."
       },
       {
         "id": "C",
@@ -3584,7 +3584,7 @@
       },
       {
         "id": "D",
-        "text": "rest_api_explorer"
+        "text": "rest_api_explorer role."
       }
     ],
     "correct": [
@@ -3672,7 +3672,7 @@
       },
       {
         "id": "B",
-        "text": "Fix the source data or transform script to populate the mandatory field, then re-run the transform on the errored rows"
+        "text": "Fix the data/script for the mandatory field, then re-run."
       },
       {
         "id": "C",
@@ -3813,7 +3813,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Data Policies enforce mandatory and read-only rules on fields when data is loaded via Import Sets and APIs"
+        "text": "Data Policies enforce mandatory/read-only on import and API."
       },
       {
         "id": "B",
@@ -4245,7 +4245,7 @@
       },
       {
         "id": "B",
-        "text": "Providing high availability and load distribution across multiple MID Servers for a single function"
+        "text": "High availability and load distribution across MID Servers."
       },
       {
         "id": "C",
@@ -4293,7 +4293,7 @@
       },
       {
         "id": "B",
-        "text": "Specifies the ServiceNow table where transformed records will be created or updated"
+        "text": "The table where transformed records are created/updated."
       },
       {
         "id": "C",
@@ -4624,19 +4624,19 @@
     "options": [
       {
         "id": "A",
-        "text": "Windows only"
+        "text": "Windows only support."
       },
       {
         "id": "B",
-        "text": "Linux only"
+        "text": "Linux only support."
       },
       {
         "id": "C",
-        "text": "Windows and Linux (both supported)"
+        "text": "Both Windows and Linux."
       },
       {
         "id": "D",
-        "text": "macOS, Windows, and Linux"
+        "text": "macOS, Windows, Linux."
       }
     ],
     "correct": [
@@ -4675,7 +4675,7 @@
       },
       {
         "id": "B",
-        "text": "Use the 'Clean up import sets' scheduled job or the cleanup option on the Import Set record to remove processed rows"
+        "text": "Use the 'Clean up import sets' scheduled job."
       },
       {
         "id": "C",
@@ -4767,7 +4767,7 @@
     "options": [
       {
         "id": "A",
-        "text": "JSON Schema file"
+        "text": "A JSON Schema file."
       },
       {
         "id": "B",
@@ -4775,7 +4775,7 @@
       },
       {
         "id": "C",
-        "text": "WSDL (Web Services Description Language) file"
+        "text": "A WSDL description file."
       },
       {
         "id": "D",
@@ -4866,7 +4866,7 @@
       },
       {
         "id": "B",
-        "text": "Loading data directly into an Import Set staging table via a REST API call, without needing a file upload"
+        "text": "Load data into a staging table via REST, no file upload."
       },
       {
         "id": "C",
@@ -5586,7 +5586,7 @@
       },
       {
         "id": "B",
-        "text": "A named configuration for external system connection details and credentials that can be referenced across multiple actions and flows"
+        "text": "A named config for external connection details and credentials."
       },
       {
         "id": "C",
@@ -6112,7 +6112,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Each transformed row now triggers the target table's business rules"
+        "text": "Each transformed row triggers the target's business rules."
       },
       {
         "id": "B",
@@ -6304,19 +6304,19 @@
     "options": [
       {
         "id": "A",
-        "text": "A scheduled import (scheduled data import)"
+        "text": "A scheduled data import."
       },
       {
         "id": "B",
-        "text": "A coalesce field"
+        "text": "A coalesce field map."
       },
       {
         "id": "C",
-        "text": "A UI policy"
+        "text": "A simple UI policy."
       },
       {
         "id": "D",
-        "text": "A watch list"
+        "text": "A watch list entry."
       }
     ],
     "correct": [
@@ -6352,7 +6352,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Apply multiple transform maps from the same import set to different target tables"
+        "text": "Apply multiple transform maps to different target tables."
       },
       {
         "id": "B",
@@ -6400,7 +6400,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Use a source script on the field map"
+        "text": "A source script on the field map."
       },
       {
         "id": "B",
@@ -6408,11 +6408,11 @@
       },
       {
         "id": "C",
-        "text": "Create a UI policy"
+        "text": "Create a UI policy rule."
       },
       {
         "id": "D",
-        "text": "Set a coalesce field"
+        "text": "Set a coalesce field."
       }
     ],
     "correct": [
@@ -6544,7 +6544,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A scheduled import of the file via a data source and transform map"
+        "text": "A scheduled import of the file."
       },
       {
         "id": "B",
@@ -6556,7 +6556,7 @@
       },
       {
         "id": "D",
-        "text": "A UI policy"
+        "text": "A simple UI policy."
       }
     ],
     "correct": [
@@ -6688,11 +6688,11 @@
     "options": [
       {
         "id": "A",
-        "text": "The Order value on each transform map"
+        "text": "The transform map Order value."
       },
       {
         "id": "B",
-        "text": "A coalesce field"
+        "text": "A coalesce field map."
       },
       {
         "id": "C",
@@ -6700,7 +6700,7 @@
       },
       {
         "id": "D",
-        "text": "A UI policy"
+        "text": "A simple UI policy."
       }
     ],
     "correct": [
@@ -6736,7 +6736,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A file (CSV/Excel), a JDBC database connection, or a retrieved attachment"
+        "text": "A file, JDBC, or an attachment."
       },
       {
         "id": "B",
@@ -6832,11 +6832,11 @@
     "options": [
       {
         "id": "A",
-        "text": "A data source that defines the external connection/format"
+        "text": "A data source defining the connection."
       },
       {
         "id": "B",
-        "text": "A transform map that maps staged rows to a target table"
+        "text": "A transform map to the target table."
       },
       {
         "id": "C",

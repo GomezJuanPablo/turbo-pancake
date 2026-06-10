@@ -576,7 +576,7 @@
     "options": [
       {
         "id": "A",
-        "text": "The field must have a non-empty value when the record is saved."
+        "text": "The field must have a value when saved."
       },
       {
         "id": "B",
@@ -623,7 +623,7 @@
     "options": [
       {
         "id": "A",
-        "text": "The single field shown by default when a record is referenced from another table or shown in a search result."
+        "text": "The field shown when the record is referenced."
       },
       {
         "id": "B",
@@ -860,7 +860,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A table-level read ACL on incident granting read to itil, plus a field-level read ACL on incident.work_notes that additionally restricts read by a condition tying assignment_group to the user's groups."
+        "text": "A table read ACL for itil plus a work_notes field ACL."
       },
       {
         "id": "B",
@@ -908,7 +908,7 @@
     "options": [
       {
         "id": "A",
-        "text": "More specific ACL rules (e.g., table.field) are evaluated before more general ones (e.g., table) for the same operation."
+        "text": "More specific ACLs (table.field) run before general ones."
       },
       {
         "id": "B",
@@ -955,7 +955,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A write ACL on incident.resolution_notes with a condition checking that the current user equals current.assigned_to."
+        "text": "A write ACL on resolution_notes checking user = assigned_to."
       },
       {
         "id": "B",
@@ -1050,7 +1050,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Child tables inherit applicable ACLs from their parent, and table/field ACLs on the child can additionally restrict or augment access."
+        "text": "Child tables inherit parent ACLs and can add their own."
       },
       {
         "id": "B",
@@ -1145,7 +1145,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Elevated privilege (security_admin) is required for editing high-impact security configuration; admin alone is not sufficient, by design."
+        "text": "Editing security config needs security_admin, not just admin."
       },
       {
         "id": "B",
@@ -1335,7 +1335,7 @@
     "options": [
       {
         "id": "A",
-        "text": "All fields on the incident table for the specified operation."
+        "text": "All fields on incident for that operation."
       },
       {
         "id": "B",
@@ -1383,7 +1383,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Refactor the ACL script to avoid heavy queries inside the per-record evaluation, prefer indexed conditions."
+        "text": "Refactor the ACL script to avoid heavy queries."
       },
       {
         "id": "B",
@@ -1525,7 +1525,7 @@
     "options": [
       {
         "id": "A",
-        "text": "The platform allows conversion in some cases, but each mechanism has a different enforcement scope."
+        "text": "Conversion is allowed sometimes, but enforcement scope differs."
       },
       {
         "id": "B",
@@ -1714,7 +1714,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Designated fields can be encrypted at rest so their values are stored as ciphertext and only readable by users with access to the appropriate encryption context/keys."
+        "text": "Designated fields can be stored encrypted at rest."
       },
       {
         "id": "B",
@@ -1809,7 +1809,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A Data Policy on the field set to Read-only when the record is not new."
+        "text": "A Data Policy setting the field Read-only when not new."
       },
       {
         "id": "B",
@@ -1856,7 +1856,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Configure Field Normalization on incident.category to map variant values to a canonical set and clean up reports going forward."
+        "text": "Use Field Normalization on the field."
       },
       {
         "id": "B",
@@ -1864,7 +1864,7 @@
       },
       {
         "id": "C",
-        "text": "Rename the field."
+        "text": "Rename the field label."
       },
       {
         "id": "D",
@@ -1904,7 +1904,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A user opening (reading) the record without changing any field."
+        "text": "A user reading the record without changing a field."
       },
       {
         "id": "B",
@@ -1952,7 +1952,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Configure field-level encryption on the SSN field with an encryption context that only the authorized group can use."
+        "text": "Field-level encryption on SSN with a restricted context."
       },
       {
         "id": "B",
@@ -2000,7 +2000,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Server-side, during the insert/update operation, evaluating conditions before the write is persisted."
+        "text": "Server-side, before the write is saved."
       },
       {
         "id": "B",
@@ -2047,7 +2047,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Audit tables grow with the number of audited field changes, so admins should consider which fields are worth auditing rather than turning on auditing for every field."
+        "text": "Audit tables grow with audited changes, so audit selectively."
       },
       {
         "id": "B",
@@ -2285,7 +2285,7 @@
     "options": [
       {
         "id": "A",
-        "text": "In Zurich, MFA is enforced by default for local logins, with configurable enrollment windows and exemptions."
+        "text": "In Zurich, MFA is enforced by default for local logins."
       },
       {
         "id": "B",
@@ -2476,7 +2476,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Granting integrations or applications delegated access to the instance on behalf of a user."
+        "text": "Delegated access to the instance on a user's behalf."
       },
       {
         "id": "B",
@@ -2524,7 +2524,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Keep a local-auth admin account excluded from SAML enforcement, secured with MFA, used only when SAML is unavailable."
+        "text": "Keep a local-auth admin excluded from SAML, secured with MFA."
       },
       {
         "id": "B",
@@ -2619,7 +2619,7 @@
     "options": [
       {
         "id": "A",
-        "text": "The platform manages sessions with configurable timeouts and can invalidate them on logout, role change, password reset, or admin action."
+        "text": "Sessions have configurable timeouts and can be invalidated."
       },
       {
         "id": "B",
@@ -2666,7 +2666,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Configure the MFA policy with an exemption for that specific user or for a service-account group."
+        "text": "Add an MFA exemption for that user or service-account group."
       },
       {
         "id": "B",
@@ -2714,7 +2714,7 @@
     "options": [
       {
         "id": "A",
-        "text": "On the login audit / sys_user_session and related security tables that record successful and failed login events."
+        "text": "The login audit (sys_user_session) tables."
       },
       {
         "id": "B",
@@ -2722,7 +2722,7 @@
       },
       {
         "id": "C",
-        "text": "In the favicon.svg."
+        "text": "Inside the favicon.svg."
       },
       {
         "id": "D",
@@ -2762,7 +2762,7 @@
     "options": [
       {
         "id": "A",
-        "text": "The script was authenticating as the user with basic auth and now MFA blocks that path."
+        "text": "The script used basic auth as the user, now blocked by MFA."
       },
       {
         "id": "B",
@@ -2999,7 +2999,7 @@
     "options": [
       {
         "id": "A",
-        "text": "To reduce common web vulnerabilities such as clickjacking, MIME-sniffing."
+        "text": "To reduce vulnerabilities like clickjacking and MIME-sniffing."
       },
       {
         "id": "B",
@@ -3046,7 +3046,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Investigate the actual access requirement and grant the minimum permissions to satisfy it, instead of widening an ACL."
+        "text": "Grant the minimum permissions needed, not a wider ACL."
       },
       {
         "id": "B",
@@ -3094,7 +3094,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Open Instance Security Center, review findings, address high-severity hardening items first, document exceptions."
+        "text": "Review Instance Security Center and fix high-severity items."
       },
       {
         "id": "B",
@@ -3189,7 +3189,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Show the table/field ACLs governing read on those fields, plus the role and group membership reports that resolve who effectively has each role."
+        "text": "Show the read ACLs plus role/group membership reports."
       },
       {
         "id": "B",
@@ -3237,7 +3237,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Multiple, overlapping controls (authentication, ACLs, field encryption, audit, headers, etc.) so that no single layer's failure exposes the instance."
+        "text": "Multiple overlapping controls so no single failure exposes it."
       },
       {
         "id": "B",
@@ -3283,7 +3283,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Investigate the business justification for the current value, align with the baseline if possible."
+        "text": "Investigate the justification and align to the baseline."
       },
       {
         "id": "B",
@@ -3331,7 +3331,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Develop and test the change on a sub-production instance, capture it in an update set, peer-review it."
+        "text": "Test on sub-production, capture in an update set, peer-review."
       },
       {
         "id": "B",
@@ -3906,11 +3906,11 @@
     "options": [
       {
         "id": "A",
-        "text": "It surfaces a security dashboard with compliance and hardening metrics"
+        "text": "Surfaces a security and hardening dashboard."
       },
       {
         "id": "B",
-        "text": "It lets you act on configuration hardening recommendations"
+        "text": "Lets you act on hardening recommendations."
       },
       {
         "id": "C",
@@ -4002,7 +4002,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Create a read ACL on the table with a role/condition requiring the hr role"
+        "text": "A read ACL on the table requiring the hr role."
       },
       {
         "id": "B",
@@ -4050,19 +4050,19 @@
     "options": [
       {
         "id": "A",
-        "text": "A script that returns true or false"
+        "text": "A script returning true or false."
       },
       {
         "id": "B",
-        "text": "A coalesce field"
+        "text": "A coalesce field map."
       },
       {
         "id": "C",
-        "text": "A scheduled job"
+        "text": "A scheduled job record."
       },
       {
         "id": "D",
-        "text": "A transform map"
+        "text": "A transform map row."
       }
     ],
     "correct": [
@@ -4098,7 +4098,7 @@
     "options": [
       {
         "id": "A",
-        "text": "The user needs to pass at least one of the matching same-level ACLs"
+        "text": "Pass at least one matching same-level ACL."
       },
       {
         "id": "B",
@@ -4146,7 +4146,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Add a specific ACL for the table so the more specific rule governs access"
+        "text": "Add a specific ACL so the more specific rule wins."
       },
       {
         "id": "B",
@@ -4242,19 +4242,19 @@
     "options": [
       {
         "id": "A",
-        "text": "The record's History (List/Calendar), backed by sys_audit"
+        "text": "The record History (sys_audit)."
       },
       {
         "id": "B",
-        "text": "The update set log"
+        "text": "The update set log."
       },
       {
         "id": "C",
-        "text": "The sys_user table"
+        "text": "The sys_user table."
       },
       {
         "id": "D",
-        "text": "The import set table"
+        "text": "The import set table."
       }
     ],
     "correct": [
@@ -4290,7 +4290,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Keep a local login path (e.g., the side-door login URL) for admins/fallback"
+        "text": "Keep a local login path for admin fallback."
       },
       {
         "id": "B",
@@ -4298,7 +4298,7 @@
       },
       {
         "id": "C",
-        "text": "Disable MFA entirely"
+        "text": "Disable MFA for everyone."
       },
       {
         "id": "D",
@@ -4342,15 +4342,15 @@
       },
       {
         "id": "B",
-        "text": "A coalesce field"
+        "text": "A coalesce field map."
       },
       {
         "id": "C",
-        "text": "A UI policy"
+        "text": "A simple UI policy."
       },
       {
         "id": "D",
-        "text": "A watch list"
+        "text": "A watch list entry."
       }
     ],
     "correct": [
@@ -4386,19 +4386,19 @@
     "options": [
       {
         "id": "A",
-        "text": "Reference (to the User table)"
+        "text": "A Reference field."
       },
       {
         "id": "B",
-        "text": "String"
+        "text": "A String field."
       },
       {
         "id": "C",
-        "text": "True/False"
+        "text": "A True/False field."
       },
       {
         "id": "D",
-        "text": "Choice"
+        "text": "A Choice field."
       }
     ],
     "correct": [
@@ -4482,11 +4482,11 @@
     "options": [
       {
         "id": "A",
-        "text": "Use Debug Security Rules / session debugging to see which ACL is failing"
+        "text": "Use Debug Security Rules to see the failing ACL."
       },
       {
         "id": "B",
-        "text": "Check both the row-level and field-level ACLs that apply"
+        "text": "Check both row and field ACLs."
       },
       {
         "id": "C",
@@ -4530,11 +4530,11 @@
     "options": [
       {
         "id": "A",
-        "text": "Requiring multi-factor authentication for privileged roles"
+        "text": "Require MFA for privileged roles."
       },
       {
         "id": "B",
-        "text": "Delegating authentication to a trusted IdP via SAML SSO"
+        "text": "Delegate auth to a trusted IdP (SAML SSO)."
       },
       {
         "id": "C",
