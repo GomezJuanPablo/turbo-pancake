@@ -2515,7 +2515,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Log an incident directly from the Service Catalog"
+        "text": "Log an incident from the catalog."
       },
       {
         "id": "B",

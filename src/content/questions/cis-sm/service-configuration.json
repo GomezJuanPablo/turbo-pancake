@@ -268,7 +268,7 @@
       },
       {
         "id": "D",
-        "text": "A read-only SNMP account is sufficient for discovery"
+        "text": "A read-only SNMP account suffices."
       }
     ],
     "correct": [
@@ -316,7 +316,7 @@
       },
       {
         "id": "D",
-        "text": "Add a credential of type 'Applicative' and associate the appropriate CI type for Ignite"
+        "text": "Add an 'Applicative' credential for the Ignite CI type."
       }
     ],
     "correct": [
@@ -400,19 +400,19 @@
     "options": [
       {
         "id": "A",
-        "text": "A credential affinity linking that device to the working credential"
+        "text": "A credential affinity link."
       },
       {
         "id": "B",
-        "text": "A credential store"
+        "text": "A credential store entry."
       },
       {
         "id": "C",
-        "text": "A credential lock"
+        "text": "A credential lock record."
       },
       {
         "id": "D",
-        "text": "A credential vault"
+        "text": "A credential vault entry."
       }
     ],
     "correct": [
@@ -736,19 +736,19 @@
     "options": [
       {
         "id": "A",
-        "text": "A CMDB Health KPI"
+        "text": "A CMDB Health KPI value."
       },
       {
         "id": "B",
-        "text": "A URL, host name, or IP address"
+        "text": "A URL, host, or IP."
       },
       {
         "id": "C",
-        "text": "A MID Server name"
+        "text": "A MID Server name here."
       },
       {
         "id": "D",
-        "text": "An incident number"
+        "text": "An incident number ref."
       }
     ],
     "correct": [
@@ -796,7 +796,7 @@
       },
       {
         "id": "D",
-        "text": "To periodically rediscover the service so the map stays current as the environment changes"
+        "text": "Periodically rediscover so the map stays current."
       }
     ],
     "correct": [
@@ -832,7 +832,7 @@
     "options": [
       {
         "id": "A",
-        "text": "To organize related application services together for management and reporting"
+        "text": "Group related application services."
       },
       {
         "id": "B",
@@ -880,19 +880,19 @@
     "options": [
       {
         "id": "A",
-        "text": "Set Variable"
+        "text": "Set Variable step."
       },
       {
         "id": "B",
-        "text": "Change user (switch to elevated credentials mid-pattern)"
+        "text": "Change user mid-pattern."
       },
       {
         "id": "C",
-        "text": "Create Connection"
+        "text": "Create Connection step."
       },
       {
         "id": "D",
-        "text": "Parse File"
+        "text": "Parse File step."
       }
     ],
     "correct": [
@@ -936,7 +936,7 @@
       },
       {
         "id": "C",
-        "text": "It is rediscovered and only its changed attributes are updated"
+        "text": "It's rediscovered and only changed attributes update."
       },
       {
         "id": "D",
@@ -1080,11 +1080,11 @@
       },
       {
         "id": "C",
-        "text": "Task [task]"
+        "text": "Task [task] table."
       },
       {
         "id": "D",
-        "text": "Application Service [cmdb_ci_service_discovered]"
+        "text": "Application Service table."
       }
     ],
     "correct": [
@@ -1228,7 +1228,7 @@
       },
       {
         "id": "D",
-        "text": "An IT-facing service (e.g., DNS, authentication) that supports other services rather than being consumed directly by the business"
+        "text": "An IT-facing supporting service."
       }
     ],
     "correct": [
@@ -1324,7 +1324,7 @@
       },
       {
         "id": "D",
-        "text": "An application service is discovered/maintained with its dependency map and entry points"
+        "text": "An app service discovered with its dependency map."
       }
     ],
     "correct": [
@@ -1412,7 +1412,7 @@
       },
       {
         "id": "B",
-        "text": "It captures the relationships/dependencies among CIs, not just the CIs themselves"
+        "text": "It captures CI relationships, not just the CIs."
       },
       {
         "id": "C",
@@ -1508,7 +1508,7 @@
       },
       {
         "id": "B",
-        "text": "Associate the credential with a specific CI type and/or MID Server / IP scope"
+        "text": "Scope it to a CI type or MID Server."
       },
       {
         "id": "C",
@@ -1648,7 +1648,7 @@
     "options": [
       {
         "id": "A",
-        "text": "To verify that a mapped service's entry point is reachable/available over time"
+        "text": "Check the entry point is reachable."
       },
       {
         "id": "B",
@@ -1804,7 +1804,7 @@
       },
       {
         "id": "D",
-        "text": "A domain user with local administrator rights on the target"
+        "text": "A domain user with local admin."
       }
     ],
     "correct": [
@@ -1852,7 +1852,7 @@
       },
       {
         "id": "D",
-        "text": "A discoverable, maintained dependency map with entry points instead of a static high-level record"
+        "text": "A discoverable dependency map with entry points."
       }
     ],
     "correct": [
@@ -1944,7 +1944,7 @@
       },
       {
         "id": "C",
-        "text": "Add it as an inclusion (manual connection) on the map"
+        "text": "Add a manual connection (inclusion)."
       },
       {
         "id": "D",
@@ -1996,7 +1996,7 @@
       },
       {
         "id": "D",
-        "text": "Traffic-based connections / candidate generation"
+        "text": "Traffic-based connections."
       }
     ],
     "correct": [
@@ -2080,19 +2080,19 @@
     "options": [
       {
         "id": "A",
-        "text": "An entry point (such as a URL or host:port)"
+        "text": "An entry point (URL/port)."
       },
       {
         "id": "B",
-        "text": "A reconciliation rule"
+        "text": "A reconciliation rule row."
       },
       {
         "id": "C",
-        "text": "A coalesce field"
+        "text": "A coalesce field map."
       },
       {
         "id": "D",
-        "text": "A scheduled report"
+        "text": "A scheduled report job."
       }
     ],
     "correct": [
@@ -2176,7 +2176,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Applicative (application-level) credentials"
+        "text": "Applicative credentials."
       },
       {
         "id": "B",
@@ -2416,19 +2416,19 @@
     "options": [
       {
         "id": "A",
-        "text": "The Application Service Readiness dashboard"
+        "text": "The Readiness dashboard."
       },
       {
         "id": "B",
-        "text": "The Service Catalog"
+        "text": "The Service Catalog app."
       },
       {
         "id": "C",
-        "text": "A UI policy"
+        "text": "A simple UI policy."
       },
       {
         "id": "D",
-        "text": "A watch list"
+        "text": "A watch list entry."
       }
     ],
     "correct": [
@@ -2512,7 +2512,7 @@
     "options": [
       {
         "id": "A",
-        "text": "The entry point is where mapping of the service begins and seeds discovery of its dependencies"
+        "text": "The entry point begins mapping and seeds discovery."
       },
       {
         "id": "B",

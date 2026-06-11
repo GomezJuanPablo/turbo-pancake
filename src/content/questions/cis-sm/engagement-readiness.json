@@ -11,7 +11,7 @@
     "options": [
       {
         "id": "A",
-        "text": "It performs a single or a few limited, specialized operations"
+        "text": "A few specialized operations."
       },
       {
         "id": "B",
@@ -107,7 +107,7 @@
     "options": [
       {
         "id": "A",
-        "text": "It shows the business service's components and dependencies so impact and likely culprits are obvious"
+        "text": "It shows the service's components and dependencies."
       },
       {
         "id": "B",
@@ -308,7 +308,7 @@
       },
       {
         "id": "B",
-        "text": "By correlating and de-duplicating related events into fewer, service-impacting alerts"
+        "text": "Correlate events into fewer alerts."
       },
       {
         "id": "C",
@@ -562,7 +562,7 @@
       },
       {
         "id": "C",
-        "text": "By giving change planners visibility into a service's dependencies before they make changes"
+        "text": "Give change planners visibility into dependencies."
       },
       {
         "id": "D",
@@ -662,7 +662,7 @@
       },
       {
         "id": "D",
-        "text": "Lower ongoing maintenance effort because maps update themselves as the environment changes"
+        "text": "Lower maintenance as maps update themselves."
       }
     ],
     "correct": [
@@ -754,7 +754,7 @@
       },
       {
         "id": "C",
-        "text": "Without authentication to targets, discovery can't collect data at all"
+        "text": "No auth means no data collected."
       },
       {
         "id": "D",
@@ -798,7 +798,7 @@
       },
       {
         "id": "B",
-        "text": "To build top-down, dependency-aware maps of business/application services and their underlying CIs"
+        "text": "Build top-down maps of services and their CIs."
       },
       {
         "id": "C",
@@ -846,7 +846,7 @@
       },
       {
         "id": "B",
-        "text": "It provides the service context so alerts can be tied to impacted business services"
+        "text": "Service context ties alerts to services."
       },
       {
         "id": "C",
@@ -942,7 +942,7 @@
       },
       {
         "id": "B",
-        "text": "Identify the priority business services and gather their entry points and credential requirements"
+        "text": "Find priority services and their entry points."
       },
       {
         "id": "C",
@@ -994,7 +994,7 @@
       },
       {
         "id": "C",
-        "text": "Automated discovery builds the dependency map from an entry point instead of an engineer drawing it by hand"
+        "text": "Automated discovery builds the map from an entry point."
       },
       {
         "id": "D",
@@ -1042,7 +1042,7 @@
       },
       {
         "id": "C",
-        "text": "Reduced Mean Time to Resolve for incidents on mapped services"
+        "text": "Lower MTTR on mapped services."
       },
       {
         "id": "D",
@@ -1130,7 +1130,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Validate the MID Server (connectivity, capabilities, credentials) ahead of mapping"
+        "text": "Validate the MID Server before mapping."
       },
       {
         "id": "B",
@@ -1226,7 +1226,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Working credentials (OS and applicative) available to the MID Server"
+        "text": "Working target credentials."
       },
       {
         "id": "B",
@@ -1274,7 +1274,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Entry points seed top-down mapping, so they're needed to start each service map"
+        "text": "Entry points seed each service map."
       },
       {
         "id": "B",
@@ -1322,7 +1322,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Understanding of infrastructure"
+        "text": "Infrastructure knowledge."
       },
       {
         "id": "B",
@@ -1334,7 +1334,7 @@
       },
       {
         "id": "D",
-        "text": "Copywriting"
+        "text": "Copywriting skills only."
       }
     ],
     "correct": [
@@ -1370,7 +1370,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Resolve network access (routes/firewall) or place a MID Server that can reach it"
+        "text": "Fix access or use a reachable MID Server."
       },
       {
         "id": "B",
@@ -1382,7 +1382,7 @@
       },
       {
         "id": "D",
-        "text": "Disable IRE"
+        "text": "Disable IRE entirely."
       }
     ],
     "correct": [
@@ -1418,7 +1418,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Clean identification reduces duplicates so maps attach to the correct CIs"
+        "text": "Good identification, fewer duplicates."
       },
       {
         "id": "B",
@@ -1466,19 +1466,19 @@
     "options": [
       {
         "id": "A",
-        "text": "The Application Service Readiness dashboard"
+        "text": "The Readiness dashboard."
       },
       {
         "id": "B",
-        "text": "The Service Catalog"
+        "text": "The Service Catalog app."
       },
       {
         "id": "C",
-        "text": "A coalesce field"
+        "text": "A coalesce field map."
       },
       {
         "id": "D",
-        "text": "The branding settings"
+        "text": "The branding settings page."
       }
     ],
     "correct": [
@@ -1514,7 +1514,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Network reachability and valid credentials from a MID Server to each tier"
+        "text": "MID Server access to each tier."
       },
       {
         "id": "B",
@@ -1522,11 +1522,11 @@
       },
       {
         "id": "C",
-        "text": "A branding logo"
+        "text": "A branding logo file."
       },
       {
         "id": "D",
-        "text": "A survey definition"
+        "text": "A survey definition record."
       }
     ],
     "correct": [
@@ -1562,7 +1562,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A small set of high-value, well-understood services"
+        "text": "A small set of high-value services."
       },
       {
         "id": "B",
@@ -1610,11 +1610,11 @@
     "options": [
       {
         "id": "A",
-        "text": "Credentials prepared and validated for targets"
+        "text": "Validated credentials for targets."
       },
       {
         "id": "B",
-        "text": "MID Server connectivity to in-scope networks confirmed"
+        "text": "Confirmed MID Server connectivity."
       },
       {
         "id": "C",
@@ -1662,7 +1662,7 @@
       },
       {
         "id": "B",
-        "text": "Confirming CMDB identification is sound to avoid duplicates"
+        "text": "Confirm CMDB identification is sound."
       },
       {
         "id": "C",

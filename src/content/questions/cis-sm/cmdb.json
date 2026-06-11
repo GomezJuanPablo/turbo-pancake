@@ -59,19 +59,19 @@
     "options": [
       {
         "id": "A",
-        "text": "Class Downgrade"
+        "text": "Class Downgrade type."
       },
       {
         "id": "B",
-        "text": "Class Upgrade (base class to a more specific subclass)"
+        "text": "Upgrade to a subclass."
       },
       {
         "id": "C",
-        "text": "Class Change"
+        "text": "Class Change type."
       },
       {
         "id": "D",
-        "text": "Class Switch"
+        "text": "Class Switch type."
       }
     ],
     "correct": [
@@ -115,7 +115,7 @@
       },
       {
         "id": "C",
-        "text": "The Identification and Reconciliation Engine (IRE)"
+        "text": "The IRE engine."
       },
       {
         "id": "D",
@@ -215,7 +215,7 @@
       },
       {
         "id": "D",
-        "text": "Recognizes and tags the device, then matches it to an existing CI or creates a new one"
+        "text": "Matches or creates the CI."
       }
     ],
     "correct": [
@@ -251,7 +251,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Assign a priority among data sources when multiple are authorized to update the same table or attributes"
+        "text": "Set priority among sources updating the same attributes."
       },
       {
         "id": "B",
@@ -303,7 +303,7 @@
       },
       {
         "id": "B",
-        "text": "Which data sources are authorized to update a CMDB table or set of attributes"
+        "text": "Which sources may update a table or attributes."
       },
       {
         "id": "C",
@@ -547,7 +547,7 @@
       },
       {
         "id": "C",
-        "text": "A de-duplication task (duplicate CI remediation)"
+        "text": "A de-duplication task."
       },
       {
         "id": "D",
@@ -595,7 +595,7 @@
       },
       {
         "id": "C",
-        "text": "A dependent identifier (identification using a related parent CI)"
+        "text": "A dependent identifier."
       },
       {
         "id": "D",
@@ -647,7 +647,7 @@
       },
       {
         "id": "D",
-        "text": "A class-level definition that groups one or more identifier entries used to identify CIs of that class"
+        "text": "A class definition grouping identifier entries."
       }
     ],
     "correct": [
@@ -923,7 +923,7 @@
     "options": [
       {
         "id": "A",
-        "text": "It records, per attribute, what each contributing source reported alongside the reconciled value"
+        "text": "It records each source's value and the reconciled one."
       },
       {
         "id": "B",
@@ -971,7 +971,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A label identifying which integration/process supplied the data, used to enforce attribute authority"
+        "text": "A label of which source supplied the data."
       },
       {
         "id": "B",
@@ -1027,7 +1027,7 @@
       },
       {
         "id": "C",
-        "text": "IRE enforces consistent identification and reconciliation"
+        "text": "IRE enforces consistent identification."
       },
       {
         "id": "D",
@@ -1115,7 +1115,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A Relationship Type (with paired parent/child descriptors)"
+        "text": "A Relationship Type."
       },
       {
         "id": "B",
@@ -1271,7 +1271,7 @@
       },
       {
         "id": "D",
-        "text": "A CMDB Health KPI or rule flagging CIs that violate a quality standard"
+        "text": "A health KPI flagging non-compliant CIs."
       }
     ],
     "correct": [
@@ -1311,7 +1311,7 @@
       },
       {
         "id": "B",
-        "text": "Without relationships they can't participate in service maps or impact analysis"
+        "text": "Without relationships they can't join service maps."
       },
       {
         "id": "C",
@@ -1415,7 +1415,7 @@
       },
       {
         "id": "D",
-        "text": "An identifier that resolves a CI using only its own attributes, without needing a related parent CI"
+        "text": "An identifier using only the CI's own attributes."
       }
     ],
     "correct": [
@@ -1463,7 +1463,7 @@
       },
       {
         "id": "D",
-        "text": "To control which payload items IRE will process or skip based on defined conditions"
+        "text": "Control which payload items IRE processes or skips."
       }
     ],
     "correct": [
@@ -1607,7 +1607,7 @@
       },
       {
         "id": "D",
-        "text": "To rank sources so the most authoritative one wins when several report the same attribute"
+        "text": "Rank sources so the most authoritative wins."
       }
     ],
     "correct": [

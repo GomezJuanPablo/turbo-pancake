@@ -107,7 +107,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Cloud or dynamic environments where resources are frequently created, renamed, or scaled"
+        "text": "Cloud/dynamic environments with frequent changes."
       },
       {
         "id": "B",
@@ -491,7 +491,7 @@
     "options": [
       {
         "id": "A",
-        "text": "It doesn't require a Service Mapping license and visualizes via list filters/CMDB queries"
+        "text": "No Service Mapping license; uses list/CMDB queries."
       },
       {
         "id": "B",
@@ -539,7 +539,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Its components are defined explicitly by an administrator rather than discovered by patterns"
+        "text": "Its components are defined by an admin, not discovered."
       },
       {
         "id": "B",
@@ -591,7 +591,7 @@
       },
       {
         "id": "B",
-        "text": "Review each candidate, adjust as needed, and initiate mapping for the ones to keep"
+        "text": "Review candidates and map the keepers."
       },
       {
         "id": "C",
@@ -643,7 +643,7 @@
       },
       {
         "id": "C",
-        "text": "Scheduled rediscovery updates the map automatically as the environment changes"
+        "text": "Scheduled rediscovery keeps the map current."
       },
       {
         "id": "D",
@@ -687,7 +687,7 @@
       },
       {
         "id": "B",
-        "text": "It generates connection suggestions and confidence scores from processed discovery data"
+        "text": "It generates connection suggestions with confidence scores."
       },
       {
         "id": "C",
@@ -735,7 +735,7 @@
       },
       {
         "id": "B",
-        "text": "The probability that a discovered connection belongs to the application service"
+        "text": "Probability a connection belongs to the service."
       },
       {
         "id": "C",
@@ -827,7 +827,7 @@
     "options": [
       {
         "id": "A",
-        "text": "It indicates how much to trust a suggested connection"
+        "text": "How much to trust a suggested connection."
       },
       {
         "id": "B",
@@ -883,7 +883,7 @@
       },
       {
         "id": "C",
-        "text": "It analyzes traffic (e.g., NetFlow/netstat) to infer likely connections and suggest dependencies"
+        "text": "It analyzes traffic to infer likely connections."
       },
       {
         "id": "D",
@@ -931,7 +931,7 @@
       },
       {
         "id": "C",
-        "text": "Characterizing an application so its connections and relationships can be evaluated/learned"
+        "text": "Characterize an app's connections."
       },
       {
         "id": "D",
@@ -983,7 +983,7 @@
       },
       {
         "id": "D",
-        "text": "The readiness state of prerequisites needed for accurate mapping"
+        "text": "Readiness of prerequisites for accurate mapping."
       }
     ],
     "correct": [
@@ -1163,7 +1163,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Patterns learned from existing, successfully mapped services"
+        "text": "Patterns from existing mapped services."
       },
       {
         "id": "B",
@@ -1307,7 +1307,7 @@
     "options": [
       {
         "id": "A",
-        "text": "More complete service maps with fewer manual interventions"
+        "text": "More complete maps with less manual work."
       },
       {
         "id": "B",
@@ -1355,7 +1355,7 @@
     "options": [
       {
         "id": "A",
-        "text": "As a complement that fills gaps, not a replacement for patterns"
+        "text": "A complement that fills gaps, not a replacement."
       },
       {
         "id": "B",
@@ -1403,7 +1403,7 @@
     "options": [
       {
         "id": "A",
-        "text": "There isn't enough mapped data yet for the model to learn from"
+        "text": "Too little mapped data to learn from."
       },
       {
         "id": "B",
@@ -1451,11 +1451,11 @@
     "options": [
       {
         "id": "A",
-        "text": "Improve map completeness by predicting connections discovery missed"
+        "text": "Predict missed connections."
       },
       {
         "id": "B",
-        "text": "Replace the CMDB"
+        "text": "Replace the whole CMDB."
       },
       {
         "id": "C",
@@ -1499,19 +1499,19 @@
     "options": [
       {
         "id": "A",
-        "text": "Prioritize remediation on the services with the most issues"
+        "text": "Prioritize the worst services."
       },
       {
         "id": "B",
-        "text": "Order new hardware"
+        "text": "Order new hardware now."
       },
       {
         "id": "C",
-        "text": "Configure SSO"
+        "text": "Configure SSO login here."
       },
       {
         "id": "D",
-        "text": "Set email properties"
+        "text": "Set the email properties."
       }
     ],
     "correct": [
@@ -1547,11 +1547,11 @@
     "options": [
       {
         "id": "A",
-        "text": "It suggests connections that discovery may have missed"
+        "text": "It suggests connections discovery missed."
       },
       {
         "id": "B",
-        "text": "Suggestions are reviewed before being applied"
+        "text": "Suggestions are reviewed first."
       },
       {
         "id": "C",
@@ -1595,19 +1595,19 @@
     "options": [
       {
         "id": "A",
-        "text": "A larger base of successfully mapped services to learn from"
+        "text": "More mapped services to learn."
       },
       {
         "id": "B",
-        "text": "Reviewing and accepting only correct suggestions over time"
+        "text": "Accept correct suggestions."
       },
       {
         "id": "C",
-        "text": "Turning off Discovery"
+        "text": "Turning off Discovery here."
       },
       {
         "id": "D",
-        "text": "Deleting existing maps"
+        "text": "Deleting the existing maps."
       }
     ],
     "correct": [

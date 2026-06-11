@@ -59,7 +59,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A Java application that runs on the customer network and connects out to the ServiceNow instance"
+        "text": "A Java app connecting out to the instance."
       },
       {
         "id": "B",
@@ -67,7 +67,7 @@
       },
       {
         "id": "C",
-        "text": "An operating system"
+        "text": "An operating system layer."
       },
       {
         "id": "D",
@@ -647,7 +647,7 @@
       },
       {
         "id": "D",
-        "text": "Horizontal discovery across infrastructure layers"
+        "text": "Horizontal discovery."
       }
     ],
     "correct": [
@@ -683,19 +683,19 @@
     "options": [
       {
         "id": "A",
-        "text": "~65,000 (2^16 = 65,536)"
+        "text": "~65,000 (2^16)."
       },
       {
         "id": "B",
-        "text": "~1 million"
+        "text": "~1 million ports."
       },
       {
         "id": "C",
-        "text": "~16 million"
+        "text": "~16 million ports."
       },
       {
         "id": "D",
-        "text": "~256"
+        "text": "~256 ports."
       }
     ],
     "correct": [
@@ -979,7 +979,7 @@
       },
       {
         "id": "C",
-        "text": "To parse the data a probe returns and update the CMDB accordingly"
+        "text": "Parse a probe's data and update the CMDB."
       },
       {
         "id": "D",
@@ -1027,7 +1027,7 @@
       },
       {
         "id": "C",
-        "text": "Evaluates initial scan results to determine the device type and which probes/patterns to run next"
+        "text": "Evaluate scan results to pick device type and probes."
       },
       {
         "id": "D",
@@ -1115,7 +1115,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A conduit that runs probes/commands on the internal network on the instance's behalf and returns results"
+        "text": "A conduit running probes on the internal network."
       },
       {
         "id": "B",
@@ -1259,7 +1259,7 @@
     "options": [
       {
         "id": "A",
-        "text": "No inbound firewall rules to the MID Server are required"
+        "text": "No inbound firewall rules to the MID Server."
       },
       {
         "id": "B",
@@ -1307,7 +1307,7 @@
     "options": [
       {
         "id": "A",
-        "text": "What to discover (IP ranges/targets), when, and with which MID Server"
+        "text": "What to discover, when, and which MID Server."
       },
       {
         "id": "B",
@@ -1415,7 +1415,7 @@
       },
       {
         "id": "D",
-        "text": "Assign capabilities, applications, and IP ranges to the MID Server so it's selected for matching work"
+        "text": "MID Server capabilities and IP ranges."
       }
     ],
     "correct": [
@@ -1451,7 +1451,7 @@
     "options": [
       {
         "id": "A",
-        "text": "The ECC Queue (input/output records)"
+        "text": "The ECC Queue."
       },
       {
         "id": "B",
@@ -1463,7 +1463,7 @@
       },
       {
         "id": "D",
-        "text": "The email log"
+        "text": "The email log table."
       }
     ],
     "correct": [
@@ -1499,19 +1499,19 @@
     "options": [
       {
         "id": "A",
-        "text": "1,024"
+        "text": "1,024 hosts."
       },
       {
         "id": "B",
-        "text": "16"
+        "text": "16 hosts."
       },
       {
         "id": "C",
-        "text": "256 (2^8)"
+        "text": "256 hosts (2^8)."
       },
       {
         "id": "D",
-        "text": "65,536"
+        "text": "65,536 hosts."
       }
     ],
     "correct": [
@@ -1547,7 +1547,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Add MID Servers (and/or memory) and load-balance the work across a cluster"
+        "text": "Add MID Servers and load-balance across a cluster."
       },
       {
         "id": "B",
@@ -1647,7 +1647,7 @@
       },
       {
         "id": "B",
-        "text": "The open ports and responses found during the Port Scan"
+        "text": "Open ports/responses from the Port Scan."
       },
       {
         "id": "C",
@@ -1691,7 +1691,7 @@
     "options": [
       {
         "id": "A",
-        "text": "The MID Server regularly posts a heartbeat/status to the instance"
+        "text": "The MID Server posts a heartbeat to the instance."
       },
       {
         "id": "B",
@@ -1787,7 +1787,7 @@
     "options": [
       {
         "id": "A",
-        "text": "To gather detailed attributes and relationships for an already-identified CI"
+        "text": "Gather details for an already-identified CI."
       },
       {
         "id": "B",
@@ -1835,7 +1835,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Scope that MID Server to the subnet's IP range so it's selected for those targets"
+        "text": "Scope the MID Server to the subnet's IP range."
       },
       {
         "id": "B",
@@ -2039,7 +2039,7 @@
       },
       {
         "id": "D",
-        "text": "It must be validated (its certificate/connection approved) on the instance"
+        "text": "It must be validated on the instance."
       }
     ],
     "correct": [
@@ -2123,7 +2123,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Provide valid SSH credentials accessible to the MID Server's credential store"
+        "text": "Provide SSH credentials in the MID Server store."
       },
       {
         "id": "B",
@@ -2171,7 +2171,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Use MID Server selection based on capabilities and IP ranges"
+        "text": "MID Server selection by capability/IP."
       },
       {
         "id": "B",
@@ -2363,19 +2363,19 @@
     "options": [
       {
         "id": "A",
-        "text": "The ECC Queue (input/output records)"
+        "text": "The ECC Queue."
       },
       {
         "id": "B",
-        "text": "The Service Catalog"
+        "text": "The Service Catalog app."
       },
       {
         "id": "C",
-        "text": "The update set log"
+        "text": "The update set log view."
       },
       {
         "id": "D",
-        "text": "A knowledge base"
+        "text": "A knowledge base page."
       }
     ],
     "correct": [
@@ -2411,7 +2411,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Configure SSH credentials to use sudo for the elevated commands"
+        "text": "Configure SSH credentials to use sudo."
       },
       {
         "id": "B",

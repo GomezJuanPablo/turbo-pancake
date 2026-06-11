@@ -2128,19 +2128,19 @@
     "options": [
       {
         "id": "A",
-        "text": "A boundary"
+        "text": "A service boundary node."
       },
       {
         "id": "B",
-        "text": "A cluster member"
+        "text": "A cluster member node."
       },
       {
         "id": "C",
-        "text": "A subordinate (hosted) service component of the parent"
+        "text": "A hosted child component."
       },
       {
         "id": "D",
-        "text": "An exclusion"
+        "text": "A map exclusion entry."
       }
     ],
     "correct": [
@@ -2896,19 +2896,19 @@
     "options": [
       {
         "id": "A",
-        "text": "Credential vault entries"
+        "text": "Credential vault entry records."
       },
       {
         "id": "B",
-        "text": "Boundary connections leaving the current service context"
+        "text": "Boundary connections leaving context."
       },
       {
         "id": "C",
-        "text": "Cluster heartbeat links"
+        "text": "Cluster heartbeat link records."
       },
       {
         "id": "D",
-        "text": "Reconciliation conflicts"
+        "text": "Reconciliation conflict records."
       }
     ],
     "correct": [
