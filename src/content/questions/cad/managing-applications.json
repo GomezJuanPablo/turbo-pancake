@@ -1758,5 +1758,53 @@
       "preview",
       "commit"
     ]
+  },
+  {
+    "id": "cad-mgr-038",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Managing Applications",
+    "subdomain": "ATF",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A team wants automated tests to run against critical journeys before each promotion. Which tool fits?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Automated Test Framework (ATF)."
+      },
+      {
+        "id": "B",
+        "text": "An external Selenium installer."
+      },
+      {
+        "id": "C",
+        "text": "A UI Action."
+      },
+      {
+        "id": "D",
+        "text": "A type of ACL."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "ATF is the platform-native framework for authoring and running automated tests against ServiceNow, ideal for guarding critical journeys at each promotion.",
+    "distractor_notes": {
+      "B": "ATF is built in; you don't install external Selenium.",
+      "C": "A UI Action is a button, not a test framework.",
+      "D": "ACLs control access, not testing."
+    },
+    "references": [
+      {
+        "title": "Application Manager",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/application-manager/application-manager.html"
+      }
+    ],
+    "tags": [
+      "atf",
+      "testing",
+      "promotion"
+    ]
   }
 ]

@@ -2492,5 +2492,149 @@
       "ui-policy",
       "forms"
     ]
+  },
+  {
+    "id": "cad-aui-052",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Application User Interface",
+    "subdomain": "List Editor",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An agent must update the State on 20 records quickly without opening each one. What's built for this?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Inline editing in the list."
+      },
+      {
+        "id": "B",
+        "text": "A UI Policy on the form."
+      },
+      {
+        "id": "C",
+        "text": "A saved favorite."
+      },
+      {
+        "id": "D",
+        "text": "The global search box."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The list editor lets you edit field values directly in list cells, ideal for fast updates across many rows. UI Policies, favorites, and search don't bulk-edit values.",
+    "distractor_notes": {
+      "B": "UI Policies change form behavior, not in-list editing.",
+      "C": "Favorites are navigation shortcuts.",
+      "D": "Search finds records; it doesn't edit them."
+    },
+    "references": [
+      {
+        "title": "Use the list editor",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-user-interface/t_UseTheListEditor.html"
+      }
+    ],
+    "tags": [
+      "list-editor",
+      "inline-edit",
+      "forms"
+    ]
+  },
+  {
+    "id": "cad-aui-053",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Application User Interface",
+    "subdomain": "Related Lists",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "On a parent record, a developer needs to show child task records that reference it. Which element does this?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A related list."
+      },
+      {
+        "id": "B",
+        "text": "A breadcrumb."
+      },
+      {
+        "id": "C",
+        "text": "A favorite."
+      },
+      {
+        "id": "D",
+        "text": "A watch list."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Related lists appear below the form and show records connected to the current record, like child tasks. Breadcrumbs edit list filters; watch lists handle notifications.",
+    "distractor_notes": {
+      "B": "Breadcrumbs show and edit a list's filter, not related records.",
+      "C": "Favorites are saved shortcuts.",
+      "D": "Watch lists control who is notified."
+    },
+    "references": [
+      {
+        "title": "Related lists",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-user-interface/c_RelatedLists.html"
+      }
+    ],
+    "tags": [
+      "related-list",
+      "forms",
+      "relationships"
+    ]
+  },
+  {
+    "id": "cad-aui-054",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Application User Interface",
+    "subdomain": "Personalization",
+    "difficulty": "application",
+    "type": "multi_select",
+    "stem": "Which TWO changes affect only the current user, not everyone?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Personalize Form."
+      },
+      {
+        "id": "B",
+        "text": "Personalize List columns."
+      },
+      {
+        "id": "C",
+        "text": "Configure Form Layout."
+      },
+      {
+        "id": "D",
+        "text": "Edit the table's default view."
+      }
+    ],
+    "correct": [
+      "A",
+      "B"
+    ],
+    "rationale": "Personalize Form and Personalize List apply per user. Configure Form Layout and editing the default view change the experience for everyone.",
+    "distractor_notes": {
+      "C": "Configure Form Layout changes the form for all users.",
+      "D": "Editing the default view affects everyone on that view."
+    },
+    "references": [
+      {
+        "title": "Configuring the form layout",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/configure-form-layout.html"
+      }
+    ],
+    "tags": [
+      "personalization",
+      "forms",
+      "per-user"
+    ]
   }
 ]

@@ -2474,5 +2474,149 @@
       "script",
       "answer"
     ]
+  },
+  {
+    "id": "cad-sec-052",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Security and Restricting Access",
+    "subdomain": "Default Deny",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A developer creates a custom table with no ACLs. A non-admin can't read it. What restores intended access?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Add a granting read ACL."
+      },
+      {
+        "id": "B",
+        "text": "Disable contextual security."
+      },
+      {
+        "id": "C",
+        "text": "Give everyone the admin role."
+      },
+      {
+        "id": "D",
+        "text": "Delete the table's dictionary."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The platform is default-deny: a new table needs at least one granting ACL (or inheritance) before non-admins can use it. Disabling security or granting admin is unsafe.",
+    "distractor_notes": {
+      "B": "Disabling contextual security weakens the whole instance.",
+      "C": "Granting admin broadly is a severe over-permission.",
+      "D": "Deleting the dictionary removes the table, not the fix."
+    },
+    "references": [
+      {
+        "title": "Access Control List rules",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/access-control/access-control-rules.html"
+      }
+    ],
+    "tags": [
+      "acl",
+      "default-deny",
+      "custom-table"
+    ]
+  },
+  {
+    "id": "cad-sec-053",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Security and Restricting Access",
+    "subdomain": "Elevated Privilege",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "With high security on, an admin is blocked from editing an ACL until they elevate. To which role?",
+    "options": [
+      {
+        "id": "A",
+        "text": "security_admin."
+      },
+      {
+        "id": "B",
+        "text": "itil."
+      },
+      {
+        "id": "C",
+        "text": "approver_user."
+      },
+      {
+        "id": "D",
+        "text": "catalog_admin."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Editing access controls under high security requires elevating to security_admin for the session — an extra safeguard. The other roles don't grant ACL editing.",
+    "distractor_notes": {
+      "B": "itil supports ITSM work, not ACL administration.",
+      "C": "approver_user handles approvals.",
+      "D": "catalog_admin manages the catalog."
+    },
+    "references": [
+      {
+        "title": "Configure an ACL rule",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/access-control/t_CreateAnACLRule.html"
+      }
+    ],
+    "tags": [
+      "security_admin",
+      "acl",
+      "elevated"
+    ]
+  },
+  {
+    "id": "cad-sec-054",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Security and Restricting Access",
+    "subdomain": "Best Practice",
+    "difficulty": "application",
+    "type": "multi_select",
+    "stem": "Which TWO are sound access-design practices?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Grant least privilege."
+      },
+      {
+        "id": "B",
+        "text": "Deny by default, grant explicitly."
+      },
+      {
+        "id": "C",
+        "text": "Give all users admin."
+      },
+      {
+        "id": "D",
+        "text": "Disable ACLs in production."
+      }
+    ],
+    "correct": [
+      "A",
+      "B"
+    ],
+    "rationale": "Least privilege and default-deny are core security practices: users get only what they need, and access is granted explicitly. Broad admin or disabled ACLs are dangerous.",
+    "distractor_notes": {
+      "C": "Universal admin removes all access control.",
+      "D": "Disabling ACLs exposes every record."
+    },
+    "references": [
+      {
+        "title": "Access Control List rules",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/access-control/access-control-rules.html"
+      }
+    ],
+    "tags": [
+      "security",
+      "least-privilege",
+      "best-practice"
+    ]
   }
 ]

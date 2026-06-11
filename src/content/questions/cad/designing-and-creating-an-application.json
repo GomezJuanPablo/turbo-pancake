@@ -1808,5 +1808,101 @@
       "task",
       "data-model"
     ]
+  },
+  {
+    "id": "cad-dca-038",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Designing and Creating an Application",
+    "subdomain": "Application Scope",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "From a scoped app, a developer can't directly modify a Global-scope record. Why?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Scope protects cross-scope changes."
+      },
+      {
+        "id": "B",
+        "text": "They lack the itil role."
+      },
+      {
+        "id": "C",
+        "text": "The instance is read-only."
+      },
+      {
+        "id": "D",
+        "text": "Scoped apps hold no records."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Application scope isolates and protects each app's artifacts; cross-scope changes are restricted by default and governed by the target app's settings. It prevents accidental edits across apps.",
+    "distractor_notes": {
+      "B": "This is a scope boundary, not a role issue.",
+      "C": "The instance isn't read-only here.",
+      "D": "Scoped apps do contain records; they're just protected."
+    },
+    "references": [
+      {
+        "title": "Application scope",
+        "url": "https://www.servicenow.com/docs/r/zurich/application-development/c_ApplicationScope.html"
+      }
+    ],
+    "tags": [
+      "application-scope",
+      "cross-scope",
+      "protection"
+    ]
+  },
+  {
+    "id": "cad-dca-039",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Designing and Creating an Application",
+    "subdomain": "Field Types",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A field should hold one of a small, fixed set of statuses shown as a dropdown. Which field type fits?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Choice."
+      },
+      {
+        "id": "B",
+        "text": "Reference."
+      },
+      {
+        "id": "C",
+        "text": "String."
+      },
+      {
+        "id": "D",
+        "text": "True/False."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "A Choice field stores a fixed small set of values (stored as integers with labels in sys_choice) shown as a dropdown. Reference points at records; String is free text.",
+    "distractor_notes": {
+      "B": "Reference links to records on another table, not a fixed list.",
+      "C": "String accepts any text, with no fixed set.",
+      "D": "True/False is a boolean, not a multi-value list."
+    },
+    "references": [
+      {
+        "title": "System dictionary",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_SystemDictionary.html"
+      }
+    ],
+    "tags": [
+      "choice",
+      "field-types",
+      "data-model"
+    ]
   }
 ]

@@ -1194,5 +1194,53 @@
       "transform-map",
       "duplicates"
     ]
+  },
+  {
+    "id": "cad-ext-026",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Working with External Data",
+    "subdomain": "Data Source",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A developer needs to define where a recurring CSV import comes from and its format. Which object does that?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A Data Source."
+      },
+      {
+        "id": "B",
+        "text": "A Transform Map."
+      },
+      {
+        "id": "C",
+        "text": "A coalesce field."
+      },
+      {
+        "id": "D",
+        "text": "An ACL."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "A Data Source defines where imported data comes from and its format (file, JDBC, etc.), feeding the import set table. A transform map then maps those rows to the target.",
+    "distractor_notes": {
+      "B": "A transform map maps staged rows to the target, not the source.",
+      "C": "Coalesce controls match-on-update behavior.",
+      "D": "ACLs govern access, not ingestion."
+    },
+    "references": [
+      {
+        "title": "Import Sets",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_ImportSets.html"
+      }
+    ],
+    "tags": [
+      "data-source",
+      "import",
+      "csv"
+    ]
   }
 ]

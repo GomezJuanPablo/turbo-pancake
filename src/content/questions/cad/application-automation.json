@@ -2438,5 +2438,101 @@
       "trigger",
       "types"
     ]
+  },
+  {
+    "id": "cad-aut-052",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Application Automation",
+    "subdomain": "Async Business Rule",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A heavy external callout should run after save without making the user wait. Which business rule fits?",
+    "options": [
+      {
+        "id": "A",
+        "text": "An async business rule."
+      },
+      {
+        "id": "B",
+        "text": "A before business rule."
+      },
+      {
+        "id": "C",
+        "text": "A client script."
+      },
+      {
+        "id": "D",
+        "text": "A UI Policy."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Async business rules run after the transaction commits via the scheduler, so slow work doesn't block the user. Before rules run inline; client-side options can't do server work.",
+    "distractor_notes": {
+      "B": "A before rule runs inline during save and delays the user.",
+      "C": "Client scripts can't perform server-side callouts.",
+      "D": "UI Policies manipulate form fields, not server processing."
+    },
+    "references": [
+      {
+        "title": "Business Rules",
+        "url": "https://www.servicenow.com/docs/r/zurich/application-development/c_BusinessRules.html"
+      }
+    ],
+    "tags": [
+      "business-rule",
+      "async",
+      "performance"
+    ]
+  },
+  {
+    "id": "cad-aut-053",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Application Automation",
+    "subdomain": "Notifications",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Stakeholders should get an email when a record's Priority becomes 1. What delivers this?",
+    "options": [
+      {
+        "id": "A",
+        "text": "An email notification on condition."
+      },
+      {
+        "id": "B",
+        "text": "A UI Policy on the incident form."
+      },
+      {
+        "id": "C",
+        "text": "A favorite."
+      },
+      {
+        "id": "D",
+        "text": "A coalesce field."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Email notifications send when their trigger condition is met (Priority = 1) to defined recipients. UI Policies and favorites don't send email.",
+    "distractor_notes": {
+      "B": "UI Policies change form behavior, not email.",
+      "C": "Favorites are personal shortcuts.",
+      "D": "Coalesce is an import-matching concept."
+    },
+    "references": [
+      {
+        "title": "Notifications",
+        "url": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/c_Notifications.html"
+      }
+    ],
+    "tags": [
+      "notifications",
+      "email",
+      "conditions"
+    ]
   }
 ]
