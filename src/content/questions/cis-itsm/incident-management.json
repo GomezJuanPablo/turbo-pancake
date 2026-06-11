@@ -2886,5 +2886,149 @@
       "knowledge",
       "draft-article"
     ]
+  },
+  {
+    "id": "cisitsm-inc-061",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Incident Management",
+    "subdomain": "Major Incident",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A core business service goes down, affecting many users with high urgency. How should this be handled?",
+    "options": [
+      {
+        "id": "A",
+        "text": "As a major incident."
+      },
+      {
+        "id": "B",
+        "text": "As a standard change."
+      },
+      {
+        "id": "C",
+        "text": "As a service request."
+      },
+      {
+        "id": "D",
+        "text": "As a known error."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "A high-impact, high-urgency outage is a major incident, which triggers heightened communication and coordination. Changes, requests, and known errors are different record types.",
+    "distractor_notes": {
+      "B": "A standard change is a pre-approved change, not an outage response.",
+      "C": "A service request is for routine catalog requests.",
+      "D": "A known error documents a root cause, not the live outage."
+    },
+    "references": [
+      {
+        "title": "Incident Management",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/c_IncidentManagement.html"
+      }
+    ],
+    "tags": [
+      "incident",
+      "major-incident",
+      "impact"
+    ]
+  },
+  {
+    "id": "cisitsm-inc-062",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Incident Management",
+    "subdomain": "On Hold",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "An incident is On Hold awaiting the caller, who now replies with the needed info. What should happen next?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Clear On Hold and move to In Progress."
+      },
+      {
+        "id": "B",
+        "text": "Close the incident immediately."
+      },
+      {
+        "id": "C",
+        "text": "Promote it to a major incident."
+      },
+      {
+        "id": "D",
+        "text": "Leave the state unchanged."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "With the awaited information received, the On hold reason is cleared and the incident returns to In Progress so work resumes. Closing or promoting it isn't warranted by a caller reply.",
+    "distractor_notes": {
+      "B": "Closing skips the remaining resolution work.",
+      "C": "A caller reply doesn't make it a major incident.",
+      "D": "Leaving it On Hold stalls a now-actionable incident."
+    },
+    "references": [
+      {
+        "title": "Exploring Incident Management",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/incident-management-process.html"
+      }
+    ],
+    "tags": [
+      "incident",
+      "on-hold",
+      "state"
+    ]
+  },
+  {
+    "id": "cisitsm-inc-063",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Incident Management",
+    "subdomain": "Incident vs Problem",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "Several incidents keep recurring from the same underlying cause. What's the right way to address the cause?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Raise a problem and link the incidents."
+      },
+      {
+        "id": "B",
+        "text": "Open more incidents each time."
+      },
+      {
+        "id": "C",
+        "text": "Convert them to changes."
+      },
+      {
+        "id": "D",
+        "text": "Delete the duplicate incidents."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Incidents restore service; a problem investigates and eliminates the recurring root cause, with the incidents linked to it. Opening more incidents only treats symptoms.",
+    "distractor_notes": {
+      "B": "More incidents address symptoms, not the cause.",
+      "C": "A change implements a fix but isn't the investigation record.",
+      "D": "Deleting incidents loses history and doesn't fix the cause."
+    },
+    "references": [
+      {
+        "title": "Problem Management",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/c_ProblemManagement.html"
+      }
+    ],
+    "tags": [
+      "incident",
+      "problem",
+      "root-cause"
+    ]
   }
 ]

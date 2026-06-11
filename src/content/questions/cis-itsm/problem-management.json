@@ -1730,5 +1730,101 @@
       "state-model",
       "states"
     ]
+  },
+  {
+    "id": "cisitsm-prb-037",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Problem Management",
+    "subdomain": "Workaround",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A problem's root cause isn't fixed yet, but service must be restored now. What should the team record?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A workaround on the problem."
+      },
+      {
+        "id": "B",
+        "text": "A standard change."
+      },
+      {
+        "id": "C",
+        "text": "A new catalog item."
+      },
+      {
+        "id": "D",
+        "text": "A duplicate incident."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "A workaround temporarily restores service or reduces impact while a permanent fix is pending, and it can notify related incidents. It's the standard interim control on a problem.",
+    "distractor_notes": {
+      "B": "A standard change is a pre-approved change, not an interim restore.",
+      "C": "A catalog item is for requests, not interim fixes.",
+      "D": "Duplicating incidents doesn't restore service."
+    },
+    "references": [
+      {
+        "title": "Problem Management",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/c_ProblemManagement.html"
+      }
+    ],
+    "tags": [
+      "problem",
+      "workaround",
+      "restore"
+    ]
+  },
+  {
+    "id": "cisitsm-prb-038",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Problem Management",
+    "subdomain": "Known Error",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "Investigation has confirmed the root cause and a documented workaround, but no permanent fix yet. How is this captured?",
+    "options": [
+      {
+        "id": "A",
+        "text": "As a known error."
+      },
+      {
+        "id": "B",
+        "text": "As a closed incident."
+      },
+      {
+        "id": "C",
+        "text": "As a standard change."
+      },
+      {
+        "id": "D",
+        "text": "As a service request."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "A known error records a confirmed root cause with a workaround, available for fast handling of recurrences until a permanent fix lands. It's a core Problem Management output.",
+    "distractor_notes": {
+      "B": "A closed incident is one resolved ticket, not the documented root cause.",
+      "C": "A standard change implements work; it doesn't capture the known error.",
+      "D": "A service request is for routine catalog requests."
+    },
+    "references": [
+      {
+        "title": "Problem Management",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/c_ProblemManagement.html"
+      }
+    ],
+    "tags": [
+      "problem",
+      "known-error",
+      "root-cause"
+    ]
   }
 ]

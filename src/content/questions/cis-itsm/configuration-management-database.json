@@ -579,5 +579,53 @@
       "baseline",
       "change-control"
     ]
+  },
+  {
+    "id": "cisitsm-cmdb-013",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Configuration Management Database (CMDB)",
+    "subdomain": "Impact Analysis",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "Before a server change, you need to see which business services depend on it. What makes this possible?",
+    "options": [
+      {
+        "id": "A",
+        "text": "CI relationships."
+      },
+      {
+        "id": "B",
+        "text": "A coalesce field map."
+      },
+      {
+        "id": "C",
+        "text": "A record watch list."
+      },
+      {
+        "id": "D",
+        "text": "A simple UI Policy."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "CI relationships connect CIs so the platform can show dependencies and perform impact analysis — for example, which services a server supports. Without relationships, CIs are isolated.",
+    "distractor_notes": {
+      "B": "Coalesce is an import-matching concept.",
+      "C": "Watch lists handle notifications.",
+      "D": "UI Policies change form behavior."
+    },
+    "references": [
+      {
+        "title": "CI relationships in the CMDB",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/c_CIRelationships.html"
+      }
+    ],
+    "tags": [
+      "cmdb",
+      "relationships",
+      "impact-analysis"
+    ]
   }
 ]

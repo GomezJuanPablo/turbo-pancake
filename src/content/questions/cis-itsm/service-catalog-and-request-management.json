@@ -2875,5 +2875,149 @@
       "transfer",
       "scenario"
     ]
+  },
+  {
+    "id": "cisitsm-scr-061",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Service Catalog and Request Management",
+    "subdomain": "Record Producer",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "You want a friendly catalog form that creates an Incident record when submitted. Which object does this?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A record producer."
+      },
+      {
+        "id": "B",
+        "text": "A standard catalog item."
+      },
+      {
+        "id": "C",
+        "text": "An order guide."
+      },
+      {
+        "id": "D",
+        "text": "A variable set."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "A record producer is a catalog interface that creates a record on a target table (like Incident) from a guided form. Standard items generate requests/RITMs instead.",
+    "distractor_notes": {
+      "B": "A standard item produces a request/RITM, not a direct record.",
+      "C": "Order guides bundle multiple items together.",
+      "D": "A variable set is a reusable group of variables."
+    },
+    "references": [
+      {
+        "title": "Record Producer",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/c_RecordProducer.html"
+      }
+    ],
+    "tags": [
+      "catalog",
+      "record-producer",
+      "incident"
+    ]
+  },
+  {
+    "id": "cisitsm-scr-062",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Service Catalog and Request Management",
+    "subdomain": "Order Guide",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "New-hire onboarding should let a manager order a laptop, phone, and access in one guided flow. What fits?",
+    "options": [
+      {
+        "id": "A",
+        "text": "An order guide."
+      },
+      {
+        "id": "B",
+        "text": "A single catalog item."
+      },
+      {
+        "id": "C",
+        "text": "A record producer."
+      },
+      {
+        "id": "D",
+        "text": "A knowledge base."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Order guides walk a requester through ordering multiple related items together and can pass shared answers between them — ideal for onboarding bundles.",
+    "distractor_notes": {
+      "B": "One item covers one thing, not a multi-item bundle.",
+      "C": "A record producer creates one record on a table.",
+      "D": "A knowledge base stores articles, not orderable bundles."
+    },
+    "references": [
+      {
+        "title": "Define a catalog item",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/t_DefineACatalogItem.html"
+      }
+    ],
+    "tags": [
+      "catalog",
+      "order-guide",
+      "onboarding"
+    ]
+  },
+  {
+    "id": "cisitsm-scr-063",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Service Catalog and Request Management",
+    "subdomain": "User Criteria",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A VPN catalog item should only be orderable by full-time employees. What restricts who can see and order it?",
+    "options": [
+      {
+        "id": "A",
+        "text": "User criteria on the item."
+      },
+      {
+        "id": "B",
+        "text": "A coalesce field map."
+      },
+      {
+        "id": "C",
+        "text": "A record watch list."
+      },
+      {
+        "id": "D",
+        "text": "The list editor tool."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Catalog visibility is governed by user criteria — define who can or cannot see and order an item based on role, group, or other attributes.",
+    "distractor_notes": {
+      "B": "Coalesce is an import-matching concept.",
+      "C": "Watch lists handle notifications.",
+      "D": "The list editor edits field values."
+    },
+    "references": [
+      {
+        "title": "Define a catalog item",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/t_DefineACatalogItem.html"
+      }
+    ],
+    "tags": [
+      "catalog",
+      "user-criteria",
+      "access"
+    ]
   }
 ]

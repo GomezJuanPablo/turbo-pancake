@@ -2887,5 +2887,149 @@
       "unauthorized-change",
       "scenario"
     ]
+  },
+  {
+    "id": "cisitsm-chg-061",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Change Management",
+    "subdomain": "Emergency Change",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A production outage needs an immediate fix outside the normal approval timeline. Which change type applies?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Emergency change."
+      },
+      {
+        "id": "B",
+        "text": "Standard change."
+      },
+      {
+        "id": "C",
+        "text": "Normal change."
+      },
+      {
+        "id": "D",
+        "text": "Knowledge article."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Emergency changes use an expedited path for urgent fixes like outages, while still being recorded for review. Standard is pre-approved routine; normal follows the full cycle.",
+    "distractor_notes": {
+      "B": "Standard changes are pre-approved low-risk routines.",
+      "C": "A normal change follows the full timeline — too slow here.",
+      "D": "A knowledge article documents information, not a change."
+    },
+    "references": [
+      {
+        "title": "Change types",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/change-types.html"
+      }
+    ],
+    "tags": [
+      "change",
+      "emergency",
+      "types"
+    ]
+  },
+  {
+    "id": "cisitsm-chg-062",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Change Management",
+    "subdomain": "Standard Change",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A low-risk, repeatable task with a proven procedure is performed weekly. Which change type fits?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Standard change."
+      },
+      {
+        "id": "B",
+        "text": "Normal change."
+      },
+      {
+        "id": "C",
+        "text": "Emergency change."
+      },
+      {
+        "id": "D",
+        "text": "Problem."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Pre-approved, low-risk, repeatable work follows a standard change template — no CAB approval each time. Normal changes need full assessment; emergency is for urgent fixes.",
+    "distractor_notes": {
+      "B": "Normal changes require full assessment and approval.",
+      "C": "Emergency changes are for urgent, unplanned fixes.",
+      "D": "A problem investigates root cause; it isn't a change type."
+    },
+    "references": [
+      {
+        "title": "Change types",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/change-types.html"
+      }
+    ],
+    "tags": [
+      "change",
+      "standard",
+      "types"
+    ]
+  },
+  {
+    "id": "cisitsm-chg-063",
+    "exam": "CIS-ITSM",
+    "release": "Australia",
+    "domain": "Change Management",
+    "subdomain": "Conflict Detection",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A planned change overlaps a CI's blackout window. What does the platform do, and what's the fix?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Conflict detection flags it; reschedule."
+      },
+      {
+        "id": "B",
+        "text": "It auto-deletes the change."
+      },
+      {
+        "id": "C",
+        "text": "It approves the change anyway."
+      },
+      {
+        "id": "D",
+        "text": "It reassigns the CI's owner."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Conflict detection flags the blackout-window overlap so you reschedule to a valid maintenance window. It doesn't delete, auto-approve, or reassign anything.",
+    "distractor_notes": {
+      "B": "Conflicts are flagged for resolution, not deletion.",
+      "C": "Auto-approving over a blackout defeats the control.",
+      "D": "Owner reassignment is unrelated to scheduling conflicts."
+    },
+    "references": [
+      {
+        "title": "Change Management",
+        "url": "https://www.servicenow.com/docs/r/australia/it-service-management/c_ITILChangeManagement.html"
+      }
+    ],
+    "tags": [
+      "change",
+      "conflict-detection",
+      "blackout"
+    ]
   }
 ]
