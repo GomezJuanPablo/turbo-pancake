@@ -2348,5 +2348,149 @@
       "refactor",
       "scenario"
     ]
+  },
+  {
+    "id": "cad-aui-049",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Application User Interface",
+    "subdomain": "UI Policy",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A developer needs the 'Resolution notes' field to become mandatory only when State is Resolved, with no code. Which tool fits?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A UI Policy with that condition."
+      },
+      {
+        "id": "B",
+        "text": "An onLoad client script."
+      },
+      {
+        "id": "C",
+        "text": "A read ACL on the field."
+      },
+      {
+        "id": "D",
+        "text": "A scheduled job."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "UI Policies declaratively make fields mandatory, read-only, or visible based on a condition like State = Resolved — no scripting needed. Reach for a client script only when the rule can't be expressed declaratively.",
+    "distractor_notes": {
+      "B": "A client script is code; the declarative UI Policy is the intended fit here.",
+      "C": "A read ACL controls visibility/security, not conditional mandatory behavior.",
+      "D": "Scheduled jobs run on a timer, unrelated to form behavior."
+    },
+    "references": [
+      {
+        "title": "UI Policy",
+        "url": "https://www.servicenow.com/docs/r/zurich/application-development/c_UIPolicy.html"
+      }
+    ],
+    "tags": [
+      "ui-policy",
+      "mandatory",
+      "forms"
+    ]
+  },
+  {
+    "id": "cad-aui-050",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Application User Interface",
+    "subdomain": "Client Script",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "When a user changes the Category on a form, a related field must update instantly in the browser. Which script type fits?",
+    "options": [
+      {
+        "id": "A",
+        "text": "An onChange client script."
+      },
+      {
+        "id": "B",
+        "text": "A before business rule."
+      },
+      {
+        "id": "C",
+        "text": "An onLoad client script."
+      },
+      {
+        "id": "D",
+        "text": "A scheduled script."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "onChange client scripts react to a specific field changing on the form, ideal for instant browser-side updates. onLoad runs once at open; business rules run server-side after submit.",
+    "distractor_notes": {
+      "B": "A before business rule runs server-side at save, not live in the browser.",
+      "C": "onLoad runs only when the form first loads, not on a later change.",
+      "D": "Scheduled scripts run on a timer, not on form input."
+    },
+    "references": [
+      {
+        "title": "Client Scripts",
+        "url": "https://www.servicenow.com/docs/r/zurich/application-development/c_ClientScripts.html"
+      }
+    ],
+    "tags": [
+      "client-script",
+      "onchange",
+      "forms"
+    ]
+  },
+  {
+    "id": "cad-aui-051",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Application User Interface",
+    "subdomain": "Client vs Server",
+    "difficulty": "application",
+    "type": "multi_select",
+    "stem": "Which TWO run in the user's browser (client-side)?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Client Scripts."
+      },
+      {
+        "id": "B",
+        "text": "UI Policies."
+      },
+      {
+        "id": "C",
+        "text": "Business Rules."
+      },
+      {
+        "id": "D",
+        "text": "Scheduled Jobs."
+      }
+    ],
+    "correct": [
+      "A",
+      "B"
+    ],
+    "rationale": "Client Scripts and UI Policies execute in the browser on the form. Business Rules and Scheduled Jobs run server-side, so imports and APIs don't bypass them.",
+    "distractor_notes": {
+      "C": "Business Rules run server-side on the database operation.",
+      "D": "Scheduled Jobs run server-side on a timer."
+    },
+    "references": [
+      {
+        "title": "Client Scripts",
+        "url": "https://www.servicenow.com/docs/r/zurich/application-development/c_ClientScripts.html"
+      }
+    ],
+    "tags": [
+      "client-side",
+      "ui-policy",
+      "forms"
+    ]
   }
 ]

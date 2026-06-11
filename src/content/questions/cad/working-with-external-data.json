@@ -1146,5 +1146,53 @@
       "rest",
       "crud"
     ]
+  },
+  {
+    "id": "cad-ext-025",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Working with External Data",
+    "subdomain": "Coalesce",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A recurring user import keeps creating duplicates instead of updating existing records. What should be set?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A coalesce field on the field map."
+      },
+      {
+        "id": "B",
+        "text": "A larger import batch size."
+      },
+      {
+        "id": "C",
+        "text": "A read ACL on the table."
+      },
+      {
+        "id": "D",
+        "text": "A UI Policy on the form."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Marking a unique field (like email) as coalesce tells the transform to update the matching record instead of inserting a new one — eliminating duplicates.",
+    "distractor_notes": {
+      "B": "Batch size affects throughput, not duplicate matching.",
+      "C": "An ACL controls access, not import matching.",
+      "D": "UI Policies act on forms, not server-side imports."
+    },
+    "references": [
+      {
+        "title": "Coalesce fields",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/r_CoalesceFields.html"
+      }
+    ],
+    "tags": [
+      "coalesce",
+      "transform-map",
+      "duplicates"
+    ]
   }
 ]

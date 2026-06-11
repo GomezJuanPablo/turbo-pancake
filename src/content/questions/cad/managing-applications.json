@@ -1710,5 +1710,53 @@
       "engineering-discipline",
       "scenario"
     ]
+  },
+  {
+    "id": "cad-mgr-037",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Managing Applications",
+    "subdomain": "Update Sets",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A developer must move configuration from dev to test. What's the correct order after marking the set Complete?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Retrieve, preview, then commit in test."
+      },
+      {
+        "id": "B",
+        "text": "Commit in dev to push it to test."
+      },
+      {
+        "id": "C",
+        "text": "Export each record by hand."
+      },
+      {
+        "id": "D",
+        "text": "Delete it so test regenerates it."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "In the target, retrieve the completed set, Preview to catch collisions, then Commit. Committing in the source applies it there; it doesn't transport.",
+    "distractor_notes": {
+      "B": "Committing in dev applies it in dev, not test.",
+      "C": "Manual export defeats the purpose of update sets.",
+      "D": "Deleting a set doesn't regenerate anything elsewhere."
+    },
+    "references": [
+      {
+        "title": "Working with update sets",
+        "url": "https://www.servicenow.com/docs/r/zurich/application-development/system-update-sets/using-system-update-sets.html"
+      }
+    ],
+    "tags": [
+      "update-sets",
+      "preview",
+      "commit"
+    ]
   }
 ]

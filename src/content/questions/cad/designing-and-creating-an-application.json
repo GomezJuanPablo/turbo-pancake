@@ -1760,5 +1760,53 @@
       "architecture",
       "scenario"
     ]
+  },
+  {
+    "id": "cad-dca-037",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Designing and Creating an Application",
+    "subdomain": "Table Extension",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A new 'Loaner Request' record represents work with assignment and state. How should the table be modeled?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Extend the Task table."
+      },
+      {
+        "id": "B",
+        "text": "A standalone table, no parent."
+      },
+      {
+        "id": "C",
+        "text": "Extend the Knowledge table."
+      },
+      {
+        "id": "D",
+        "text": "Store it as choice values."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Work-type records extend Task to inherit number, state, assignment, and work notes, staying consistent with ITSM patterns. A standalone table would re-create all of that by hand.",
+    "distractor_notes": {
+      "B": "A standalone table loses the inherited task fields and behavior.",
+      "C": "Knowledge is for articles, not work records.",
+      "D": "Choice values can't represent individual work records."
+    },
+    "references": [
+      {
+        "title": "Table extension",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_TableExtension.html"
+      }
+    ],
+    "tags": [
+      "table-extension",
+      "task",
+      "data-model"
+    ]
   }
 ]

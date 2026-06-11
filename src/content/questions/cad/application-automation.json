@@ -2294,5 +2294,149 @@
       "consolidation",
       "scenario"
     ]
+  },
+  {
+    "id": "cad-aut-049",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Application Automation",
+    "subdomain": "Flow Trigger",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A flow must run every time a Loaner Request is created and email the requester. What starts the flow?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A record-created trigger."
+      },
+      {
+        "id": "B",
+        "text": "An onLoad client script."
+      },
+      {
+        "id": "C",
+        "text": "A coalesce field."
+      },
+      {
+        "id": "D",
+        "text": "A UI Action button."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "A record-based trigger set to Created fires the flow whenever a new record is inserted; a Send Email action then notifies the requester. Client scripts and UI actions don't start flows.",
+    "distractor_notes": {
+      "B": "Client scripts run on the form, not as flow triggers.",
+      "C": "Coalesce is an import-matching concept.",
+      "D": "A UI Action runs on click, not automatically on insert."
+    },
+    "references": [
+      {
+        "title": "Flow trigger",
+        "url": "https://www.servicenow.com/docs/r/zurich/build-workflows/flow-trigger.html"
+      }
+    ],
+    "tags": [
+      "flow",
+      "trigger",
+      "automation"
+    ]
+  },
+  {
+    "id": "cad-aut-050",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Application Automation",
+    "subdomain": "Subflow",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Several flows repeat the same steps. What's the maintainable way to define that logic once and reuse it?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A subflow with inputs and outputs."
+      },
+      {
+        "id": "B",
+        "text": "Copy the steps into each flow."
+      },
+      {
+        "id": "C",
+        "text": "A UI Policy on the form."
+      },
+      {
+        "id": "D",
+        "text": "A separate update set each."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "A subflow packages reusable logic with defined inputs/outputs, callable from many flows — define once, reuse everywhere. Copy-pasting steps causes drift.",
+    "distractor_notes": {
+      "B": "Duplicated steps drift apart and are hard to maintain.",
+      "C": "UI Policies change form behavior, not flow reuse.",
+      "D": "Update sets move configuration; they don't make logic reusable."
+    },
+    "references": [
+      {
+        "title": "Subflow",
+        "url": "https://www.servicenow.com/docs/r/zurich/build-workflows/subflow.html"
+      }
+    ],
+    "tags": [
+      "flow",
+      "subflow",
+      "reuse"
+    ]
+  },
+  {
+    "id": "cad-aut-051",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Application Automation",
+    "subdomain": "Flow Triggers",
+    "difficulty": "application",
+    "type": "multi_select",
+    "stem": "Which TWO are valid Flow Designer trigger types?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Record created or updated."
+      },
+      {
+        "id": "B",
+        "text": "Scheduled (time-based)."
+      },
+      {
+        "id": "C",
+        "text": "Browser tab focus."
+      },
+      {
+        "id": "D",
+        "text": "Mouse hover on a field."
+      }
+    ],
+    "correct": [
+      "A",
+      "B"
+    ],
+    "rationale": "Flows can be triggered by record events (created/updated) and by schedules (plus inbound email and others). Browser focus and hover are not flow triggers.",
+    "distractor_notes": {
+      "C": "Tab focus is a browser event, not a flow trigger.",
+      "D": "Field hover is a UI event, not a flow trigger."
+    },
+    "references": [
+      {
+        "title": "Flow trigger",
+        "url": "https://www.servicenow.com/docs/r/zurich/build-workflows/flow-trigger.html"
+      }
+    ],
+    "tags": [
+      "flow",
+      "trigger",
+      "types"
+    ]
   }
 ]

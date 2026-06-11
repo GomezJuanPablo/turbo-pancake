@@ -2330,5 +2330,149 @@
       "or-across-trap",
       "scenario"
     ]
+  },
+  {
+    "id": "cad-sec-049",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Security and Restricting Access",
+    "subdomain": "Field ACL",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Only members holding the hr role should read the Salary field on a custom table. What enforces this securely?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A field read ACL requiring the hr role."
+      },
+      {
+        "id": "B",
+        "text": "A UI Policy hiding the field."
+      },
+      {
+        "id": "C",
+        "text": "Removing it from the form layout."
+      },
+      {
+        "id": "D",
+        "text": "A client script that clears it."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "A field-level read ACL requiring the hr role makes the platform refuse to return the value to anyone else, across forms, lists, and the API. Hiding it on the form is cosmetic — the value is still reachable.",
+    "distractor_notes": {
+      "B": "UI Policy hides the field on the form only; the value is still readable via list/API.",
+      "C": "Form layout changes are cosmetic, not security.",
+      "D": "A client script can't secure server-side data access."
+    },
+    "references": [
+      {
+        "title": "Access Control List rules",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/access-control/access-control-rules.html"
+      }
+    ],
+    "tags": [
+      "acl",
+      "field-security",
+      "roles"
+    ]
+  },
+  {
+    "id": "cad-sec-050",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Security and Restricting Access",
+    "subdomain": "ACL Evaluation",
+    "difficulty": "application",
+    "type": "multi_select",
+    "stem": "To read a single field's value, which TWO ACL checks must a user pass?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The row (table) read ACL."
+      },
+      {
+        "id": "B",
+        "text": "The field read ACL."
+      },
+      {
+        "id": "C",
+        "text": "Any write ACL on the field."
+      },
+      {
+        "id": "D",
+        "text": "An execute ACL on the table."
+      }
+    ],
+    "correct": [
+      "A",
+      "B"
+    ],
+    "rationale": "Reading a field value requires passing both the row-level and field-level read ACLs — an AND across granularity levels. Write and execute ACLs govern different operations.",
+    "distractor_notes": {
+      "C": "Write ACLs govern editing, not reading.",
+      "D": "Execute ACLs protect operations like UI actions, not field reads."
+    },
+    "references": [
+      {
+        "title": "ACL rule processing",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/r_ACLRuleProcessing.html"
+      }
+    ],
+    "tags": [
+      "acl",
+      "read",
+      "and-logic"
+    ]
+  },
+  {
+    "id": "cad-sec-051",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Security and Restricting Access",
+    "subdomain": "ACL Script",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "In an ACL script, how does a developer grant or deny the request?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Set answer = true to allow."
+      },
+      {
+        "id": "B",
+        "text": "Return the string 'allow'."
+      },
+      {
+        "id": "C",
+        "text": "Throw an exception to allow."
+      },
+      {
+        "id": "D",
+        "text": "Set window.allow = true."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "An ACL script decides access by setting the answer variable to true (allow) or false (deny). The condition, roles, and script all applicable must pass for access.",
+    "distractor_notes": {
+      "B": "ACL scripts use the answer variable, not a returned string.",
+      "C": "Throwing an exception doesn't grant access.",
+      "D": "window is client-side; ACLs run server-side."
+    },
+    "references": [
+      {
+        "title": "Configure an ACL rule",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/access-control/t_CreateAnACLRule.html"
+      }
+    ],
+    "tags": [
+      "acl",
+      "script",
+      "answer"
+    ]
   }
 ]
