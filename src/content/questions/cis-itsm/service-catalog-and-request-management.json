@@ -11,7 +11,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A specific type of catalog item that lets end users create task-based records"
+        "text": "A catalog item that creates task-based records."
       },
       {
         "id": "B",
@@ -110,7 +110,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Create, edit, and copy individual catalog items that users can request"
+        "text": "Create, edit, and copy individual catalog items."
       },
       {
         "id": "B",
@@ -157,7 +157,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A visual, guided experience for creating or editing a catalog item or record producer"
+        "text": "A guided experience for editing a catalog item."
       },
       {
         "id": "B",
@@ -204,7 +204,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Pre-specify values or restrictions for attributes like catalogs, categories, variable types"
+        "text": "Pre-set values/restrictions for item attributes."
       },
       {
         "id": "B",
@@ -252,7 +252,7 @@
     "options": [
       {
         "id": "A",
-        "text": "To order a set of related catalog items together through a multi-step"
+        "text": "To order related catalog items together."
       },
       {
         "id": "B",
@@ -299,7 +299,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Values entered for variables on the initial order form are passed to the equivalent variables in the ordered catalog items"
+        "text": "Order-form variable values pass to the ordered items."
       },
       {
         "id": "B",
@@ -347,7 +347,7 @@
     "options": [
       {
         "id": "A",
-        "text": "By defining order guide rules that add catalog items when specific conditions are met"
+        "text": "Order guide rules that add items."
       },
       {
         "id": "B",
@@ -395,7 +395,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A reusable set of variables that can be added to multiple catalog items and order guides"
+        "text": "Reusable variables for many items."
       },
       {
         "id": "B",
@@ -443,7 +443,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Catalog client scripts, data lookup rules, and advanced reference qualifiers"
+        "text": "Catalog client scripts, data lookups, ref qualifiers."
       },
       {
         "id": "B",
@@ -491,7 +491,7 @@
     "options": [
       {
         "id": "A",
-        "text": "To define client-side dynamic behavior or validations on the item"
+        "text": "To define client-side behavior or validation."
       },
       {
         "id": "B",
@@ -539,7 +539,7 @@
     "options": [
       {
         "id": "A",
-        "text": "To store catalog items or order guides in one place so they can be checked out together"
+        "text": "To store items/guides together for checkout."
       },
       {
         "id": "B",
@@ -683,7 +683,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Configure the layout and functionality of the service catalog cart used to place requests"
+        "text": "Configure the catalog cart layout."
       },
       {
         "id": "B",
@@ -731,7 +731,7 @@
     "options": [
       {
         "id": "A",
-        "text": "To add catalog items or record producers so they can be reviewed later when needed"
+        "text": "To add items/producers to review later."
       },
       {
         "id": "B",
@@ -778,7 +778,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Yes — Service Catalog lets you add a catalog item to multiple catalogs and categories"
+        "text": "Yes — an item can be in multiple catalogs/categories."
       },
       {
         "id": "B",
@@ -826,7 +826,7 @@
     "options": [
       {
         "id": "A",
-        "text": "User criteria records applied to items and categories"
+        "text": "User criteria on items and categories."
       },
       {
         "id": "B",
@@ -874,7 +874,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Organize and display commonly requested items and knowledge articles"
+        "text": "Organize commonly requested items."
       },
       {
         "id": "B",
@@ -922,7 +922,7 @@
     "options": [
       {
         "id": "A",
-        "text": "They group catalog items so users can browse to the items within them"
+        "text": "They group items so users can browse to them."
       },
       {
         "id": "B",
@@ -969,7 +969,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A fulfillment mechanism you can associate with catalog items to define the work needed to deliver them"
+        "text": "A fulfillment mechanism tied to catalog items."
       },
       {
         "id": "B",
@@ -1017,7 +1017,7 @@
     "options": [
       {
         "id": "A",
-        "text": "One or more task templates, each defining work that a specific fulfillment group completes"
+        "text": "Task templates for fulfillment groups."
       },
       {
         "id": "B",
@@ -1113,7 +1113,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Submit requests for services, products, or information through a self-service portal, with streamlined fulfillment workflows"
+        "text": "Submit self-service requests with workflows."
       },
       {
         "id": "B",
@@ -1208,7 +1208,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Allowing catalog items to be requested and fulfilled based on defined flows"
+        "text": "Items requested and fulfilled by flows."
       },
       {
         "id": "B",
@@ -1255,7 +1255,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Efficiently manage multiple incidents, catalog requests"
+        "text": "Manage many incidents and requests."
       },
       {
         "id": "B",
@@ -1302,19 +1302,19 @@
     "options": [
       {
         "id": "A",
-        "text": "To join the Service Catalog flow from another flow and associate the request with the incident for end-to-end tracking"
+        "text": "Join the catalog flow to the incident."
       },
       {
         "id": "B",
-        "text": "To delete the incident"
+        "text": "To delete the incident record."
       },
       {
         "id": "C",
-        "text": "To reconcile the CMDB"
+        "text": "To reconcile the CMDB now."
       },
       {
         "id": "D",
-        "text": "To bypass all approvals"
+        "text": "To bypass all approvals here."
       }
     ],
     "correct": [
@@ -1398,19 +1398,19 @@
     "options": [
       {
         "id": "A",
-        "text": "An order guide with cascading variables"
+        "text": "An order guide, cascading variables."
       },
       {
         "id": "B",
-        "text": "A single record producer"
+        "text": "A single record producer item."
       },
       {
         "id": "C",
-        "text": "A knowledge article"
+        "text": "A knowledge article page."
       },
       {
         "id": "D",
-        "text": "A change request"
+        "text": "A change request record."
       }
     ],
     "correct": [
@@ -1446,7 +1446,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Configuring the fields and attributes that define a catalog item"
+        "text": "Configure the fields of a catalog item."
       },
       {
         "id": "B",
@@ -1542,19 +1542,19 @@
     "options": [
       {
         "id": "A",
-        "text": "Define service fulfillment steps while creating a catalog item in Catalog Builder"
+        "text": "Steps in Catalog Builder."
       },
       {
         "id": "B",
-        "text": "Detect duplicate CIs"
+        "text": "Detect duplicate CIs here."
       },
       {
         "id": "C",
-        "text": "Schedule CAB meetings"
+        "text": "Schedule the CAB meetings."
       },
       {
         "id": "D",
-        "text": "Set incident priority"
+        "text": "Set the incident priority."
       }
     ],
     "correct": [
@@ -1590,7 +1590,7 @@
     "options": [
       {
         "id": "A",
-        "text": "It fulfills items in an order so that required items are completed before their dependent items, without manual checking"
+        "text": "It completes required items before their dependents."
       },
       {
         "id": "B",
@@ -1638,7 +1638,7 @@
     "options": [
       {
         "id": "A",
-        "text": "To set up a default value mechanism so the user can focus only on the required values"
+        "text": "Default values for the fields."
       },
       {
         "id": "B",
@@ -1787,7 +1787,7 @@
     "options": [
       {
         "id": "A",
-        "text": "What percentage of the screen size the variable can span on a catalog item page"
+        "text": "What percent of the screen width the variable spans."
       },
       {
         "id": "B",
@@ -1835,7 +1835,7 @@
     "options": [
       {
         "id": "A",
-        "text": "So the audit history records all changes to the named variables"
+        "text": "So audit history records the changes."
       },
       {
         "id": "B",
@@ -1883,7 +1883,7 @@
     "options": [
       {
         "id": "A",
-        "text": "By considering certain fields of the catalog item table when matching the keyword"
+        "text": "By matching the keyword against certain item fields."
       },
       {
         "id": "B",
@@ -1978,7 +1978,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Users can view and request items from all catalogs in the system"
+        "text": "View and request items from all catalogs."
       },
       {
         "id": "B",
@@ -2026,7 +2026,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Shopping cart preview screens for the one-step and two-step carts, the wish list"
+        "text": "Previews for one/two-step carts."
       },
       {
         "id": "B",
@@ -2074,7 +2074,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Shopping cart status screens for desktop and Classic Mobile orders"
+        "text": "Cart status for desktop and mobile."
       },
       {
         "id": "B",
@@ -2121,7 +2121,7 @@
     "options": [
       {
         "id": "A",
-        "text": "To use an alternate description field or to add the request item number for each line"
+        "text": "Use an alternate description field."
       },
       {
         "id": "B",
@@ -2265,7 +2265,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Add a catalog item or order guide to store in one place and check out together"
+        "text": "Store items/guides for checkout."
       },
       {
         "id": "B",
@@ -2277,7 +2277,7 @@
       },
       {
         "id": "D",
-        "text": "Define SLAs"
+        "text": "Define the SLAs here."
       }
     ],
     "correct": [
@@ -2313,7 +2313,7 @@
     "options": [
       {
         "id": "A",
-        "text": "So the catalog item appears as content within the relevant topic or child topics in Employee Center"
+        "text": "Shows under its Employee Center topic."
       },
       {
         "id": "B",
@@ -2361,7 +2361,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Widgets for the shopping cart, catalog items, and order guides"
+        "text": "Cart, item, and order-guide widgets."
       },
       {
         "id": "B",
@@ -2409,7 +2409,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Creating a universal request by submitting a request from a catalog item or record producer, for a consistent ticketing experience"
+        "text": "A universal request for consistency."
       },
       {
         "id": "B",
@@ -2457,7 +2457,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Configure all catalog items or all record producers at once for universal request creation"
+        "text": "Configure all items/producers for universal requests."
       },
       {
         "id": "B",
@@ -2505,7 +2505,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Create the request and assign it to the appropriate assignment group for the request manager to fulfill"
+        "text": "Create and assign the request."
       },
       {
         "id": "B",
@@ -2553,7 +2553,7 @@
     "options": [
       {
         "id": "A",
-        "text": "To provide a better user experience and track progress as the requested item state transitions"
+        "text": "Improve UX and track item progress."
       },
       {
         "id": "B",
@@ -2601,7 +2601,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Moving the request to another department, with or without resolution, to fulfill it"
+        "text": "Move the request to another department."
       },
       {
         "id": "B",
@@ -2696,7 +2696,7 @@
     "options": [
       {
         "id": "A",
-        "text": "They are installed with the activation of the ITSM Roles - Request Management plugin"
+        "text": "Installed with the ITSM Request Management plugin."
       },
       {
         "id": "B",
@@ -2744,7 +2744,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Requesting items on behalf of another user"
+        "text": "Requesting items for another user."
       },
       {
         "id": "B",
@@ -2792,19 +2792,19 @@
     "options": [
       {
         "id": "A",
-        "text": "A step-based service fulfillment flow"
+        "text": "A step-based fulfillment flow."
       },
       {
         "id": "B",
-        "text": "A user criteria record"
+        "text": "A user criteria record here."
       },
       {
         "id": "C",
-        "text": "A dynamic category"
+        "text": "A dynamic category set."
       },
       {
         "id": "D",
-        "text": "A variable set"
+        "text": "A reusable variable set."
       }
     ],
     "correct": [
@@ -2840,7 +2840,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Transfer the request to the other department, with or without resolution, so the right team can fulfill it"
+        "text": "Transfer the request to another department to fulfill."
       },
       {
         "id": "B",

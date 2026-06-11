@@ -106,7 +106,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Which state model is invoked and the change process that must be followed"
+        "text": "Which state model and change process applies."
       },
       {
         "id": "B",
@@ -154,7 +154,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A pre-authorized, low-risk, repeatable change with a proven history of success that follows a specified procedure"
+        "text": "A pre-authorized, low-risk, repeatable change."
       },
       {
         "id": "B",
@@ -249,7 +249,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Emergency change — it bypasses group and peer review and goes straight to the Authorize state for the CAB approval group"
+        "text": "Emergency change — straight to Authorize for the CAB."
       },
       {
         "id": "B",
@@ -345,7 +345,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Any service change that is not a standard change or an emergency change"
+        "text": "Any change that isn't standard or emergency."
       },
       {
         "id": "B",
@@ -393,7 +393,7 @@
     "options": [
       {
         "id": "A",
-        "text": "To implement a controlled process for modifying approved and supported configuration items"
+        "text": "A controlled process for modifying supported CIs."
       },
       {
         "id": "B",
@@ -441,7 +441,7 @@
     "options": [
       {
         "id": "A",
-        "text": "As a catalog of predefined standard change templates"
+        "text": "Standard change templates catalog."
       },
       {
         "id": "B",
@@ -489,7 +489,7 @@
     "options": [
       {
         "id": "A",
-        "text": "By creating it from a published standard change catalog template"
+        "text": "By creating it from a standard change template."
       },
       {
         "id": "B",
@@ -585,7 +585,7 @@
     "options": [
       {
         "id": "A",
-        "text": "The attached files are copied to the change request created from the template"
+        "text": "Attached files are copied to the change request."
       },
       {
         "id": "B",
@@ -729,7 +729,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Create a change from a list of CIs, or add selected CIs from a list to a change record"
+        "text": "From CIs, or add CIs to a change."
       },
       {
         "id": "B",
@@ -777,7 +777,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Through related lists on the Change Request form, and from the dependency views map"
+        "text": "Via related lists and dependency views."
       },
       {
         "id": "B",
@@ -825,7 +825,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Assess and analyze the risk and impact, and review any conflicts that are detected"
+        "text": "Assess risk and impact and review detected conflicts."
       },
       {
         "id": "B",
@@ -921,7 +921,7 @@
     "options": [
       {
         "id": "A",
-        "text": "How likely a team is to complete the change request without issues"
+        "text": "How likely the change is to complete without issues."
       },
       {
         "id": "B",
@@ -969,7 +969,7 @@
     "options": [
       {
         "id": "A",
-        "text": "The configuration items and the planned start and end dates, also checking blackout/maintenance schedules and other active changes"
+        "text": "The CIs and dates, with blackout schedules."
       },
       {
         "id": "B",
@@ -1070,7 +1070,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A graphical view of potential scheduling conflicts, with the Scheduling Assistant to help resolve them"
+        "text": "A graphical conflict view with the Scheduling Assistant."
       },
       {
         "id": "B",
@@ -1118,7 +1118,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Run conflict detection manually for the change request and review the detected conflicts"
+        "text": "Run conflict detection and review the conflicts."
       },
       {
         "id": "B",
@@ -1167,7 +1167,7 @@
     "options": [
       {
         "id": "A",
-        "text": "The periods during which a configuration item or change can be implemented"
+        "text": "When a CI or change can be implemented."
       },
       {
         "id": "B",
@@ -1215,7 +1215,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Conflict detection flags the blackout window, and you reschedule the change to a valid maintenance window"
+        "text": "Conflict detection flags it; reschedule to a valid window."
       },
       {
         "id": "B",
@@ -1264,7 +1264,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A Gantt or timeline view based on criteria defined in a Change Schedule Definition"
+        "text": "A Gantt from a Change Schedule Definition."
       },
       {
         "id": "B",
@@ -1360,7 +1360,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A recurring meeting invitation that determines the attributes of all CAB meetings generated from it"
+        "text": "Recurring invite for CAB attributes."
       },
       {
         "id": "B",
@@ -1408,7 +1408,7 @@
     "options": [
       {
         "id": "A",
-        "text": "They use approval definitions to generate approvals according to your business requirements"
+        "text": "They use approval definitions to generate approvals."
       },
       {
         "id": "B",
@@ -1456,7 +1456,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Tailor change activities and flows for specific use cases with fit-for-purpose state models"
+        "text": "Tailor change flows with fit-for-purpose state models."
       },
       {
         "id": "B",
@@ -1556,7 +1556,7 @@
     "options": [
       {
         "id": "A",
-        "text": "To configure the states and transitions that match your organization's change processes"
+        "text": "Your process's states and transitions."
       },
       {
         "id": "B",
@@ -1604,7 +1604,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Define the states for a change model and the transitions between them"
+        "text": "Define a change model's states and transitions."
       },
       {
         "id": "B",
@@ -1652,7 +1652,7 @@
     "options": [
       {
         "id": "A",
-        "text": "To enable state transitions based on defined conditions"
+        "text": "Enable transitions on defined conditions."
       },
       {
         "id": "B",
@@ -1700,7 +1700,7 @@
     "options": [
       {
         "id": "A",
-        "text": "To enable access to the Change models capabilities when creating a change request"
+        "text": "To enable Change models when creating a change."
       },
       {
         "id": "B",
@@ -1748,7 +1748,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A library of reusable actions and end-to-end implementations of the base-system change models"
+        "text": "Reusable base change-model actions."
       },
       {
         "id": "B",
@@ -1796,7 +1796,7 @@
     "options": [
       {
         "id": "A",
-        "text": "The new base-system flows replace the existing workflows, though you can still create or use custom workflows"
+        "text": "New base-system flows replace the old workflows."
       },
       {
         "id": "B",
@@ -1988,7 +1988,7 @@
     "options": [
       {
         "id": "A",
-        "text": "View and manage the details of a CAB meeting and its agenda items"
+        "text": "View and manage a CAB meeting and its agenda."
       },
       {
         "id": "B",
@@ -2036,7 +2036,7 @@
     "options": [
       {
         "id": "A",
-        "text": "View the agenda items and change schedule, and approve a change request"
+        "text": "View agenda and schedule, and approve a change."
       },
       {
         "id": "B",
@@ -2132,7 +2132,7 @@
     "options": [
       {
         "id": "A",
-        "text": "To customize the agenda and make the meeting more effective"
+        "text": "To customize the agenda and improve the meeting."
       },
       {
         "id": "B",
@@ -2180,7 +2180,7 @@
     "options": [
       {
         "id": "A",
-        "text": "To define the approvals that should be generated for a change"
+        "text": "Define the approvals for a change."
       },
       {
         "id": "B",
@@ -2228,7 +2228,7 @@
     "options": [
       {
         "id": "A",
-        "text": "The conditions used to determine the change approval action"
+        "text": "The conditions that determine the approval action."
       },
       {
         "id": "B",
@@ -2276,7 +2276,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Creates user and group approvals according to a change approval policy record"
+        "text": "Generates approvals per policy."
       },
       {
         "id": "B",
@@ -2324,19 +2324,19 @@
     "options": [
       {
         "id": "A",
-        "text": "An active or canceled change request"
+        "text": "An active or canceled change request."
       },
       {
         "id": "B",
-        "text": "Only a closed incident"
+        "text": "Only a closed incident record."
       },
       {
         "id": "C",
-        "text": "Only a problem record"
+        "text": "Only a problem record here."
       },
       {
         "id": "D",
-        "text": "Only a knowledge article"
+        "text": "Only a knowledge article."
       }
     ],
     "correct": [
@@ -2467,19 +2467,19 @@
     "options": [
       {
         "id": "A",
-        "text": "Discovery, Software Asset Management, and Hardware Asset Management"
+        "text": "Discovery, Software AM, Hardware AM."
       },
       {
         "id": "B",
-        "text": "Only the Service Portal"
+        "text": "Only the Service Portal app."
       },
       {
         "id": "C",
-        "text": "Only Virtual Agent"
+        "text": "Only the Virtual Agent."
       },
       {
         "id": "D",
-        "text": "Only the Knowledge base"
+        "text": "Only the Knowledge base."
       }
     ],
     "correct": [
@@ -2514,7 +2514,7 @@
     "options": [
       {
         "id": "A",
-        "text": "The CI can be maintained automatically, and fulfillers can manually request the discovery process for a CI"
+        "text": "Maintained automatically and on request."
       },
       {
         "id": "B",
@@ -2562,7 +2562,7 @@
     "options": [
       {
         "id": "A",
-        "text": "The asset action to perform on the CI associated with a hardware asset"
+        "text": "The asset action to perform on the CI."
       },
       {
         "id": "B",
@@ -2610,7 +2610,7 @@
     "options": [
       {
         "id": "A",
-        "text": "The projected licensing cost implication of a change"
+        "text": "The projected licensing cost of a change."
       },
       {
         "id": "B",
@@ -2658,7 +2658,7 @@
     "options": [
       {
         "id": "A",
-        "text": "The Software Asset Management integration, shown in the License change projection form section"
+        "text": "The SAM integration, in the License change projection."
       },
       {
         "id": "B",
@@ -2707,7 +2707,7 @@
     "options": [
       {
         "id": "A",
-        "text": "To classify templates by change model, template usage, and organizational areas"
+        "text": "Classify templates by model, usage, and area."
       },
       {
         "id": "B",
@@ -2755,7 +2755,7 @@
     "options": [
       {
         "id": "A",
-        "text": "When the standard change request is created, provided the standard change proposal was approved"
+        "text": "When the standard change request is created, if approved."
       },
       {
         "id": "B",
@@ -2803,7 +2803,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Assigning maintenance schedules to CIs lets conflict detection determine conflicts in a change schedule when those CIs are added to a change"
+        "text": "Schedules let conflict detection find conflicts."
       },
       {
         "id": "B",
