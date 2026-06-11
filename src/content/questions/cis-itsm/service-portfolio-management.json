@@ -11,7 +11,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Document and manage your IT services using a standardized, structured format"
+        "text": "Document and manage IT services in a standard format."
       },
       {
         "id": "B",
@@ -58,15 +58,15 @@
     "options": [
       {
         "id": "A",
-        "text": "Services currently available"
+        "text": "Services available now."
       },
       {
         "id": "B",
-        "text": "Services that may be available in the future"
+        "text": "Possible future services."
       },
       {
         "id": "C",
-        "text": "Services that existed in the past"
+        "text": "Past (retired) services."
       },
       {
         "id": "D",
@@ -206,7 +206,7 @@
     "options": [
       {
         "id": "A",
-        "text": "It inherits the pricing structure of its associated parent service"
+        "text": "It inherits the parent service's pricing."
       },
       {
         "id": "B",
@@ -254,7 +254,7 @@
     "options": [
       {
         "id": "A",
-        "text": "The unique availability guarantees, scope, and pricing for the offering"
+        "text": "Its availability, scope, and pricing."
       },
       {
         "id": "B",
@@ -302,7 +302,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A framework of layers and nodes used to organize and manage services in a portfolio"
+        "text": "Layers and nodes for the portfolio."
       },
       {
         "id": "B",
@@ -492,7 +492,7 @@
     "options": [
       {
         "id": "A",
-        "text": "To adjust the availability of a business or technical service commitment"
+        "text": "Adjust a commitment's availability."
       },
       {
         "id": "B",

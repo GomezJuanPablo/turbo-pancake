@@ -202,7 +202,7 @@
     "options": [
       {
         "id": "A",
-        "text": "To determine whether the problem requires a thorough investigation"
+        "text": "To decide if the problem needs investigation."
       },
       {
         "id": "B",
@@ -298,7 +298,7 @@
     "options": [
       {
         "id": "A",
-        "text": "The mandatory fields in the assess dialog must be filled in"
+        "text": "The assess dialog's mandatory fields must be filled."
       },
       {
         "id": "B",
@@ -346,7 +346,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A temporary way to restore service or lessen impact while no permanent resolution exists yet"
+        "text": "A temporary way to restore service without a fix."
       },
       {
         "id": "B",
@@ -394,7 +394,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A notification is sent to related incidents that a workaround is available"
+        "text": "Related incidents are notified a workaround exists."
       },
       {
         "id": "B",
@@ -538,7 +538,7 @@
     "options": [
       {
         "id": "A",
-        "text": "It lets the problem coordinator ask subject matter experts to help identify the root cause and proposed fix"
+        "text": "It lets the coordinator ask SMEs for root cause/fix."
       },
       {
         "id": "B",
@@ -634,7 +634,7 @@
     "options": [
       {
         "id": "A",
-        "text": "The smallest unit of work performed to complete a problem"
+        "text": "The smallest unit of work on a problem."
       },
       {
         "id": "B",
@@ -682,7 +682,7 @@
     "options": [
       {
         "id": "A",
-        "text": "To prioritize it and highlight that it needs a review"
+        "text": "To prioritize and flag for review."
       },
       {
         "id": "B",
@@ -826,7 +826,7 @@
     "options": [
       {
         "id": "A",
-        "text": "To avoid creating multiple problems for incidents that share the same underlying issue"
+        "text": "To avoid multiple problems for the same issue."
       },
       {
         "id": "B",
@@ -874,7 +874,7 @@
     "options": [
       {
         "id": "A",
-        "text": "To capture all the changes needed to implement the fix for that problem"
+        "text": "To capture all changes needed for the fix."
       },
       {
         "id": "B",
@@ -922,7 +922,7 @@
     "options": [
       {
         "id": "A",
-        "text": "To identify all the configuration items affected by the same problem"
+        "text": "To find all CIs affected by the problem."
       },
       {
         "id": "B",
@@ -970,7 +970,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Related incident records are impacted and a notification is sent for each such update"
+        "text": "Related incidents are impacted and notified per update."
       },
       {
         "id": "B",
@@ -1066,7 +1066,7 @@
     "options": [
       {
         "id": "A",
-        "text": "You can create a knowledge article from the problem immediately, without waiting for the problem to be closed"
+        "text": "You can create a KB article before the problem closes."
       },
       {
         "id": "B",
@@ -1114,7 +1114,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Add a detailed note of the resolution for future reference"
+        "text": "Add a resolution note for reference."
       },
       {
         "id": "B",
@@ -1162,7 +1162,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Tailor processes with custom states and transitions for specific use cases"
+        "text": "Tailor processes with custom states/transitions."
       },
       {
         "id": "B",
@@ -1210,7 +1210,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Enable the Problem Management models system property"
+        "text": "Enable the Problem Management models property."
       },
       {
         "id": "B",
@@ -1258,7 +1258,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Custom states and transitions tailored to your use cases"
+        "text": "Custom states and transitions."
       },
       {
         "id": "B",
@@ -1354,7 +1354,7 @@
     "options": [
       {
         "id": "A",
-        "text": "To provide a refined way of monitoring and reporting on problems"
+        "text": "A refined way to monitor and report on problems."
       },
       {
         "id": "B",
@@ -1402,7 +1402,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Using data lookup and assignment rules to automatically assign a task based on predefined conditions"
+        "text": "Data lookup/assignment rules auto-assign the task."
       },
       {
         "id": "B",
@@ -1594,7 +1594,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Problem tasks assigned to the different groups"
+        "text": "Problem tasks assigned to the groups."
       },
       {
         "id": "B",
@@ -1642,7 +1642,7 @@
     "options": [
       {
         "id": "A",
-        "text": "It helps resolve incoming incidents quickly and avoids new problems being raised on the same issue"
+        "text": "It resolves incidents fast and prevents duplicate problems."
       },
       {
         "id": "B",

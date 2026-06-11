@@ -11,7 +11,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A series of connected tables that contain all the assets and business services controlled by a company"
+        "text": "Connected tables of a company's assets/services."
       },
       {
         "id": "B",
@@ -59,7 +59,7 @@
     "options": [
       {
         "id": "A",
-        "text": "It tracks the configuration items and also the relationships between those items"
+        "text": "It tracks CIs and the relationships between them."
       },
       {
         "id": "B",
@@ -107,7 +107,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A centralized framework for identifying and reconciling data from different data sources to maintain CMDB integrity"
+        "text": "Framework to identify/reconcile source data."
       },
       {
         "id": "B",
@@ -305,7 +305,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Centrally view, create, or edit class definitions, IRE class settings"
+        "text": "View and edit class and IRE settings."
       },
       {
         "id": "B",
@@ -353,7 +353,7 @@
     "options": [
       {
         "id": "A",
-        "text": "View, create, modify, or delete CI relationships"
+        "text": "Create or modify CI relationships."
       },
       {
         "id": "B",
@@ -401,7 +401,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Examine a CI and its relationships in various views, and launch the relationship editor"
+        "text": "Examine a CI and its relationships."
       },
       {
         "id": "B",
@@ -449,7 +449,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Building complex infrastructure and service queries that span multiple CMDB classes, non-CMDB tables"
+        "text": "Queries across many CMDB classes."
       },
       {
         "id": "B",
@@ -497,7 +497,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A central, modernized workspace to search and explore the CMDB, examine health and recent activities"
+        "text": "A modern workspace to search and explore the CMDB."
       },
       {
         "id": "B",
@@ -544,7 +544,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Understand and control the changes that have been made to your CIs in the CMDB"
+        "text": "Understand and control changes made to your CIs."
       },
       {
         "id": "B",

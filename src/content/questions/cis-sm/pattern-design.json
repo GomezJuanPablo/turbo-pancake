@@ -107,7 +107,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Each Connection Section runs and every successful section contributes a connection to the map"
+        "text": "Each Connection Section adds a connection to the map."
       },
       {
         "id": "B",
@@ -499,7 +499,7 @@
       },
       {
         "id": "C",
-        "text": "A CI Type/Table for the pattern to populate"
+        "text": "A CI Type/Table to populate."
       },
       {
         "id": "D",
@@ -831,7 +831,7 @@
       },
       {
         "id": "B",
-        "text": "Host A (the source that initiates the connection)"
+        "text": "Host A (the initiator)."
       },
       {
         "id": "C",
@@ -931,7 +931,7 @@
       },
       {
         "id": "C",
-        "text": "No Connection Section is defined for Apache to Tomcat"
+        "text": "No Connection Section defined for Apache to Tomcat."
       },
       {
         "id": "D",
@@ -1119,7 +1119,7 @@
       },
       {
         "id": "B",
-        "text": "ServiceNow Store (Discovery and Service Mapping Patterns app)"
+        "text": "The ServiceNow Store."
       },
       {
         "id": "C",
@@ -1167,7 +1167,7 @@
       },
       {
         "id": "B",
-        "text": "Allow fallback to parent's rules"
+        "text": "Fallback to parent rules."
       },
       {
         "id": "C",
@@ -1319,7 +1319,7 @@
       },
       {
         "id": "D",
-        "text": "An identification error occurs because a required criterion attribute"
+        "text": "A required criterion attribute is missing."
       }
     ],
     "correct": [
@@ -1403,7 +1403,7 @@
     "options": [
       {
         "id": "A",
-        "text": "A method by which a user interacts with a service, or by which one CI interacts with another"
+        "text": "How a user or CI interacts with a service."
       },
       {
         "id": "B",
@@ -1948,7 +1948,7 @@
       },
       {
         "id": "D",
-        "text": "To recognize and classify the CI and create or update it in the CMDB"
+        "text": "To recognize, classify, and create/update the CI."
       }
     ],
     "correct": [
@@ -1992,7 +1992,7 @@
       },
       {
         "id": "C",
-        "text": "An ambiguous multiple-match that should be surfaced for review rather than blindly updated"
+        "text": "An ambiguous multi-match to surface for review."
       },
       {
         "id": "D",
@@ -2228,7 +2228,7 @@
       },
       {
         "id": "B",
-        "text": "A warning triangle on the affected CI"
+        "text": "A warning triangle icon."
       },
       {
         "id": "C",
@@ -2468,7 +2468,7 @@
       },
       {
         "id": "B",
-        "text": "Both Identification and Connection sections"
+        "text": "ID and Connection sections."
       },
       {
         "id": "C",
@@ -2512,7 +2512,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Direct baseline edits are overwritten on upgrade and aren't upgrade-safe"
+        "text": "Baseline edits are overwritten on upgrade."
       },
       {
         "id": "B",
@@ -2572,7 +2572,7 @@
       },
       {
         "id": "D",
-        "text": "Adds detailed, step-by-step verbosity to the discovery log for inspection"
+        "text": "Adds step-by-step detail to the log."
       }
     ],
     "correct": [
@@ -2952,7 +2952,7 @@
       },
       {
         "id": "C",
-        "text": "Run the pattern in debug against that host and inspect the discovery log step-by-step"
+        "text": "Run the pattern in debug and inspect the log."
       },
       {
         "id": "D",
@@ -3040,7 +3040,7 @@
     "options": [
       {
         "id": "A",
-        "text": "More specific sections should be listed before broader ones so the precise match wins first"
+        "text": "List specific sections before broader ones."
       },
       {
         "id": "B",
@@ -3192,7 +3192,7 @@
       },
       {
         "id": "C",
-        "text": "Yes — variables from the Identification Section are available to Connection Sections of the same pattern"
+        "text": "Yes — Identification Section variables are available."
       },
       {
         "id": "D",
@@ -3332,7 +3332,7 @@
       },
       {
         "id": "B",
-        "text": "Lets the identifier still match when a criterion attribute value is empty/null"
+        "text": "Lets the identifier match when an attribute is null."
       },
       {
         "id": "C",
@@ -3472,7 +3472,7 @@
     "options": [
       {
         "id": "A",
-        "text": "An entry point (such as the service URL or load balancer)"
+        "text": "An entry point (URL or load balancer)."
       },
       {
         "id": "B",
@@ -3520,7 +3520,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Create a pattern from the generic application so it's identified correctly"
+        "text": "Create a pattern from the generic application."
       },
       {
         "id": "B",
@@ -3712,7 +3712,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Add a manual connection (inclusion) to the map"
+        "text": "Add a manual connection (inclusion)."
       },
       {
         "id": "B",
@@ -3904,7 +3904,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Service Mapping builds a service-centric map of dependencies from an entry point"
+        "text": "A service-centric dependency map."
       },
       {
         "id": "B",
@@ -3952,11 +3952,11 @@
     "options": [
       {
         "id": "A",
-        "text": "Identification sections identify and populate the current CI"
+        "text": "Identification sections handle the current CI."
       },
       {
         "id": "B",
-        "text": "Connection sections find the next CIs to continue the map"
+        "text": "Connection sections find the next CIs."
       },
       {
         "id": "C",
