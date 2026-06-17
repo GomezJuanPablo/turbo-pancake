@@ -157,6 +157,8 @@
   .fb__toggle svg { display: block; }
 
   .fb__backdrop { position: fixed; inset: 0; z-index: 1; background: transparent; }
+  /* The hidden attribute must win over display:flex below. */
+  .fb__panel[hidden], .fb__backdrop[hidden] { display: none !important; }
   .fb__toggle { z-index: 2; position: relative; }
   .fb__panel {
     position: absolute; z-index: 2; bottom: 52px; left: 0;
