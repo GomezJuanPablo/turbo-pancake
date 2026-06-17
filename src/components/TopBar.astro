@@ -36,10 +36,21 @@ const activeLabel = navItems.find(i => i.id === activeNav)?.label ?? 'All';
   </button>
 
   <div class="topbar__status" aria-label="User status">
-    <div class="topbar__themes" role="group" aria-label="Theme">
-      <button type="button" class="theme-dot" data-theme-set="default" title="Teal theme" aria-label="Teal theme" style="background:#0E8B9E"></button>
-      <button type="button" class="theme-dot" data-theme-set="pink" title="Pink theme" aria-label="Pink theme" style="background:#D6336C"></button>
-      <button type="button" class="theme-dot" data-theme-set="midnight" title="Midnight theme" aria-label="Midnight theme" style="background:#6EA8FE"></button>
+    <div class="topbar__settings" data-settings>
+      <button type="button" class="topbar__gear" data-settings-toggle aria-haspopup="true" aria-expanded="false" aria-label="Settings and theme">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="3"></circle>
+          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+        </svg>
+      </button>
+      <div class="topbar__menu" data-settings-menu role="menu" aria-label="Theme">
+        <div class="topbar__menu-title">Theme</div>
+        <button type="button" class="theme-opt" data-theme-set="zurich"    role="menuitemradio"><span class="theme-opt__dot" style="background:#0E8B9E"></span><span class="theme-opt__name">Zurich</span><span class="theme-opt__check">✓</span></button>
+        <button type="button" class="theme-opt" data-theme-set="tokyo"     role="menuitemradio"><span class="theme-opt__dot" style="background:#D6336C"></span><span class="theme-opt__name">Tokyo</span><span class="theme-opt__check">✓</span></button>
+        <button type="button" class="theme-opt" data-theme-set="yokohama"  role="menuitemradio"><span class="theme-opt__dot" style="background:#1F77C2"></span><span class="theme-opt__name">Yokohama</span><span class="theme-opt__check">✓</span></button>
+        <button type="button" class="theme-opt" data-theme-set="xanadu"    role="menuitemradio"><span class="theme-opt__dot" style="background:#7C5CD6"></span><span class="theme-opt__name">Xanadu</span><span class="theme-opt__check">✓</span></button>
+        <button type="button" class="theme-opt" data-theme-set="vancouver" role="menuitemradio"><span class="theme-opt__dot" style="background:#15163A"></span><span class="theme-opt__name">Vancouver</span><span class="theme-opt__check">✓</span></button>
+      </div>
     </div>
     <span class="status-pill" title="Streak (days)">🔥 <span data-streak>0</span></span>
     <span class="status-pill" title="Experience points">⚡ <span data-xp>0</span></span>
@@ -82,16 +93,28 @@ const activeLabel = navItems.find(i => i.id === activeNav)?.label ?? 'All';
     }
   });
 
-  // Theme switcher
-  const dots = document.querySelectorAll('[data-theme-set]');
-  const markActive = (t) => dots.forEach((b) => b.classList.toggle('is-active', b.getAttribute('data-theme-set') === t));
-  markActive(document.documentElement.dataset.theme || 'default');
-  dots.forEach((b) => b.addEventListener('click', () => {
+  // Theme switcher (gear menu)
+  const settings = document.querySelector('[data-settings]');
+  const gear = document.querySelector('[data-settings-toggle]');
+  const themeMenu = document.querySelector('[data-settings-menu]');
+  const opts = document.querySelectorAll('[data-theme-set]');
+  const markActive = (t) => opts.forEach((b) => b.classList.toggle('is-active', b.getAttribute('data-theme-set') === t));
+  markActive(document.documentElement.dataset.theme || 'zurich');
+  const closeThemeMenu = () => { themeMenu?.classList.remove('is-open'); gear?.setAttribute('aria-expanded', 'false'); };
+  gear?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const open = themeMenu?.classList.toggle('is-open');
+    gear.setAttribute('aria-expanded', String(!!open));
+  });
+  opts.forEach((b) => b.addEventListener('click', () => {
     const t = b.getAttribute('data-theme-set');
     document.documentElement.dataset.theme = t;
     try { localStorage.setItem('glideup:theme', t); } catch (e) {}
     markActive(t);
+    closeThemeMenu();
   }));
+  document.addEventListener('click', (e) => { if (settings && !settings.contains(e.target as Node)) closeThemeMenu(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeThemeMenu(); });
 </script>
 
 <style>
