@@ -916,3 +916,20 @@ img, svg { display: block; max-width: 100%; }
 .theme-opt__check { color: var(--primary); opacity: 0; }
 .theme-opt.is-active { font-weight: 600; }
 .theme-opt.is-active .theme-opt__check { opacity: 1; }
+
+/* Answer-confirmation guard (fat-finger protection) */
+.btn--primary.is-confirming {
+  background: var(--primary-dark);
+  box-shadow: 0 0 0 3px var(--primary-bg);
+}
+
+/* Redo-missed entry link in the practice meta area */
+.redo-link {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-size: 12px; font-weight: 600; text-decoration: none;
+  color: var(--primary-dark); background: var(--primary-bg);
+  border: 1px solid var(--border); border-radius: 999px;
+  padding: 4px 12px; margin-bottom: 12px;
+}
+.redo-link:hover { border-color: var(--primary); }
+.redo-link[hidden] { display: none; }

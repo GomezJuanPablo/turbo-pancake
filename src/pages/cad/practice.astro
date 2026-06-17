@@ -35,6 +35,8 @@ for (const d of blueprint!.data.domains) weights[d.name] = d.weight;
       <span class="practice-meta__item" data-session-progress></span>
     </div>
 
+    <a class="redo-link" data-redo-link href="?redo=1" hidden>↻ Redo questions you missed (<span data-redo-count>0</span>)</a>
+
     <article
       class="question"
       data-question-card
@@ -78,6 +80,7 @@ for (const d of blueprint!.data.domains) weights[d.name] = d.weight;
       <p style="font-size:13px;color:var(--text-muted);margin-bottom:16px;" data-complete-summary></p>
       <div style="display:flex;gap:8px;flex-wrap:wrap;">
         <a href="./practice/" class="btn btn--primary">New session</a>
+        <a class="btn btn--ghost" data-redo-complete href="?redo=1" hidden>↻ Redo missed</a>
         <a href="./" class="btn btn--ghost">Dashboard</a>
       </div>      <div id="lb-form" style="margin-top:14px;border-top:1px solid var(--border);padding-top:14px;">
         <p style="font-size:12px;color:var(--text-muted);margin-bottom:8px;">Submit this score to the leaderboard? It's anonymous — just pick a username.</p>
@@ -104,17 +107,25 @@ for (const d of blueprint!.data.domains) weights[d.name] = d.weight;
 
   const bankEl = document.getElementById('glideup-bank');
   const { questions: bank, weights } = JSON.parse(bankEl.textContent || '{"questions":[],"weights":{}}');
+  const bankIds = new Set(bank.map((q) => q.id));
 
   // --- Mode detection ---
   const params   = new URLSearchParams(window.location.search);
   const DOMAIN   = params.get('domain');          // domain focus
   const SET_NUM  = params.get('set') ? parseInt(params.get('set')) : null; // exam sim 1-4
   const IS_SIM   = SET_NUM !== null && SET_NUM >= 1 && SET_NUM <= 4;
+  const REDO     = params.get('redo') === '1'; // re-do questions answered wrong
+
+  // Questions answered but not yet gotten right, limited to this exam's bank.
+  const _savedByQ  = (load().byQuestion) || {};
+  const _missedSet = new Set(Object.keys(_savedByQ).filter(
+    (id) => bankIds.has(id) && _savedByQ[id] && _savedByQ[id].correct === false));
+
   const SESSION_LIMIT = (IS_SIM || DOMAIN) ? 60 : Infinity;
 
-  // Bounded modes (exam sim, domain focus) run a fixed, sequential set with no repeats.
-  // Open-ended Full Practice keeps the adaptive, history-driven selector.
-  const IS_SESSION = SESSION_LIMIT < Infinity;
+  // Bounded modes (exam sim, domain focus, redo-missed) run a fixed, sequential
+  // set with no repeats. Open-ended Full Practice keeps the adaptive selector.
+  const IS_SESSION = SESSION_LIMIT < Infinity || REDO;
 
   function shuffle(arr) {
     const a = [...arr];
@@ -129,7 +140,9 @@ for (const d of blueprint!.data.domains) weights[d.name] = d.weight;
     ? buildExamSet(bank, weights, SET_NUM)
     : DOMAIN
       ? bank.filter(q => q.domain === DOMAIN)
-      : bank;
+      : REDO
+        ? bank.filter(q => _missedSet.has(q.id))
+        : bank;
 
   // For bounded sessions, present each question exactly once (deduped by id).
   // buildExamSet already returns a shuffled, unique 60; domain focus we shuffle here.
@@ -171,7 +184,8 @@ for (const d of blueprint!.data.domains) weights[d.name] = d.weight;
 
   // Set mode label
   if (modeLabelEl) {
-    if (IS_SIM)   modeLabelEl.textContent = `Exam Sim ${SET_NUM} of 4`;
+    if (REDO)     modeLabelEl.textContent = 'Redo: questions you missed';
+    else if (IS_SIM)   modeLabelEl.textContent = `Exam Sim ${SET_NUM} of 4`;
     else if (DOMAIN) modeLabelEl.textContent = `Domain: ${DOMAIN}`;
     else          modeLabelEl.textContent = 'Full Practice';
   }
@@ -189,9 +203,11 @@ for (const d of blueprint!.data.domains) weights[d.name] = d.weight;
     return pick(OPENERS_CORRECT_LOW);
   }
 
-  let selected = null;
-  let revealed = false;
-  let current  = null;
+  let selected  = null;
+  let revealed  = false;
+  let current   = null;
+  let confirming = false;
+  const SUBMIT_LABEL = 'Check answer';
   let sessionAnswered = 0;
   let sessionCorrect  = 0;
 
@@ -224,8 +240,14 @@ for (const d of blueprint!.data.domains) weights[d.name] = d.weight;
       const pct = sessionAnswered > 0 ? Math.round((sessionCorrect / sessionAnswered) * 100) : 0;
       const summaryEl = completeEl.querySelector('[data-complete-summary]');
       if (summaryEl) {
-        const label = IS_SIM ? `Exam Sim ${SET_NUM}` : DOMAIN ? `${DOMAIN} focus` : 'Session';
+        const label = IS_SIM ? `Exam Sim ${SET_NUM}` : DOMAIN ? `${DOMAIN} focus` : REDO ? 'Redo missed' : 'Session';
         summaryEl.textContent = `${label}: ${sessionCorrect} / ${sessionAnswered} correct (${pct}%)`;
+      }
+      const rc = completeEl.querySelector('[data-redo-complete]');
+      if (rc) {
+        const sb = (load().byQuestion) || {};
+        const n = Object.keys(sb).filter((id) => bankIds.has(id) && sb[id] && sb[id].correct === false).length;
+        rc.hidden = n === 0;
       }
     }
   }
@@ -243,6 +265,9 @@ for (const d of blueprint!.data.domains) weights[d.name] = d.weight;
     feedbackEl.hidden = true;
     feedbackEl.classList.remove('is-correct', 'is-incorrect');
     submitBtn.hidden = true;
+    submitBtn.textContent = SUBMIT_LABEL;
+    submitBtn.classList.remove('is-confirming');
+    confirming = false;
     nextBtn.hidden   = true;
 
     stemEl.textContent   = q.stem;
@@ -268,6 +293,10 @@ for (const d of blueprint!.data.domains) weights[d.name] = d.weight;
         btn.setAttribute('aria-checked', 'true');
         btn.classList.add('is-selected');
         selected = opt.id;
+        // Changing the selection cancels a pending confirmation (fat-finger guard).
+        confirming = false;
+        submitBtn.textContent = SUBMIT_LABEL;
+        submitBtn.classList.remove('is-confirming');
         submitBtn.hidden = false;
       });
       optionsEl.appendChild(btn);
@@ -309,6 +338,15 @@ for (const d of blueprint!.data.domains) weights[d.name] = d.weight;
 
   submitBtn?.addEventListener('click', () => {
     if (!selected || !current || revealed) return;
+    // First click arms confirmation; second click locks the answer in.
+    if (!confirming) {
+      confirming = true;
+      submitBtn.textContent = 'Confirm answer ✓';
+      submitBtn.classList.add('is-confirming');
+      return;
+    }
+    confirming = false;
+    submitBtn.classList.remove('is-confirming');
     revealed = true;
     const correct = isCorrect([selected], current.correct);
 
@@ -339,6 +377,15 @@ for (const d of blueprint!.data.domains) weights[d.name] = d.weight;
   });
 
   nextBtn?.addEventListener('click', advance);
+
+  // Redo-missed entry points
+  const _missedHere = [..._missedSet].length;
+  const _redoLink  = root.querySelector('[data-redo-link]');
+  const _redoCount = root.querySelector('[data-redo-count]');
+  if (_redoCount) _redoCount.textContent = String(_missedHere);
+  if (_redoLink && _missedHere > 0 && !REDO && !IS_SESSION) _redoLink.hidden = false;
+  if (REDO) { const _lbf = root.querySelector('#lb-form'); if (_lbf) _lbf.hidden = true; }
+
   updateStats();
   advance();
 
