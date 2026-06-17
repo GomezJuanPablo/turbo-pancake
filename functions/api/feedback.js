@@ -38,6 +38,7 @@ async function openGithubIssue(env, entry) {
     `**Type:** ${TYPES[entry.type]}`,
     `**Page:** ${entry.page || '(unknown)'}`,
     entry.question ? `**Question:** ${entry.question}` : '',
+    entry.email ? `**Reply to:** ${entry.email}` : '',
     `**Submitted:** ${entry.at}`,
     '', '---', '',
     entry.message,
@@ -95,6 +96,7 @@ export async function onRequest(context) {
       message,
       page: clean(body.page, 300),
       question: clean(body.question, 400),
+      email: clean(body.email, 120),
       at: new Date().toISOString(),
     };
 

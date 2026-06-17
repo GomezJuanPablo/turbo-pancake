@@ -32,6 +32,10 @@
     <textarea id="fb-msg" class="fb__textarea" data-fb-msg rows="4" maxlength="2000"
       placeholder="Tell us what's on your mind…"></textarea>
 
+    <label class="fb__label" for="fb-email">Email <span class="fb__hint">(optional — for a reply)</span></label>
+    <input id="fb-email" type="email" class="fb__select" data-fb-email maxlength="120"
+      placeholder="you@example.com" autocomplete="email" />
+
     <p class="fb__context" data-fb-context hidden></p>
 
     <div class="fb__actions">
@@ -49,6 +53,7 @@
     const closeBtn = root.querySelector('[data-fb-close]');
     const typeEl = root.querySelector('[data-fb-type]') as HTMLSelectElement;
     const msgEl = root.querySelector('[data-fb-msg]') as HTMLTextAreaElement;
+    const emailEl = root.querySelector('[data-fb-email]') as HTMLInputElement;
     const contextEl = root.querySelector('[data-fb-context]');
     const submitBtn = root.querySelector('[data-fb-submit]') as HTMLButtonElement;
     const statusEl = root.querySelector('[data-fb-status]');
@@ -100,6 +105,7 @@
         message,
         page: location.pathname + location.search,
         question: typeEl.value === 'question' ? currentQuestion() : '',
+        email: (emailEl.value || '').trim(),
       };
       try {
         const res = await fetch('/api/feedback', {
@@ -110,7 +116,7 @@
         const data = await res.json().catch(() => ({}));
         if (res.ok && data.ok) {
           if (statusEl) statusEl.textContent = 'Thanks — sent! 🧌';
-          msgEl.value = '';
+          msgEl.value = ''; emailEl.value = '';
           setTimeout(close, 1200);
         } else {
           if (statusEl) statusEl.textContent = data.error || 'Could not send — try again.';
@@ -159,6 +165,7 @@
   }
   .fb__select:focus, .fb__textarea:focus { border-color: var(--primary, #0E8B9E); }
   .fb__textarea { resize: vertical; min-height: 70px; }
+  .fb__hint { font-weight: 400; color: var(--text-muted, #6b7280); }
   .fb__context { font-size: 11px; color: var(--text-muted, #6b7280); margin: 2px 0 0; line-height: 1.4; }
   .fb__actions { display: flex; align-items: center; gap: 10px; margin-top: 8px; }
   .fb__submit {
