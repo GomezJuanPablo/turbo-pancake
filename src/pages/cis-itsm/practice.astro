@@ -54,6 +54,12 @@ for (const d of blueprint!.data.domains) weights[d.name] = d.weight;
         <button type="button" class="btn btn--primary" data-submit hidden>Check answer</button>
         <button type="button" class="btn btn--primary" data-next hidden>Next question →</button>
       </div>
+      <div class="q-rate" data-q-rate>
+        <span class="q-rate__label">Was this question clear and correct?</span>
+        <button type="button" class="q-rate__btn" data-q-up title="Looks good" aria-label="This question looks good">👍</button>
+        <button type="button" class="q-rate__btn" data-q-down title="Report a problem with this question" aria-label="Report a problem with this question">👎</button>
+        <span class="q-rate__thanks" data-q-thanks hidden>Thanks for the signal! 🧌</span>
+      </div>
     </article>
 
     <div class="card" data-empty hidden>
@@ -223,6 +229,8 @@ for (const d of blueprint!.data.domains) weights[d.name] = d.weight;
 
   function renderQuestion(q) {
     current  = q;
+    root.dataset.currentQid = q.id;
+    const _qt = root.querySelector('[data-q-thanks]'); if (_qt) _qt.hidden = true;
     selected = null;
     revealed = false;
 
@@ -367,6 +375,17 @@ for (const d of blueprint!.data.domains) weights[d.name] = d.weight;
       if (lbStatus) lbStatus.textContent = 'Network error — try again.';
       lbSubmitBtn.disabled = false;
     }
+  });
+
+  // Per-question feedback (thumbs up / down)
+  const rateUp = root.querySelector('[data-q-up]');
+  const rateDown = root.querySelector('[data-q-down]');
+  const rateThanks = root.querySelector('[data-q-thanks]');
+  rateUp?.addEventListener('click', () => {
+    if (rateThanks) { rateThanks.hidden = false; setTimeout(() => { rateThanks.hidden = true; }, 1600); }
+  });
+  rateDown?.addEventListener('click', () => {
+    if ((window as any).glideupOpenFeedback) (window as any).glideupOpenFeedback('question');
   });
 </script>
 

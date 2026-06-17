@@ -5,12 +5,9 @@ interface Props {
 const { activeNav = '' } = Astro.props;
 
 const navItems = [
-  { id: 'all',      label: 'All',      href: '/' },
-  { id: 'csa',      label: 'CSA',      href: '/csa/' },
-  { id: 'cad',      label: 'CAD',      href: '/cad/' },
-  { id: 'cis-itsm', label: 'CIS-ITSM', href: '/cis-itsm/' },
-  { id: 'cis-df',   label: 'CIS-DF',   href: '/cis-df/' },
-  { id: 'cis-sm',   label: 'CIS-SM',   href: '/cis-sm/' },
+  { id: 'all',    label: 'All',    href: '/' },
+  { id: 'github', label: 'GitHub', href: 'https://github.com/GomezJuanPablo/turbo-pancake', external: true },
+  { id: 'docs',   label: 'ServiceNow Docs', href: 'https://www.servicenow.com/docs/', external: true },
 ];
 
 const activeLabel = navItems.find(i => i.id === activeNav)?.label ?? 'All';
@@ -24,7 +21,7 @@ const activeLabel = navItems.find(i => i.id === activeNav)?.label ?? 'All';
   <!-- Desktop nav (hidden on mobile via CSS) -->
   <nav class="topbar__nav" aria-label="Top navigation">
     {navItems.map((item) => (
-      <a href={item.href} class={`topbar__nav-item ${activeNav === item.id ? 'is-active' : ''}`}>{item.label}</a>
+      <a href={item.href} class={`topbar__nav-item ${activeNav === item.id ? 'is-active' : ''}`} {...(item.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}>{item.label}</a>
     ))}
   </nav>
 
@@ -47,7 +44,7 @@ const activeLabel = navItems.find(i => i.id === activeNav)?.label ?? 'All';
 <!-- Mobile dropdown (closed by default) -->
 <nav class="topbar__dropdown" id="nav-menu" aria-label="Mobile navigation">
   {navItems.map((item) => (
-    <a href={item.href} class={`topbar__dropdown-item ${activeNav === item.id ? 'is-active' : ''}`}>{item.label}</a>
+    <a href={item.href} class={`topbar__dropdown-item ${activeNav === item.id ? 'is-active' : ''}`} {...(item.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}>{item.label}</a>
   ))}
 </nav>
 

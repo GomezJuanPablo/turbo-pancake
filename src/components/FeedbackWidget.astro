@@ -88,6 +88,13 @@
       toggle.setAttribute('aria-expanded', 'false');
     }
 
+    // Allow other components (e.g. the per-question thumbs-down) to open the
+    // panel pre-set to a given type.
+    (window as any).glideupOpenFeedback = function (type) {
+      open();
+      if (type) typeEl.value = type;
+    };
+
     toggle.addEventListener('click', () => (panel.hidden ? open() : close()));
     closeBtn.addEventListener('click', close);
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !panel.hidden) close(); });
@@ -105,6 +112,7 @@
         message,
         page: location.pathname + location.search,
         question: typeEl.value === 'question' ? currentQuestion() : '',
+        questionId: (document.getElementById('practice-root') && document.getElementById('practice-root').dataset.currentQid) || '',
         email: (emailEl.value || '').trim(),
       };
       try {

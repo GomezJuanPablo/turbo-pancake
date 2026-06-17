@@ -827,3 +827,9 @@ img, svg { display: block; max-width: 100%; }
     animation-duration: 0.01ms !important;
   }
 }
+
+/* Per-question feedback (thumbs up/down) */
+.q-rate { display: flex; align-items: center; gap: 10px; margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--border); font-size: 12px; color: var(--text-muted); flex-wrap: wrap; }
+.q-rate__btn { border: 1px solid var(--border); background: var(--bg); border-radius: 8px; cursor: pointer; font-size: 15px; line-height: 1; padding: 5px 9px; transition: border-color 0.15s, transform 0.15s; }
+.q-rate__btn:hover { border-color: var(--primary); transform: translateY(-1px); }
+.q-rate__thanks { color: var(--primary-dark); font-weight: 600; }

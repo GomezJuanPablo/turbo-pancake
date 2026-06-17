@@ -51,7 +51,8 @@ import Breadcrumb from '../components/Breadcrumb.astro';
       const reply = it.email
         ? `<a href="mailto:${esc(it.email)}?subject=${encodeURIComponent('Re: your GlideUp feedback')}" style="font-weight:600;">Reply to ${esc(it.email)}</a>`
         : '<span style="color:var(--text-muted);">No email provided</span>';
-      const q = it.question ? `<div style="font-size:12px;color:var(--text-muted);margin-top:4px;">On question: ${esc(it.question)}</div>` : '';
+      const qid = it.questionId ? ` <code style="font-size:11px;">[${esc(it.questionId)}]</code>` : '';
+      const q = (it.question || it.questionId) ? `<div style="font-size:12px;color:var(--text-muted);margin-top:4px;">On question:${qid} ${esc(it.question)}</div>` : '';
       const page = it.page ? `<a href="${esc(it.page)}" style="font-size:12px;">${esc(it.page)}</a>` : '';
       return `<article class="card" style="padding:14px;margin-bottom:10px;">
         <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline;">
