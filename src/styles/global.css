@@ -1163,3 +1163,26 @@ img, svg { display: block; max-width: 100%; }
 
 /* Multi-select questions: count hint above the options */
 .options__hint { font-size: 12px; font-weight: 600; color: var(--primary-dark); margin: 0 0 10px; }
+
+/* Matching questions (tap-to-pair) */
+.match__hint { font-size: 12px; font-weight: 600; color: var(--primary-dark); margin-bottom: 12px; }
+.match__cols { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.match__col { display: flex; flex-direction: column; gap: 8px; }
+.match__left, .match__right {
+  display: flex; align-items: center; gap: 8px; width: 100%; text-align: left;
+  font-family: inherit; font-size: 13px; color: var(--text); cursor: pointer;
+  background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px;
+  transition: border-color 0.12s, background 0.12s;
+}
+.match__left { justify-content: space-between; }
+.match__left:hover, .match__right:hover { border-color: var(--primary); }
+.match__left.is-active { border-color: var(--primary); box-shadow: 0 0 0 2px var(--primary-bg); }
+.match__left.is-paired { background: var(--primary-bg); }
+.match__right.is-used { opacity: 0.45; }
+.match__slot { font-weight: 600; color: var(--primary-dark); font-size: 12px; white-space: nowrap; }
+.match__left.is-correct { border-color: #2F9E44; background: rgba(47,158,68,0.10); }
+.match__left.is-incorrect { border-color: #E03131; background: rgba(224,49,49,0.08); }
+.match__left:disabled, .match__right:disabled { cursor: default; }
+@media (max-width: 520px) {
+  .match__cols { grid-template-columns: 1fr; }
+}

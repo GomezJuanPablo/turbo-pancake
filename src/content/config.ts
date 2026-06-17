@@ -44,7 +44,7 @@ export const questionSchema = z
     domain: z.string().min(1),
     subdomain: z.string().optional(),
     difficulty: z.enum(['recall', 'application', 'scenario']),
-    type: z.enum(['single_select', 'multi_select']),
+    type: z.enum(['single_select', 'multi_select', 'matching']),
     stem: z
       .string()
       .min(10)
@@ -54,14 +54,38 @@ export const questionSchema = z
       .refine((s) => !/🧌|😀|😂|🔥|⚡/.test(s), {
         message: 'voice rule: zero emoji in stems',
       }),
-    options: z.array(optionSchema).min(2),
-    correct: z.array(z.string()).min(1),
+    options: z.array(optionSchema).optional(),
+    correct: z.array(z.string()).optional(),
+    pairs: z.array(z.object({ left: z.string().min(1), right: z.string().min(1) })).optional(),
     rationale: z.string().min(20),
-    distractor_notes: z.record(z.string(), z.string()),
+    distractor_notes: z.record(z.string(), z.string()).optional(),
     references: z.array(referenceSchema).min(1),
     tags: z.array(z.string()).optional(),
   })
   .superRefine((q, ctx) => {
+    if (q.type === 'matching') {
+      const pairs = q.pairs || [];
+      if (pairs.length < 3) {
+        ctx.addIssue({ code: z.ZodIssueCode.custom, message: 'matching needs at least 3 pairs', path: ['pairs'] });
+      }
+      const lefts = pairs.map((p) => p.left);
+      const rights = pairs.map((p) => p.right);
+      if (new Set(lefts).size !== lefts.length) {
+        ctx.addIssue({ code: z.ZodIssueCode.custom, message: 'matching left values must be unique', path: ['pairs'] });
+      }
+      if (new Set(rights).size !== rights.length) {
+        ctx.addIssue({ code: z.ZodIssueCode.custom, message: 'matching right values must be unique', path: ['pairs'] });
+      }
+      return;
+    }
+    if (!q.options || q.options.length < 2) {
+      ctx.addIssue({ code: z.ZodIssueCode.custom, message: 'options must have at least 2 items', path: ['options'] });
+      return;
+    }
+    if (!q.correct || q.correct.length < 1) {
+      ctx.addIssue({ code: z.ZodIssueCode.custom, message: 'correct must have at least one entry', path: ['correct'] });
+      return;
+    }
     const optionIds = new Set(q.options.map((o) => o.id));
     for (const c of q.correct) {
       if (!optionIds.has(c)) {
@@ -80,8 +104,9 @@ export const questionSchema = z
       });
     }
     const correctSet = new Set(q.correct);
+    const dnotes = q.distractor_notes || {};
     for (const opt of q.options) {
-      const hasNote = typeof q.distractor_notes[opt.id] === 'string' && q.distractor_notes[opt.id].trim().length > 0;
+      const hasNote = typeof dnotes[opt.id] === 'string' && dnotes[opt.id].trim().length > 0;
       if (!correctSet.has(opt.id) && !hasNote) {
         ctx.addIssue({
           code: z.ZodIssueCode.custom,

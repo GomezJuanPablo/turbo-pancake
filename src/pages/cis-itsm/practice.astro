@@ -115,6 +115,7 @@ for (const d of blueprint!.data.domains) weights[d.name] = d.weight;
   const SET_NUM  = params.get('set') ? parseInt(params.get('set')) : null; // exam sim 1-4
   const IS_SIM   = SET_NUM !== null && SET_NUM >= 1 && SET_NUM <= 4;
   const REDO     = params.get('redo') === '1'; // re-do questions answered wrong
+  const ONLY_TYPE = params.get('type'); // e.g. 'matching' — practice one question format
 
   // Questions answered but not yet gotten right, limited to this exam's bank.
   const _savedByQ  = (load().byQuestion) || {};
@@ -125,7 +126,7 @@ for (const d of blueprint!.data.domains) weights[d.name] = d.weight;
 
   // Bounded modes (exam sim, domain focus, redo-missed) run a fixed, sequential
   // set with no repeats. Open-ended Full Practice keeps the adaptive selector.
-  const IS_SESSION = SESSION_LIMIT < Infinity || REDO;
+  const IS_SESSION = SESSION_LIMIT < Infinity || REDO || !!ONLY_TYPE;
 
   function shuffle(arr) {
     const a = [...arr];
@@ -142,7 +143,9 @@ for (const d of blueprint!.data.domains) weights[d.name] = d.weight;
       ? bank.filter(q => q.domain === DOMAIN)
       : REDO
         ? bank.filter(q => _missedSet.has(q.id))
-        : bank;
+        : ONLY_TYPE
+          ? bank.filter(q => (q.type || 'single_select') === ONLY_TYPE)
+          : bank;
 
   // For bounded sessions, present each question exactly once (deduped by id).
   // buildExamSet already returns a shuffled, unique 60; domain focus we shuffle here.
@@ -184,7 +187,8 @@ for (const d of blueprint!.data.domains) weights[d.name] = d.weight;
 
   // Set mode label
   if (modeLabelEl) {
-    if (REDO)     modeLabelEl.textContent = 'Redo: questions you missed';
+    if (ONLY_TYPE) modeLabelEl.textContent = 'Format: ' + ONLY_TYPE;
+    else if (REDO)     modeLabelEl.textContent = 'Redo: questions you missed';
     else if (IS_SIM)   modeLabelEl.textContent = `Exam Sim ${SET_NUM} of 4`;
     else if (DOMAIN) modeLabelEl.textContent = `Domain: ${DOMAIN}`;
     else          modeLabelEl.textContent = 'Full Practice';
@@ -205,6 +209,10 @@ for (const d of blueprint!.data.domains) weights[d.name] = d.weight;
 
   const chosen   = new Set();
   let isMulti    = false;
+  let isMatching = false;
+  let matchAuthored = [];
+  const matchPairing = new Map();
+  let matchActiveLeft = null;
   let revealed   = false;
   let current    = null;
   let confirming = false;
@@ -258,7 +266,11 @@ for (const d of blueprint!.data.domains) weights[d.name] = d.weight;
     root.dataset.currentQid = q.id;
     const _qt = root.querySelector('[data-q-thanks]'); if (_qt) _qt.hidden = true;
     chosen.clear();
-    isMulti = (q.type === 'multi_select') || ((q.correct || []).length > 1);
+    isMatching = q.type === 'matching';
+    isMulti = !isMatching && ((q.type === 'multi_select') || ((q.correct || []).length > 1));
+    matchAuthored = isMatching ? (q.pairs || []) : [];
+    matchPairing.clear();
+    matchActiveLeft = null;
     revealed = false;
 
     card.hidden  = false;
@@ -277,6 +289,9 @@ for (const d of blueprint!.data.domains) weights[d.name] = d.weight;
     diffEl.textContent   = q.difficulty;
 
     optionsEl.innerHTML = '';
+    if (isMatching) {
+      buildMatching();
+    } else {
     if (isMulti) {
       const hint = document.createElement('div');
       hint.className = 'options__hint';
@@ -322,10 +337,11 @@ for (const d of blueprint!.data.domains) weights[d.name] = d.weight;
       });
       optionsEl.appendChild(btn);
     }
+    }
 
     rationaleEl.textContent = q.rationale;
     distractorsEl.innerHTML = '';
-    for (const [letter, note] of Object.entries(q.distractor_notes || {})) {
+    if (!isMatching) for (const [letter, note] of Object.entries(q.distractor_notes || {})) {
       const row = document.createElement('div');
       row.className = 'feedback__distractor';
       const strong = document.createElement('strong');
@@ -344,6 +360,66 @@ for (const d of blueprint!.data.domains) weights[d.name] = d.weight;
     }
   }
 
+  function _mShuffle(a){ const r=[...a]; for(let i=r.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[r[i],r[j]]=[r[j],r[i]];} return r; }
+  function buildMatching() {
+    const wrap = document.createElement('div'); wrap.className='match';
+    const hint = document.createElement('div'); hint.className='match__hint';
+    hint.textContent = 'Tap a prompt on the left, then tap its match on the right.';
+    wrap.appendChild(hint);
+    const cols = document.createElement('div'); cols.className='match__cols';
+    const leftCol = document.createElement('div'); leftCol.className='match__col';
+    const rightCol = document.createElement('div'); rightCol.className='match__col';
+    matchAuthored.forEach((p) => {
+      const lb = document.createElement('button'); lb.type='button'; lb.className='match__left'; lb.dataset.left=p.left;
+      lb.innerHTML = '<span class="match__left-text"></span><span class="match__slot" data-slot>—</span>';
+      lb.querySelector('.match__left-text').textContent = p.left;
+      lb.addEventListener('click', () => { if (revealed) return; matchActiveLeft = p.left; refreshMatch(); });
+      leftCol.appendChild(lb);
+    });
+    _mShuffle(matchAuthored.map((p) => p.right)).forEach((rt) => {
+      const rb = document.createElement('button'); rb.type='button'; rb.className='match__right'; rb.dataset.right=rt;
+      rb.textContent = rt;
+      rb.addEventListener('click', () => {
+        if (revealed) return;
+        let active = matchActiveLeft;
+        if (!active) { const un = matchAuthored.find((p) => !matchPairing.has(p.left)); active = un ? un.left : null; }
+        if (!active) return;
+        for (const [l,r] of matchPairing) if (r===rt) matchPairing.delete(l);
+        matchPairing.set(active, rt);
+        const nxt = matchAuthored.find((p) => !matchPairing.has(p.left));
+        matchActiveLeft = nxt ? nxt.left : null;
+        confirming=false; submitBtn.textContent=SUBMIT_LABEL; submitBtn.classList.remove('is-confirming');
+        refreshMatch();
+      });
+      rightCol.appendChild(rb);
+    });
+    cols.appendChild(leftCol); cols.appendChild(rightCol); wrap.appendChild(cols);
+    optionsEl.appendChild(wrap);
+    refreshMatch();
+  }
+  function refreshMatch() {
+    const used = new Set(matchPairing.values());
+    optionsEl.querySelectorAll('.match__left').forEach((lb) => {
+      const l = lb.dataset.left; const slot = lb.querySelector('[data-slot]');
+      slot.textContent = matchPairing.get(l) || '—';
+      lb.classList.toggle('is-paired', matchPairing.has(l));
+      lb.classList.toggle('is-active', matchActiveLeft === l);
+    });
+    optionsEl.querySelectorAll('.match__right').forEach((rb) => { rb.classList.toggle('is-used', used.has(rb.dataset.right)); });
+    submitBtn.hidden = !(matchAuthored.length>0 && matchPairing.size === matchAuthored.length);
+  }
+  function revealMatching() {
+    optionsEl.querySelectorAll('.match__left').forEach((lb) => {
+      const l = lb.dataset.left;
+      const authored = (matchAuthored.find((p) => p.left===l) || {}).right;
+      const got = matchPairing.get(l);
+      const slot = lb.querySelector('[data-slot]');
+      if (got === authored) { lb.classList.add('is-correct'); slot.textContent = authored + ' ✓'; }
+      else { lb.classList.add('is-incorrect'); slot.textContent = (got || '—') + ' ✗ → ' + authored; }
+    });
+    optionsEl.querySelectorAll('.match__left, .match__right').forEach((b) => { b.disabled = true; });
+  }
+
   function advance() {
     // Bounded sessions walk a fixed, unique queue in order — no repeats.
     if (IS_SESSION) {
@@ -358,7 +434,8 @@ for (const d of blueprint!.data.domains) weights[d.name] = d.weight;
   }
 
   submitBtn?.addEventListener('click', () => {
-    if (!chosen.size || !current || revealed) return;
+    const _ready = isMatching ? (matchAuthored.length > 0 && matchPairing.size === matchAuthored.length) : chosen.size > 0;
+    if (!_ready || !current || revealed) return;
     // First click arms confirmation; second click locks the answer in.
     if (!confirming) {
       confirming = true;
@@ -369,13 +446,18 @@ for (const d of blueprint!.data.domains) weights[d.name] = d.weight;
     confirming = false;
     submitBtn.classList.remove('is-confirming');
     revealed = true;
-    const correct = isCorrect([...chosen], current.correct);
-
-    for (const b of optionsEl.querySelectorAll('.option')) {
-      const letter = b.dataset.option;
-      if (current.correct.includes(letter)) b.classList.add('is-correct');
-      else if (chosen.has(letter))           b.classList.add('is-incorrect');
-      b.disabled = true;
+    let correct;
+    if (isMatching) {
+      correct = matchAuthored.length > 0 && matchAuthored.every((p) => matchPairing.get(p.left) === p.right);
+      revealMatching();
+    } else {
+      correct = isCorrect([...chosen], current.correct);
+      for (const b of optionsEl.querySelectorAll('.option')) {
+        const letter = b.dataset.option;
+        if (current.correct.includes(letter)) b.classList.add('is-correct');
+        else if (chosen.has(letter))           b.classList.add('is-incorrect');
+        b.disabled = true;
+      }
     }
 
     feedbackEl.hidden = false;

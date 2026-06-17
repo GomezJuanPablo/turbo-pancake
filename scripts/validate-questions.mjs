@@ -37,7 +37,7 @@ const runVoice = !schemaOnly && !urlsOnly;
 const runUrls = !schemaOnly && !voiceOnly;
 
 const ALLOWED_DIFFICULTY = new Set(['recall', 'application', 'scenario']);
-const ALLOWED_TYPE = new Set(['single_select', 'multi_select']);
+const ALLOWED_TYPE = new Set(['single_select', 'multi_select', 'matching']);
 const ALLOWED_LETTERS = new Set(['A', 'B', 'C', 'D', 'E', 'F']);
 const ID_PATTERN = /^[a-z]+-[a-z0-9-]+-\d{3}$/;
 
@@ -61,11 +61,27 @@ function warn(file, qid, msg) { warnCount++;  errors.push({ level: 'WARN',  file
 function validateQuestion(q, file) {
   const qid = q?.id || '(missing id)';
 
-  const required = [
-    'id','exam','domain','difficulty','type','stem',
-    'options','correct','rationale','distractor_notes','references',
-  ];
+  const isMatching = q.type === 'matching';
+  const required = isMatching
+    ? ['id','exam','domain','difficulty','type','stem','pairs','rationale','references']
+    : ['id','exam','domain','difficulty','type','stem','options','correct','rationale','distractor_notes','references'];
   for (const f of required) if (!(f in q)) err(file, qid, `missing required field: ${f}`);
+
+  if (isMatching) {
+    if (!Array.isArray(q.pairs) || q.pairs.length < 3) {
+      err(file, qid, 'matching `pairs` must be an array of at least 3 {left,right} items');
+    } else {
+      const lefts = q.pairs.map((p) => p && p.left);
+      const rights = q.pairs.map((p) => p && p.right);
+      for (const pr of q.pairs) {
+        if (!pr || typeof pr.left !== 'string' || typeof pr.right !== 'string') {
+          err(file, qid, 'each matching pair needs string left + right');
+        }
+      }
+      if (new Set(lefts).size !== lefts.length) err(file, qid, 'matching left values must be unique');
+      if (new Set(rights).size !== rights.length) err(file, qid, 'matching right values must be unique');
+    }
+  }
 
   if (q.id && !ID_PATTERN.test(q.id)) err(file, qid, `id "${q.id}" doesn't match pattern {exam}-{slug}-{NNN}`);
   if (q.difficulty && !ALLOWED_DIFFICULTY.has(q.difficulty)) {
@@ -80,9 +96,9 @@ function validateQuestion(q, file) {
     if (/🧌|😀|😂|🔥|⚡/.test(q.stem)) err(file, qid, 'stem contains emoji — voice rule: zero emoji in stems');
   }
 
-  if (!Array.isArray(q.options) || q.options.length < 2) {
+  if (!isMatching && (!Array.isArray(q.options) || q.options.length < 2)) {
     err(file, qid, 'options must be an array of at least 2 items');
-  } else {
+  } else if (!isMatching) {
     const ids = new Set();
     for (const opt of q.options) {
       if (!opt || typeof opt.id !== 'string' || typeof opt.text !== 'string') {
@@ -97,7 +113,8 @@ function validateQuestion(q, file) {
     }
   }
 
-  if (!Array.isArray(q.correct)) err(file, qid, '`correct` must be an array');
+  if (isMatching) { /* matching has no options/correct */ }
+  else if (!Array.isArray(q.correct)) err(file, qid, '`correct` must be an array');
   else if (q.correct.length === 0) err(file, qid, '`correct` must have at least one entry');
   else if (q.type === 'single_select' && q.correct.length !== 1) {
     err(file, qid, `single_select must have exactly one correct answer (has ${q.correct.length})`);
@@ -110,7 +127,8 @@ function validateQuestion(q, file) {
     err(file, qid, 'rationale must be a non-trivial string (>= 20 chars)');
   }
 
-  if (!q.distractor_notes || typeof q.distractor_notes !== 'object') {
+  if (isMatching) { /* matching has no distractor_notes */ }
+  else if (!q.distractor_notes || typeof q.distractor_notes !== 'object') {
     err(file, qid, 'distractor_notes must be an object');
   } else if (Array.isArray(q.options) && Array.isArray(q.correct)) {
     const correctSet = new Set(q.correct);
