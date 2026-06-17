@@ -1,0 +1,175 @@
+---
+/**
+ * FeedbackWidget — a global feedback button shown on every page (and every
+ * question, since practice pages use BaseLayout too). Clicking it opens a
+ * small panel with a type dropdown (Feature request / Bug / Question feedback),
+ * a message box, and auto-captured context (current page + the visible
+ * question stem, if any). Submits to /api/feedback.
+ */
+---
+<div class="fb" data-fb>
+  <button type="button" class="fb__toggle" data-fb-toggle aria-haspopup="dialog" aria-expanded="false" aria-controls="fb-panel">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+    </svg>
+    <span>Feedback</span>
+  </button>
+
+  <div class="fb__panel" id="fb-panel" role="dialog" aria-label="Send feedback" data-fb-panel hidden>
+    <div class="fb__head">
+      <strong class="fb__title">Send feedback</strong>
+      <button type="button" class="fb__close" data-fb-close aria-label="Close">×</button>
+    </div>
+
+    <label class="fb__label" for="fb-type">Type</label>
+    <select id="fb-type" class="fb__select" data-fb-type>
+      <option value="feature">Feature request</option>
+      <option value="bug">Bug report</option>
+      <option value="question">Question feedback</option>
+    </select>
+
+    <label class="fb__label" for="fb-msg">Details</label>
+    <textarea id="fb-msg" class="fb__textarea" data-fb-msg rows="4" maxlength="2000"
+      placeholder="Tell us what's on your mind…"></textarea>
+
+    <p class="fb__context" data-fb-context hidden></p>
+
+    <div class="fb__actions">
+      <button type="button" class="fb__submit" data-fb-submit>Send feedback</button>
+      <span class="fb__status" data-fb-status aria-live="polite"></span>
+    </div>
+  </div>
+</div>
+
+<script>
+  const root = document.querySelector('[data-fb]');
+  if (root) {
+    const toggle = root.querySelector('[data-fb-toggle]');
+    const panel = root.querySelector('[data-fb-panel]');
+    const closeBtn = root.querySelector('[data-fb-close]');
+    const typeEl = root.querySelector('[data-fb-type]') as HTMLSelectElement;
+    const msgEl = root.querySelector('[data-fb-msg]') as HTMLTextAreaElement;
+    const contextEl = root.querySelector('[data-fb-context]');
+    const submitBtn = root.querySelector('[data-fb-submit]') as HTMLButtonElement;
+    const statusEl = root.querySelector('[data-fb-status]');
+
+    // Detect a visible question on the current page (practice pages render
+    // the stem into [data-stem] inside a [data-question-card] that is shown).
+    function currentQuestion() {
+      const card = document.querySelector('[data-question-card]');
+      const stemEl = document.querySelector('[data-stem]');
+      if (card && !(card as HTMLElement).hidden && stemEl && stemEl.textContent && stemEl.textContent.trim()) {
+        return stemEl.textContent.trim();
+      }
+      return '';
+    }
+
+    function open() {
+      const q = currentQuestion();
+      if (q) {
+        typeEl.value = 'question';
+        contextEl.hidden = false;
+        contextEl.textContent = 'About this question: ' + (q.length > 90 ? q.slice(0, 90) + '…' : q);
+      } else {
+        contextEl.hidden = true;
+        contextEl.textContent = '';
+      }
+      panel.hidden = false;
+      toggle.setAttribute('aria-expanded', 'true');
+      setTimeout(() => msgEl.focus(), 0);
+    }
+    function close() {
+      panel.hidden = true;
+      toggle.setAttribute('aria-expanded', 'false');
+    }
+
+    toggle.addEventListener('click', () => (panel.hidden ? open() : close()));
+    closeBtn.addEventListener('click', close);
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !panel.hidden) close(); });
+    document.addEventListener('click', (e) => {
+      if (!panel.hidden && !root.contains(e.target as Node)) close();
+    });
+
+    submitBtn.addEventListener('click', async () => {
+      const message = (msgEl.value || '').trim();
+      if (!message) { if (statusEl) statusEl.textContent = 'Add a few details first.'; return; }
+      submitBtn.disabled = true;
+      if (statusEl) statusEl.textContent = 'Sending…';
+      const payload = {
+        type: typeEl.value,
+        message,
+        page: location.pathname + location.search,
+        question: typeEl.value === 'question' ? currentQuestion() : '',
+      };
+      try {
+        const res = await fetch('/api/feedback', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+        const data = await res.json().catch(() => ({}));
+        if (res.ok && data.ok) {
+          if (statusEl) statusEl.textContent = 'Thanks — sent! 🧌';
+          msgEl.value = '';
+          setTimeout(close, 1200);
+        } else {
+          if (statusEl) statusEl.textContent = data.error || 'Could not send — try again.';
+        }
+      } catch {
+        if (statusEl) statusEl.textContent = 'Network error — try again.';
+      } finally {
+        submitBtn.disabled = false;
+      }
+    });
+  }
+</script>
+
+<style>
+  .fb { position: fixed; bottom: 18px; left: 18px; z-index: 9999; }
+  .fb__toggle {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 10px 16px; border: none; border-radius: 999px; cursor: pointer;
+    background: var(--primary-dark, #006B7F); color: #fff;
+    font-weight: 600; font-size: 13px; font-family: inherit;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.18);
+    transition: transform var(--t-fast, 0.15s) ease, background var(--t-fast, 0.15s) ease;
+  }
+  .fb__toggle:hover { background: var(--primary, #0E8B9E); transform: translateY(-1px); }
+  .fb__toggle svg { display: block; }
+
+  .fb__panel {
+    position: absolute; bottom: 52px; left: 0;
+    width: 320px; max-width: calc(100vw - 36px);
+    background: var(--bg, #fff); color: var(--text, #16181d);
+    border: 1px solid var(--border, #e3e6ea); border-radius: 12px;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.22);
+    padding: 14px; display: flex; flex-direction: column; gap: 6px;
+  }
+  .fb__head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 2px; }
+  .fb__title { font-size: 14px; }
+  .fb__close {
+    border: none; background: transparent; font-size: 20px; line-height: 1;
+    cursor: pointer; color: var(--text-muted, #6b7280); padding: 0 4px;
+  }
+  .fb__label { font-size: 11px; font-weight: 600; color: var(--text-muted, #6b7280); margin-top: 4px; }
+  .fb__select, .fb__textarea {
+    width: 100%; box-sizing: border-box; font-family: inherit; font-size: 13px;
+    padding: 8px 10px; border: 1px solid var(--border, #e3e6ea);
+    border-radius: 8px; background: var(--bg, #fff); color: var(--text, #16181d); outline: none;
+  }
+  .fb__select:focus, .fb__textarea:focus { border-color: var(--primary, #0E8B9E); }
+  .fb__textarea { resize: vertical; min-height: 70px; }
+  .fb__context { font-size: 11px; color: var(--text-muted, #6b7280); margin: 2px 0 0; line-height: 1.4; }
+  .fb__actions { display: flex; align-items: center; gap: 10px; margin-top: 8px; }
+  .fb__submit {
+    border: none; border-radius: 8px; cursor: pointer; padding: 8px 14px;
+    background: var(--primary, #0E8B9E); color: #fff; font-weight: 600; font-size: 13px; font-family: inherit;
+  }
+  .fb__submit:hover { background: var(--primary-dark, #006B7F); }
+  .fb__submit:disabled { opacity: 0.6; cursor: default; }
+  .fb__status { font-size: 12px; color: var(--text-muted, #6b7280); }
+
+  @media (max-width: 900px) {
+    .fb { bottom: 14px; left: 14px; }
+  }
+</style>

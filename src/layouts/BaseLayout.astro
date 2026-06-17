@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import TopBar from '../components/TopBar.astro';
 import SideNav from '../components/SideNav.astro';
+import FeedbackWidget from '../components/FeedbackWidget.astro';
 
 interface Props {
   title?: string;
@@ -74,5 +75,7 @@ const {
       />
       <span>Support GlideUp on Ko-fi</span>
     </a>
+
+    <FeedbackWidget />
   </body>
 </html>
