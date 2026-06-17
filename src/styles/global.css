@@ -838,212 +838,212 @@ img, svg { display: block; max-width: 100%; }
    Themes — switchable via html[data-theme]. Default = teal (:root).
    ============================================================ */
 :root[data-theme="aspen"] {
-  --primary:       #D83E18;
-  --primary-hover: #BA3515;
-  --primary-dark:  #972B11;
-  --primary-bg:    rgba(216, 62, 24, 0.1);
-  --chrome:        #2F130C;
-  --chrome-2:      #431B11;
-  --chrome-border: #5C2517;
-  --magenta:       #F27050;
+  --primary:       #DD8913;
+  --primary-hover: #BE7610;
+  --primary-dark:  #9B600D;
+  --primary-bg:    rgba(221, 137, 19, 0.1);
+  --chrome:        #2F200C;
+  --chrome-2:      #432E11;
+  --chrome-border: #5C3F17;
+  --magenta:       #F6AF4C;
 }
 
 :root[data-theme="berlin"] {
-  --primary:       #D86B18;
-  --primary-hover: #BA5C15;
-  --primary-dark:  #974B11;
-  --primary-bg:    rgba(216, 107, 24, 0.1);
-  --chrome:        #2F1B0C;
-  --chrome-2:      #432711;
-  --chrome-border: #5C3517;
-  --magenta:       #F29650;
+  --primary:       #31D8C3;
+  --primary-hover: #24C0AC;
+  --primary-dark:  #1E9C8C;
+  --primary-bg:    rgba(49, 216, 195, 0.1);
+  --chrome:        #0C2F2A;
+  --chrome-2:      #11433D;
+  --chrome-border: #175C53;
+  --magenta:       #71EADB;
 }
 
 :root[data-theme="calgary"] {
-  --primary:       #D89718;
-  --primary-hover: #BA8215;
-  --primary-dark:  #976A11;
-  --primary-bg:    rgba(216, 151, 24, 0.1);
-  --chrome:        #2F230C;
-  --chrome-2:      #433211;
-  --chrome-border: #5C4417;
-  --magenta:       #F2BB50;
+  --primary:       #CB0BAB;
+  --primary-hover: #AF0993;
+  --primary-dark:  #8E0878;
+  --primary-bg:    rgba(203, 11, 171, 0.1);
+  --chrome:        #2F0C29;
+  --chrome-2:      #43113B;
+  --chrome-border: #5C1750;
+  --magenta:       #FA2DD8;
 }
 
 :root[data-theme="dublin"] {
-  --primary:       #D8C318;
-  --primary-hover: #BAA815;
-  --primary-dark:  #978811;
-  --primary-bg:    rgba(216, 195, 24, 0.1);
-  --chrome:        #2F2B0C;
-  --chrome-2:      #433E11;
-  --chrome-border: #5C5417;
-  --magenta:       #F2E050;
+  --primary:       #6CB11B;
+  --primary-hover: #5D9817;
+  --primary-dark:  #4C7C13;
+  --primary-bg:    rgba(108, 177, 27, 0.1);
+  --chrome:        #1F2F0C;
+  --chrome-2:      #2C4311;
+  --chrome-border: #3C5C17;
+  --magenta:       #96E836;
 }
 
 :root[data-theme="eureka"] {
-  --primary:       #C0D818;
-  --primary-hover: #A5BA15;
-  --primary-dark:  #869711;
-  --primary-bg:    rgba(192, 216, 24, 0.1);
-  --chrome:        #2B2F0C;
-  --chrome-2:      #3D4311;
-  --chrome-border: #535C17;
-  --magenta:       #DEF250;
+  --primary:       #1745CF;
+  --primary-hover: #143BB2;
+  --primary-dark:  #103091;
+  --primary-bg:    rgba(23, 69, 207, 0.1);
+  --chrome:        #0C152F;
+  --chrome-2:      #111D43;
+  --chrome-border: #17285C;
+  --magenta:       #4671F1;
 }
 
 :root[data-theme="fuji"] {
-  --primary:       #94D818;
-  --primary-hover: #7FBA15;
-  --primary-dark:  #689711;
-  --primary-bg:    rgba(148, 216, 24, 0.1);
-  --chrome:        #222F0C;
-  --chrome-2:      #314311;
-  --chrome-border: #435C17;
-  --magenta:       #B8F250;
+  --primary:       #DD1C13;
+  --primary-hover: #BE1810;
+  --primary-dark:  #9B140D;
+  --primary-bg:    rgba(221, 28, 19, 0.1);
+  --chrome:        #2F0D0C;
+  --chrome-2:      #431311;
+  --chrome-border: #5C1A17;
+  --magenta:       #F6534C;
 }
 
 :root[data-theme="geneva"] {
-  --primary:       #68D818;
-  --primary-hover: #59BA15;
-  --primary-dark:  #499711;
-  --primary-bg:    rgba(104, 216, 24, 0.1);
-  --chrome:        #1A2F0C;
-  --chrome-2:      #264311;
-  --chrome-border: #345C17;
-  --magenta:       #93F250;
+  --primary:       #21AB4F;
+  --primary-hover: #1C9344;
+  --primary-dark:  #177837;
+  --primary-bg:    rgba(33, 171, 79, 0.1);
+  --chrome:        #0C2F17;
+  --chrome-2:      #114322;
+  --chrome-border: #175C2E;
+  --magenta:       #3CE173;
 }
 
 :root[data-theme="helsinki"] {
-  --primary:       #3BD818;
-  --primary-hover: #33BA15;
-  --primary-dark:  #299711;
-  --primary-bg:    rgba(59, 216, 24, 0.1);
-  --chrome:        #122F0C;
-  --chrome-2:      #1A4311;
-  --chrome-border: #245C17;
-  --magenta:       #6DF250;
+  --primary:       #830BCB;
+  --primary-hover: #7109AF;
+  --primary-dark:  #5C088E;
+  --primary-bg:    rgba(131, 11, 203, 0.1);
+  --chrome:        #220C2F;
+  --chrome-2:      #301143;
+  --chrome-border: #42175C;
+  --magenta:       #AD2DFA;
 }
 
 :root[data-theme="istanbul"] {
-  --primary:       #18D821;
-  --primary-hover: #15BA1C;
-  --primary-dark:  #119717;
-  --primary-bg:    rgba(24, 216, 33, 0.1);
-  --chrome:        #0C2F0D;
-  --chrome-2:      #114313;
-  --chrome-border: #175C1A;
-  --magenta:       #50F257;
+  --primary:       #B1A51B;
+  --primary-hover: #988E17;
+  --primary-dark:  #7C7413;
+  --primary-bg:    rgba(177, 165, 27, 0.1);
+  --chrome:        #2F2C0C;
+  --chrome-2:      #433F11;
+  --chrome-border: #5C5617;
+  --magenta:       #E8DA36;
 }
 
 :root[data-theme="jakarta"] {
-  --primary:       #18D84D;
-  --primary-hover: #15BA42;
-  --primary-dark:  #119736;
-  --primary-bg:    rgba(24, 216, 77, 0.1);
-  --chrome:        #0C2F15;
-  --chrome-2:      #11431F;
-  --chrome-border: #175C2A;
-  --magenta:       #50F27D;
+  --primary:       #17A8CF;
+  --primary-hover: #1490B2;
+  --primary-dark:  #107691;
+  --primary-bg:    rgba(23, 168, 207, 0.1);
+  --chrome:        #0C272F;
+  --chrome-2:      #113943;
+  --chrome-border: #174D5C;
+  --magenta:       #46CDF1;
 }
 
 :root[data-theme="kingston"] {
-  --primary:       #18D879;
-  --primary-hover: #15BA68;
-  --primary-dark:  #119755;
-  --primary-bg:    rgba(24, 216, 121, 0.1);
-  --chrome:        #0C2F1E;
-  --chrome-2:      #11432A;
-  --chrome-border: #175C3A;
-  --magenta:       #50F2A2;
+  --primary:       #DD1378;
+  --primary-hover: #BE1067;
+  --primary-dark:  #9B0D54;
+  --primary-bg:    rgba(221, 19, 120, 0.1);
+  --chrome:        #2F0C1D;
+  --chrome-2:      #43112A;
+  --chrome-border: #5C1739;
+  --magenta:       #F64CA1;
 }
 
 :root[data-theme="london"] {
-  --primary:       #18D8A6;
-  --primary-hover: #15BA8F;
-  --primary-dark:  #119774;
-  --primary-bg:    rgba(24, 216, 166, 0.1);
-  --chrome:        #0C2F26;
-  --chrome-2:      #114336;
-  --chrome-border: #175C4A;
-  --magenta:       #50F2C8;
+  --primary:       #3DAB21;
+  --primary-hover: #34931C;
+  --primary-dark:  #2B7817;
+  --primary-bg:    rgba(61, 171, 33, 0.1);
+  --chrome:        #132F0C;
+  --chrome-2:      #1B4311;
+  --chrome-border: #255C17;
+  --magenta:       #5EE13C;
 }
 
 :root[data-theme="madrid"] {
-  --primary:       #18D8D2;
-  --primary-hover: #15BAB5;
-  --primary-dark:  #119793;
-  --primary-bg:    rgba(24, 216, 210, 0.1);
-  --chrome:        #0C2F2E;
-  --chrome-2:      #114342;
-  --chrome-border: #175C5A;
-  --magenta:       #50F2ED;
+  --primary:       #1B0BCB;
+  --primary-hover: #1709AF;
+  --primary-dark:  #13088E;
+  --primary-bg:    rgba(27, 11, 203, 0.1);
+  --chrome:        #0F0C2F;
+  --chrome-2:      #151143;
+  --chrome-border: #1D175C;
+  --magenta:       #3E2DFA;
 }
 
 :root[data-theme="newyork"] {
-  --primary:       #18B1D8;
-  --primary-hover: #1598BA;
-  --primary-dark:  #117C97;
-  --primary-bg:    rgba(24, 177, 216, 0.1);
-  --chrome:        #0C282F;
-  --chrome-2:      #113943;
-  --chrome-border: #174E5C;
-  --magenta:       #50D1F2;
+  --primary:       #D96620;
+  --primary-hover: #BB581C;
+  --primary-dark:  #984716;
+  --primary-bg:    rgba(217, 102, 32, 0.1);
+  --chrome:        #2F190C;
+  --chrome-2:      #432411;
+  --chrome-border: #5C3117;
+  --magenta:       #ED945D;
 }
 
 :root[data-theme="orlando"] {
-  --primary:       #1885D8;
-  --primary-hover: #1572BA;
-  --primary-dark:  #115D97;
-  --primary-bg:    rgba(24, 133, 216, 0.1);
-  --chrome:        #0C202F;
-  --chrome-2:      #112D43;
-  --chrome-border: #173E5C;
-  --magenta:       #50ACF2;
+  --primary:       #14B882;
+  --primary-hover: #119E70;
+  --primary-dark:  #0E815B;
+  --primary-bg:    rgba(20, 184, 130, 0.1);
+  --chrome:        #0C2F23;
+  --chrome-2:      #114333;
+  --chrome-border: #175C45;
+  --magenta:       #2EF0B0;
 }
 
 :root[data-theme="paris"] {
-  --primary:       #1859D8;
-  --primary-hover: #154DBA;
-  --primary-dark:  #113E97;
-  --primary-bg:    rgba(24, 89, 216, 0.1);
-  --chrome:        #0C182F;
-  --chrome-2:      #112243;
-  --chrome-border: #172E5C;
-  --magenta:       #5087F2;
+  --primary:       #D513DD;
+  --primary-hover: #B710BE;
+  --primary-dark:  #950D9B;
+  --primary-bg:    rgba(213, 19, 221, 0.1);
+  --chrome:        #2E0C2F;
+  --chrome-2:      #411143;
+  --chrome-border: #59175C;
+  --magenta:       #EF4CF6;
 }
 
 :root[data-theme="quebec"] {
-  --primary:       #182DD8;
-  --primary-hover: #1527BA;
-  --primary-dark:  #111F97;
-  --primary-bg:    rgba(24, 45, 216, 0.1);
-  --chrome:        #0C102F;
-  --chrome-2:      #111643;
-  --chrome-border: #171E5C;
-  --magenta:       #5062F2;
+  --primary:       #88AB21;
+  --primary-hover: #75931C;
+  --primary-dark:  #5F7817;
+  --primary-bg:    rgba(136, 171, 33, 0.1);
+  --chrome:        #262F0C;
+  --chrome-2:      #374311;
+  --chrome-border: #4A5C17;
+  --magenta:       #B8E13C;
 }
 
 :root[data-theme="rome"] {
-  --primary:       #3018D8;
-  --primary-hover: #2915BA;
-  --primary-dark:  #221197;
-  --primary-bg:    rgba(48, 24, 216, 0.1);
-  --chrome:        #100C2F;
-  --chrome-2:      #171143;
-  --chrome-border: #20175C;
-  --magenta:       #6450F2;
+  --primary:       #0B63CB;
+  --primary-hover: #0955AF;
+  --primary-dark:  #08458E;
+  --primary-bg:    rgba(11, 99, 203, 0.1);
+  --chrome:        #0C1C2F;
+  --chrome-2:      #112843;
+  --chrome-border: #17375C;
+  --magenta:       #2D8BFA;
 }
 
 :root[data-theme="sandiego"] {
-  --primary:       #5C18D8;
-  --primary-hover: #4F15BA;
-  --primary-dark:  #401197;
-  --primary-bg:    rgba(92, 24, 216, 0.1);
-  --chrome:        #180C2F;
-  --chrome-2:      #231143;
-  --chrome-border: #2F175C;
-  --magenta:       #8950F2;
+  --primary:       #D9203F;
+  --primary-hover: #BB1C36;
+  --primary-dark:  #98162C;
+  --primary-bg:    rgba(217, 32, 63, 0.1);
+  --chrome:        #2F0C12;
+  --chrome-2:      #431119;
+  --chrome-border: #5C1722;
+  --magenta:       #ED5D75;
 }
 
 :root[data-theme="tokyo"] {
@@ -1058,14 +1058,14 @@ img, svg { display: block; max-width: 100%; }
 }
 
 :root[data-theme="utah"] {
-  --primary:       #B418D8;
-  --primary-hover: #9B15BA;
-  --primary-dark:  #7E1197;
-  --primary-bg:    rgba(180, 24, 216, 0.1);
-  --chrome:        #280C2F;
-  --chrome-2:      #3A1143;
-  --chrome-border: #4F175C;
-  --magenta:       #D350F2;
+  --primary:       #14B829;
+  --primary-hover: #119E23;
+  --primary-dark:  #0E811D;
+  --primary-bg:    rgba(20, 184, 41, 0.1);
+  --chrome:        #0C2F10;
+  --chrome-2:      #114317;
+  --chrome-border: #175C20;
+  --magenta:       #2EF047;
 }
 
 :root[data-theme="vancouver"] {
@@ -1088,14 +1088,14 @@ img, svg { display: block; max-width: 100%; }
 }
 
 :root[data-theme="washington"] {
-  --primary:       #D818A3;
-  --primary-hover: #BA158C;
-  --primary-dark:  #971172;
-  --primary-bg:    rgba(216, 24, 163, 0.1);
-  --chrome:        #2F0C25;
-  --chrome-2:      #431135;
-  --chrome-border: #5C1749;
-  --magenta:       #F250C5;
+  --primary:       #6813DD;
+  --primary-hover: #5910BE;
+  --primary-dark:  #490D9B;
+  --primary-bg:    rgba(104, 19, 221, 0.1);
+  --chrome:        #1B0C2F;
+  --chrome-2:      #261143;
+  --chrome-border: #34175C;
+  --magenta:       #934CF6;
 }
 
 :root[data-theme="xanadu"] {
