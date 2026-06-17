@@ -1,0 +1,41 @@
+---
+/** Dismissible heads-up on practice pages announcing the theme picker. */
+---
+<div class="theme-hu" data-theme-hu hidden>
+  <span class="theme-hu__icon" aria-hidden="true">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="13.5" cy="6.5" r="1.5"></circle><circle cx="17.5" cy="10.5" r="1.5"></circle>
+      <circle cx="8.5" cy="7.5" r="1.5"></circle><circle cx="6.5" cy="12.5" r="1.5"></circle>
+      <path d="M12 2a10 10 0 1 0 0 20 2 2 0 0 0 2-2c0-.5-.2-1-.5-1.4-.3-.4-.5-.9-.5-1.4a2 2 0 0 1 2-2h2.3A4.2 4.2 0 0 0 22 11c0-5-4.5-9-10-9z"></path>
+    </svg>
+  </span>
+  <span class="theme-hu__text">New: pick a theme — Zurich, Tokyo, Yokohama, Xanadu, or Vancouver — from the <strong>settings gear</strong> at the top right.</span>
+  <button type="button" class="theme-hu__close" data-theme-hu-close aria-label="Dismiss">×</button>
+</div>
+
+<script>
+  const KEY = 'glideup:themeHeadsUp:v1';
+  const el = document.querySelector('[data-theme-hu]');
+  try { if (!localStorage.getItem(KEY) && el) el.hidden = false; } catch { if (el) el.hidden = false; }
+  document.querySelector('[data-theme-hu-close]')?.addEventListener('click', () => {
+    if (el) el.hidden = true;
+    try { localStorage.setItem(KEY, '1'); } catch (e) {}
+  });
+</script>
+
+<style>
+  .theme-hu {
+    display: flex; align-items: center; gap: 10px; margin-bottom: 14px;
+    padding: 9px 12px; background: var(--primary-bg); color: var(--text);
+    border: 1px solid var(--border); border-radius: 8px; font-size: 13px;
+  }
+  .theme-hu[hidden] { display: none; }
+  .theme-hu__icon { color: var(--primary); display: inline-flex; flex: none; }
+  .theme-hu__text { flex: 1; line-height: 1.4; }
+  .theme-hu__text strong { color: var(--primary-dark); font-weight: 600; }
+  .theme-hu__close {
+    border: none; background: transparent; cursor: pointer; font-size: 18px;
+    line-height: 1; color: var(--text-muted); padding: 0 4px; flex: none;
+  }
+  .theme-hu__close:hover { color: var(--text); }
+</style>

@@ -849,25 +849,25 @@ img, svg { display: block; max-width: 100%; }
 }
 
 :root[data-theme="yokohama"] {
-  --primary:       #1F77C2;
-  --primary-hover: #1A66A6;
-  --primary-dark:  #144E80;
-  --primary-bg:    rgba(31, 119, 194, 0.09);
-  --chrome:        #0C2440;
-  --chrome-2:      #143158;
-  --chrome-border: #1E3F66;
-  --magenta:       #2EA6FF;
+  --primary:       #E8740F;
+  --primary-hover: #CC6310;
+  --primary-dark:  #A8500C;
+  --primary-bg:    rgba(232, 116, 15, 0.10);
+  --chrome:        #2E1B05;
+  --chrome-2:      #3D2608;
+  --chrome-border: #54350E;
+  --magenta:       #FFB257;
 }
 
 :root[data-theme="xanadu"] {
-  --primary:       #7C5CD6;
-  --primary-hover: #6A4AC0;
-  --primary-dark:  #523A99;
-  --primary-bg:    rgba(124, 92, 214, 0.10);
-  --chrome:        #241A40;
-  --chrome-2:      #332455;
-  --chrome-border: #43306B;
-  --magenta:       #B57BFF;
+  --primary:       #9333EA;
+  --primary-hover: #7E22CE;
+  --primary-dark:  #6B21A8;
+  --primary-bg:    rgba(147, 51, 234, 0.11);
+  --chrome:        #2A0E45;
+  --chrome-2:      #3A165C;
+  --chrome-border: #4C2174;
+  --magenta:       #C77DFF;
 }
 
 :root[data-theme="vancouver"] {

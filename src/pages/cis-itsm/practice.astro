@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
+import ThemeHeadsUp from '../../components/ThemeHeadsUp.astro';
 import { getCollection, getEntry } from 'astro:content';
 
 const blueprint = await getEntry('blueprints', 'cis-itsm');
@@ -23,6 +24,8 @@ for (const d of blueprint!.data.domains) weights[d.name] = d.weight;
     { label: 'CIS-ITSM', href: '/cis-itsm/' },
     { label: 'Question' },
   ]} />
+
+  <ThemeHeadsUp />
 
   <div id="practice-root" class="practice-root" data-exam="CIS-ITSM">
     <div class="practice-meta">
