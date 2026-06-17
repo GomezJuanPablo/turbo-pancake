@@ -8,6 +8,7 @@
  */
 ---
 <div class="fb" data-fb>
+  <div class="fb__backdrop" data-fb-backdrop hidden></div>
   <button type="button" class="fb__toggle" data-fb-toggle aria-haspopup="dialog" aria-expanded="false" aria-controls="fb-panel">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
       <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
@@ -57,6 +58,7 @@
     const contextEl = root.querySelector('[data-fb-context]');
     const submitBtn = root.querySelector('[data-fb-submit]') as HTMLButtonElement;
     const statusEl = root.querySelector('[data-fb-status]');
+    const backdrop = root.querySelector('[data-fb-backdrop]');
 
     // Detect a visible question on the current page (practice pages render
     // the stem into [data-stem] inside a [data-question-card] that is shown).
@@ -80,11 +82,13 @@
         contextEl.textContent = '';
       }
       panel.hidden = false;
+      if (backdrop) backdrop.hidden = false;
       toggle.setAttribute('aria-expanded', 'true');
       setTimeout(() => msgEl.focus(), 0);
     }
     function close() {
       panel.hidden = true;
+      if (backdrop) backdrop.hidden = true;
       toggle.setAttribute('aria-expanded', 'false');
     }
 
@@ -97,6 +101,7 @@
 
     toggle.addEventListener('click', () => (panel.hidden ? open() : close()));
     closeBtn.addEventListener('click', close);
+    backdrop?.addEventListener('click', close);
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !panel.hidden) close(); });
     document.addEventListener('click', (e) => {
       if (!panel.hidden && !root.contains(e.target as Node)) close();
@@ -151,8 +156,10 @@
   .fb__toggle:hover { background: var(--primary, #0E8B9E); transform: translateY(-1px); }
   .fb__toggle svg { display: block; }
 
+  .fb__backdrop { position: fixed; inset: 0; z-index: 1; background: transparent; }
+  .fb__toggle { z-index: 2; position: relative; }
   .fb__panel {
-    position: absolute; bottom: 52px; left: 0;
+    position: absolute; z-index: 2; bottom: 52px; left: 0;
     width: 320px; max-width: calc(100vw - 36px);
     background: var(--bg, #fff); color: var(--text, #16181d);
     border: 1px solid var(--border, #e3e6ea); border-radius: 12px;
@@ -162,8 +169,10 @@
   .fb__head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 2px; }
   .fb__title { font-size: 14px; }
   .fb__close {
-    border: none; background: transparent; font-size: 20px; line-height: 1;
-    cursor: pointer; color: var(--text-muted, #6b7280); padding: 0 4px;
+    border: none; background: transparent; font-size: 24px; line-height: 1;
+    cursor: pointer; color: var(--text-muted, #6b7280);
+    min-width: 36px; min-height: 36px; display: inline-flex;
+    align-items: center; justify-content: center; margin: -6px -6px 0 0;
   }
   .fb__label { font-size: 11px; font-weight: 600; color: var(--text-muted, #6b7280); margin-top: 4px; }
   .fb__select, .fb__textarea {
@@ -186,5 +195,7 @@
 
   @media (max-width: 900px) {
     .fb { bottom: 14px; left: 14px; }
+    .fb__backdrop { background: rgba(0,0,0,0.35); }
+    .fb__panel { width: min(340px, calc(100vw - 28px)); }
   }
 </style>

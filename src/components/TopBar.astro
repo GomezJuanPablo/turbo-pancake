@@ -36,6 +36,11 @@ const activeLabel = navItems.find(i => i.id === activeNav)?.label ?? 'All';
   </button>
 
   <div class="topbar__status" aria-label="User status">
+    <div class="topbar__themes" role="group" aria-label="Theme">
+      <button type="button" class="theme-dot" data-theme-set="default" title="Teal theme" aria-label="Teal theme" style="background:#0E8B9E"></button>
+      <button type="button" class="theme-dot" data-theme-set="pink" title="Pink theme" aria-label="Pink theme" style="background:#D6336C"></button>
+      <button type="button" class="theme-dot" data-theme-set="midnight" title="Midnight theme" aria-label="Midnight theme" style="background:#6EA8FE"></button>
+    </div>
     <span class="status-pill" title="Streak (days)">🔥 <span data-streak>0</span></span>
     <span class="status-pill" title="Experience points">⚡ <span data-xp>0</span></span>
   </div>
@@ -76,6 +81,17 @@ const activeLabel = navItems.find(i => i.id === activeNav)?.label ?? 'All';
       toggle?.setAttribute('aria-expanded', 'false');
     }
   });
+
+  // Theme switcher
+  const dots = document.querySelectorAll('[data-theme-set]');
+  const markActive = (t) => dots.forEach((b) => b.classList.toggle('is-active', b.getAttribute('data-theme-set') === t));
+  markActive(document.documentElement.dataset.theme || 'default');
+  dots.forEach((b) => b.addEventListener('click', () => {
+    const t = b.getAttribute('data-theme-set');
+    document.documentElement.dataset.theme = t;
+    try { localStorage.setItem('glideup:theme', t); } catch (e) {}
+    markActive(t);
+  }));
 </script>
 
 <style>
