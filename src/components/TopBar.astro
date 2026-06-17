@@ -10,6 +10,7 @@ const navItems = [
   { id: 'docs',   label: 'ServiceNow Docs', href: 'https://www.servicenow.com/docs/', external: true },
 ];
 
+import { navGroups } from '../lib/nav.js';
 const activeLabel = navItems.find(i => i.id === activeNav)?.label ?? 'All';
 ---
 <header class="topbar">
@@ -85,6 +86,14 @@ const activeLabel = navItems.find(i => i.id === activeNav)?.label ?? 'All';
 <nav class="topbar__dropdown" id="nav-menu" aria-label="Mobile navigation">
   {navItems.map((item) => (
     <a href={item.href} class={`topbar__dropdown-item ${activeNav === item.id ? 'is-active' : ''}`} {...(item.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}>{item.label}</a>
+  ))}
+  {navGroups.map((group) => (
+    <Fragment>
+      <div class="topbar__dropdown-label">{group.label}</div>
+      {group.items.map((item) => (
+        <a href={item.href} class={`topbar__dropdown-item ${activeNav === item.id ? 'is-active' : ''}`}>{item.label}</a>
+      ))}
+    </Fragment>
   ))}
 </nav>
 
@@ -178,11 +187,21 @@ const activeLabel = navItems.find(i => i.id === activeNav)?.label ?? 'All';
     left: 0;
     right: 0;
     z-index: 300;
+    max-height: calc(100vh - 48px);
+    overflow-y: auto;
     background: var(--chrome);
     border-bottom: 1px solid rgba(255,255,255,0.1);
     box-shadow: 0 8px 24px rgba(0,0,0,0.3);
   }
   .topbar__dropdown.is-open { display: flex; }
+  .topbar__dropdown-label {
+    padding: 12px 20px 4px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: rgba(255,255,255,0.45);
+  }
 
   .topbar__dropdown-item {
     padding: 12px 20px;
@@ -198,7 +217,7 @@ const activeLabel = navItems.find(i => i.id === activeNav)?.label ?? 'All';
   .topbar__dropdown-item.is-active { color: var(--primary); }
 
   /* Swap desktop nav for hamburger on mobile */
-  @media (max-width: 680px) {
+  @media (max-width: 900px) {
     .topbar__nav { display: none; }
     .topbar__hamburger { display: flex; }
   }

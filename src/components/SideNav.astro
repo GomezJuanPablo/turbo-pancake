@@ -4,27 +4,7 @@ interface Props {
 }
 const { activeNav = '' } = Astro.props;
 
-const groups = [
-  {
-    label: 'Start Here',
-    items: [
-      { id: 'how-to-use', label: 'How to Practice', href: '/how-to-use/' },
-      { id: 'leaderboard', label: 'Leaderboard',     href: '/leaderboard/' },
-      { id: 'roadmap',     label: 'Roadmap',          href: '/roadmap/' },
-      { id: 'about',       label: 'About',            href: '/about/' },
-    ],
-  },
-  {
-    label: 'Exam Practice',
-    items: [
-      { id: 'csa',      label: 'CSA',      href: '/csa/' },
-      { id: 'cad',      label: 'CAD',      href: '/cad/' },
-      { id: 'cis-itsm', label: 'CIS-ITSM', href: '/cis-itsm/' },
-      { id: 'cis-df',   label: 'CIS-DF',   href: '/cis-df/' },
-      { id: 'cis-sm',   label: 'CIS-SM',   href: '/cis-sm/' },
-    ],
-  },
-];
+import { navGroups as groups } from '../lib/nav.js';
 ---
 <aside class="sidenav" aria-label="Primary navigation">
   {groups.map((group) => (
