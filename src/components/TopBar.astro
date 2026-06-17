@@ -45,11 +45,35 @@ const activeLabel = navItems.find(i => i.id === activeNav)?.label ?? 'All';
       </button>
       <div class="topbar__menu" data-settings-menu role="menu" aria-label="Theme">
         <div class="topbar__menu-title">Theme</div>
-        <button type="button" class="theme-opt" data-theme-set="zurich"    role="menuitemradio"><span class="theme-opt__dot" style="background:#0E8B9E"></span><span class="theme-opt__name">Zurich</span><span class="theme-opt__check">✓</span></button>
-        <button type="button" class="theme-opt" data-theme-set="tokyo"     role="menuitemradio"><span class="theme-opt__dot" style="background:#D6336C"></span><span class="theme-opt__name">Tokyo</span><span class="theme-opt__check">✓</span></button>
-        <button type="button" class="theme-opt" data-theme-set="yokohama"  role="menuitemradio"><span class="theme-opt__dot" style="background:#E8740F"></span><span class="theme-opt__name">Yokohama</span><span class="theme-opt__check">✓</span></button>
-        <button type="button" class="theme-opt" data-theme-set="xanadu"    role="menuitemradio"><span class="theme-opt__dot" style="background:#9333EA"></span><span class="theme-opt__name">Xanadu</span><span class="theme-opt__check">✓</span></button>
-        <button type="button" class="theme-opt" data-theme-set="vancouver" role="menuitemradio"><span class="theme-opt__dot" style="background:#15163A"></span><span class="theme-opt__name">Vancouver</span><span class="theme-opt__check">✓</span></button>
+        <div class="theme-grid">
+          <button type="button" class="theme-swatch" data-theme-set="aspen" data-name="Aspen · 2011" style="background:#D83E18" title="Aspen (2011)" aria-label="Aspen" role="menuitemradio"></button>
+          <button type="button" class="theme-swatch" data-theme-set="berlin" data-name="Berlin · 2012" style="background:#D86B18" title="Berlin (2012)" aria-label="Berlin" role="menuitemradio"></button>
+          <button type="button" class="theme-swatch" data-theme-set="calgary" data-name="Calgary · 2013" style="background:#D89718" title="Calgary (2013)" aria-label="Calgary" role="menuitemradio"></button>
+          <button type="button" class="theme-swatch" data-theme-set="dublin" data-name="Dublin · 2013" style="background:#D8C318" title="Dublin (2013)" aria-label="Dublin" role="menuitemradio"></button>
+          <button type="button" class="theme-swatch" data-theme-set="eureka" data-name="Eureka · 2014" style="background:#C0D818" title="Eureka (2014)" aria-label="Eureka" role="menuitemradio"></button>
+          <button type="button" class="theme-swatch" data-theme-set="fuji" data-name="Fuji · 2015" style="background:#94D818" title="Fuji (2015)" aria-label="Fuji" role="menuitemradio"></button>
+          <button type="button" class="theme-swatch" data-theme-set="geneva" data-name="Geneva · 2015" style="background:#68D818" title="Geneva (2015)" aria-label="Geneva" role="menuitemradio"></button>
+          <button type="button" class="theme-swatch" data-theme-set="helsinki" data-name="Helsinki · 2016" style="background:#3BD818" title="Helsinki (2016)" aria-label="Helsinki" role="menuitemradio"></button>
+          <button type="button" class="theme-swatch" data-theme-set="istanbul" data-name="Istanbul · 2017" style="background:#18D821" title="Istanbul (2017)" aria-label="Istanbul" role="menuitemradio"></button>
+          <button type="button" class="theme-swatch" data-theme-set="jakarta" data-name="Jakarta · 2017" style="background:#18D84D" title="Jakarta (2017)" aria-label="Jakarta" role="menuitemradio"></button>
+          <button type="button" class="theme-swatch" data-theme-set="kingston" data-name="Kingston · 2018" style="background:#18D879" title="Kingston (2018)" aria-label="Kingston" role="menuitemradio"></button>
+          <button type="button" class="theme-swatch" data-theme-set="london" data-name="London · 2018" style="background:#18D8A6" title="London (2018)" aria-label="London" role="menuitemradio"></button>
+          <button type="button" class="theme-swatch" data-theme-set="madrid" data-name="Madrid · 2019" style="background:#18D8D2" title="Madrid (2019)" aria-label="Madrid" role="menuitemradio"></button>
+          <button type="button" class="theme-swatch" data-theme-set="newyork" data-name="New York · 2019" style="background:#18B1D8" title="New York (2019)" aria-label="New York" role="menuitemradio"></button>
+          <button type="button" class="theme-swatch" data-theme-set="orlando" data-name="Orlando · 2020" style="background:#1885D8" title="Orlando (2020)" aria-label="Orlando" role="menuitemradio"></button>
+          <button type="button" class="theme-swatch" data-theme-set="paris" data-name="Paris · 2020" style="background:#1859D8" title="Paris (2020)" aria-label="Paris" role="menuitemradio"></button>
+          <button type="button" class="theme-swatch" data-theme-set="quebec" data-name="Quebec · 2021" style="background:#182DD8" title="Quebec (2021)" aria-label="Quebec" role="menuitemradio"></button>
+          <button type="button" class="theme-swatch" data-theme-set="rome" data-name="Rome · 2021" style="background:#3018D8" title="Rome (2021)" aria-label="Rome" role="menuitemradio"></button>
+          <button type="button" class="theme-swatch" data-theme-set="sandiego" data-name="San Diego · 2022" style="background:#5C18D8" title="San Diego (2022)" aria-label="San Diego" role="menuitemradio"></button>
+          <button type="button" class="theme-swatch" data-theme-set="tokyo" data-name="Tokyo · 2022" style="background:#D6336C" title="Tokyo (2022)" aria-label="Tokyo" role="menuitemradio"></button>
+          <button type="button" class="theme-swatch" data-theme-set="utah" data-name="Utah · 2023" style="background:#B418D8" title="Utah (2023)" aria-label="Utah" role="menuitemradio"></button>
+          <button type="button" class="theme-swatch" data-theme-set="vancouver" data-name="Vancouver · 2023" style="background:#6E8BFF" title="Vancouver (2023)" aria-label="Vancouver" role="menuitemradio"></button>
+          <button type="button" class="theme-swatch" data-theme-set="washington" data-name="Washington, D.C. · 2024" style="background:#D818A3" title="Washington, D.C. (2024)" aria-label="Washington, D.C." role="menuitemradio"></button>
+          <button type="button" class="theme-swatch" data-theme-set="xanadu" data-name="Xanadu · 2024" style="background:#9333EA" title="Xanadu (2024)" aria-label="Xanadu" role="menuitemradio"></button>
+          <button type="button" class="theme-swatch" data-theme-set="yokohama" data-name="Yokohama · 2025" style="background:#E8740F" title="Yokohama (2025)" aria-label="Yokohama" role="menuitemradio"></button>
+          <button type="button" class="theme-swatch" data-theme-set="zurich" data-name="Zurich · 2025" style="background:#0E8B9E" title="Zurich (2025)" aria-label="Zurich" role="menuitemradio"></button>
+        </div>
+        <div class="topbar__menu-active" data-theme-active></div>
       </div>
     </div>
     <span class="status-pill" title="Streak (days)">🔥 <span data-streak>0</span></span>
@@ -98,7 +122,12 @@ const activeLabel = navItems.find(i => i.id === activeNav)?.label ?? 'All';
   const gear = document.querySelector('[data-settings-toggle]');
   const themeMenu = document.querySelector('[data-settings-menu]');
   const opts = document.querySelectorAll('[data-theme-set]');
-  const markActive = (t) => opts.forEach((b) => b.classList.toggle('is-active', b.getAttribute('data-theme-set') === t));
+  const activeLabel = document.querySelector('[data-theme-active]');
+  const showActiveLabel = () => {
+    const cur = document.querySelector('.theme-swatch.is-active');
+    if (activeLabel && cur) activeLabel.textContent = cur.getAttribute('data-name') || '';
+  };
+  const markActive = (t) => { opts.forEach((b) => b.classList.toggle('is-active', b.getAttribute('data-theme-set') === t)); showActiveLabel(); };
   markActive(document.documentElement.dataset.theme || 'zurich');
   const closeThemeMenu = () => { themeMenu?.classList.remove('is-open'); gear?.setAttribute('aria-expanded', 'false'); };
   gear?.addEventListener('click', (e) => {
@@ -106,13 +135,17 @@ const activeLabel = navItems.find(i => i.id === activeNav)?.label ?? 'All';
     const open = themeMenu?.classList.toggle('is-open');
     gear.setAttribute('aria-expanded', String(!!open));
   });
-  opts.forEach((b) => b.addEventListener('click', () => {
-    const t = b.getAttribute('data-theme-set');
-    document.documentElement.dataset.theme = t;
-    try { localStorage.setItem('glideup:theme', t); } catch (e) {}
-    markActive(t);
-    closeThemeMenu();
-  }));
+  opts.forEach((b) => {
+    b.addEventListener('mouseenter', () => { if (activeLabel) activeLabel.textContent = b.getAttribute('data-name') || ''; });
+    b.addEventListener('click', () => {
+      const t = b.getAttribute('data-theme-set');
+      document.documentElement.dataset.theme = t;
+      try { localStorage.setItem('glideup:theme', t); } catch (e) {}
+      markActive(t);
+      closeThemeMenu();
+    });
+  });
+  themeMenu?.addEventListener('mouseleave', showActiveLabel);
   document.addEventListener('click', (e) => { if (settings && !settings.contains(e.target as Node)) closeThemeMenu(); });
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeThemeMenu(); });
 </script>
