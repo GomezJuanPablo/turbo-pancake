@@ -1,0 +1,122 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+---
+<BaseLayout title="Feedback inbox — GlideUp.net" description="Private feedback inbox." activeNav="">
+  <Breadcrumb crumbs={[{ label: 'Practice', href: '/' }, { label: 'Feedback inbox' }]} />
+
+  <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:16px;">
+    <div>
+      <h1 style="font-size:22px;font-weight:700;margin-bottom:4px;">Feedback inbox</h1>
+      <p style="font-size:13px;color:var(--text-muted);">Submissions from the in-app feedback widget. Private — requires the access key.</p>
+    </div>
+    <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
+      <input id="fa-key" type="password" placeholder="Access key" autocomplete="off"
+        style="font-size:13px;padding:8px 10px;border:1px solid var(--border);border-radius:8px;background:var(--bg);color:var(--text);outline:none;width:200px;" />
+      <button type="button" id="fa-load" class="btn btn--primary" style="padding:8px 14px;">Load</button>
+    </div>
+  </div>
+
+  <div id="fa-status" class="card" style="padding:16px;font-size:13px;color:var(--text-muted);">Enter your access key and click Load.</div>
+
+  <div id="fa-filters" style="display:none;gap:6px;flex-wrap:wrap;margin:14px 0;">
+    <button type="button" class="fa-filter is-active" data-filter="all">All</button>
+    <button type="button" class="fa-filter" data-filter="feature">Feature requests</button>
+    <button type="button" class="fa-filter" data-filter="bug">Bugs</button>
+    <button type="button" class="fa-filter" data-filter="question">Questions</button>
+  </div>
+
+  <div id="fa-list"></div>
+</BaseLayout>
+
+<script>
+  const KEY_STORE = 'glideup:fbkey';
+  const keyEl = document.getElementById('fa-key') as HTMLInputElement;
+  const loadBtn = document.getElementById('fa-load');
+  const statusEl = document.getElementById('fa-status');
+  const listEl = document.getElementById('fa-list');
+  const filtersEl = document.getElementById('fa-filters');
+  let items = [];
+  let activeFilter = 'all';
+
+  const TYPE_LABEL = { feature: 'Feature request', bug: 'Bug report', question: 'Question feedback' };
+  const esc = (s) => String(s == null ? '' : s).replace(/[&<>"]/g, (c) => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;' }[c]));
+
+  function render() {
+    const rows = items.filter((it) => activeFilter === 'all' || it.type === activeFilter);
+    if (!rows.length) { listEl.innerHTML = '<div class="card" style="padding:16px;font-size:13px;color:var(--text-muted);">No submissions in this view.</div>'; return; }
+    listEl.innerHTML = rows.map((it) => {
+      const when = it.at ? new Date(it.at).toLocaleString() : '';
+      const label = TYPE_LABEL[it.type] || it.type;
+      const reply = it.email
+        ? `<a href="mailto:${esc(it.email)}?subject=${encodeURIComponent('Re: your GlideUp feedback')}" style="font-weight:600;">Reply to ${esc(it.email)}</a>`
+        : '<span style="color:var(--text-muted);">No email provided</span>';
+      const q = it.question ? `<div style="font-size:12px;color:var(--text-muted);margin-top:4px;">On question: ${esc(it.question)}</div>` : '';
+      const page = it.page ? `<a href="${esc(it.page)}" style="font-size:12px;">${esc(it.page)}</a>` : '';
+      return `<article class="card" style="padding:14px;margin-bottom:10px;">
+        <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline;">
+          <span class="fa-badge fa-badge--${esc(it.type)}">${esc(label)}</span>
+          <span style="font-size:12px;color:var(--text-muted);">${esc(when)}</span>
+        </div>
+        <p style="margin:8px 0 6px;font-size:14px;white-space:pre-wrap;">${esc(it.message)}</p>
+        ${q}
+        <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:8px;font-size:12px;">
+          <span>${reply}</span>${page}
+        </div>
+      </article>`;
+    }).join('');
+  }
+
+  async function load() {
+    const key = (keyEl.value || '').trim();
+    if (!key) { statusEl.textContent = 'Enter your access key first.'; return; }
+    localStorage.setItem(KEY_STORE, key);
+    statusEl.style.display = 'block';
+    statusEl.textContent = 'Loading…';
+    filtersEl.style.display = 'none';
+    listEl.innerHTML = '';
+    try {
+      const res = await fetch('/api/feedback?key=' + encodeURIComponent(key));
+      const data = await res.json().catch(() => ({}));
+      if (res.status === 401) { statusEl.textContent = 'Wrong access key.'; return; }
+      if (res.status === 503) { statusEl.textContent = 'Reading is disabled — set a FEEDBACK_KEY environment variable in Cloudflare Pages, then use it here.'; return; }
+      if (!res.ok) { statusEl.textContent = data.error || 'Could not load feedback.'; return; }
+      items = Array.isArray(data.items) ? data.items : [];
+      statusEl.style.display = 'none';
+      filtersEl.style.display = items.length ? 'flex' : 'none';
+      if (!items.length) { listEl.innerHTML = '<div class="card" style="padding:16px;font-size:13px;color:var(--text-muted);">No feedback yet.</div>'; return; }
+      render();
+    } catch {
+      statusEl.textContent = 'Network error — try again.';
+    }
+  }
+
+  loadBtn?.addEventListener('click', load);
+  keyEl?.addEventListener('keydown', (e) => { if (e.key === 'Enter') load(); });
+  filtersEl?.querySelectorAll('.fa-filter').forEach((b) => b.addEventListener('click', () => {
+    filtersEl.querySelectorAll('.fa-filter').forEach((x) => x.classList.remove('is-active'));
+    b.classList.add('is-active');
+    activeFilter = b.getAttribute('data-filter');
+    render();
+  }));
+
+  // Auto-load if a key was saved this session.
+  const saved = localStorage.getItem(KEY_STORE);
+  if (saved) { keyEl.value = saved; load(); }
+</script>
+
+<style>
+  .fa-filter {
+    font-size: 12px; padding: 6px 12px; border: 1px solid var(--border);
+    border-radius: 999px; background: var(--bg); color: var(--text-muted);
+    cursor: pointer; font-family: inherit;
+  }
+  .fa-filter.is-active { background: var(--primary); color: #fff; border-color: var(--primary); }
+  .fa-badge {
+    font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em;
+    padding: 3px 8px; border-radius: 6px; color: #fff;
+  }
+  .fa-badge--feature { background: #0E8B9E; }
+  .fa-badge--bug { background: #c0392b; }
+  .fa-badge--question { background: #6b48a8; }
+</style>
