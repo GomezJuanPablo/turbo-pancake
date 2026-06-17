@@ -6,6 +6,7 @@
  * Storage: reuses the existing `leaderboard` KV binding under a feedback:* key
  * (zero config). If a GITHUB_TOKEN env secret is set, each submission also
  * opens a GitHub issue in the repo for triage.
+ * (redeploy: pick up FEEDBACK_KEY/GITHUB_TOKEN env vars)
  */
 
 const CORS_HEADERS = {
