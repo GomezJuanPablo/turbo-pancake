@@ -203,9 +203,10 @@ for (const d of blueprint!.data.domains) weights[d.name] = d.weight;
     return pick(OPENERS_CORRECT_LOW);
   }
 
-  let selected  = null;
-  let revealed  = false;
-  let current   = null;
+  const chosen   = new Set();
+  let isMulti    = false;
+  let revealed   = false;
+  let current    = null;
   let confirming = false;
   const SUBMIT_LABEL = 'Check answer';
   let sessionAnswered = 0;
@@ -256,7 +257,8 @@ for (const d of blueprint!.data.domains) weights[d.name] = d.weight;
     current  = q;
     root.dataset.currentQid = q.id;
     const _qt = root.querySelector('[data-q-thanks]'); if (_qt) _qt.hidden = true;
-    selected = null;
+    chosen.clear();
+    isMulti = (q.type === 'multi_select') || ((q.correct || []).length > 1);
     revealed = false;
 
     card.hidden  = false;
@@ -275,29 +277,48 @@ for (const d of blueprint!.data.domains) weights[d.name] = d.weight;
     diffEl.textContent   = q.difficulty;
 
     optionsEl.innerHTML = '';
+    if (isMulti) {
+      const hint = document.createElement('div');
+      hint.className = 'options__hint';
+      hint.textContent = `Select ${(q.correct || []).length} answers.`;
+      optionsEl.appendChild(hint);
+    }
     for (const opt of q.options) {
       const btn = document.createElement('button');
       btn.type = 'button';
       btn.className = 'option';
       btn.dataset.option = opt.id;
-      btn.setAttribute('role', 'radio');
+      btn.setAttribute('role', isMulti ? 'checkbox' : 'radio');
       btn.setAttribute('aria-checked', 'false');
       btn.innerHTML = `<span class="option__letter">${opt.id}</span><span class="option__text"></span>`;
       btn.querySelector('.option__text').textContent = opt.text;
       btn.addEventListener('click', () => {
         if (revealed) return;
-        for (const b of optionsEl.querySelectorAll('.option')) {
-          b.setAttribute('aria-checked', 'false');
-          b.classList.remove('is-selected');
+        if (isMulti) {
+          if (chosen.has(opt.id)) {
+            chosen.delete(opt.id);
+            btn.setAttribute('aria-checked', 'false');
+            btn.classList.remove('is-selected');
+          } else {
+            chosen.add(opt.id);
+            btn.setAttribute('aria-checked', 'true');
+            btn.classList.add('is-selected');
+          }
+        } else {
+          chosen.clear();
+          for (const b of optionsEl.querySelectorAll('.option')) {
+            b.setAttribute('aria-checked', 'false');
+            b.classList.remove('is-selected');
+          }
+          chosen.add(opt.id);
+          btn.setAttribute('aria-checked', 'true');
+          btn.classList.add('is-selected');
         }
-        btn.setAttribute('aria-checked', 'true');
-        btn.classList.add('is-selected');
-        selected = opt.id;
         // Changing the selection cancels a pending confirmation (fat-finger guard).
         confirming = false;
         submitBtn.textContent = SUBMIT_LABEL;
         submitBtn.classList.remove('is-confirming');
-        submitBtn.hidden = false;
+        submitBtn.hidden = chosen.size === 0;
       });
       optionsEl.appendChild(btn);
     }
@@ -337,23 +358,23 @@ for (const d of blueprint!.data.domains) weights[d.name] = d.weight;
   }
 
   submitBtn?.addEventListener('click', () => {
-    if (!selected || !current || revealed) return;
+    if (!chosen.size || !current || revealed) return;
     // First click arms confirmation; second click locks the answer in.
     if (!confirming) {
       confirming = true;
-      submitBtn.textContent = 'Confirm answer ✓';
+      submitBtn.textContent = isMulti ? 'Confirm answers ✓' : 'Confirm answer ✓';
       submitBtn.classList.add('is-confirming');
       return;
     }
     confirming = false;
     submitBtn.classList.remove('is-confirming');
     revealed = true;
-    const correct = isCorrect([selected], current.correct);
+    const correct = isCorrect([...chosen], current.correct);
 
     for (const b of optionsEl.querySelectorAll('.option')) {
       const letter = b.dataset.option;
       if (current.correct.includes(letter)) b.classList.add('is-correct');
-      else if (letter === selected)          b.classList.add('is-incorrect');
+      else if (chosen.has(letter))           b.classList.add('is-incorrect');
       b.disabled = true;
     }
 

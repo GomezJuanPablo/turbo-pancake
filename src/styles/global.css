@@ -1160,3 +1160,6 @@ img, svg { display: block; max-width: 100%; }
 }
 .redo-link:hover { border-color: var(--primary); }
 .redo-link[hidden] { display: none; }
+
+/* Multi-select questions: count hint above the options */
+.options__hint { font-size: 12px; font-weight: 600; color: var(--primary-dark); margin: 0 0 10px; }
