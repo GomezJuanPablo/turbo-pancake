@@ -1,0 +1,1514 @@
+[
+  {
+    "id": "cisms-patx-001",
+    "exam": "CIS-SM",
+    "release": "Zurich",
+    "domain": "Service Mapping Pattern Design",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "In a Service Mapping pattern, what does an identification section do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Identifies the current CI and its attributes"
+      },
+      {
+        "id": "B",
+        "text": "Finds the CIs the current one connects to"
+      },
+      {
+        "id": "C",
+        "text": "Stores the MID Server credentials"
+      },
+      {
+        "id": "D",
+        "text": "Schedules the discovery job"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "Finding connected CIs is the job of a connection section.",
+      "C": "Credentials are configured separately, not in identification sections.",
+      "D": "Scheduling is a discovery schedule setting, not a pattern section."
+    },
+    "rationale": "An identification section discovers and identifies the current CI and populates its attributes during pattern execution.",
+    "references": [
+      {
+        "title": "Pattern identification sections",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/pattern-identification-sections.html"
+      }
+    ]
+  },
+  {
+    "id": "cisms-patx-002",
+    "exam": "CIS-SM",
+    "release": "Zurich",
+    "domain": "Service Mapping Pattern Design",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What does a connection section in a pattern do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Discovers the next CIs the current CI connects to"
+      },
+      {
+        "id": "B",
+        "text": "Identifies the current CI's attributes"
+      },
+      {
+        "id": "C",
+        "text": "Defines SSH credentials"
+      },
+      {
+        "id": "D",
+        "text": "Sets the application theme"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "Identifying the current CI is the identification section's role.",
+      "C": "Credentials are managed outside pattern sections.",
+      "D": "Themes are cosmetic and unrelated."
+    },
+    "rationale": "A connection section follows the current CI's configuration or traffic to discover the next CIs in the service, extending the map.",
+    "references": [
+      {
+        "title": "Pattern connection sections",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/pattern-connection-sections.html"
+      }
+    ]
+  },
+  {
+    "id": "cisms-patx-003",
+    "exam": "CIS-SM",
+    "release": "Zurich",
+    "domain": "Service Mapping Pattern Design",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is an entry point in Service Mapping?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The starting point, such as a URL or host and port, where mapping begins"
+      },
+      {
+        "id": "B",
+        "text": "A cluster of MID Servers used for load"
+      },
+      {
+        "id": "C",
+        "text": "A CMDB health indicator"
+      },
+      {
+        "id": "D",
+        "text": "A type of discovery credential"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "A MID Server cluster handles workload, not the map's starting point.",
+      "C": "Health indicators are governance metrics.",
+      "D": "Credentials authenticate to targets; they are not entry points."
+    },
+    "rationale": "An entry point is where Service Mapping begins discovering a service, typically a URL or host:port that represents the service's front door.",
+    "references": [
+      {
+        "title": "How Service Mapping discovers a service",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/service-mapping-discovery-process.html"
+      }
+    ]
+  },
+  {
+    "id": "cisms-patx-004",
+    "exam": "CIS-SM",
+    "release": "Zurich",
+    "domain": "Service Mapping Pattern Design",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which tool is used to view and edit Service Mapping patterns?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Pattern Designer"
+      },
+      {
+        "id": "B",
+        "text": "Form Designer"
+      },
+      {
+        "id": "C",
+        "text": "Flow Designer"
+      },
+      {
+        "id": "D",
+        "text": "Update Set editor"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "Form Designer arranges form fields.",
+      "C": "Flow Designer builds flows, not discovery patterns.",
+      "D": "Update Sets move configuration between instances."
+    },
+    "rationale": "Pattern Designer is the tool for building and editing the identification and connection logic in discovery patterns.",
+    "references": [
+      {
+        "title": "Pattern Designer operations",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/pattern-designer-operations.html"
+      }
+    ]
+  },
+  {
+    "id": "cisms-patx-005",
+    "exam": "CIS-SM",
+    "release": "Zurich",
+    "domain": "Service Mapping Pattern Design",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Mapping stops at a process and never finds the database it talks to. Which pattern section most likely needs work?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The connection section"
+      },
+      {
+        "id": "B",
+        "text": "The identification section"
+      },
+      {
+        "id": "C",
+        "text": "Number Maintenance"
+      },
+      {
+        "id": "D",
+        "text": "The theme"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "Identification handles the current CI, not finding the next one.",
+      "C": "Number Maintenance defines record numbering.",
+      "D": "Themes are cosmetic."
+    },
+    "rationale": "Following the process to the database it connects to is the connection section's job; a gap there stops the map from extending.",
+    "references": [
+      {
+        "title": "Pattern connection sections",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/pattern-connection-sections.html"
+      }
+    ]
+  },
+  {
+    "id": "cisms-patx-006",
+    "exam": "CIS-SM",
+    "release": "Zurich",
+    "domain": "Service Mapping Pattern Design",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which discovery approach does Service Mapping use to build a service map?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Top-down, starting from an entry point"
+      },
+      {
+        "id": "B",
+        "text": "Horizontal scanning of IP ranges only"
+      },
+      {
+        "id": "C",
+        "text": "Manual CMDB entry only"
+      },
+      {
+        "id": "D",
+        "text": "Random host sampling"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "Horizontal discovery sweeps IP ranges; Service Mapping is top-down from an entry point.",
+      "C": "Manual entry is a fallback, not the core approach.",
+      "D": "Discovery is deterministic, not random."
+    },
+    "rationale": "Service Mapping uses top-down discovery: it starts at an entry point and follows connections to build the service map.",
+    "references": [
+      {
+        "title": "Top-down service mapping",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/top-down-mapping.html"
+      }
+    ]
+  },
+  {
+    "id": "cisms-patx-007",
+    "exam": "CIS-SM",
+    "release": "Zurich",
+    "domain": "Service Mapping Pattern Design",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A CI is found but its attributes are wrong. Which pattern section should you adjust?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The identification section"
+      },
+      {
+        "id": "B",
+        "text": "The connection section"
+      },
+      {
+        "id": "C",
+        "text": "The credential record"
+      },
+      {
+        "id": "D",
+        "text": "The dashboard"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "Connection sections find the next CIs, not the current CI's attributes.",
+      "C": "Credentials authenticate; they do not parse attributes.",
+      "D": "Dashboards display data, not parse it."
+    },
+    "rationale": "Attribute values for the current CI come from the identification section, so that is where you correct wrong attributes.",
+    "references": [
+      {
+        "title": "Pattern identification sections",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/pattern-identification-sections.html"
+      }
+    ]
+  },
+  {
+    "id": "cisms-patx-008",
+    "exam": "CIS-SM",
+    "release": "Zurich",
+    "domain": "Service Mapping Pattern Design",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What does an operation do within a pattern section?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Performs a step such as parsing output or running a command"
+      },
+      {
+        "id": "B",
+        "text": "Stores a credential securely"
+      },
+      {
+        "id": "C",
+        "text": "Defines a user role"
+      },
+      {
+        "id": "D",
+        "text": "Sets the record number prefix"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "Credential storage is handled by the credentials store.",
+      "C": "Roles are user administration.",
+      "D": "Number prefixes are set in Number Maintenance."
+    },
+    "rationale": "Operations are the ordered steps inside a section that execute commands and parse their output to extract CI data.",
+    "references": [
+      {
+        "title": "Discovery patterns and sections",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/discovery-patterns.html"
+      }
+    ]
+  },
+  {
+    "id": "cisms-patx-009",
+    "exam": "CIS-SM",
+    "release": "Zurich",
+    "domain": "Service Mapping Pattern Design",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "Two similar applications need the same discovery logic. What promotes reuse?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Reusing patterns and sections across entry points"
+      },
+      {
+        "id": "B",
+        "text": "Copying CI records by hand"
+      },
+      {
+        "id": "C",
+        "text": "Switching the theme"
+      },
+      {
+        "id": "D",
+        "text": "Adding more roles"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "Manual copying is error-prone and not reuse of logic.",
+      "C": "Themes are cosmetic.",
+      "D": "Roles do not affect discovery logic."
+    },
+    "rationale": "Patterns and their sections are reusable, so the same logic can drive discovery for multiple similar services and entry points.",
+    "references": [
+      {
+        "title": "Discovery patterns and sections",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/discovery-patterns.html"
+      }
+    ]
+  },
+  {
+    "id": "cisms-patx-010",
+    "exam": "CIS-SM",
+    "release": "Zurich",
+    "domain": "Service Mapping Pattern Design",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Following traffic and configuration from the entry point through each tier describes what?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Top-down discovery"
+      },
+      {
+        "id": "B",
+        "text": "Horizontal discovery"
+      },
+      {
+        "id": "C",
+        "text": "Manual mapping"
+      },
+      {
+        "id": "D",
+        "text": "Tag-based grouping"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "Horizontal discovery scans ranges rather than following a service.",
+      "C": "Manual mapping is hand-built, not traffic-followed.",
+      "D": "Tag-based grouping uses tags, not traffic traversal."
+    },
+    "rationale": "Top-down discovery follows connections from the entry point through each tier of the application to build the map.",
+    "references": [
+      {
+        "title": "Top-down service mapping",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/top-down-mapping.html"
+      }
+    ]
+  },
+  {
+    "id": "cisms-patx-011",
+    "exam": "CIS-SM",
+    "release": "Zurich",
+    "domain": "Service Mapping Pattern Design",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Service Mapping does not recognize a custom application's process. What do you create or edit?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A discovery pattern with the right identification and connection sections"
+      },
+      {
+        "id": "B",
+        "text": "A UI Policy on the form"
+      },
+      {
+        "id": "C",
+        "text": "A Number Maintenance record"
+      },
+      {
+        "id": "D",
+        "text": "A new theme"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "UI Policies affect forms, not discovery.",
+      "C": "Number Maintenance is about numbering.",
+      "D": "Themes are cosmetic."
+    },
+    "rationale": "Custom or unsupported components are handled by authoring or editing a discovery pattern with appropriate sections.",
+    "references": [
+      {
+        "title": "Discovery patterns and sections",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/discovery-patterns.html"
+      }
+    ]
+  },
+  {
+    "id": "cisms-disx-001",
+    "exam": "CIS-SM",
+    "release": "Zurich",
+    "domain": "Discovery Configuration",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What component runs Service Mapping discovery on the local network?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The MID Server"
+      },
+      {
+        "id": "B",
+        "text": "The web browser"
+      },
+      {
+        "id": "C",
+        "text": "A UI Policy"
+      },
+      {
+        "id": "D",
+        "text": "The service catalog"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "The browser renders the UI; it does not run discovery.",
+      "C": "UI Policies control form fields.",
+      "D": "The catalog requests services."
+    },
+    "rationale": "The MID Server runs on the customer network and executes discovery and pattern operations for the instance.",
+    "references": [
+      {
+        "title": "MID Server overview",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/mid-server/mid-server-overview.html"
+      }
+    ]
+  },
+  {
+    "id": "cisms-disx-002",
+    "exam": "CIS-SM",
+    "release": "Zurich",
+    "domain": "Discovery Configuration",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "How does the MID Server communicate with the ServiceNow instance?",
+    "options": [
+      {
+        "id": "A",
+        "text": "It initiates outbound connections to the instance"
+      },
+      {
+        "id": "B",
+        "text": "The instance opens inbound connections to it"
+      },
+      {
+        "id": "C",
+        "text": "Through email relays"
+      },
+      {
+        "id": "D",
+        "text": "Via the Form Designer"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "The instance does not connect inbound to the MID Server.",
+      "C": "Email is not the MID Server transport.",
+      "D": "Form Designer is unrelated to communication."
+    },
+    "rationale": "The MID Server initiates outbound connections to the instance and pulls work, so no inbound firewall openings to it are needed.",
+    "references": [
+      {
+        "title": "MID Server communication",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/mid-server/mid-server-communication.html"
+      }
+    ]
+  },
+  {
+    "id": "cisms-disx-003",
+    "exam": "CIS-SM",
+    "release": "Zurich",
+    "domain": "Discovery Configuration",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What does the MID Server config.xml define?",
+    "options": [
+      {
+        "id": "A",
+        "text": "MID Server configuration parameters"
+      },
+      {
+        "id": "B",
+        "text": "CI relationships in the CMDB"
+      },
+      {
+        "id": "C",
+        "text": "The active theme"
+      },
+      {
+        "id": "D",
+        "text": "Access control rules"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "Relationships are stored in cmdb_rel_ci, not config.xml.",
+      "C": "Themes are cosmetic.",
+      "D": "ACLs are platform security records."
+    },
+    "rationale": "config.xml holds the MID Server's configuration parameters, such as instance URL and credentials reference.",
+    "references": [
+      {
+        "title": "MID Server config.xml",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/mid-server/mid-server-config-xml.html"
+      }
+    ]
+  },
+  {
+    "id": "cisms-disx-004",
+    "exam": "CIS-SM",
+    "release": "Zurich",
+    "domain": "Discovery Configuration",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Discovery cannot reach targets through a firewall. Which MID Server detail should you verify first?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The required outbound ports and connectivity"
+      },
+      {
+        "id": "B",
+        "text": "The current theme"
+      },
+      {
+        "id": "C",
+        "text": "Number Maintenance"
+      },
+      {
+        "id": "D",
+        "text": "The form layout"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "Themes are cosmetic.",
+      "C": "Numbering is unrelated to connectivity.",
+      "D": "Form layout does not affect network reachability."
+    },
+    "rationale": "Firewall reachability depends on the MID Server having the required outbound ports and network connectivity to targets.",
+    "references": [
+      {
+        "title": "MID Server outbound ports",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/mid-server/mid-server-ports.html"
+      }
+    ]
+  },
+  {
+    "id": "cisms-disx-005",
+    "exam": "CIS-SM",
+    "release": "Zurich",
+    "domain": "Discovery Configuration",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Why keep MID Servers on the supported version?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Auto-upgrade keeps them compatible with the instance"
+      },
+      {
+        "id": "B",
+        "text": "To change the theme"
+      },
+      {
+        "id": "C",
+        "text": "To add user roles"
+      },
+      {
+        "id": "D",
+        "text": "To rename CI classes"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "Themes are cosmetic.",
+      "C": "Roles are unrelated to MID Server versioning.",
+      "D": "Class names are unrelated to MID upgrades."
+    },
+    "rationale": "MID Servers auto-upgrade to stay compatible with the instance version, which is required for reliable discovery.",
+    "references": [
+      {
+        "title": "MID Server auto-upgrade",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/mid-server/mid-server-upgrade.html"
+      }
+    ]
+  },
+  {
+    "id": "cisms-disx-006",
+    "exam": "CIS-SM",
+    "release": "Zurich",
+    "domain": "Discovery Configuration",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A new network segment needs to be discovered. What must be able to reach it?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A MID Server with connectivity and valid credentials"
+      },
+      {
+        "id": "B",
+        "text": "A UI Policy"
+      },
+      {
+        "id": "C",
+        "text": "A new theme"
+      },
+      {
+        "id": "D",
+        "text": "A report"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "UI Policies affect forms.",
+      "C": "Themes are cosmetic.",
+      "D": "Reports display data, they do not discover."
+    },
+    "rationale": "Discovering a segment requires a MID Server that can reach it on the network and holds credentials for its targets.",
+    "references": [
+      {
+        "title": "MID Server overview",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/mid-server/mid-server-overview.html"
+      }
+    ]
+  },
+  {
+    "id": "cisms-smcx-001",
+    "exam": "CIS-SM",
+    "release": "Zurich",
+    "domain": "Service Mapping Configuration",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which credential type is commonly required to discover Linux and Unix hosts?",
+    "options": [
+      {
+        "id": "A",
+        "text": "SSH credentials"
+      },
+      {
+        "id": "B",
+        "text": "A theme"
+      },
+      {
+        "id": "C",
+        "text": "A UI Policy"
+      },
+      {
+        "id": "D",
+        "text": "Number Maintenance"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "Themes are cosmetic.",
+      "C": "UI Policies affect forms.",
+      "D": "Number Maintenance defines numbering."
+    },
+    "rationale": "SSH credentials let the MID Server log in to Linux and Unix hosts to run discovery commands.",
+    "references": [
+      {
+        "title": "SSH credentials",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/mid-server/ssh-credentials.html"
+      }
+    ]
+  },
+  {
+    "id": "cisms-smcx-002",
+    "exam": "CIS-SM",
+    "release": "Zurich",
+    "domain": "Service Mapping Configuration",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which credential type is used to discover network devices such as switches and load balancers?",
+    "options": [
+      {
+        "id": "A",
+        "text": "SNMP credentials"
+      },
+      {
+        "id": "B",
+        "text": "SSH credentials only"
+      },
+      {
+        "id": "C",
+        "text": "A UI Policy"
+      },
+      {
+        "id": "D",
+        "text": "A theme"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "SSH targets servers, not typical SNMP network gear.",
+      "C": "UI Policies affect forms.",
+      "D": "Themes are cosmetic."
+    },
+    "rationale": "Network devices are typically queried via SNMP, so SNMP credentials are required to discover them.",
+    "references": [
+      {
+        "title": "SNMP credentials",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/mid-server/snmp-credentials.html"
+      }
+    ]
+  },
+  {
+    "id": "cisms-smcx-003",
+    "exam": "CIS-SM",
+    "release": "Zurich",
+    "domain": "Service Mapping Configuration",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What are the main ways to map services in Service Mapping?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Top-down (pattern-based), tag-based, and manual"
+      },
+      {
+        "id": "B",
+        "text": "Only manual entry"
+      },
+      {
+        "id": "C",
+        "text": "Only spreadsheet import"
+      },
+      {
+        "id": "D",
+        "text": "Only by email"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "Manual is one option, not the only one.",
+      "C": "Spreadsheet import is not a Service Mapping method.",
+      "D": "Email is not a mapping method."
+    },
+    "rationale": "Services can be mapped top-down with patterns, grouped by tags, or built manually, depending on the use case.",
+    "references": [
+      {
+        "title": "Ways to map services",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/map-services.html"
+      }
+    ]
+  },
+  {
+    "id": "cisms-smcx-004",
+    "exam": "CIS-SM",
+    "release": "Zurich",
+    "domain": "Service Mapping Configuration",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A host is discovered but its database credentials fail. What should you check?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The correct credentials for that target type"
+      },
+      {
+        "id": "B",
+        "text": "The theme"
+      },
+      {
+        "id": "C",
+        "text": "The form layout"
+      },
+      {
+        "id": "D",
+        "text": "Number Maintenance"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "Themes are cosmetic.",
+      "C": "Form layout does not affect authentication.",
+      "D": "Numbering is unrelated to credentials."
+    },
+    "rationale": "Each target type needs appropriate credentials; a database failing while the host succeeds points to missing or wrong database credentials.",
+    "references": [
+      {
+        "title": "SSH credentials",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/mid-server/ssh-credentials.html"
+      }
+    ]
+  },
+  {
+    "id": "cisms-smcx-005",
+    "exam": "CIS-SM",
+    "release": "Zurich",
+    "domain": "Service Mapping Configuration",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What must be in place before Service Mapping can discover a service?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A MID Server, credentials, and connectivity to targets"
+      },
+      {
+        "id": "B",
+        "text": "A custom theme"
+      },
+      {
+        "id": "C",
+        "text": "A leaderboard entry"
+      },
+      {
+        "id": "D",
+        "text": "A committed update set"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "Themes are cosmetic.",
+      "C": "Leaderboards are unrelated.",
+      "D": "Update sets move configuration, not a discovery prerequisite."
+    },
+    "rationale": "Service Mapping requires a reachable MID Server, valid credentials, and network connectivity to the targets it must discover.",
+    "references": [
+      {
+        "title": "Service Mapping discovery requirements",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/service-mapping-requirements.html"
+      }
+    ]
+  },
+  {
+    "id": "cisms-smcx-006",
+    "exam": "CIS-SM",
+    "release": "Zurich",
+    "domain": "Service Mapping Configuration",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "Load balancers in the traffic path are missing from the map. What enables their discovery?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Network device discovery using SNMP credentials"
+      },
+      {
+        "id": "B",
+        "text": "A theme change"
+      },
+      {
+        "id": "C",
+        "text": "Adding more roles"
+      },
+      {
+        "id": "D",
+        "text": "A UI Policy"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "Themes are cosmetic.",
+      "C": "Roles do not affect discovery.",
+      "D": "UI Policies affect forms."
+    },
+    "rationale": "Load balancers are network devices discovered over SNMP, so SNMP credentials and network discovery are needed to map them.",
+    "references": [
+      {
+        "title": "Discover network devices",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/discover-load-balancers.html"
+      }
+    ]
+  },
+  {
+    "id": "cisms-cdbx-001",
+    "exam": "CIS-SM",
+    "release": "Zurich",
+    "domain": "Configuration Management Database",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Service Mapping populates which structure with discovered services and CIs?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The CMDB"
+      },
+      {
+        "id": "B",
+        "text": "The email log"
+      },
+      {
+        "id": "C",
+        "text": "The theme store"
+      },
+      {
+        "id": "D",
+        "text": "An update set"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "Logs record events, not CIs.",
+      "C": "There is no theme store for CIs.",
+      "D": "Update sets move configuration."
+    },
+    "rationale": "Discovered application services and their supporting CIs are stored in the CMDB.",
+    "references": [
+      {
+        "title": "CMDB table inheritance",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/cmdb-tables.html"
+      }
+    ]
+  },
+  {
+    "id": "cisms-cdbx-002",
+    "exam": "CIS-SM",
+    "release": "Zurich",
+    "domain": "Configuration Management Database",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What keeps discovered CIs from duplicating existing ones?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Identification and Reconciliation (IRE)"
+      },
+      {
+        "id": "B",
+        "text": "A UI Policy"
+      },
+      {
+        "id": "C",
+        "text": "A theme"
+      },
+      {
+        "id": "D",
+        "text": "Number Maintenance"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "UI Policies affect forms.",
+      "C": "Themes are cosmetic.",
+      "D": "Numbering is unrelated to matching."
+    },
+    "rationale": "IRE matches incoming CIs to existing records using identification rules, updating rather than duplicating them.",
+    "references": [
+      {
+        "title": "IRE identification rules",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/ci-identification-rules.html"
+      }
+    ]
+  },
+  {
+    "id": "cisms-cdbx-003",
+    "exam": "CIS-SM",
+    "release": "Zurich",
+    "domain": "Configuration Management Database",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Moving a CI to a more specific class is called what?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Reclassification"
+      },
+      {
+        "id": "B",
+        "text": "Coalescing"
+      },
+      {
+        "id": "C",
+        "text": "Theming"
+      },
+      {
+        "id": "D",
+        "text": "Certification"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "Coalescing matches import rows.",
+      "C": "Theming is cosmetic.",
+      "D": "Certification attests accuracy."
+    },
+    "rationale": "Changing a CI's class, such as making a generic Computer a Linux Server, is reclassification.",
+    "references": [
+      {
+        "title": "CI reclassification",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/ci-reclassification.html"
+      }
+    ]
+  },
+  {
+    "id": "cisms-cdbx-004",
+    "exam": "CIS-SM",
+    "release": "Zurich",
+    "domain": "Configuration Management Database",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Two sources disagree on a CI attribute during mapping. What decides the winning value?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Data source precedence"
+      },
+      {
+        "id": "B",
+        "text": "Alphabetical order of sources"
+      },
+      {
+        "id": "C",
+        "text": "The current theme"
+      },
+      {
+        "id": "D",
+        "text": "The form layout"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "Sources are not ranked alphabetically.",
+      "C": "Themes are cosmetic.",
+      "D": "Form layout does not set precedence."
+    },
+    "rationale": "Data source precedence (with reconciliation rules) determines which source's value is authoritative when sources conflict.",
+    "references": [
+      {
+        "title": "Data source precedence",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/datasource-precedence.html"
+      }
+    ]
+  },
+  {
+    "id": "cisms-cdbx-005",
+    "exam": "CIS-SM",
+    "release": "Zurich",
+    "domain": "Configuration Management Database",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Application services discovered by Service Mapping are stored as which kind of record?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Application service CIs"
+      },
+      {
+        "id": "B",
+        "text": "User records"
+      },
+      {
+        "id": "C",
+        "text": "Incident records"
+      },
+      {
+        "id": "D",
+        "text": "Theme records"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "Users are people, not services.",
+      "C": "Incidents are tasks.",
+      "D": "There is no theme record type for services."
+    },
+    "rationale": "Service Mapping creates application service CIs representing the running service and its supporting components.",
+    "references": [
+      {
+        "title": "CMDB table inheritance",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/cmdb-tables.html"
+      }
+    ]
+  },
+  {
+    "id": "cisms-cdbx-006",
+    "exam": "CIS-SM",
+    "release": "Zurich",
+    "domain": "Configuration Management Database",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "Discovery created a duplicate CI for an existing host. Which mechanism should have matched it?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The identification phase via IRE"
+      },
+      {
+        "id": "B",
+        "text": "The active theme"
+      },
+      {
+        "id": "C",
+        "text": "A UI Policy"
+      },
+      {
+        "id": "D",
+        "text": "Number Maintenance"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "Themes are cosmetic.",
+      "C": "UI Policies affect forms.",
+      "D": "Numbering does not match CIs."
+    },
+    "rationale": "The identification phase uses IRE rules to match incoming data to existing CIs; a duplicate suggests an identification gap.",
+    "references": [
+      {
+        "title": "Identification phase",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/discovery/identification.html"
+      }
+    ]
+  },
+  {
+    "id": "cisms-engx-001",
+    "exam": "CIS-SM",
+    "release": "Zurich",
+    "domain": "Service Mapping Engagement Readiness",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Why is Service Mapping valuable for incident resolution?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Service maps show impacted CIs and their dependencies"
+      },
+      {
+        "id": "B",
+        "text": "It changes the application theme"
+      },
+      {
+        "id": "C",
+        "text": "It assigns user roles"
+      },
+      {
+        "id": "D",
+        "text": "It renames CMDB tables"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "Themes are cosmetic.",
+      "C": "Role assignment is user administration.",
+      "D": "Table renaming is unrelated."
+    },
+    "rationale": "Service maps reveal which CIs support a service and how they depend on each other, speeding impact analysis during incidents.",
+    "references": [
+      {
+        "title": "Service maps in incident resolution",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/service-maps-incident.html"
+      }
+    ]
+  },
+  {
+    "id": "cisms-engx-002",
+    "exam": "CIS-SM",
+    "release": "Zurich",
+    "domain": "Service Mapping Engagement Readiness",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is a key prerequisite for a successful Service Mapping engagement?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Clear scope plus MID Server, credentials, and connectivity"
+      },
+      {
+        "id": "B",
+        "text": "A custom theme"
+      },
+      {
+        "id": "C",
+        "text": "A leaderboard entry"
+      },
+      {
+        "id": "D",
+        "text": "A committed update set"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "Themes are cosmetic.",
+      "C": "Leaderboards are unrelated.",
+      "D": "Update sets move configuration, not readiness."
+    },
+    "rationale": "Engagement readiness means a defined scope and the technical foundation (MID Server, credentials, connectivity) are in place.",
+    "references": [
+      {
+        "title": "Service Mapping design principles",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/service-mapping-overview.html"
+      }
+    ]
+  },
+  {
+    "id": "cisms-engx-003",
+    "exam": "CIS-SM",
+    "release": "Zurich",
+    "domain": "Service Mapping Engagement Readiness",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Stakeholders want to know which services an outage affects. What do they consult?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The service map or dependency view"
+      },
+      {
+        "id": "B",
+        "text": "The theme picker"
+      },
+      {
+        "id": "C",
+        "text": "Number Maintenance"
+      },
+      {
+        "id": "D",
+        "text": "The Form Designer"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "The theme picker is cosmetic.",
+      "C": "Numbering is unrelated.",
+      "D": "Form Designer arranges fields."
+    },
+    "rationale": "A service map (dependency view) shows the CIs a service depends on, making outage impact clear.",
+    "references": [
+      {
+        "title": "Using service maps",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/view-service-maps.html"
+      }
+    ]
+  },
+  {
+    "id": "cisms-engx-004",
+    "exam": "CIS-SM",
+    "release": "Zurich",
+    "domain": "Service Mapping Engagement Readiness",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "Before mapping starts, the team lists target apps and entry points. Which phase is this?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Engagement readiness and planning"
+      },
+      {
+        "id": "B",
+        "text": "Operate"
+      },
+      {
+        "id": "C",
+        "text": "Theming"
+      },
+      {
+        "id": "D",
+        "text": "Certification"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "Operate is ongoing use after mapping.",
+      "C": "Theming is cosmetic.",
+      "D": "Certification attests data accuracy later."
+    },
+    "rationale": "Listing scope, target applications, and entry points is part of engagement readiness and planning before discovery begins.",
+    "references": [
+      {
+        "title": "Service Mapping design principles",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/service-mapping-overview.html"
+      }
+    ]
+  },
+  {
+    "id": "cisms-mlx-001",
+    "exam": "CIS-SM",
+    "release": "Zurich",
+    "domain": "Machine Learning",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Besides pattern-based mapping, how can Service Mapping group CIs into a service?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Tag-based services"
+      },
+      {
+        "id": "B",
+        "text": "By changing the theme"
+      },
+      {
+        "id": "C",
+        "text": "Through ACLs"
+      },
+      {
+        "id": "D",
+        "text": "With Number Maintenance"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "Themes are cosmetic.",
+      "C": "ACLs control access.",
+      "D": "Numbering is unrelated."
+    },
+    "rationale": "Tag-based services group CIs into a service using tags (for example, cloud resource tags) instead of top-down patterns.",
+    "references": [
+      {
+        "title": "Configure tag-based services",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/tag-based-services.html"
+      }
+    ]
+  },
+  {
+    "id": "cisms-mlx-002",
+    "exam": "CIS-SM",
+    "release": "Zurich",
+    "domain": "Machine Learning",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What are dynamic CI groups used for?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Defining service membership by query or criteria"
+      },
+      {
+        "id": "B",
+        "text": "Changing the application theme"
+      },
+      {
+        "id": "C",
+        "text": "Assigning user roles"
+      },
+      {
+        "id": "D",
+        "text": "Numbering records"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "Themes are cosmetic.",
+      "C": "Roles are user administration.",
+      "D": "Numbering is unrelated."
+    },
+    "rationale": "Dynamic CI groups define membership from a query, so a service's members update automatically as CIs change.",
+    "references": [
+      {
+        "title": "Dynamic CI groups",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/dynamic-ci-groups.html"
+      }
+    ]
+  },
+  {
+    "id": "cisms-mlx-003",
+    "exam": "CIS-SM",
+    "release": "Zurich",
+    "domain": "Machine Learning",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "You need a service whose members come from cloud tags rather than a discovery pattern. What do you configure?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Tag-based services"
+      },
+      {
+        "id": "B",
+        "text": "A UI Policy"
+      },
+      {
+        "id": "C",
+        "text": "A theme"
+      },
+      {
+        "id": "D",
+        "text": "An update set"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "UI Policies affect forms.",
+      "C": "Themes are cosmetic.",
+      "D": "Update sets move configuration."
+    },
+    "rationale": "Tag-based services build service membership from resource tags, which suits cloud workloads without authored patterns.",
+    "references": [
+      {
+        "title": "Configure tag-based services",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/service-mapping/tag-based-services.html"
+      }
+    ]
+  }
+]
