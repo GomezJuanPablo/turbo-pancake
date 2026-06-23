@@ -1,0 +1,1514 @@
+[
+  {
+    "id": "cad-dca-040",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Designing and Creating an Application",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "When you create a new table inside a scoped application, what does ServiceNow prepend to the table's name?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The application scope identifier, such as x_acme_myapp"
+      },
+      {
+        "id": "B",
+        "text": "The letter u followed by an underscore"
+      },
+      {
+        "id": "C",
+        "text": "The creating user's ID and a timestamp"
+      },
+      {
+        "id": "D",
+        "text": "The name of the parent table in full"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "u_ is the prefix convention for custom tables and fields created in the global scope, not scoped apps.",
+      "C": "ServiceNow never names tables after the user or the time of creation.",
+      "D": "Extending a table does not rename the child table after its parent."
+    },
+    "rationale": "Tables and fields created inside a scoped application automatically receive that scope's prefix (x_<company>_<app>), which keeps scoped artifacts namespaced and protected.",
+    "references": [
+      {
+        "title": "Application scope",
+        "url": "https://www.servicenow.com/docs/r/zurich/application-development/c_ApplicationScope.html"
+      }
+    ]
+  },
+  {
+    "id": "cad-dca-041",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Designing and Creating an Application",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "You need a custom table that inherits the fields and process behavior of the Task table. What is the correct approach?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Extend the Task table when defining the new table"
+      },
+      {
+        "id": "B",
+        "text": "Recreate every Task field manually on a new base table"
+      },
+      {
+        "id": "C",
+        "text": "Add Task as a related list on your new table"
+      },
+      {
+        "id": "D",
+        "text": "Create a reference field that points to Task"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "Recreating fields by hand loses inheritance and the shared Task behavior and workflow.",
+      "C": "A related list links records but does not inherit fields or behavior.",
+      "D": "A reference field associates two records; it does not inherit the parent's fields."
+    },
+    "rationale": "Extending Task makes the new table a child in the Task hierarchy, inheriting its fields, business logic, and platform features such as SLAs and assignment.",
+    "references": [
+      {
+        "title": "Table extension",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_TableExtension.html"
+      }
+    ]
+  },
+  {
+    "id": "cad-dca-042",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Designing and Creating an Application",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which statement best describes an application file in ServiceNow?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A record that belongs to and is tracked by an application"
+      },
+      {
+        "id": "B",
+        "text": "A binary attachment stored on the app record"
+      },
+      {
+        "id": "C",
+        "text": "The XML produced when an app is published"
+      },
+      {
+        "id": "D",
+        "text": "A file written to the instance operating system"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "Application files are configuration records, not binary attachments.",
+      "C": "Published XML is an export artifact, not the definition of an application file.",
+      "D": "Application files live in the database, not on the host file system."
+    },
+    "rationale": "An application file is any configuration record (table, business rule, UI policy, and so on) that is associated with and version-tracked by its application.",
+    "references": [
+      {
+        "title": "Developing your application",
+        "url": "https://www.servicenow.com/docs/r/zurich/application-development/developing-applications.html"
+      }
+    ]
+  },
+  {
+    "id": "cad-dca-043",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Designing and Creating an Application",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A developer in the global scope tries to edit a script include that belongs to a scoped app and is blocked. What most likely controls this?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Cross-scope access settings on the scoped application"
+      },
+      {
+        "id": "B",
+        "text": "The developer's missing admin role"
+      },
+      {
+        "id": "C",
+        "text": "A read-only field on the script include form"
+      },
+      {
+        "id": "D",
+        "text": "An active update set in the wrong state"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "Admin rights do not override scope protection; cross-scope rules still apply.",
+      "C": "A read-only field would limit one field, not block editing a scoped artifact.",
+      "D": "Update set state controls capture, not cross-scope edit protection."
+    },
+    "rationale": "Scope protection and cross-scope privileges govern whether code in one scope can modify artifacts in another; the scoped app must grant access for outside edits.",
+    "references": [
+      {
+        "title": "Creation restrictions across application scopes",
+        "url": "https://www.servicenow.com/docs/r/zurich/application-development/r_CreationRestrsAcrossAppScopes.html"
+      }
+    ]
+  },
+  {
+    "id": "cad-dca-044",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Designing and Creating an Application",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Where do you set the default number format (prefix and starting value) for records on a custom table?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The Number Maintenance record for the table"
+      },
+      {
+        "id": "B",
+        "text": "A field default value on the form"
+      },
+      {
+        "id": "C",
+        "text": "The table's dictionary label entry"
+      },
+      {
+        "id": "D",
+        "text": "A UI policy on the number field"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "A field default sets a value but not the auto-incrementing number sequence.",
+      "C": "The dictionary label controls display text, not numbering.",
+      "D": "UI policies change field state, not number generation."
+    },
+    "rationale": "Number Maintenance (sys_number) defines the prefix, number of digits, and next number for a table's auto-generated record numbers.",
+    "references": [
+      {
+        "title": "Tables and fields",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_TablesAndFields.html"
+      }
+    ]
+  },
+  {
+    "id": "cad-aui-055",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Application User Interface",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which tool makes a field mandatory or read-only on a form without writing code?",
+    "options": [
+      {
+        "id": "A",
+        "text": "UI Policy"
+      },
+      {
+        "id": "B",
+        "text": "A Client Script using g_form calls"
+      },
+      {
+        "id": "C",
+        "text": "A Business Rule on the table"
+      },
+      {
+        "id": "D",
+        "text": "An ACL write rule"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "A Client Script can do this but requires scripting g_form methods.",
+      "C": "Business Rules run server-side and don't directly control form field state.",
+      "D": "ACLs restrict access; they don't set mandatory or read-only behavior."
+    },
+    "rationale": "UI Policies declaratively set fields mandatory, read-only, or visible based on conditions, with no scripting required.",
+    "references": [
+      {
+        "title": "Form designer",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_FormDesign.html"
+      }
+    ]
+  },
+  {
+    "id": "cad-aui-056",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Application User Interface",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which client script type runs as a form first loads in the browser?",
+    "options": [
+      {
+        "id": "A",
+        "text": "onLoad"
+      },
+      {
+        "id": "B",
+        "text": "onSubmit"
+      },
+      {
+        "id": "C",
+        "text": "onChange"
+      },
+      {
+        "id": "D",
+        "text": "onCellEdit"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "onSubmit runs when the form is submitted, not at load.",
+      "C": "onChange runs when a specific field value changes.",
+      "D": "onCellEdit runs when a list cell is edited inline."
+    },
+    "rationale": "An onLoad client script executes when the form renders, making it the place to set initial field state in the browser.",
+    "references": [
+      {
+        "title": "Form designer",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_FormDesign.html"
+      }
+    ]
+  },
+  {
+    "id": "cad-aui-057",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Application User Interface",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "You must hide a field on the form only when a checkbox is selected, with no scripting. What do you use?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A UI Policy with a condition and a Hide action"
+      },
+      {
+        "id": "B",
+        "text": "A before Business Rule that clears the field"
+      },
+      {
+        "id": "C",
+        "text": "An ACL that denies read on the field"
+      },
+      {
+        "id": "D",
+        "text": "A data policy on the table"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "A Business Rule changes data server-side; it can't show or hide a form field.",
+      "C": "An ACL denies access broadly and isn't condition-driven on the form.",
+      "D": "Data policies enforce data rules and mirror to UI policies, but the direct UI control here is a UI Policy."
+    },
+    "rationale": "A UI Policy evaluates a condition on the form and applies field actions such as Visible = false, giving codeless show/hide behavior.",
+    "references": [
+      {
+        "title": "Form designer",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_FormDesign.html"
+      }
+    ]
+  },
+  {
+    "id": "cad-aui-058",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Application User Interface",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What does a UI Action let an application developer add to a form or list?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A button, link, or context-menu item that runs logic"
+      },
+      {
+        "id": "B",
+        "text": "A new column on the underlying table"
+      },
+      {
+        "id": "C",
+        "text": "A scheduled background job"
+      },
+      {
+        "id": "D",
+        "text": "A read restriction on a field"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "Adding a column is a dictionary change, not a UI Action.",
+      "C": "Scheduled jobs run on a timer, unrelated to UI Actions.",
+      "D": "Field read restrictions are ACLs, not UI Actions."
+    },
+    "rationale": "UI Actions add interactive controls (buttons, links, context-menu items) to forms and lists and run client or server logic when clicked.",
+    "references": [
+      {
+        "title": "Form designer",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_FormDesign.html"
+      }
+    ]
+  },
+  {
+    "id": "cad-aui-059",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Application User Interface",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A field should default to the current user when a record is created through the form. Which is the simplest configuration?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Set the field's default value to javascript:gs.getUserID()"
+      },
+      {
+        "id": "B",
+        "text": "Write an onSubmit client script to set it"
+      },
+      {
+        "id": "C",
+        "text": "Add a business rule that updates it after insert"
+      },
+      {
+        "id": "D",
+        "text": "Use a UI Policy to populate the field"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "An onSubmit script works but is more effort than a dictionary default.",
+      "C": "An after-insert rule sets it later and adds overhead versus a default.",
+      "D": "UI Policies change field state, not default values."
+    },
+    "rationale": "A dictionary default value with a javascript: expression (gs.getUserID()) populates the field automatically on new records without extra scripts.",
+    "references": [
+      {
+        "title": "System dictionary",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_SystemDictionary.html"
+      }
+    ]
+  },
+  {
+    "id": "cad-aui-060",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Application User Interface",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which feature controls which fields appear, and in what order, on a form?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Form layout (Form Designer)"
+      },
+      {
+        "id": "B",
+        "text": "Access Control rules"
+      },
+      {
+        "id": "C",
+        "text": "The table's number maintenance"
+      },
+      {
+        "id": "D",
+        "text": "A scheduled data import"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "ACLs control access to data, not which fields a form displays.",
+      "C": "Number Maintenance defines record numbering, not form layout.",
+      "D": "Imports load data; they don't arrange form fields."
+    },
+    "rationale": "Form layout, configured in the Form Designer, determines which fields are placed on a form and their arrangement.",
+    "references": [
+      {
+        "title": "Configuring the form layout",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/configure-form-layout.html"
+      }
+    ]
+  },
+  {
+    "id": "cad-aui-061",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Application User Interface",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Different groups of users should see different fields on the same record. What is the recommended way to achieve this?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Create form views and assign them per group or context"
+      },
+      {
+        "id": "B",
+        "text": "Build a separate table for each group"
+      },
+      {
+        "id": "C",
+        "text": "Delete fields the group should not see"
+      },
+      {
+        "id": "D",
+        "text": "Add a client script that reloads the page"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "A separate table per group fragments data and is unnecessary.",
+      "C": "Deleting fields removes them for everyone, not per group.",
+      "D": "Reloading the page does not change which fields display."
+    },
+    "rationale": "Form views let you present different field layouts of the same record to different audiences without duplicating data.",
+    "references": [
+      {
+        "title": "Configuring the form layout",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/configure-form-layout.html"
+      }
+    ]
+  },
+  {
+    "id": "cad-sec-055",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Security and Restricting Access",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "In what order does ServiceNow evaluate ACLs for a record operation?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Most specific (field) to most general (table)"
+      },
+      {
+        "id": "B",
+        "text": "Table first, then field, alphabetically"
+      },
+      {
+        "id": "C",
+        "text": "Random order until one passes"
+      },
+      {
+        "id": "D",
+        "text": "Newest ACL first by creation date"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "Field-level matches are evaluated before broader table-level rules, not after.",
+      "C": "ACL evaluation is deterministic, not random.",
+      "D": "Creation date does not determine ACL evaluation order."
+    },
+    "rationale": "ACL processing checks the most specific matching rule first (field-level), then the table level; the user must pass the matching rule that applies.",
+    "references": [
+      {
+        "title": "ACL rule processing",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/r_ACLRuleProcessing.html"
+      }
+    ]
+  },
+  {
+    "id": "cad-sec-056",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Security and Restricting Access",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What two things must a user satisfy for an ACL rule to grant access?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The required roles and the rule's condition/script"
+      },
+      {
+        "id": "B",
+        "text": "Only an admin role on their account"
+      },
+      {
+        "id": "C",
+        "text": "Membership in any group on the instance"
+      },
+      {
+        "id": "D",
+        "text": "A matching UI Policy on the form"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "Admin bypasses many ACLs but is not the general requirement an ACL defines.",
+      "C": "Group membership alone does not satisfy an ACL's role and condition checks.",
+      "D": "UI Policies affect form fields, not ACL evaluation."
+    },
+    "rationale": "An ACL grants access only when the user holds the required roles and the rule's condition and script both evaluate to true.",
+    "references": [
+      {
+        "title": "Access Control List rules",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/access-control/access-control-rules.html"
+      }
+    ]
+  },
+  {
+    "id": "cad-sec-057",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Security and Restricting Access",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Users in a scoped app can read records they should not. Where do you look first to restrict read access?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The record (row) and field read ACLs for the table"
+      },
+      {
+        "id": "B",
+        "text": "The form layout for that table"
+      },
+      {
+        "id": "C",
+        "text": "The table's number maintenance record"
+      },
+      {
+        "id": "D",
+        "text": "A UI Policy on the form"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "Form layout changes display, not who can read the data.",
+      "C": "Number Maintenance controls numbering, not access.",
+      "D": "UI Policies affect field state on the form, not data access."
+    },
+    "rationale": "Read access is governed by record and field-level read ACLs; tightening those rules controls who can see the rows and fields.",
+    "references": [
+      {
+        "title": "Access Control List rules",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/access-control/access-control-rules.html"
+      }
+    ]
+  },
+  {
+    "id": "cad-sec-058",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Security and Restricting Access",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the effect of granting a role the elevated 'admin' privilege?",
+    "options": [
+      {
+        "id": "A",
+        "text": "It can bypass most ACL checks across the platform"
+      },
+      {
+        "id": "B",
+        "text": "It only grants access to the System Logs"
+      },
+      {
+        "id": "C",
+        "text": "It restricts the user to read-only access"
+      },
+      {
+        "id": "D",
+        "text": "It applies only inside a single application scope"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "Admin is far broader than log access.",
+      "C": "Admin grants broad write access, not read-only.",
+      "D": "Admin is platform-wide, not limited to one scope."
+    },
+    "rationale": "The admin role can bypass most access controls, which is why it is granted sparingly and elevated privileges are used carefully.",
+    "references": [
+      {
+        "title": "Base system roles",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/user-administration/r_BaseSystemRoles.html"
+      }
+    ]
+  },
+  {
+    "id": "cad-sec-059",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Security and Restricting Access",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "You want to allow read but block write on a field for most users. Which ACL configuration fits?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A field-level write ACL that requires a specific role"
+      },
+      {
+        "id": "B",
+        "text": "A table-level read ACL set to none"
+      },
+      {
+        "id": "C",
+        "text": "A UI Policy making the field read-only"
+      },
+      {
+        "id": "D",
+        "text": "A business rule that aborts the form"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "Denying table read blocks viewing the record entirely, not just writing the field.",
+      "C": "A UI Policy is a client-side convenience and not true security.",
+      "D": "Aborting in a business rule is heavy-handed and not field-scoped access control."
+    },
+    "rationale": "A field-level write ACL requiring a role lets unauthorized users still read the field while preventing them from writing it; UI policies are not a security boundary.",
+    "references": [
+      {
+        "title": "Access Control List rules",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/access-control/access-control-rules.html"
+      }
+    ]
+  },
+  {
+    "id": "cad-sec-060",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Security and Restricting Access",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which tool helps you see exactly which ACL allowed or denied an operation during testing?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The security/ACL debug (Debug Security Rules)"
+      },
+      {
+        "id": "B",
+        "text": "The system dictionary"
+      },
+      {
+        "id": "C",
+        "text": "The form designer"
+      },
+      {
+        "id": "D",
+        "text": "Number maintenance"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "The dictionary defines fields, not ACL outcomes.",
+      "C": "The form designer arranges fields and shows no ACL traces.",
+      "D": "Number Maintenance is unrelated to security debugging."
+    },
+    "rationale": "Debug Security Rules outputs which ACLs were evaluated and their results, making it the go-to tool for diagnosing access issues.",
+    "references": [
+      {
+        "title": "ACL rule processing",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-security/r_ACLRuleProcessing.html"
+      }
+    ]
+  },
+  {
+    "id": "cad-sec-061",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Security and Restricting Access",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A scoped application needs another scope to call one of its Script Includes. What must be configured?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Cross-scope access privileges allowing the call"
+      },
+      {
+        "id": "B",
+        "text": "An admin role on every caller"
+      },
+      {
+        "id": "C",
+        "text": "A public UI Page in the target scope"
+      },
+      {
+        "id": "D",
+        "text": "A new role added to the caller's profile"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "Admin does not bypass scope protection for cross-scope script access.",
+      "C": "A UI Page is unrelated to allowing cross-scope API calls.",
+      "D": "Adding a role does not grant cross-scope execution privileges."
+    },
+    "rationale": "Cross-scope access controls (and the Script Include's accessible-from setting) determine whether code in another scope may call it.",
+    "references": [
+      {
+        "title": "Creation restrictions across application scopes",
+        "url": "https://www.servicenow.com/docs/r/zurich/application-development/r_CreationRestrsAcrossAppScopes.html"
+      }
+    ]
+  },
+  {
+    "id": "cad-aut-054",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Application Automation",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "In Flow Designer, what starts a flow running?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A trigger"
+      },
+      {
+        "id": "B",
+        "text": "A subflow"
+      },
+      {
+        "id": "C",
+        "text": "An action step"
+      },
+      {
+        "id": "D",
+        "text": "A data pill"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "A subflow is reusable logic that a flow calls; it doesn't start the flow.",
+      "C": "Actions are the steps a flow runs after it starts.",
+      "D": "Data pills carry values between steps; they don't start flows."
+    },
+    "rationale": "A trigger defines the event or schedule that starts a flow, such as a record created or updated, or a timer.",
+    "references": [
+      {
+        "title": "Flow trigger",
+        "url": "https://www.servicenow.com/docs/r/zurich/build-workflows/flow-trigger.html"
+      }
+    ]
+  },
+  {
+    "id": "cad-aut-055",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Application Automation",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which automation runs logic on a recurring schedule rather than in response to a record change?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A Scheduled Job (scheduled script execution)"
+      },
+      {
+        "id": "B",
+        "text": "A Business Rule triggered on update"
+      },
+      {
+        "id": "C",
+        "text": "An onChange Client Script"
+      },
+      {
+        "id": "D",
+        "text": "A UI Action button on the form"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "Business Rules run in response to database operations, not on a timer.",
+      "C": "Client Scripts run in the browser when fields change, not on a schedule.",
+      "D": "UI Actions run when a user clicks them, not on a recurring schedule."
+    },
+    "rationale": "A Scheduled Job (scheduled script execution) runs on a defined recurring schedule, making it the right tool for periodic background automation.",
+    "references": [
+      {
+        "title": "Flow Designer",
+        "url": "https://www.servicenow.com/docs/r/zurich/build-workflows/flow-designer.html"
+      }
+    ]
+  },
+  {
+    "id": "cad-aut-056",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Application Automation",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "You need to run automation only when an incident's priority changes to 1. What trigger and condition fit best?",
+    "options": [
+      {
+        "id": "A",
+        "text": "An Updated trigger with a condition on Priority"
+      },
+      {
+        "id": "B",
+        "text": "A Created trigger with no condition"
+      },
+      {
+        "id": "C",
+        "text": "A scheduled trigger that runs hourly"
+      },
+      {
+        "id": "D",
+        "text": "A REST trigger from an external system"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "A Created trigger fires on new records, not on a priority change.",
+      "C": "A schedule runs on time, not in response to the field change.",
+      "D": "A REST trigger responds to inbound calls, not internal updates."
+    },
+    "rationale": "An Updated record trigger with a condition (Priority changes to 1) runs the flow precisely when that change occurs.",
+    "references": [
+      {
+        "title": "Flow trigger",
+        "url": "https://www.servicenow.com/docs/r/zurich/build-workflows/flow-trigger.html"
+      }
+    ]
+  },
+  {
+    "id": "cad-aut-057",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Application Automation",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "When should you build a custom Action rather than inline flow steps?",
+    "options": [
+      {
+        "id": "A",
+        "text": "When the logic should be reusable across flows"
+      },
+      {
+        "id": "B",
+        "text": "When the logic runs only once in one flow"
+      },
+      {
+        "id": "C",
+        "text": "When you want to avoid using Flow Designer"
+      },
+      {
+        "id": "D",
+        "text": "When you need to change a form layout"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "One-off logic doesn't need to be packaged as a reusable action.",
+      "C": "Custom actions are part of Flow Designer, not an alternative to it.",
+      "D": "Form layout is a UI concern, unrelated to actions."
+    },
+    "rationale": "Custom Actions encapsulate steps with defined inputs and outputs so they can be reused across many flows, unlike one-off inline steps.",
+    "references": [
+      {
+        "title": "Flow actions",
+        "url": "https://www.servicenow.com/docs/r/zurich/build-workflows/workflow-studio/flow-actions.html"
+      }
+    ]
+  },
+  {
+    "id": "cad-aut-058",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Application Automation",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A flow must call an external REST API as one of its steps. What is the standard way to do this?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Use an IntegrationHub spoke or REST action"
+      },
+      {
+        "id": "B",
+        "text": "Write the call in a UI Policy"
+      },
+      {
+        "id": "C",
+        "text": "Add the URL to the form layout"
+      },
+      {
+        "id": "D",
+        "text": "Create a number maintenance record"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "UI Policies run in the browser and don't make server integrations.",
+      "C": "Form layout has nothing to do with outbound calls.",
+      "D": "Number Maintenance defines record numbering only."
+    },
+    "rationale": "IntegrationHub provides spokes and REST steps so flows can call external services without custom integration code.",
+    "references": [
+      {
+        "title": "IntegrationHub",
+        "url": "https://www.servicenow.com/docs/r/zurich/build-workflows/integrationhub.html"
+      }
+    ]
+  },
+  {
+    "id": "cad-aut-059",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Application Automation",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which server-side automation runs automatically in response to database operations like insert or update?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A Business Rule"
+      },
+      {
+        "id": "B",
+        "text": "A Client Script"
+      },
+      {
+        "id": "C",
+        "text": "A UI Policy"
+      },
+      {
+        "id": "D",
+        "text": "A form view"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "Client Scripts run in the browser on the form, not on database operations.",
+      "C": "UI Policies act on form fields client-side.",
+      "D": "A form view is a layout, not automation."
+    },
+    "rationale": "Business Rules execute server-side on database operations (insert, update, delete, query), making them core to record automation.",
+    "references": [
+      {
+        "title": "Flow Designer",
+        "url": "https://www.servicenow.com/docs/r/zurich/build-workflows/flow-designer.html"
+      }
+    ]
+  },
+  {
+    "id": "cad-aut-060",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Application Automation",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "You want reusable server-side functions that scripts and flows can call. What should you build?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A Script Include"
+      },
+      {
+        "id": "B",
+        "text": "An onLoad Client Script"
+      },
+      {
+        "id": "C",
+        "text": "A UI Action button"
+      },
+      {
+        "id": "D",
+        "text": "A form section"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "Client Scripts run in the browser and are not reusable server libraries.",
+      "C": "UI Actions add controls to forms, not reusable server functions.",
+      "D": "A form section is a layout element."
+    },
+    "rationale": "Script Includes hold reusable server-side functions and classes that business rules, flows, and other scripts can call.",
+    "references": [
+      {
+        "title": "Flow Designer",
+        "url": "https://www.servicenow.com/docs/r/zurich/build-workflows/flow-designer.html"
+      }
+    ]
+  },
+  {
+    "id": "cad-ext-027",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Working with External Data",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the role of the staging (import set) table in a data import?",
+    "options": [
+      {
+        "id": "A",
+        "text": "It temporarily holds incoming rows before transformation"
+      },
+      {
+        "id": "B",
+        "text": "It is the final destination for the data"
+      },
+      {
+        "id": "C",
+        "text": "It stores the transform map definition"
+      },
+      {
+        "id": "D",
+        "text": "It validates user roles for the import"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "The target table is the final destination; the import set table is staging.",
+      "C": "Transform maps are separate configuration records.",
+      "D": "Role validation is handled by ACLs, not the staging table."
+    },
+    "rationale": "Import set tables stage raw incoming rows so a transform map can map and load them into the target table.",
+    "references": [
+      {
+        "title": "Import Sets",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_ImportSets.html"
+      }
+    ]
+  },
+  {
+    "id": "cad-ext-028",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Working with External Data",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What does a coalesce field do during a transform?",
+    "options": [
+      {
+        "id": "A",
+        "text": "It matches incoming rows to existing records to update them"
+      },
+      {
+        "id": "B",
+        "text": "It deletes duplicate target records"
+      },
+      {
+        "id": "C",
+        "text": "It encrypts the imported values"
+      },
+      {
+        "id": "D",
+        "text": "It schedules the import to run nightly"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "Coalescing updates or inserts; it does not delete duplicates.",
+      "C": "Coalesce has nothing to do with encryption.",
+      "D": "Scheduling is configured on the data source or import job."
+    },
+    "rationale": "A coalesce field is the key used to find a matching target record: a match updates the existing record, no match inserts a new one.",
+    "references": [
+      {
+        "title": "Coalesce fields",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/r_CoalesceFields.html"
+      }
+    ]
+  },
+  {
+    "id": "cad-ext-029",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Working with External Data",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "An import keeps creating duplicate records instead of updating existing ones. What is the most likely fix?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Set an appropriate coalesce field in the transform map"
+      },
+      {
+        "id": "B",
+        "text": "Add more fields to the form layout"
+      },
+      {
+        "id": "C",
+        "text": "Grant the importing user the admin role"
+      },
+      {
+        "id": "D",
+        "text": "Increase the data source row limit"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "Form layout doesn't affect insert-versus-update behavior.",
+      "C": "Admin rights don't change coalesce matching.",
+      "D": "Row limits change volume, not duplicate handling."
+    },
+    "rationale": "Without a coalesce field, every row inserts a new record; defining a coalesce key makes the transform update matching records instead.",
+    "references": [
+      {
+        "title": "Coalesce fields",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/r_CoalesceFields.html"
+      }
+    ]
+  },
+  {
+    "id": "cad-ext-030",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Working with External Data",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What does a data source define for an import?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Where the data comes from and its format"
+      },
+      {
+        "id": "B",
+        "text": "Which users may view the imported records"
+      },
+      {
+        "id": "C",
+        "text": "The form layout of the target table"
+      },
+      {
+        "id": "D",
+        "text": "The number format for new records"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "Access to imported records is governed by ACLs.",
+      "C": "Form layout is unrelated to the data source.",
+      "D": "Numbering is set in Number Maintenance."
+    },
+    "rationale": "A data source specifies the origin (file, JDBC, REST) and format of the data to be loaded into an import set.",
+    "references": [
+      {
+        "title": "Create a data source",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/t_CreateADataSource.html"
+      }
+    ]
+  },
+  {
+    "id": "cad-ext-031",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Working with External Data",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "You must map an incoming column to a reference field by display value rather than sys_id. What handles this?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A field map configured to use a referenced value/source script"
+      },
+      {
+        "id": "B",
+        "text": "A UI Policy on the target form"
+      },
+      {
+        "id": "C",
+        "text": "A coalesce on the staging table only"
+      },
+      {
+        "id": "D",
+        "text": "An ACL on the reference field"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "UI Policies don't map import data to references.",
+      "C": "Coalesce identifies matching target records; it doesn't resolve display-to-reference mapping.",
+      "D": "ACLs control access, not field mapping logic."
+    },
+    "rationale": "Field maps in the transform map control how each source column maps to a target field, including referenced-value handling or source scripts to resolve references.",
+    "references": [
+      {
+        "title": "Transform Maps",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/c_TransformMaps.html"
+      }
+    ]
+  },
+  {
+    "id": "cad-mgr-039",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Managing Applications",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the recommended way to move a custom application between instances when not using source control?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Publish the app to an update set and import it"
+      },
+      {
+        "id": "B",
+        "text": "Manually rebuild each record by hand"
+      },
+      {
+        "id": "C",
+        "text": "Copy the database directly"
+      },
+      {
+        "id": "D",
+        "text": "Email the XML of each record"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "Manual rebuilding is error-prone and loses tracking.",
+      "C": "Direct database copies are not a supported app-transport method.",
+      "D": "Per-record XML email is unmanageable and not the standard process."
+    },
+    "rationale": "Publishing an application to an update set packages its files so they can be retrieved and committed on another instance.",
+    "references": [
+      {
+        "title": "Working with update sets",
+        "url": "https://www.servicenow.com/docs/r/zurich/application-development/system-update-sets/using-system-update-sets.html"
+      }
+    ]
+  },
+  {
+    "id": "cad-mgr-040",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Managing Applications",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What does committing an update set on the target instance do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Applies the captured changes to that instance"
+      },
+      {
+        "id": "B",
+        "text": "Deletes the update set permanently"
+      },
+      {
+        "id": "C",
+        "text": "Locks the source instance from edits"
+      },
+      {
+        "id": "D",
+        "text": "Publishes the app to the ServiceNow Store"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "Committing applies changes; it does not delete the set.",
+      "C": "Committing does not lock the source instance.",
+      "D": "Store publishing is a separate process from committing an update set."
+    },
+    "rationale": "Committing a retrieved update set applies its captured configuration changes to the target instance.",
+    "references": [
+      {
+        "title": "Commit an update set",
+        "url": "https://www.servicenow.com/docs/r/zurich/application-development/system-update-sets/t_CommitAnUpdateSet.html"
+      }
+    ]
+  },
+  {
+    "id": "cad-mgr-041",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Managing Applications",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "A change you made isn't moving with your update set. What is the most common reason?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The change is a data record not captured by update sets"
+      },
+      {
+        "id": "B",
+        "text": "The update set was never named"
+      },
+      {
+        "id": "C",
+        "text": "The target instance is offline"
+      },
+      {
+        "id": "D",
+        "text": "The change needs an admin to view it"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "A missing name doesn't prevent capture of tracked changes.",
+      "C": "Instance availability isn't why a specific change is excluded.",
+      "D": "Visibility roles don't determine update set capture."
+    },
+    "rationale": "Update sets capture configuration changes, not most data records; data typically must be moved separately or via specified mechanisms.",
+    "references": [
+      {
+        "title": "Working with update sets",
+        "url": "https://www.servicenow.com/docs/r/zurich/application-development/system-update-sets/using-system-update-sets.html"
+      }
+    ]
+  },
+  {
+    "id": "cad-mgr-042",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Managing Applications",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Where do you manage installed applications and plugins on an instance?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The Application Manager / All Apps page"
+      },
+      {
+        "id": "B",
+        "text": "The form designer"
+      },
+      {
+        "id": "C",
+        "text": "Number maintenance"
+      },
+      {
+        "id": "D",
+        "text": "The system dictionary"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "The form designer arranges fields, not applications.",
+      "C": "Number Maintenance controls record numbering.",
+      "D": "The dictionary defines fields and tables."
+    },
+    "rationale": "Application Manager (All Apps) is where administrators install, upgrade, and manage applications and plugins.",
+    "references": [
+      {
+        "title": "Application Manager",
+        "url": "https://www.servicenow.com/docs/r/zurich/platform-administration/application-manager/application-manager.html"
+      }
+    ]
+  },
+  {
+    "id": "cad-mgr-043",
+    "exam": "CAD",
+    "release": "Zurich",
+    "domain": "Managing Applications",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "Before moving an app to production, you want automated regression tests of its core flows. Which ServiceNow tool fits?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Automated Test Framework (ATF)"
+      },
+      {
+        "id": "B",
+        "text": "The form designer"
+      },
+      {
+        "id": "C",
+        "text": "Number maintenance"
+      },
+      {
+        "id": "D",
+        "text": "A UI Policy"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "The form designer builds layouts, not tests.",
+      "C": "Number Maintenance is unrelated to testing.",
+      "D": "UI Policies control form fields, not regression testing."
+    },
+    "rationale": "The Automated Test Framework lets you build and run repeatable tests so you can validate application behavior before promoting changes.",
+    "references": [
+      {
+        "title": "Custom application record",
+        "url": "https://www.servicenow.com/docs/r/zurich/application-development/c_CustomApplicationRecord.html"
+      }
+    ]
+  }
+]
