@@ -1,0 +1,1514 @@
+[
+  {
+    "id": "cisdf-gov-097",
+    "exam": "CIS-DF",
+    "release": "Zurich",
+    "domain": "Govern",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which CMDB Health KPI measures whether required CI attributes and relationships are populated?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Completeness"
+      },
+      {
+        "id": "B",
+        "text": "Correctness"
+      },
+      {
+        "id": "C",
+        "text": "Compliance"
+      },
+      {
+        "id": "D",
+        "text": "Staleness"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "Correctness measures accuracy, such as duplicates and stale data, not whether fields are populated.",
+      "C": "Compliance measures conformance to CSDM standards.",
+      "D": "Staleness is a signal of data not being refreshed, a correctness concern."
+    },
+    "rationale": "Completeness scores whether the attributes and relationships a CI is expected to have are actually populated.",
+    "references": [
+      {
+        "title": "CMDB Health dashboard",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/cmdb-health.html"
+      }
+    ]
+  },
+  {
+    "id": "cisdf-gov-098",
+    "exam": "CIS-DF",
+    "release": "Zurich",
+    "domain": "Govern",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which CMDB Health KPI is hurt by duplicate or stale CIs?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Correctness"
+      },
+      {
+        "id": "B",
+        "text": "Completeness"
+      },
+      {
+        "id": "C",
+        "text": "Compliance"
+      },
+      {
+        "id": "D",
+        "text": "Coverage"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "Completeness is about populated fields and relationships, not accuracy.",
+      "C": "Compliance is about CSDM conformance.",
+      "D": "Coverage is not one of the three core health KPIs."
+    },
+    "rationale": "Correctness measures the accuracy of CI data, so duplicates and stale records reduce the correctness score.",
+    "references": [
+      {
+        "title": "CMDB Health dashboard",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/cmdb-health.html"
+      }
+    ]
+  },
+  {
+    "id": "cisdf-gov-099",
+    "exam": "CIS-DF",
+    "release": "Zurich",
+    "domain": "Govern",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which CMDB Health KPI measures conformance to recommended CSDM classes and relationships?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Compliance"
+      },
+      {
+        "id": "B",
+        "text": "Completeness"
+      },
+      {
+        "id": "C",
+        "text": "Correctness"
+      },
+      {
+        "id": "D",
+        "text": "Currency"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "Completeness is about populated data.",
+      "C": "Correctness is about accuracy.",
+      "D": "Currency is not a defined CMDB Health KPI."
+    },
+    "rationale": "Compliance measures how well CIs follow the recommended CSDM classes and relationship structures.",
+    "references": [
+      {
+        "title": "CMDB Health dashboard",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/cmdb-health.html"
+      }
+    ]
+  },
+  {
+    "id": "cisdf-gov-100",
+    "exam": "CIS-DF",
+    "release": "Zurich",
+    "domain": "Govern",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A physical server appears as two CIs. Which health dimension is affected and what remediates it?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Correctness, fixed with de-duplication tasks"
+      },
+      {
+        "id": "B",
+        "text": "Completeness, fixed by adding fields"
+      },
+      {
+        "id": "C",
+        "text": "Compliance, fixed by reclassifying"
+      },
+      {
+        "id": "D",
+        "text": "Staleness, fixed by waiting"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "Adding fields addresses completeness, not duplicate records.",
+      "C": "Reclassifying changes class, it does not merge duplicates.",
+      "D": "Time does not resolve duplicate CIs."
+    },
+    "rationale": "Duplicate CIs are a correctness problem; de-duplication tasks identify and merge or remove them.",
+    "references": [
+      {
+        "title": "De-duplication tasks",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/cmdb-deduplication-tasks.html"
+      }
+    ]
+  },
+  {
+    "id": "cisdf-gov-101",
+    "exam": "CIS-DF",
+    "release": "Zurich",
+    "domain": "Govern",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "In IRE, what does an identification rule determine?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Whether an incoming CI already exists"
+      },
+      {
+        "id": "B",
+        "text": "Which source may update an attribute"
+      },
+      {
+        "id": "C",
+        "text": "The CI's install status value"
+      },
+      {
+        "id": "D",
+        "text": "The dashboard's layout"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "That is the job of a reconciliation rule, not an identification rule.",
+      "C": "Install status is a field value, not set by identification rules.",
+      "D": "Dashboards are unrelated to IRE."
+    },
+    "rationale": "Identification rules match incoming data against existing CIs to decide whether to update an existing CI or insert a new one.",
+    "references": [
+      {
+        "title": "CMDB Identification and Reconciliation (IRE)",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/c_CMDBIdentifyandReconcile.html"
+      }
+    ]
+  },
+  {
+    "id": "cisdf-gov-102",
+    "exam": "CIS-DF",
+    "release": "Zurich",
+    "domain": "Govern",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "In IRE, what does a reconciliation rule control?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Which data source may update an attribute"
+      },
+      {
+        "id": "B",
+        "text": "Whether two CIs are duplicates"
+      },
+      {
+        "id": "C",
+        "text": "A table's number prefix"
+      },
+      {
+        "id": "D",
+        "text": "A form's field order"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "Duplicate detection is identification, not reconciliation.",
+      "C": "Number prefixes are set in Number Maintenance.",
+      "D": "Field order is a form layout concern."
+    },
+    "rationale": "Reconciliation rules govern which data source is authoritative to write a given attribute, preventing lower-priority sources from overwriting it.",
+    "references": [
+      {
+        "title": "CMDB Identification and Reconciliation (IRE)",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/c_CMDBIdentifyandReconcile.html"
+      }
+    ]
+  },
+  {
+    "id": "cisdf-gov-103",
+    "exam": "CIS-DF",
+    "release": "Zurich",
+    "domain": "Govern",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "Two discovery sources report different values for the same CI attribute. What decides the winning value?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Datasource precedence and reconciliation rules"
+      },
+      {
+        "id": "B",
+        "text": "The most recent manual form edit"
+      },
+      {
+        "id": "C",
+        "text": "The CI owner's role level"
+      },
+      {
+        "id": "D",
+        "text": "Alphabetical order of the sources"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "Manual edits do not automatically win across sources in IRE.",
+      "C": "Roles do not determine attribute precedence.",
+      "D": "Sources are not ranked alphabetically."
+    },
+    "rationale": "Reconciliation rules and datasource precedence determine which source's value is authoritative when sources conflict.",
+    "references": [
+      {
+        "title": "Multisource CMDB",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/multisource-cmdb.html"
+      }
+    ]
+  },
+  {
+    "id": "cisdf-gov-104",
+    "exam": "CIS-DF",
+    "release": "Zurich",
+    "domain": "Govern",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "You need periodic attestation that a set of CIs is accurate. Which feature do you configure?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Data Certification"
+      },
+      {
+        "id": "B",
+        "text": "CMDB Query Builder"
+      },
+      {
+        "id": "C",
+        "text": "A UI Policy"
+      },
+      {
+        "id": "D",
+        "text": "Number Maintenance"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "Query Builder finds CIs but does not run attestation.",
+      "C": "UI Policies control form fields.",
+      "D": "Number Maintenance defines record numbering."
+    },
+    "rationale": "Data Certification schedules reviews where owners confirm or correct CI data, with follow-on remediation for failures.",
+    "references": [
+      {
+        "title": "Data Certification",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/c_DataCertification.html"
+      }
+    ]
+  },
+  {
+    "id": "cisdf-gov-105",
+    "exam": "CIS-DF",
+    "release": "Zurich",
+    "domain": "Govern",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Who is primarily accountable for overall CMDB data quality and governance?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The CMDB Data Manager"
+      },
+      {
+        "id": "B",
+        "text": "The MID Server"
+      },
+      {
+        "id": "C",
+        "text": "A catalog item"
+      },
+      {
+        "id": "D",
+        "text": "The Discovery schedule"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "A MID Server executes discovery and integrations; it is not an owner role.",
+      "C": "A catalog item requests services.",
+      "D": "A schedule runs jobs, it is not accountable for quality."
+    },
+    "rationale": "The CMDB Data Manager role owns CMDB data quality and governance across the platform.",
+    "references": [
+      {
+        "title": "CMDB Data Manager",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/cmdb-data-manager.html"
+      }
+    ]
+  },
+  {
+    "id": "cisdf-gov-106",
+    "exam": "CIS-DF",
+    "release": "Zurich",
+    "domain": "Govern",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "A health scorecard shows low completeness for a CI class. What is the most likely cause?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Required attributes or relationships are unpopulated"
+      },
+      {
+        "id": "B",
+        "text": "Too many roles are assigned"
+      },
+      {
+        "id": "C",
+        "text": "The active theme is wrong"
+      },
+      {
+        "id": "D",
+        "text": "The class name is long"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "Role counts do not affect completeness scores.",
+      "C": "Themes are cosmetic and unrelated.",
+      "D": "Class name length does not affect data completeness."
+    },
+    "rationale": "Low completeness means CIs in that class are missing attributes or relationships the model expects to be populated.",
+    "references": [
+      {
+        "title": "CMDB Health dashboard",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/cmdb-health.html"
+      }
+    ]
+  },
+  {
+    "id": "cisdf-gov-107",
+    "exam": "CIS-DF",
+    "release": "Zurich",
+    "domain": "Govern",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "You must stop a low-priority integration from overwriting the 'owned by' field on servers. What do you configure?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A reconciliation rule for that attribute"
+      },
+      {
+        "id": "B",
+        "text": "A UI Policy on the form"
+      },
+      {
+        "id": "C",
+        "text": "A new form view"
+      },
+      {
+        "id": "D",
+        "text": "A Number Maintenance record"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "UI Policies affect the form, not which source writes data.",
+      "C": "Form views change layout, not write precedence.",
+      "D": "Number Maintenance is about record numbering."
+    },
+    "rationale": "A reconciliation rule restricts which data source may update a specific attribute, blocking unauthorized sources.",
+    "references": [
+      {
+        "title": "CMDB Identification and Reconciliation (IRE)",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/c_CMDBIdentifyandReconcile.html"
+      }
+    ]
+  },
+  {
+    "id": "cisdf-gov-108",
+    "exam": "CIS-DF",
+    "release": "Zurich",
+    "domain": "Govern",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What does CMDB Workspace provide?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A console to manage CMDB health, data, and remediation"
+      },
+      {
+        "id": "B",
+        "text": "A page to design forms"
+      },
+      {
+        "id": "C",
+        "text": "A theme switcher"
+      },
+      {
+        "id": "D",
+        "text": "A hardware purchasing catalog"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "Form design is done in the Form Designer.",
+      "C": "Themes are unrelated to CMDB management.",
+      "D": "CMDB Workspace does not purchase hardware."
+    },
+    "rationale": "CMDB Workspace is an administrative console for monitoring health, managing data, and driving remediation.",
+    "references": [
+      {
+        "title": "CMDB Workspace",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/cmdb-workspace.html"
+      }
+    ]
+  },
+  {
+    "id": "cisdf-gov-109",
+    "exam": "CIS-DF",
+    "release": "Zurich",
+    "domain": "Govern",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "Stale CIs are lowering the correctness score. Which action most directly helps?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Rediscover or refresh the CIs on a schedule"
+      },
+      {
+        "id": "B",
+        "text": "Add more sections to the form"
+      },
+      {
+        "id": "C",
+        "text": "Rename the CI class"
+      },
+      {
+        "id": "D",
+        "text": "Grant admin to all users"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "Form sections do not refresh data.",
+      "C": "Renaming a class does not update CI data.",
+      "D": "Granting admin broadly is a security risk and does not refresh CIs."
+    },
+    "rationale": "Staleness is resolved by rediscovering or refreshing CIs so their data reflects current reality.",
+    "references": [
+      {
+        "title": "CMDB Health dashboard",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/cmdb-health.html"
+      }
+    ]
+  },
+  {
+    "id": "cisdf-ins-061",
+    "exam": "CIS-DF",
+    "release": "Zurich",
+    "domain": "Insight",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which tool visually builds queries across CI classes and their relationships?",
+    "options": [
+      {
+        "id": "A",
+        "text": "CMDB Query Builder"
+      },
+      {
+        "id": "B",
+        "text": "Number Maintenance"
+      },
+      {
+        "id": "C",
+        "text": "Form Designer"
+      },
+      {
+        "id": "D",
+        "text": "Update Sets"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "Number Maintenance defines record numbering.",
+      "C": "Form Designer arranges form fields.",
+      "D": "Update Sets move configuration between instances."
+    },
+    "rationale": "CMDB Query Builder lets you visually query CIs and traverse their relationships across classes.",
+    "references": [
+      {
+        "title": "CMDB Query Builder",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/cmdb-query-builder.html"
+      }
+    ]
+  },
+  {
+    "id": "cisdf-ins-062",
+    "exam": "CIS-DF",
+    "release": "Zurich",
+    "domain": "Insight",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What does a dependency (BSM) map display?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A CI and its related CIs, graphically"
+      },
+      {
+        "id": "B",
+        "text": "A list of assigned roles"
+      },
+      {
+        "id": "C",
+        "text": "The import schedule"
+      },
+      {
+        "id": "D",
+        "text": "The theme palette"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "Roles are managed in user administration.",
+      "C": "Schedules are set on data sources or jobs.",
+      "D": "Themes are cosmetic."
+    },
+    "rationale": "A dependency or business service map graphically shows a CI and the CIs related to it.",
+    "references": [
+      {
+        "title": "CMDB Query Builder",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/cmdb-query-builder.html"
+      }
+    ]
+  },
+  {
+    "id": "cisdf-ins-063",
+    "exam": "CIS-DF",
+    "release": "Zurich",
+    "domain": "Insight",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "You want to run health metrics repeatedly against a fixed set of CIs. What do you create?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A CMDB group"
+      },
+      {
+        "id": "B",
+        "text": "A new table"
+      },
+      {
+        "id": "C",
+        "text": "A UI Action"
+      },
+      {
+        "id": "D",
+        "text": "A data source"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "A new table is unnecessary and does not scope metrics.",
+      "C": "UI Actions add buttons, not CI scoping.",
+      "D": "Data sources define import origins."
+    },
+    "rationale": "A CMDB group is a reusable set of CIs you can target with health metrics, certification, and remediation.",
+    "references": [
+      {
+        "title": "CMDB Groups",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/cmdb-groups.html"
+      }
+    ]
+  },
+  {
+    "id": "cisdf-ins-064",
+    "exam": "CIS-DF",
+    "release": "Zurich",
+    "domain": "Insight",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "In a 'Depends on :: Used by' relationship, which side relies on the other?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The 'Depends on' side relies on the 'Used by' side"
+      },
+      {
+        "id": "B",
+        "text": "Neither side relies on the other"
+      },
+      {
+        "id": "C",
+        "text": "The 'Used by' side relies on the 'Depends on' side"
+      },
+      {
+        "id": "D",
+        "text": "Both rely equally and identically"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "The relationship explicitly encodes a dependency.",
+      "C": "This reverses the meaning of the relationship.",
+      "D": "The relationship is directional, not symmetric."
+    },
+    "rationale": "In Depends on :: Used by, the 'Depends on' CI requires the 'Used by' CI to function.",
+    "references": [
+      {
+        "title": "CMDB Query Builder",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/cmdb-query-builder.html"
+      }
+    ]
+  },
+  {
+    "id": "cisdf-ins-065",
+    "exam": "CIS-DF",
+    "release": "Zurich",
+    "domain": "Insight",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "You suspect duplicate CIs are inflating your counts. Which workflow addresses this?",
+    "options": [
+      {
+        "id": "A",
+        "text": "De-duplication tasks"
+      },
+      {
+        "id": "B",
+        "text": "A form layout change"
+      },
+      {
+        "id": "C",
+        "text": "Number Maintenance"
+      },
+      {
+        "id": "D",
+        "text": "A theme change"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "Form layout does not affect duplicate data.",
+      "C": "Numbering is unrelated to duplicates.",
+      "D": "Themes are cosmetic."
+    },
+    "rationale": "De-duplication tasks detect candidate duplicates and let you merge or remove them.",
+    "references": [
+      {
+        "title": "De-duplication tasks",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/cmdb-deduplication-tasks.html"
+      }
+    ]
+  },
+  {
+    "id": "cisdf-ins-066",
+    "exam": "CIS-DF",
+    "release": "Zurich",
+    "domain": "Insight",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "You need a CI set whose membership updates automatically from a filter. What fits?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A dynamic CMDB group"
+      },
+      {
+        "id": "B",
+        "text": "A one-time list export"
+      },
+      {
+        "id": "C",
+        "text": "A static report snapshot"
+      },
+      {
+        "id": "D",
+        "text": "A UI Policy"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "An export is a point-in-time copy that does not update.",
+      "C": "A snapshot does not refresh membership.",
+      "D": "UI Policies control form fields."
+    },
+    "rationale": "A dynamic CMDB group derives its membership from a filter, so it updates as CIs change.",
+    "references": [
+      {
+        "title": "CMDB Groups",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/cmdb-groups.html"
+      }
+    ]
+  },
+  {
+    "id": "cisdf-ins-067",
+    "exam": "CIS-DF",
+    "release": "Zurich",
+    "domain": "Insight",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What does the CMDB Health dashboard summarize?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Completeness, correctness, and compliance scores"
+      },
+      {
+        "id": "B",
+        "text": "Catalog order volumes"
+      },
+      {
+        "id": "C",
+        "text": "MID Server logs"
+      },
+      {
+        "id": "D",
+        "text": "Theme settings"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "Order volumes are a service catalog metric.",
+      "C": "MID Server logs are operational logs.",
+      "D": "Themes are cosmetic."
+    },
+    "rationale": "The CMDB Health dashboard summarizes the completeness, correctness, and compliance of CMDB data.",
+    "references": [
+      {
+        "title": "CMDB Health dashboard",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/cmdb-health.html"
+      }
+    ]
+  },
+  {
+    "id": "cisdf-ing-059",
+    "exam": "CIS-DF",
+    "release": "Zurich",
+    "domain": "Ingest",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which Discovery phase determines the type or class of a detected device?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Classification"
+      },
+      {
+        "id": "B",
+        "text": "Scanning"
+      },
+      {
+        "id": "C",
+        "text": "Exploration"
+      },
+      {
+        "id": "D",
+        "text": "Identification"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "Scanning detects that a device is present and reachable.",
+      "C": "Exploration gathers detailed attributes after identification.",
+      "D": "Identification matches to an existing CI or creates one."
+    },
+    "rationale": "Discovery runs scanning, classification, identification, then exploration; classification determines the device or CI type.",
+    "references": [
+      {
+        "title": "Discovery",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/discovery.html"
+      }
+    ]
+  },
+  {
+    "id": "cisdf-ing-060",
+    "exam": "CIS-DF",
+    "release": "Zurich",
+    "domain": "Ingest",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which Discovery phase gathers detailed attributes and relationships?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Exploration"
+      },
+      {
+        "id": "B",
+        "text": "Scanning"
+      },
+      {
+        "id": "C",
+        "text": "Classification"
+      },
+      {
+        "id": "D",
+        "text": "Identification"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "Scanning only detects active devices.",
+      "C": "Classification determines the type.",
+      "D": "Identification matches or creates the CI."
+    },
+    "rationale": "Exploration is the final Discovery phase, collecting detailed attributes and relationships for the identified CI.",
+    "references": [
+      {
+        "title": "Discovery",
+        "url": "https://www.servicenow.com/docs/r/australia/it-operations-management/discovery.html"
+      }
+    ]
+  },
+  {
+    "id": "cisdf-ing-061",
+    "exam": "CIS-DF",
+    "release": "Zurich",
+    "domain": "Ingest",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What executes Discovery and integrations on the local network?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The MID Server"
+      },
+      {
+        "id": "B",
+        "text": "The web browser"
+      },
+      {
+        "id": "C",
+        "text": "A UI Policy"
+      },
+      {
+        "id": "D",
+        "text": "The service catalog"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "The browser renders the UI, it does not run discovery.",
+      "C": "UI Policies control form fields.",
+      "D": "The catalog requests services."
+    },
+    "rationale": "The MID Server runs on the local network and executes Discovery probes and integration work on behalf of the instance.",
+    "references": [
+      {
+        "title": "MID Server",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/mid-server.html"
+      }
+    ]
+  },
+  {
+    "id": "cisdf-ing-062",
+    "exam": "CIS-DF",
+    "release": "Zurich",
+    "domain": "Ingest",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "You must load CI data from a third-party CMDB without writing custom integration code. What is recommended?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A Service Graph Connector"
+      },
+      {
+        "id": "B",
+        "text": "Manual data entry"
+      },
+      {
+        "id": "C",
+        "text": "A UI Action"
+      },
+      {
+        "id": "D",
+        "text": "A theme"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "Manual entry does not scale and is error-prone.",
+      "C": "UI Actions add buttons, not integrations.",
+      "D": "Themes are cosmetic."
+    },
+    "rationale": "Service Graph Connectors are prebuilt, IRE-based integrations for loading third-party CI data into the CMDB.",
+    "references": [
+      {
+        "title": "Service Graph Connectors",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/service-graph-connectors.html"
+      }
+    ]
+  },
+  {
+    "id": "cisdf-ing-063",
+    "exam": "CIS-DF",
+    "release": "Zurich",
+    "domain": "Ingest",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "In the import pipeline, what stages incoming rows before transformation?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The import set table"
+      },
+      {
+        "id": "B",
+        "text": "The target table"
+      },
+      {
+        "id": "C",
+        "text": "The transform map"
+      },
+      {
+        "id": "D",
+        "text": "The data source"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "The target table is the final destination.",
+      "C": "The transform map maps staged rows to the target.",
+      "D": "The data source defines where data comes from."
+    },
+    "rationale": "The import set table is a staging area that holds raw incoming rows until a transform map loads them.",
+    "references": [
+      {
+        "title": "Import sets and transform maps",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/import-sets.html"
+      }
+    ]
+  },
+  {
+    "id": "cisdf-ing-064",
+    "exam": "CIS-DF",
+    "release": "Zurich",
+    "domain": "Ingest",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "Ingestion keeps creating duplicate CIs. Which mechanism should prevent that?",
+    "options": [
+      {
+        "id": "A",
+        "text": "IRE identification rules"
+      },
+      {
+        "id": "B",
+        "text": "A larger MID Server"
+      },
+      {
+        "id": "C",
+        "text": "A new theme"
+      },
+      {
+        "id": "D",
+        "text": "More user roles"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "MID Server size affects throughput, not matching.",
+      "C": "Themes are cosmetic.",
+      "D": "Roles control access, not identification."
+    },
+    "rationale": "IRE identification rules match incoming data to existing CIs so updates occur instead of duplicate inserts.",
+    "references": [
+      {
+        "title": "Ingestion through IRE",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/c_CMDBIdentifyandReconcile.html"
+      }
+    ]
+  },
+  {
+    "id": "cisdf-ing-065",
+    "exam": "CIS-DF",
+    "release": "Zurich",
+    "domain": "Ingest",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "You need to transform external data and load it into the CMDB through identification. Which tool maps and loads via IRE?",
+    "options": [
+      {
+        "id": "A",
+        "text": "IntegrationHub ETL"
+      },
+      {
+        "id": "B",
+        "text": "Form Designer"
+      },
+      {
+        "id": "C",
+        "text": "Number Maintenance"
+      },
+      {
+        "id": "D",
+        "text": "Update Sets"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "Form Designer builds form layouts.",
+      "C": "Number Maintenance defines numbering.",
+      "D": "Update Sets move configuration."
+    },
+    "rationale": "IntegrationHub ETL maps source data to CMDB classes and loads it through IRE for identification and reconciliation.",
+    "references": [
+      {
+        "title": "IntegrationHub ETL",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/integrationhub-etl.html"
+      }
+    ]
+  },
+  {
+    "id": "cisdf-cfg-049",
+    "exam": "CIS-DF",
+    "release": "Zurich",
+    "domain": "Configuration",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "What is the base table that all configuration items extend?",
+    "options": [
+      {
+        "id": "A",
+        "text": "cmdb_ci"
+      },
+      {
+        "id": "B",
+        "text": "task"
+      },
+      {
+        "id": "C",
+        "text": "sys_user"
+      },
+      {
+        "id": "D",
+        "text": "cmdb_rel_ci"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "task is the base for tasks like incidents, not CIs.",
+      "C": "sys_user stores users.",
+      "D": "cmdb_rel_ci stores relationships, not CIs."
+    },
+    "rationale": "cmdb_ci is the root CI table; all specific CI classes extend it.",
+    "references": [
+      {
+        "title": "CI Class Manager",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/ci-class-manager.html"
+      }
+    ]
+  },
+  {
+    "id": "cisdf-cfg-050",
+    "exam": "CIS-DF",
+    "release": "Zurich",
+    "domain": "Configuration",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Where are relationships between CIs stored?",
+    "options": [
+      {
+        "id": "A",
+        "text": "cmdb_rel_ci"
+      },
+      {
+        "id": "B",
+        "text": "cmdb_ci"
+      },
+      {
+        "id": "C",
+        "text": "sys_relationship"
+      },
+      {
+        "id": "D",
+        "text": "cmdb_ci_service"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "cmdb_ci stores the CIs themselves.",
+      "C": "sys_relationship defines relationship types, not CI links.",
+      "D": "cmdb_ci_service stores service CIs."
+    },
+    "rationale": "CI-to-CI relationships are stored in cmdb_rel_ci, linking a parent and child CI with a relationship type.",
+    "references": [
+      {
+        "title": "CI Class Manager",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/ci-class-manager.html"
+      }
+    ]
+  },
+  {
+    "id": "cisdf-cfg-051",
+    "exam": "CIS-DF",
+    "release": "Zurich",
+    "domain": "Configuration",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "You move a generic Computer CI to the more specific Linux Server class. What is this called?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Reclassification"
+      },
+      {
+        "id": "B",
+        "text": "Coalescing"
+      },
+      {
+        "id": "C",
+        "text": "Transformation"
+      },
+      {
+        "id": "D",
+        "text": "Certification"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "Coalescing matches import rows to records.",
+      "C": "Transformation maps imported fields.",
+      "D": "Certification attests data accuracy."
+    },
+    "rationale": "Moving a CI to a different class (more specific, less specific, or a different branch) is reclassification.",
+    "references": [
+      {
+        "title": "CI reclassification",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/c_CMDBIdentifyandReconcile.html"
+      }
+    ]
+  },
+  {
+    "id": "cisdf-cfg-052",
+    "exam": "CIS-DF",
+    "release": "Zurich",
+    "domain": "Configuration",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which tool centralizes managing CI classes, attributes, identification, and relationship rules?",
+    "options": [
+      {
+        "id": "A",
+        "text": "CI Class Manager"
+      },
+      {
+        "id": "B",
+        "text": "Form Designer"
+      },
+      {
+        "id": "C",
+        "text": "Update Sets"
+      },
+      {
+        "id": "D",
+        "text": "MID Server"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "Form Designer arranges form fields.",
+      "C": "Update Sets move configuration between instances.",
+      "D": "The MID Server executes discovery."
+    },
+    "rationale": "CI Class Manager is the single place to view the class hierarchy and manage attributes, identification, and relationship rules.",
+    "references": [
+      {
+        "title": "CI Class Manager",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/ci-class-manager.html"
+      }
+    ]
+  },
+  {
+    "id": "cisdf-cfg-053",
+    "exam": "CIS-DF",
+    "release": "Zurich",
+    "domain": "Configuration",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "Several sources write to one CI and you need to see which source set each value. What enables this?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Multisource CMDB"
+      },
+      {
+        "id": "B",
+        "text": "A UI Policy"
+      },
+      {
+        "id": "C",
+        "text": "A theme"
+      },
+      {
+        "id": "D",
+        "text": "Number Maintenance"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "UI Policies control form fields.",
+      "C": "Themes are cosmetic.",
+      "D": "Number Maintenance defines numbering."
+    },
+    "rationale": "Multisource CMDB tracks attribute values per data source, so you can see which source provided each value.",
+    "references": [
+      {
+        "title": "Multisource CMDB",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/multisource-cmdb.html"
+      }
+    ]
+  },
+  {
+    "id": "cisdf-csdm-039",
+    "exam": "CIS-DF",
+    "release": "Zurich",
+    "domain": "CSDM Fundamentals",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which CSDM domain holds core reference data like companies, locations, and users?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Foundation"
+      },
+      {
+        "id": "B",
+        "text": "Design"
+      },
+      {
+        "id": "C",
+        "text": "Operate"
+      },
+      {
+        "id": "D",
+        "text": "Sell/Consume"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "Design captures business and application services.",
+      "C": "Operate uses the model for events and incidents.",
+      "D": "Sell/Consume covers service offerings."
+    },
+    "rationale": "The Foundation domain holds the core reference data (companies, locations, users, groups) the other domains build on.",
+    "references": [
+      {
+        "title": "CSDM overview",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/csdm.html"
+      }
+    ]
+  },
+  {
+    "id": "cisdf-csdm-040",
+    "exam": "CIS-DF",
+    "release": "Zurich",
+    "domain": "CSDM Fundamentals",
+    "difficulty": "recall",
+    "type": "single_select",
+    "stem": "Which table stores business applications?",
+    "options": [
+      {
+        "id": "A",
+        "text": "cmdb_ci_business_app"
+      },
+      {
+        "id": "B",
+        "text": "cmdb_ci"
+      },
+      {
+        "id": "C",
+        "text": "service_offering"
+      },
+      {
+        "id": "D",
+        "text": "cmdb_rel_ci"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "cmdb_ci is the base CI table.",
+      "C": "service_offering stores service offerings.",
+      "D": "cmdb_rel_ci stores relationships."
+    },
+    "rationale": "Business applications are stored in the cmdb_ci_business_app table within the CSDM Design domain.",
+    "references": [
+      {
+        "title": "CSDM overview",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/csdm.html"
+      }
+    ]
+  },
+  {
+    "id": "cisdf-csdm-041",
+    "exam": "CIS-DF",
+    "release": "Zurich",
+    "domain": "CSDM Fundamentals",
+    "difficulty": "application",
+    "type": "single_select",
+    "stem": "You need to model a running instance of an application and its supporting CIs. Which CSDM construct fits?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Application service"
+      },
+      {
+        "id": "B",
+        "text": "Service offering"
+      },
+      {
+        "id": "C",
+        "text": "Location"
+      },
+      {
+        "id": "D",
+        "text": "Company"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "A service offering is a committed level of a service, not the running instance.",
+      "C": "A location is foundation data.",
+      "D": "A company is foundation data."
+    },
+    "rationale": "An application service represents a running instance of an application together with the CIs that support it.",
+    "references": [
+      {
+        "title": "CSDM overview",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/csdm.html"
+      }
+    ]
+  },
+  {
+    "id": "cisdf-csdm-042",
+    "exam": "CIS-DF",
+    "release": "Zurich",
+    "domain": "CSDM Fundamentals",
+    "difficulty": "scenario",
+    "type": "single_select",
+    "stem": "Leadership wants services modeled before mapping technical CIs. Which CSDM domain captures the service blueprint?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Design"
+      },
+      {
+        "id": "B",
+        "text": "Foundation"
+      },
+      {
+        "id": "C",
+        "text": "Operate"
+      },
+      {
+        "id": "D",
+        "text": "Ingest"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "distractor_notes": {
+      "B": "Foundation is core reference data.",
+      "C": "Operate is operational use of the model.",
+      "D": "Ingest is not a CSDM domain."
+    },
+    "rationale": "The Design domain captures business and application services as the service blueprint, before technical mapping.",
+    "references": [
+      {
+        "title": "CSDM overview",
+        "url": "https://www.servicenow.com/docs/r/australia/servicenow-platform/configuration-management-database-cmdb/csdm.html"
+      }
+    ]
+  }
+]
