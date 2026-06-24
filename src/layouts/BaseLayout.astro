@@ -12,7 +12,7 @@ interface Props {
 
 const {
   title = 'GlideUp.net — Free ServiceNow Cert Practice',
-  description = 'Free, community-built, doc-anchored ServiceNow certification practice. CSA, CAD, CIS-ITSM, CIS-DF. No login, no ads.',
+  description = 'Free, community-built, doc-anchored ServiceNow certification practice. CSA, CAD, CIS-ITSM, CIS-DF. No login required.',
   activeNav = '',
 } = Astro.props;
 ---
@@ -52,6 +52,19 @@ const {
       <main class="content">
         <div class="content__inner">
           <slot />
+          <!-- Subtle, single ad slot. After approval, create ONE Display unit in AdSense
+               and paste its slot id into data-ad-slot below, then uncomment the block. -->
+          <aside class="ad-quiet" aria-label="Advertisement">
+            <span class="ad-quiet__lbl">Advertisement</span>
+            <!--
+            <ins class="adsbygoogle" style="display:block"
+                 data-ad-client="ca-pub-2897604935002362"
+                 data-ad-slot="REPLACE_WITH_SLOT_ID"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            -->
+          </aside>
         </div>
       </main>
     </div>
@@ -83,3 +96,16 @@ const {
   </body>
 </html>
 
+<style>
+  /* Subtle ad slot — intentionally low-key and easy to ignore */
+  .ad-quiet{
+    max-width:728px;margin:48px auto 8px;padding-top:14px;
+    border-top:1px solid color-mix(in srgb, currentColor 10%, transparent);
+    text-align:center;opacity:.75;
+  }
+  .ad-quiet__lbl{
+    display:block;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;
+    opacity:.5;margin-bottom:6px;
+  }
+  .ad-quiet ins{margin:0 auto}
+</style>
