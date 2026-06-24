@@ -26,7 +26,7 @@ GlideUp closes that gap with:
 - **Every wrong answer explained** (not just "the correct answer is B")
 - **Verified documentation links** on every question
 - **Gamification** that rewards persistence and accuracy
-- **No login, no PII, no ads** — anonymous progress via localStorage
+- **No login, no PII** — anonymous progress via localStorage
 - **NE-native UX** — the chrome, layout, and palette match what practitioners see daily in the Now Platform
 
 ---
